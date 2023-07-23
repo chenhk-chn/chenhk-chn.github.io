@@ -154,7 +154,7 @@
 
         <div class="article-content markdown-body">
             <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>今年年初，抖音上线了一款名为国风穿越的特效，突然火了一阵。大致是不管用户是什么样子的发型，都可以一键变成古装的格格头或者是带有发髻的古风发型。这其实对于用户来说，还是蛮有参与感和新鲜感的，至少我玩了很久，并且还推荐给我妈玩，哈哈哈。这让我们团队对于替换用户发型产生了兴趣。</p>
-<p>学术界有一些关于头发编辑的文章，比如基于StyleGAN的，令你的头发变长变短、改变颜色；或者基于StarGAN或者<a class="link"   target="_blank" rel="noopener" href="https://github.com/ckkelvinchan/GLEAN" >GLEAN<i class="fas fa-external-link-alt"></i></a>这样的cGAN的方式。但这些方式其实只能解决头发二元变量的问题，即：是否是长发、是否是卷发这种常见的发型生成问题，如果涉及到是否是古代发髻这种日常生活中几乎不可见的发型时，以上所说的方法其实就失效了。所以，我们将上面提到的方法称之为<strong>发型编辑</strong>，而我们要实现的，其实是<strong>发型替换</strong>。</p>
+<p>学界有一些关于头发编辑的文章，比如基于StyleGAN的，令你的头发变长变短、改变颜色；或者基于StarGAN或者<a class="link"   target="_blank" rel="noopener" href="https://github.com/ckkelvinchan/GLEAN" >GLEAN<i class="fas fa-external-link-alt"></i></a>这样的cGAN的方式。但这些方式其实只能解决头发二元变量的问题，即：是否是长发、是否是卷发这种常见的发型生成问题，如果涉及到是否是古代发髻这种日常生活中几乎不可见的发型时，以上所说的方法其实就失效了。所以，我们将上面提到的方法称之为<strong>发型编辑</strong>，而我们要实现的，其实是<strong>发型替换</strong>。</p>
 <hr>
 <h1 id="我们的技术方案"><a href="#我们的技术方案" class="headerlink" title="我们的技术方案"></a>我们的技术方案</h1><h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a><em>难点</em></h2><p>说回来，这从技术角度上讲，其实还蛮困难的。因为抖音落地在移动端，所以我们推测其实使用的是类似于pix2pix的模型，这就要求存在非常多的图片对，这些图片对的获取其实是这个模型训练主要的难度。一旦拥有了现成的图片对，我们便可以将问题转换到我们熟悉的领域，也就是类似于人脸卡通化的问题上，而我们对于如何实现人脸卡通化有着很多的经验。</p>
 <p>我们将过程初步拆解为：</p>
