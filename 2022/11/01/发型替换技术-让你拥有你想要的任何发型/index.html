@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="祝大家的人生没有遗憾，不用重来。">
+    <meta name="author" content="陈浩锟/垂野/RigelChen">
+    
+    <title>
+        
+            发型替换技术 - 让你拥有你想要的任何发型 |
+        
+        Rocinante
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/simmons.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-Hans"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/fitz.jpg","favicon":"/images/simmons.jpg","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"祝大家的人生没有遗憾，不用重来。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Rocinante
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                文章
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">文章</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">发型替换技术 - 让你拥有你想要的任何发型</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/fitz.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">陈浩锟/垂野/RigelChen</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-11-01 20:46:25</span>
+        <span class="mobile">2022-11-01 20:46</span>
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>今年年初，抖音上线了一款名为国风穿越的特效，突然火了一阵。大致是不管用户是什么样子的发型，都可以一键变成古装的格格头或者是带有发髻的古风发型。这其实对于用户来说，还是蛮有参与感和新鲜感的，至少我玩了很久，并且还推荐给我妈玩，哈哈哈。这让我们团队对于替换用户发型产生了兴趣。</p>
+<p>学术界有一些关于头发编辑的文章，比如基于StyleGAN的，令你的头发变长变短、改变颜色；或者基于StarGAN或者<a class="link"   target="_blank" rel="noopener" href="https://github.com/ckkelvinchan/GLEAN" >GLEAN<i class="fas fa-external-link-alt"></i></a>这样的cGAN的方式。但这些方式其实只能解决头发二元变量的问题，即：是否是长发、是否是卷发这种常见的发型生成问题，如果涉及到是否是古代发髻这种日常生活中几乎不可见的发型时，以上所说的方法其实就失效了。所以，我们将上面提到的方法称之为<strong>发型编辑</strong>，而我们要实现的，其实是<strong>发型替换</strong>。</p>
+<hr>
+<h1 id="我们的技术方案"><a href="#我们的技术方案" class="headerlink" title="我们的技术方案"></a>我们的技术方案</h1><h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a><em>难点</em></h2><p>说回来，这从技术角度上讲，其实还蛮困难的。因为抖音落地在移动端，所以我们推测其实使用的是类似于pix2pix的模型，这就要求存在非常多的图片对，这些图片对的获取其实是这个模型训练主要的难度。一旦拥有了现成的图片对，我们便可以将问题转换到我们熟悉的领域，也就是类似于人脸卡通化的问题上，而我们对于如何实现人脸卡通化有着很多的经验。</p>
+<p>我们将过程初步拆解为：</p>
+<ol>
+<li><strong>制作发型替换的图片对</strong></li>
+<li>利用图片对来训练类Pix2pix模型。</li>
+</ol>
+<p>我们认为难点在第一步，本文阐述的重点也在第一步。</p>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a><em>实现过程</em></h2><p>我们为制作图片对的过程申请了专利。但是由于专利尚未公开，因此还不能公开讨论我们是如何实现的，只能很骄傲地说，我们实现的方案非常精妙，以至于我为它起了一个很好听的名字，叫做<strong>劫持</strong>。</p>
+<p>国家专利局的受理号是xxxxxxx，我为第一发明人，欢迎大家关注此专利的进展。专利公开后我们再来详细讨论。</p>
+<hr>
+<h1 id="落地"><a href="#落地" class="headerlink" title="落地"></a>落地</h1><p>截至2022年11月1日，我们使用全新的技术方案一共落地了三个项目。</p>
+<h2 id="背头"><a href="#背头" class="headerlink" title="背头"></a><em>背头</em></h2><p>背头其实属于比较中规中矩的发型，但是是我，也是我们团队，使用新的技术方案落地的第一个发型，因此要求稳，哈哈哈。具体效果可以查看以下的图片。（左下角的背头就是我用全新的技术方案实现的）</p>
+<h2 id="间谍过家家的动漫发型-Anya和黄昏"><a href="#间谍过家家的动漫发型-Anya和黄昏" class="headerlink" title="间谍过家家的动漫发型 - Anya和黄昏"></a><em>间谍过家家的动漫发型 - Anya和黄昏</em></h2><p>第一个落地的背头发型获得成功后，我们开始放飞自我。想要调整更高难度的发型。正值间谍过家家很火，我们准备以<strong>满足用户cosplay的愿望</strong>为目标去迭代，因此打算制作Anya的发型和黄昏的发型。这两款发型的难度其实要远高于背头，尤其是因为它们艳丽的颜色。我们优化了我们原本的方案，最终的效果如下，并且也在QQ小世界中上线了。</p>
+<hr>
+<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>我们目前采取的技术路线中，生成的发型其实会和用户本身产生耦合。例如用户本身是白头发，那么生成的背头也是白头发，尽管在黄昏和Anya的发型中，我们优化了这一点。</p>
+<p>不过我们打算挑战自己，采取一种全新的技术路线，来生成一致性更强的发型，使得不管用户本身是什么头发，都能够生成我们宣传的那一种发型。当然这种目标抹杀了用户的千人千面，和前面的劫持策略可以说是侧重点各有不同。目前我们已经有初步的方案了，后续有新的发型通过这种方案落地的话，我们再来分享。</p>
+<hr>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>对于我来说，这小半年收获以下的成果。</p>
+<ul>
+<li>第一发明人技术专利一篇，专利名称《blablabka》，受理号：****，尚未公开。</li>
+<li>独立上线<strong>背头</strong>发型替换模型到QQ小世界。</li>
+<li>合作上线<strong>Anya和黄昏发型</strong>到QQ小世界。</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：发型替换技术 - 让你拥有你想要的任何发型</li>
+        <li>Post author：陈浩锟/垂野/RigelChen</li>
+        <li>Create time：2022-11-01 20:46:25</li>
+        <li>
+            Post link：https://chenhk.cn/2022/11/01/发型替换技术-让你拥有你想要的任何发型/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">陈浩锟/垂野/RigelChen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B5%B7%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9A%84%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">我们的技术方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%BE%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text">实现过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%90%BD%E5%9C%B0"><span class="nav-number">3.</span> <span class="nav-text">落地</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%A4%B4"><span class="nav-number">3.1.</span> <span class="nav-text">背头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E8%B0%8D%E8%BF%87%E5%AE%B6%E5%AE%B6%E7%9A%84%E5%8A%A8%E6%BC%AB%E5%8F%91%E5%9E%8B-Anya%E5%92%8C%E9%BB%84%E6%98%8F"><span class="nav-number">3.2.</span> <span class="nav-text">间谍过家家的动漫发型 - Anya和黄昏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD"><span class="nav-number">4.</span> <span class="nav-text">后续</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%90%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">成果</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
