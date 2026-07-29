@@ -3,36 +3,131 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placr — give photos their missing place.">
 <title>Placr</title>
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <h1>Placr</h1>
-  <p class="updated">给「照片」里缺少位置的照片补上地点 · macOS 15+</p>
-</header>
-
-<p class="lede">Placr 按月份扫描你的照片图库，把缺少位置的照片按拍摄时间分组，参考同一时段有位置的照片给出建议，并在你确认后批量写入。原位置始终可恢复。</p>
-
-<p>Placr scans your photo library one month at a time, groups the photos missing a location by capture time, suggests a place based on nearby photos that do have one, and writes them in bulk once you confirm. Every write can be undone.</p>
-
-<div class="cards">
-  <a class="card" href="privacy.html">
-    <strong>隐私政策 · Privacy Policy</strong>
-    <span>本地运行，不收集数据</span>
-  </a>
-  <a class="card" href="support.html">
-    <strong>技术支持 · Support</strong>
-    <span>常见问题与联系方式</span>
-  </a>
+<div class="site-bar">
+  <a class="wordmark" href="index.html" aria-label="Placr home">Placr</a>
+  <nav class="language-picker" aria-label="Language">
+    <button type="button" data-set-language="zh-Hans">简体中文</button>
+    <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
+    <button type="button" data-set-language="zh-HK">繁中・香港</button>
+    <button type="button" data-set-language="ja">日本語</button>
+    <button type="button" data-set-language="en">English</button>
+  </nav>
 </div>
+
+<main tabindex="-1">
+  <section class="language-panel" data-language="zh-Hans" lang="zh-Hans"
+    data-title="Placr">
+    <header>
+      <h1>给照片补上缺失的地点</h1>
+      <p class="updated">macOS 15 或更新版本</p>
+    </header>
+    <p class="lede">Placr 按月份扫描你的照片图库，把缺少位置的照片按拍摄时间分组，参考同一时段有位置的照片给出建议，并在你确认后批量写入。</p>
+    <p>照片始终留在你的 Mac 上。每次写入都会保留可恢复的操作记录。</p>
+    <div class="cards">
+      <a class="card" href="privacy.html" data-localized-link="privacy.html">
+        <strong>隐私政策</strong>
+        <span>本地运行，不收集数据</span>
+      </a>
+      <a class="card" href="support.html" data-localized-link="support.html">
+        <strong>技术支持</strong>
+        <span>常见问题、权限和联系方式</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="language-panel" data-language="zh-Hant" lang="zh-Hant"
+    data-title="Placr">
+    <header>
+      <h1>為照片補上缺少的地點</h1>
+      <p class="updated">需要 macOS 15 或以上版本</p>
+    </header>
+    <p class="lede">Placr 會逐月掃描你的照片圖庫，依拍攝時間將缺少位置資訊的照片分組，參考同一時段已有位置的照片提出建議，並在你確認後批次寫入。</p>
+    <p>照片會一直留在你的 Mac 上。每次寫入都會保留可還原的操作記錄。</p>
+    <div class="cards">
+      <a class="card" href="privacy.html" data-localized-link="privacy.html">
+        <strong>隱私權政策</strong>
+        <span>在本機執行，不收集資料</span>
+      </a>
+      <a class="card" href="support.html" data-localized-link="support.html">
+        <strong>技術支援</strong>
+        <span>常見問題、權限與聯絡方式</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="language-panel" data-language="zh-HK" lang="zh-HK"
+    data-title="Placr">
+    <header>
+      <h1>為相片補上缺少的地點</h1>
+      <p class="updated">需要 macOS 15 或以上版本</p>
+    </header>
+    <p class="lede">Placr 會逐月掃描你的相片圖庫，按拍攝時間將缺少位置的相片分組，參考同一時段已有位置的相片提供建議，並在你確認後批次寫入。</p>
+    <p>相片會一直留在你的 Mac 上。每次寫入都會保留可以還原的操作記錄。</p>
+    <div class="cards">
+      <a class="card" href="privacy.html" data-localized-link="privacy.html">
+        <strong>私隱政策</strong>
+        <span>在本機運作，不收集資料</span>
+      </a>
+      <a class="card" href="support.html" data-localized-link="support.html">
+        <strong>技術支援</strong>
+        <span>常見問題、權限及聯絡方法</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="language-panel" data-language="ja" lang="ja"
+    data-title="Placr">
+    <header>
+      <h1>写真に足りない場所を戻す</h1>
+      <p class="updated">macOS 15 以降が必要です</p>
+    </header>
+    <p class="lede">Placr は写真ライブラリを月ごとに調べ、位置情報のない写真を撮影時刻でまとめます。同じ時間帯に撮られた位置情報付きの写真を手がかりに場所を提案し、確認後にまとめて書き込みます。</p>
+    <p>写真が Mac の外へ送られることはありません。書き込みのたびに、元に戻すための操作記録が残ります。</p>
+    <div class="cards">
+      <a class="card" href="privacy.html" data-localized-link="privacy.html">
+        <strong>プライバシーポリシー</strong>
+        <span>端末内で動作し、データを収集しません</span>
+      </a>
+      <a class="card" href="support.html" data-localized-link="support.html">
+        <strong>サポート</strong>
+        <span>よくある質問、権限、連絡先</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="language-panel" data-language="en" lang="en"
+    data-title="Placr">
+    <header>
+      <h1>Give photos their missing place</h1>
+      <p class="updated">Requires macOS 15 or later</p>
+    </header>
+    <p class="lede">Placr scans your photo library one month at a time, groups photos missing a location by capture time, and suggests a place using nearby photos that already have one. Nothing is written until you confirm.</p>
+    <p>Your photos stay on your Mac. Every write leaves a local operation record that can restore the previous location.</p>
+    <div class="cards">
+      <a class="card" href="privacy.html" data-localized-link="privacy.html">
+        <strong>Privacy Policy</strong>
+        <span>Local processing, no data collection</span>
+      </a>
+      <a class="card" href="support.html" data-localized-link="support.html">
+        <strong>Support</strong>
+        <span>Answers, permissions, and contact details</span>
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p>
 </footer>
-
 </div>
+<script src="language.js"></script>
 </body>
 </html>

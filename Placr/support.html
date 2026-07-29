@@ -3,113 +3,221 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placr Support">
 <title>技术支持 · Placr</title>
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <a class="home" href="index.html">← Placr</a>
-  <h1>技术支持</h1>
-  <p class="updated">需要 macOS 15 或更新版本</p>
-</header>
-
-<p class="lede">遇到问题或有功能建议，随时写信到 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。下面是几个常见问题。</p>
-
-<h2>常见问题</h2>
-
-<h3>搜不到境外的地点怎么办？</h3>
-
-<p>在中国大陆使用时，Apple 地图不返回境外的搜索结果，这是系统层面的限制，应用无法绕过。</p>
-
-<p>解决办法是在「设置 → 地点搜索」中填入你自己的 Google Maps API Key。填好之后，Apple 地图搜不到的时候会自动改用 Google 查询，日常的境内搜索仍然走 Apple 地图。</p>
-
-<h3>Google Maps API Key 怎么获取？</h3>
-
-<p>在 <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud 控制台</a>创建项目，启用 <strong>Places API (New)</strong>，然后生成一个 API Key 粘贴到 Placr 的设置里。</p>
-
-<div class="note">
-  <p>这个 Key 属于你自己，搜索请求会计入你的 Google 账户。Google 为地图服务提供了每月免费额度，超出部分按其定价收费。建议在控制台为该 Key 设置用量上限。</p>
+<div class="site-bar">
+  <a class="wordmark" href="index.html" data-localized-link="index.html">Placr</a>
+  <nav class="language-picker" aria-label="Language">
+    <button type="button" data-set-language="zh-Hans">简体中文</button>
+    <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
+    <button type="button" data-set-language="zh-HK">繁中・香港</button>
+    <button type="button" data-set-language="ja">日本語</button>
+    <button type="button" data-set-language="en">English</button>
+  </nav>
 </div>
 
-<h3>Key 保存在哪里？安全吗？</h3>
+<main tabindex="-1">
+  <article class="language-panel" data-language="zh-Hans" lang="zh-Hans"
+    data-title="技术支持 · Placr">
+    <header>
+      <h1>技术支持</h1>
+      <p class="updated">需要 macOS 15 或更新版本</p>
+    </header>
+    <p class="lede">遇到问题或有功能建议，请发送邮件至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
-<p>保存在 macOS 钥匙串中，和其他应用的密码同等待遇。它不会出现在草稿、操作记录或任何导出文件里。你可以随时在设置中移除。</p>
+    <h2>搜不到境外地点怎么办？</h2>
+    <p>在中国大陆使用时，Apple 地图可能不返回境外搜索结果，这是系统层面的限制。你可以在“设置 → 地点搜索”中填入自己的 Google Maps API Key；Apple 地图没有结果时，Placr 会自动改用 Google。</p>
 
-<h3>写错位置了，能撤销吗？</h3>
+    <h2>怎样获取 Google Maps API Key？</h2>
+    <p>在 <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud 控制台</a>创建项目，启用 <strong>Places API (New)</strong>，生成 API Key 后粘贴到 Placr 设置中。</p>
+    <div class="note"><p>这个 Key 属于你，搜索请求会计入你的 Google 账户。建议在 Google Cloud 中限制该 Key 只能使用 Places API，并设置预算提醒。</p></div>
 
-<p>可以。每次写入前，Placr 都会把照片原来的位置记录下来。打开「操作记录」，选中那次写入，点击恢复即可回到写入前的状态——对本来就没有位置的照片来说，就是恢复为没有位置。</p>
+    <h2>API Key 保存在哪里？</h2>
+    <p>它保存在 macOS 钥匙串中，不会出现在草稿、操作记录或导出文件里。你可以随时在 Placr 设置中移除；钥匙串服务名是 <code>cn.chenhk.placr.google-places</code>。</p>
 
-<h3>Placr 会修改或删除我的照片吗？</h3>
+    <h2>怎样撤销照片权限？</h2>
+    <p>打开“系统设置 → 隐私与安全性 → 照片”，关闭 Placr。撤销权限不会删除照片，也不会撤销已经写入的位置。</p>
 
-<p>不会删除照片，也不会改动位置以外的任何元数据。位置只在你于确认页面明确同意后才会写入。</p>
+    <h2>怎样删除 Placr 的本机数据？</h2>
+    <p>先退出 Placr。在访达选择“前往 → 前往文件夹”，输入 <code>~/Library/Containers/cn.chenhk.placr</code>，将该文件夹移到废纸篓。Google API Key 需要另外在 Placr 设置或“钥匙串访问”中移除。</p>
+    <div class="note"><p>删除本机数据会同时删除操作记录，也就失去用 Placr 恢复旧位置的依据。需要恢复时请先恢复，再删除。</p></div>
 
-<h3>换了 Dock 图标，为什么访达里还是原来的？</h3>
+    <h2>写错位置后能撤销吗？</h2>
+    <p>可以。打开“操作记录”，选择那次写入并恢复。Placr 会先确认照片当前的位置仍然等于当时写入的值，不会覆盖你后来在“照片”中做出的修改。</p>
 
-<p>这是 macOS 的限制。应用在运行时只能替换 Dock 和应用切换器中显示的图标；访达里看到的图标由代码签名固定，无法在运行时更改。</p>
+    <h2>Placr 会修改或删除照片吗？</h2>
+    <p>不会删除照片，也不会改动位置以外的元数据。位置只会在你完成候选确认和最终批量确认后写入。</p>
 
-<h3>怎么切换界面语言？</h3>
+    <h2>为什么访达中的图标没有变化？</h2>
+    <p>macOS 只允许应用在运行时替换 Dock 和应用切换器图标；访达图标由代码签名固定，无法在运行时更改。</p>
 
-<p>在「设置 → 语言」中选择，或者选「跟随系统」。Placr 提供简体中文、繁體中文（台灣）、繁體中文（香港）、日本語和 English。切换后需要重新启动应用生效。</p>
+    <h2>怎样切换界面语言？</h2>
+    <p>在“设置 → 语言”中选择，或选择跟随系统。Placr 支持简体中文、繁體中文（台灣）、繁體中文（香港）、日本語和 English，切换后需要重新启动。</p>
+  </article>
 
-<h3>为什么有些照片的时区看起来不对？</h3>
+  <article class="language-panel" data-language="zh-Hant" lang="zh-Hant"
+    data-title="技術支援 · Placr">
+    <header>
+      <h1>技術支援</h1>
+      <p class="updated">需要 macOS 15 或以上版本</p>
+    </header>
+    <p class="lede">若遇到問題或有功能建議，請寄信至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
-<p>照片记录的是绝对拍摄时刻。Placr 在比较时间时使用绝对时刻，同时在卡片上分别显示候选地点的时区和参考照片的原时区，方便你确认是不是同一段行程。</p>
+    <h2>找不到國外地點怎麼辦？</h2>
+    <p>在中國大陸使用時，Apple 地圖可能不會傳回境外搜尋結果，這是系統層級的限制。你可以在「設定 → 地點搜尋」中輸入自己的 Google Maps API 金鑰；Apple 地圖沒有結果時，Placr 會自動改用 Google。</p>
 
-<hr class="divider">
+    <h2>如何取得 Google Maps API 金鑰？</h2>
+    <p>在 <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud 控制台</a>建立專案，啟用 <strong>Places API (New)</strong>，產生 API 金鑰後貼到 Placr 設定中。</p>
+    <div class="note"><p>這個金鑰屬於你，搜尋請求會計入你的 Google 帳戶。建議在 Google Cloud 將金鑰限制為只能使用 Places API，並設定預算通知。</p></div>
 
-<header>
-  <h1>Support</h1>
-  <p class="updated">Requires macOS 15 or later</p>
-</header>
+    <h2>API 金鑰儲存在哪裡？</h2>
+    <p>它會保存在 macOS 鑰匙圈中，不會出現在草稿、操作記錄或匯出檔案。你可以隨時在 Placr 設定中移除；鑰匙圈服務名稱是 <code>cn.chenhk.placr.google-places</code>。</p>
 
-<p class="lede">For problems or feature requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>. A few common questions are answered below.</p>
+    <h2>如何撤銷照片權限？</h2>
+    <p>開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。撤銷權限不會刪除照片，也不會撤銷已寫入的位置。</p>
 
-<h2>Frequently asked</h2>
+    <h2>如何刪除 Placr 的本機資料？</h2>
+    <p>先結束 Placr。在 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。Google API 金鑰需要另外在 Placr 設定或「鑰匙圈存取」中移除。</p>
+    <div class="note"><p>刪除本機資料也會刪除操作記錄，因此無法再用 Placr 還原舊位置。如需還原，請先還原再刪除。</p></div>
 
-<h3>Why can't I find places outside my country?</h3>
+    <h2>寫錯位置後可以復原嗎？</h2>
+    <p>可以。開啟「操作記錄」，選擇該次寫入並還原。Placr 會先確認照片目前的位置仍與當時寫入的值相同，不會覆蓋你後來在「照片」中所做的修改。</p>
 
-<p>When used from mainland China, Apple Maps does not return results for places abroad. This is a platform-level limitation the app cannot work around.</p>
+    <h2>Placr 會修改或刪除照片嗎？</h2>
+    <p>不會刪除照片，也不會更動位置以外的中繼資料。只有在你完成候選確認與最後的批次確認後才會寫入位置。</p>
 
-<p>The workaround is to enter your own Google Maps API key under <strong>Settings → Place search</strong>. Once it is set, Placr falls back to Google whenever Apple Maps finds nothing, while everyday local searches still go through Apple Maps.</p>
+    <h2>為什麼 Finder 中的圖示沒有改變？</h2>
+    <p>macOS 只允許 App 在執行期間替換 Dock 與 App 切換器圖示；Finder 圖示由程式碼簽署固定，無法在執行期間更改。</p>
 
-<h3>How do I get a Google Maps API key?</h3>
+    <h2>如何切換介面語言？</h2>
+    <p>在「設定 → 語言」中選擇，或選擇跟隨系統。Placr 支援簡體中文、繁體中文（台灣）、繁體中文（香港）、日本語與 English，切換後需要重新啟動。</p>
+  </article>
 
-<p>Create a project in the <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud console</a>, enable <strong>Places API (New)</strong>, then generate an API key and paste it into Placr's settings.</p>
+  <article class="language-panel" data-language="zh-HK" lang="zh-HK"
+    data-title="技術支援 · Placr">
+    <header>
+      <h1>技術支援</h1>
+      <p class="updated">需要 macOS 15 或以上版本</p>
+    </header>
+    <p class="lede">如遇到問題或有功能建議，請電郵至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
-<div class="note">
-  <p>The key is yours, and search requests are billed to your Google account. Google provides a monthly free allowance for Maps services and charges beyond it according to their pricing. Setting a usage cap on the key in the console is recommended.</p>
-</div>
+    <h2>搜尋不到海外地點怎麼辦？</h2>
+    <p>在中國大陸使用時，Apple 地圖可能不會提供境外搜尋結果，這是系統層面的限制。你可以在「設定 → 地點搜尋」輸入自己的 Google Maps API Key；Apple 地圖沒有結果時，Placr 會自動改用 Google。</p>
 
-<h3>Where is the key stored?</h3>
+    <h2>如何取得 Google Maps API Key？</h2>
+    <p>在 <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud 控制台</a>建立專案，啟用 <strong>Places API (New)</strong>，產生 API Key 後貼到 Placr 設定。</p>
+    <div class="note"><p>這個 Key 屬於你，搜尋請求會計入你的 Google 帳戶。建議在 Google Cloud 將 Key 限制為只可使用 Places API，並設定預算提示。</p></div>
 
-<p>In the macOS Keychain, the same place other apps keep passwords. It never appears in drafts, operation history, or any exported file, and you can remove it from Settings at any time.</p>
+    <h2>API Key 儲存在哪裡？</h2>
+    <p>它會保存在 macOS 鑰匙圈，不會出現在草稿、操作記錄或匯出檔案。你可以隨時在 Placr 設定移除；鑰匙圈服務名稱是 <code>cn.chenhk.placr.google-places</code>。</p>
 
-<h3>Can I undo a location I wrote by mistake?</h3>
+    <h2>如何撤銷相片權限？</h2>
+    <p>開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。撤銷權限不會刪除相片，亦不會撤銷已寫入的位置。</p>
 
-<p>Yes. Placr records each photo's original location before every write. Open the operation history, select that write, and restore it. For photos that had no location to begin with, restoring returns them to having no location.</p>
+    <h2>如何刪除 Placr 的本機資料？</h2>
+    <p>先結束 Placr。在 Finder 選擇「前往 → 前往資料夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該資料夾移到垃圾桶。Google API Key 需要另外在 Placr 設定或「鑰匙圈存取」移除。</p>
+    <div class="note"><p>刪除本機資料亦會刪除操作記錄，因此無法再用 Placr 還原舊位置。如需還原，請先還原再刪除。</p></div>
 
-<h3>Does Placr modify or delete my photos?</h3>
+    <h2>寫錯位置後可以還原嗎？</h2>
+    <p>可以。開啟「操作記錄」，選擇該次寫入並還原。Placr 會先確認相片目前的位置仍與當時寫入的值相同，不會覆蓋你後來在「相片」所作的修改。</p>
 
-<p>It never deletes photos and never changes metadata other than location. A location is written only after you explicitly approve it on the confirmation screen.</p>
+    <h2>Placr 會修改或刪除相片嗎？</h2>
+    <p>不會刪除相片，亦不會更改位置以外的元資料。只有在你完成候選確認及最後的批次確認後才會寫入位置。</p>
 
-<h3>I changed the Dock icon, but Finder still shows the old one.</h3>
+    <h2>為甚麼 Finder 中的圖示沒有改變？</h2>
+    <p>macOS 只容許應用程式在運作期間替換 Dock 及應用程式切換器圖示；Finder 圖示由程式碼簽署固定，無法在運作期間更改。</p>
 
-<p>That is a macOS limitation. An app can replace the icon shown in the Dock and the app switcher at runtime, but the icon Finder displays is fixed by the code signature and cannot be changed while the app runs.</p>
+    <h2>如何切換介面語言？</h2>
+    <p>在「設定 → 語言」選擇，或選擇跟隨系統。Placr 支援簡體中文、繁體中文（台灣）、繁體中文（香港）、日本語及 English，切換後需要重新啟動。</p>
+  </article>
 
-<h3>How do I change the language?</h3>
+  <article class="language-panel" data-language="ja" lang="ja"
+    data-title="サポート · Placr">
+    <header>
+      <h1>サポート</h1>
+      <p class="updated">macOS 15 以降が必要です</p>
+    </header>
+    <p class="lede">不具合や機能のご要望は <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> までお送りください。</p>
 
-<p>Pick one under <strong>Settings → Language</strong>, or choose to follow the system. Placr ships Simplified Chinese, Traditional Chinese (Taiwan), Traditional Chinese (Hong Kong), Japanese, and English. Restart the app for the change to take effect.</p>
+    <h2>海外の場所が検索できない場合</h2>
+    <p>中国本土から利用すると、Apple マップが国外の検索結果を返さない場合があります。これはシステム側の制限です。「設定 → 場所検索」で自分の Google Maps API キーを設定すると、Apple マップに結果がないときだけ自動的に Google を利用します。</p>
 
-<h3>Why do some time zones look wrong?</h3>
+    <h2>Google Maps API キーの取得方法</h2>
+    <p><a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud コンソール</a>でプロジェクトを作成し、<strong>Places API (New)</strong> を有効にして、作成した API キーを Placr の設定に貼り付けます。</p>
+    <div class="note"><p>キーはご自身のもので、検索はご自身の Google アカウントに計上されます。Places API だけに利用を制限し、予算アラートを設定することをおすすめします。</p></div>
 
-<p>A photo records an absolute moment in time. Placr compares times as absolute moments, and each card shows the candidate place's time zone alongside the reference photo's original time zone, so you can tell whether they belong to the same trip.</p>
+    <h2>API キーの保存場所</h2>
+    <p>macOS のキーチェーンに保存され、下書き、操作履歴、書き出したファイルには含まれません。Placr の設定からいつでも削除できます。キーチェーンのサービス名は <code>cn.chenhk.placr.google-places</code> です。</p>
+
+    <h2>写真へのアクセスを取り消す方法</h2>
+    <p>「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。権限を取り消しても写真は削除されず、すでに書き込んだ位置情報も元には戻りません。</p>
+
+    <h2>Placr の端末内データを削除する方法</h2>
+    <p>Placr を終了し、Finder の「移動 → フォルダへ移動」で <code>~/Library/Containers/cn.chenhk.placr</code> を開き、そのフォルダをゴミ箱へ移動します。Google API キーは Placr の設定または「キーチェーンアクセス」で別途削除してください。</p>
+    <div class="note"><p>端末内データを削除すると操作履歴も消え、Placr から以前の位置に復元できなくなります。必要な復元を先に済ませてください。</p></div>
+
+    <h2>間違った位置を元に戻せますか？</h2>
+    <p>できます。「操作履歴」を開き、対象の書き込みを選んで復元してください。Placr は現在の位置が書き込み時の値と同じことを確認するため、その後「写真」で行った変更を上書きしません。</p>
+
+    <h2>写真を変更または削除しますか？</h2>
+    <p>写真を削除せず、位置情報以外のメタデータも変更しません。候補の確認と最後の一括確認を終えた場合にだけ位置情報を書き込みます。</p>
+
+    <h2>Finder のアイコンが変わらない理由</h2>
+    <p>macOS では実行中に変更できるのは Dock とアプリ切り替え画面のアイコンだけです。Finder のアイコンはコード署名で固定されているため変更できません。</p>
+
+    <h2>表示言語の変更方法</h2>
+    <p>「設定 → 言語」で選ぶか、システム設定に従うよう指定します。簡体字中国語、繁体字中国語（台湾・香港）、日本語、英語に対応しており、変更後は再起動が必要です。</p>
+  </article>
+
+  <article class="language-panel" data-language="en" lang="en"
+    data-title="Support · Placr">
+    <header>
+      <h1>Support</h1>
+      <p class="updated">Requires macOS 15 or later</p>
+    </header>
+    <p class="lede">For problems or feature requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+
+    <h2>Places abroad do not appear in search</h2>
+    <p>When Placr is used from mainland China, Apple Maps may not return results outside the region. This is a system-level limitation. Add your own Google Maps API key under Settings → Place Search, and Placr will use Google only when Apple Maps returns no result.</p>
+
+    <h2>Get a Google Maps API key</h2>
+    <p>Create a project in the <a href="https://console.cloud.google.com/google/maps-apis" rel="noopener">Google Cloud console</a>, enable <strong>Places API (New)</strong>, generate an API key, and paste it into Placr Settings.</p>
+    <div class="note"><p>The key belongs to you, and searches count against your Google account. Restrict the key to Places API and set a budget alert in Google Cloud.</p></div>
+
+    <h2>Where the API key is stored</h2>
+    <p>It is kept in the macOS Keychain and never appears in drafts, operation history, or exported files. You can remove it at any time in Placr Settings. Its Keychain service name is <code>cn.chenhk.placr.google-places</code>.</p>
+
+    <h2>Revoke Photos access</h2>
+    <p>Open System Settings → Privacy &amp; Security → Photos and turn off Placr. Revoking access does not delete photos or undo locations that have already been written.</p>
+
+    <h2>Delete Placr’s local data</h2>
+    <p>Quit Placr. In Finder, choose Go → Go to Folder, enter <code>~/Library/Containers/cn.chenhk.placr</code>, and move that folder to the Trash. Remove the Google API key separately in Placr Settings or Keychain Access.</p>
+    <div class="note"><p>Deleting local data also deletes the operation history, so Placr will no longer be able to restore earlier locations. Complete any restoration first.</p></div>
+
+    <h2>Undo a location written by mistake</h2>
+    <p>Open Operation History, select the write, and restore it. Placr first verifies that the current location still matches the value it wrote, so it will not overwrite a change you made later in Photos.</p>
+
+    <h2>Does Placr change or delete photos?</h2>
+    <p>It never deletes photos and never changes metadata other than location. A location is written only after both the candidate confirmation and final batch confirmation.</p>
+
+    <h2>Why the Finder icon does not change</h2>
+    <p>macOS lets an app change only its Dock and app-switcher icon at runtime. The icon in Finder is fixed by the code signature and cannot be changed while the app runs.</p>
+
+    <h2>Change the interface language</h2>
+    <p>Choose a language under Settings → Language, or follow the system. Placr supports Simplified Chinese, Traditional Chinese for Taiwan and Hong Kong, Japanese, and English. Restart the app after changing it.</p>
+  </article>
+</main>
 
 <footer>
-  <p>© 2026 Chen Haokun · <a href="index.html">Placr</a> · <a href="privacy.html">隐私政策 / Privacy</a></p>
+  <p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Placr</a> · <a href="privacy.html" data-localized-link="privacy.html">Privacy</a></p>
 </footer>
-
 </div>
+<script src="language.js"></script>
 </body>
 </html>
