@@ -3,119 +3,256 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placr Privacy Policy">
 <title>隐私政策 · Placr</title>
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <a class="home" href="index.html">← Placr</a>
-  <h1>隐私政策</h1>
-  <p class="updated">最后更新：2026 年 7 月</p>
-</header>
+<div class="site-bar">
+  <a class="wordmark" href="index.html" data-localized-link="index.html">Placr</a>
+  <nav class="language-picker" aria-label="Language">
+    <button type="button" data-set-language="zh-Hans">简体中文</button>
+    <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
+    <button type="button" data-set-language="zh-HK">繁中・香港</button>
+    <button type="button" data-set-language="ja">日本語</button>
+    <button type="button" data-set-language="en">English</button>
+  </nav>
+</div>
 
-<p class="lede">Placr 完全在你的 Mac 上运行。它没有服务器，不需要注册账号，开发者也收不到你的任何数据。</p>
+<main tabindex="-1">
+  <article class="language-panel" data-language="zh-Hans" lang="zh-Hans"
+    data-title="隐私政策 · Placr">
+    <header>
+      <h1>隐私政策</h1>
+      <p class="updated">最后更新：2026 年 7 月</p>
+    </header>
 
-<h2>不收集的内容</h2>
+    <p class="lede">Placr 完全在你的 Mac 上运行。它没有开发者服务器，不需要注册账号，开发者也收不到你的照片或使用记录。</p>
 
-<p>Placr 不会收集、存储或向开发者控制的任何服务器传输个人信息。应用中没有分析统计、没有崩溃上报、没有广告、没有跨应用追踪，也没有集成任何第三方数据收集 SDK。</p>
+    <h2>不收集的内容</h2>
+    <p>Placr 不会向开发者控制的服务器收集、存储或传输个人信息。应用没有分析统计、崩溃上报、广告、跨应用追踪，也没有第三方数据收集 SDK。</p>
 
-<h2>照片</h2>
+    <h2>照片</h2>
+    <p>在你授权后，Placr 会读取照片的拍摄时间、位置和缩略图，用来找出缺少位置的照片、按时间分组并显示参考照片。所有处理都在你的 Mac 上完成，照片本身不会离开设备。</p>
+    <p>只有经过候选确认和最终批量确认后，Placr 才会写入位置。它不会删除照片，也不会修改位置以外的元数据。写入前的原位置会保存在本机操作记录中，供你恢复。</p>
 
-<p>在你授予照片权限后，Placr 会读取你所选月份照片的拍摄时间、位置信息和缩略图，用来找出缺少位置的照片并按时间分组。这些处理全部在你的 Mac 本机完成，照片本身不会离开你的设备。</p>
+    <h2>地点搜索与第三方服务</h2>
+    <p>搜索地点时，Placr 只发送你输入的文字；若有参考坐标，还会发送一个大致的搜索区域。照片、照片缩略图和操作记录不会发送。</p>
+    <p>默认搜索由 Apple 地图（MapKit）处理，适用 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 的隐私政策</a>。如果你主动提供自己的 Google Maps API Key，而且 Apple 地图没有结果，Placr 才会请求 Google Places，适用 <a href="https://policies.google.com/privacy" rel="noopener">Google 的隐私政策</a>。</p>
+    <p>Placr 只向这些服务提供完成当前搜索所需的最少信息，不会出售数据，也不会允许将请求用于开发者的广告或用户画像。</p>
 
-<p>只有当你在确认页面明确同意后，Placr 才会把你选择的地点写入照片。每次写入前的原始位置都会记录在本机，你可以随时在操作记录中恢复。Placr 不会删除照片，也不会修改位置以外的任何元数据。</p>
+    <h2>本机存储与保留期限</h2>
+    <p>图库快照、审阅草稿、操作记录、时区缓存和偏好设置保存在 Placr 的沙盒容器中，直到你删除相应文件。Google Maps API Key 单独保存在 macOS 钥匙串中，直到你在 Placr 设置或“钥匙串访问”中移除。</p>
+    <div class="note">
+      <p>删除 App 不一定会自动删除沙盒容器或钥匙串项目。下面提供了完整删除方法。</p>
+    </div>
 
-<h2>地点搜索</h2>
+    <h2>撤销权限与删除数据</h2>
+    <ul>
+      <li>撤销照片访问：打开“系统设置 → 隐私与安全性 → 照片”，关闭 Placr。</li>
+      <li>移除 Google API Key：在 Placr 的地点搜索设置中选择移除；也可以在“钥匙串访问”中删除服务名为 <code>cn.chenhk.placr.google-places</code> 的项目。</li>
+      <li>删除 Placr 本机数据：退出 Placr，在访达选择“前往 → 前往文件夹”，输入 <code>~/Library/Containers/cn.chenhk.placr</code>，然后将该文件夹移到废纸篓。</li>
+    </ul>
+    <p>撤销照片权限或删除本机数据不会撤销已经写入照片的位置。若要恢复，请先在 Placr 的操作记录中执行恢复，再删除本机数据。</p>
 
-<p>搜索地点时，只有<strong>你输入的文字</strong>会发送给地图服务。如果当前存在参考坐标，还会附带一个大致的地理范围，用来提高结果相关性。你的照片、照片的位置和其他任何信息都不会被发送。</p>
+    <h2>儿童</h2>
+    <p>Placr 不面向儿童设计，也不会收集年龄或其他个人信息。</p>
 
-<p>默认使用 Apple 地图（MapKit）。这部分查询适用 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 的隐私政策</a>。</p>
+    <h2>政策变更</h2>
+    <p>如果本政策发生变化，本页顶部的日期会更新；重大变化也会在应用内提示。</p>
 
-<p>如果你在设置中填入了自己的 Google Maps API Key，并且 Apple 地图没有返回结果，Placr 会转而查询 Google Places API。这部分查询适用 <a href="https://policies.google.com/privacy" rel="noopener">Google 的隐私政策</a>。这个 Key 属于你自己，相关请求也计入你自己的 Google 账户。</p>
+    <h2>联系方式</h2>
+    <p>如有隐私问题，请发送邮件至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+  </article>
 
-<h2>本机存储的内容</h2>
+  <article class="language-panel" data-language="zh-Hant" lang="zh-Hant"
+    data-title="隱私權政策 · Placr">
+    <header>
+      <h1>隱私權政策</h1>
+      <p class="updated">最後更新：2026 年 7 月</p>
+    </header>
 
-<p>以下数据保存在 Placr 的沙盒容器内，只有你可以访问，删除应用即随之删除：</p>
+    <p class="lede">Placr 完全在你的 Mac 上執行。它沒有開發者伺服器，不需要註冊帳號，開發者也不會收到你的照片或使用記錄。</p>
 
-<ul>
-  <li>操作记录：每次写入了哪些照片、原先的位置是什么</li>
-  <li>尚未完成的审阅草稿</li>
-  <li>时区查询缓存</li>
-  <li>偏好设置：所选月份、界面语言、Dock 图标</li>
-</ul>
+    <h2>不收集的內容</h2>
+    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳輸個人資訊。App 沒有分析統計、當機回報、廣告、跨 App 追蹤，也沒有第三方資料收集 SDK。</p>
 
-<p>你的 Google Maps API Key 保存在 macOS 钥匙串中，不在上述文件里，也不会随草稿或记录一同导出。</p>
+    <h2>照片</h2>
+    <p>在你授權後，Placr 會讀取照片的拍攝時間、位置與縮圖，用來找出缺少位置資訊的照片、依時間分組並顯示參考照片。所有處理都在你的 Mac 上完成，照片本身不會離開裝置。</p>
+    <p>只有在你確認候選項目並完成最後的批次確認後，Placr 才會寫入位置。它不會刪除照片，也不會修改位置以外的中繼資料。寫入前的位置會儲存在本機操作記錄中，供你還原。</p>
 
-<h2>儿童</h2>
+    <h2>地點搜尋與第三方服務</h2>
+    <p>搜尋地點時，Placr 只會傳送你輸入的文字；若有參考座標，還會傳送大致的搜尋區域。照片、照片縮圖與操作記錄都不會傳送。</p>
+    <p>預設搜尋由 Apple 地圖（MapKit）處理，適用 <a href="https://www.apple.com/tw/legal/privacy/" rel="noopener">Apple 的隱私權政策</a>。只有在你主動提供自己的 Google Maps API 金鑰，而且 Apple 地圖沒有結果時，Placr 才會查詢 Google Places，適用 <a href="https://policies.google.com/privacy?hl=zh-TW" rel="noopener">Google 隱私權政策</a>。</p>
+    <p>Placr 只會向這些服務提供完成當次搜尋所需的最少資訊，不會販售資料，也不會允許將請求用於開發者的廣告或使用者剖析。</p>
 
-<p>Placr 不面向儿童设计，也不会收集任何与年龄相关的信息。</p>
+    <h2>本機儲存與保留期間</h2>
+    <p>圖庫快照、審閱草稿、操作記錄、時區快取與偏好設定會保存在 Placr 的沙盒容器中，直到你刪除相關檔案。Google Maps API 金鑰會另外保存在 macOS 鑰匙圈中，直到你在 Placr 設定或「鑰匙圈存取」中移除。</p>
+    <div class="note">
+      <p>刪除 App 不一定會自動刪除沙盒容器或鑰匙圈項目。下方提供完整刪除方式。</p>
+    </div>
 
-<h2>政策变更</h2>
+    <h2>撤銷權限與刪除資料</h2>
+    <ul>
+      <li>撤銷照片存取：開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。</li>
+      <li>移除 Google API 金鑰：在 Placr 的地點搜尋設定中選擇移除；也可以在「鑰匙圈存取」中刪除服務名稱為 <code>cn.chenhk.placr.google-places</code> 的項目。</li>
+      <li>刪除 Placr 本機資料：結束 Placr，在 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。</li>
+    </ul>
+    <p>撤銷照片權限或刪除本機資料，不會撤銷已寫入照片的位置。若要還原，請先在 Placr 的操作記錄中執行還原，再刪除本機資料。</p>
 
-<p>如果本政策发生变化，本页顶部的更新日期会同步修改。涉及重大变更时会在应用内提示。</p>
+    <h2>兒童</h2>
+    <p>Placr 並非為兒童設計，也不會收集年齡或其他個人資訊。</p>
 
-<h2>联系方式</h2>
+    <h2>政策變更</h2>
+    <p>若本政策有所變更，本頁上方的日期會同步更新；重大變更也會在 App 內提示。</p>
 
-<p>有任何隐私相关的问题，请发送邮件至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+    <h2>聯絡方式</h2>
+    <p>如有隱私權相關問題，請寄信至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+  </article>
 
-<hr class="divider">
+  <article class="language-panel" data-language="zh-HK" lang="zh-HK"
+    data-title="私隱政策 · Placr">
+    <header>
+      <h1>私隱政策</h1>
+      <p class="updated">最後更新：2026 年 7 月</p>
+    </header>
 
-<header>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: July 2026</p>
-</header>
+    <p class="lede">Placr 完全在你的 Mac 上運作。它沒有開發者伺服器，不需要註冊帳戶，開發者亦不會收到你的相片或使用記錄。</p>
 
-<p class="lede">Placr runs entirely on your Mac. There is no server, no account, and no way for the developer to receive any of your data.</p>
+    <h2>不收集的內容</h2>
+    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳送個人資料。應用程式沒有分析統計、當機報告、廣告、跨應用程式追蹤，亦沒有第三方資料收集 SDK。</p>
 
-<h2>What is not collected</h2>
+    <h2>相片</h2>
+    <p>在你授權後，Placr 會讀取相片的拍攝時間、位置及縮圖，用來找出缺少位置的相片、按時間分組並顯示參考相片。所有處理都在你的 Mac 上完成，相片本身不會離開裝置。</p>
+    <p>只有在你確認候選項目及最後的批次確認後，Placr 才會寫入位置。它不會刪除相片，亦不會修改位置以外的元資料。寫入前的位置會儲存在本機操作記錄中，讓你還原。</p>
 
-<p>Placr does not collect, store, or transmit personal information to any server controlled by the developer. There is no analytics, no crash reporting, no advertising, no cross-app tracking, and no third-party data collection SDK of any kind.</p>
+    <h2>地點搜尋及第三方服務</h2>
+    <p>搜尋地點時，Placr 只會傳送你輸入的文字；如有參考座標，亦會傳送大概的搜尋範圍。相片、相片縮圖及操作記錄都不會傳送。</p>
+    <p>預設搜尋由 Apple 地圖（MapKit）處理，受 <a href="https://www.apple.com/hk/privacy/" rel="noopener">Apple 私隱政策</a>約束。只有在你主動提供自己的 Google Maps API Key，而且 Apple 地圖沒有結果時，Placr 才會查詢 Google Places，受 <a href="https://policies.google.com/privacy?hl=zh-HK" rel="noopener">Google 私隱權政策</a>約束。</p>
+    <p>Placr 只會向這些服務提供完成當次搜尋所需的最少資料，不會出售資料，亦不會容許將請求用於開發者的廣告或用戶分析。</p>
 
-<h2>Photos</h2>
+    <h2>本機儲存及保留期</h2>
+    <p>圖庫快照、審閱草稿、操作記錄、時區快取及偏好設定會保存在 Placr 的沙盒容器內，直至你刪除相關檔案。Google Maps API Key 會另外保存在 macOS 鑰匙圈，直至你在 Placr 設定或「鑰匙圈存取」中移除。</p>
+    <div class="note">
+      <p>刪除應用程式未必會自動刪除沙盒容器或鑰匙圈項目。下方提供完整刪除方法。</p>
+    </div>
 
-<p>Once you grant photo access, Placr reads the capture time, location, and thumbnail of the photos in the month you selected, in order to find the ones missing a location and group them by time. All of this happens on your Mac. Your photos never leave your device.</p>
+    <h2>撤銷權限及刪除資料</h2>
+    <ul>
+      <li>撤銷相片存取：開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。</li>
+      <li>移除 Google API Key：在 Placr 的地點搜尋設定中選擇移除；亦可在「鑰匙圈存取」刪除服務名稱為 <code>cn.chenhk.placr.google-places</code> 的項目。</li>
+      <li>刪除 Placr 本機資料：結束 Placr，在 Finder 選擇「前往 → 前往資料夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該資料夾移到垃圾桶。</li>
+    </ul>
+    <p>撤銷相片權限或刪除本機資料，不會撤銷已寫入相片的位置。如要還原，請先在 Placr 的操作記錄中執行還原，再刪除本機資料。</p>
 
-<p>Placr writes a location to a photo only after you explicitly approve it on the confirmation screen. The original location is recorded locally before every write, so you can restore it at any time from the operation history. Placr never deletes photos and never modifies metadata other than location.</p>
+    <h2>兒童</h2>
+    <p>Placr 並非為兒童而設，亦不會收集年齡或其他個人資料。</p>
 
-<h2>Place search</h2>
+    <h2>政策變更</h2>
+    <p>如本政策有所變更，本頁上方的日期會同步更新；重大變更亦會在應用程式內提示。</p>
 
-<p>When you search for a place, only <strong>the text you typed</strong> is sent to the map service. If a reference coordinate is available, an approximate geographic area is included to improve relevance. Your photos, their locations, and any other information are not sent.</p>
+    <h2>聯絡方法</h2>
+    <p>如有私隱問題，請電郵至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+  </article>
 
-<p>Apple Maps (MapKit) is used by default. Those queries are covered by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.</p>
+  <article class="language-panel" data-language="ja" lang="ja"
+    data-title="プライバシーポリシー · Placr">
+    <header>
+      <h1>プライバシーポリシー</h1>
+      <p class="updated">最終更新：2026 年 7 月</p>
+    </header>
 
-<p>If you have entered your own Google Maps API key in Settings and Apple Maps returns no result, Placr queries the Google Places API instead. Those queries are covered by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>. The key is yours, and the requests are billed to your own Google account.</p>
+    <p class="lede">Placr はすべて Mac 上で動作します。開発者が運営するサーバーもアカウント登録もなく、写真や利用履歴が開発者に送られることはありません。</p>
 
-<h2>What is stored on your Mac</h2>
+    <h2>収集しない情報</h2>
+    <p>Placr は、開発者が管理するサーバーへ個人情報を収集、保存、送信しません。解析、クラッシュレポート、広告、アプリ横断トラッキング、第三者のデータ収集 SDK は一切ありません。</p>
 
-<p>The following is kept inside Placr's sandbox container, accessible only to you, and removed when you delete the app:</p>
+    <h2>写真</h2>
+    <p>許可を得た後、Placr は撮影時刻、位置情報、サムネイルを読み取り、位置情報のない写真の抽出、時刻によるグループ分け、参考写真の表示に使います。処理はすべて Mac 上で行われ、写真そのものが端末の外へ送られることはありません。</p>
+    <p>候補を確認し、最後の一括確認を行った場合にだけ位置情報を書き込みます。写真の削除や、位置情報以外のメタデータの変更は行いません。書き込み前の位置は、復元できるよう端末内の操作履歴に保存されます。</p>
 
-<ul>
-  <li>Operation history: which photos were written and what their locations were before</li>
-  <li>Review drafts you have not finished</li>
-  <li>A cache of time zone lookups</li>
-  <li>Preferences: selected month, interface language, Dock icon</li>
-</ul>
+    <h2>場所検索と第三者サービス</h2>
+    <p>場所を検索するときに送信するのは、入力した文字列だけです。参考座標がある場合は、検索精度を上げるため大まかな検索範囲も送信します。写真、サムネイル、操作履歴は送信しません。</p>
+    <p>通常の検索は Apple マップ（MapKit）が処理し、<a href="https://www.apple.com/jp/legal/privacy/" rel="noopener">Apple のプライバシーポリシー</a>が適用されます。自分の Google Maps API キーを設定し、Apple マップで結果が得られなかった場合にだけ Google Places を利用し、<a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google のプライバシーポリシー</a>が適用されます。</p>
+    <p>これらのサービスには、その検索を完了するために必要な最小限の情報だけを送ります。データを販売したり、開発者の広告やユーザープロファイル作成に利用させたりすることはありません。</p>
 
-<p>Your Google Maps API key is stored in the macOS Keychain, separately from the files above, and is never included in exported drafts or history.</p>
+    <h2>端末内の保存と保持期間</h2>
+    <p>ライブラリのスナップショット、確認途中の下書き、操作履歴、タイムゾーンのキャッシュ、設定は、削除するまで Placr のサンドボックスコンテナに保存されます。Google Maps API キーは macOS のキーチェーンに別途保存され、Placr の設定または「キーチェーンアクセス」で削除するまで残ります。</p>
+    <div class="note">
+      <p>アプリを削除しても、サンドボックスコンテナやキーチェーン項目が自動的に消えるとは限りません。完全な削除方法を以下に示します。</p>
+    </div>
 
-<h2>Children</h2>
+    <h2>権限の取り消しとデータの削除</h2>
+    <ul>
+      <li>写真へのアクセスを取り消す：「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。</li>
+      <li>Google API キーを削除する：Placr の場所検索設定で削除します。または「キーチェーンアクセス」でサービス名 <code>cn.chenhk.placr.google-places</code> の項目を削除します。</li>
+      <li>Placr の端末内データを削除する：Placr を終了し、Finder の「移動 → フォルダへ移動」で <code>~/Library/Containers/cn.chenhk.placr</code> を開き、そのフォルダをゴミ箱へ移動します。</li>
+    </ul>
+    <p>写真の権限や端末内データを削除しても、写真に書き込まれた位置情報は元に戻りません。復元したい場合は、データを削除する前に Placr の操作履歴から復元してください。</p>
 
-<p>Placr is not directed to children and does not collect any age-related information.</p>
+    <h2>子どもについて</h2>
+    <p>Placr は子ども向けに設計されておらず、年齢その他の個人情報を収集しません。</p>
 
-<h2>Changes</h2>
+    <h2>ポリシーの変更</h2>
+    <p>このポリシーを変更した場合は、ページ上部の日付を更新します。重要な変更はアプリ内でもお知らせします。</p>
 
-<p>If this policy changes, the date at the top of this page will be updated. Significant changes will also be surfaced in the app.</p>
+    <h2>お問い合わせ</h2>
+    <p>プライバシーに関するお問い合わせは <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> までお送りください。</p>
+  </article>
 
-<h2>Contact</h2>
+  <article class="language-panel" data-language="en" lang="en"
+    data-title="Privacy Policy · Placr">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: July 2026</p>
+    </header>
 
-<p>For any privacy question, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+    <p class="lede">Placr runs entirely on your Mac. There is no developer-operated server, no account, and no way for the developer to receive your photos or usage history.</p>
+
+    <h2>What is not collected</h2>
+    <p>Placr does not collect, store, or transmit personal information to any server controlled by the developer. There is no analytics, crash reporting, advertising, cross-app tracking, or third-party data collection SDK.</p>
+
+    <h2>Photos</h2>
+    <p>After you grant access, Placr reads capture times, locations, and thumbnails to find photos missing a location, group them by time, and display reference photos. All processing happens on your Mac. The photos themselves never leave the device.</p>
+    <p>A location is written only after you approve the candidate and the final batch confirmation. Placr never deletes photos or changes metadata other than location. The previous location is stored in a local operation record so you can restore it.</p>
+
+    <h2>Place search and third-party services</h2>
+    <p>For a place search, Placr sends only the text you typed. If a reference coordinate is available, it also sends an approximate search region. Photos, thumbnails, and operation records are never sent.</p>
+    <p>Searches are handled by Apple Maps (MapKit) by default and are subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>. Placr contacts Google Places only if you supply your own Google Maps API key and Apple Maps returns no result; those requests are subject to <a href="https://policies.google.com/privacy" rel="noopener">Google’s Privacy Policy</a>.</p>
+    <p>Placr provides these services only the minimum information required for the search at hand. It does not sell data or permit requests to be used for advertising or user profiling on the developer’s behalf.</p>
+
+    <h2>Local storage and retention</h2>
+    <p>The library snapshot, review drafts, operation history, time-zone cache, and preferences remain in Placr’s sandbox container until you remove the files. A Google Maps API key is stored separately in the macOS Keychain until you remove it in Placr Settings or Keychain Access.</p>
+    <div class="note">
+      <p>Deleting the app may not automatically remove its sandbox container or Keychain item. Complete removal instructions follow.</p>
+    </div>
+
+    <h2>Revoking access and deleting data</h2>
+    <ul>
+      <li>Revoke Photos access: open System Settings → Privacy &amp; Security → Photos, then turn off Placr.</li>
+      <li>Remove the Google API key: remove it in Placr’s place-search settings, or delete the item whose service is <code>cn.chenhk.placr.google-places</code> in Keychain Access.</li>
+      <li>Delete Placr’s local data: quit Placr, choose Go → Go to Folder in Finder, enter <code>~/Library/Containers/cn.chenhk.placr</code>, and move that folder to the Trash.</li>
+    </ul>
+    <p>Revoking Photos access or deleting local data does not undo locations already written to Photos. To restore them, use Placr’s operation history before deleting the local data.</p>
+
+    <h2>Children</h2>
+    <p>Placr is not directed to children and does not collect age or any other personal information.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date at the top of this page will be updated. Significant changes will also be surfaced in the app.</p>
+
+    <h2>Contact</h2>
+    <p>For any privacy question, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+</main>
 
 <footer>
-  <p>© 2026 Chen Haokun · <a href="index.html">Placr</a> · <a href="support.html">技术支持 / Support</a></p>
+  <p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Placr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p>
 </footer>
-
 </div>
+<script src="language.js"></script>
 </body>
 </html>
