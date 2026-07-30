@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Placr — give photos their missing place.">
+<meta name="theme-color" content="#fbfaf7">
 <title>Placr</title>
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -25,12 +28,37 @@
 <main tabindex="-1">
   <section class="language-panel" data-language="zh-Hans" lang="zh-Hans"
     data-title="Placr">
-    <header>
+    <header class="hero">
+      <img class="hero-mark" src="assets/icon-256.png" alt=""
+        width="76" height="76">
       <h1>给照片补上缺失的地点</h1>
-      <p class="updated">macOS 15 或更新版本</p>
+      <p class="lede">Placr 按月份扫描你的照片图库，把缺少位置的照片按拍摄时间分组，参考同一时段有位置的照片给出建议，并在你确认后批量写入。</p>
+      <p class="meta">macOS 15 或更新版本</p>
     </header>
-    <p class="lede">Placr 按月份扫描你的照片图库，把缺少位置的照片按拍摄时间分组，参考同一时段有位置的照片给出建议，并在你确认后批量写入。</p>
-    <p>照片始终留在你的 Mac 上。每次写入都会保留可恢复的操作记录。</p>
+
+    <figure class="shot">
+      <img src="assets/screenshot-zh-Hans.jpg" width="1440" height="867"
+        loading="lazy" decoding="async"
+        alt="Placr 界面：左侧按月份和状态筛选，中间是候选组列表，右侧是待定位照片和参考照片。">
+    </figure>
+
+    <ul class="features">
+      <li>
+        <strong>按月份看</strong>
+        <span>只处理缺少位置的照片，按拍摄时间分成候选组。</span>
+      </li>
+      <li>
+        <strong>就近取证</strong>
+        <span>用同一时段已有位置的照片推断地点，也可以自己搜索。</span>
+      </li>
+      <li>
+        <strong>确认后才写</strong>
+        <span>每次写入都留有操作记录，随时可以恢复原来的位置。</span>
+      </li>
+    </ul>
+
+    <p class="closing">照片始终留在你的 Mac 上，开发者收不到任何内容。</p>
+
     <div class="cards">
       <a class="card" href="privacy.html" data-localized-link="privacy.html">
         <strong>隐私政策</strong>
@@ -45,12 +73,37 @@
 
   <section class="language-panel" data-language="zh-Hant" lang="zh-Hant"
     data-title="Placr">
-    <header>
+    <header class="hero">
+      <img class="hero-mark" src="assets/icon-256.png" alt=""
+        width="76" height="76">
       <h1>為照片補上缺少的地點</h1>
-      <p class="updated">需要 macOS 15 或以上版本</p>
+      <p class="lede">Placr 會逐月掃描你的照片圖庫，依拍攝時間將缺少位置資訊的照片分組，參考同一時段已有位置的照片提出建議，並在你確認後批次寫入。</p>
+      <p class="meta">需要 macOS 15 或以上版本</p>
     </header>
-    <p class="lede">Placr 會逐月掃描你的照片圖庫，依拍攝時間將缺少位置資訊的照片分組，參考同一時段已有位置的照片提出建議，並在你確認後批次寫入。</p>
-    <p>照片會一直留在你的 Mac 上。每次寫入都會保留可還原的操作記錄。</p>
+
+    <figure class="shot">
+      <img src="assets/screenshot-zh-Hant.jpg" width="1440" height="867"
+        loading="lazy" decoding="async"
+        alt="Placr 介面：左側依月份和狀態篩選，中間是候選群組清單，右側是待定位照片與參考照片。">
+    </figure>
+
+    <ul class="features">
+      <li>
+        <strong>逐月檢視</strong>
+        <span>只處理缺少位置的照片，依拍攝時間分成候選群組。</span>
+      </li>
+      <li>
+        <strong>就近取證</strong>
+        <span>以同一時段已有位置的照片推斷地點，也可以自行搜尋。</span>
+      </li>
+      <li>
+        <strong>確認後才寫入</strong>
+        <span>每次寫入都留有操作記錄，隨時可以還原成原本的位置。</span>
+      </li>
+    </ul>
+
+    <p class="closing">照片會一直留在你的 Mac 上，開發者收不到任何內容。</p>
+
     <div class="cards">
       <a class="card" href="privacy.html" data-localized-link="privacy.html">
         <strong>隱私權政策</strong>
@@ -65,12 +118,37 @@
 
   <section class="language-panel" data-language="zh-HK" lang="zh-HK"
     data-title="Placr">
-    <header>
+    <header class="hero">
+      <img class="hero-mark" src="assets/icon-256.png" alt=""
+        width="76" height="76">
       <h1>為相片補上缺少的地點</h1>
-      <p class="updated">需要 macOS 15 或以上版本</p>
+      <p class="lede">Placr 會逐月掃描你的相片圖庫，按拍攝時間將缺少位置的相片分組，參考同一時段已有位置的相片提供建議，並在你確認後批次寫入。</p>
+      <p class="meta">需要 macOS 15 或以上版本</p>
     </header>
-    <p class="lede">Placr 會逐月掃描你的相片圖庫，按拍攝時間將缺少位置的相片分組，參考同一時段已有位置的相片提供建議，並在你確認後批次寫入。</p>
-    <p>相片會一直留在你的 Mac 上。每次寫入都會保留可以還原的操作記錄。</p>
+
+    <figure class="shot">
+      <img src="assets/screenshot-zh-HK.jpg" width="1440" height="867"
+        loading="lazy" decoding="async"
+        alt="Placr 介面：左邊按月份和狀態篩選，中間是候選組清單，右邊是待定位相片同參考相片。">
+    </figure>
+
+    <ul class="features">
+      <li>
+        <strong>逐月檢視</strong>
+        <span>只處理缺少位置的相片，按拍攝時間分成候選組。</span>
+      </li>
+      <li>
+        <strong>就近取證</strong>
+        <span>用同一時段已有位置的相片推斷地點，亦可以自行搜尋。</span>
+      </li>
+      <li>
+        <strong>確認後先寫入</strong>
+        <span>每次寫入都留有操作記錄，隨時可以還原成原本的位置。</span>
+      </li>
+    </ul>
+
+    <p class="closing">相片會一直留在你的 Mac 上，開發者收不到任何內容。</p>
+
     <div class="cards">
       <a class="card" href="privacy.html" data-localized-link="privacy.html">
         <strong>私隱政策</strong>
@@ -85,12 +163,37 @@
 
   <section class="language-panel" data-language="ja" lang="ja"
     data-title="Placr">
-    <header>
+    <header class="hero">
+      <img class="hero-mark" src="assets/icon-256.png" alt=""
+        width="76" height="76">
       <h1>写真に足りない場所を戻す</h1>
-      <p class="updated">macOS 15 以降が必要です</p>
+      <p class="lede">Placr は写真ライブラリを月ごとに調べ、位置情報のない写真を撮影時刻でまとめます。同じ時間帯に撮られた位置情報付きの写真を手がかりに場所を提案し、確認後にまとめて書き込みます。</p>
+      <p class="meta">macOS 15 以降が必要です</p>
     </header>
-    <p class="lede">Placr は写真ライブラリを月ごとに調べ、位置情報のない写真を撮影時刻でまとめます。同じ時間帯に撮られた位置情報付きの写真を手がかりに場所を提案し、確認後にまとめて書き込みます。</p>
-    <p>写真が Mac の外へ送られることはありません。書き込みのたびに、元に戻すための操作記録が残ります。</p>
+
+    <figure class="shot">
+      <img src="assets/screenshot-ja.jpg" width="1440" height="867"
+        loading="lazy" decoding="async"
+        alt="Placr の画面：左が月と状態の絞り込み、中央が候補グループの一覧、右が位置情報のない写真と参考写真。">
+    </figure>
+
+    <ul class="features">
+      <li>
+        <strong>月ごとに確認</strong>
+        <span>位置情報のない写真だけを、撮影時刻でグループにまとめます。</span>
+      </li>
+      <li>
+        <strong>近くの写真から推定</strong>
+        <span>同じ時間帯の位置情報付きの写真から場所を提案します。自分で検索することもできます。</span>
+      </li>
+      <li>
+        <strong>確認してから書き込み</strong>
+        <span>書き込みごとに操作記録が残り、いつでも元の位置に戻せます。</span>
+      </li>
+    </ul>
+
+    <p class="closing">写真が Mac の外へ出ることはなく、開発者が受け取ることもありません。</p>
+
     <div class="cards">
       <a class="card" href="privacy.html" data-localized-link="privacy.html">
         <strong>プライバシーポリシー</strong>
@@ -105,12 +208,37 @@
 
   <section class="language-panel" data-language="en" lang="en"
     data-title="Placr">
-    <header>
+    <header class="hero">
+      <img class="hero-mark" src="assets/icon-256.png" alt=""
+        width="76" height="76">
       <h1>Give photos their missing place</h1>
-      <p class="updated">Requires macOS 15 or later</p>
+      <p class="lede">Placr scans your photo library one month at a time, groups photos missing a location by capture time, and suggests a place using nearby photos that already have one. Nothing is written until you confirm.</p>
+      <p class="meta">Requires macOS 15 or later</p>
     </header>
-    <p class="lede">Placr scans your photo library one month at a time, groups photos missing a location by capture time, and suggests a place using nearby photos that already have one. Nothing is written until you confirm.</p>
-    <p>Your photos stay on your Mac. Every write leaves a local operation record that can restore the previous location.</p>
+
+    <figure class="shot">
+      <img src="assets/screenshot-en.jpg" width="1440" height="867"
+        loading="lazy" decoding="async"
+        alt="The Placr window: filters by month and status on the left, candidate groups in the middle, photos needing a location and their reference photos on the right.">
+    </figure>
+
+    <ul class="features">
+      <li>
+        <strong>One month at a time</strong>
+        <span>Only photos without a location, grouped by when they were taken.</span>
+      </li>
+      <li>
+        <strong>Borrowed from nearby photos</strong>
+        <span>Photos taken around the same time that already have a location suggest the place. You can also search for one.</span>
+      </li>
+      <li>
+        <strong>Written only after you confirm</strong>
+        <span>Every write leaves a record, so the previous location can be restored.</span>
+      </li>
+    </ul>
+
+    <p class="closing">Your photos stay on your Mac. The developer receives nothing.</p>
+
     <div class="cards">
       <a class="card" href="privacy.html" data-localized-link="privacy.html">
         <strong>Privacy Policy</strong>

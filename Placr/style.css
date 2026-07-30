@@ -59,6 +59,15 @@ body {
   text-decoration: none;
 }
 
+/* 图标只在够大的时候才看得出是什么：缩到导航栏那个尺寸，塔身和图钉会糊成
+   一团噪点。所以它只出现在首页标题上方。 */
+.hero-mark {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 28px;
+}
+
 .language-picker {
   display: none;
   align-items: center;
@@ -110,7 +119,10 @@ main:focus { outline: none; }
   padding-top: 1px;
 }
 
-.language-panel + .language-panel {
+/* 没有 JS 时五种语言会全部堆在一起，靠这条分隔线区分。必须限定在没有 JS 的
+   情况下：`+` 选的是 DOM 里的相邻关系，跟显不显示无关，不限定的话只要当前语言
+   不是第一个面板，就会在标题上方白白多出一段空白和一条双线。 */
+html:not(.js) .language-panel + .language-panel {
   margin-top: 96px;
   border-top: 3px double var(--rule);
 }
@@ -167,6 +179,10 @@ h2 {
 
 h3 { margin: 32px 0 10px; font-size: 20px; letter-spacing: -0.01em; }
 
+/* 正文列有 760px，英文在这个宽度下一行能排到九十多个字符，读起来会串行。
+   38em 折算过来中文约 38 字、英文约 70 字符，都在舒服的范围内。 */
+p, ul { max-width: 38em; }
+
 p { margin: 0 0 16px; }
 
 ul { margin: 0 0 16px; padding-left: 22px; }
@@ -185,14 +201,98 @@ a:hover { color: var(--accent-strong); }
   color: var(--fg);
 }
 
+/* 首页不需要标题下那条横线：下面紧接着就是一张截图，两条边界叠在一起显得碎。 */
+.hero {
+  padding: 76px 0 0;
+  border-bottom: 0;
+  margin-bottom: 40px;
+}
+
+.hero .lede { margin: 24px 0 0; }
+
+.hero .meta {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.shot {
+  width: 100%;
+  margin: 0 0 56px;
+}
+
+/* 界面图比正文列宽一些。窗口本身有 1440 像素宽，塞进 760 的正文列里只剩一团
+   看不清的灰点，撑开之后才看得出这个应用长什么样。
+   用左右对称的负边距撑，不用 translateX：位移只改画面不改布局盒子，右侧会多出
+   半个宽度的溢出，整页跟着横向滚动。断点取 1120px，是为了保证撑开之后即使算上
+   滚动条也还在视口内。 */
+@media (min-width: 1120px) {
+  .shot {
+    width: 1040px;
+    margin-inline: calc((100% - 1040px) / 2);
+  }
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 18px 44px -28px rgba(20, 20, 18, 0.55);
+}
+
+.features {
+  display: grid;
+  gap: 28px;
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+.features strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.features span {
+  display: block;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.closing {
+  max-width: 34em;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+@media (min-width: 721px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
 .note {
+  max-width: 38em;
   background: var(--card);
   border-left: 3px solid var(--accent);
   border-radius: 2px 12px 12px 2px;
   padding: 18px 22px;
-  margin: 24px 0;
-  font-size: 15px;
-  color: var(--muted);
+  margin: 28px 0;
+  font-size: 16px;
+  /* 提示框讲的是「删掉 App 不等于删干净」这类要紧事，用灰字会被当成脚注读过去。 */
+  color: var(--fg);
 }
 
 .note p:last-child { margin-bottom: 0; }
@@ -213,7 +313,11 @@ footer {
 
 footer a { color: var(--muted); }
 
-.cards { display: grid; gap: 16px; margin-top: 40px; }
+.cards { display: grid; gap: 16px; margin-top: 48px; }
+
+@media (min-width: 721px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
 
 .card {
   display: block;
