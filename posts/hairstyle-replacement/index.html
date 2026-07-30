@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>发型替换技术：让你拥有你想要的任何发型 — 陈浩锟 / 垂野</title>
+<meta name="description" content="记录团队如何用「劫持」方案实现任意发型替换，并落地到 QQ 小世界背头、Anya、黄昏等发型。">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand"><span class="dot"></span>Rocinante</a>
+    <div class="header-right">
+      <nav class="nav" data-nav>
+        <a href="/">首页</a>
+        <a href="/posts/">文章</a>
+        <a href="/resume/">简历</a>
+        <a href="https://github.com/chenhk-chn" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="切换明暗主题">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+      </nav>
+      <button class="menu-btn" data-menu-toggle aria-label="打开菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article>
+    <div class="article-head wrap reveal">
+      <span class="eyebrow">CV / GAN</span>
+      <h1>发型替换技术：让你拥有你想要的任何发型</h1>
+      <div class="article-meta">
+        <span>陈浩锟 / 垂野 / RigelChen</span>
+        <span class="sep"></span>
+        <span>2022-11-01</span>
+        <span class="sep"></span>
+        <span>第一篇文章</span>
+      </div>
+    </div>
+
+    <div class="wrap prose reveal">
+      <h2>起因</h2>
+      <p>今年年初，抖音上线了一款名为「国风穿越」的特效，突然火了一阵——不管用户原本是什么发型，都能一键变成古装的格格头或带发髻的古风发型。这对用户来说很有参与感和新鲜感，我自己玩了很久，还推荐给我妈玩，哈哈哈。这让我们团队对「替换用户发型」这件事产生了兴趣。</p>
+      <p>学界已有一些关于头发编辑的工作，比如基于 StyleGAN 让头发变长变短、改变颜色；或者基于 StarGAN / <a class="inline-link" href="https://github.com/ckkelvinchan/GLEAN" target="_blank" rel="noopener">GLEAN</a> 这类 cGAN 方案。但这些方法只能解决头发的「二元变量」问题，比如是否长发、是否卷发；一旦涉及日常生活中几乎不存在的发型（比如古代发髻），这些方法就失效了。所以我们把上面这类方法称为<strong>发型编辑</strong>，而我们要做的，是<strong>发型替换</strong>。</p>
+
+      <h2>我们的技术方案</h2>
+      <h3>难点</h3>
+      <p>这件事从技术角度讲其实相当困难。因为抖音落地在移动端，我们推测它用的是类似 pix2pix 的模型，这就需要大量成对的图片数据，而图片对的获取正是训练这类模型最大的难度。一旦有了现成的图片对，问题就可以转化为我们更熟悉的领域——类似人脸卡通化的问题，在这方面我们积累了不少经验。</p>
+      <p>我们把整个过程拆解为：</p>
+      <ol>
+        <li><strong>制作发型替换的图片对</strong></li>
+        <li>利用图片对训练一个类 Pix2Pix 模型</li>
+      </ol>
+      <p>难点在第一步，本文阐述的重点也在第一步。</p>
+
+      <h3>实现过程</h3>
+      <p>我们为制作图片对的过程申请了专利。由于专利尚未公开，暂时还不能详细讨论具体实现，只能骄傲地说——我们的方案很精妙，精妙到我给它起了一个很好听的名字，叫做<strong>劫持</strong>。</p>
+      <div class="callout">
+        <span class="eyebrow">专利</span>
+        国家专利局受理，本人为第一发明人，欢迎关注该专利的后续进展；公开后会再来详细分享具体方法。
+      </div>
+
+      <h2>落地</h2>
+      <p>截至 2022 年 11 月 1 日，我们用这套全新的技术方案一共落地了三个发型。</p>
+
+      <h3>背头</h3>
+      <p>背头是相对中规中矩的发型，但它是团队用新方案落地的第一个发型，所以对稳定性要求很高，哈哈哈。（左下角的背头就是用全新技术方案实现的）</p>
+
+      <h3>《间谍过家家》的动漫发型 — Anya 与黄昏</h3>
+      <p>第一个发型跑通之后，我们开始「放飞自我」，想挑战更高难度的发型。正值《间谍过家家》很火，我们决定以<strong>满足用户 cosplay 的愿望</strong>为目标去迭代，做了 Anya 和黄昏的发型。这两款发型的难度远高于背头，尤其是因为它们艳丽的颜色。优化方案之后，最终效果上线到了 QQ 小世界。</p>
+
+      <h2>后续</h2>
+      <p>我们当时采用的技术路线里，生成的发型会和用户本身的发色产生耦合——比如用户本身是白发，生成的背头也会带白发，尽管在黄昏和 Anya 的发型里我们已经优化了这一点。</p>
+      <p>我们计划挑战自己，尝试一种一致性更强的新技术路线：不管用户本身是什么发色，都能生成宣传图里那种统一效果。当然这个目标会牺牲「千人千面」的个性化，和前面「劫持」策略的侧重点各有不同。当时已经有了初步方案，等后续有新发型落地，再来分享。</p>
+
+      <h2>成果</h2>
+      <p>这半年多的时间里，收获了以下成果：</p>
+      <ul>
+        <li>作为第一发明人申请技术专利一项，尚未公开。</li>
+        <li>独立上线<strong>背头</strong>发型替换模型到 QQ 小世界。</li>
+        <li>合作上线<strong>Anya 和黄昏发型</strong>到 QQ 小世界。</li>
+      </ul>
+    </div>
+
+    <div class="wrap post-footer reveal">
+      <div class="tags"><span>CV</span><span>GAN</span><span>StyleGAN</span></div>
+      <p class="license">本文原发布于 2022-11-01，是这个网站重写前唯一的一篇文章，作为第一篇文章保留在这里。除特别声明外，本站文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA 4.0</a> 协议，转载请注明出处。</p>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="aliases">陈浩锟 · 垂野 · RigelChen — © 2020–2026</span>
+    <div class="footer-links">
+      <a href="mailto:imchenhaokun@foxmail.com">Email</a>
+      <a href="https://github.com/chenhk-chn" target="_blank" rel="noopener">GitHub</a>
+      <a href="/resume/">Résumé</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
