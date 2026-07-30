@@ -201,7 +201,7 @@ a:hover { color: var(--accent-strong); }
   color: var(--fg);
 }
 
-/* 首页不需要标题下那条横线：下面紧接着就是一张截图，两条边界叠在一起显得碎。 */
+/* 首页不需要标题下那条横线：下面紧接着就是特性列表，多一条边界只会显得碎。 */
 .hero {
   padding: 76px 0 0;
   border-bottom: 0;
@@ -214,32 +214,6 @@ a:hover { color: var(--accent-strong); }
   margin: 20px 0 0;
   color: var(--muted);
   font-size: 15px;
-}
-
-.shot {
-  width: 100%;
-  margin: 0 0 56px;
-}
-
-/* 界面图比正文列宽一些。窗口本身有 1440 像素宽，塞进 760 的正文列里只剩一团
-   看不清的灰点，撑开之后才看得出这个应用长什么样。
-   用左右对称的负边距撑，不用 translateX：位移只改画面不改布局盒子，右侧会多出
-   半个宽度的溢出，整页跟着横向滚动。断点取 1120px，是为了保证撑开之后即使算上
-   滚动条也还在视口内。 */
-@media (min-width: 1120px) {
-  .shot {
-    width: 1040px;
-    margin-inline: calc((100% - 1040px) / 2);
-  }
-}
-
-.shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  box-shadow: 0 18px 44px -28px rgba(20, 20, 18, 0.55);
 }
 
 .features {
