@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>简历 — 陈浩锟</title>
-<meta name="description" content="陈浩锟简历：多模态大模型 / Agent 系统 / AIGC 数据工程算法工程师。字节跳动、腾讯、阿里巴巴达摩院。">
+<meta name="description" content="陈浩锟简历：多模态大模型 / Agent 系统 / 后训练与强化学习方向算法工程师。字节跳动 Seed 视觉应用、腾讯、阿里巴巴达摩院。">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -37,7 +37,7 @@
     <div>
       <span class="eyebrow">Résumé</span>
       <h1>陈浩锟</h1>
-      <p class="role">多模态大模型 / Agent 系统 / AIGC 数据工程 —— 算法工程师</p>
+      <p class="role">多模态大模型 / Agent 系统 / 后训练与强化学习 —— 算法工程师</p>
     </div>
     <div class="resume-actions">
       <a class="btn" href="/resume/resume.pdf" download>下载 PDF</a>
@@ -56,7 +56,7 @@
     <span class="eyebrow">Summary</span>
     <h2>简介</h2>
     <p style="max-width:68ch;color:var(--ink-soft);font-size:15.5px;margin:0">
-      专注多模态大语言模型、Agent 系统与图文生成方向。目前在字节跳动主导图文创作 Agent 架构与 AIGC 数据工程，此前在腾讯负责大语言模型预训练与生成式图像编辑，在人像生成、换脸与多模态对齐方向有多年经验。国家发明专利 18 项，共同一作论文发表于 arXiv 与 WACV。
+      专注多模态大模型、Agent 系统与后训练方向。目前在字节跳动 Seed 视觉应用主导豆包 / 即梦创作 Agent 的架构演进与强化学习训练，此前负责 DreamPoster、ETTA 的数据工程与开放式输入建模；更早在腾讯自研 QQ 业务大语言模型并落地生成式图像编辑。国家发明专利 18 项，共同一作论文发表于 arXiv 与 WACV。
     </p>
   </section>
 
@@ -65,16 +65,16 @@
     <h2>核心技能</h2>
     <div class="skill-grid">
       <div>
-        <div class="k">多模态大模型</div>
-        <div class="v">GPT / T5 / LLaMA / CLIP 架构设计与训练；DreamPoster 等文生图大模型的设计与训练</div>
-      </div>
-      <div>
         <div class="k">Agent 系统</div>
-        <div class="v">Planner + Function Calling 架构、工具调用、任务规划、多模态智能体</div>
+        <div class="v">Planner + Function Calling / ReAct Loop 架构、工具调用、任务规划、多模态智能体</div>
       </div>
       <div>
-        <div class="k">数据工程</div>
-        <div class="v">自动化标注、数据合成、多模态数据处理、大规模训练数据构建</div>
+        <div class="k">后训练与强化学习</div>
+        <div class="v">SFT / RM / DPO / RL 全流程，rule-based reward、trace verifier、带图 verifier</div>
+      </div>
+      <div>
+        <div class="k">多模态大模型与数据</div>
+        <div class="v">VLM / T5 / LLaMA / CLIP 训练；自动化标注、协议化合成、百万级数据构建与评测</div>
       </div>
     </div>
   </section>
@@ -88,27 +88,37 @@
         <h3>字节跳动 · 高级算法工程师</h3>
         <span class="period">2023.10 — 至今</span>
       </div>
-      <div class="job-org">Data · 智能创作 · 视觉智能</div>
+      <div class="job-org">Seed · 视觉应用（历经创意营销 → 智能创作 → Seed 视觉应用）</div>
 
       <div class="proj">
-        <h4>图文创作 Agent 系统 <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner</span></h4>
-        <p>设计并实现 Planner + Function Calling 的模块化组合架构，支持多轮任务规划、工具编排与并发执行，推动大模型从生成器向任务执行器演进。</p>
-        <div class="metric-line">豆包「超能创意」Web/客户端 LT30 +0.70%/+0.80% · 生图 DAU +169.4% · 渗透率 6.21%→12.07% · 即梦「创作 Agent」全端 LT +1.2% · 复用至 Pippit / 剪映</div>
+        <h4>创作 Agent 架构与强化学习 <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner / RL 负责人 · 2025.3 – 至今</span></h4>
+        <p>主导创作 Agent 架构演进：Planner + Function Calling（豆包「超能创意」1.0 / 2.0）→ 三合一 / 三合二 PlanList → ReAct Loop，把线上串联 VLM 工程链路升级为可训练、可评测、可 AB 的 Agent 模型体系。负责 Agent 强化学习方向，自研工具参数 + 工具选择的 rule-based RL，并沉淀 trace verifier、带图 verifier，使 RL 能约束中间推理与工具调用过程。</p>
+        <div class="metric-line">工具参数错误兜底率 3%→0.08% · 工具选择准确率 95.14% · Resource ID 幻觉率 0.71% · ReAct 复杂任务 Avg 1.186→1.511</div>
+        <div class="metric-line">豆包「超能创意」Web/客户端 LT30 +0.70%/+0.80% · 生图 DAU +169.4% · 渗透率 6.21%→12.07% · ReAct 升级后生图/生视频 UV 采纳率 +4.2%/+5% · App 创作失败请求 3.5%→0.5% · 复用至 Pippit / 剪映 / 豆包 Mobile</div>
       </div>
 
       <div class="proj">
-        <h4>AIGC 数据工程与标注系统 <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner</span></h4>
-        <p>构建端到端图文数据清洗流程（爬虫 + OCR + 美学/匹配打分 + 去重），沉淀百万级高质量图文对；训练具备 Grounding 能力的多模态标注模型（预训练 + SFT/DPO 两阶段）。</p>
-        <div class="metric-line">支撑 DreamPoster、ETTA 百万级结构化训练数据构建，大幅降低人工标注成本</div>
+        <h4>即梦创作 Agent <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner · 2025.7 – 2025.11</span></h4>
+        <p>完成即梦 Agent 架构四期迭代，走通面向 VLM 的后训练全流程（人工标注 → SFT / RM / RL），并落地创意顾问、记忆工具、上下文治理、灵感搜索等能力模块。</p>
+        <div class="metric-line">文生图可用率 31%→42% · 文生视频 6%→17% · 创意度 Best 率 21%（豆包 3% / Agent-Claude 1% / GPT-5 0%）</div>
+        <div class="metric-line">国内 Agent DAU 0→34.4 万 · 活跃渗透 0→45.48% · 生成→保存 PV 转化 31.3% · 大盘 LT +1.27% · 会员 ARPU +9%</div>
       </div>
 
       <div class="proj">
-        <h4>开放式输入建模（PE 模块） <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner</span></h4>
-        <p>构建结构化 Prompt ↔ 自然语言的双向数据链路，结合 persona 模拟与 DPO 偏好训练，把用户自由输入转化为模型「最擅长处理」的结构化 Prompt。</p>
-        <div class="metric-line">DreamPoster 传图海报可用率 88.55%（优于 GPT-4o 47.56% / SeedEdit3.0 25.96%）· 图生图 UV 渗透 +1.8% · 保存渗透 +9.7%</div>
+        <h4>DreamPoster / ETTA 图文生成 <span style="color:var(--ink-faint);font-weight:400;">· 算法 Owner · 2024.3 – 2025.6</span></h4>
+        <p>数据侧构建渲染 + Inpainting + 裁剪的成对数据链路（500 万+ 图片对、万级高质量海报），并把 OCR + 多模型组合链路收敛为单一多模态标注模型；输入侧基于 Doubao-1.5-Vision-Pro / Qwen2.5-VL 开发海内外 PE 模块，用 persona 模拟 + DPO 把开放式输入转成模型偏好的结构化 Prompt。</p>
+        <div class="metric-line">DreamPoster 可用率 88.55%（GPT-4o 47.56% / SeedEdit3.0 25.96%）· ETTA 中英文海报 GSB +40%/+35% · 文字标注编辑距离 4.94→3.40 · SDXL+ETTA 文字准确率 18%→82%</div>
+        <div class="metric-line">即梦首发带动图生图 UV 渗透 +1.8%、保存渗透 +9.7%、图生成 LT7 +1% · ETTA 带动 Web 文生图保存渗透 +1.4%，Web DAU 破 10 万 · 上线即梦 / Pippit / CapCut / 剪映 / 豆包 / 抖音</div>
+      </div>
+
+      <div class="proj">
+        <h4>早期项目 <span style="color:var(--ink-faint);font-weight:400;">· 2023.10 – 2024.8</span></h4>
+        <p>AI 商品图与抖音相机的开放式输入（PE）；剪映 / CapCut 营销智能文案与 CCPush 多语言推送文案模型。</p>
+        <div class="metric-line">商品图 PE 对比美图 / PhotoRoom CMOS 109%/114% · CommercePro DAU 导出率 41.46% · Push 文案可用率 50%→88%，美区 LT7 +0.365%</div>
       </div>
 
       <p style="font-size:13.5px;color:var(--ink-faint);margin-top:16px;">
+        其他：公司级技术分享 veTalk《创作 Agent 构建之道》；2025 Q3 Spot Bonus（个人）、2025 Q1 Spot Bonus（优秀团队）。<br>
         Hu, X.†, Chen, H.†, Qi, Z.†, et al. <em>DreamPoster: A Unified Framework for Image-Conditioned Generative Poster Design</em>, arXiv:2507.04218, 2025.（† 共同一作）
       </p>
     </div>
@@ -127,15 +137,9 @@
       </div>
 
       <div class="proj">
-        <h4>发型编辑 & AI 换脸 <span style="color:var(--ink-faint);font-weight:400;">· 一期 Owner / 二期核心参与者</span></h4>
-        <p>基于 StyleGAN 特征劫持 + GFPGAN 构造图片对，实现任意发型替换与染发能力；基于 DeepFake + FaceShifter 实现通用变脸模型，并通过 OMGD 蒸馏完成移动端小型化。</p>
-        <div class="metric-line">换脸 ID 保留指标达 78% · 上线 QQ 小世界发型屋、Anya/黄昏发型、国庆及万圣节变脸活动 · 产出发明专利 5 项</div>
-      </div>
-
-      <div class="proj">
-        <h4>多模态图文语义关联 <span style="color:var(--ink-faint);font-weight:400;">· 核心参与者</span></h4>
-        <p>优化 QQ-AIGC 文本特征提取器（mT5，参考 Flan-T5 多任务/多语种训练）与 CLIP 跨模态对齐（13B 语言塔）。</p>
-        <div class="metric-line">相同 clip score 下 FID 降低约 2 点 · zero-shot 能力提升 80%</div>
+        <h4>生成式图像编辑：发型替换 & AI 换脸 <span style="color:var(--ink-faint);font-weight:400;">· 一期 Owner / 二期核心参与者</span></h4>
+        <p>基于 StyleGAN 特征劫持 + GFPGAN 构造图片对，实现任意发型替换与染发能力；基于 DeepFake + FaceShifter 实现通用变脸模型，并通过 OMGD 蒸馏完成移动端小型化。此外参与优化 QQ-AIGC 文本特征提取器（mT5）与 CLIP 跨模态对齐（13B 语言塔）。</p>
+        <div class="metric-line">换脸 ID 保留指标达 78% · 上线 QQ 小世界发型屋、Anya/黄昏发型、国庆及万圣节变脸活动 · 产出发明专利 5 项 · 相同 clip score 下 FID 降低约 2 点</div>
       </div>
     </div>
 

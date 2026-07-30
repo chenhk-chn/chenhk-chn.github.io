@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>陈浩锟 · 垂野 — 多模态大模型 / Agent 系统</title>
-<meta name="description" content="陈浩锟（垂野 / RigelChen）的个人网站。多模态大模型、Agent 系统与 AIGC 数据工程方向算法工程师，字节跳动 / 前腾讯。">
+<meta name="description" content="陈浩锟（垂野 / RigelChen）的个人网站。多模态大模型、Agent 系统与后训练方向算法工程师，字节跳动 Seed 视觉应用 / 前腾讯。">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -37,7 +37,7 @@
     <div>
       <span class="eyebrow">Algorithm Engineer · Hangzhou</span>
       <h1>用<em>多模态大模型</em>，<br>构建会规划、能创作的智能体。</h1>
-      <p class="lede">现于字节跳动负责图文创作 Agent 系统与 AIGC 数据工程方向的研发；此前在腾讯从事大语言模型预训练与生成式图像编辑。研究方向：多模态 LLM、Agent 系统、图文生成。</p>
+      <p class="lede">现于字节跳动 Seed 视觉应用，负责豆包 / 即梦创作 Agent 的架构演进与强化学习训练；此前在腾讯自研 QQ 业务大语言模型并落地生成式图像编辑。研究方向：Agent 系统、后训练与强化学习、多模态图文生成。</p>
       <div class="actions">
         <a class="btn primary" href="/resume/">查看简历</a>
         <a class="btn" href="/posts/">阅读文章</a>
@@ -65,22 +65,22 @@
       <div class="focus-item">
         <div class="num">01</div>
         <div>
-          <h3>图文创作 Agent 系统</h3>
-          <p>设计 Planner + Function Calling 的模块化智能体架构，支持多轮任务规划与工具并发执行，落地于豆包「超能创意」、即梦「创作 Agent」等功能，并复用至 Pippit、剪映等场景。</p>
+          <h3>创作 Agent 架构演进</h3>
+          <p>把创作 Agent 从 Planner + Function Calling 一路推进到 ReAct Loop，将线上串联的 VLM 工程链路升级为可训练、可评测、可 AB 的 Agent 模型体系，落地豆包与即梦，并复用至 Pippit、剪映。</p>
         </div>
       </div>
       <div class="focus-item">
         <div class="num">02</div>
         <div>
-          <h3>AIGC 数据工程与标注</h3>
-          <p>构建高质量图文配对筛选与协议化合成链路，训练具备 Grounding 能力的多模态标注模型，为 DreamPoster、ETTA 等文生图模型提供百万级结构化训练数据。</p>
+          <h3>Agent 强化学习</h3>
+          <p>自研工具参数与工具选择的 rule-based RL，并沉淀 trace verifier、带图 verifier，让 RL 不只优化最终生成结果，也能约束中间推理与工具调用过程——工具选择准确率 95.14%，ID 幻觉率降到 0.71%。</p>
         </div>
       </div>
       <div class="focus-item">
         <div class="num">03</div>
         <div>
-          <h3>开放式输入建模</h3>
-          <p>把用户自由输入转化为模型「最擅长处理」的结构化 Prompt，通过 SFT + DPO 训练偏好驱动的输入模块，支撑 DreamPoster 传图海报可用率达 88.55%。</p>
+          <h3>图文生成数据与输入建模</h3>
+          <p>为 DreamPoster、ETTA 构建百万级成对数据与多模态标注链路，并用 persona 模拟 + DPO 把用户开放式输入转成模型偏好的结构化 Prompt，支撑传图海报可用率达 88.55%。</p>
         </div>
       </div>
     </div>
