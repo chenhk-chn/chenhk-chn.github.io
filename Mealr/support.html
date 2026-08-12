@@ -1,13 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hans">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Mealr Support"><title>Mealr 支持</title><link rel="stylesheet" href="style.css"><script defer src="language.js"></script></head>
-<body>
-  <header class="site-header"><a class="brand" href="index.html">Mealr</a><select id="language-picker" class="language-picker" aria-label="Language"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></header>
-  <main>
-    <article class="language-panel" data-language="zh-Hans"><p class="eyebrow">帮助</p><h1>Mealr 支持</h1><p class="lead">遇到识别、健康权限、iCloud 同步或订阅问题？我们会尽力帮你解决。</p><div class="card"><h2>照片识别不准确怎么办？</h2><p>估算不需要精确到克。你可以在确认页用“少 / 正常 / 多”快速调整；如果照片中食物被遮挡，换一个更完整的角度重拍会更有效。</p><h2>为什么看不到消耗？</h2><p>请在 Mealr 中连接 Apple 健康，并确认已允许读取活动能量和基础能量。模拟器通常没有真实健康数据，请使用真机验证。</p><h2>iCloud 为什么没有同步？</h2><p>iCloud 同步是会员功能。请确认设备登录了同一 Apple 账户、iCloud Drive 已开启且网络可用，然后在会员页点“立即同步”。</p><h2>如何管理订阅？</h2><p>打开系统“设置” → 你的 Apple 账户 → “订阅”，可以查看、取消或重新订阅。试用和退款由 Apple 管理。</p><h2>如何删除数据？</h2><p>你可以删除本地记录或卸载 App；会员页将提供删除全部 Mealr iCloud 餐食数据的选项。如仍需协助，请联系我们。</p><h2>联系我们</h2><p><a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></div></article>
-    <article class="language-panel" data-language="zh-Hant" hidden><p class="eyebrow">協助</p><h1>Mealr 支援</h1><p class="lead">如遇到識別、健康權限、iCloud 同步或訂閱問題，請聯絡我們。</p><div class="card"><h2>識別不準確？</h2><p>可在確認頁用「少／正常／多」調整；如食物被遮擋，可換角度重拍。</p><h2>看不到消耗？</h2><p>請連接 Apple 健康並允許讀取活動和基礎能量。請以真機驗證。</p><h2>iCloud 未同步？</h2><p>確認會員有效、裝置使用同一 Apple 帳戶、iCloud Drive 已開啟及網絡正常，然後點「立即同步」。</p><h2>管理訂閱</h2><p>前往系統「設定」→ Apple 帳戶 →「訂閱」。</p><h2>刪除資料</h2><p>你可刪除本機記錄或卸載 App；會員頁將提供刪除全部 Mealr iCloud 餐食資料的選項。</p><h2>聯絡</h2><p><a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></div></article>
-    <article class="language-panel" data-language="en" hidden><p class="eyebrow">Help</p><h1>Mealr Support</h1><p class="lead">Having trouble with recognition, Health permissions, iCloud sync, or a subscription? We are here to help.</p><div class="card"><h2>Recognition looks wrong</h2><p>Use the low-friction “less / normal / more” adjustment. If food is obscured, retake the photo from a clearer angle.</p><h2>No energy burned is shown</h2><p>Connect Apple Health and allow access to active and basal energy. Use a physical device for realistic Health data.</p><h2>iCloud is not syncing</h2><p>Confirm that membership is active, all devices use the same Apple Account, iCloud Drive is enabled, and a network connection is available. Then tap Sync Now.</p><h2>Manage a subscription</h2><p>Open Settings → Apple Account → Subscriptions. Apple manages trials and refunds.</p><h2>Delete data</h2><p>Delete local records or uninstall the app. The membership screen will provide an option to delete all Mealr meal data from iCloud.</p><h2>Contact</h2><p><a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></div></article>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbfaf7"><meta name="description" content="Mealr Support">
+<title>技术支持 · Mealr</title><link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body><div class="wrap">
+  <div class="site-bar">
+    <a class="wordmark" href="index.html" data-localized-link="index.html">Mealr</a>
+    <nav class="language-picker" aria-label="Language">
+      <button type="button" data-set-language="zh-Hans">简体中文</button>
+      <button type="button" data-set-language="zh-Hant">繁體中文</button>
+      <button type="button" data-set-language="en">English</button>
+    </nav>
+  </div>
+  <main tabindex="-1">
+    <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="技术支持 · Mealr">
+      <header><h1>技术支持</h1><p class="updated">需要 iOS 18 或更新版本</p></header>
+      <p class="lede">遇到问题或有功能建议，请发送邮件至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+      <h2>识别结果不准确怎么办？</h2><p>Mealr 的结果是用于趋势记录的估算，不需要精确到克。你可以在确认页使用“少、正常、多”快速调整。如果食物被遮挡，换一个能看清整盘食物的角度重拍通常更有效。</p>
+      <h2>为什么首页没有显示消耗？</h2><p>请在 Mealr 中连接 Apple 健康，并允许读取活动能量和基础能量。Apple 健康的真实数据需要在 iPhone 上验证，模拟器通常没有完整记录。</p>
+      <h2>怎样修改 Apple 健康权限？</h2><p>打开“设置 → 隐私与安全性 → 健康 → Mealr”，或在“健康”App 中打开个人头像后的“App 与服务”，选择 Mealr。</p>
+      <h2>为什么 iCloud 没有同步？</h2><p>iCloud 同步是会员功能。请确认设备登录了同一个 Apple 账户、iCloud Drive 已开启且网络可用，然后在 Mealr 会员页选择“立即同步”。</p>
+      <h2>怎样删除 iCloud 中的数据？</h2><p>打开 Mealr 会员页，选择“删除 iCloud 中的 Mealr 数据”。这会删除 CloudKit 私有数据库中的 Mealr 餐食记录和照片，但不会同时删除当前设备上的本机记录。</p>
+      <div class="note"><p>删除云端数据后，如果保留本机记录并再次开启同步，这些记录可能重新上传。若要全部移除，请同时删除本机记录。</p></div>
+      <h2>怎样管理或取消订阅？</h2><p>打开系统“设置”，点你的 Apple 账户，再选择“订阅”。免费试用、续订、退款和付款均由 Apple 管理。</p>
+      <h2>Mealr 是医疗或营养建议吗？</h2><p>不是。照片识别和营养数据都是估算值，只适合一般信息与趋势记录。涉及疾病、孕期、进食障碍或专业营养管理时，请咨询合格专业人士。</p>
+    </article>
+
+    <article class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="技術支援 · Mealr">
+      <header><h1>技術支援</h1><p class="updated">需要 iOS 18 或以上版本</p></header>
+      <p class="lede">如遇到問題或有功能建議，請電郵至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+      <h2>識別結果不準確？</h2><p>Mealr 的結果是用於趨勢記錄的估算，不需要精確到克。你可用「少、正常、多」快速調整；如食物被遮擋，請換一個能看清整盤食物的角度重拍。</p>
+      <h2>首頁沒有顯示消耗？</h2><p>請連接 Apple 健康並允許讀取活動和基礎能量。模擬器通常沒有完整的健康資料，請以 iPhone 驗證。</p>
+      <h2>修改 Apple 健康權限</h2><p>前往「設定 → 私隱與保安 → 健康 → Mealr」，或在「健康」App 的「App 與服務」中選擇 Mealr。</p>
+      <h2>iCloud 沒有同步？</h2><p>確認會員有效、裝置使用同一 Apple 帳戶、iCloud Drive 已開啟且網絡可用，然後在會員頁選擇「立即同步」。</p>
+      <h2>刪除 iCloud 資料</h2><p>在會員頁選擇「刪除 iCloud 中的 Mealr 資料」。這會刪除 CloudKit 私人資料庫中的餐食記錄和相片，但不會同時刪除本機記錄。</p><div class="note"><p>如保留本機記錄並再次同步，記錄可能重新上傳。需要完全移除時，請同時刪除本機記錄。</p></div>
+      <h2>管理或取消訂閱</h2><p>前往系統「設定」→ Apple 帳戶 →「訂閱」。試用、續訂、退款和付款由 Apple 管理。</p>
+      <h2>醫療與營養提示</h2><p>Mealr 的識別和營養結果為估算值，不構成醫療或專業營養建議。</p>
+    </article>
+
+    <article class="language-panel" data-language="en" lang="en" data-title="Support · Mealr">
+      <header><h1>Support</h1><p class="updated">Requires iOS 18 or later</p></header>
+      <p class="lede">For problems or feature requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+      <h2>The estimate looks wrong</h2><p>Mealr provides estimates for trend tracking, not gram-level precision. Use the quick less, normal, or more adjustment. If food is obscured, retake the photo from an angle that shows the whole plate.</p>
+      <h2>No energy burned appears</h2><p>Connect Apple Health and allow access to active and basal energy. A simulator generally lacks complete Health data, so verify this on an iPhone.</p>
+      <h2>Change Apple Health access</h2><p>Open Settings → Privacy &amp; Security → Health → Mealr, or select Mealr under Apps and Services in the Health app.</p>
+      <h2>iCloud is not syncing</h2><p>Confirm that membership is active, devices use the same Apple Account, iCloud Drive is enabled, and a network connection is available. Then choose Sync Now on the membership screen.</p>
+      <h2>Delete iCloud data</h2><p>Choose Delete Mealr Data from iCloud on the membership screen. This deletes Mealr meal records and photos in the CloudKit private database, but does not also delete local records.</p><div class="note"><p>If local records remain and you sync again, they may be uploaded again. Delete local records too when you want to remove everything.</p></div>
+      <h2>Manage or cancel a subscription</h2><p>Open Settings, select your Apple Account, then Subscriptions. Apple manages trials, renewals, refunds, and payment.</p>
+      <h2>Medical and nutrition disclaimer</h2><p>Mealr's recognition and nutrition results are estimates and are not medical or professional nutrition advice.</p>
+    </article>
   </main>
-  <footer>© 2026 Mealr · <a href="index.html">Home</a><a href="privacy.html">Privacy</a></footer>
-</body>
-</html>
+  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Mealr</a> · <a href="privacy.html" data-localized-link="privacy.html">Privacy</a></p></footer>
+</div><script src="language.js"></script></body></html>
