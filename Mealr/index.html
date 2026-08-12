@@ -1,128 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Mealr — snap a meal and keep moving.">
-<meta name="theme-color" content="#fbfaf7">
-<title>Mealr</title>
-<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=2">
-<link rel="apple-touch-icon" href="assets/icon-512.png?v=2">
-<link rel="stylesheet" href="style.css?v=placr-20260812-1">
-<script>document.documentElement.classList.add("js")</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mealr — 拍照记录一餐，轻松了解每日热量趋势。">
+  <title>Mealr</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="language.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <div class="site-bar">
-    <a class="wordmark" href="index.html" aria-label="Mealr home">Mealr</a>
-    <nav class="language-picker" aria-label="Language">
-      <button type="button" data-set-language="zh-Hans">简体中文</button>
-      <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
-      <button type="button" data-set-language="zh-HK">繁中・香港</button>
-      <button type="button" data-set-language="ja">日本語</button>
-      <button type="button" data-set-language="en">English</button>
-    </nav>
-  </div>
-
-  <main tabindex="-1">
-    <section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Mealr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=2" alt="" width="76" height="76">
-        <h1>拍一下，这顿就记好了</h1>
-        <p class="lede">Mealr 从照片估算一餐的热量和营养。无需称重，不用填表，确认一次就能继续生活。</p>
-        <p class="meta">适用于 iPhone · 需要 iOS 18 或更新版本</p>
-      </header>
-      <ul class="features">
-        <li><strong>拍照即记录</strong><span>识别食物，估算热量、蛋白质、碳水和脂肪。</span></li>
-        <li><strong>不要求克数</strong><span>需要调整时，只用“少、正常、多”这样的简单选择。</span></li>
-        <li><strong>看见长期趋势</strong><span>结合 Apple 健康，查看每日摄入、消耗和热量缺口。</span></li>
-      </ul>
-      <p class="closing">没有账号系统，没有复杂饮食计划。Mealr 只想让记录少一点负担。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>照片、Apple 健康与 iCloud 数据</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、权限和联系方式</span></a>
-      </div>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mealr</a>
+    <select id="language-picker" class="language-picker" aria-label="Language">
+      <option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option>
+    </select>
+  </header>
+  <main>
+    <section class="language-panel" data-language="zh-Hans">
+      <p class="eyebrow">拍一下，就记好了</p><h1>让饮食记录少一点负担。</h1>
+      <p class="lead">Mealr 用照片估算一餐的热量与营养。你无需称重或填写表单，确认一次即可查看每天的摄入、消耗与热量缺口。</p>
+      <div class="actions"><a class="button secondary" href="privacy.html#zh-Hans">隐私政策</a><a class="button secondary" href="support.html#zh-Hans">获取支持</a></div>
     </section>
-
-    <section class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="Mealr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=2" alt="" width="76" height="76">
-        <h1>拍一下，這餐就記好了</h1>
-        <p class="lede">Mealr 從相片估算一餐的熱量與營養。無需稱重，不用填表，確認一次就能繼續生活。</p>
-        <p class="meta">適用於 iPhone · 需要 iOS 18 或以上版本</p>
-      </header>
-      <ul class="features">
-        <li><strong>拍照即記錄</strong><span>識別食物，估算熱量、蛋白質、碳水化合物與脂肪。</span></li>
-        <li><strong>不要求克數</strong><span>需要調整時，只用「少、正常、多」這類簡單選擇。</span></li>
-        <li><strong>看見長期趨勢</strong><span>配合 Apple 健康，查看每日攝取、消耗與熱量差。</span></li>
-      </ul>
-      <p class="closing">沒有帳戶系統，也沒有複雜飲食計劃。Mealr 只想讓記錄少一點負擔。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>私隱政策</strong><span>相片、Apple 健康與 iCloud 資料</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、權限與聯絡方式</span></a>
-      </div>
+    <section class="language-panel" data-language="zh-Hant" hidden>
+      <p class="eyebrow">拍一下，就記好了</p><h1>讓飲食記錄少一點負擔。</h1>
+      <p class="lead">Mealr 用照片估算一餐的熱量與營養。你無需稱重或填寫表格，確認一次即可查看每天的攝取、消耗與熱量差。</p>
+      <div class="actions"><a class="button secondary" href="privacy.html#zh-Hant">私隱政策</a><a class="button secondary" href="support.html#zh-Hant">取得支援</a></div>
     </section>
-
-    <section class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="Mealr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=2" alt="" width="76" height="76">
-        <h1>影低一餐，就記錄好了</h1>
-        <p class="lede">Mealr 從相片估算一餐的熱量及營養。毋須磅重，不用填表，確認一次就可以繼續生活。</p>
-        <p class="meta">適用於 iPhone · 需要 iOS 18 或以上版本</p>
-      </header>
-      <ul class="features">
-        <li><strong>拍照即記錄</strong><span>辨認食物，估算熱量、蛋白質、碳水化合物及脂肪。</span></li>
-        <li><strong>不要求克數</strong><span>需要調整時，只需選擇「少、正常、多」。</span></li>
-        <li><strong>看見長期趨勢</strong><span>配合 Apple 健康，查看每日攝取、消耗及熱量差。</span></li>
-      </ul>
-      <p class="closing">沒有帳戶系統，也沒有複雜飲食計劃。Mealr 只想令記錄輕鬆一點。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>私隱政策</strong><span>相片、Apple 健康及 iCloud 資料</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、權限及聯絡方法</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="ja" lang="ja" data-title="Mealr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=2" alt="" width="76" height="76">
-        <h1>撮るだけで、食事の記録が完了</h1>
-        <p class="lede">Mealr は食事の写真からカロリーと栄養を推定します。重さを量る必要も、フォームを埋める必要もありません。一度確認すれば完了です。</p>
-        <p class="meta">iPhone 向け · iOS 18 以降が必要です</p>
-      </header>
-      <ul class="features">
-        <li><strong>写真からすぐ記録</strong><span>食べ物を認識し、カロリー、たんぱく質、炭水化物、脂質を推定します。</span></li>
-        <li><strong>グラム入力は不要</strong><span>調整が必要な場合も「少なめ・普通・多め」から選ぶだけです。</span></li>
-        <li><strong>長期的な傾向を確認</strong><span>Apple ヘルスケアと連携し、摂取量、消費量、カロリー収支を確認できます。</span></li>
-      </ul>
-      <p class="closing">アカウント登録も複雑な食事プランもありません。Mealr は記録の負担を軽くします。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>プライバシーポリシー</strong><span>写真、Apple ヘルスケア、iCloud のデータ</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>サポート</strong><span>よくある質問、権限、お問い合わせ</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="en" lang="en" data-title="Mealr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=2" alt="" width="76" height="76">
-        <h1>Snap a meal and keep moving</h1>
-        <p class="lede">Mealr estimates calories and nutrition from a photo. No weighing, no forms—confirm once and get on with your day.</p>
-        <p class="meta">For iPhone · Requires iOS 18 or later</p>
-      </header>
-      <ul class="features">
-        <li><strong>Photo-first logging</strong><span>Recognizes food and estimates calories, protein, carbohydrates, and fat.</span></li>
-        <li><strong>No grams required</strong><span>When an adjustment helps, choose simple options such as less, normal, or more.</span></li>
-        <li><strong>Trends that matter</strong><span>Use Apple Health to follow daily intake, energy burned, and calorie balance.</span></li>
-      </ul>
-      <p class="closing">No account system and no complicated diet plan. Mealr simply makes logging feel lighter.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>Photos, Apple Health, and iCloud data</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, permissions, and contact details</span></a>
-      </div>
+    <section class="language-panel" data-language="en" hidden>
+      <p class="eyebrow">Snap it. Log it.</p><h1>Food tracking with less friction.</h1>
+      <p class="lead">Mealr estimates calories and nutrition from a photo. No weighing or forms—confirm once, then follow your daily intake, energy burned, and calorie balance.</p>
+      <div class="actions"><a class="button secondary" href="privacy.html#en">Privacy Policy</a><a class="button secondary" href="support.html#en">Support</a></div>
     </section>
   </main>
-
-  <footer><p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></footer>
-</div>
-<script src="language.js?v=placr-20260812-1"></script>
+  <footer>© 2026 Mealr · <a href="privacy.html">Privacy</a><a href="support.html">Support</a></footer>
 </body>
 </html>

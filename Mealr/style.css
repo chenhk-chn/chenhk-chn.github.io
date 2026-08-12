@@ -1,26 +1,11 @@
 :root {
   color-scheme: light dark;
-  --bg: #fbfaf7;
-  --fg: #20201e;
-  --muted: #6c6a64;
-  --rule: #d9d6cf;
-  --accent: #d96613;
-  --accent-strong: #a94708;
-  --card: #f0eee8;
-  --focus: #bf6a38;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #171816;
-    --fg: #f3f1ea;
-    --muted: #aaa79e;
-    --rule: #3b3d38;
-    --accent: #ff9b4a;
-    --accent-strong: #ffb477;
-    --card: #222420;
-    --focus: #eea06e;
-  }
+  --accent: #ff8a1f;
+  --text: #1d1d1f;
+  --secondary: #6e6e73;
+  --surface: rgba(255, 255, 255, .76);
+  --line: rgba(0, 0, 0, .08);
+  --bg: #f5f5f7;
 }
 
 * { box-sizing: border-box; }
@@ -29,325 +14,105 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  padding: 0 24px 96px;
-  background: var(--bg);
-  color: var(--fg);
-  font: 17px/1.68 -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Helvetica Neue", "PingFang SC", "PingFang TC", "Hiragino Sans",
-    "Yu Gothic", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 85% -10%, rgba(255, 138, 31, .16), transparent 35rem),
+    var(--bg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap { max-width: 760px; margin: 0 auto; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-.site-bar {
+.site-header, main, footer {
+  width: min(760px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--rule);
+  padding: 28px 0 12px;
 }
 
-.wordmark {
-  color: var(--fg);
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
+.brand {
+  color: var(--text);
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-
-/* 图标只在够大的时候才看得出是什么：缩到导航栏那个尺寸，塔身和图钉会糊成
-   一团噪点。所以它只出现在首页标题上方。 */
-.hero-mark {
-  display: block;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 28px;
+  letter-spacing: -.02em;
 }
 
 .language-picker {
-  display: none;
-  align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.language-picker::-webkit-scrollbar { display: none; }
-
-.js .language-picker { display: flex; }
-
-.language-picker button {
-  appearance: none;
-  border: 1px solid transparent;
+  padding: 8px 30px 8px 12px;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 7px 10px;
-  background: transparent;
-  color: var(--muted);
+  color: var(--text);
+  background: var(--surface);
   font: inherit;
-  font-size: 13px;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color 180ms ease, border-color 180ms ease,
-    background-color 180ms ease;
 }
 
-.language-picker button:hover {
-  color: var(--fg);
-  border-color: var(--rule);
-}
+main { padding: 52px 0 80px; }
 
-.language-picker button.is-active {
-  color: var(--fg);
-  background: var(--card);
-  border-color: var(--rule);
-}
-
-.language-picker button:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
-main:focus { outline: none; }
-
-.language-panel {
-  padding-top: 1px;
-}
-
-/* 没有 JS 时五种语言会全部堆在一起，靠这条分隔线区分。必须限定在没有 JS 的
-   情况下：`+` 选的是 DOM 里的相邻关系，跟显不显示无关，不限定的话只要当前语言
-   不是第一个面板，就会在标题上方白白多出一段空白和一条双线。 */
-html:not(.js) .language-panel + .language-panel {
-  margin-top: 96px;
-  border-top: 3px double var(--rule);
-}
-
-.js .language-panel { display: none; }
-.js .language-panel.is-active { display: block; }
-
-header {
-  padding: 72px 0 40px;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 48px;
-}
-
-header .home {
-  display: inline-block;
-  margin-bottom: 24px;
-  font-size: 15px;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-header .home:hover { text-decoration: underline; }
-
-h1 {
+.eyebrow {
   margin: 0 0 8px;
-  max-width: 100%;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: clamp(42px, 7vw, 64px);
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
+  color: var(--accent);
+  font-weight: 650;
 }
 
-h1:lang(zh-Hans),
-h1:lang(zh-Hant),
-h1:lang(zh-HK),
-h1:lang(ja) {
-  line-break: strict;
-  letter-spacing: -0.02em;
+h1, h2 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif;
+  letter-spacing: -.035em;
 }
 
-.updated { margin: 0; color: var(--muted); font-size: 15px; }
-
-h2 {
-  margin: 56px 0 16px;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 27px;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-}
-
-h3 { margin: 32px 0 10px; font-size: 20px; letter-spacing: -0.01em; }
-
-/* 正文列有 760px，英文在这个宽度下一行能排到九十多个字符，读起来会串行。
-   38em 折算过来中文约 38 字、英文约 70 字符，都在舒服的范围内。 */
-p, ul { max-width: 38em; }
-
-p { margin: 0 0 16px; }
-
-ul { margin: 0 0 16px; padding-left: 22px; }
-
-li { margin-bottom: 8px; }
-
-a { color: var(--accent); text-underline-offset: 0.18em; }
-a:hover { color: var(--accent-strong); }
-
-.lede {
-  max-width: 34em;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 23px;
-  line-height: 1.45;
-  color: var(--fg);
-}
-
-/* 首页不需要标题下那条横线：下面紧接着就是特性列表，多一条边界只会显得碎。 */
-.hero {
-  padding: 76px 0 0;
-  border-bottom: 0;
-  margin-bottom: 40px;
-}
-
-.hero .lede { margin: 24px 0 0; }
-
-.hero .meta {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.features {
-  display: grid;
-  gap: 28px;
-  margin: 0 0 48px;
-  padding: 0;
-  list-style: none;
-}
-
-.features li {
-  margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--rule);
-}
-
-.features strong {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-}
-
-.features span {
-  display: block;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.closing {
-  max-width: 34em;
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-@media (min-width: 721px) {
-  .features {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-}
-
-.note {
-  max-width: 38em;
-  background: var(--card);
-  border-left: 3px solid var(--accent);
-  border-radius: 2px 12px 12px 2px;
-  padding: 18px 22px;
-  margin: 28px 0;
-  font-size: 16px;
-  /* 提示框讲的是「删掉 App 不等于删干净」这类要紧事，用灰字会被当成脚注读过去。 */
-  color: var(--fg);
-}
-
-.note p:last-child { margin-bottom: 0; }
-
-.divider {
-  margin: 80px 0 0;
-  border: 0;
-  border-top: 1px solid var(--rule);
-}
-
-footer {
-  margin-top: 64px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 14px;
-}
-
-footer a { color: var(--muted); }
-
-.cards { display: grid; gap: 16px; margin-top: 48px; }
-
-@media (min-width: 721px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
+h1 { margin: 0; font-size: clamp(42px, 8vw, 68px); line-height: 1.05; }
+h2 { margin: 34px 0 8px; font-size: 24px; }
+p, li { color: var(--secondary); }
+.lead { max-width: 650px; font-size: 20px; line-height: 1.55; }
 
 .card {
-  display: block;
-  padding: 28px;
-  background: var(--card);
-  border: 1px solid transparent;
-  border-radius: 14px;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: border-color 180ms ease, color 180ms ease;
+  margin-top: 32px;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .05);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
 }
 
-.card:hover {
-  color: inherit;
-  border-color: var(--accent);
+.meta { margin: 6px 0 0; font-size: 14px; }
+.language-panel[hidden] { display: none; }
+ul { padding-left: 1.25rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  color: white;
+  background: var(--accent);
+  font-weight: 650;
 }
+.button.secondary { color: var(--text); background: var(--surface); border: 1px solid var(--line); }
+.button:hover { text-decoration: none; filter: brightness(.97); }
 
-.card strong {
-  display: block;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 24px;
-  margin-bottom: 4px;
-}
+footer { padding: 24px 0 48px; border-top: 1px solid var(--line); color: var(--secondary); font-size: 14px; }
+footer a { margin-right: 16px; }
 
-.card span { color: var(--muted); font-size: 15px; }
-
-code {
-  padding: 0.1em 0.35em;
-  border: 1px solid var(--rule);
-  border-radius: 5px;
-  font: 0.88em/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 720px) {
-  body { padding-inline: 18px; }
-
-  .site-bar {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f5f5f7;
+    --secondary: #a1a1a6;
+    --surface: rgba(35, 35, 38, .72);
+    --line: rgba(255, 255, 255, .10);
+    --bg: #0d0d0f;
   }
-
-  .language-picker {
-    width: 100%;
-    flex-wrap: wrap;
-    overflow: visible;
-  }
-
-  header { padding-top: 52px; }
-  h1 { font-size: clamp(40px, 12vw, 54px); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition-duration: 0.01ms !important; }
+@media (max-width: 520px) {
+  .site-header { padding-top: 20px; }
+  main { padding-top: 34px; }
+  .card { padding: 20px; border-radius: 20px; }
 }

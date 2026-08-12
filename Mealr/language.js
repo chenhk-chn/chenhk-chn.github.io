@@ -1,87 +1,26 @@
-(() => {
-  const supported = ["zh-Hans", "zh-Hant", "zh-HK", "ja", "en"];
-  const aliases = {
-    "zh-CN": "zh-Hans",
-    "zh-SG": "zh-Hans",
-    "zh-TW": "zh-Hant",
-    "zh-MO": "zh-HK",
-    "en-US": "en",
-    "en-GB": "en",
-  };
+const supported = ["zh-Hans", "zh-Hant", "en"];
 
-  function normalizeLanguage(value) {
-    if (!value) return null;
-    if (supported.includes(value)) return value;
-    if (aliases[value]) return aliases[value];
+function preferredLanguage() {
+  const hash = location.hash.slice(1);
+  if (supported.includes(hash)) return hash;
+  const language = navigator.language.toLowerCase();
+  if (language.startsWith("zh-tw") || language.startsWith("zh-hk") || language.startsWith("zh-mo")) return "zh-Hant";
+  if (language.startsWith("zh")) return "zh-Hans";
+  return "en";
+}
 
-    const lower = value.toLowerCase();
-    if (lower.startsWith("zh-hk") || lower.startsWith("zh-mo")) return "zh-HK";
-    if (lower.startsWith("zh-tw") || lower.includes("hant")) return "zh-Hant";
-    if (lower.startsWith("zh")) return "zh-Hans";
-    if (lower.startsWith("ja")) return "ja";
-    if (lower.startsWith("en")) return "en";
-    return null;
-  }
-
-  function browserLanguage() {
-    for (const value of navigator.languages || [navigator.language]) {
-      const normalized = normalizeLanguage(value);
-      if (normalized) return normalized;
-    }
-    return "en";
-  }
-
-  const hashLanguage = normalizeLanguage(
-    decodeURIComponent(window.location.hash.slice(1))
-  );
-  let activeLanguage = hashLanguage || browserLanguage();
-
-  function localizedTarget(link, language) {
-    const base = link.dataset.localizedLink;
-    return `${base}#${encodeURIComponent(language)}`;
-  }
-
-  function showLanguage(language, updateHash = false) {
-    activeLanguage = normalizeLanguage(language) || "en";
-    document.documentElement.lang = activeLanguage;
-
-    document.querySelectorAll("[data-language]").forEach((panel) => {
-      const isActive = panel.dataset.language === activeLanguage;
-      panel.classList.toggle("is-active", isActive);
-      panel.hidden = !isActive;
-      if (isActive && panel.dataset.title) {
-        document.title = panel.dataset.title;
-      }
-    });
-
-    document.querySelectorAll("[data-set-language]").forEach((button) => {
-      const isActive = button.dataset.setLanguage === activeLanguage;
-      button.setAttribute("aria-pressed", String(isActive));
-      button.classList.toggle("is-active", isActive);
-    });
-
-    document.querySelectorAll("[data-localized-link]").forEach((link) => {
-      link.href = localizedTarget(link, activeLanguage);
-    });
-
-    if (updateHash) {
-      history.replaceState(null, "", `#${encodeURIComponent(activeLanguage)}`);
-    }
-  }
-
-  document.querySelectorAll("[data-set-language]").forEach((button) => {
-    button.addEventListener("click", () => {
-      showLanguage(button.dataset.setLanguage, true);
-      document.querySelector("main")?.focus({ preventScroll: true });
-    });
+function showLanguage(language) {
+  const selected = supported.includes(language) ? language : "en";
+  document.querySelectorAll(".language-panel").forEach(panel => {
+    panel.hidden = panel.dataset.language !== selected;
   });
+  const picker = document.querySelector("#language-picker");
+  if (picker) picker.value = selected;
+  document.documentElement.lang = selected;
+  history.replaceState(null, "", `#${selected}`);
+}
 
-  window.addEventListener("hashchange", () => {
-    const language = normalizeLanguage(
-      decodeURIComponent(window.location.hash.slice(1))
-    );
-    if (language) showLanguage(language);
-  });
-
-  showLanguage(activeLanguage);
-})();
+document.addEventListener("DOMContentLoaded", () => {
+  showLanguage(preferredLanguage());
+  document.querySelector("#language-picker")?.addEventListener("change", event => showLanguage(event.target.value));
+});
