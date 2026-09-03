@@ -22,7 +22,7 @@
   </div>
   <main tabindex="-1">
     <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="隐私政策 · Mealr">
-      <header><h1>隐私政策</h1><p class="updated">最后更新：2026 年 8 月 26 日</p></header>
+      <header><h1>隐私政策</h1><p class="updated">最后更新：2026 年 9 月 3 日</p></header>
       <p class="lede">Mealr 只处理完成饮食记录所必需的数据。你不需要注册账号，也不会因为使用 Mealr 而被用于广告或跨应用跟踪。</p>
       <h2>餐食照片与 AI 分析</h2>
       <p>只有当你拍摄或选择照片并发起识别时，Mealr 才会将该照片和食物识别提示发送到开发者控制的 Mealr 服务，再由该服务调用阿里云百炼的 Qwen 多模态模型。请求不会主动附加你的姓名、Apple 健康历史、位置或完整餐食历史。</p>
@@ -43,6 +43,10 @@
       <p>你可以在 App 的设置中主动发送反馈。若选择附带诊断信息，Mealr 只会附带系统版本、识别模式、最近错误码等技术信息，不会附带照片、菜名、位置、健康明细或访问凭证。崩溃报告由 Apple 通过 App Store Connect 提供。当前版本没有第三方统计分析 SDK。</p>
       <h2>订阅与付款</h2>
       <p>购买、免费试用、续订、退款和付款信息由 Apple 处理。Mealr 只通过 StoreKit 获取商品信息和订阅权益状态，不接收银行卡或完整付款资料。</p>
+      <h2>设备验证与用量配额</h2>
+      <p>为防止刷量和滥用，识别服务使用 Apple App Attest 验证设备完整性。服务端会保存该设备凭据的标识哈希、公钥与计数器，用于验证请求来自真实安装的 App、按设备统计当天已使用的免费识别次数（按北京时间自然日重置），并限制异常高频请求。这类设备标识不绑定姓名，也无法反推出你的身份。</p>
+      <p>订阅状态通过 Apple 签名的凭证在服务端校验；服务端只保存订阅交易的不可逆摘要与到期时间，不保存付款资料。请求 IP 仅用于小时级限流等滥用防护，相应计数会在短时间内自动过期。</p>
+      <p>卸载并重装 App 后，多数系统会生成新的设备凭据并重新计数；部分系统可能沿用同一凭据，此时当日已用次数会继续累计。你可通过 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> 请求删除与设备凭据关联的服务端记录。</p>
       <h2>相机、照片与分析</h2>
       <ul><li>相机只在你选择拍摄一餐时使用。</li><li>系统照片选择器只向 Mealr 提供你明确选择的项目。</li><li>麦克风只在你点击语音输入时使用，停止后立即释放。</li><li>当前版本没有第三方广告、跨应用跟踪或行为分析 SDK。</li></ul>
       <h2>保留与删除</h2>
@@ -54,7 +58,7 @@
     </article>
 
     <article class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="私隱政策 · Mealr">
-      <header><h1>私隱政策</h1><p class="updated">最後更新：2026 年 8 月 26 日</p></header>
+      <header><h1>私隱政策</h1><p class="updated">最後更新：2026 年 9 月 3 日</p></header>
       <p class="lede">Mealr 只處理完成飲食記錄所必需的資料。你不需要註冊帳戶，也不會因使用 Mealr 而被用於廣告或跨 App 追蹤。</p>
       <h2>餐食相片與 AI 分析</h2><p>只有當你拍攝或選擇相片並開始識別時，Mealr 才會把相片和食物識別提示傳送至開發者控制的 Mealr 服務，再由該服務調用阿里雲百煉的 Qwen 多模態模型。請求不會主動附加你的姓名、Apple 健康歷史、位置或完整餐食歷史。</p><p>一次辨識最多可包含 4 張相片，會作為同一餐一起傳送。服務供應商可能按其條款處理請求內容和必要技術資訊。模型服務密鑰不會包含在 App 中；Mealr 不會主動永久保存上傳的餐食相片。</p>
       <h2>語音補充</h2><p>只有當你點擊麥克風時，Mealr 才會錄音，並以系統語音辨識把這段話轉成文字。音訊不會存成檔案，也不會由 Mealr 上傳；只有轉寫出的文字會隨相片一起傳送到 Mealr 服務，用來理解你實際吃了多少。單次語音最長 60 秒，傳送前你可以編輯或清空這段文字。</p><p>裝置支援時，轉寫在本機完成。若不支援，系統可能將音訊交由 Apple 的語音辨識服務處理，Mealr 不接收也不保留音訊。不使用語音輸入不影響拍攝和記錄。</p>
@@ -63,6 +67,7 @@
       <h2>本機儲存</h2><p>餐食記錄、相片和大致位置保存在這台裝置。目前版本不會將餐食歷史或相片同步到 CloudKit 或 iCloud。</p>
       <h2>意見回饋與診斷</h2><p>你可以在 App 設定中主動傳送意見。若選擇附帶診斷資訊，Mealr 只會附帶系統版本、辨識模式、最近錯誤碼等技術資訊，不會附帶相片、菜名、位置、健康明細或存取憑證。當機報告由 Apple 透過 App Store Connect 提供。目前版本沒有第三方統計分析 SDK。</p>
       <h2>訂閱與付款</h2><p>購買、試用、續訂、退款和付款資料由 Apple 處理。Mealr 只讀取商品和權益狀態，不接收銀行卡資料。</p>
+      <h2>裝置驗證與用量配額</h2><p>為防止刷量與濫用，識別服務使用 Apple App Attest 驗證裝置完整性。伺服器會保存該裝置憑證的識別雜湊、公鑰與計數器，用於驗證請求來自真實安裝的 App、按裝置統計當天已使用的免費辨識次數（按北京時間自然日重置），並限制異常高頻請求。這類裝置標識不綁定姓名，也無法反推你的身分。</p><p>訂閱狀態經 Apple 簽名的憑證在伺服器校驗；伺服器只保存訂閱交易的不可逆摘要與到期時間，不保存付款資料。請求 IP 僅用於小時級限流等濫用防護，相應計數會在短時間內自動過期。</p><p>解除安裝並重裝 App 後，多數系統會產生新的裝置憑證並重新計數；部分系統可能沿用同一憑證，此時當日已用次數會繼續累計。你可以經 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> 要求刪除與裝置憑證關聯的伺服器記錄。</p>
       <h2>權限與分析</h2><ul><li>相機只在你選擇拍攝時使用。</li><li>系統相片選擇器只提供你明確選取的項目。</li><li>麥克風只在你點擊語音輸入時使用，停止後立即釋放。</li><li>目前版本沒有第三方廣告、跨 App 追蹤或行為分析 SDK。</li></ul>
       <h2>保留與刪除</h2><p>可在 App 的今日、趨勢或設定中刪除單筆餐食，或重設全部本機記錄和相片。刪除時會盡量同時刪除寫入 Apple 健康的對應樣本；也可在「健康」App 中管理。移除 App 會清除其餘本機資料。</p>
       <h2>兒童與健康提示</h2><p>Mealr 不面向 13 歲以下兒童。熱量結果為估算值，不構成醫療或營養建議。</p>
@@ -70,7 +75,7 @@
     </article>
 
     <article class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="私隱政策 · Mealr">
-      <header><h1>私隱政策</h1><p class="updated">最後更新：2026 年 8 月 26 日</p></header>
+      <header><h1>私隱政策</h1><p class="updated">最後更新：2026 年 9 月 3 日</p></header>
       <p class="lede">Mealr 只處理完成飲食記錄所必需的資料。你毋須註冊帳戶，使用 Mealr 亦不會令你被用於廣告或跨應用程式追蹤。</p>
       <h2>餐食相片及 AI 分析</h2><p>只有當你拍攝或選擇相片並開始辨認時，Mealr 才會把相片及食物辨認提示傳送至開發者控制的 Mealr 服務，再由該服務調用阿里雲百煉的 Qwen 多模態模型。請求不會主動附加你的姓名、Apple 健康記錄、位置或完整餐食記錄。</p><p>一次辨認最多可包含 4 張相片，會當成同一餐一齊傳送。服務供應商可能按其條款處理請求內容及必要技術資料。模型服務密鑰不會包含在應用程式中；Mealr 不會主動永久保存上傳的餐食相片。</p>
       <h2>語音補充</h2><p>只有當你㩒麥克風嗰陣，Mealr 先會錄音，並用系統語音辨認把你講嘅嘢轉成文字。音訊唔會存成檔案，亦唔會由 Mealr 上傳；只有轉寫出嚟嘅文字會連相片一齊傳送去 Mealr 服務，用嚟理解你實際食咗幾多。單次語音最長 60 秒，傳送之前你可以編輯或者清空呢段文字。</p><p>裝置支援嘅時候，轉寫喺本機完成。如果唔支援，系統可能會將音訊交畀 Apple 嘅語音辨認服務處理，Mealr 唔會接收亦唔會保留音訊。唔用語音輸入唔影響影相同記錄。</p>
@@ -79,6 +84,7 @@
       <h2>本機儲存</h2><p>餐食記錄、相片同大概位置保存在呢部裝置。目前版本唔會將餐食歷史或相片同步到 CloudKit 或 iCloud。</p>
       <h2>意見回饋同診斷</h2><p>你可以喺 App 設定主動傳送意見。如果選擇附帶診斷資訊，Mealr 只會附帶系統版本、辨識模式、最近錯誤碼等技術資訊，唔會附帶相片、菜名、位置、健康明細或存取憑證。當機報告由 Apple 經 App Store Connect 提供。目前版本冇第三方統計分析 SDK。</p>
       <h2>訂閱及付款</h2><p>購買、免費試用、續訂、退款及付款資料由 Apple 處理。Mealr 只透過 StoreKit 取得商品及訂閱權益狀態，不會收到銀行卡資料。</p>
+      <h2>裝置驗證及用量配額</h2><p>為防止刷量及濫用，識別服務使用 Apple App Attest 驗證裝置完整性。伺服器會保存該裝置憑證嘅識別雜湊、公鑰及計數器，用嚟驗證請求來自真實安裝嘅 App、按裝置統計當日已用嘅免費識別次數（按北京時間自然日重置），並限制異常高頻請求。呢類裝置標識唔會綁定姓名，亦無法反推你嘅身分。</p><p>訂閱狀態經 Apple 簽名嘅憑證喺伺服器核驗；伺服器只保存訂閱交易嘅不可逆摘要及到期時間，唔保存付款資料。請求 IP 只用於小時級限流等濫用防護，相關計數會喺短時間內自動過期。</p><p>移除並重裝 App 之後，多數系統會產生新嘅裝置憑證並重新計數；部分系統可能沿用同一憑證，此時當日已用次數會繼續累計。你可以電郵 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> 要求刪除與裝置憑證相關嘅伺服器記錄。</p>
       <h2>權限及分析</h2><ul><li>相機只會在你選擇拍攝一餐時使用。</li><li>系統相片選擇器只會提供你明確選取的項目。</li><li>麥克風只會喺你㩒語音輸入嗰陣使用，停止之後即刻釋放。</li><li>目前版本沒有第三方廣告、跨應用程式追蹤或行為分析 SDK。</li></ul>
       <h2>保留及刪除</h2><p>可在 App 的今日、趨勢或設定中刪除單條餐食，或重設全部本機記錄同相片。刪除時會盡量同時刪除寫入 Apple 健康嘅對應樣本；亦可喺「健康」應用程式管理。移除應用程式會清除其餘本機資料。</p>
       <h2>兒童及健康提示</h2><p>Mealr 不面向 13 歲以下兒童。熱量結果為估算值，只供一般資訊及趨勢記錄，不構成醫療或營養建議。</p>
@@ -86,7 +92,7 @@
     </article>
 
     <article class="language-panel" data-language="ja" lang="ja" data-title="プライバシーポリシー · Mealr">
-      <header><h1>プライバシーポリシー</h1><p class="updated">最終更新：2026 年 8 月 26 日</p></header>
+      <header><h1>プライバシーポリシー</h1><p class="updated">最終更新：2026 年 9 月 3 日</p></header>
       <p class="lede">Mealr は食事の記録に必要なデータだけを処理します。アカウント登録は不要で、広告やアプリ横断トラッキングに利用されることもありません。</p>
       <h2>食事の写真と AI 分析</h2><p>写真を撮影または選択して分析を依頼した場合にだけ、Mealr は写真と認識用指示を開発者管理の Mealr サービスへ送り、そのサービスが Alibaba Cloud Model Studio の Qwen マルチモーダルモデルを呼び出します。氏名、Apple ヘルスケア履歴、位置、完全な食事履歴は意図的に付加しません。</p><p>1 回の分析には最大 4 枚の写真を含められ、同じ食事としてまとめて送信されます。提供者は規約に従って内容と必要な技術情報を処理する場合があります。モデルサービスの認証情報は App に含めず、Mealr はアップロード写真を意図的に永続保存しません。</p>
       <h2>音声メモ</h2><p>マイクボタンを押したときにだけ Mealr は録音し、システムの音声認識で文字に変換します。音声はファイルとして保存されず、Mealr がアップロードすることもありません。送信されるのは書き起こされたテキストだけで、写真と一緒に Mealr サービスへ送られ、実際に食べた量の理解に使われます。1 回の録音は最長 60 秒で、送信前にテキストを編集または消去できます。</p><p>端末が対応している場合、書き起こしはこの端末で行われます。対応していない場合、システムが音声を Apple の音声認識サービスへ送ることがあります。Mealr は音声を受け取らず、保持もしません。音声入力を使わなくても撮影と記録は利用できます。</p>
@@ -95,6 +101,7 @@
       <h2>端末内保存</h2><p>食事記録、写真、およその位置はこの端末に保存されます。現在のバージョンでは、食事履歴や写真を CloudKit や iCloud へ同期しません。</p>
       <h2>フィードバックと診断</h2><p>App の設定から任意でフィードバックを送れます。診断情報を付ける場合、Mealr は OS バージョン、認識モード、直近のエラーコードなどの技術情報のみを含め、写真、料理名、位置、ヘルスケア詳細、アクセストークンは含めません。クラッシュレポートは Apple が App Store Connect 経由で提供します。現在のバージョンに第三者の分析 SDK はありません。</p>
       <h2>サブスクリプションと支払い</h2><p>購入、無料トライアル、更新、返金、支払い情報は Apple が処理します。Mealr は StoreKit から商品と利用権の状態だけを取得し、カード情報は受け取りません。</p>
+      <h2>端末検証と利用枠</h2><p>不正利用の防止のため、認識サービスは Apple App Attest で端末の整合性を検証します。サーバーはこの端末証明書の識別子ハッシュ、公開鍵、カウンターを保存し、正規にインストールされた App からのリクエストであることの確認、端末ごとの当日の無料認識回数の集計（北京時間の暦日でリセット）、異常な高頻度リクエストの制限に使います。こうした端末識別子は氏名に紐づかず、本人を特定することもできません。</p><p>サブスクリプションの状態は Apple 署名のトランザクションでサーバー側検証されます。サーバーが保存するのは取引の不可逆ハッシュと有効期限のみで、支払い情報は保存しません。リクエストの IP は時間あたりのレート制限などの不正利用対策にだけ使われ、該当カウンターは短時間で自動的に期限切れになります。</p><p>App を削除して再インストールした場合、多くのシステムでは新しい端末証明書が作られ計数もリセットされますが、一部のシステムでは同じ証明書が引き継がれ、当日の使用回数が引き続き累計されることがあります。端末証明書に関連するサーバー記録の削除は <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> までご依頼ください。</p>
       <h2>権限と解析</h2><ul><li>カメラは食事を撮影するときだけ使います。</li><li>システムの写真選択画面からは、明示的に選んだ項目だけを受け取ります。</li><li>マイクは音声入力をタップしたときだけ使い、停止後すぐに解放します。</li><li>現在のバージョンには広告、アプリ横断トラッキング、行動解析 SDK はありません。</li></ul>
       <h2>保存期間と削除</h2><p>App の「今日」「トレンド」または設定から食事を1件削除するか、端末内の記録と写真をすべてリセットできます。削除時は Apple ヘルスケアへ書き込んだ対応サンプルもできる限り削除します。ヘルスケア App でも管理できます。App を削除すると、残りの端末内データも消えます。</p>
       <h2>子どもと健康上の注意</h2><p>Mealr は 13 歳未満の子どもを対象としていません。カロリーは一般的な情報と傾向確認のための推定値であり、医療・診断・治療の助言ではありません。</p>
@@ -102,7 +109,7 @@
     </article>
 
     <article class="language-panel" data-language="en" lang="en" data-title="Privacy Policy · Mealr">
-      <header><h1>Privacy Policy</h1><p class="updated">Last updated: August 26, 2026</p></header>
+      <header><h1>Privacy Policy</h1><p class="updated">Last updated: September 3, 2026</p></header>
       <p class="lede">Mealr processes only the data needed to provide meal logging. You do not need an account, and using Mealr does not enroll you in advertising or cross-app tracking.</p>
       <h2>Meal photos and AI analysis</h2><p>Only when you request analysis does Mealr send the selected photo and recognition prompt to a developer-controlled Mealr service, which calls the Qwen multimodal model through Alibaba Cloud Model Studio. Requests do not intentionally include your name, Apple Health history, location, or complete meal history.</p><p>A single analysis can include up to four photos, which are sent together as one meal. The provider may process request content and necessary technical information under its terms. Model-service credentials are not included in the app, and Mealr does not intentionally retain uploaded meal photos permanently.</p>
       <h2>Spoken notes</h2><p>Mealr records only while you hold the microphone active, and uses the system speech recognizer to turn what you said into text. The audio is never written to a file or uploaded by Mealr. Only the transcribed text is sent alongside your photos to the Mealr service, so the model can understand how much you actually ate. A single recording lasts at most 60 seconds, and you can edit or clear the text before sending it.</p><p>When your device supports on-device recognition, transcription happens locally. If it does not, the system may send the audio to Apple's speech recognition service for transcription. Mealr neither receives nor retains that audio. Photo capture and logging work without ever using voice input.</p>
@@ -111,6 +118,7 @@
       <h2>On-device storage</h2><p>Meal records, photos, and approximate location stay on this device. The current version does not sync meal history or photos to CloudKit or iCloud.</p>
       <h2>Feedback and diagnostics</h2><p>You can send feedback from Settings in the app. If you choose to include diagnostics, Mealr attaches technical details such as OS version, inference mode, and recent error codes. It does not attach photos, dish names, location, Health samples, or access tokens. Crash reports are provided by Apple through App Store Connect. The current version has no third-party analytics SDK.</p>
       <h2>Subscriptions and payment</h2><p>Apple processes purchases, trials, renewals, refunds, and payment information. Mealr uses StoreKit only for product and entitlement status and does not receive card details.</p>
+      <h2>Device verification and usage quota</h2><p>To prevent abuse, the recognition service verifies device integrity with Apple App Attest. The server stores a hash of the device credential's identifier, its public key, and a counter. These are used to confirm that requests come from a genuinely installed app, to count each device's daily free recognitions (reset on Beijing calendar days), and to throttle abnormally high request rates. The device identifier is not tied to your name and cannot identify you.</p><p>Subscription status is verified server-side using Apple-signed transactions; the server keeps only an irreversible digest of the transaction and its expiry, never payment details. Request IP addresses are used solely for hourly rate limiting and similar abuse protection, and those counters expire automatically within a short window.</p><p>After deleting and reinstalling the app, most systems issue a fresh device credential and counting starts over; on some systems the same credential may carry over, in which case today's used recognitions keep accumulating. You can request deletion of the server records tied to your device credential at <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
       <h2>Permissions and analytics</h2><ul><li>Camera access is used only when you choose to photograph a meal.</li><li>The system photo picker gives Mealr only the items you explicitly select.</li><li>The microphone is used only while you have voice input running, and is released as soon as you stop.</li><li>The current version contains no third-party advertising, cross-app tracking, or behavioral analytics SDK.</li></ul>
       <h2>Retention and deletion</h2><p>You can delete a single meal from Today, Trends, or Settings, or reset all on-device records and photos. Deletion also tries to remove the matching Apple Health samples; you can manage those in the Health app as well. Uninstalling the app removes remaining local data.</p>
       <h2>Children and health disclaimer</h2><p>Mealr is not directed to children under 13. Calorie results are estimates for general information and trend tracking, not medical advice, diagnosis, or treatment.</p>
