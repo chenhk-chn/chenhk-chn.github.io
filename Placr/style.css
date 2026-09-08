@@ -60,12 +60,14 @@ body {
 }
 
 /* 图标只在够大的时候才看得出是什么：缩到导航栏那个尺寸，塔身和图钉会糊成
-   一团噪点。所以它只出现在首页标题上方。 */
+   一团噪点。所以它只出现在首页标题上方。icon-hero.png 的画布比图标本体
+   四周多 18% 的同色延伸边（透明渐变到页面底色），104px 里画面本体仍约
+   76px，视觉尺寸与前版一致。 */
 .hero-mark {
   display: block;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 28px;
+  width: 104px;
+  height: 104px;
+  margin-bottom: 16px;
 }
 
 .language-picker {
