@@ -15,12 +15,20 @@
 
 <div class="site-bar">
   <a class="wordmark" href="index.html" data-localized-link="index.html">Placr</a>
-  <nav class="language-picker" aria-label="Language">
-    <button type="button" data-set-language="zh-Hans">简体中文</button>
-    <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
-    <button type="button" data-set-language="zh-HK">繁中・香港</button>
-    <button type="button" data-set-language="ja">日本語</button>
-    <button type="button" data-set-language="en">English</button>
+  <nav class="language-picker">
+    <select data-language-select aria-label="Language">
+      <option value="zh-Hans">简体中文</option>
+      <option value="zh-Hant">繁體中文（台灣）</option>
+      <option value="zh-HK">繁體中文（香港）</option>
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="ko">한국어</option>
+    </select>
   </nav>
 </div>
 
@@ -243,6 +251,270 @@
 
     <h2>Contact</h2>
     <p>For any privacy question, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="de" lang="de"
+    data-title="Datenschutzrichtlinie · Placr">
+    <header>
+      <h1>Datenschutzrichtlinie</h1>
+      <p class="updated">Zuletzt aktualisiert: Juli 2026</p>
+    </header>
+
+    <p class="lede">Placr läuft vollständig auf deinem Mac. Es gibt keinen vom Entwickler betriebenen Server und keine Kontoregistrierung; die App sendet deine Fotos oder Nutzungsdaten nie von selbst. Einzige Ausnahme: „Feedback senden“ öffnet dein eigenes Mailprogramm mit einem bearbeitbaren Entwurf.</p>
+
+    <h2>Was nicht erfasst wird</h2>
+    <p>Placr erfasst, speichert oder überträgt keine personenbezogenen Daten an vom Entwickler kontrollierte Server. Es gibt keine Analyse, keine Absturzberichte, keine Werbung, keine appübergreifende Verfolgung und keine SDKs von Drittanbietern zur Datensammlung.</p>
+
+    <h2>Fotos</h2>
+    <p>Nach deiner Freigabe liest Placr Aufnahmezeitpunkt, Standort und Miniaturbilder, um Fotos ohne Standort zu finden, sie zeitlich zu gruppieren und Referenzfotos anzuzeigen. Alles geschieht auf deinem Mac; die Fotos selbst verlassen das Gerät nie.</p>
+    <p>Ein Standort wird erst geschrieben, nachdem du den Kandidaten und die abschließende Sammelbestätigung genehmigt hast. Placr löscht keine Fotos und ändert keine Metadaten außer dem Standort. Der vorherige Standort wird zum Wiederherstellen im lokalen Aktionsverlauf gespeichert.</p>
+
+    <h2>Ortssuche und Drittanbieter</h2>
+    <p>Für eine Ortssuche sendet Placr nur den von dir eingegebenen Text; liegt eine Referenzkoordinate vor, zusätzlich einen ungefähren Suchbereich. Fotos, Miniaturbilder und der Aktionsverlauf werden nie gesendet.</p>
+    <p>Ortssuchen werden von Apple Karten (MapKit) ausgeführt und unterliegen der <a href="https://www.apple.com/legal/privacy/" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
+    <p>Placr übermittelt diesen Diensten nur die für die jeweilige Suche nötigen Mindestinformationen, verkauft keine Daten und erlaubt nicht, Anfragen für Werbung oder Nutzerprofile im Auftrag des Entwicklers zu verwenden.</p>
+
+    <h2>Lokale Speicherung und Speicherdauer</h2>
+    <p>Mediathek-Snapshot, Prüfentwürfe, Aktionsverlauf, Zeitzonen-Cache und Einstellungen bleiben im Sandbox-Container von Placr, bis du die Dateien entfernst.</p>
+    <div class="note">
+      <p>Das Löschen der App entfernt den Sandbox-Container oder den Schlüsselbund-Eintrag nicht automatisch. Vollständige Schritte zum Entfernen folgen.</p>
+    </div>
+
+    <h2>Zugriff entziehen und Daten löschen</h2>
+    <ul>
+      <li>Fotozugriff entziehen: Öffne „Systemeinstellungen → Datenschutz &amp; Sicherheit → Fotos“ und schalte Placr aus.</li>
+      <li>Lokale Daten löschen: Beende Placr, wähle im Finder „Gehe zu → Ordner öffnen“, gib <code>~/Library/Containers/cn.chenhk.placr</code> ein und lege den Ordner in den Papierkorb.</li>
+    </ul>
+    <p>Das Entziehen des Fotozugriffs oder das Löschen lokaler Daten macht bereits geschriebene Standorte nicht rückgängig. Stelle sie zuerst über den Aktionsverlauf wieder her, bevor du die lokalen Daten löschst.</p>
+
+    <h2>Kinder</h2>
+    <p>Placr richtet sich nicht an Kinder und erfasst weder Alter noch andere personenbezogene Daten.</p>
+
+    <h2>Änderungen der Richtlinie</h2>
+    <p>Ändert sich diese Richtlinie, wird das Datum oben auf der Seite aktualisiert; wesentliche Änderungen werden auch in der App bekannt gegeben.</p>
+
+    <h2>Kontakt</h2>
+    <p>Bei Datenschutzfragen schreib an <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="es" lang="es"
+    data-title="Política de privacidad · Placr">
+    <header>
+      <h1>Política de privacidad</h1>
+      <p class="updated">Última actualización: julio de 2026</p>
+    </header>
+
+    <p class="lede">Placr funciona por completo en tu Mac. No hay servidor del desarrollador ni registro de cuenta, y la app nunca envía tus fotos ni tu historial de uso por su cuenta. La única excepción: al elegir «Enviar comentarios» se abre tu propio cliente de correo con un borrador editable.</p>
+
+    <h2>Lo que no se recopila</h2>
+    <p>Placr no recopila, almacena ni transmite información personal a ningún servidor controlado por el desarrollador. No hay análisis de uso, informes de fallos, publicidad, rastreo entre apps ni SDK de recopilación de datos de terceros.</p>
+
+    <h2>Fotos</h2>
+    <p>Tras conceder el acceso, Placr lee fechas de captura, ubicaciones y miniaturas para encontrar fotos sin ubicación, agruparlas por tiempo y mostrar fotos de referencia. Todo el procesamiento ocurre en tu Mac; las fotos nunca salen del dispositivo.</p>
+    <p>Una ubicación se escribe solo después de aprobar el candidato y la confirmación final por lotes. Placr nunca borra fotos ni cambia metadatos distintos de la ubicación. La ubicación anterior se guarda en un registro local de operaciones para que puedas restaurarla.</p>
+
+    <h2>Búsqueda de lugares y servicios de terceros</h2>
+    <p>Para buscar un lugar, Placr envía solo el texto que escribiste. Si hay una coordenada de referencia disponible, también envía una región de búsqueda aproximada. Las fotos, las miniaturas y los registros de operaciones nunca se envían.</p>
+    <p>Las búsquedas de lugares las gestiona Mapas de Apple (MapKit) y se rigen por la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de privacidad de Apple</a>.</p>
+    <p>Placr proporciona a estos servicios la información mínima necesaria para cada búsqueda. No vende datos ni permite que las solicitudes se usen para publicidad o perfiles de usuarios en nombre del desarrollador.</p>
+
+    <h2>Almacenamiento local y retención</h2>
+    <p>La instantánea de la fototeca, los borradores de revisión, el historial de operaciones, la caché de zonas horarias y las preferencias permanecen en el contenedor de sandbox de Placr hasta que elimines los archivos.</p>
+    <div class="note">
+      <p>Eliminar la app puede no eliminar automáticamente su contenedor de sandbox ni el elemento del llavero. Más abajo se indican los pasos completos de eliminación.</p>
+    </div>
+
+    <h2>Revocar el acceso y eliminar datos</h2>
+    <ul>
+      <li>Revocar el acceso a Fotos: abre Ajustes del Sistema → Privacidad y seguridad → Fotos y desactiva Placr.</li>
+      <li>Eliminar los datos locales de Placr: sal de Placr, elige Ir → Ir a la carpeta en el Finder, escribe <code>~/Library/Containers/cn.chenhk.placr</code> y mueve esa carpeta a la Papelera.</li>
+    </ul>
+    <p>Revocar el acceso a Fotos o eliminar los datos locales no deshace las ubicaciones ya escritas en Fotos. Para restaurarlas, usa el historial de operaciones de Placr antes de eliminar los datos locales.</p>
+
+    <h2>Niños</h2>
+    <p>Placr no está dirigido a niños y no recopila la edad ni ningún otro dato personal.</p>
+
+    <h2>Cambios</h2>
+    <p>Si cambia esta política, se actualizará la fecha de la parte superior de la página. Los cambios importantes también se anunciarán en la app.</p>
+
+    <h2>Contacto</h2>
+    <p>Para cualquier duda de privacidad, escribe a <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="fr" lang="fr"
+    data-title="Politique de confidentialité · Placr">
+    <header>
+      <h1>Politique de confidentialité</h1>
+      <p class="updated">Dernière mise à jour : juillet 2026</p>
+    </header>
+
+    <p class="lede">Placr fonctionne entièrement sur votre Mac. Il n'existe ni serveur géré par le développeur ni compte, et l'app n'envoie jamais vos photos ni votre historique d'utilisation de sa propre initiative. Seule exception : « Envoyer des commentaires » ouvre votre propre client de messagerie avec un brouillon modifiable.</p>
+
+    <h2>Ce qui n'est pas collecté</h2>
+    <p>Placr ne collecte, ne stocke et ne transmet aucune donnée personnelle vers un serveur contrôlé par le développeur. Pas d'analytique, pas de rapports de plantage, pas de publicité, pas de suivi entre apps, pas de SDK tiers de collecte de données.</p>
+
+    <h2>Photos</h2>
+    <p>Après votre autorisation, Placr lit les dates de prise, les lieux et les vignettes pour trouver les photos sans lieu, les grouper dans le temps et afficher des photos de référence. Tout le traitement a lieu sur votre Mac ; les photos ne quittent jamais l'appareil.</p>
+    <p>Un lieu n'est écrit qu'après votre validation du candidat et la confirmation finale par lot. Placr ne supprime jamais de photos et ne modifie aucune métadonnée autre que le lieu. Le lieu antérieur est conservé dans un historique d'opérations local pour permettre sa restauration.</p>
+
+    <h2>Recherche de lieux et services tiers</h2>
+    <p>Pour une recherche de lieu, Placr n'envoie que le texte saisi. Si une coordonnée de référence est disponible, il envoie aussi une zone de recherche approximative. Les photos, les vignettes et les historiques d'opérations ne sont jamais envoyés.</p>
+    <p>Les recherches de lieux sont traitées par Plans (MapKit) et soumises à la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Politique de confidentialité d'Apple</a>.</p>
+    <p>Placr ne transmet à ces services que le minimum nécessaire à chaque recherche. Il ne vend aucune donnée et ne permet pas que les requêtes servent à de la publicité ou du profilage au nom du développeur.</p>
+
+    <h2>Stockage local et conservation</h2>
+    <p>L'instantané de la photothèque, les brouillons de révision, l'historique des opérations, le cache des fuseaux horaires et les réglages restent dans le conteneur sandbox de Placr jusqu'à ce que vous supprimiez les fichiers.</p>
+    <div class="note">
+      <p>Supprimer l'app ne supprime pas nécessairement son conteneur sandbox ni son élément de trousseau. Les instructions complètes de suppression suivent.</p>
+    </div>
+
+    <h2>Révoquer l'accès et supprimer les données</h2>
+    <ul>
+      <li>Révoquer l'accès aux photos : ouvrez Réglages Système → Confidentialité et sécurité → Photos, puis désactivez Placr.</li>
+      <li>Supprimer les données locales de Placr : quittez Placr, choisissez Aller → Aller au dossier dans le Finder, saisissez <code>~/Library/Containers/cn.chenhk.placr</code> et placez ce dossier à la Corbeille.</li>
+    </ul>
+    <p>Révoquer l'accès aux photos ou supprimer les données locales n'annule pas les lieux déjà écrits dans Photos. Pour les restaurer, servez-vous de l'historique des opérations de Placr avant de supprimer les données locales.</p>
+
+    <h2>Enfants</h2>
+    <p>Placr ne s'adresse pas aux enfants et ne collecte ni l'âge ni aucune autre donnée personnelle.</p>
+
+    <h2>Modifications</h2>
+    <p>Si cette politique change, la date en haut de cette page sera mise à jour. Les changements importants seront également signalés dans l'app.</p>
+
+    <h2>Contact</h2>
+    <p>Pour toute question de confidentialité, écrivez à <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="it" lang="it"
+    data-title="Informativa sulla privacy · Placr">
+    <header>
+      <h1>Informativa sulla privacy</h1>
+      <p class="updated">Ultimo aggiornamento: luglio 2026</p>
+    </header>
+
+    <p class="lede">Placr funziona interamente sul tuo Mac. Non esiste un server gestito dallo sviluppatore né la registrazione di un account, e l'app non invia mai foto o cronologie d'uso di propria iniziativa. Unica eccezione: scegliendo «Invia commenti» si apre il tuo client di posta con una bozza modificabile.</p>
+
+    <h2>Cosa non viene raccolto</h2>
+    <p>Placr non raccoglie, archivia né trasmette informazioni personali a server controllati dallo sviluppatore. Niente analisi, segnalazioni di arresto anomalo, pubblicità, tracciamento tra app o SDK di terze parti per la raccolta dati.</p>
+
+    <h2>Foto</h2>
+    <p>Dopo aver concesso l'accesso, Placr legge data di scatto, luoghi e miniature per trovare le foto senza luogo, raggrupparle nel tempo e mostrare foto di riferimento. Tutta l'elaborazione avviene sul tuo Mac; le foto non lasciano mai il dispositivo.</p>
+    <p>Un luogo viene scritto solo dopo l'approvazione del candidato e la conferma finale del lotto. Placr non elimina mai le foto e non modifica metadati diversi dal luogo. Il luogo precedente è conservato in una cronologia operazioni locale, così puoi ripristinarlo.</p>
+
+    <h2>Ricerca di luoghi e servizi di terze parti</h2>
+    <p>Per cercare un luogo, Placr invia solo il testo digitato. Se è disponibile una coordinata di riferimento, invia anche un'area di ricerca approssimativa. Foto, miniature e cronologie operazioni non vengono mai inviate.</p>
+    <p>Le ricerche dei luoghi sono gestite da Mappe (MapKit) e sono soggette all'<a href="https://www.apple.com/legal/privacy/" rel="noopener">Informativa sulla privacy di Apple</a>.</p>
+    <p>Placr fornisce a questi servizi solo le informazioni minime necessarie alla ricerca. Non vende dati né consente che le richieste siano usate per pubblicità o profilatura per conto dello sviluppatore.</p>
+
+    <h2>Archiviazione locale e conservazione</h2>
+    <p>Lo snapshot della libreria, le bozze di revisione, la cronologia operazioni, la cache dei fusi orari e le preferenze restano nel contenitore sandbox di Placr finché non elimini i file.</p>
+    <div class="note">
+      <p>Eliminare l'app non rimuove necessariamente il contenitore sandbox o l'elemento del portachiavi. Più sotto trovi le istruzioni complete per la rimozione.</p>
+    </div>
+
+    <h2>Revocare l'accesso ed eliminare i dati</h2>
+    <ul>
+      <li>Revocare l'accesso alle foto: apri Impostazioni di Sistema → Privacy e sicurezza → Foto e disattiva Placr.</li>
+      <li>Eliminare i dati locali di Placr: chiudi Placr, nel Finder scegli Vai → Vai alla cartella, digita <code>~/Library/Containers/cn.chenhk.placr</code> e sposta la cartella nel Cestino.</li>
+    </ul>
+    <p>Revocare l'accesso alle foto o eliminare i dati locali non annulla i luoghi già scritti in Foto. Per ripristinarli, usa la cronologia operazioni di Placr prima di eliminare i dati locali.</p>
+
+    <h2>Bambini</h2>
+    <p>Placr non è destinato ai bambini e non raccoglie età né altre informazioni personali.</p>
+
+    <h2>Modifiche</h2>
+    <p>Se questa informativa cambia, la data in cima alla pagina verrà aggiornata. Le modifiche significative verranno segnalate anche nell'app.</p>
+
+    <h2>Contatti</h2>
+    <p>Per qualsiasi domanda sulla privacy, scrivi a <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="pt-BR" lang="pt-BR"
+    data-title="Política de Privacidade · Placr">
+    <header>
+      <h1>Política de Privacidade</h1>
+      <p class="updated">Última atualização: julho de 2026</p>
+    </header>
+
+    <p class="lede">O Placr funciona inteiramente no seu Mac. Não há servidor operado pelo desenvolvedor nem cadastro de conta, e o app nunca envia suas fotos ou histórico de uso por conta própria. Única exceção: ao escolher “Enviar comentários”, abre-se o seu próprio cliente de e-mail com um rascunho editável.</p>
+
+    <h2>O que não é coletado</h2>
+    <p>O Placr não coleta, armazena nem transmite informações pessoais a nenhum servidor controlado pelo desenvolvedor. Não há análise de uso, relatórios de falhas, publicidade, rastreamento entre apps ou SDK de coleta de dados de terceiros.</p>
+
+    <h2>Fotos</h2>
+    <p>Depois que você concede acesso, o Placr lê datas de captura, locais e miniaturas para encontrar fotos sem local, agrupá-las pelo tempo e mostrar fotos de referência. Todo o processamento acontece no seu Mac; as fotos nunca saem do aparelho.</p>
+    <p>Um local só é gravado depois que você aprova o candidato e a confirmação final do lote. O Placr nunca apaga fotos nem altera metadados além do local. O local anterior é guardado em um histórico de operações local para você poder restaurá-lo.</p>
+
+    <h2>Busca de lugares e serviços de terceiros</h2>
+    <p>Para buscar um lugar, o Placr envia apenas o texto digitado. Se há uma coordenada de referência disponível, também envia uma região de busca aproximada. Fotos, miniaturas e históricos de operações nunca são enviados.</p>
+    <p>As buscas de lugares são feitas pelo Mapas Apple (MapKit) e estão sujeitas à <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de Privacidade da Apple</a>.</p>
+    <p>O Placr fornece a esses serviços apenas o mínimo necessário para cada busca. Não vende dados nem permite que as solicitações sejam usadas para publicidade ou criação de perfis em nome do desenvolvedor.</p>
+
+    <h2>Armazenamento local e retenção</h2>
+    <p>O instantâneo da biblioteca, os rascunhos de revisão, o histórico de operações, o cache de fusos horários e as preferências ficam no contêiner de sandbox do Placr até você remover os arquivos.</p>
+    <div class="note">
+      <p>Apagar o app pode não remover automaticamente o contêiner de sandbox nem o item do chaveiro. As instruções completas de remoção seguem abaixo.</p>
+    </div>
+
+    <h2>Revogar o acesso e apagar dados</h2>
+    <ul>
+      <li>Revogar o acesso às fotos: abra Ajustes do Sistema → Privacidade e Segurança → Fotos e desative o Placr.</li>
+      <li>Apagar os dados locais do Placr: saia do Placr, escolha Ir → Ir para a Pasta no Finder, digite <code>~/Library/Containers/cn.chenhk.placr</code> e mova a pasta para o Lixo.</li>
+    </ul>
+    <p>Revogar o acesso às fotos ou apagar os dados locais não desfaz os locais já gravados no Fotos. Para restaurá-los, use o histórico de operações do Placr antes de apagar os dados locais.</p>
+
+    <h2>Crianças</h2>
+    <p>O Placr não é direcionado a crianças e não coleta idade nem qualquer outra informação pessoal.</p>
+
+    <h2>Mudanças</h2>
+    <p>Se esta política mudar, a data no topo da página será atualizada. Mudanças importantes também serão comunicadas no app.</p>
+
+    <h2>Contato</h2>
+    <p>Para qualquer dúvida de privacidade, escreva para <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+  </article>
+
+  <article class="language-panel" data-language="ko" lang="ko"
+    data-title="개인정보 처리방침 · Placr">
+    <header>
+      <h1>개인정보 처리방침</h1>
+      <p class="updated">마지막 업데이트: 2026년 7월</p>
+    </header>
+
+    <p class="lede">Placr는 전적으로 Mac에서 동작합니다. 개발자가 운영하는 서버도 계정 가입도 없으며, 앱이 사진이나 사용 기록을 자동으로 보내지 않습니다. 유일한 예외: '피드백 보내기'를 선택하면 수정 가능한 임시 메일과 함께 본인의 메일 앱이 열립니다.</p>
+
+    <h2>수집하지 않는 정보</h2>
+    <p>Placr는 개발자가 관리하는 서버로 개인정보를 수집, 저장, 전송하지 않습니다. 분석, 크래시 리포트, 광고, 앱 간 추적, 서드파티 데이터 수집 SDK가 전혀 없습니다.</p>
+
+    <h2>사진</h2>
+    <p>권한을 허용하면 Placr는 촬영 시각, 위치, 썸네일을 읽어 위치 없는 사진을 찾고, 시각순으로 묶고, 참고 사진을 표시하는 데 사용합니다. 모든 처리는 Mac에서 이루어지며 사진 자체가 기기 밖으로 나가는 일은 없습니다.</p>
+    <p>위치는 후보를 확인하고 최종 일괄 확인을 마친 뒤에만 기록됩니다. Placr는 사진을 삭제하지 않고 위치 외의 메타데이터도 변경하지 않습니다. 기록 이전의 위치는 복원할 수 있도록 기기 내 작업 기록에 저장됩니다.</p>
+
+    <h2>장소 검색과 서드파티 서비스</h2>
+    <p>장소를 검색할 때 Placr가 보내는 것은 입력한 텍스트뿐입니다. 참고 좌표가 있으면 대략적인 검색 범위도 함께 보냅니다. 사진, 썸네일, 작업 기록은 절대 전송하지 않습니다.</p>
+    <p>장소 검색은 Apple 지도(MapKit)가 처리하며 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple의 개인정보 처리방침</a>이 적용됩니다.</p>
+    <p>Placr는 해당 검색을 완료하는 데 필요한 최소한의 정보만 이들 서비스에 제공하며, 데이터를 판매하거나 요청이 개발자를 위한 광고나 사용자 프로파일링에 쓰이도록 허용하지 않습니다.</p>
+
+    <h2>로컬 저장과 보존 기간</h2>
+    <p>보관함 스냅샷, 검토 초안, 작업 기록, 시간대 캐시, 설정은 삭제하기 전까지 Placr의 샌드박스 컨테이너에 보관됩니다.</p>
+    <div class="note">
+      <p>앱을 삭제해도 샌드박스 컨테이너나 키체인 항목이 자동으로 지워지지 않을 수 있습니다. 완전한 삭제 방법은 아래에 있습니다.</p>
+    </div>
+
+    <h2>권한 철회와 데이터 삭제</h2>
+    <ul>
+      <li>사진 접근 철회: '시스템 설정 → 개인정보 보호 및 보안 → 사진'에서 Placr을 끕니다.</li>
+      <li>Placr 로컬 데이터 삭제: Placr을 종료한 뒤 Finder에서 '이동 → 폴더로 이동'을 골라 <code>~/Library/Containers/cn.chenhk.placr</code>를 입력하고 그 폴더를 휴지통으로 옮깁니다.</li>
+    </ul>
+    <p>사진 권한을 철회하거나 로컬 데이터를 삭제해도 이미 사진에 기록된 위치는 되돌려지지 않습니다. 복원이 필요하면 로컬 데이터를 삭제하기 전에 Placr의 작업 기록에서 복원하세요.</p>
+
+    <h2>어린이</h2>
+    <p>Placr는 어린이를 대상으로 하지 않으며, 나이 그 외의 개인정보를 수집하지 않습니다.</p>
+
+    <h2>방침 변경</h2>
+    <p>이 방침이 바뀌면 페이지 상단의 날짜를 갱신합니다. 중요한 변경은 앱에서도 알려 드립니다.</p>
+
+    <h2>연락처</h2>
+    <p>개인정보 관련 문의는 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>으로 보내 주세요.</p>
   </article>
 </main>
 

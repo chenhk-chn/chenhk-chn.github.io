@@ -1,5 +1,8 @@
 (() => {
-  const supported = ["zh-Hans", "zh-Hant", "zh-HK", "ja", "en"];
+  const supported = [
+    "zh-Hans", "zh-Hant", "zh-HK", "ja", "en",
+    "de", "es", "fr", "it", "pt-BR", "ko",
+  ];
   const aliases = {
     "zh-CN": "zh-Hans",
     "zh-SG": "zh-Hans",
@@ -7,6 +10,7 @@
     "zh-MO": "zh-HK",
     "en-US": "en",
     "en-GB": "en",
+    "pt-PT": "pt-BR",
   };
 
   function normalizeLanguage(value) {
@@ -20,6 +24,12 @@
     if (lower.startsWith("zh")) return "zh-Hans";
     if (lower.startsWith("ja")) return "ja";
     if (lower.startsWith("en")) return "en";
+    if (lower.startsWith("de")) return "de";
+    if (lower.startsWith("es")) return "es";
+    if (lower.startsWith("fr")) return "fr";
+    if (lower.startsWith("it")) return "it";
+    if (lower.startsWith("pt")) return "pt-BR";
+    if (lower.startsWith("ko")) return "ko";
     return null;
   }
 
@@ -64,11 +74,10 @@
       }
     });
 
-    document.querySelectorAll("[data-set-language]").forEach((button) => {
-      const isActive = button.dataset.setLanguage === activeLanguage;
-      button.setAttribute("aria-pressed", String(isActive));
-      button.classList.toggle("is-active", isActive);
-    });
+    const select = document.querySelector("[data-language-select]");
+    if (select && select.value !== activeLanguage) {
+      select.value = activeLanguage;
+    }
 
     document.querySelectorAll("[data-localized-link]").forEach((link) => {
       link.href = localizedTarget(link, activeLanguage);
@@ -79,12 +88,13 @@
     }
   }
 
-  document.querySelectorAll("[data-set-language]").forEach((button) => {
-    button.addEventListener("click", () => {
-      showLanguage(button.dataset.setLanguage, true);
+  const languageSelect = document.querySelector("[data-language-select]");
+  if (languageSelect) {
+    languageSelect.addEventListener("change", () => {
+      showLanguage(languageSelect.value, true);
       document.querySelector("main")?.focus({ preventScroll: true });
     });
-  });
+  }
 
   window.addEventListener("hashchange", () => {
     const language = hashLanguage();
@@ -95,6 +105,6 @@
 
   // 只有走到这一步（解析、监听、首屏激活全部成功）才给 <html> 加 .js，
   // CSS 的"隐藏非当前语言"规则才生效。脚本加载失败或中途抛错时，
-  // 五种语言的正文保持全部可见——隐私和支持页宁可冗余也不空白。
+  // 各种语言的正文保持全部可见——隐私和支持页宁可冗余也不空白。
   document.documentElement.classList.add("js");
 })();

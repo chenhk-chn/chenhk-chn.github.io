@@ -73,43 +73,30 @@ body {
 .language-picker {
   display: none;
   align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
-
-.language-picker::-webkit-scrollbar { display: none; }
 
 .js .language-picker { display: flex; }
 
-.language-picker button {
-  appearance: none;
-  border: 1px solid transparent;
+.language-picker select {
+  appearance: auto;
+  border: 1px solid var(--rule);
   border-radius: 999px;
-  padding: 7px 10px;
-  background: transparent;
-  color: var(--muted);
+  padding: 7px 12px;
+  background: var(--card);
+  color: var(--fg);
   font: inherit;
   font-size: 13px;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.2;
+  max-width: 220px;
   cursor: pointer;
-  transition: color 180ms ease, border-color 180ms ease,
-    background-color 180ms ease;
+  transition: border-color 180ms ease;
 }
 
-.language-picker button:hover {
-  color: var(--fg);
-  border-color: var(--rule);
+.language-picker select:hover {
+  border-color: var(--muted);
 }
 
-.language-picker button.is-active {
-  color: var(--fg);
-  background: var(--card);
-  border-color: var(--rule);
-}
-
-.language-picker button:focus-visible,
+.language-picker select:focus-visible,
 a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
