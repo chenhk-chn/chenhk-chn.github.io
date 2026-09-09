@@ -31,10 +31,20 @@
     return "en";
   }
 
-  const hashLanguage = normalizeLanguage(
-    decodeURIComponent(window.location.hash.slice(1))
-  );
-  let activeLanguage = hashLanguage || browserLanguage();
+  // hash 来自不受控的 URL 输入，`#%` 这类非法编码会让 decodeURIComponent
+  // 直接抛 URIError。解析失败按"没有语言指示"处理，回落浏览器语言，
+  // 不能让整个脚本死在初始化途中。
+  function hashLanguage() {
+    try {
+      return normalizeLanguage(
+        decodeURIComponent(window.location.hash.slice(1))
+      );
+    } catch {
+      return null;
+    }
+  }
+
+  let activeLanguage = hashLanguage() || browserLanguage();
 
   function localizedTarget(link, language) {
     const base = link.dataset.localizedLink;
@@ -77,11 +87,14 @@
   });
 
   window.addEventListener("hashchange", () => {
-    const language = normalizeLanguage(
-      decodeURIComponent(window.location.hash.slice(1))
-    );
+    const language = hashLanguage();
     if (language) showLanguage(language);
   });
 
   showLanguage(activeLanguage);
+
+  // 只有走到这一步（解析、监听、首屏激活全部成功）才给 <html> 加 .js，
+  // CSS 的"隐藏非当前语言"规则才生效。脚本加载失败或中途抛错时，
+  // 五种语言的正文保持全部可见——隐私和支持页宁可冗余也不空白。
+  document.documentElement.classList.add("js");
 })();
