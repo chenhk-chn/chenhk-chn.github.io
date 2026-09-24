@@ -8,20 +8,29 @@
 <title>Pickr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=pickr-20260918-1">
 <link rel="apple-touch-icon" href="assets/icon-512.png?v=pickr-20260918-1">
-<link rel="stylesheet" href="style.css?v=pickr-20260918-1">
+<link rel="stylesheet" href="style.css?v=pickr-20260924-1">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <div class="wrap">
   <div class="site-bar">
     <a class="wordmark" href="index.html" aria-label="Pickr home">Pickr</a>
-    <nav class="language-picker" aria-label="Language">
-      <button type="button" data-set-language="zh-Hans">简体中文</button>
-      <button type="button" data-set-language="zh-Hant">繁中・台灣</button>
-      <button type="button" data-set-language="zh-HK">繁中・香港</button>
-      <button type="button" data-set-language="ja">日本語</button>
-      <button type="button" data-set-language="en">English</button>
-    </nav>
+    <label class="language-picker">
+      <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文（台灣）</option>
+        <option value="zh-HK">繁體中文（香港）</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="it">Italiano</option>
+        <option value="de">Deutsch</option>
+        <option value="pt-BR">Português (Brasil)</option>
+        <option value="pt-PT">Português (Portugal)</option>
+      </select>
+    </label>
   </div>
 
   <main tabindex="-1">
@@ -29,7 +38,7 @@
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
         <h1>每月一次，给照片库做减法</h1>
-        <p class="lede">Pickr 带你按月份快速翻看照片，上滑待删除、下滑待收藏。浏览和待确认免费；写入照片库，以及把整理进度同步到你自己的 iCloud，需要会员。</p>
+        <p class="lede">Pickr 带你按月份快速翻看照片，上滑待删除、下滑待收藏。浏览和待确认免费。写入照片库可以先免费保存 7 次，不限张数；用完后需要会员。把整理进度同步到你自己的 iCloud 也需要会员。</p>
         <p class="meta">适用于 iPhone 与 iPad · 需要 iOS 17 或更新版本</p>
       </header>
       <ul class="features">
@@ -48,7 +57,7 @@
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
         <h1>每月一次，替相片庫做減法</h1>
-        <p class="lede">Pickr 帶你按月份快速翻看相片，上滑待刪除、下滑待收藏。瀏覽和待確認免費；寫入相片庫，以及把整理進度同步到你自己的 iCloud，需要會員。</p>
+        <p class="lede">Pickr 帶你按月份快速翻看相片，上滑待刪除、下滑待收藏。瀏覽和待確認免費。寫入相片庫可以先免費儲存 7 次，不限張數；用完後需要會員。把整理進度同步到你自己的 iCloud 也需要會員。</p>
         <p class="meta">適用於 iPhone 與 iPad · 需要 iOS 17 或以上版本</p>
       </header>
       <ul class="features">
@@ -67,7 +76,7 @@
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
         <h1>每月一次，幫相簿做減法</h1>
-        <p class="lede">Pickr 帶你按月份快速睇相，向上掃待刪除、向下掃待收藏。瀏覽同待確認免費；寫入相簿，同埋將整理進度同步到你自己嘅 iCloud，需要會員。</p>
+        <p class="lede">Pickr 帶你按月份快速睇相，向上掃待刪除、向下掃待收藏。瀏覽同待確認免費。寫入相簿可以先免費儲存 7 次，唔限張數；用完之後需要會員。將整理進度同步到你自己嘅 iCloud 都需要會員。</p>
         <p class="meta">適用於 iPhone 同 iPad · 需要 iOS 17 或以上版本</p>
       </header>
       <ul class="features">
@@ -86,7 +95,7 @@
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
         <h1>月に一度、写真ライブラリを整える</h1>
-        <p class="lede">Pickr は月ごとに写真を素早くふり返り、上スワイプで削除候補、下スワイプでお気に入りへ。閲覧と確認リストは無料です。写真ライブラリへの書き込みと、整理の進行を自分の iCloud に同期するにはメンバーシップが必要です。</p>
+        <p class="lede">Pickr は月ごとに写真を素早くふり返り、上スワイプで削除候補、下スワイプでお気に入りへ。閲覧と確認リストは無料です。写真ライブラリへの保存は、枚数に関係なく 7 回まで無料で、その後はメンバーシップが必要です。整理の進行を自分の iCloud に同期するにもメンバーシップが必要です。</p>
         <p class="meta">iPhone と iPad 対応 · iOS 17 以降が必要です</p>
       </header>
       <ul class="features">
@@ -105,7 +114,7 @@
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
         <h1>One pass a month to slim your library</h1>
-        <p class="lede">Pickr walks you through your photos month by month: swipe up to queue for deletion, swipe down to queue as a favorite. Browsing and the review list are free. Writing changes to your photo library, and syncing progress to your own iCloud, requires membership.</p>
+        <p class="lede">Pickr walks you through your photos month by month: swipe up to queue for deletion, swipe down to queue as a favorite. Browsing and the review list are free. You can save changes to your photo library 7 times for free, with no photo limit; membership is required after that. Syncing progress to your own iCloud also requires membership.</p>
         <p class="meta">For iPhone and iPad · Requires iOS 17 or later</p>
       </header>
       <ul class="features">
@@ -119,10 +128,143 @@
         <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, permissions, and contact details</span></a>
       </div>
     </section>
+
+    <section class="language-panel" data-language="ko" lang="ko" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>한 달에 한 번, 보관함을 가볍게</h1>
+        <p class="lede">Pickr는 사진을 한 달씩 보여 줍니다. 위로 밀면 삭제 대기, 아래로 밀면 즐겨찾기 대기입니다. 둘러보기와 확인 목록은 무료입니다. 사진 보관함에 변경을 저장하는 것은 7회까지 무료이며, 한 번에 몇 장이든 상관없습니다. 그다음부터는 멤버십이 필요합니다. 진행 상황을 자신의 iCloud에 동기화하는 것도 멤버십이 필요합니다.</p>
+        <p class="meta">iPhone과 iPad · iOS 17 이상</p>
+      </header>
+      <ul class="features">
+        <li><strong>밀어서 정리</strong><span>위로 밀면 삭제 대기, 아래로 밀면 즐겨찾기 대기입니다. 둘러보기와 확인은 무료입니다.</span></li>
+        <li><strong>확인 없이 지우지 않습니다</strong><span>삭제는 확인 목록에 모였다가, 시스템 사진 앱의 확인을 거친 뒤에만 실행됩니다. 지운 항목은 최근 삭제된 항목에 30일 동안 남습니다.</span></li>
+        <li><strong>진행 상황은 자신의 iCloud에</strong><span>멤버는 정리 진행 상황을 자신의 iCloud 비공개 데이터베이스에 동기화하고, 다른 기기에서 이어서 할 수 있습니다.</span></li>
+      </ul>
+      <p class="closing">Pickr 계정은 없습니다. 사진은 Pickr로 업로드되지 않으며, 광고도 없습니다.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>개인정보 처리방침</strong><span>사진, iCloud, 기기에 남는 데이터</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>지원</strong><span>자주 묻는 질문, 권한, 문의</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="fr" lang="fr" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Un passage par mois pour alléger la photothèque</h1>
+        <p class="lede">Pickr parcourt vos photos mois par mois : glissez vers le haut pour les mettre en attente de suppression, vers le bas pour les mettre en favoris. La consultation et la liste de confirmation sont gratuites. Vous pouvez enregistrer des modifications dans la photothèque 7 fois gratuitement, sans limite de photos ; ensuite, l’abonnement est nécessaire. Synchroniser la progression avec votre propre iCloud nécessite aussi l’abonnement.</p>
+        <p class="meta">Pour iPhone et iPad · Nécessite iOS 17 ou ultérieur</p>
+      </header>
+      <ul class="features">
+        <li><strong>Glisser pour trier</strong><span>Vers le haut, la photo rejoint la file de suppression. Vers le bas, elle rejoint les favoris. La consultation et la confirmation restent gratuites.</span></li>
+        <li><strong>Rien n’est supprimé sans vous</strong><span>Les suppressions attendent dans un lot de confirmation et ne partent qu’après la confirmation de Photos. Les éléments retirés restent dans Supprimés récemment pendant 30 jours.</span></li>
+        <li><strong>La progression reste dans votre iCloud</strong><span>Les membres peuvent synchroniser la progression dans leur base iCloud privée et reprendre sur un autre appareil.</span></li>
+      </ul>
+      <p class="closing">Pas de compte Pickr. Les photos ne sont pas envoyées à Pickr, et il n’y a pas de publicité.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Politique de confidentialité</strong><span>Photos, iCloud et données sur l’appareil</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistance</strong><span>Réponses, autorisations et contact</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="es" lang="es" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Una pasada al mes para aligerar tu fototeca</h1>
+        <p class="lede">Pickr recorre tus fotos mes a mes: desliza hacia arriba para dejarlas en espera de eliminación y hacia abajo para dejarlas como favoritas. Mirar y la lista de confirmación son gratis. Puedes guardar cambios en la fototeca 7 veces gratis, sin límite de fotos; después hace falta la suscripción. Sincronizar el progreso con tu propio iCloud también requiere suscripción.</p>
+        <p class="meta">Para iPhone y iPad · Requiere iOS 17 o posterior</p>
+      </header>
+      <ul class="features">
+        <li><strong>Desliza para elegir</strong><span>Hacia arriba, la foto queda en espera de eliminación. Hacia abajo, queda como favorita. Mirar y confirmar siguen siendo gratis.</span></li>
+        <li><strong>Nada se borra sin que lo veas</strong><span>Las eliminaciones esperan en un lote de confirmación y solo se ejecutan tras la confirmación de Fotos. Lo eliminado permanece en Eliminados recientemente durante 30 días.</span></li>
+        <li><strong>El progreso vive en tu iCloud</strong><span>Quien tiene suscripción puede sincronizar el progreso en su base de datos privada de iCloud y seguir en otro dispositivo.</span></li>
+      </ul>
+      <p class="closing">Sin cuenta de Pickr. Las fotos no se suben a Pickr y no hay anuncios.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de privacidad</strong><span>Fotos, iCloud y datos en el dispositivo</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Soporte</strong><span>Respuestas, permisos y contacto</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="it" lang="it" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Un passaggio al mese per alleggerire la libreria</h1>
+        <p class="lede">Pickr scorre le foto mese per mese: scorri verso l’alto per metterle in attesa di eliminazione, verso il basso per metterle tra i preferiti. Sfogliare e l’elenco di conferma sono gratuiti. Puoi salvare le modifiche nella libreria foto 7 volte gratis, senza limite di foto; dopo serve l’abbonamento. Sincronizzare i progressi con il tuo iCloud richiede anch’esso l’abbonamento.</p>
+        <p class="meta">Per iPhone e iPad · Richiede iOS 17 o versioni successive</p>
+      </header>
+      <ul class="features">
+        <li><strong>Scorri per scegliere</strong><span>Verso l’alto, la foto va in attesa di eliminazione. Verso il basso, va tra i preferiti. Sfogliare e confermare restano gratuiti.</span></li>
+        <li><strong>Niente si elimina da solo</strong><span>Le eliminazioni restano in un gruppo di conferma e partono solo dopo la conferma di Foto. Gli elementi rimossi restano in Eliminati di recente per 30 giorni.</span></li>
+        <li><strong>I progressi restano nel tuo iCloud</strong><span>Chi ha l’abbonamento può sincronizzare i progressi nel proprio database iCloud privato e continuare su un altro dispositivo.</span></li>
+      </ul>
+      <p class="closing">Nessun account Pickr. Le foto non vengono caricate su Pickr e non ci sono annunci.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Informativa sulla privacy</strong><span>Foto, iCloud e dati sul dispositivo</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Supporto</strong><span>Risposte, permessi e contatti</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="de" lang="de" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Ein Durchgang im Monat, damit die Mediathek leichter wird</h1>
+        <p class="lede">Pickr geht deine Fotos Monat für Monat durch: nach oben wischen stellt sie zum Löschen zurück, nach unten wischen zu den Favoriten. Ansehen und die Bestätigungsliste sind kostenlos. Änderungen an der Fotomediathek kannst du 7-mal kostenlos sichern, ohne Foto-Limit; danach brauchst du eine Mitgliedschaft. Den Fortschritt mit deiner eigenen iCloud zu synchronisieren erfordert ebenfalls eine Mitgliedschaft.</p>
+        <p class="meta">Für iPhone und iPad · Erfordert iOS 17 oder neuer</p>
+      </header>
+      <ul class="features">
+        <li><strong>Wischen zum Auswählen</strong><span>Nach oben: zum Löschen vormerken. Nach unten: als Favorit vormerken. Ansehen und Bestätigen bleiben kostenlos.</span></li>
+        <li><strong>Nichts wird ungesehen gelöscht</strong><span>Löschungen warten in einem Prüfstapel und laufen erst nach der Bestätigung von Fotos. Entfernte Objekte bleiben 30 Tage in Zuletzt gelöscht.</span></li>
+        <li><strong>Der Fortschritt bleibt in deiner iCloud</strong><span>Mitglieder können den Fortschritt in ihrer privaten iCloud-Datenbank synchronisieren und auf einem anderen Gerät weitermachen.</span></li>
+      </ul>
+      <p class="closing">Kein Pickr-Account. Fotos werden nicht an Pickr hochgeladen, und es gibt keine Werbung.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Datenschutz</strong><span>Fotos, iCloud und Daten auf dem Gerät</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Antworten, Zugriffsrechte und Kontakt</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="pt-BR" lang="pt-BR" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Uma passada por mês para aliviar a fototeca</h1>
+        <p class="lede">O Pickr percorre suas fotos mês a mês: deslize para cima para deixar na fila de exclusão, para baixo para deixar como favorita. Olhar e a lista de confirmação são grátis. Você pode salvar alterações na fototeca 7 vezes de graça, sem limite de fotos; depois disso, é preciso ser membro. Sincronizar o progresso com o seu próprio iCloud também exige a assinatura.</p>
+        <p class="meta">Para iPhone e iPad · Requer iOS 17 ou posterior</p>
+      </header>
+      <ul class="features">
+        <li><strong>Deslize para escolher</strong><span>Para cima, a foto entra na fila de exclusão. Para baixo, entra nos favoritos. Olhar e confirmar continuam grátis.</span></li>
+        <li><strong>Nada é apagado sem você ver</strong><span>As exclusões esperam em um lote de confirmação e só acontecem depois da confirmação do app Fotos. O que foi apagado fica em Apagados recentemente por 30 dias.</span></li>
+        <li><strong>O progresso fica no seu iCloud</strong><span>Membros podem sincronizar o progresso no próprio banco de dados privado do iCloud e continuar em outro aparelho.</span></li>
+      </ul>
+      <p class="closing">Sem conta Pickr. As fotos não são enviadas ao Pickr e não há anúncios.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de Privacidade</strong><span>Fotos, iCloud e dados no aparelho</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Suporte</strong><span>Respostas, permissões e contato</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="pt-PT" lang="pt-PT" data-title="Pickr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
+        <h1>Uma passagem por mês para aligeirar a fototeca</h1>
+        <p class="lede">O Pickr percorre as suas fotografias mês a mês: deslize para cima para as deixar na fila de eliminação, para baixo para as deixar como favoritas. Ver e a lista de confirmação são gratuitos. Pode guardar alterações na fototeca 7 vezes gratuitamente, sem limite de fotografias; a seguir, é necessária a subscrição. Sincronizar o progresso com o seu próprio iCloud também exige a subscrição.</p>
+        <p class="meta">Para iPhone e iPad · Requer o iOS 17 ou posterior</p>
+      </header>
+      <ul class="features">
+        <li><strong>Deslize para escolher</strong><span>Para cima, a fotografia fica na fila de eliminação. Para baixo, fica nos favoritos. Ver e confirmar continuam gratuitos.</span></li>
+        <li><strong>Nada é eliminado sem a sua confirmação</strong><span>As eliminações esperam num lote de confirmação e só avançam depois da confirmação da app Fotografias. O que foi eliminado fica em Eliminados recentemente durante 30 dias.</span></li>
+        <li><strong>O progresso fica no seu iCloud</strong><span>Quem tem subscrição pode sincronizar o progresso na sua base de dados privada do iCloud e continuar noutro dispositivo.</span></li>
+      </ul>
+      <p class="closing">Sem conta Pickr. As fotografias não são enviadas para o Pickr e não há anúncios.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de Privacidade</strong><span>Fotografias, iCloud e dados no dispositivo</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistência</strong><span>Respostas, permissões e contacto</span></a>
+      </div>
+    </section>
   </main>
 
   <footer><p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></footer>
 </div>
-<script src="language.js?v=pickr-20260918-1"></script>
+<script src="language.js?v=pickr-20260924-1"></script>
 </body>
 </html>

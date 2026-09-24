@@ -70,44 +70,41 @@ body {
 
 .language-picker {
   display: none;
-  align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  position: relative;
 }
 
-.language-picker::-webkit-scrollbar { display: none; }
+.js .language-picker { display: block; }
 
-.js .language-picker { display: flex; }
-
-.language-picker button {
+.language-picker select {
   appearance: none;
-  border: 1px solid transparent;
+  margin: 0;
+  width: auto;
+  max-width: 100%;
+  padding: 8px 36px 8px 14px;
+  border: 1px solid var(--rule);
   border-radius: 999px;
-  padding: 7px 10px;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 13px;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color 180ms ease, border-color 180ms ease,
-    background-color 180ms ease;
-}
-
-.language-picker button:hover {
-  color: var(--fg);
-  border-color: var(--rule);
-}
-
-.language-picker button.is-active {
-  color: var(--fg);
   background: var(--card);
-  border-color: var(--rule);
+  color: var(--fg);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
 }
 
-.language-picker button:focus-visible,
+.language-picker::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.language-picker select:focus-visible,
 a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -119,7 +116,7 @@ main:focus { outline: none; }
   padding-top: 1px;
 }
 
-/* 没有 JS 时五种语言会全部堆在一起，靠这条分隔线区分。必须限定在没有 JS 的
+/* 没有 JS 时各语言会全部堆在一起，靠这条分隔线区分。必须限定在没有 JS 的
    情况下：`+` 选的是 DOM 里的相邻关系，跟显不显示无关，不限定的话只要当前语言
    不是第一个面板，就会在标题上方白白多出一段空白和一条双线。 */
 html:not(.js) .language-panel + .language-panel {
@@ -337,10 +334,9 @@ code {
     gap: 14px;
   }
 
-  .language-picker {
+  .language-picker,
+  .language-picker select {
     width: 100%;
-    flex-wrap: wrap;
-    overflow: visible;
   }
 
   header { padding-top: 52px; }
