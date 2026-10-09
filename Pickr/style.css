@@ -347,3 +347,28 @@ code {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* 下载入口：上架前是 TestFlight 徽章 + 邮箱；上架后换成 App Store 徽章。 */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 26px 0 0;
+}
+
+.cta-badge {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cta a { font-size: 15px; }
+
+@media (prefers-color-scheme: dark) {
+  .cta-badge { color: #0d2818; }
+}
