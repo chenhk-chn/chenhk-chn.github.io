@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Siftr 内容发布 Skill：给你的 AI Agent 的安装包与完整说明">
+<title>发布 Skill · Siftr</title>
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
+<link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-2">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body><div class="wrap">
+  <div class="site-bar">
+    <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
+    <label class="language-picker">
+      <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="en">English</option>
+      </select>
+    </label>
+  </div>
+  <main tabindex="-1">
+    <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="发布 Skill · Siftr">
+      <header><h1>内容发布 Skill</h1><p class="updated">Skill 版本：2026 年 10 月 14 日</p></header>
+      <p class="lede">把这个页面发给你的 AI Agent，它就能按 Siftr 的内容协议，把 Markdown 简报发布到你自己的坚果云 WebDAV。Skill 与安装包不含任何凭据；应用密码由 Agent 的运行环境注入。</p>
+      <h2>安装</h2>
+      <p>安装包是一个 zip，解压得到完整的 <code>siftr-publish/</code> 目录（SKILL.md 与两个脚本）。把它放进你 Agent 的 skills 目录即可，常见位置如 <code>~/.agents/skills/</code>、<code>~/.zcode/skills/</code>、<code>~/.claude/skills/</code>——各平台不同，以你的 Agent 文档为准。</p>
+      <p>直接把下面这句话发给你的 Agent：</p>
+      <pre><code>安装这个 Skill：下载 https://chenhk-chn.github.io/Siftr/assets/siftr-publish.zip 并解压，把得到的 siftr-publish/ 整个目录放进你的 skills 目录，然后按其中 SKILL.md 的说明为我发布 Siftr 内容。</code></pre>
+      <p><a href="assets/siftr-publish.zip">下载安装包（siftr-publish.zip）</a> · 需要配置的三个环境变量见全文 §2。</p>
+      <h2>Skill 全文</h2>
+      <p>以下与安装包内的 SKILL.md 完全一致（由 <code>scripts/package_skill.py</code> 从 <code>skills/siftr-publish/</code> 生成，不会漂移）。</p>
+      <!--SKILL-BODY-START-->
+<h2>Siftr 内容发布（面向 Agent）</h2>
+      <p>你是 <strong>唯一的写入方</strong>。Siftr App 只读：它 GET <code>manifest.json</code>，对比后再 GET 需要的正文。App 不会替你总结、配图、推荐、朗读或追问——这些都不做。<strong>摘要、分类、标签、标题都由你写好</strong>，写进元数据和 Markdown。</p>
+      <blockquote><p>只想传任意文件到坚果云？看 §2 的 curl 原语即可，零依赖。想让 App 读到内容？先读 §1 的逻辑，再用 §5 的工具。</p></blockquote>
+      <h3>1. 先理解这套逻辑（决定你每次该怎么做）</h3>
+      <h4>1.1 两个标识，别混</h4>
+      <div class="tablewrap"><table><thead><tr><th>标识</th><th>含义</th><th>谁决定</th></tr></thead><tbody><tr><td><code>id</code></td><td><strong>这是哪一篇文章</strong>。跨修订保持不变（如 <code>ai-daily</code>、<code>weekly-2026-w41</code>）</td><td>你</td></tr><tr><td><code>content_sha256</code></td><td><strong>这是哪份字节</strong>。正文 UTF-8 字节的 SHA-256</td><td>工具自动算</td></tr></tbody></table></div>
+      <p>读者端的已读/收藏记录挂在 <code>id</code> 上；内容变化靠 <code>content_sha256</code> 判断。</p>
+      <h4>1.2 发布前的决策表</h4>
+      <div class="tablewrap"><table><thead><tr><th>你手里的情况</th><th>怎么做</th><th>工具返回</th></tr></thead><tbody><tr><td>全新的一篇</td><td>起一个<strong>新 id</strong>，<code>publish</code></td><td><code>published</code></td></tr><tr><td>修订已发布的文章（改错字、补充、更新）</td><td><strong>沿用原 id</strong>，改 Markdown，<code>publish</code></td><td><code>published</code>（旧版本文件保留，Manifest 指向新文件）</td></tr><tr><td>与上次完全一样</td><td>什么都不用做（再跑也没副作用）</td><td><code>unchanged</code></td></tr><tr><td>新 id，但正文与某篇<strong>已发布</strong>的字节完全相同</td><td><strong>不要发</strong>。这是重复内容，工具直接拒绝写入</td><td><code>duplicate</code>（含 <code>duplicate_of</code>，即已存在的 id）</td></tr><tr><td>想用旧 id 发一篇完全不同的文章</td><td><strong>禁止</strong>。会覆盖该 id 的阅读状态；换新 id</td><td>—</td></tr></tbody></table></div>
+      <p>重复内容有两层防线：发布工具（<code>duplicate</code>，不写任何文件）和 App（读到相同 Markdown 只显示一份）。别靠 App 兜底——<strong>别制造重复</strong>。判断「是不是同一篇」用 id，不要用标题。</p>
+      <h4>1.3 读者可以订阅多个 WebDAV 来源</h4>
+      <p>用户可在 Siftr 里添加多个 WebDAV（例如两个坚果云目录、或坚果云加别家 WebDAV）。对你的影响：</p>
+      <ul><li><strong>一个目录 = 一个来源 = 一份 <code>manifest.json</code></strong>，一个目录只让一个发布方写。Manifest 是「读—改—写」，没有锁，两个 Agent 同时写同一个目录会丢更新。想多 Agent，就一人一个目录，让用户在 App 里各添加一次。</li><li><strong>同一地址 App 只收一次</strong>（大小写、末尾斜杠、默认端口 443、「服务器路径+目录」怎么拆分都视为同一地址）。你不需要、也不应该帮用户在多个目录里重复发同一篇来「保险」。</li><li><strong>不同来源里内容完全相同的 Markdown，App 只显示一份</strong>（保留较早添加的来源那份，已读/收藏同步到两份上）。所以「同一篇发布到两个目录」没有意义，除非用户明确要求镜像备份。</li><li>来源之间 id 互不冲突：甲目录的 <code>daily</code> 和乙目录的 <code>daily</code> 是两篇不同的文章，除非字节也相同。</li><li>写入一个目录时只操作这个目录。不要在 <code>SIFTR_DAV_URL</code> 之外读写；不要把一个来源的凭据用到另一个来源。</li></ul>
+      <h4>1.4 读者端如何对待你的文件（决定了「不可变」规则）</h4>
+      <ul><li>正文文件名含全文 SHA-256，<strong>一版一文件，永不改、永不删</strong>。修订就是新文件 + Manifest 改指新路径。App 要求同一路径下内容不可变，违反会被判定为损坏的 Manifest。</li><li><strong>Manifest 永远最后写</strong>。读者随时可能刷新：正文先落盘并回读校验，Manifest 最后更新，读者看到的状态就总是一致的。</li><li>App 会把 <code>media/</code> 图片按路径缓存，不会因为你覆盖同名图片而刷新（见 §7）。</li></ul>
+      <h3>2. 凭据与上传原语</h3>
+      <p>运行环境通过各自的安全管理器注入三个环境变量：</p>
+      <div class="tablewrap"><table><thead><tr><th>变量</th><th>含义</th><th>示例</th></tr></thead><tbody><tr><td><code>SIFTR_DAV_URL</code></td><td>内容根目录完整 URL（HTTPS）</td><td><code>https://dav.jianguoyun.com/dav/Siftr/</code></td></tr><tr><td><code>SIFTR_DAV_USER</code></td><td>账号</td><td><code>user@example.com</code></td></tr><tr><td><code>SIFTR_DAV_APP_PASSWORD</code></td><td>第三方应用密码</td><td>见下</td></tr></tbody></table></div>
+      <p>坚果云 WebDAV <strong>不接受登录密码</strong>。在网页版「账户信息 → 安全选项 → 第三方应用管理」为每个发布方单独创建应用密码（读者 App、每个 Agent 各一个，互不共用）。凭据只从环境变量读取，<strong>绝不写入</strong> Markdown、元数据、仓库、日志、命令行字面值或你的回复。</p>
+      <pre><code data-lang="bash"># 上传（PUT，覆盖同名文件）
+curl -f -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; -T daily.md &quot;$SIFTR_DAV_URL/documents/daily_3f2a1b….md&quot;
+# 建目录（已存在返回 405，可忽略）
+curl -s -o /dev/null -X MKCOL -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/documents/&quot;
+# 读取
+curl -f -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/manifest.json&quot;
+# 列目录（坚果云禁止 GET 目录，必须 PROPFIND）
+curl -s -X PROPFIND -H &#x27;Depth: 1&#x27; -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/&quot;</code></pre>
+      <p><code>-f</code> 让 4xx/5xx 以非零退出码暴露。变量引用一律加引号。</p>
+      <h4>坚果云 WebDAV 行为速查（2026-10 实测）</h4>
+      <div class="tablewrap"><table><thead><tr><th>场景</th><th>实际返回</th></tr></thead><tbody><tr><td>认证</td><td>HTTPS + Basic（<code>realm=&quot;nutstore&quot;</code>），HTTP/2</td></tr><tr><td>凭据错误</td><td><code>401</code>，空响应体</td></tr><tr><td>父目录不存在时 GET/PUT</td><td><code>409 AncestorsNotFound</code>——<strong>不是 404</strong>，先 <code>MKCOL</code></td></tr><tr><td>GET 目录</td><td><code>403</code>；列目录必须 PROPFIND</td></tr><tr><td>频率/流量超限</td><td><code>429</code>/<code>5xx</code>；指数退避，几次后放弃</td></tr></tbody></table></div>
+      <h3>3. 云端目录结构（Siftr 内容协议 v1）</h3>
+      <pre><code data-lang="">$SIFTR_DAV_URL（如 https://dav.jianguoyun.com/dav/Siftr/）
+├── manifest.json                      # 索引：App 的唯一入口
+├── documents/
+│   └── &lt;id前缀&gt;_&lt;内容SHA-256&gt;.md       # 不可变正文，一版一文件
+└── media/                             # 可选：私有图片（App 认证加载）
+    └── &lt;名称&gt;.png|.jpg|.jpeg|.gif|.webp</code></pre>
+      <p><code>manifest.json</code> 顶层：</p>
+      <div class="tablewrap"><table><thead><tr><th>字段</th><th>类型</th><th>约束</th></tr></thead><tbody><tr><td><code>schema_version</code></td><td>int</td><td>固定 <code>1</code></td></tr><tr><td><code>generated_at</code></td><td>string</td><td>带时区 ISO 8601；整份 ≤ 2 MiB</td></tr><tr><td><code>publisher</code></td><td>string?</td><td>发布方标识，可选</td></tr><tr><td><code>documents</code></td><td>array</td><td>≤ 5000 条，按 <code>published_at</code> 倒序；<code>id</code> 不得重复</td></tr></tbody></table></div>
+      <p><code>documents[]</code> 每条：</p>
+      <div class="tablewrap"><table><thead><tr><th>字段</th><th>类型</th><th>约束</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>ASCII <code>[A-Za-z0-9._-]</code>，≤ 200 字符，跨修订不变</td></tr><tr><td><code>title</code> / <code>subtitle</code></td><td>string / string?</td><td>标题非空且 ≤ 200 字符</td></tr><tr><td><code>summary</code></td><td>string</td><td>≤ 1000 字符；App 列表和搜索都用它，认真写</td></tr><tr><td><code>category</code></td><td>string</td><td>非空；App 用它做筛选</td></tr><tr><td><code>tags</code></td><td>[string]?</td><td>可选；App 用它做筛选和搜索</td></tr><tr><td><code>published_at</code> / <code>updated_at</code></td><td>string</td><td>带时区 ISO 8601（<code>2026-10-13T09:00:00+08:00</code>）；<code>published_at</code> 决定排序与按月归档</td></tr><tr><td><code>path</code></td><td>string</td><td><code>documents/&amp;lt;id&amp;gt;_&amp;lt;sha256&amp;gt;.md</code>，由工具生成</td></tr><tr><td><code>content_sha256</code></td><td>string</td><td>正文 UTF-8 字节 SHA-256（64 位小写十六进制）</td></tr><tr><td><code>size_bytes</code></td><td>int</td><td>真实字节数，单篇 ≤ 5 MiB</td></tr><tr><td><code>reading_minutes</code> / <code>source_count</code></td><td>int?</td><td>非负</td></tr></tbody></table></div>
+      <p>硬性规则：正文只允许 <code>documents/</code> 下 UTF-8 <code>.md</code>、非空、≤ 5 MiB；正文与链接里不得出现凭据；时间戳必须带时区。</p>
+      <h3>4. 元数据 JSON（<code>--metadata</code>）</h3>
+      <pre><code data-lang="json">{
+  &quot;id&quot;: &quot;ai-daily&quot;,
+  &quot;title&quot;: &quot;AI 每日简报：把信息读成理解&quot;,
+  &quot;summary&quot;: &quot;三句话说清今天发生了什么、为什么重要。&quot;,
+  &quot;category&quot;: &quot;AI 资讯&quot;,
+  &quot;tags&quot;: [&quot;Agent&quot;, &quot;模型&quot;],
+  &quot;published_at&quot;: &quot;2026-10-13T08:30:00+08:00&quot;,
+  &quot;updated_at&quot;: &quot;2026-10-13T08:30:00+08:00&quot;,
+  &quot;reading_minutes&quot;: 3,
+  &quot;source_count&quot;: 5
+}</code></pre>
+      <p>必填：<code>id</code>、<code>title</code>、<code>summary</code>、<code>category</code>、<code>published_at</code>、<code>updated_at</code>。可选：<code>subtitle</code>、<code>tags</code>、<code>reading_minutes</code>、<code>source_count</code>、<code>publisher</code>。<code>path</code>、<code>content_sha256</code>、<code>size_bytes</code> 由工具填，不要手写。修订时 <code>published_at</code> 保持首次发布时间，<code>updated_at</code> 写本次时间。</p>
+      <h3>5. 发布路径：按运行环境任选</h3>
+      <h4>B. Python 3.10+（推荐）</h4>
+      <p><code>scripts/siftr_publish.py</code>（纯标准库，内置校验、幂等、重复检测、回读与退避，适合无人值守任务）：</p>
+      <pre><code data-lang="bash">python3 scripts/siftr_publish.py validate --markdown out/daily.md --metadata out/daily.json   # 完全离线
+python3 scripts/siftr_publish.py status                                                        # 读远端 Manifest 概况
+python3 scripts/siftr_publish.py publish  --markdown out/daily.md --metadata out/daily.json</code></pre>
+      <p><code>publish</code> 的 JSON 结果与你该做的事：</p>
+      <div class="tablewrap"><table><thead><tr><th><code>result</code></th><th>含义</th><th>你该做的</th></tr></thead><tbody><tr><td><code>published</code></td><td>新文章或修订已写入并回读确认</td><td>汇报 id、篇数、<code>generated_at</code></td></tr><tr><td><code>unchanged</code></td><td>远端已是这份内容</td><td>汇报「无变化」，不重试</td></tr><tr><td><code>duplicate</code></td><td>另一个 id（<code>duplicate_of</code>）已有完全相同的正文，<strong>什么也没写</strong></td><td>不要换 id 重发。若本意是修订那一篇，用 <code>duplicate_of</code> 的 id 并修改内容；否则汇报「重复，已跳过」</td></tr><tr><td>非零退出 + 错误信息</td><td>校验、认证、网络或回读失败</td><td>见 §9；Manifest 不会被改动，可安全重试</td></tr></tbody></table></div>
+      <p>只在明确授权的发布请求或既定计划任务里执行 <code>publish</code>。</p>
+      <h4>A. 纯 shell（没有 Python 的主机）</h4>
+      <p>用 <code>scripts/siftr_upload.sh</code>（POSIX sh + curl，自动建父目录并做 SHA-256 回读）：</p>
+      <pre><code data-lang="bash">scripts/siftr_upload.sh out/daily_3f2a1b.md documents/daily_3f2a1b.md
+scripts/siftr_upload.sh chart.jpg media/chart.jpg</code></pre>
+      <p><code>manifest.json</code> 由你按 §1、§3 手工编排：GET 旧 Manifest → 本地合并 → 上传正文并确认回读哈希一致 → 最后 PUT <code>manifest.json</code> → GET 复核。合并时务必自己做 Python 版做的事：</p>
+      <ol><li>同 <code>id</code> 替换旧条目（沿用 <code>id</code>，更新 <code>path</code>、<code>content_sha256</code>、<code>size_bytes</code>、<code>updated_at</code>）。</li><li><strong>先查重</strong>：若别的 <code>id</code> 已有相同 <code>content_sha256</code>，停止，按 <code>duplicate</code> 处理。</li><li>按 <code>published_at</code> 倒序，刷新 <code>generated_at</code>，Manifest ≤ 2 MiB、≤ 5000 条。</li></ol>
+      <h3>6. Markdown 写作规范（按 App 渲染器实际能力）</h3>
+      <p>支持：h1–h3、粗/斜体、行内代码、有序/无序列表、引用块、表格、代码块（横向滚动）、分隔线、可点击链接、图片。正文 18pt，随系统动态字号。</p>
+      <ul><li>分节用 <code>##</code> 与 <code>###</code>；<strong>不要用 <code>#</code></strong>（与文章大标题重复）。<strong>每个标题都会成为 App 里的目录条目和书签锚点</strong>，所以小节标题要简短、有信息、在同一篇里不重复。</li><li>首段直接给结论，段落短小；关键引语放引用块，对比信息用表格，命令与代码放代码块并标注语言。</li><li>链接锚文本要有意义，必须是 http(s)；App 会拦截指向用户 WebDAV 主机的链接，所以<strong>不要链接到你自己的 WebDAV 地址</strong>。</li><li>不写 HTML；不要在正文里放凭据。</li><li>App 支持全文搜索：把读者会搜的专有名词、产品名、人名写进正文（而不只写在图里）。</li><li>不要写「相关推荐」「点此提问」「朗读」之类依赖 App 功能的话——这些功能不存在。</li></ul>
+      <h3>7. 图片策略</h3>
+      <p>坚果云流量配额宝贵，按优先级：</p>
+      <ol><li><strong>首选公开网络链接</strong>：<code>![图表](https://example.com/chart.png)</code>，不消耗坚果云流量。</li><li><strong>确需私有图片才上传 <code>media/</code>，且必须先压缩</strong>：长边 ≤ 1600px、JPEG 质量 70–80（或 WebP 80），单张目标 ≤ 300 KB。10 MiB 的协议上限只是兜底。</li></ol>
+      <pre><code data-lang="bash">magick in.png -resize &#x27;1600x1600&gt;&#x27; -quality 75 out.jpg                 # ImageMagick（v6 用 convert）
+sips -Z 1600 -s format jpeg -s formatOptions 72 in.png --out out.jpg   # macOS 自带</code></pre>
+      <p>私有图片用<strong>纯相对路径</strong>引用：<code>![架构图](media/architecture.png)</code>。App 用<strong>该来源</strong>的凭据认证加载并缓存。</p>
+      <ul><li><code>media/</code> 只允许 <code>png/jpg/jpeg/gif/webp</code>；路径禁止 <code>..</code>、<code>%</code>、空格与控制字符。发布工具会拒绝违规引用。</li><li>图片不进 Manifest，App 按路径按需加载。</li><li>缓存以路径为键：<strong>覆盖同名图片不会刷新已读设备</strong>。改图用新文件名（<code>chart-v2.png</code>）并发布正文修订，旧图保留。</li></ul>
+      <h3>8. 纪律与汇报</h3>
+      <ul><li>发布前先 <code>validate</code>。脚本自带凭据泄露检查（<code>Authorization</code>、URL 内嵌账号密码、<code>SIFTR_DAV_APP_PASSWORD=</code> 等直接拒绝）。</li><li>永不删除远端历史文件；永不覆盖已有正文路径。</li><li>一个目录只有一个写入方（§1.3）。</li><li>汇报只含：命令结果（<code>published</code>/<code>unchanged</code>/<code>duplicate</code>/错误类别）、文档 id、篇数、时间。<strong>不含</strong>凭据、账号、私有本地路径。</li></ul>
+      <h3>9. 排错速查</h3>
+      <div class="tablewrap"><table><thead><tr><th>现象</th><th>原因</th><th>做法</th></tr></thead><tbody><tr><td><code>认证失败</code> / 401</td><td>用了登录密码，或应用密码已撤销</td><td>让用户重新创建第三方应用密码</td></tr><tr><td>409 <code>AncestorsNotFound</code></td><td>父目录不存在</td><td><code>MKCOL</code> 后重试（Python 工具首次发布会自动初始化）</td></tr><tr><td>429 / 5xx</td><td>限流</td><td>退避重试；仍失败就放弃，下次计划任务再试</td></tr><tr><td><code>远端 Manifest 格式错误；已停止发布</code></td><td>远端 <code>manifest.json</code> 损坏或被他人改过</td><td><strong>不要覆盖</strong>。汇报给用户，由人决定如何恢复</td></tr><tr><td><code>Manifest 中存在重复 ID</code></td><td>远端被手工改坏</td><td>同上，不要自行覆盖</td></tr><tr><td><code>正文回读校验失败</code></td><td>上传被截断/中途改写</td><td>Manifest 未改动；直接重试</td></tr><tr><td><code>duplicate</code></td><td>内容与别的 id 相同</td><td>§1.2：不要重发</td></tr><tr><td>App 里没看到新内容</td><td>读者需要手动下拉刷新；或用户没添加这个目录</td><td>确认目录地址与用户在 App 里添加的一致</td></tr></tbody></table></div>
+      <!--SKILL-BODY-END-->
+    </article>
+
+    <article class="language-panel" data-language="en" lang="en" data-title="Publisher Skill · Siftr">
+      <header><h1>Publisher Skill</h1><p class="updated">Skill version: October 14, 2026</p></header>
+      <p class="lede">Send this page to your AI agent and it can publish Markdown briefings to your own WebDAV cloud (Jianguoyun) in the exact layout the Siftr reader expects. Neither the skill nor the package contains credentials; the app password is injected by your agent's runtime.</p>
+      <h2>Install</h2>
+      <p>The package is a zip that unfolds into a complete <code>siftr-publish/</code> folder (SKILL.md plus two scripts). Drop it into your agent's skills directory — commonly <code>~/.agents/skills/</code>, <code>~/.zcode/skills/</code>, or <code>~/.claude/skills/</code>; check your agent's documentation.</p>
+      <p>Send this to your agent:</p>
+      <pre><code>Install this skill: download https://chenhk-chn.github.io/Siftr/assets/siftr-publish.zip and unzip it, place the resulting siftr-publish/ folder into your skills directory, then follow its SKILL.md to publish Siftr content for me.</code></pre>
+      <p><a href="assets/siftr-publish.zip">Download the package (siftr-publish.zip)</a> · The three environment variables it needs are in §2 below.</p>
+      <h2>Full skill text</h2>
+      <p>Identical to the SKILL.md inside the package (generated from <code>skills/siftr-publish/</code> by <code>scripts/package_skill.py</code>, so it never drifts). The skill itself is written in Simplified Chinese; agents follow it as-is.</p>
+      <!--SKILL-BODY-START-->
+<h2>Siftr 内容发布（面向 Agent）</h2>
+      <p>你是 <strong>唯一的写入方</strong>。Siftr App 只读：它 GET <code>manifest.json</code>，对比后再 GET 需要的正文。App 不会替你总结、配图、推荐、朗读或追问——这些都不做。<strong>摘要、分类、标签、标题都由你写好</strong>，写进元数据和 Markdown。</p>
+      <blockquote><p>只想传任意文件到坚果云？看 §2 的 curl 原语即可，零依赖。想让 App 读到内容？先读 §1 的逻辑，再用 §5 的工具。</p></blockquote>
+      <h3>1. 先理解这套逻辑（决定你每次该怎么做）</h3>
+      <h4>1.1 两个标识，别混</h4>
+      <div class="tablewrap"><table><thead><tr><th>标识</th><th>含义</th><th>谁决定</th></tr></thead><tbody><tr><td><code>id</code></td><td><strong>这是哪一篇文章</strong>。跨修订保持不变（如 <code>ai-daily</code>、<code>weekly-2026-w41</code>）</td><td>你</td></tr><tr><td><code>content_sha256</code></td><td><strong>这是哪份字节</strong>。正文 UTF-8 字节的 SHA-256</td><td>工具自动算</td></tr></tbody></table></div>
+      <p>读者端的已读/收藏记录挂在 <code>id</code> 上；内容变化靠 <code>content_sha256</code> 判断。</p>
+      <h4>1.2 发布前的决策表</h4>
+      <div class="tablewrap"><table><thead><tr><th>你手里的情况</th><th>怎么做</th><th>工具返回</th></tr></thead><tbody><tr><td>全新的一篇</td><td>起一个<strong>新 id</strong>，<code>publish</code></td><td><code>published</code></td></tr><tr><td>修订已发布的文章（改错字、补充、更新）</td><td><strong>沿用原 id</strong>，改 Markdown，<code>publish</code></td><td><code>published</code>（旧版本文件保留，Manifest 指向新文件）</td></tr><tr><td>与上次完全一样</td><td>什么都不用做（再跑也没副作用）</td><td><code>unchanged</code></td></tr><tr><td>新 id，但正文与某篇<strong>已发布</strong>的字节完全相同</td><td><strong>不要发</strong>。这是重复内容，工具直接拒绝写入</td><td><code>duplicate</code>（含 <code>duplicate_of</code>，即已存在的 id）</td></tr><tr><td>想用旧 id 发一篇完全不同的文章</td><td><strong>禁止</strong>。会覆盖该 id 的阅读状态；换新 id</td><td>—</td></tr></tbody></table></div>
+      <p>重复内容有两层防线：发布工具（<code>duplicate</code>，不写任何文件）和 App（读到相同 Markdown 只显示一份）。别靠 App 兜底——<strong>别制造重复</strong>。判断「是不是同一篇」用 id，不要用标题。</p>
+      <h4>1.3 读者可以订阅多个 WebDAV 来源</h4>
+      <p>用户可在 Siftr 里添加多个 WebDAV（例如两个坚果云目录、或坚果云加别家 WebDAV）。对你的影响：</p>
+      <ul><li><strong>一个目录 = 一个来源 = 一份 <code>manifest.json</code></strong>，一个目录只让一个发布方写。Manifest 是「读—改—写」，没有锁，两个 Agent 同时写同一个目录会丢更新。想多 Agent，就一人一个目录，让用户在 App 里各添加一次。</li><li><strong>同一地址 App 只收一次</strong>（大小写、末尾斜杠、默认端口 443、「服务器路径+目录」怎么拆分都视为同一地址）。你不需要、也不应该帮用户在多个目录里重复发同一篇来「保险」。</li><li><strong>不同来源里内容完全相同的 Markdown，App 只显示一份</strong>（保留较早添加的来源那份，已读/收藏同步到两份上）。所以「同一篇发布到两个目录」没有意义，除非用户明确要求镜像备份。</li><li>来源之间 id 互不冲突：甲目录的 <code>daily</code> 和乙目录的 <code>daily</code> 是两篇不同的文章，除非字节也相同。</li><li>写入一个目录时只操作这个目录。不要在 <code>SIFTR_DAV_URL</code> 之外读写；不要把一个来源的凭据用到另一个来源。</li></ul>
+      <h4>1.4 读者端如何对待你的文件（决定了「不可变」规则）</h4>
+      <ul><li>正文文件名含全文 SHA-256，<strong>一版一文件，永不改、永不删</strong>。修订就是新文件 + Manifest 改指新路径。App 要求同一路径下内容不可变，违反会被判定为损坏的 Manifest。</li><li><strong>Manifest 永远最后写</strong>。读者随时可能刷新：正文先落盘并回读校验，Manifest 最后更新，读者看到的状态就总是一致的。</li><li>App 会把 <code>media/</code> 图片按路径缓存，不会因为你覆盖同名图片而刷新（见 §7）。</li></ul>
+      <h3>2. 凭据与上传原语</h3>
+      <p>运行环境通过各自的安全管理器注入三个环境变量：</p>
+      <div class="tablewrap"><table><thead><tr><th>变量</th><th>含义</th><th>示例</th></tr></thead><tbody><tr><td><code>SIFTR_DAV_URL</code></td><td>内容根目录完整 URL（HTTPS）</td><td><code>https://dav.jianguoyun.com/dav/Siftr/</code></td></tr><tr><td><code>SIFTR_DAV_USER</code></td><td>账号</td><td><code>user@example.com</code></td></tr><tr><td><code>SIFTR_DAV_APP_PASSWORD</code></td><td>第三方应用密码</td><td>见下</td></tr></tbody></table></div>
+      <p>坚果云 WebDAV <strong>不接受登录密码</strong>。在网页版「账户信息 → 安全选项 → 第三方应用管理」为每个发布方单独创建应用密码（读者 App、每个 Agent 各一个，互不共用）。凭据只从环境变量读取，<strong>绝不写入</strong> Markdown、元数据、仓库、日志、命令行字面值或你的回复。</p>
+      <pre><code data-lang="bash"># 上传（PUT，覆盖同名文件）
+curl -f -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; -T daily.md &quot;$SIFTR_DAV_URL/documents/daily_3f2a1b….md&quot;
+# 建目录（已存在返回 405，可忽略）
+curl -s -o /dev/null -X MKCOL -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/documents/&quot;
+# 读取
+curl -f -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/manifest.json&quot;
+# 列目录（坚果云禁止 GET 目录，必须 PROPFIND）
+curl -s -X PROPFIND -H &#x27;Depth: 1&#x27; -u &quot;$SIFTR_DAV_USER:$SIFTR_DAV_APP_PASSWORD&quot; &quot;$SIFTR_DAV_URL/&quot;</code></pre>
+      <p><code>-f</code> 让 4xx/5xx 以非零退出码暴露。变量引用一律加引号。</p>
+      <h4>坚果云 WebDAV 行为速查（2026-10 实测）</h4>
+      <div class="tablewrap"><table><thead><tr><th>场景</th><th>实际返回</th></tr></thead><tbody><tr><td>认证</td><td>HTTPS + Basic（<code>realm=&quot;nutstore&quot;</code>），HTTP/2</td></tr><tr><td>凭据错误</td><td><code>401</code>，空响应体</td></tr><tr><td>父目录不存在时 GET/PUT</td><td><code>409 AncestorsNotFound</code>——<strong>不是 404</strong>，先 <code>MKCOL</code></td></tr><tr><td>GET 目录</td><td><code>403</code>；列目录必须 PROPFIND</td></tr><tr><td>频率/流量超限</td><td><code>429</code>/<code>5xx</code>；指数退避，几次后放弃</td></tr></tbody></table></div>
+      <h3>3. 云端目录结构（Siftr 内容协议 v1）</h3>
+      <pre><code data-lang="">$SIFTR_DAV_URL（如 https://dav.jianguoyun.com/dav/Siftr/）
+├── manifest.json                      # 索引：App 的唯一入口
+├── documents/
+│   └── &lt;id前缀&gt;_&lt;内容SHA-256&gt;.md       # 不可变正文，一版一文件
+└── media/                             # 可选：私有图片（App 认证加载）
+    └── &lt;名称&gt;.png|.jpg|.jpeg|.gif|.webp</code></pre>
+      <p><code>manifest.json</code> 顶层：</p>
+      <div class="tablewrap"><table><thead><tr><th>字段</th><th>类型</th><th>约束</th></tr></thead><tbody><tr><td><code>schema_version</code></td><td>int</td><td>固定 <code>1</code></td></tr><tr><td><code>generated_at</code></td><td>string</td><td>带时区 ISO 8601；整份 ≤ 2 MiB</td></tr><tr><td><code>publisher</code></td><td>string?</td><td>发布方标识，可选</td></tr><tr><td><code>documents</code></td><td>array</td><td>≤ 5000 条，按 <code>published_at</code> 倒序；<code>id</code> 不得重复</td></tr></tbody></table></div>
+      <p><code>documents[]</code> 每条：</p>
+      <div class="tablewrap"><table><thead><tr><th>字段</th><th>类型</th><th>约束</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>ASCII <code>[A-Za-z0-9._-]</code>，≤ 200 字符，跨修订不变</td></tr><tr><td><code>title</code> / <code>subtitle</code></td><td>string / string?</td><td>标题非空且 ≤ 200 字符</td></tr><tr><td><code>summary</code></td><td>string</td><td>≤ 1000 字符；App 列表和搜索都用它，认真写</td></tr><tr><td><code>category</code></td><td>string</td><td>非空；App 用它做筛选</td></tr><tr><td><code>tags</code></td><td>[string]?</td><td>可选；App 用它做筛选和搜索</td></tr><tr><td><code>published_at</code> / <code>updated_at</code></td><td>string</td><td>带时区 ISO 8601（<code>2026-10-13T09:00:00+08:00</code>）；<code>published_at</code> 决定排序与按月归档</td></tr><tr><td><code>path</code></td><td>string</td><td><code>documents/&amp;lt;id&amp;gt;_&amp;lt;sha256&amp;gt;.md</code>，由工具生成</td></tr><tr><td><code>content_sha256</code></td><td>string</td><td>正文 UTF-8 字节 SHA-256（64 位小写十六进制）</td></tr><tr><td><code>size_bytes</code></td><td>int</td><td>真实字节数，单篇 ≤ 5 MiB</td></tr><tr><td><code>reading_minutes</code> / <code>source_count</code></td><td>int?</td><td>非负</td></tr></tbody></table></div>
+      <p>硬性规则：正文只允许 <code>documents/</code> 下 UTF-8 <code>.md</code>、非空、≤ 5 MiB；正文与链接里不得出现凭据；时间戳必须带时区。</p>
+      <h3>4. 元数据 JSON（<code>--metadata</code>）</h3>
+      <pre><code data-lang="json">{
+  &quot;id&quot;: &quot;ai-daily&quot;,
+  &quot;title&quot;: &quot;AI 每日简报：把信息读成理解&quot;,
+  &quot;summary&quot;: &quot;三句话说清今天发生了什么、为什么重要。&quot;,
+  &quot;category&quot;: &quot;AI 资讯&quot;,
+  &quot;tags&quot;: [&quot;Agent&quot;, &quot;模型&quot;],
+  &quot;published_at&quot;: &quot;2026-10-13T08:30:00+08:00&quot;,
+  &quot;updated_at&quot;: &quot;2026-10-13T08:30:00+08:00&quot;,
+  &quot;reading_minutes&quot;: 3,
+  &quot;source_count&quot;: 5
+}</code></pre>
+      <p>必填：<code>id</code>、<code>title</code>、<code>summary</code>、<code>category</code>、<code>published_at</code>、<code>updated_at</code>。可选：<code>subtitle</code>、<code>tags</code>、<code>reading_minutes</code>、<code>source_count</code>、<code>publisher</code>。<code>path</code>、<code>content_sha256</code>、<code>size_bytes</code> 由工具填，不要手写。修订时 <code>published_at</code> 保持首次发布时间，<code>updated_at</code> 写本次时间。</p>
+      <h3>5. 发布路径：按运行环境任选</h3>
+      <h4>B. Python 3.10+（推荐）</h4>
+      <p><code>scripts/siftr_publish.py</code>（纯标准库，内置校验、幂等、重复检测、回读与退避，适合无人值守任务）：</p>
+      <pre><code data-lang="bash">python3 scripts/siftr_publish.py validate --markdown out/daily.md --metadata out/daily.json   # 完全离线
+python3 scripts/siftr_publish.py status                                                        # 读远端 Manifest 概况
+python3 scripts/siftr_publish.py publish  --markdown out/daily.md --metadata out/daily.json</code></pre>
+      <p><code>publish</code> 的 JSON 结果与你该做的事：</p>
+      <div class="tablewrap"><table><thead><tr><th><code>result</code></th><th>含义</th><th>你该做的</th></tr></thead><tbody><tr><td><code>published</code></td><td>新文章或修订已写入并回读确认</td><td>汇报 id、篇数、<code>generated_at</code></td></tr><tr><td><code>unchanged</code></td><td>远端已是这份内容</td><td>汇报「无变化」，不重试</td></tr><tr><td><code>duplicate</code></td><td>另一个 id（<code>duplicate_of</code>）已有完全相同的正文，<strong>什么也没写</strong></td><td>不要换 id 重发。若本意是修订那一篇，用 <code>duplicate_of</code> 的 id 并修改内容；否则汇报「重复，已跳过」</td></tr><tr><td>非零退出 + 错误信息</td><td>校验、认证、网络或回读失败</td><td>见 §9；Manifest 不会被改动，可安全重试</td></tr></tbody></table></div>
+      <p>只在明确授权的发布请求或既定计划任务里执行 <code>publish</code>。</p>
+      <h4>A. 纯 shell（没有 Python 的主机）</h4>
+      <p>用 <code>scripts/siftr_upload.sh</code>（POSIX sh + curl，自动建父目录并做 SHA-256 回读）：</p>
+      <pre><code data-lang="bash">scripts/siftr_upload.sh out/daily_3f2a1b.md documents/daily_3f2a1b.md
+scripts/siftr_upload.sh chart.jpg media/chart.jpg</code></pre>
+      <p><code>manifest.json</code> 由你按 §1、§3 手工编排：GET 旧 Manifest → 本地合并 → 上传正文并确认回读哈希一致 → 最后 PUT <code>manifest.json</code> → GET 复核。合并时务必自己做 Python 版做的事：</p>
+      <ol><li>同 <code>id</code> 替换旧条目（沿用 <code>id</code>，更新 <code>path</code>、<code>content_sha256</code>、<code>size_bytes</code>、<code>updated_at</code>）。</li><li><strong>先查重</strong>：若别的 <code>id</code> 已有相同 <code>content_sha256</code>，停止，按 <code>duplicate</code> 处理。</li><li>按 <code>published_at</code> 倒序，刷新 <code>generated_at</code>，Manifest ≤ 2 MiB、≤ 5000 条。</li></ol>
+      <h3>6. Markdown 写作规范（按 App 渲染器实际能力）</h3>
+      <p>支持：h1–h3、粗/斜体、行内代码、有序/无序列表、引用块、表格、代码块（横向滚动）、分隔线、可点击链接、图片。正文 18pt，随系统动态字号。</p>
+      <ul><li>分节用 <code>##</code> 与 <code>###</code>；<strong>不要用 <code>#</code></strong>（与文章大标题重复）。<strong>每个标题都会成为 App 里的目录条目和书签锚点</strong>，所以小节标题要简短、有信息、在同一篇里不重复。</li><li>首段直接给结论，段落短小；关键引语放引用块，对比信息用表格，命令与代码放代码块并标注语言。</li><li>链接锚文本要有意义，必须是 http(s)；App 会拦截指向用户 WebDAV 主机的链接，所以<strong>不要链接到你自己的 WebDAV 地址</strong>。</li><li>不写 HTML；不要在正文里放凭据。</li><li>App 支持全文搜索：把读者会搜的专有名词、产品名、人名写进正文（而不只写在图里）。</li><li>不要写「相关推荐」「点此提问」「朗读」之类依赖 App 功能的话——这些功能不存在。</li></ul>
+      <h3>7. 图片策略</h3>
+      <p>坚果云流量配额宝贵，按优先级：</p>
+      <ol><li><strong>首选公开网络链接</strong>：<code>![图表](https://example.com/chart.png)</code>，不消耗坚果云流量。</li><li><strong>确需私有图片才上传 <code>media/</code>，且必须先压缩</strong>：长边 ≤ 1600px、JPEG 质量 70–80（或 WebP 80），单张目标 ≤ 300 KB。10 MiB 的协议上限只是兜底。</li></ol>
+      <pre><code data-lang="bash">magick in.png -resize &#x27;1600x1600&gt;&#x27; -quality 75 out.jpg                 # ImageMagick（v6 用 convert）
+sips -Z 1600 -s format jpeg -s formatOptions 72 in.png --out out.jpg   # macOS 自带</code></pre>
+      <p>私有图片用<strong>纯相对路径</strong>引用：<code>![架构图](media/architecture.png)</code>。App 用<strong>该来源</strong>的凭据认证加载并缓存。</p>
+      <ul><li><code>media/</code> 只允许 <code>png/jpg/jpeg/gif/webp</code>；路径禁止 <code>..</code>、<code>%</code>、空格与控制字符。发布工具会拒绝违规引用。</li><li>图片不进 Manifest，App 按路径按需加载。</li><li>缓存以路径为键：<strong>覆盖同名图片不会刷新已读设备</strong>。改图用新文件名（<code>chart-v2.png</code>）并发布正文修订，旧图保留。</li></ul>
+      <h3>8. 纪律与汇报</h3>
+      <ul><li>发布前先 <code>validate</code>。脚本自带凭据泄露检查（<code>Authorization</code>、URL 内嵌账号密码、<code>SIFTR_DAV_APP_PASSWORD=</code> 等直接拒绝）。</li><li>永不删除远端历史文件；永不覆盖已有正文路径。</li><li>一个目录只有一个写入方（§1.3）。</li><li>汇报只含：命令结果（<code>published</code>/<code>unchanged</code>/<code>duplicate</code>/错误类别）、文档 id、篇数、时间。<strong>不含</strong>凭据、账号、私有本地路径。</li></ul>
+      <h3>9. 排错速查</h3>
+      <div class="tablewrap"><table><thead><tr><th>现象</th><th>原因</th><th>做法</th></tr></thead><tbody><tr><td><code>认证失败</code> / 401</td><td>用了登录密码，或应用密码已撤销</td><td>让用户重新创建第三方应用密码</td></tr><tr><td>409 <code>AncestorsNotFound</code></td><td>父目录不存在</td><td><code>MKCOL</code> 后重试（Python 工具首次发布会自动初始化）</td></tr><tr><td>429 / 5xx</td><td>限流</td><td>退避重试；仍失败就放弃，下次计划任务再试</td></tr><tr><td><code>远端 Manifest 格式错误；已停止发布</code></td><td>远端 <code>manifest.json</code> 损坏或被他人改过</td><td><strong>不要覆盖</strong>。汇报给用户，由人决定如何恢复</td></tr><tr><td><code>Manifest 中存在重复 ID</code></td><td>远端被手工改坏</td><td>同上，不要自行覆盖</td></tr><tr><td><code>正文回读校验失败</code></td><td>上传被截断/中途改写</td><td>Manifest 未改动；直接重试</td></tr><tr><td><code>duplicate</code></td><td>内容与别的 id 相同</td><td>§1.2：不要重发</td></tr><tr><td>App 里没看到新内容</td><td>读者需要手动下拉刷新；或用户没添加这个目录</td><td>确认目录地址与用户在 App 里添加的一致</td></tr></tbody></table></div>
+      <!--SKILL-BODY-END-->
+    </article>
+  </main>
+  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
+</div><script src="language.js?v=siftr-20261014-1"></script></body></html>
