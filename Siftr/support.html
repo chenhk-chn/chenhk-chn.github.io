@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr Support">
+<title>技术支持 · Siftr</title>
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
+<link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-1">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body><div class="wrap">
+  <div class="site-bar">
+    <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
+    <label class="language-picker">
+      <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="en">English</option>
+      </select>
+    </label>
+  </div>
+  <main tabindex="-1">
+    <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="技术支持 · Siftr">
+      <header><h1>技术支持</h1><p class="updated">需要 iOS 18 或以上版本</p></header>
+      <p class="lede">遇到问题或有功能建议，请发邮件到 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>，附上机型、系统版本和「设置」里显示的最后同步时间会更有帮助。</p>
+      <h2>开始之前需要什么</h2>
+      <ul>
+        <li>一台 iOS 18 或更新系统的 iPhone 或 iPad。</li>
+        <li>一个坚果云账号（其他标准 WebDAV 服务也可，但默认预设是坚果云）。</li>
+        <li>一个由 AI Agent（例如 Hermes）发布到你云盘的内容目录，里面应有 <code>manifest.json</code> 和 Markdown 简报。</li>
+      </ul>
+      <h2>首次配置</h2>
+      <ul>
+        <li>在坚果云网页「账户信息 → 安全选项 → 第三方应用管理」中生成一个应用密码（为 Siftr 单独创建，不要与发布端共用）。</li>
+        <li>打开 Siftr，输入服务器地址（默认 <code>https://dav.jianguoyun.com/dav/</code>）、账号邮箱、应用密码和内容目录（默认 <code>Siftr</code>）。</li>
+        <li>点「测试连接」确认能读到内容后保存，回到首页下拉刷新即可看到简报。</li>
+      </ul>
+      <h2>刷新后没有新内容？</h2>
+      <p>先确认发布端当天是否执行成功；Siftr 首页会显示最后同步时间。网络失败或格式异常时，App 会保留上一次的内容并提示错误，不会清空首页；稍后再下拉重试即可。</p>
+      <h2>飞行模式下能阅读吗？</h2>
+      <p>能。凡是打开过的文章都缓存在本机，断网时照常阅读；从未打开过的文章则需要联网下载。</p>
+      <h2>清理缓存会删掉收藏吗？</h2>
+      <p>不会。「设置」里的清理只移除可重新下载的正文缓存；收藏、已读状态和阅读进度都保留。</p>
+      <h2>应用密码换了怎么办？</h2>
+      <p>打开「设置 → 连接坚果云」，输入新密码重新测试并保存；此前已缓存的内容不受影响，照常可读。</p>
+      <h2>文章更新后阅读进度会丢吗？</h2>
+      <p>不会。阅读状态按文档 ID 记录，云端修订正文不会重置你的已读、收藏和阅读位置。</p>
+      <h2>Debug 示例模式</h2>
+      <p>开发版可以在启动参数中加 <code>--demo</code> 查看明确标记的示例简报，其数据与真实配置完全隔离；正式版不含示例数据。</p>
+    </article>
+
+    <article class="language-panel" data-language="en" lang="en" data-title="Support · Siftr">
+      <header><h1>Support</h1><p class="updated">Requires iOS 18 or later</p></header>
+      <p class="lede">For problems or ideas, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> — including your device model, iOS version, and the last-sync time shown in Settings helps a lot.</p>
+      <h2>What you need to start</h2>
+      <ul>
+        <li>An iPhone or iPad running iOS 18 or later.</li>
+        <li>A Jianguoyun account (other standard WebDAV services work too; Jianguoyun is the default preset).</li>
+        <li>A content folder in your cloud, published by an AI agent (for example Hermes), containing a <code>manifest.json</code> and Markdown briefings.</li>
+      </ul>
+      <h2>First-time setup</h2>
+      <ul>
+        <li>Generate an app-specific password under Jianguoyun's web settings (Account Info → Security → third-party app management) — create a separate one for Siftr, not shared with your publisher.</li>
+        <li>Open Siftr and enter the server address (default <code>https://dav.jianguoyun.com/dav/</code>), account email, app password, and content folder (default <code>Siftr</code>).</li>
+        <li>Tap "Test Connection", save once it succeeds, then pull to refresh on the home feed.</li>
+      </ul>
+      <h2>No new content after refreshing?</h2>
+      <p>First check whether your publishing agent ran today; Siftr's home shows the last sync time. On network or format errors the app keeps the previous content and shows the error instead of emptying the feed — just pull to retry later.</p>
+      <h2>Can I read offline?</h2>
+      <p>Yes. Every article you have opened is cached on the device and readable without a network; articles never opened need a connection to download.</p>
+      <h2>Does clearing the cache delete favorites?</h2>
+      <p>No. Clearing in Settings removes only re-downloadable article bodies; favorites, read states, and reading positions are kept.</p>
+      <h2>Changed the app password?</h2>
+      <p>Open Settings → Jianguoyun connection, enter the new password, test, and save. Previously cached content is unaffected and stays readable.</p>
+      <h2>Will revisions reset my progress?</h2>
+      <p>No. Reading state is bound to each document's stable ID, so a revised body never resets your read state, favorites, or position.</p>
+      <h2>Demo mode</h2>
+      <p>Debug builds accept a <code>--demo</code> launch argument that shows clearly labeled sample briefings in an isolated environment; release builds contain no sample data.</p>
+    </article>
+  </main>
+  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
+</div><script src="language.js?v=siftr-20261014-1"></script></body></html>

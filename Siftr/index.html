@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Siftr — 阅读 AI Agent 为你整理的每日简报：连接你自己的坚果云 WebDAV，按需缓存正文，本地保存收藏与阅读进度。无服务器、无账号、无广告。">
+<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)">
+<title>Siftr</title>
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
+<link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-1">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="site-bar">
+    <a class="wordmark" href="index.html" aria-label="Siftr home">Siftr</a>
+    <label class="language-picker">
+      <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="en">English</option>
+      </select>
+    </label>
+  </div>
+
+  <main tabindex="-1">
+    <section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>AI 负责整理，你负责阅读</h1>
+        <p class="lede">Siftr 把 AI Agent 每天发布到坚果云的 Markdown 简报，变成一本安静的原生刊物：连接你自己的 WebDAV，下拉刷新取新内容，正文按需缓存、飞行模式也能接着读；收藏和阅读位置只保存在这台设备上。</p>
+        <p class="meta">适用于 iPhone 与 iPad · 需要 iOS 18 或更新版本</p>
+      <p class="cta"><span class="cta-badge">正在 TestFlight 内测</span><a href="mailto:imhccn@gmail.com">参加测试或反馈</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>连接你自己的云盘</strong><span>首次配置输入 WebDAV 地址、第三方应用密码和内容目录；简报存放在你自己的坚果云里，Siftr 不经手任何第三方服务器。</span></li>
+        <li><strong>像刊物，不像网盘</strong><span>首页按时间倒序排列每日简报，最新一期突出显示；标题、摘要、分类与标签一目了然，未读状态清晰可辨。</span></li>
+        <li><strong>正文按需缓存</strong><span>打开过的文章保存在本机；再次进入秒开，飞行模式、地铁里都能接着读，网络异常也绝不清空已读内容。</span></li>
+        <li><strong>阅读进度不丢</strong><span>已读/未读、滚动位置和最近阅读时间绑定文档本身；云端修订正文或刷新索引，都不会清掉你的记录。</span></li>
+        <li><strong>收藏与全文搜索</strong><span>一键收藏值得保留的简报；标题、摘要、标签乃至正文都能搜，搜索结果依然可以离线打开已缓存的文章。</span></li>
+        <li><strong>安静地刷新</strong><span>下拉即取最新索引，内容没有变化就不重复下载；同步失败保留旧内容，并明确显示最后成功同步的时间。</span></li>
+      </ul>
+      <p class="closing">没有 Siftr 账号，没有广告，也没有跟踪。你的阅读记录只属于这台设备。</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>WebDAV 凭证、缓存与本地数据</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、连接配置和联系方式</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="en" lang="en" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>A quiet home for your AI briefings</h1>
+        <p class="lede">Siftr turns the Markdown briefings your AI agent publishes to your own WebDAV cloud each day into a calm, native magazine: pull to refresh, articles cached on demand and readable offline, with favorites and reading positions kept on this device alone.</p>
+        <p class="meta">For iPhone and iPad · Requires iOS 18 or later · The app interface currently speaks Simplified Chinese</p>
+      <p class="cta"><span class="cta-badge">Now in TestFlight</span><a href="mailto:imhccn@gmail.com">Join the beta or send feedback</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>Your cloud, your data</strong><span>Set up once with a WebDAV address, an app-specific password, and a content folder. Briefings live in your own Jianguoyun storage — Siftr operates no server of its own.</span></li>
+        <li><strong>A magazine, not a file list</strong><span>The home feed reads like a table of contents: the latest issue up top, then every briefing in reverse chronological order with titles, summaries, categories, and tags.</span></li>
+        <li><strong>Cached as you read</strong><span>Articles you open stay on the device — instant on revisit, fully readable in airplane mode or on the subway, and never wiped by a failed refresh.</span></li>
+        <li><strong>Progress that sticks</strong><span>Read state, scroll position, and recents are bound to each document's identity; revisions and index refreshes never reset your place.</span></li>
+        <li><strong>Favorites and full-text search</strong><span>Keep the briefings worth keeping, and search titles, summaries, tags, and body text — cached results still open offline.</span></li>
+        <li><strong>Refreshes quietly</strong><span>Pull to fetch the latest index; unchanged content is never re-downloaded, a failed sync keeps what you had, and the last successful sync time is always shown.</span></li>
+      </ul>
+      <p class="closing">No Siftr account, no ads, no tracking. Your reading history stays on your device.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>WebDAV credentials, cache, and on-device data</span></a>
+        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, setup steps, and contact details</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></footer>
+</div>
+<script src="language.js?v=siftr-20261014-1"></script>
+</body>
+</html>

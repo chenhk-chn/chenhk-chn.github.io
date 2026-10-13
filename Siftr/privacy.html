@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr Privacy Policy">
+<title>隐私政策 · Siftr</title>
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
+<link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-1">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body><div class="wrap">
+  <div class="site-bar">
+    <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
+    <label class="language-picker">
+      <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="en">English</option>
+      </select>
+    </label>
+  </div>
+  <main tabindex="-1">
+    <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="隐私政策 · Siftr">
+      <header><h1>隐私政策</h1><p class="updated">最后更新：2026 年 10 月 14 日</p></header>
+      <p class="lede">Siftr 是一个本地优先的私人阅读器。你不需要注册账号；简报正文保存在你自己的坚果云和这台设备上，阅读记录只留在这台设备上。开发者不经营任何服务器，也不收集你的数据。</p>
+      <h2>Siftr 不收集任何数据</h2>
+      <p>Siftr 没有账号体系，没有分析或广告 SDK，没有跟踪器。你阅读了什么、搜了什么、收藏了什么，都不会发送给开发者或任何第三方服务器。</p>
+      <div class="note"><p>Siftr 对云端内容只读：它只从你配置的 WebDAV 目录下载索引和正文，不会修改、上传或删除你坚果云里的任何文件。</p></div>
+      <h2>WebDAV 凭证</h2>
+      <p>服务器地址、账号邮箱和第三方应用密码只保存在这台设备的 iOS 钥匙串（Keychain）中，不进入云端备份，也不会写入普通日志。凭证只发送给你自己配置的服务器；遇到跨域重定向时不会继续携带。</p>
+      <p>建议在坚果云「账户信息 → 安全选项 → 第三方应用管理」中为 Siftr 单独创建一个应用密码，与发布端（例如 Hermes）使用的密码分开。你随时可以在坚果云侧吊销它，吊销不影响本机已缓存的内容。</p>
+      <h2>简报内容与缓存</h2>
+      <p>正文 Markdown 与索引按需从你自己的 WebDAV 下载，缓存保存在应用沙盒的专属目录中。你可以在「设置」里查看缓存占用并一键清理；清理缓存不会删除收藏和阅读记录。</p>
+      <p>正文中如果包含外部图片链接，Siftr 只会在你打开文章时按需加载，且不会携带任何 WebDAV 凭证。点击外部链接由系统浏览器处理，同样不携带凭证。</p>
+      <h2>阅读记录</h2>
+      <p>已读状态、收藏、阅读进度、最近阅读时间和最近同步时间保存在本机（SwiftData 数据库），不上传坚果云，也没有任何云端同步。卸载并重装 App 后这些记录会重新开始。</p>
+      <h2>网络请求</h2>
+      <p>App 只向你配置的 WebDAV 服务器发起 HTTPS 请求（读取 manifest.json 与正文），外加文章内公开的外部图片。没有后台轮询、没有推送服务、没有统计上报。</p>
+      <h2>卸载与删除</h2>
+      <p>删除 Siftr 会一并移除本机的缓存、阅读记录与钥匙串凭证。你坚果云里的简报原文不受影响——它们本来就在你自己的账户里。</p>
+      <h2>儿童</h2>
+      <p>Siftr 不面向 13 岁以下儿童，也不刻意收集儿童的个人信息。</p>
+      <h2>变更与联系</h2>
+      <p>本政策更新时，页面顶部的日期会随之改变。隐私问题或数据请求请发邮件到 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+    </article>
+
+    <article class="language-panel" data-language="en" lang="en" data-title="Privacy Policy · Siftr">
+      <header><h1>Privacy Policy</h1><p class="updated">Last updated: October 14, 2026</p></header>
+      <p class="lede">Siftr is a local-first personal reader. There is no account to sign up for; your briefings live in your own WebDAV cloud and on this device, and your reading history stays on this device. The developer operates no server and collects no data.</p>
+      <h2>Siftr collects nothing</h2>
+      <p>Siftr has no account system, no analytics or advertising SDKs, and no trackers. What you read, search for, or favorite is never sent to the developer or any third-party server.</p>
+      <div class="note"><p>Siftr treats your cloud as read-only: it downloads only the index and article bodies from the WebDAV folder you configure, and never modifies, uploads, or deletes anything in your cloud storage.</p></div>
+      <h2>WebDAV credentials</h2>
+      <p>The server address, account email, and app-specific password are stored only in this device's iOS Keychain — never in cloud backups or plain-text logs. Credentials are sent only to the server you configured, and never forwarded across redirects to another host.</p>
+      <p>We recommend creating a dedicated app password for Siftr under Jianguoyun's third-party app management, separate from the one your publishing agent uses. You can revoke it at any time; revocation does not affect content already cached on this device.</p>
+      <h2>Content and cache</h2>
+      <p>Article bodies and the index are downloaded on demand from your own WebDAV and cached in the app's sandbox. Settings shows the cache size and a one-tap clear; clearing the cache never deletes favorites or reading history.</p>
+      <p>If an article contains external image links, Siftr loads them only when you open the article, without any WebDAV credentials. External links open in the system browser, likewise credential-free.</p>
+      <h2>Reading history</h2>
+      <p>Read state, favorites, reading progress, recents, and the last sync time live in an on-device database. They are not uploaded to your cloud and are not synced anywhere. Reinstalling the app starts them fresh.</p>
+      <h2>Network requests</h2>
+      <p>The app makes HTTPS requests only to the WebDAV server you configure (fetching manifest.json and article bodies), plus public external images embedded in articles. No background polling, no push service, no telemetry.</p>
+      <h2>Uninstalling</h2>
+      <p>Deleting Siftr removes the local cache, reading history, and Keychain credentials. The briefings in your own cloud are untouched — they were yours all along.</p>
+      <h2>Children</h2>
+      <p>Siftr is not intended for children under 13 and does not knowingly collect personal information from children.</p>
+      <h2>Changes and contact</h2>
+      <p>When this policy is updated, the date at the top changes with it. For privacy questions or data requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+    </article>
+  </main>
+  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
+</div><script src="language.js?v=siftr-20261014-1"></script></body></html>
