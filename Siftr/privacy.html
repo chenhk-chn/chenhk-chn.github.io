@@ -26,11 +26,11 @@
       <p>Siftr 没有账号体系，没有分析或广告 SDK，没有跟踪器。你阅读了什么、搜了什么、收藏了什么，都不会发送给开发者或任何第三方服务器。</p>
       <div class="note"><p>Siftr 对云端内容只读：它只从你配置的 WebDAV 目录下载索引和正文，不会修改、上传或删除你坚果云里的任何文件。</p></div>
       <h2>WebDAV 凭证</h2>
-      <p>服务器地址、账号邮箱和第三方应用密码只保存在这台设备的 iOS 钥匙串（Keychain）中，不参与 iCloud 同步，也不会写入普通日志。凭证只发送给你自己配置的服务器；遇到跨域重定向时不会继续携带。</p>
+      <p>服务器地址、账号邮箱和第三方应用密码只保存在这台设备的 iOS 钥匙串（Keychain）中，默认只在本机；开启 iCloud 同步后，应用密码会通过 iCloud 钥匙串（端到端加密，Apple 也无法读取）在你的设备间同步，不会写入普通日志。凭证只发送给你自己配置的服务器；遇到跨域重定向时不会继续携带。</p>
       <p>建议在坚果云「账户信息 → 安全选项 → 第三方应用管理」中为 Siftr 单独创建一个应用密码，与发布端（例如 Hermes）使用的密码分开。你随时可以在坚果云侧吊销它，吊销不影响本机已缓存的内容。</p>
       <h2>iCloud 同步（可选）</h2>
       <p>开启后，内容来源列表（不含任何密码）、收藏、已读状态和阅读设置会写入你自己 iCloud 账户下的 CloudKit 私有数据库，用于在你的设备之间保持一致。私有数据库只有登录你 Apple 账户的设备能读取，开发者无法访问。</p>
-      <p>文章正文、阅读位置和滚动进度不参与同步，只保存在本机；应用密码永远不进入 iCloud。你可以在设置里随时关闭同步。</p>
+      <p>文章正文、阅读位置和滚动进度不参与同步，只保存在本机；应用密码不会进入 iCloud 私有数据库，只经 iCloud 钥匙串同步。你可以在设置里随时关闭同步。</p>
       <h2>正文与缓存</h2>
       <p>正文 Markdown 与索引按需从你自己的 WebDAV 下载，缓存在应用沙盒的专属目录中。「设置」里可查看占用并一键清理；清理缓存不会删除收藏和阅读记录。</p>
       <p>正文中如含外部图片链接，只在打开文章时按需加载，且不携带任何 WebDAV 凭证。点击外部链接由系统浏览器处理，同样不携带凭证。</p>
@@ -49,7 +49,7 @@
       <p>Siftr 沒有帳號體系，沒有分析或廣告 SDK，沒有追蹤器。你閱讀了什麼、搜了什麼、收藏了什麼，都不會傳送給開發者或任何第三方伺服器。</p>
       <div class="note"><p>Siftr 對雲端內容唯讀：它只從你設定的 WebDAV 目錄下載索引和正文，不會修改、上傳或刪除你堅果雲裡的任何檔案。</p></div>
       <h2>WebDAV 憑證</h2>
-      <p>伺服器位址、帳號電子郵件和第三方應用程式密碼只保存在這台裝置的 iOS 鑰匙圈（Keychain）中，不參與 iCloud 同步，也不會寫入一般日誌。憑證只傳送給你自己設定的伺服器；遇到跨網域重新導向時不會繼續攜帶。</p>
+      <p>伺服器位址、帳號電子郵件和第三方應用程式密碼只保存在這台裝置的 iOS 鑰匙圈（Keychain）中，預設只在本機；開啟 iCloud 同步後，應用程式密碼會透過 iCloud 鑰匙圈（端對端加密）在你的裝置間同步，不會寫入一般日誌。憑證只傳送給你自己設定的伺服器；遇到跨網域重新導向時不會繼續攜帶。</p>
       <p>建議在堅果雲「帳戶資訊 → 安全選項 → 第三方應用管理」中為 Siftr 單獨建立一個應用程式密碼，與發布端（例如 Hermes）使用的密碼分開。你隨時可以在堅果雲側撤銷它，撤銷不影響本機已快取的內容。</p>
       <h2>iCloud 同步（可選）</h2>
       <p>開啟後，內容來源列表（不含任何密碼）、收藏、已讀狀態和閱讀設定會寫入你自己 iCloud 帳戶下的 CloudKit 私有資料庫，用於在你的裝置之間保持一致。私有資料庫只有登入你 Apple 帳號的裝置能讀取，開發者無法存取。</p>
@@ -72,7 +72,7 @@
       <p>Siftr 冇帳戶體系，冇分析或者廣告 SDK，冇追蹤器。你閱讀咩、搜尋咩、收藏咩，都不會傳送俾開發者或者任何第三方伺服器。</p>
       <div class="note"><p>Siftr 對雲端內容唯讀：佢只會從你設定的 WebDAV 目錄下載索引同正文，唔會修改、上載或者刪除你堅果雲入面嘅任何檔案。</p></div>
       <h2>WebDAV 憑證</h2>
-      <p>伺服器位址、帳戶電郵同第三方應用程式密碼只儲存在這部裝置嘅 iOS 鑰匙圈（Keychain）入面，不參與 iCloud 同步，亦唔會寫入一般日誌。憑證只會傳送俾你自己設定嘅伺服器；遇到跨網域重新導向時唔會繼續攜帶。</p>
+      <p>伺服器位址、帳戶電郵同第三方應用程式密碼只儲存在這部裝置嘅 iOS 鑰匙圈（Keychain）入面，預設只喺本機；開啟 iCloud 同步後，應用程式密碼會透過 iCloud 鑰匙圈（端對端加密）喺你嘅裝置間同步，亦唔會寫入一般日誌。憑證只會傳送俾你自己設定嘅伺服器；遇到跨網域重新導向時唔會繼續攜帶。</p>
       <p>建議喺堅果雲「帳戶資料 → 安全選項 → 第三方應用管理」度為 Siftr 單獨建立一個應用程式密碼，同發佈端（例如 Hermes）用嘅密碼分開。你隨時可以喺堅果雲側撤銷佢，撤銷唔影響本機已快取嘅內容。</p>
       <h2>iCloud 同步（可選）</h2>
       <p>開啟之後，內容來源列表（唔含任何密碼）、收藏、已讀狀態同閱讀設定會寫入你自己 iCloud 帳戶下面嘅 CloudKit 私有資料庫，用嚟喺你嘅裝置之間保持一致。私有資料庫只有登入你 Apple 帳號嘅裝置先讀到，開發者無法存取。</p>
@@ -118,11 +118,11 @@
       <p>Siftr has no account system, no analytics or advertising SDKs, and no trackers. What you read, search for, or favorite is never sent to the developer or any third-party server.</p>
       <div class="note"><p>Siftr treats your cloud as read-only: it downloads only the index and article bodies from the WebDAV folders you configure, and never modifies, uploads, or deletes anything in your cloud storage.</p></div>
       <h2>WebDAV credentials</h2>
-      <p>The server address, account email, and app-specific password are stored only in this device’s iOS Keychain — never synced over iCloud or written to plain-text logs. Credentials are sent only to the server you configured and never forwarded across redirects.</p>
+      <p>The server address, account email, and app-specific password are stored in the iOS Keychain and never written to plain-text logs. With iCloud sync on, the password travels through end-to-end encrypted iCloud Keychain between your devices; with it off it stays on this device. Credentials are sent only to the server you configured and never forwarded across redirects.</p>
       <p>We recommend creating a dedicated app password for Siftr under Jianguoyun’s third-party app management, separate from the one your publishing agent uses. You can revoke it at any time; revocation does not affect content already cached on this device.</p>
       <h2>iCloud sync (optional)</h2>
       <p>When enabled, your content source list (never any passwords), favorites, read states, and reading settings are written to the CloudKit private database of your own iCloud account to stay consistent across your devices. Only devices signed into your Apple ID can read that database; the developer cannot.</p>
-      <p>Article bodies, reading positions, and scroll progress are never synced and stay on this device; app passwords never enter iCloud. You can turn sync off in Settings at any time.</p>
+      <p>Article bodies, reading positions, and scroll progress are never synced and stay on this device; app passwords never enter the iCloud database and sync only through iCloud Keychain. You can turn sync off in Settings at any time.</p>
       <h2>Content and cache</h2>
       <p>Article bodies and the index are downloaded on demand from your own WebDAV and cached in the app’s sandbox. Settings shows the size and a one-tap clear; clearing the cache never deletes favorites or reading history.</p>
       <p>If an article contains external image links, they load only when you open it, without any WebDAV credentials. External links open in the system browser, likewise credential-free.</p>
