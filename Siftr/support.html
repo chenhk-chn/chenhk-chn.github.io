@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr Support">
-<title>技术支持 · Siftr</title>
+<title>Support · Siftr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
 <link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
-<link rel="stylesheet" href="style.css?v=siftr-20261014-2">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-3">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body><div class="wrap">
@@ -14,69 +14,261 @@
     <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
     <label class="language-picker">
       <select data-language-select aria-label="Language">
-        <option value="zh-Hans">简体中文</option>
-        <option value="en">English</option>
+        <option value="zh-Hans">简体中文</option>        <option value="zh-Hant">繁體中文（中國台灣）</option>        <option value="zh-HK">繁體中文（中國香港）</option>        <option value="ja">日本語</option>        <option value="en">English</option>        <option value="ru">Русский</option>        <option value="fr">Français</option>        <option value="ko">한국어</option>        <option value="de">Deutsch</option>        <option value="es">Español</option>
       </select>
     </label>
   </div>
   <main tabindex="-1">
     <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="技术支持 · Siftr">
       <header><h1>技术支持</h1><p class="updated">需要 iOS 18 或以上版本</p></header>
-      <p class="lede">遇到问题或有功能建议，请发邮件到 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>，附上机型、系统版本和「设置」里显示的最后同步时间会更有帮助。</p>
+      <p class="lede">遇到问题或有功能建议，请发邮件到 imhccn@gmail.com，附上机型、系统版本和「设置」里显示的最后同步时间会更有帮助。</p>
       <h2>开始之前需要什么</h2>
-      <ul>
-        <li>一台 iOS 18 或更新系统的 iPhone 或 iPad。</li>
-        <li>一个坚果云账号（其他标准 WebDAV 服务也可，但默认预设是坚果云）。</li>
-        <li>一个由 AI Agent（例如 Hermes）发布到你云盘的内容目录，里面应有 <code>manifest.json</code> 和 Markdown 简报。</li>
-      </ul>
+      <p>一台 iOS 18 或更新系统的 iPhone 或 iPad；一个坚果云账号（其他标准 WebDAV 也可以）；一个由 AI Agent（例如 Hermes）发布到你云盘的内容目录。</p>
       <h2>首次配置</h2>
-      <ul>
-        <li>在坚果云网页「账户信息 → 安全选项 → 第三方应用管理」中生成一个应用密码（为 Siftr 单独创建，不要与发布端共用）。</li>
-        <li>打开 Siftr，输入服务器地址（默认 <code>https://dav.jianguoyun.com/dav/</code>）、账号邮箱、应用密码和内容目录（默认 <code>Siftr</code>）。</li>
-        <li>点「测试连接」确认能读到内容后保存，回到首页下拉刷新即可看到简报。</li>
-      </ul>
+      <p>在坚果云网页「账户信息 → 安全选项 → 第三方应用管理」生成一个应用密码（为 Siftr 单独创建）；打开 Siftr 输入服务器地址（默认 https://dav.jianguoyun.com/dav/）、邮箱、应用密码和内容目录；点「测试连接」，成功后保存并下拉刷新。可添加多个来源，同一地址只保留一份。</p>
       <h2>刷新后没有新内容？</h2>
-      <p>先确认发布端当天是否执行成功；Siftr 首页会显示最后同步时间。网络失败或格式异常时，App 会保留上一次的内容并提示错误，不会清空首页；稍后再下拉重试即可。</p>
+      <p>先确认发布端当天是否执行成功；首页会显示最后同步时间。网络失败或格式异常时，App 保留上一次的内容并提示错误，不会清空首页；稍后再下拉重试即可。</p>
       <h2>飞行模式下能阅读吗？</h2>
-      <p>能。凡是打开过的文章都缓存在本机，断网时照常阅读；从未打开过的文章则需要联网下载。</p>
+      <p>能。凡是打开过的文章都缓存在本机，断网时照常阅读；也可以在设置或搜索页主动「下载全部正文」建立离线资料库。</p>
       <h2>清理缓存会删掉收藏吗？</h2>
       <p>不会。「设置」里的清理只移除可重新下载的正文缓存；收藏、已读状态和阅读进度都保留。</p>
+      <h2>阅读设置在哪里？</h2>
+      <p>设置页「阅读与外观」，或阅读页「更多 → 阅读设置」：主题色、字号、黑体/宋体、行距、日间/夜间，全部即时预览；开启 iCloud 同步后跟随你的设备。</p>
       <h2>应用密码换了怎么办？</h2>
-      <p>打开「设置 → 连接坚果云」，输入新密码重新测试并保存；此前已缓存的内容不受影响，照常可读。</p>
+      <p>打开「设置 → 连接坚果云」，输入新密码重新测试并保存；此前已缓存的内容不受影响，照常可读。通过 iCloud 同步来的来源，需要在本机输入一次该来源的应用密码。</p>
+      <h2>小组件和快捷指令</h2>
+      <p>长按主屏幕添加 Siftr 小组件，显示最新一期与未读数；在「快捷指令」App 中可使用「刷新 Siftr」和「打开最新一期」。</p>
       <h2>文章更新后阅读进度会丢吗？</h2>
       <p>不会。阅读状态按文档 ID 记录，云端修订正文不会重置你的已读、收藏和阅读位置。</p>
       <h2>Debug 示例模式</h2>
-      <p>开发版可以在启动参数中加 <code>--demo</code> 查看明确标记的示例简报，其数据与真实配置完全隔离；正式版不含示例数据。</p>
+      <p>开发版可以在启动参数中加 --demo 查看明确标记的示例简报，其数据与真实配置完全隔离；正式版不含示例数据。</p>
+    </article>
+
+    <article class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="技術支援 · Siftr">
+      <header><h1>技術支援</h1><p class="updated">需要 iOS 18 或以上版本</p></header>
+      <p class="lede">遇到問題或有功能建議，請寄電子郵件到 imhccn@gmail.com，附上機型、系統版本和「設定」裡顯示的最後同步時間會更有幫助。</p>
+      <h2>開始之前需要什麼</h2>
+      <p>一台 iOS 18 或更新系統的 iPhone 或 iPad；一個堅果雲帳號（其他標準 WebDAV 也可以）；一個由 AI Agent（例如 Hermes）發布到你雲端的內容目錄。</p>
+      <h2>首次設定</h2>
+      <p>在堅果雲網頁「帳戶資訊 → 安全選項 → 第三方應用管理」產生一個應用程式密碼（為 Siftr 單獨建立）；開啟 Siftr 輸入伺服器位址（預設 https://dav.jianguoyun.com/dav/）、電子郵件、應用程式密碼和內容目錄；點「測試連線」，成功後儲存並下拉重新整理。可加入多個來源，同一位址只保留一份。</p>
+      <h2>重新整理後沒有新內容？</h2>
+      <p>先確認發布端當天是否執行成功；首頁會顯示最後同步時間。網路失敗或格式異常時，App 保留上一次的內容並提示錯誤，不會清空首頁；稍後再下拉重試即可。</p>
+      <h2>飛航模式下能閱讀嗎？</h2>
+      <p>能。凡是開啟過的文章都快取在本機，斷網時照常閱讀；也可以在設定或搜尋頁主動「下載全部正文」建立離線資料庫。</p>
+      <h2>清理快取會刪掉收藏嗎？</h2>
+      <p>不會。「設定」裡的清理只移除可重新下載的正文快取；收藏、已讀狀態和閱讀進度都保留。</p>
+      <h2>閱讀設定在哪裡？</h2>
+      <p>設定頁「閱讀與外觀」，或閱讀頁「更多 → 閱讀設定」：主題色、字號、黑體/宋體、行距、日間/夜間，全部即時預覽；開啟 iCloud 同步後跟隨你的裝置。</p>
+      <h2>應用程式密碼換了怎麼辦？</h2>
+      <p>開啟「設定 → 連接堅果雲」，輸入新密碼重新測試並儲存；此前已快取的內容不受影響，照常可讀。透過 iCloud 同步來的來源，需要在本機輸入一次該來源的應用程式密碼。</p>
+      <h2>小工具與捷徑</h2>
+      <p>長按主畫面加入 Siftr 小工具，顯示最新一期與未讀數；在「捷徑」App 中可使用「重新整理 Siftr」和「打開最新一期」。</p>
+      <h2>文章更新後閱讀進度會丟失嗎？</h2>
+      <p>不會。閱讀狀態按文件 ID 記錄，雲端修訂正文不會重置你的已讀、收藏和閱讀位置。</p>
+      <h2>Debug 示例模式</h2>
+      <p>開發版可以在啟動參數中加 --demo 檢視明確標記的示例簡報，其資料與真實設定完全隔離；正式版不含示例資料。</p>
+    </article>
+
+    <article class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="技術支援 · Siftr">
+      <header><h1>技術支援</h1><p class="updated">需要 iOS 18 或以上版本</p></header>
+      <p class="lede">遇到問題或者有功能建議，請電郵到 imhccn@gmail.com，附上機型、系統版本同「設定」入面顯示嘅最後同步時間會更有幫助。</p>
+      <h2>開始之前需要咩</h2>
+      <p>一部 iOS 18 或更新系統嘅 iPhone 或 iPad；一個堅果雲帳戶（其他標準 WebDAV 都得）；一個由 AI Agent（例如 Hermes）發佈到你雲端嘅內容目錄。</p>
+      <h2>首次設定</h2>
+      <p>喺堅果雲網頁「帳戶資料 → 安全選項 → 第三方應用管理」產生一個應用程式密碼（為 Siftr 單獨建立）；開啟 Siftr 輸入伺服器位址（預設 https://dav.jianguoyun.com/dav/）、電郵、應用程式密碼同內容目錄；撳「測試連線」，成功後儲存並下拉重新整理。可以新增多個來源，同一位址只保留一份。</p>
+      <h2>重新整理後冇新內容？</h2>
+      <p>先確認發佈端當日有冇執行成功；主頁會顯示最後同步時間。網絡失敗或格式異常時，App 保留上一次嘅內容並提示錯誤，唔會清空主頁；陣間再下拉重試得啦。</p>
+      <h2>飛行模式下可以閱讀嗎？</h2>
+      <p>得。開過嘅文章全部快取咗喺本機，斷網照讀；亦都可以喺設定或者搜尋頁主動「下載全部正文」建立離線資料庫。</p>
+      <h2>清理快取會刪走收藏嗎？</h2>
+      <p>唔會。「設定」入面嘅清理只移除可以重新下載嘅正文快取；收藏、已讀狀態同閱讀進度全部保留。</p>
+      <h2>閱讀設定喺邊？</h2>
+      <p>設定頁「閱讀與外觀」，或者閱讀頁「更多 → 閱讀設定」：主題色、字號、黑體/宋體、行距、日間/夜間，全部即時預覽；開咗 iCloud 同步之後跟住你嘅裝置。</p>
+      <h2>應用程式密碼換咗點算？</h2>
+      <p>開「設定 → 連接堅果雲」，輸入新密碼重新測試然後儲存；之前快取咗嘅內容唔受影響，照常可讀。透過 iCloud 同步過嚟嘅來源，要喺本機輸入一次該來源嘅應用程式密碼。</p>
+      <h2>小工具同捷徑</h2>
+      <p>長按主畫面新增 Siftr 小工具，顯示最新一期同未讀數；喺「捷徑」App 入面可以用「重新整理 Siftr」同「開啟最新一期」。</p>
+      <h2>文章更新之後閱讀進度會唔會丟失？</h2>
+      <p>唔會。閱讀狀態按文件 ID 記錄，雲端修訂正文唔會重設你嘅已讀、收藏同閱讀位置。</p>
+      <h2>Debug 示例模式</h2>
+      <p>開發版可以喺啟動參數加 --demo 睇明確標記嘅示例簡報，佢嘅資料同真實設定完全隔離；正式版唔含示例資料。</p>
+    </article>
+
+    <article class="language-panel" data-language="ja" lang="ja" data-title="サポート · Siftr">
+      <header><h1>サポート</h1><p class="updated">iOS 18 以降が必要です</p></header>
+      <p class="lede">問題やご要望は imhccn@gmail.com までメールでお寄せください。機種、iOS のバージョン、設定に表示される最終同期時刻を添えていただけると助かります。</p>
+      <h2>始める前に必要なもの</h2>
+      <p>iOS 18 以降の iPhone または iPad、Nutstore アカウント（他の標準 WebDAV でも可）、そして AI エージェント（Hermes など）があなたのクラウドに公開しているコンテンツフォルダです。</p>
+      <h2>初回セットアップ</h2>
+      <p>Nutstore のウェブ版「アカウント情報 → セキュリティオプション → サードパーティアプリ管理」でアプリパスワードを作成（Siftr 専用に別個で）。Siftr を開き、サーバーアドレス（初期値 https://dav.jianguoyun.com/dav/）、メールアドレス、アプリパスワード、コンテンツフォルダを入力し、「接続をテスト」→ 成功したら保存して引き落として更新します。ソースはいくつでも追加でき、同じアドレスは 1 つだけ保持されます。</p>
+      <h2>更新しても新しいブリーフィングがない？</h2>
+      <p>まずその日に発行側のエージェントが成功したか確認してください。ホームには最終同期時刻が表示されます。ネットワークや形式のエラーでは前回の内容を保持してエラーを示し、フィードを空にしません。少し待って引き落とせば再試行できます。</p>
+      <h2>機内モードでも読める？</h2>
+      <p>読めます。開いたことのある記事はすべてキャッシュされ、オフラインでそのまま読めます。設定や検索画面から「本文をすべてダウンロード」してオフラインライブラリを作ることもできます。</p>
+      <h2>キャッシュを消すとお気に入りも消える？</h2>
+      <p>消えません。設定からの消去は再ダウンロード可能な本文のみ。お気に入り、既読状態、閲覧位置は保持されます。</p>
+      <h2>読書設定はどこ？</h2>
+      <p>設定の「読書と外観」、またはリーダーの「その他 → 読書設定」：テーマカラー、文字サイズ、ゴシック/明朝、行間、ライト/ダークをその場でプレビューできます。iCloud 同期を有効にするとデバイス間で共有されます。</p>
+      <h2>アプリパスワードを変えた？</h2>
+      <p>設定の該当ソースを開き、新しいパスワードを入力してテスト、保存してください。キャッシュ済みの内容はそのまま読めます。iCloud 経由で同期されたソースは、このデバイスで一度アプリパスワードの入力が必要です。</p>
+      <h2>ウィジェットとショートカット</h2>
+      <p>ホーム画面を長押しして Siftr ウィジェットを追加すると、最新号と未読数が表示されます。ショートカット App では「Siftr を更新」と「最新号を開く」が使えます。</p>
+      <h2>記事が更新されると位置はリセットされる？</h2>
+      <p>されません。閲覧状態はドキュメント ID に紐づくため、本文が改訂されても既読・お気に入り・位置は保たれます。</p>
+      <h2>デモモード</h2>
+      <p>開発ビルドでは起動引数 --demo で「サンプル」と明記されたブリーフィングを表示できます。データは実設定と完全に分離され、リリース版にサンプルは含まれません。</p>
     </article>
 
     <article class="language-panel" data-language="en" lang="en" data-title="Support · Siftr">
       <header><h1>Support</h1><p class="updated">Requires iOS 18 or later</p></header>
-      <p class="lede">For problems or ideas, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> — including your device model, iOS version, and the last-sync time shown in Settings helps a lot.</p>
+      <p class="lede">For problems or ideas, email imhccn@gmail.com — including your device model, iOS version, and the last-sync time shown in Settings helps a lot.</p>
       <h2>What you need to start</h2>
-      <ul>
-        <li>An iPhone or iPad running iOS 18 or later.</li>
-        <li>A Jianguoyun account (other standard WebDAV services work too; Jianguoyun is the default preset).</li>
-        <li>A content folder in your cloud, published by an AI agent (for example Hermes), containing a <code>manifest.json</code> and Markdown briefings.</li>
-      </ul>
+      <p>An iPhone or iPad on iOS 18 or later; a Jianguoyun account (any standard WebDAV works); and a content folder in your cloud, published by an AI agent such as Hermes.</p>
       <h2>First-time setup</h2>
-      <ul>
-        <li>Generate an app-specific password under Jianguoyun's web settings (Account Info → Security → third-party app management) — create a separate one for Siftr, not shared with your publisher.</li>
-        <li>Open Siftr and enter the server address (default <code>https://dav.jianguoyun.com/dav/</code>), account email, app password, and content folder (default <code>Siftr</code>).</li>
-        <li>Tap "Test Connection", save once it succeeds, then pull to refresh on the home feed.</li>
-      </ul>
+      <p>Generate an app password under Jianguoyun’s web settings (Account Info → Security → third-party app management) — create a separate one for Siftr; open Siftr and enter the server address (default https://dav.jianguoyun.com/dav/), email, app password, and content folder; tap “Test Connection”, save once it succeeds, then pull to refresh. Add as many sources as you like — the same address is kept only once.</p>
       <h2>No new content after refreshing?</h2>
-      <p>First check whether your publishing agent ran today; Siftr's home shows the last sync time. On network or format errors the app keeps the previous content and shows the error instead of emptying the feed — just pull to retry later.</p>
+      <p>First check whether your publishing agent ran today; Siftr’s home shows the last sync time. On network or format errors the app keeps the previous content and shows the error instead of emptying the feed — just pull to retry later.</p>
       <h2>Can I read offline?</h2>
-      <p>Yes. Every article you have opened is cached on the device and readable without a network; articles never opened need a connection to download.</p>
+      <p>Yes. Every article you have opened is cached and readable without a network; you can also build an offline library with “Download all articles” in Settings or from search.</p>
       <h2>Does clearing the cache delete favorites?</h2>
       <p>No. Clearing in Settings removes only re-downloadable article bodies; favorites, read states, and reading positions are kept.</p>
+      <h2>Where are the reading settings?</h2>
+      <p>In Settings → Reading and appearance, or in the reader under More → Reading settings: theme color, text size, sans/serif, line spacing, light/dark — all with live preview, and following your devices once iCloud sync is on.</p>
       <h2>Changed the app password?</h2>
-      <p>Open Settings → Jianguoyun connection, enter the new password, test, and save. Previously cached content is unaffected and stays readable.</p>
+      <p>Open Settings → the source, enter the new password, test, and save. Previously cached content stays readable. Sources synced over iCloud need their app password entered once on this device.</p>
+      <h2>Widgets and Shortcuts</h2>
+      <p>Touch and hold the Home Screen to add a Siftr widget showing the latest issue and unread count; “Refresh Siftr” and “Open Latest” are available in the Shortcuts app.</p>
       <h2>Will revisions reset my progress?</h2>
-      <p>No. Reading state is bound to each document's stable ID, so a revised body never resets your read state, favorites, or position.</p>
+      <p>No. Reading state is bound to each document’s stable ID, so a revised body never resets your read state, favorites, or position.</p>
       <h2>Demo mode</h2>
-      <p>Debug builds accept a <code>--demo</code> launch argument that shows clearly labeled sample briefings in an isolated environment; release builds contain no sample data.</p>
+      <p>Debug builds accept a --demo launch argument that shows clearly labeled sample briefings in an isolated environment; release builds contain no sample data.</p>
     </article>
+
+    <article class="language-panel" data-language="ru" lang="ru" data-title="Поддержка · Siftr">
+      <header><h1>Поддержка</h1><p class="updated">Требуется iOS 18 или новее</p></header>
+      <p class="lede">О проблемах и идеях пишите на imhccn@gmail.com — приложите модель устройства, версию iOS и время последней синхронизации из настроек, так будет намного проще помочь.</p>
+      <h2>Что нужно для начала</h2>
+      <p>iPhone или iPad с iOS 18 или новее; аккаунт Nutstore (подойдёт любой стандартный WebDAV); и каталог содержимого в вашем облаке, куда публикует ИИ-агент (например, Hermes).</p>
+      <h2>Первая настройка</h2>
+      <p>Создайте пароль приложения в веб-настройках Nutstore («Информация об аккаунте → Безопасность → Сторонние приложения»), отдельный для Siftr; откройте Siftr и введите адрес сервера (по умолчанию https://dav.jianguoyun.com/dav/), почту, пароль приложения и каталог; нажмите «Проверить соединение», сохраните после успеха и потяните для обновления. Источников можно добавить сколько угодно — один и тот же адрес хранится один раз.</p>
+      <h2>После обновления нет нового?</h2>
+      <p>Сначала проверьте, отработал ли сегодня публикующий агент; на главной показано время последней синхронизации. При сетевых ошибках или проблемах формата приложение сохраняет прежнее содержимое и показывает ошибку, не очищая ленту, — просто потяните ещё раз позже.</p>
+      <h2>Можно читать офлайн?</h2>
+      <p>Да. Все открытые статьи кэшируются и читаются без сети; полную офлайн-библиотеку можно собрать кнопкой «Скачать все тексты» в настройках или из поиска.</p>
+      <h2>Очистка кэша удаляет избранное?</h2>
+      <p>Нет. Очистка в настройках убирает только повторно скачиваемые тексты; избранное, статус прочтения и позиции сохраняются.</p>
+      <h2>Где настройки чтения?</h2>
+      <p>Настройки → Чтение и оформление или в читалке «Ещё → Настройки чтения»: цвет темы, размер, гротеск/антиква, интервал, светлая/тёмная — всё с живым предпросмотром, а с iCloud синхронизируется между устройствами.</p>
+      <h2>Сменили пароль приложения?</h2>
+      <p>Откройте источник в настройках, введите новый пароль, проверьте и сохраните. Скачанное ранее остаётся читаемым. Источники, синхронизированные через iCloud, требуют однократного ввода своего пароля на устройстве.</p>
+      <h2>Виджеты и Команды</h2>
+      <p>Удерживайте домашний экран, чтобы добавить виджет Siftr со свежим выпуском и числом непрочитанных; «Обновить Siftr» и «Открыть последний выпуск» доступны в Командах.</p>
+      <h2>Сбрасывает ли ревизия прогресс?</h2>
+      <p>Нет. Статус чтения привязан к стабильному ID документа, поэтому обновление текста не сбрасывает прочтение, избранное и позицию.</p>
+      <h2>Демо-режим</h2>
+      <p>Отладочные сборки принимают аргумент запуска --demo и показывают явно помеченные примеры брифингов в изолированной среде; в релизных сборках примеров нет.</p>
+    </article>
+
+    <article class="language-panel" data-language="fr" lang="fr" data-title="Assistance · Siftr">
+      <header><h1>Assistance</h1><p class="updated">Nécessite iOS 18 ou ultérieur</p></header>
+      <p class="lede">Pour tout problème ou suggestion, écrivez à imhccn@gmail.com — avec le modèle, la version d’iOS et l’heure de dernière synchronisation affichée dans Réglages, c’est encore mieux.</p>
+      <h2>Ce qu’il faut pour commencer</h2>
+      <p>Un iPhone ou iPad sous iOS 18 ou ultérieur ; un compte Nutstore (tout WebDAV standard convient) ; et un dossier de contenu dans votre cloud, publié par un agent IA tel qu’Hermes.</p>
+      <h2>Première configuration</h2>
+      <p>Générez un mot de passe d’app dans les réglages web de Nutstore (Infos du compte → Sécurité → gestion des apps tierces), dédié à Siftr ; ouvrez Siftr et saisissez l’adresse du serveur (par défaut https://dav.jianguoyun.com/dav/), l’e-mail, le mot de passe et le dossier ; touchez « Tester la connexion », enregistrez une fois réussi, puis tirez pour actualiser. Ajoutez autant de sources que vous voulez — une même adresse n’est gardée qu’une fois.</p>
+      <h2>Rien de neuf après actualisation ?</h2>
+      <p>Vérifiez d’abord que votre agent éditeur a bien tourné aujourd’hui ; l’accueil affiche l’heure de dernière synchronisation. En cas d’erreur réseau ou de format, l’app garde le contenu précédent et affiche l’erreur au lieu de vider le fil — retirez simplement plus tard.</p>
+      <h2>Peut-on lire hors ligne ?</h2>
+      <p>Oui. Tout article ouvert est en cache et lisible sans réseau ; vous pouvez aussi constituer une bibliothèque hors ligne via « Tout télécharger » dans Réglages ou depuis la recherche.</p>
+      <h2>Vider le cache supprime-t-il les favoris ?</h2>
+      <p>Non. La purge dans Réglages ne retire que les textes retéléchargeables ; favoris, état de lecture et positions sont conservés.</p>
+      <h2>Où sont les réglages de lecture ?</h2>
+      <p>Dans Réglages → Lecture et apparence, ou dans le lecteur sous Plus → Réglages de lecture : couleur du thème, taille, sans/avec serif, interligne, clair/sombre — en aperçu instantané, et suivant vos appareils une fois iCloud activé.</p>
+      <h2>Mot de passe d’app changé ?</h2>
+      <p>Ouvrez la source dans Réglages, saisissez le nouveau mot de passe, testez, enregistrez. Le contenu déjà en cache reste lisible. Les sources synchronisées via iCloud exigent une saisie unique du mot de passe sur cet appareil.</p>
+      <h2>Widgets et raccourcis</h2>
+      <p>Maintenez l’écran d’accueil pour ajouter un widget Siftr avec le dernier numéro et les non lus ; « Actualiser Siftr » et « Ouvrir le dernier » sont disponibles dans Raccourcis.</p>
+      <h2>Une révision réinitialise-t-elle ma progression ?</h2>
+      <p>Non. L’état de lecture est lié à l’identifiant stable du document : une nouvelle version ne touche ni votre progression, ni vos favoris, ni votre position.</p>
+      <h2>Mode démo</h2>
+      <p>Les builds de débogage acceptent l’argument --demo et affichent des briefings d’exemple clairement signalés, dans un environnement isolé ; les versions finales n’en contiennent pas.</p>
+    </article>
+
+    <article class="language-panel" data-language="ko" lang="ko" data-title="지원 · Siftr">
+      <header><h1>지원</h1><p class="updated">iOS 18 이상 필요</p></header>
+      <p class="lede">문제나 제안이 있으면 imhccn@gmail.com으로 보내 주세요. 기기 모델, iOS 버전, 설정에 표시된 마지막 동기화 시간을 함께 알려 주시면 큰 도움이 돼요.</p>
+      <h2>시작하려면</h2>
+      <p>iOS 18 이상의 iPhone 또는 iPad, 누터스트 계정(다른 표준 WebDAV도 가능), 그리고 AI 에이전트(예: Hermes)가 당신의 클라우드에 게시한 콘텐츠 디렉터리가 필요해요.</p>
+      <h2>처음 설정</h2>
+      <p>누터스트 웹의 「계정 정보 → 보안 옵션 → 서드파티 앱 관리」에서 앱 비밀번호를 만드세요(Siftr용으로 따로). Siftr을 열고 서버 주소(기본 https://dav.jianguoyun.com/dav/), 이메일, 앱 비밀번호, 콘텐츠 디렉터리를 입력한 뒤 「연결 테스트」→ 성공하면 저장하고 당겨서 새로 고치세요. 소스는 몇 개든 추가할 수 있고 같은 주소는 하나만 유지돼요.</p>
+      <h2>새로 고쳐도 새 콘텐츠가 없나요?</h2>
+      <p>먼저 그날 게시 에이전트가 성공했는지 확인하세요. 홈 화면에 마지막 동기화 시간이 표시돼요. 네트워크나 형식 오류가 나면 앱은 이전 콘텐츠를 유지하고 오류를 알려 주며 목록을 비우지 않아요. 잠시 후 다시 당겨서 시도하세요.</p>
+      <h2>오프라인에서도 읽을 수 있나요?</h2>
+      <p>네. 한 번 연 글은 모두 캐시되어 네트워크 없이 읽을 수 있어요. 설정이나 검색 화면에서 「본문 전체 다운로드」로 오프라인 라이브러리를 만들 수도 있습니다.</p>
+      <h2>캐시를 지우면 즐겨찾기도 지워지나요?</h2>
+      <p>아니요. 설정에서 지우는 건 다시 다운로드할 수 있는 본문뿐이에요. 즐겨찾기, 읽음 상태, 읽기 위치는 유지됩니다.</p>
+      <h2>읽기 설정은 어디에 있나요?</h2>
+      <p>설정의 「읽기와 화면 모드」 또는 리더의 「더보기 → 읽기 설정」에서 테마 색상, 글자 크기, 고딕/명조, 줄 간격, 라이트/다크를 실시간 미리 보며 조정할 수 있어요. iCloud 동기화를 켜면 기기를 따라갑니다.</p>
+      <h2>앱 비밀번호를 바꿨다면?</h2>
+      <p>설정에서 해당 소스를 열고 새 비밀번호를 입력해 테스트한 뒤 저장하세요. 이미 캐시된 콘텐츠는 그대로 읽을 수 있어요. iCloud로 동기화된 소스는 이 기기에서 비밀번호를 한 번 입력해야 합니다.</p>
+      <h2>위젯과 단축어</h2>
+      <p>홈 화면을 길게 눌러 Siftr 위젯을 추가하면 최신 호와 읽지 않은 개수가 표시돼요. 단축어 앱에서는 「Siftr 새로 고침」과 「최신 호 열기」를 쓸 수 있어요.</p>
+      <h2>글이 업데이트되면 진행 상태가 초기화되나요?</h2>
+      <p>아니요. 읽기 상태는 문서 ID에 묶여 있어 본문이 개정되어도 읽음·즐겨찾기·위치가 유지돼요.</p>
+      <h2>데모 모드</h2>
+      <p>디버그 빌드는 --demo 실행 인자로 명확히 표시된 샘플 브리핑을 볼 수 있어요. 데이터는 실제 설정과 완전히 분리되고 릴리스 빌드에는 샘플이 없습니다.</p>
+    </article>
+
+    <article class="language-panel" data-language="de" lang="de" data-title="Support · Siftr">
+      <header><h1>Support</h1><p class="updated">Erfordert iOS 18 oder neuer</p></header>
+      <p class="lede">Bei Problemen oder Ideen schreibe an imhccn@gmail.com — mit Gerätemodell, iOS-Version und der in den Einstellungen gezeigten letzten Synchronisierungszeit ist alles leichter.</p>
+      <h2>Was du zum Start brauchst</h2>
+      <p>Ein iPhone oder iPad mit iOS 18 oder neuer; ein Nutstore-Konto (jedes Standard-WebDAV geht); und einen Inhaltsordner in deinem Cloud-Speicher, den ein KI-Agent wie Hermes veröffentlicht.</p>
+      <h2>Ersteinrichtung</h2>
+      <p>Erzeuge in Nutstores Webeinstellungen (Kontoinformationen → Sicherheit → Verwaltung von Drittanbieter-Apps) ein App-Passwort — eigens für Siftr; öffne Siftr und gib Serveradresse (standardmäßig https://dav.jianguoyun.com/dav/), E-Mail, App-Passwort und Ordner ein; tippe auf „Verbindung testen“, sichere nach Erfolg und ziehe zum Aktualisieren. Füge beliebig viele Quellen hinzu — dieselbe Adresse wird nur einmal geführt.</p>
+      <h2>Nichts Neues nach dem Aktualisieren?</h2>
+      <p>Prüfe zuerst, ob dein Veröffentlichungs-Agent heute erfolgreich lief; die Startseite zeigt die letzte Synchronisierung. Bei Netzwerk- oder Formatfehlern behält die App den alten Inhalt und zeigt den Fehler, statt die Liste zu leeren — zieh später einfach erneut.</p>
+      <h2>Kann ich offline lesen?</h2>
+      <p>Ja. Jeder geöffnete Artikel ist gecacht und ohne Netz lesbar; über „Alle Texte laden“ in den Einstellungen oder über die Suche baust du dir eine Offline-Bibliothek auf.</p>
+      <h2>Löscht das Leeren des Caches die Favoriten?</h2>
+      <p>Nein. Das Leeren entfernt nur erneut ladbare Texte; Favoriten, Lesestatus und Positionen bleiben erhalten.</p>
+      <h2>Wo sind die Leseeinstellungen?</h2>
+      <p>Unter Einstellungen → Lesen und Erscheinungsbild oder im Reader unter Mehr → Leseeinstellungen: Themenfarbe, Textgröße, serifenlos/Serif, Zeilenabstand, hell/dunkel — alles mit Live-Vorschau und mit iCloud auf all deinen Geräten.</p>
+      <h2>App-Passwort geändert?</h2>
+      <p>Öffne die Quelle in den Einstellungen, gib das neue Passwort ein, teste und sichere. Bereits gecachte Inhalte bleiben lesbar. Über iCloud synchronisierte Quellen brauchen ihr App-Passwort einmal auf diesem Gerät.</p>
+      <h2>Widgets und Kurzbefehle</h2>
+      <p>Halte den HomeScreen gedrückt, um ein Siftr-Widget mit der neuesten Ausgabe und der Ungelesen-Zahl hinzuzufügen; „Siftr aktualisieren“ und „Neuestes öffnen“ gibt es in der Kurzbefehle-App.</p>
+      <h2>Setzt eine Überarbeitung meinen Fortschritt zurück?</h2>
+      <p>Nein. Der Lesestatus hängt an der stabilen Dokument-ID — eine neue Version berührt Lesestatus, Favoriten und Position nicht.</p>
+      <h2>Demomodus</h2>
+      <p>Debug-Builds akzeptieren das Startargument --demo und zeigen klar gekennzeichnete Beispiel-Briefings in einer isolierten Umgebung; Release-Builds enthalten keine Beispiele.</p>
+    </article>
+
+    <article class="language-panel" data-language="es" lang="es" data-title="Soporte · Siftr">
+      <header><h1>Soporte</h1><p class="updated">Requiere iOS 18 o posterior</p></header>
+      <p class="lede">Para problemas o ideas, escribe a imhccn@gmail.com — con el modelo, la versión de iOS y la hora de última sincronización que muestra Ajustes, mejor aún.</p>
+      <h2>Qué necesitas para empezar</h2>
+      <p>Un iPhone o iPad con iOS 18 o posterior; una cuenta de Nutstore (vale cualquier WebDAV estándar); y una carpeta de contenido en tu cloud, publicada por un agente de IA como Hermes.</p>
+      <h2>Configuración inicial</h2>
+      <p>Genera una contraseña de app en la web de Nutstore (Información de la cuenta → Seguridad → gestión de apps de terceros), dedicada a Siftr; abre Siftr e introduce la dirección del servidor (por defecto https://dav.jianguoyun.com/dav/), el correo, la contraseña y la carpeta; toca «Probar conexión», guarda al tener éxito y tira para actualizar. Añade todas las fuentes que quieras — la misma dirección se guarda una sola vez.</p>
+      <h2>¿Nada nuevo al actualizar?</h2>
+      <p>Comprueba primero si tu agente publicador funcionó hoy; la portada muestra la última sincronización. Ante errores de red o de formato, la app conserva el contenido previo y muestra el error en vez de vaciar la lista — vuelve a tirar más tarde.</p>
+      <h2>¿Se puede leer sin conexión?</h2>
+      <p>Sí. Todo artículo abierto queda en caché y se lee sin red; también puedes montar una biblioteca sin conexión con «Descargar todos los artículos» en Ajustes o desde la búsqueda.</p>
+      <h2>¿Borrar la caché elimina los favoritos?</h2>
+      <p>No. Borrar en Ajustes quita solo los textos re-descargables; favoritos, estado de lectura y posiciones se conservan.</p>
+      <h2>¿Dónde están los ajustes de lectura?</h2>
+      <p>En Ajustes → Lectura y apariencia, o en el lector under Más → Ajustes de lectura: color del tema, tamaño, redonda/serifa, interlineado, claro/oscuro — con vista previa inmediata y siguiendo tus dispositivos con iCloud activado.</p>
+      <h2>¿Cambiaste la contraseña de app?</h2>
+      <p>Abre la fuente en Ajustes, introduce la nueva contraseña, prueba y guarda. Lo ya en caché sigue legible. Las fuentes sincronizadas por iCloud piden su contraseña una vez en este dispositivo.</p>
+      <h2>Widgets y atajos</h2>
+      <p>Mantén pulsada la pantalla de inicio para añadir un widget de Siftr con el último número y los no leídos; «Actualizar Siftr» y «Abrir el último» están en la app Atajos.</p>
+      <h2>¿Una revisión reinicia mi progreso?</h2>
+      <p>No. El estado de lectura se liga al ID estable del documento, así que una nueva versión no toca tu progreso, favoritos ni posición.</p>
+      <h2>Modo demo</h2>
+      <p>Las compilaciones de depuración aceptan el argumento --demo y muestran boletines de ejemplo claramente marcados en un entorno aislado; las versiones finales no contienen ejemplos.</p>
+    </article>
+
   </main>
   <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
-</div><script src="language.js?v=siftr-20261014-1"></script></body></html>
+</div><script src="language.js?v=siftr-20261014-2"></script></body></html>

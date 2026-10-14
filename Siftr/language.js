@@ -1,20 +1,22 @@
 (() => {
-  const supported = ["zh-Hans", "en"];
+  const supported = ["zh-Hans", "zh-Hant", "zh-HK", "ja", "en", "ru", "fr", "ko", "de", "es"];
   const aliases = {
     "zh-CN": "zh-Hans",
     "zh-SG": "zh-Hans",
-    "zh-TW": "zh-Hans",
-    "zh-HK": "zh-Hans",
-    "zh-MO": "zh-Hans",
-    "zh-Hant": "zh-Hans",
-    "zh-Hant-HK": "zh-Hans",
-    // App 界面目前只有简体中文；所有中文变体都落到简体面板。
+    "zh-TW": "zh-Hant",
+    "zh-Hant-HK": "zh-HK",
+    "zh-MO": "zh-HK",
     "en-US": "en",
     "en-GB": "en",
+    // App 界面当前提供十种语言；所有中文变体按地区归到最近的面板。
+    "no": "ru",
+    "no-NO": "ru",
+    "nn": "ru",
+    "in": "ko",
   };
 
-  // 前缀匹配的尝试顺序。
-  const matchOrder = ["zh-Hans", "en"];
+  // 前缀匹配的尝试顺序：多段代码在前，避免 zh-HK 抢先匹配 zh-Hans。
+  const matchOrder = ["zh-Hant-HK", "zh-Hans", "zh-Hant", "zh-HK", "ja", "en", "ru", "fr", "ko", "de", "es"];
 
   function normalizeLanguage(value) {
     if (!value) return null;
@@ -23,7 +25,11 @@
 
     const lower = value.toLowerCase();
     if (aliases[lower]) return aliases[lower];
-    if (lower.startsWith("zh")) return "zh-Hans";
+    if (lower.startsWith("zh")) {
+      if (lower.startsWith("zh-hk") || lower.startsWith("zh-mo") || lower.includes("-hk")) return "zh-HK";
+      if (lower.startsWith("zh-tw") || lower.includes("hant")) return "zh-Hant";
+      return "zh-Hans";
+    }
     for (const code of matchOrder) {
       if (lower.startsWith(code.toLowerCase())) return code;
     }

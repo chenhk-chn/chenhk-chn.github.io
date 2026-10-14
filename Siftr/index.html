@@ -1,80 +1,244 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Siftr — 阅读 AI Agent 为你整理的每日简报：连接你自己的坚果云 WebDAV，按需缓存正文，本地保存收藏与阅读进度。无服务器、无账号、无广告。">
-<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr — 阅读 AI Agent 为你整理的每日简报：连接你自己的坚果云 WebDAV，按需缓存正文，本地保存收藏与阅读进度。无服务器、无账号、无广告。">
 <title>Siftr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
 <link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
-<link rel="stylesheet" href="style.css?v=siftr-20261014-2">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-3">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
-<div class="wrap">
+<body><div class="wrap">
   <div class="site-bar">
-    <a class="wordmark" href="index.html" aria-label="Siftr home">Siftr</a>
+    <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
     <label class="language-picker">
       <select data-language-select aria-label="Language">
-        <option value="zh-Hans">简体中文</option>
-        <option value="en">English</option>
+        <option value="zh-Hans">简体中文</option>        <option value="zh-Hant">繁體中文（中國台灣）</option>        <option value="zh-HK">繁體中文（中國香港）</option>        <option value="ja">日本語</option>        <option value="en">English</option>        <option value="ru">Русский</option>        <option value="fr">Français</option>        <option value="ko">한국어</option>        <option value="de">Deutsch</option>        <option value="es">Español</option>
       </select>
     </label>
   </div>
-
   <main tabindex="-1">
     <section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Siftr">
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
         <h1>AI 负责整理，你负责阅读</h1>
-        <p class="lede">Siftr 把 AI Agent 每天发布到坚果云的 Markdown 简报，变成一本安静的原生刊物：连接你自己的 WebDAV，下拉刷新取新内容，正文按需缓存、飞行模式也能接着读；收藏和阅读位置只保存在这台设备上。</p>
+        <p class="lede">Siftr 把 AI Agent 每天发布到坚果云的 Markdown 简报，变成一本安静的原生刊物：支持多个 WebDAV 来源，下拉刷新取新内容，正文按需缓存、飞行模式也能接着读；收藏、已读和阅读设置经你自己的 iCloud 私有库同步。</p>
         <p class="meta">适用于 iPhone 与 iPad · 需要 iOS 18 或更新版本</p>
       <p class="cta"><span class="cta-badge">正在 TestFlight 内测</span><a href="mailto:imhccn@gmail.com">参加测试或反馈</a></p>
       </header>
       <ul class="features">
-        <li><strong>连接你自己的云盘</strong><span>首次配置输入 WebDAV 地址、第三方应用密码和内容目录；简报存放在你自己的坚果云里，Siftr 不经手任何第三方服务器。</span></li>
-        <li><strong>像刊物，不像网盘</strong><span>首页按时间倒序排列每日简报，最新一期突出显示；标题、摘要、分类与标签一目了然，未读状态清晰可辨。</span></li>
-        <li><strong>正文按需缓存</strong><span>打开过的文章保存在本机；再次进入秒开，飞行模式、地铁里都能接着读，网络异常也绝不清空已读内容。</span></li>
-        <li><strong>阅读进度不丢</strong><span>已读/未读、滚动位置和最近阅读时间绑定文档本身；云端修订正文或刷新索引，都不会清掉你的记录。</span></li>
-        <li><strong>收藏与全文搜索</strong><span>一键收藏值得保留的简报；标题、摘要、标签乃至正文都能搜，搜索结果依然可以离线打开已缓存的文章。</span></li>
-        <li><strong>安静地刷新</strong><span>下拉即取最新索引，内容没有变化就不重复下载；同步失败保留旧内容，并明确显示最后成功同步的时间。</span></li>
+        <li><strong>连接你自己的云盘</strong><span>可同时添加多个 WebDAV 来源；简报存放在你自己的坚果云里，Siftr 不设服务器、不经手第三方。</span></li>
+        <li><strong>像刊物，不像网盘</strong><span>最新一期突出显示，分类、标签、未读筛选与按月归档一应俱全，读起来像一本私人杂志。</span></li>
+        <li><strong>把阅读器调成你的样子</strong><span>五套主题色、黑体或宋体、字号与行距、日间夜间随你搭配；iOS 26 上还有 Liquid Glass 玻璃质感的阅读界面。</span></li>
+        <li><strong>全文搜索，离线照读</strong><span>打开过的文章进入全文索引，多词搜索、命中高亮并跳转章节；地铁里、飞行模式都能接着读。</span></li>
+        <li><strong>收藏与设置跟着 iCloud 走</strong><span>收藏、已读状态和阅读设置同步到你自己的 iCloud 私有库；正文与阅读位置只保存在本机。</span></li>
+        <li><strong>小组件与快捷指令</strong><span>主屏小组件显示最新一期与未读数；快捷指令一键刷新或直达最新一期。</span></li>
       </ul>
-      <p class="closing">没有 Siftr 账号，没有广告，也没有跟踪。你的阅读记录只属于这台设备。</p>
+      <p class="closing">没有 Siftr 账号，没有广告，也没有跟踪。</p>
       <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>WebDAV 凭证、缓存与本地数据</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、连接配置和联系方式</span></a>
-        <a class="card" href="skill.html" data-localized-link="skill.html"><strong>发布 Skill</strong><span>把发布简报的技能交给你的 AI Agent</span></a>
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>WebDAV 凭证、缓存与本地数据</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、连接配置和联系方式</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>发布 Skill</strong><span>把发布简报的技能交给你的 AI Agent</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>AI 負責整理，你負責閱讀</h1>
+        <p class="lede">Siftr 把 AI Agent 每天發布到堅果雲的 Markdown 簡報，變成一本安靜的原生刊物：支援多個 WebDAV 來源，下拉重新整理取新內容，正文按需快取、飛航模式也能接著讀；收藏、已讀和閱讀設定經你自己的 iCloud 私有資料庫同步。</p>
+        <p class="meta">適用於 iPhone 與 iPad · 需要 iOS 18 或更新版本</p>
+      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或回報</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>連接你自己的雲端硬碟</strong><span>可同時加入多個 WebDAV 來源；簡報存放在你自己的堅果雲裡，Siftr 不設伺服器、不經手第三方。</span></li>
+        <li><strong>像刊物，不像網路硬碟</strong><span>最新一期突出顯示，分類、標籤、未讀篩選與按月歸檔一應俱全，讀起來像一本私人雜誌。</span></li>
+        <li><strong>把閱讀器調成你的樣子</strong><span>五套主題色、黑體或宋體、字號與行距、日間夜間隨你搭配；iOS 26 上還有 Liquid Glass 玻璃質感的閱讀介面。</span></li>
+        <li><strong>全文搜尋，離線照讀</strong><span>開啟過的文章進入全文索引，多詞搜尋、命中高亮並跳轉章節；捷運裡、飛航模式都能接著讀。</span></li>
+        <li><strong>收藏與設定跟著 iCloud 走</strong><span>收藏、已讀狀態和閱讀設定同步到你自己的 iCloud 私有資料庫；正文與閱讀位置只保存在本機。</span></li>
+        <li><strong>小工具與捷徑</strong><span>主畫面小工具顯示最新一期與未讀數；「捷徑」一鍵重新整理或直達最新一期。</span></li>
+      </ul>
+      <p class="closing">沒有 Siftr 帳號，沒有廣告，也沒有追蹤。</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隱私政策</strong><span>WebDAV 憑證、快取與本機資料</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、連線設定和聯絡方式</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>發布 Skill</strong><span>把發布簡報的技能交給你的 AI Agent</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>AI 負責整理，你負責閱讀</h1>
+        <p class="lede">Siftr 把 AI Agent 每日發佈到堅果雲嘅 Markdown 簡報，變成一本安靜嘅原生刊物：支援多個 WebDAV 來源，下拉重新整理取得新內容，正文按需快取、飛行模式下都可以繼續讀；收藏、已讀同閱讀設定經你自己的 iCloud 私有資料庫同步。</p>
+        <p class="meta">適用於 iPhone 及 iPad · 需要 iOS 18 或以上版本</p>
+      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或回報</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>連接你自己的雲端硬碟</strong><span>可以同時新增多個 WebDAV 來源；簡報儲存在你自己的堅果雲入面，Siftr 不設伺服器、不經手第三方。</span></li>
+        <li><strong>似刊物，不似網絡硬碟</strong><span>最新一期突出顯示，分類、標籤、未讀篩選同按月歸檔一應俱全，讀落似一本私人雜誌。</span></li>
+        <li><strong>將閱讀器調成你的樣子</strong><span>五款主題色、黑體或宋體、字號同行距、日間夜間任你配搭；iOS 26 仲有 Liquid Glass 玻璃質感嘅閱讀介面。</span></li>
+        <li><strong>全文搜尋，離線照讀</strong><span>開過嘅文章會進入全文索引，多詞搜尋、命中高亮並跳去章節；地鐵入面、飛行模式都照讀。</span></li>
+        <li><strong>收藏同設定跟住 iCloud 走</strong><span>收藏、已讀狀態同閱讀設定同步到你自己的 iCloud 私有資料庫；正文同閱讀位置只儲存在本機。</span></li>
+        <li><strong>小工具同捷徑</strong><span>主畫面小工具顯示最新一期同未讀數；「捷徑」一鍵重新整理或者直達最新一期。</span></li>
+      </ul>
+      <p class="closing">冇 Siftr 帳戶，冇廣告，亦冇追蹤。</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>私隱政策</strong><span>WebDAV 憑證、快取同本機資料</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、連線設定同聯絡方法</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>發佈 Skill</strong><span>把發佈簡報嘅技能交俾你嘅 AI Agent</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="ja" lang="ja" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>AI がまとめ、あなたが読む</h1>
+        <p class="lede">Siftr は、AI エージェントが毎日 Nutstore に公開する Markdown ブリーフィングを、静かなネイティブの雑誌に変えます。複数の WebDAV ソースに対応し、引き落として更新、本文は必要なときにキャッシュ、機内モードでも読み続けられます。お気に入り・既読・読書設定はあなた自身の iCloud プライベートデータベース経由で同期されます。</p>
+        <p class="meta">iPhone と iPad に対応 · iOS 18 以降が必要です</p>
+      <p class="cta"><span class="cta-badge">TestFlight でベータテスト中</span><a href="mailto:imhccn@gmail.com">ベータに参加・フィードバック</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>自分のクラウドに接続</strong><span>複数の WebDAV ソースを同時に追加できます。ブリーフィングはあなた自身の Nutstore にあり、Siftr はサーバーを持ちません。</span></li>
+        <li><strong>雑誌のように、ドライブではなく</strong><span>最新号を大きく表示し、カテゴリ・タグ・未読フィルタと月別アーカイブを備えた、プライベートな雑誌のような画面です。</span></li>
+        <li><strong>読書器を自分好みに</strong><span>5 つのテーマカラー、ゴシック体または明朝体、文字サイズと行間、ライト/ダークを自由に組み合わせられます。iOS 26 では Liquid Glass の質感になります。</span></li>
+        <li><strong>全文検索とオフライン閲覧</strong><span>開いた記事は全文索引に加わり、複数語検索、ハイライト表示、セクションへのジャンプに対応。地下鉄でも機内モードでも読めます。</span></li>
+        <li><strong>お気に入りは iCloud と共に</strong><span>お気に入り・既読状態・読書設定はあなた自身の iCloud プライベートデータベースに同期。本文と閲覧位置はこのデバイスのみに保存されます。</span></li>
+        <li><strong>ウィジェットとショートカット</strong><span>ホーム画面ウィジェットに最新号と未読数を表示。ショートカットでワンタップ更新や最新号を開けます。</span></li>
+      </ul>
+      <p class="closing">Siftr アカウントも広告もトラッキングもありません。</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>プライバシーポリシー</strong><span>WebDAV の資格情報、キャッシュ、端末内データ</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>サポート</strong><span>よくある質問、セットアップ、連絡先</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>パブリッシャー Skill</strong><span>公開用スキルをあなたの AI エージェントへ</span></a>
       </div>
     </section>
 
     <section class="language-panel" data-language="en" lang="en" data-title="Siftr">
       <header class="hero">
         <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>A quiet home for your AI briefings</h1>
-        <p class="lede">Siftr turns the Markdown briefings your AI agent publishes to your own WebDAV cloud each day into a calm, native magazine: pull to refresh, articles cached on demand and readable offline, with favorites and reading positions kept on this device alone.</p>
-        <p class="meta">For iPhone and iPad · Requires iOS 18 or later · The app interface currently speaks Simplified Chinese</p>
+        <h1>Your AI curates. You just read.</h1>
+        <p class="lede">Siftr turns the Markdown briefings your AI agent publishes to your own WebDAV cloud into a calm, native magazine: multiple sources, pull to refresh, articles cached on demand and fully readable offline, with favorites, read states, and reading settings synced through your own private iCloud.</p>
+        <p class="meta">For iPhone and iPad · Requires iOS 18 or later</p>
       <p class="cta"><span class="cta-badge">Now in TestFlight</span><a href="mailto:imhccn@gmail.com">Join the beta or send feedback</a></p>
       </header>
       <ul class="features">
-        <li><strong>Your cloud, your data</strong><span>Set up once with a WebDAV address, an app-specific password, and a content folder. Briefings live in your own Jianguoyun storage — Siftr operates no server of its own.</span></li>
-        <li><strong>A magazine, not a file list</strong><span>The home feed reads like a table of contents: the latest issue up top, then every briefing in reverse chronological order with titles, summaries, categories, and tags.</span></li>
-        <li><strong>Cached as you read</strong><span>Articles you open stay on the device — instant on revisit, fully readable in airplane mode or on the subway, and never wiped by a failed refresh.</span></li>
-        <li><strong>Progress that sticks</strong><span>Read state, scroll position, and recents are bound to each document's identity; revisions and index refreshes never reset your place.</span></li>
-        <li><strong>Favorites and full-text search</strong><span>Keep the briefings worth keeping, and search titles, summaries, tags, and body text — cached results still open offline.</span></li>
-        <li><strong>Refreshes quietly</strong><span>Pull to fetch the latest index; unchanged content is never re-downloaded, a failed sync keeps what you had, and the last successful sync time is always shown.</span></li>
+        <li><strong>Your clouds, your data</strong><span>Add several WebDAV sources at once; briefings live in your own Jianguoyun storage — Siftr operates no server of its own.</span></li>
+        <li><strong>A magazine, not a file list</strong><span>The latest issue up front, with category, tag, and unread filters plus a month-by-month archive — it reads like a private magazine.</span></li>
+        <li><strong>A reader shaped like you</strong><span>Five theme colors, sans or serif type, text size and line spacing, light or dark — with a Liquid Glass reading surface on iOS 26.</span></li>
+        <li><strong>Full-text search, offline reading</strong><span>Articles you open join a full-text index: multi-word search, highlighted matches that jump to the section — all readable on the subway or in airplane mode.</span></li>
+        <li><strong>Favorites follow your iCloud</strong><span>Favorites, read states, and reading settings sync through your own private iCloud; article bodies and reading positions stay on this device.</span></li>
+        <li><strong>Widgets and Shortcuts</strong><span>A Home Screen widget shows the latest issue and unread count; Shortcuts refresh or open the latest issue in one tap.</span></li>
       </ul>
-      <p class="closing">No Siftr account, no ads, no tracking. Your reading history stays on your device.</p>
+      <p class="closing">No Siftr account, no ads, no tracking.</p>
       <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>WebDAV credentials, cache, and on-device data</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, setup steps, and contact details</span></a>
-        <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Publisher Skill</strong><span>Hand the publishing skill to your AI agent</span></a>
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>WebDAV credentials, cache, and on-device data</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, setup steps, and contact details</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Publisher Skill</strong><span>Hand the publishing skill to your AI agent</span></a>
       </div>
     </section>
-  </main>
 
-  <footer><p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></footer>
-</div>
-<script src="language.js?v=siftr-20261014-1"></script>
-</body>
-</html>
+    <section class="language-panel" data-language="ru" lang="ru" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>ИИ готовит. Вы читаете.</h1>
+        <p class="lede">Siftr превращает Markdown-брифинги, которые ваш ИИ-агент ежедневно публикует в Nutstore, в спокойный нативный журнал: несколько источников WebDAV, обновление потягиванием, кэширование статей по требованию и полное чтение офлайн; избранное, статус прочтения и настройки чтения синхронизируются через ваш личный iCloud.</p>
+        <p class="meta">Для iPhone и iPad · Требуется iOS 18 или новее</p>
+      <p class="cta"><span class="cta-badge">Бета в TestFlight</span><a href="mailto:imhccn@gmail.com">Участвовать в бете или написать</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>Ваши облака, ваши данные</strong><span>Добавляйте несколько источников WebDAV; брифинги лежат в вашем собственном Nutstore — у Siftr нет своего сервера.</span></li>
+        <li><strong>Журнал, а не файловый список</strong><span>Свежий выпуск на видном месте, фильтры по категориям, меткам и непрочитанным, архив по месяцам — читается как личный журнал.</span></li>
+        <li><strong>Читалка под вас</strong><span>Пять цветов темы, гротеск или антиква, размер шрифта и межстрочный интервал, светлая или тёмная — а на iOS 26 ещё и стеклянный Liquid Glass.</span></li>
+        <li><strong>Полнотекстовый поиск и офлайн</strong><span>Прочитанные статьи попадают в полнотекстовый индекс: поиск по нескольким словам, подсветка совпадений и переход к разделу; читается и в метро, и в самолёте.</span></li>
+        <li><strong>Избранное следует за iCloud</strong><span>Избранное, статус прочтения и настройки чтения синхронизируются через ваш личный iCloud; тексты статей и позиция чтения остаются на устройстве.</span></li>
+        <li><strong>Виджеты и Команды</strong><span>Виджет на домашнем экране показывает свежий выпуск и число непрочитанных; Команды обновляют или открывают последний выпуск одним нажатием.</span></li>
+      </ul>
+      <p class="closing">Без аккаунта Siftr, без рекламы и без слежки.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Политика конфиденциальности</strong><span>Учётные данные WebDAV, кэш и локальные данные</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Поддержка</strong><span>Ответы, настройка и контакты</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill публикации</strong><span>Передайте навык публикации своему ИИ-агенту</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="fr" lang="fr" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>Votre IA prépare. Vous lisez.</h1>
+        <p class="lede">Siftr transforme les briefings Markdown que votre agent IA publie chaque jour sur Nutstore en un magazine natif et paisible : plusieurs sources WebDAV, actualisation par tirage, articles mis en cache à la demande et lisibles hors ligne ; favoris, état de lecture et réglages suivent votre iCloud privé.</p>
+        <p class="meta">Pour iPhone et iPad · Nécessite iOS 18 ou ultérieur</p>
+      <p class="cta"><span class="cta-badge">Bêta sur TestFlight</span><a href="mailto:imhccn@gmail.com">Participer à la bêta ou écrire</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>Vos nuages, vos données</strong><span>Ajoutez plusieurs sources WebDAV ; les briefings restent dans votre propre Nutstore — Siftr n’exploite aucun serveur.</span></li>
+        <li><strong>Un magazine, pas un listing de fichiers</strong><span>Le dernier numéro en tête, filtres par catégorie, tag et non lus, archive mois par mois — on lit cela comme un magazine privé.</span></li>
+        <li><strong>Un lecteur à votre image</strong><span>Cinq couleurs de thème, sans ou avec empattement, taille de texte et interligne, clair ou sombre — et un rendu Liquid Glass sur iOS 26.</span></li>
+        <li><strong>Recherche plein texte, lecture hors ligne</strong><span>Les articles ouverts rejoignent l’index plein texte : recherche multi-mots, occurrences surlignées et saut à la section ; lisible dans le métro comme en avion.</span></li>
+        <li><strong>Les favoris suivent votre iCloud</strong><span>Favoris, état de lecture et réglages se synchronisent via votre iCloud privé ; les corps d’articles et la position de lecture restent sur l’appareil.</span></li>
+        <li><strong>Widgets et raccourcis</strong><span>Un widget d’écran d’accueil affiche le dernier numéro et le nombre de non lus ; les raccourcis actualisent ou ouvrent le dernier numéro en un geste.</span></li>
+      </ul>
+      <p class="closing">Pas de compte Siftr, pas de pub, pas de traçage.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Politique de confidentialité</strong><span>Identifiants WebDAV, cache et données locales</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistance</strong><span>Réponses, configuration et contact</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill de publication</strong><span>Confiez le skill de publication à votre agent IA</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="ko" lang="ko" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>AI가 정리하고, 당신이 읽는다</h1>
+        <p class="lede">Siftr은 AI 에이전트가 매일 누터스트에 게시하는 Markdown 브리핑을 조용한 네이티브 매거진으로 바꿔 줘요. WebDAV 소스 여러 개를 추가할 수 있고, 당겨서 새로 고치며, 본문은 필요할 때 캐시되어 비행기 모드에서도 이어 읽을 수 있고, 즐겨찾기·읽음 상태·읽기 설정은 당신의 iCloud 개인 데이터베이스로 동기화돼요.</p>
+        <p class="meta">iPhone 및 iPad용 · iOS 18 이상 필요</p>
+      <p class="cta"><span class="cta-badge">TestFlight 베타 테스트 중</span><a href="mailto:imhccn@gmail.com">베타 참여 또는 피드백</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>당신의 클라우드, 당신의 데이터</strong><span>WebDAV 소스를 여러 개 동시에 추가할 수 있어요. 브리핑은 당신의 누터스트에 있고 Siftr은 서버를 운영하지 않아요.</span></li>
+        <li><strong>파일 목록이 아니라 매거진</strong><span>최신 호를 크게 보여 주고, 카테고리·태그·읽지 않음 필터와 월별 보관까지 갖춰 개인 매거진처럼 읽혀요.</span></li>
+        <li><strong>취향대로 조정하는 리더</strong><span>테마 색상 5종, 고딕 또는 명조, 글자 크기와 줄 간격, 라이트/다크 자유 조합. iOS 26에서는 Liquid Glass 질감까지</span></li>
+        <li><strong>전문 검색과 오프라인 읽기</strong><span>열어 본 글은 전문 색인에 들어가 여러 단어 검색, 일치 항목 강조, 섹션 이동까지 가능해요. 지하철에서도 비행기 모드에서도 읽어요.</span></li>
+        <li><strong>즐겨찾기는 iCloud를 따라</strong><span>즐겨찾기·읽음 상태·읽기 설정은 당신의 iCloud 개인 데이터베이스로 동기화되고, 본문과 읽기 위치는 이 기기에만 저장돼요.</span></li>
+        <li><strong>위젯과 단축어</strong><span>홈 화면 위젯에 최신 호와 읽지 않은 개수를 표시하고, 단축어로 한 번에 새로 고치거나 최신 호를 열어요.</span></li>
+      </ul>
+      <p class="closing">Siftr 계정도, 광고도, 추적도 없습니다.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>개인정보 처리방침</strong><span>WebDAV 자격 증명, 캐시, 기기 데이터</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>지원</strong><span>자주 묻는 질문, 설정, 연락처</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>게시 Skill</strong><span>게시 스킬을 AI 에이전트에게 건네주기</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="de" lang="de" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>Deine KI sortiert. Du liest.</h1>
+        <p class="lede">Siftr verwandelt die Markdown-Briefings, die dein KI-Agent täglich in Nutstore veröffentlicht, in ein ruhiges, native Magazin: mehrere WebDAV-Quellen, Aktualisieren durch Ziehen, bei Bedarf zwischengespeicherte und offline lesbare Artikel; Favoriten, Lesestatus und Leseeinstellungen folgen über dein privates iCloud.</p>
+        <p class="meta">Für iPhone und iPad · Erfordert iOS 18 oder neuer</p>
+      <p class="cta"><span class="cta-badge">Jetzt in TestFlight</span><a href="mailto:imhccn@gmail.com">Beta testen oder schreiben</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>Deine Clouds, deine Daten</strong><span>Füge mehrere WebDAV-Quellen hinzu; die Briefings bleiben in deinem eigenen Nutstore — Siftr betreibt keinen Server.</span></li>
+        <li><strong>Ein Magazin, keine Dateiliste</strong><span>Die neueste Ausgabe oben, Filter nach Kategorie, Tag und ungelesen sowie ein Monatsarchiv — liest sich wie ein privates Magazin.</span></li>
+        <li><strong>Ein Reader ganz nach dir</strong><span>Fünf Themenfarben, serifenlos oder Serif, Textgröße und Zeilenabstand, hell oder dunkel — auf iOS 26 dazu ein Liquid-Glass-Leseerlebnis.</span></li>
+        <li><strong>Volltextsuche, Offline-Lesen</strong><span>Geöffnete Artikel landen im Volltextindex: Mehrwort-Suche, hervorgehobene Treffer und Sprung zum Abschnitt; in der U-Bahn wie im Flugzeug lesbar.</span></li>
+        <li><strong>Favoriten folgen deinem iCloud</strong><span>Favoriten, Lesestatus und Leseeinstellungen synchronisieren über dein privates iCloud; Artikeltexte und Leseposition bleiben auf dem Gerät.</span></li>
+        <li><strong>Widgets und Kurzbefehle</strong><span>Ein HomeScreen-Widget zeigt die neueste Ausgabe und die Ungelesen-Zahl; Kurzbefehle aktualisieren oder öffnen die neueste Ausgabe mit einem Tipp.</span></li>
+      </ul>
+      <p class="closing">Kein Siftr-Konto, keine Werbung, kein Tracking.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Datenschutz</strong><span>WebDAV-Zugangsdaten, Cache und Gerätedaten</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Antworten, Einrichtung und Kontakt</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Publisher-Skill</strong><span>Übergib den Publishing-Skill deinem KI-Agenten</span></a>
+      </div>
+    </section>
+
+    <section class="language-panel" data-language="es" lang="es" data-title="Siftr">
+      <header class="hero">
+        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
+        <h1>Tu IA prepara. Tú lees.</h1>
+        <p class="lede">Siftr convierte los boletines en Markdown que tu agente de IA publica cada día en Nutstore en una revista nativa y serena: varias fuentes WebDAV, actualizar estirando hacia abajo, artículos en caché a demanda y legibles sin conexión; favoritos, estado de lectura y ajustes se sincronizan mediante tu iCloud privado.</p>
+        <p class="meta">Para iPhone y iPad · Requiere iOS 18 o posterior</p>
+      <p class="cta"><span class="cta-badge">Beta en TestFlight</span><a href="mailto:imhccn@gmail.com">Unirse a la beta o escribir</a></p>
+      </header>
+      <ul class="features">
+        <li><strong>Tus nubes, tus datos</strong><span>Añade varias fuentes WebDAV; los boletines viven en tu propio Nutstore — Siftr no opera ningún servidor.</span></li>
+        <li><strong>Una revista, no una lista de archivos</strong><span>El último número en primer plano, filtros por categoría, etiqueta y sin leer, y un archivo por meses: se lee como una revista privada.</span></li>
+        <li><strong>Un lector a tu medida</strong><span>Cinco colores de tema, redonda o con serifa, tamaño de texto e interlineado, claro u oscuro — y un acabado Liquid Glass en iOS 26.</span></li>
+        <li><strong>Búsqueda de texto completo y lectura sin conexión</strong><span>Los artículos que abres entran en el índice de texto completo: búsqueda de varias palabras, coincidencias resaltadas y salto a la sección; se lee en el metro y en el avión.</span></li>
+        <li><strong>Los favoritos siguen tu iCloud</strong><span>Favoritos, estado de lectura y ajustes se sincronizan mediante tu iCloud privado; los cuerpos de los artículos y la posición de lectura quedan en el dispositivo.</span></li>
+        <li><strong>Widgets y atajos</strong><span>Un widget en la pantalla de inicio muestra el último número y los no leídos; los atajos actualizan o abren el último número de un toque.</span></li>
+      </ul>
+      <p class="closing">Sin cuenta Siftr, sin anuncios y sin rastreo.</p>
+      <div class="cards">
+        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de privacidad</strong><span>Credenciales WebDAV, caché y datos del dispositivo</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Soporte</strong><span>Respuestas, configuración y contacto</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill de publicación</strong><span>Entrega el skill de publicación a tu agente de IA</span></a>
+      </div>
+    </section>
+
+  </main>
+  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
+</div><script src="language.js?v=siftr-20261014-2"></script></body></html>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr Privacy Policy">
-<title>隐私政策 · Siftr</title>
+<title>Privacy Policy · Siftr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
 <link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
-<link rel="stylesheet" href="style.css?v=siftr-20261014-2">
+<link rel="stylesheet" href="style.css?v=siftr-20261014-3">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body><div class="wrap">
@@ -14,59 +14,241 @@
     <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
     <label class="language-picker">
       <select data-language-select aria-label="Language">
-        <option value="zh-Hans">简体中文</option>
-        <option value="en">English</option>
+        <option value="zh-Hans">简体中文</option>        <option value="zh-Hant">繁體中文（中國台灣）</option>        <option value="zh-HK">繁體中文（中國香港）</option>        <option value="ja">日本語</option>        <option value="en">English</option>        <option value="ru">Русский</option>        <option value="fr">Français</option>        <option value="ko">한국어</option>        <option value="de">Deutsch</option>        <option value="es">Español</option>
       </select>
     </label>
   </div>
   <main tabindex="-1">
     <article class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="隐私政策 · Siftr">
       <header><h1>隐私政策</h1><p class="updated">最后更新：2026 年 10 月 14 日</p></header>
-      <p class="lede">Siftr 是一个本地优先的私人阅读器。你不需要注册账号；简报正文保存在你自己的坚果云和这台设备上，阅读记录只留在这台设备上。开发者不经营任何服务器，也不收集你的数据。</p>
+      <p class="lede">Siftr 是一个本地优先的私人阅读器。你不需要注册账号；简报正文保存在你自己的坚果云和这台设备上。开发者不经营任何服务器，也不收集你的数据。</p>
       <h2>Siftr 不收集任何数据</h2>
       <p>Siftr 没有账号体系，没有分析或广告 SDK，没有跟踪器。你阅读了什么、搜了什么、收藏了什么，都不会发送给开发者或任何第三方服务器。</p>
       <div class="note"><p>Siftr 对云端内容只读：它只从你配置的 WebDAV 目录下载索引和正文，不会修改、上传或删除你坚果云里的任何文件。</p></div>
       <h2>WebDAV 凭证</h2>
-      <p>服务器地址、账号邮箱和第三方应用密码只保存在这台设备的 iOS 钥匙串（Keychain）中，不进入云端备份，也不会写入普通日志。凭证只发送给你自己配置的服务器；遇到跨域重定向时不会继续携带。</p>
+      <p>服务器地址、账号邮箱和第三方应用密码只保存在这台设备的 iOS 钥匙串（Keychain）中，不参与 iCloud 同步，也不会写入普通日志。凭证只发送给你自己配置的服务器；遇到跨域重定向时不会继续携带。</p>
       <p>建议在坚果云「账户信息 → 安全选项 → 第三方应用管理」中为 Siftr 单独创建一个应用密码，与发布端（例如 Hermes）使用的密码分开。你随时可以在坚果云侧吊销它，吊销不影响本机已缓存的内容。</p>
-      <h2>简报内容与缓存</h2>
-      <p>正文 Markdown 与索引按需从你自己的 WebDAV 下载，缓存保存在应用沙盒的专属目录中。你可以在「设置」里查看缓存占用并一键清理；清理缓存不会删除收藏和阅读记录。</p>
-      <p>正文中如果包含外部图片链接，Siftr 只会在你打开文章时按需加载，且不会携带任何 WebDAV 凭证。点击外部链接由系统浏览器处理，同样不携带凭证。</p>
-      <h2>阅读记录</h2>
-      <p>已读状态、收藏、阅读进度、最近阅读时间和最近同步时间保存在本机（SwiftData 数据库），不上传坚果云，也没有任何云端同步。卸载并重装 App 后这些记录会重新开始。</p>
+      <h2>iCloud 同步（可选）</h2>
+      <p>开启后，内容来源列表（不含任何密码）、收藏、已读状态和阅读设置会写入你自己 iCloud 账户下的 CloudKit 私有数据库，用于在你的设备之间保持一致。私有数据库只有登录你 Apple 账户的设备能读取，开发者无法访问。</p>
+      <p>文章正文、阅读位置和滚动进度不参与同步，只保存在本机；应用密码永远不进入 iCloud。你可以在设置里随时关闭同步。</p>
+      <h2>正文与缓存</h2>
+      <p>正文 Markdown 与索引按需从你自己的 WebDAV 下载，缓存在应用沙盒的专属目录中。「设置」里可查看占用并一键清理；清理缓存不会删除收藏和阅读记录。</p>
+      <p>正文中如含外部图片链接，只在打开文章时按需加载，且不携带任何 WebDAV 凭证。点击外部链接由系统浏览器处理，同样不携带凭证。</p>
       <h2>网络请求</h2>
-      <p>App 只向你配置的 WebDAV 服务器发起 HTTPS 请求（读取 manifest.json 与正文），外加文章内公开的外部图片。没有后台轮询、没有推送服务、没有统计上报。</p>
+      <p>App 只向你配置的 WebDAV 服务器发起 HTTPS 请求（读取索引与正文），外加文章内公开的外部图片。没有后台轮询、没有推送服务、没有统计上报。</p>
       <h2>卸载与删除</h2>
-      <p>删除 Siftr 会一并移除本机的缓存、阅读记录与钥匙串凭证。你坚果云里的简报原文不受影响——它们本来就在你自己的账户里。</p>
-      <h2>儿童</h2>
-      <p>Siftr 不面向 13 岁以下儿童，也不刻意收集儿童的个人信息。</p>
-      <h2>变更与联系</h2>
-      <p>本政策更新时，页面顶部的日期会随之改变。隐私问题或数据请求请发邮件到 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+      <p>删除 Siftr 会一并移除本机的缓存、阅读记录与钥匙串凭证；iCloud 私有数据库里的同步数据可在系统设置的 iCloud 储存空间管理中删除。你坚果云里的简报原文不受影响——它们本来就在你自己的账户里。</p>
+      <h2>儿童与联系</h2>
+      <p>Siftr 不面向 13 岁以下儿童，也不刻意收集儿童的个人信息。隐私问题或数据请求请发邮件到 imhccn@gmail.com。</p>
+    </article>
+
+    <article class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="隱私政策 · Siftr">
+      <header><h1>隱私政策</h1><p class="updated">最後更新：2026 年 10 月 14 日</p></header>
+      <p class="lede">Siftr 是一個本地優先的私人閱讀器。你不需要註冊帳號；簡報正文保存在你自己的堅果雲和這台裝置上。開發者不經營任何伺服器，也不收集你的資料。</p>
+      <h2>Siftr 不收集任何資料</h2>
+      <p>Siftr 沒有帳號體系，沒有分析或廣告 SDK，沒有追蹤器。你閱讀了什麼、搜了什麼、收藏了什麼，都不會傳送給開發者或任何第三方伺服器。</p>
+      <div class="note"><p>Siftr 對雲端內容唯讀：它只從你設定的 WebDAV 目錄下載索引和正文，不會修改、上傳或刪除你堅果雲裡的任何檔案。</p></div>
+      <h2>WebDAV 憑證</h2>
+      <p>伺服器位址、帳號電子郵件和第三方應用程式密碼只保存在這台裝置的 iOS 鑰匙圈（Keychain）中，不參與 iCloud 同步，也不會寫入一般日誌。憑證只傳送給你自己設定的伺服器；遇到跨網域重新導向時不會繼續攜帶。</p>
+      <p>建議在堅果雲「帳戶資訊 → 安全選項 → 第三方應用管理」中為 Siftr 單獨建立一個應用程式密碼，與發布端（例如 Hermes）使用的密碼分開。你隨時可以在堅果雲側撤銷它，撤銷不影響本機已快取的內容。</p>
+      <h2>iCloud 同步（可選）</h2>
+      <p>開啟後，內容來源列表（不含任何密碼）、收藏、已讀狀態和閱讀設定會寫入你自己 iCloud 帳戶下的 CloudKit 私有資料庫，用於在你的裝置之間保持一致。私有資料庫只有登入你 Apple 帳號的裝置能讀取，開發者無法存取。</p>
+      <p>文章正文、閱讀位置和捲動進度不參與同步，只保存在本機；應用程式密碼永遠不進入 iCloud。你可以在設定裡隨時關閉同步。</p>
+      <h2>正文與快取</h2>
+      <p>正文 Markdown 與索引按需從你自己的 WebDAV 下載，快取在應用程式沙盒的專屬目錄中。「設定」裡可查看佔用並一鍵清理；清理快取不會刪除收藏和閱讀記錄。</p>
+      <p>正文中如含外部圖片連結，只在開啟文章時按需載入，且不攜帶任何 WebDAV 憑證。點擊外部連結由系統瀏覽器處理，同樣不攜帶憑證。</p>
+      <h2>網路請求</h2>
+      <p>App 只向你設定的 WebDAV 伺服器發起 HTTPS 請求（讀取索引與正文），外加文章內公開的外部圖片。沒有背景輪詢、沒有推播服務、沒有統計上報。</p>
+      <h2>解除安裝與刪除</h2>
+      <p>刪除 Siftr 會一併移除本機的快取、閱讀記錄與鑰匙圈憑證；iCloud 私有資料庫裡的同步資料可在系統設定的 iCloud 儲存空間管理中刪除。你堅果雲裡的簡報原文不受影響——它們本來就在你自己的帳號裡。</p>
+      <h2>兒童與聯絡</h2>
+      <p>Siftr 不面向 13 歲以下兒童，也不刻意收集兒童的個人資料。隱私問題或資料請求請寄電子郵件到 imhccn@gmail.com。</p>
+    </article>
+
+    <article class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="私隱政策 · Siftr">
+      <header><h1>私隱政策</h1><p class="updated">最後更新：2026 年 10 月 14 日</p></header>
+      <p class="lede">Siftr 是一個本地優先嘅私人閱讀器。你唔需要註冊帳戶；簡報正文儲存在你自己的堅果雲同這部裝置上面。開發者不經營任何伺服器，亦不收集你的資料。</p>
+      <h2>Siftr 唔收集任何資料</h2>
+      <p>Siftr 冇帳戶體系，冇分析或者廣告 SDK，冇追蹤器。你閱讀咩、搜尋咩、收藏咩，都不會傳送俾開發者或者任何第三方伺服器。</p>
+      <div class="note"><p>Siftr 對雲端內容唯讀：佢只會從你設定的 WebDAV 目錄下載索引同正文，唔會修改、上載或者刪除你堅果雲入面嘅任何檔案。</p></div>
+      <h2>WebDAV 憑證</h2>
+      <p>伺服器位址、帳戶電郵同第三方應用程式密碼只儲存在這部裝置嘅 iOS 鑰匙圈（Keychain）入面，不參與 iCloud 同步，亦唔會寫入一般日誌。憑證只會傳送俾你自己設定嘅伺服器；遇到跨網域重新導向時唔會繼續攜帶。</p>
+      <p>建議喺堅果雲「帳戶資料 → 安全選項 → 第三方應用管理」度為 Siftr 單獨建立一個應用程式密碼，同發佈端（例如 Hermes）用嘅密碼分開。你隨時可以喺堅果雲側撤銷佢，撤銷唔影響本機已快取嘅內容。</p>
+      <h2>iCloud 同步（可選）</h2>
+      <p>開啟之後，內容來源列表（唔含任何密碼）、收藏、已讀狀態同閱讀設定會寫入你自己 iCloud 帳戶下面嘅 CloudKit 私有資料庫，用嚟喺你嘅裝置之間保持一致。私有資料庫只有登入你 Apple 帳號嘅裝置先讀到，開發者無法存取。</p>
+      <p>文章正文、閱讀位置同捲動進度不參與同步，只儲存在本機；應用程式密碼永遠唔會進入 iCloud。你可以喺設定度隨時關閉同步。</p>
+      <h2>正文同快取</h2>
+      <p>正文 Markdown 同索引按需從你自己的 WebDAV 下載，快取喺應用程式沙盒嘅專屬目錄入面。「設定」度可以查看佔用同一鍵清理；清理快取唔會刪除收藏同閱讀記錄。</p>
+      <p>正文入面如有外部圖片連結，只會喺開啟文章時按需載入，而且唔攜帶任何 WebDAV 憑證。撳外部連結由系統瀏覽器處理，同樣唔攜帶憑證。</p>
+      <h2>網絡請求</h2>
+      <p>App 只會向你設定嘅 WebDAV 伺服器發出 HTTPS 請求（讀取索引同正文），另加文章內公開嘅外部圖片。冇背景輪詢、冇推播服務、冇統計上報。</p>
+      <h2>移除同刪除</h2>
+      <p>刪除 Siftr 會一併移除本機嘅快取、閱讀記錄同鑰匙圈憑證；iCloud 私有資料庫入面嘅同步資料可以喺系統設定嘅 iCloud 儲存空間管理度刪除。你堅果雲入面嘅簡報原稿唔受影響——佢哋本來就喺你自己帳戶度。</p>
+      <h2>兒童同聯絡</h2>
+      <p>Siftr 不面向 13 歲以下兒童，亦唔會刻意收集兒童嘅個人資料。私隱問題或者資料請求請電郵到 imhccn@gmail.com。</p>
+    </article>
+
+    <article class="language-panel" data-language="ja" lang="ja" data-title="プライバシーポリシー · Siftr">
+      <header><h1>プライバシーポリシー</h1><p class="updated">最終更新：2026 年 10 月 14 日</p></header>
+      <p class="lede">Siftr はローカルファーストの個人用リーダーです。アカウント登録は不要で、ブリーフィングの本文はあなた自身の Nutstore とこのデバイスに保存されます。開発者はサーバーを運営せず、データを収集もしません。</p>
+      <h2>Siftr は何も収集しません</h2>
+      <p>Siftr にはアカウント体系も、解析・広告 SDK も、トラッカーもありません。何を読み、何を検索し、何をお気に入りにしても、開発者や第三者サーバーに送信されることはありません。</p>
+      <div class="note"><p>Siftr はクラウドに対して読み取り専用です。設定した WebDAV フォルダから索引と本文をダウンロードするだけで、Nutstore 内のファイルを変更・アップロード・削除することはありません。</p></div>
+      <h2>WebDAV の資格情報</h2>
+      <p>サーバーアドレス、アカウントのメールアドレス、サードパーティ製アプリパスワードはこのデバイスの iOS キーチェーンにのみ保存され、iCloud 同期にもログにも書き込まれません。資格情報は設定したサーバーにのみ送信され、別ホストへのリダイレクトでは決して転送されません。</p>
+      <p>Nutstore の「アカウント情報 → セキュリティオプション → サードパーティアプリ管理」で、発行者（Hermes など）とは別に Siftr 専用のアプリパスワードを作成することをおすすめします。いつでも取り消せ、取り消してもこのデバイスのキャッシュには影響しません。</p>
+      <h2>iCloud 同期（任意）</h2>
+      <p>有効にすると、ソース一覧（パスワードは含まない）、お気に入り、既読状態、読書設定が、あなた自身の iCloud アカウントの CloudKit プライベートデータベースに書き込まれ、デバイス間で共有されます。このデータベースを読めるのはあなたの Apple ID でサインインしたデバイスだけで、開発者はアクセスできません。</p>
+      <p>記事本文、閲覧位置、スクロール進行は同期されず、このデバイスにのみ保存されます。アプリパスワードが iCloud に入ることは決してありません。設定からいつでもオフにできます。</p>
+      <h2>本文とキャッシュ</h2>
+      <p>本文と索引はあなた自身の WebDAV から必要なときにダウンロードされ、アプリのサンドボックスにキャッシュされます。設定で容量の確認とワンタップ消去が可能で、消去してもお気に入りや閲覧履歴は失われません。</p>
+      <p>記事に外部画像リンクが含まれる場合、開いたときにのみ読み込まれ、WebDAV の資格情報は一切送信されません。外部リンクも資格情報なしでシステムブラウザで開きます。</p>
+      <h2>ネットワーク通信</h2>
+      <p>アプリが HTTPS リクエストを送る相手は、設定した WebDAV サーバー（索引と本文の取得）と、記事内の公開外部画像だけです。バックグラウンドポーリングもプッシュも統計レポートもありません。</p>
+      <h2>削除について</h2>
+      <p>Siftr を削除すると、キャッシュ、閲覧履歴、キーチェーンの資格情報がこのデバイスから除去されます。iCloud プライベートデータベースの同期データは、システム設定の iCloud ストレージ管理から削除できます。Nutstore 内のブリーフィング原本には影響しません。</p>
+      <h2>児童とお問い合わせ</h2>
+      <p>Siftr は 13 歳未満の子どもを対象とせず、児童の個人情報を意図的に収集することもありません。プライバシーに関するご質問やデータ請求は imhccn@gmail.com までメールでご連絡ください。</p>
     </article>
 
     <article class="language-panel" data-language="en" lang="en" data-title="Privacy Policy · Siftr">
       <header><h1>Privacy Policy</h1><p class="updated">Last updated: October 14, 2026</p></header>
-      <p class="lede">Siftr is a local-first personal reader. There is no account to sign up for; your briefings live in your own WebDAV cloud and on this device, and your reading history stays on this device. The developer operates no server and collects no data.</p>
+      <p class="lede">Siftr is a local-first personal reader. There is no account to sign up for; your briefings live in your own WebDAV cloud and on this device. The developer operates no server and collects no data.</p>
       <h2>Siftr collects nothing</h2>
       <p>Siftr has no account system, no analytics or advertising SDKs, and no trackers. What you read, search for, or favorite is never sent to the developer or any third-party server.</p>
-      <div class="note"><p>Siftr treats your cloud as read-only: it downloads only the index and article bodies from the WebDAV folder you configure, and never modifies, uploads, or deletes anything in your cloud storage.</p></div>
+      <div class="note"><p>Siftr treats your cloud as read-only: it downloads only the index and article bodies from the WebDAV folders you configure, and never modifies, uploads, or deletes anything in your cloud storage.</p></div>
       <h2>WebDAV credentials</h2>
-      <p>The server address, account email, and app-specific password are stored only in this device's iOS Keychain — never in cloud backups or plain-text logs. Credentials are sent only to the server you configured, and never forwarded across redirects to another host.</p>
-      <p>We recommend creating a dedicated app password for Siftr under Jianguoyun's third-party app management, separate from the one your publishing agent uses. You can revoke it at any time; revocation does not affect content already cached on this device.</p>
+      <p>The server address, account email, and app-specific password are stored only in this device’s iOS Keychain — never synced over iCloud or written to plain-text logs. Credentials are sent only to the server you configured and never forwarded across redirects.</p>
+      <p>We recommend creating a dedicated app password for Siftr under Jianguoyun’s third-party app management, separate from the one your publishing agent uses. You can revoke it at any time; revocation does not affect content already cached on this device.</p>
+      <h2>iCloud sync (optional)</h2>
+      <p>When enabled, your content source list (never any passwords), favorites, read states, and reading settings are written to the CloudKit private database of your own iCloud account to stay consistent across your devices. Only devices signed into your Apple ID can read that database; the developer cannot.</p>
+      <p>Article bodies, reading positions, and scroll progress are never synced and stay on this device; app passwords never enter iCloud. You can turn sync off in Settings at any time.</p>
       <h2>Content and cache</h2>
-      <p>Article bodies and the index are downloaded on demand from your own WebDAV and cached in the app's sandbox. Settings shows the cache size and a one-tap clear; clearing the cache never deletes favorites or reading history.</p>
-      <p>If an article contains external image links, Siftr loads them only when you open the article, without any WebDAV credentials. External links open in the system browser, likewise credential-free.</p>
-      <h2>Reading history</h2>
-      <p>Read state, favorites, reading progress, recents, and the last sync time live in an on-device database. They are not uploaded to your cloud and are not synced anywhere. Reinstalling the app starts them fresh.</p>
+      <p>Article bodies and the index are downloaded on demand from your own WebDAV and cached in the app’s sandbox. Settings shows the size and a one-tap clear; clearing the cache never deletes favorites or reading history.</p>
+      <p>If an article contains external image links, they load only when you open it, without any WebDAV credentials. External links open in the system browser, likewise credential-free.</p>
       <h2>Network requests</h2>
-      <p>The app makes HTTPS requests only to the WebDAV server you configure (fetching manifest.json and article bodies), plus public external images embedded in articles. No background polling, no push service, no telemetry.</p>
-      <h2>Uninstalling</h2>
-      <p>Deleting Siftr removes the local cache, reading history, and Keychain credentials. The briefings in your own cloud are untouched — they were yours all along.</p>
-      <h2>Children</h2>
-      <p>Siftr is not intended for children under 13 and does not knowingly collect personal information from children.</p>
-      <h2>Changes and contact</h2>
-      <p>When this policy is updated, the date at the top changes with it. For privacy questions or data requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+      <p>The app makes HTTPS requests only to the WebDAV servers you configure (fetching the index and article bodies), plus public external images embedded in articles. No background polling, no push service, no telemetry.</p>
+      <h2>Uninstalling and deletion</h2>
+      <p>Deleting Siftr removes the local cache, reading history, and Keychain credentials; synced data in your iCloud private database can be deleted from iCloud storage management in system settings. The briefings in your own cloud are untouched — they were yours all along.</p>
+      <h2>Children and contact</h2>
+      <p>Siftr is not intended for children under 13 and does not knowingly collect personal information from children. For privacy questions or data requests, email imhccn@gmail.com.</p>
     </article>
+
+    <article class="language-panel" data-language="ru" lang="ru" data-title="Политика конфиденциальности · Siftr">
+      <header><h1>Политика конфиденциальности</h1><p class="updated">Обновлено: 14 октября 2026 г.</p></header>
+      <p class="lede">Siftr — локальный в первую очередь персональный ридер. Регистрация не нужна; тексты брифингов живут в вашем собственном облаке WebDAV и на этом устройстве. Разработчик не держит серверов и не собирает ваши данные.</p>
+      <h2>Siftr ничего не собирает</h2>
+      <p>У Siftr нет аккаунтов, аналитики, рекламных SDK и трекеров. Что вы читаете, ищете и добавляете в избранное, никогда не отправляется разработчику или сторонним серверам.</p>
+      <div class="note"><p>Siftr работает с вашим облаком только на чтение: он скачивает лишь индекс и тексты из настроенных вами WebDAV-каталогов и никогда не изменяет, не загружает и не удаляет файлы в вашем хранилище.</p></div>
+      <h2>Учётные данные WebDAV</h2>
+      <p>Адрес сервера, почта аккаунта и пароль приложения хранятся только в связке ключей iOS этого устройства — не синхронизируются через iCloud и не попадают в журналы. Данные отправляются только на настроенный вами сервер и никогда не передаются дальше при перенаправлениях.</p>
+      <p>Рекомендуем создать отдельный пароль приложения для Siftr в разделе управления сторонними приложениями Nutstore — не тот, которым пользуется ваш публикующий агент. Его можно отозвать в любой момент; отзыв не затрагивает уже скачанный на устройство кэш.</p>
+      <h2>Синхронизация iCloud (по желанию)</h2>
+      <p>Если включена, список источников (без паролей), избранное, статус прочтения и настройки чтения записываются в частную базу CloudKit вашего аккаунта iCloud, чтобы совпадать на всех устройствах. Читать её могут только устройства с вашим Apple ID; разработчику она недоступна.</p>
+      <p>Тексты статей, позиция и прогресс чтения не синхронизируются и остаются на устройстве; пароли никогда не попадают в iCloud. Синхронизацию можно выключить в настройках в любой момент.</p>
+      <h2>Тексты и кэш</h2>
+      <p>Тексты и индекс скачиваются по требованию из вашего WebDAV и кэшируются в песочнице приложения. В настройках виден размер и есть очистка одним нажатием; она не удаляет избранное и историю чтения.</p>
+      <p>Если в статье есть внешние изображения, они загружаются только при открытии и без учётных данных WebDAV. Внешние ссылки открываются системным браузером — также без данных.</p>
+      <h2>Сетевые запросы</h2>
+      <p>Приложение отправляет HTTPS-запросы только настроенным вами WebDAV-серверам (индекс и тексты) и за публичными внешними изображениями из статей. Никакой фоновой polling-активности, пуш-сервисов и телеметрии.</p>
+      <h2>Удаление</h2>
+      <p>Удаление Siftr убирает локальный кэш, историю чтения и данные из связки ключей; синхронизированные данные в частной базе iCloud можно удалить через управление хранилищем iCloud в системных настройках. Брифинги в вашем облаке не затрагиваются — они и так ваши.</p>
+      <h2>Дети и связь</h2>
+      <p>Siftr не предназначен для детей до 13 лет и сознательно не собирает их персональные данные. По вопросам приватности и запросам данных пишите на imhccn@gmail.com.</p>
+    </article>
+
+    <article class="language-panel" data-language="fr" lang="fr" data-title="Politique de confidentialité · Siftr">
+      <header><h1>Politique de confidentialité</h1><p class="updated">Dernière mise à jour : 14 octobre 2026</p></header>
+      <p class="lede">Siftr est un lecteur personnel local-first. Aucun compte à créer ; les textes de vos briefings vivent dans votre propre cloud WebDAV et sur cet appareil. Le développeur n’exploite aucun serveur et ne collecte aucune donnée.</p>
+      <h2>Siftr ne collecte rien</h2>
+      <p>Siftr n’a ni comptes, ni SDK d’analyse ou de publicité, ni traceurs. Ce que vous lisez, cherchez ou mettez en favori n’est jamais envoyé au développeur ni à un serveur tiers.</p>
+      <div class="note"><p>Siftr traite votre cloud en lecture seule : il ne télécharge que l’index et les textes des dossiers WebDAV que vous configurez, et ne modifie, n’envoie ni ne supprime jamais rien dans votre stockage.</p></div>
+      <h2>Identifiants WebDAV</h2>
+      <p>L’adresse du serveur, l’e-mail du compte et le mot de passe d’app sont stockés uniquement dans le trousseau iOS de cet appareil — jamais synchronisés via iCloud ni écrits dans des journaux. Ils ne sont envoyés qu’au serveur configuré, et jamais transmis lors d’une redirection vers un autre hôte.</p>
+      <p>Créez de préférence un mot de passe d’app dédié à Siftr dans la gestion des apps tierces de Nutstore, distinct de celui de votre agent éditeur. Vous pouvez le révoquer à tout moment ; la révocation ne touche pas au contenu déjà en cache.</p>
+      <h2>Synchronisation iCloud (facultative)</h2>
+      <p>Si activée, la liste des sources (jamais de mots de passe), les favoris, l’état de lecture et les réglages sont écrits dans la base privée CloudKit de votre compte iCloud pour rester identiques sur vos appareils. Seuls les appareils connectés à votre identifiant Apple peuvent la lire ; le développeur n’y accède pas.</p>
+      <p>Les corps d’articles, la position et la progression de lecture ne sont jamais synchronisés et restent sur l’appareil ; les mots de passe n’entrent jamais dans iCloud. La synchronisation se désactive à tout moment dans Réglages.</p>
+      <h2>Textes et cache</h2>
+      <p>Textes et index sont téléchargés à la demande depuis votre WebDAV et mis en cache dans la sandbox de l’app. Réglages affiche la taille et propose une purge en un geste, sans toucher aux favoris ni à l’historique.</p>
+      <p>Les images externes éventuelles ne se chargent qu’à l’ouverture de l’article, sans identifiants WebDAV. Les liens externes s’ouvrent dans le navigateur système, tout aussi sans identifiants.</p>
+      <h2>Requêtes réseau</h2>
+      <p>L’app n’émet des requêtes HTTPS que vers les serveurs WebDAV configurés (index et textes) et vers les images externes publiques des articles. Pas de polling en arrière-plan, pas de service push, pas de télémétrie.</p>
+      <h2>Désinstallation</h2>
+      <p>Supprimer Siftr efface le cache local, l’historique de lecture et les identifiants du trousseau ; les données synchronisées dans votre base privée iCloud se suppriment depuis la gestion du stockage iCloud. Les briefings de votre cloud restent intacts — ils étaient à vous dès le départ.</p>
+      <h2>Enfants et contact</h2>
+      <p>Siftr ne s’adresse pas aux enfants de moins de 13 ans et ne collecte sciemment aucune donnée les concernant. Pour toute question de confidentialité ou demande de données : imhccn@gmail.com.</p>
+    </article>
+
+    <article class="language-panel" data-language="ko" lang="ko" data-title="개인정보 처리방침 · Siftr">
+      <header><h1>개인정보 처리방침</h1><p class="updated">마지막 업데이트: 2026년 10월 14일</p></header>
+      <p class="lede">Siftr은 로컬 우선 개인 리더예요. 계정 가입이 필요 없고, 브리핑 본문은 당신의 WebDAV 클라우드와 이 기기에 저장됩니다. 개발자는 서버를 운영하지 않고 데이터를 수집하지도 않아요.</p>
+      <h2>Siftr은 아무것도 수집하지 않아요</h2>
+      <p>Siftr에는 계정 체계, 분석·광고 SDK, 트래커가 없습니다. 무엇을 읽고 검색하고 즐겨찾기에 넣었는지 개발자나 제3자 서버로 전송되지 않아요.</p>
+      <div class="note"><p>Siftr은 클라우드를 읽기 전용으로 다뤄요. 설정한 WebDAV 디렉터리에서 인덱스와 본문만 내려받을 뿐, 누터스트의 어떤 파일도 수정·업로드·삭제하지 않습니다.</p></div>
+      <h2>WebDAV 자격 증명</h2>
+      <p>서버 주소, 계정 이메일, 서드파티 앱 비밀번호는 이 기기의 iOS 키체인에만 저장되고 iCloud 동기화나 일반 로그에는 기록되지 않아요. 자격 증명은 설정한 서버로만 전송되며, 다른 호스트로 리다이렉트될 때는 절대 전달되지 않습니다.</p>
+      <p>누터스트의 「계정 정보 → 보안 옵션 → 서드파티 앱 관리」에서 게시 에이전트와 별개로 Siftr 전용 앱 비밀번호를 만드는 것을 권장해요. 언제든 해지할 수 있고, 해지해도 이 기기에 캐시된 콘텐츠에는 영향이 없습니다.</p>
+      <h2>iCloud 동기화(선택)</h2>
+      <p>켜면 소스 목록(비밀번호 제외), 즐겨찾기, 읽음 상태, 읽기 설정이 당신 iCloud 계정의 CloudKit 개인 데이터베이스에 기록되어 기기 간에 일치하게 유지돼요. 이 데이터베이스는 당신의 Apple ID로 로그인한 기기만 읽을 수 있고 개발자는 접근할 수 없습니다.</p>
+      <p>글 본문, 읽기 위치, 스크롤 진행은 동기화되지 않고 이 기기에만 저장돼요. 앱 비밀번호는 절대 iCloud에 들어가지 않습니다. 설정에서 언제든 동기화를 끌 수 있어요.</p>
+      <h2>본문과 캐시</h2>
+      <p>본문과 인덱스는 당신의 WebDAV에서 필요할 때 내려받아 앱 샌드박스 전용 디렉터리에 캐시돼요. 설정에서 용량을 확인하고 한 번에 지울 수 있으며, 캐시를 지워도 즐겨찾기와 읽기 기록은 지워지지 않습니다.</p>
+      <p>글에 외부 이미지 링크가 있으면 글을 열 때만 불러오고 WebDAV 자격 증명은 전송하지 않아요. 외부 링크도 시스템 브라우저에서 자격 증명 없이 열립니다.</p>
+      <h2>네트워크 요청</h2>
+      <p>앱은 설정한 WebDAV 서버(인덱스·본문)와 글 속 공개 외부 이미지에만 HTTPS 요청을 보내요. 백그라운드 폴링, 푸시 서비스, 통계 보고가 없습니다.</p>
+      <h2>삭제</h2>
+      <p>Siftr을 삭제하면 로컬 캐시, 읽기 기록, 키체인 자격 증명이 함께 제거돼요. iCloud 개인 데이터베이스의 동기화 데이터는 시스템 설정의 iCloud 저장 공간 관리에서 삭제할 수 있습니다. 누터스트의 브리핑 원본은 영향을 받지 않아요.</p>
+      <h2>아동 및 연락</h2>
+      <p>Siftr은 13세 미만 아동을 대상으로 하지 않으며 아동의 개인정보를 의도적으로 수집하지 않아요. 개인정보 문의나 데이터 요청은 imhccn@gmail.com으로 보내 주세요.</p>
+    </article>
+
+    <article class="language-panel" data-language="de" lang="de" data-title="Datenschutz · Siftr">
+      <header><h1>Datenschutz</h1><p class="updated">Zuletzt aktualisiert: 14. Oktober 2026</p></header>
+      <p class="lede">Siftr ist ein Local-First-Leser für dich allein. Kein Konto nötig; die Texte deiner Briefings leben in deinem eigenen WebDAV-Space und auf diesem Gerät. Der Entwickler betreibt keinen Server und sammelt keine Daten.</p>
+      <h2>Siftr sammelt nichts</h2>
+      <p>Siftr hat kein Kontosystem, keine Analyse- oder Werbe-SDKs und keine Tracker. Was du liest, suchst oder favorisierst, geht niemals an den Entwickler oder Drittanbieter-Server.</p>
+      <div class="note"><p>Siftr behandelt deine Cloud rein lesend: Es lädt nur Index und Texte aus den von dir konfigurierten WebDAV-Ordnern und ändert, lädt nie etwas hoch oder löscht Dateien in deinem Speicher.</p></div>
+      <h2>WebDAV-Zugangsdaten</h2>
+      <p>Serveradresse, Konto-E-Mail und App-Passwort liegen ausschließlich im iOS-Schlüsselbund dieses Geräts — ohne iCloud-Synchronisierung und ohne Eintrag in Logs. Sie gehen nur an den konfigurierten Server und werden bei Weiterleitungen an andere Hosts nie mitgeschickt.</p>
+      <p>Lege am besten ein eigenes App-Passwort für Siftr in Nutstores Verwaltung der Drittanbieter-Apps an — getrennt vom Passwort deines Veröffentlichungs-Agenten. Du kannst es jederzeit widerrufen; der Widerruf berührt den bereits gecachten Inhalt nicht.</p>
+      <h2>iCloud-Synchronisierung (optional)</h2>
+      <p>Wenn aktiviert, werden Quellenliste (niemals Passwörter), Favoriten, Lesestatus und Leseeinstellungen in die private CloudKit-Datenbank deines iCloud-Kontos geschrieben, damit alles auf deinen Geräten übereinstimmt. Lesen können sie nur Geräte mit deiner Apple-ID; der Entwickler hat keinen Zugriff.</p>
+      <p>Artikeltexte, Leseposition und Scroll-Fortschritt werden nie synchronisiert und bleiben auf dem Gerät; App-Passwörter gelangen niemals in iCloud. In den Einstellungen lässt sich die Synchronisierung jederzeit abschalten.</p>
+      <h2>Texte und Cache</h2>
+      <p>Texte und Index werden bei Bedarf aus deinem WebDAV geladen und in der App-Sandbox gecacht. Die Einstellungen zeigen die Größe und bieten das Leeren mit einem Tipp — Favoriten und Leseverlauf bleiben dabei erhalten.</p>
+      <p>Externe Bilder in Artikeln laden nur beim Öffnen, ohne WebDAV-Zugangsdaten. Externe Links öffnen sich genauso zugangsdatenfrei im Systembrowser.</p>
+      <h2>Netzwerkanfragen</h2>
+      <p>Die App stellt HTTPS-Anfragen nur an die von dir konfigurierten WebDAV-Server (Index und Texte) sowie an öffentliche externe Bilder in Artikeln. Kein Hintergrund-Polling, kein Push-Dienst, keine Telemetrie.</p>
+      <h2>Deinstallation</h2>
+      <p>Beim Löschen von Siftr verschwinden lokaler Cache, Leseverlauf und die Schlüsselbund-Daten; synchronisierte Daten in deiner privaten iCloud-Datenbank löschst du über die iCloud-Speicherverwaltung der Systemeinstellungen. Die Briefings in deiner Cloud bleiben unberührt — sie waren immer deine.</p>
+      <h2>Kinder und Kontakt</h2>
+      <p>Siftr richtet sich nicht an Kinder unter 13 und sammelt wissentlich keine Daten von Kindern. Fragen zum Datenschutz oder Datenanfragen: imhccn@gmail.com.</p>
+    </article>
+
+    <article class="language-panel" data-language="es" lang="es" data-title="Política de privacidad · Siftr">
+      <header><h1>Política de privacidad</h1><p class="updated">Última actualización: 14 de octubre de 2026</p></header>
+      <p class="lede">Siftr es un lector personal de prioridad local. No hay cuenta que crear; los textos de tus boletines viven en tu propio cloud WebDAV y en este dispositivo. El desarrollador no opera servidores ni recoge datos.</p>
+      <h2>Siftr no recoge nada</h2>
+      <p>Siftr no tiene cuentas, ni SDK de analítica o publicidad, ni rastreadores. Lo que lees, buscas o marcas como favorito nunca se envía al desarrollador ni a servidores de terceros.</p>
+      <div class="note"><p>Siftr trata tu cloud en modo de solo lectura: descarga únicamente el índice y los textos de las carpetas WebDAV que configures, y nunca modifica, sube ni borra nada en tu almacenamiento.</p></div>
+      <h2>Credenciales WebDAV</h2>
+      <p>La dirección del servidor, el correo de la cuenta y la contraseña de app se guardan solo en el llavero iOS de este dispositivo — sin sincronizarse por iCloud ni escribirse en registros. Se envían únicamente al servidor configurado y nunca se reenvían ante redirecciones a otro host.</p>
+      <p>Recomendamos crear una contraseña de app dedicada a Siftr en la gestión de apps de terceros de Nutstore, distinta de la de tu agente publicador. Puedes revocarla en cualquier momento; la revocación no afecta al contenido ya en caché.</p>
+      <h2>Sincronización de iCloud (opcional)</h2>
+      <p>Si la activas, la lista de fuentes (nunca contraseñas), los favoritos, el estado de lectura y los ajustes se escriben en la base privada de CloudKit de tu cuenta iCloud para coincidir en todos tus dispositivos. Solo los dispositivos con tu Apple ID pueden leerla; el desarrollador no puede.</p>
+      <p>Los cuerpos de los artículos, la posición y el progreso de lectura nunca se sincronizan y quedan en el dispositivo; las contraseñas jamás entran en iCloud. Puedes desactivar la sincronización en Ajustes cuando quieras.</p>
+      <h2>Textos y caché</h2>
+      <p>Textos e índice se descargan a demanda de tu WebDAV y se guardan en la sandbox de la app. Ajustes muestra el tamaño y ofrece un borrado de un toque que no toca favoritos ni historial.</p>
+      <p>Las imágenes externas de los artículos se cargan solo al abrirlos, sin credenciales WebDAV. Los enlaces externos se abren en el navegador del sistema, igualmente sin credenciales.</p>
+      <h2>Peticiones de red</h2>
+      <p>La app solo hace peticiones HTTPS a los servidores WebDAV configurados (índice y textos) y a imágenes externas públicas de los artículos. Sin sondeo en segundo plano, sin servicio push, sin telemetría.</p>
+      <h2>Desinstalación</h2>
+      <p>Al borrar Siftr desaparecen la caché local, el historial de lectura y las credenciales del llavero; los datos sincronizados de tu base privada de iCloud se borran desde la gestión de almacenamiento de iCloud. Los boletines de tu cloud no se tocan — siempre fueron tuyos.</p>
+      <h2>Niños y contacto</h2>
+      <p>Siftr no se dirige a menores de 13 años ni recoge deliberadamente sus datos personales. Consultas de privacidad o solicitudes de datos: imhccn@gmail.com.</p>
+    </article>
+
   </main>
   <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
-</div><script src="language.js?v=siftr-20261014-1"></script></body></html>
+</div><script src="language.js?v=siftr-20261014-2"></script></body></html>
