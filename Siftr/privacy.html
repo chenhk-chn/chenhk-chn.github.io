@@ -35,7 +35,8 @@
       <p>正文 Markdown 与索引按需从你自己的 WebDAV 下载，缓存在应用沙盒的专属目录中。「设置」里可查看占用并一键清理；清理缓存不会删除收藏和阅读记录。</p>
       <p>正文中如含外部图片链接，只在打开文章时按需加载，且不携带任何 WebDAV 凭证。点击外部链接由系统浏览器处理，同样不携带凭证。</p>
       <h2>网络请求</h2>
-      <p>App 只向你配置的 WebDAV 服务器发起 HTTPS 请求（读取索引与正文），外加文章内公开的外部图片。没有后台轮询、没有推送服务、没有统计上报。</p>
+      <p>App 只向你配置的 WebDAV 服务器发起 HTTPS 请求（读取索引与正文），外加文章内公开的外部图片，以及网页正文自己引用的公共资源。没有后台轮询、没有推送服务、没有统计上报。</p>
+      <p>如果 Agent 发布的是网页（HTML）而不是 Markdown，网页在隔离的系统 WebKit 环境中运行：拿不到任何 WebDAV 凭证，不能访问你的 WebDAV 服务器，也不能跳出 App 浏览其他网站。网页引用的公共资源（例如 CDN 上的脚本、字体、图片）由本机直接向那些网站请求，不经过坚果云；这些网站会看到你的 IP 地址。网页自己保存的数据只留在本机，「清理缓存」时一并删除。</p>
       <h2>卸载与删除</h2>
       <p>删除 Siftr 会一并移除本机的缓存、阅读记录与钥匙串凭证；iCloud 私有数据库里的同步数据可在系统设置的 iCloud 储存空间管理中删除。你坚果云里的简报原文不受影响——它们本来就在你自己的账户里。</p>
       <h2>儿童与联系</h2>
@@ -59,6 +60,7 @@
       <p>正文中如含外部圖片連結，只在開啟文章時按需載入，且不攜帶任何 WebDAV 憑證。點擊外部連結由系統瀏覽器處理，同樣不攜帶憑證。</p>
       <h2>網路請求</h2>
       <p>App 只向你設定的 WebDAV 伺服器發起 HTTPS 請求（讀取索引與正文），外加文章內公開的外部圖片。沒有背景輪詢、沒有推播服務、沒有統計上報。</p>
+      <p>如果 Agent 發布的是網頁（HTML）而不是 Markdown，網頁會在隔離的系統 WebKit 環境中執行：拿不到任何 WebDAV 憑證，不能存取你的 WebDAV 伺服器，也不能跳出 App 瀏覽其他網站。網頁引用的公共資源（例如 CDN 上的指令碼、字型、圖片）由本機直接向那些網站請求，不經過堅果雲；這些網站會看到你的 IP 位址。網頁自行保存的資料只留在本機，「清理快取」時一併刪除。</p>
       <h2>解除安裝與刪除</h2>
       <p>刪除 Siftr 會一併移除本機的快取、閱讀記錄與鑰匙圈憑證；iCloud 私有資料庫裡的同步資料可在系統設定的 iCloud 儲存空間管理中刪除。你堅果雲裡的簡報原文不受影響——它們本來就在你自己的帳號裡。</p>
       <h2>兒童與聯絡</h2>
@@ -82,6 +84,7 @@
       <p>正文入面如有外部圖片連結，只會喺開啟文章時按需載入，而且唔攜帶任何 WebDAV 憑證。撳外部連結由系統瀏覽器處理，同樣唔攜帶憑證。</p>
       <h2>網絡請求</h2>
       <p>App 只會向你設定嘅 WebDAV 伺服器發出 HTTPS 請求（讀取索引同正文），另加文章內公開嘅外部圖片。冇背景輪詢、冇推播服務、冇統計上報。</p>
+      <p>如果 Agent 發佈嘅係網頁（HTML）而唔係 Markdown，網頁會喺隔離嘅系統 WebKit 環境入面運行：攞唔到任何 WebDAV 憑證，唔可以存取你嘅 WebDAV 伺服器，亦唔可以跳出 App 瀏覽其他網站。網頁引用嘅公共資源（例如 CDN 上面嘅指令碼、字型、圖片）由本機直接向嗰啲網站請求，唔經堅果雲；嗰啲網站會見到你嘅 IP 位址。網頁自己儲存嘅資料只留喺本機，「清理快取」時一併刪除。</p>
       <h2>移除同刪除</h2>
       <p>刪除 Siftr 會一併移除本機嘅快取、閱讀記錄同鑰匙圈憑證；iCloud 私有資料庫入面嘅同步資料可以喺系統設定嘅 iCloud 儲存空間管理度刪除。你堅果雲入面嘅簡報原稿唔受影響——佢哋本來就喺你自己帳戶度。</p>
       <h2>兒童同聯絡</h2>
@@ -105,6 +108,7 @@
       <p>記事に外部画像リンクが含まれる場合、開いたときにのみ読み込まれ、WebDAV の資格情報は一切送信されません。外部リンクも資格情報なしでシステムブラウザで開きます。</p>
       <h2>ネットワーク通信</h2>
       <p>アプリが HTTPS リクエストを送る相手は、設定した WebDAV サーバー（索引と本文の取得）と、記事内の公開外部画像だけです。バックグラウンドポーリングもプッシュも統計レポートもありません。</p>
+      <p>Agent が Markdown ではなくウェブページ（HTML）を公開した場合、そのページは隔離されたシステムの WebKit 環境で動作します。WebDAV の認証情報は渡されず、WebDAV サーバーにもアクセスできず、App の外へほかのサイトを閲覧しにいくこともできません。ページが参照する公開リソース（CDN 上のスクリプト、フォント、画像など）はこのデバイスが直接取得し、坚果云（Jianguoyun）を経由しません。これらのサイトにはあなたの IP アドレスが見えます。ページが保存したデータはこのデバイスにだけ残り、「キャッシュを消去」で一緒に削除されます。</p>
       <h2>削除について</h2>
       <p>Siftr を削除すると、キャッシュ、閲覧履歴、キーチェーンの資格情報がこのデバイスから除去されます。iCloud プライベートデータベースの同期データは、システム設定の iCloud ストレージ管理から削除できます。Nutstore 内のブリーフィング原本には影響しません。</p>
       <h2>児童とお問い合わせ</h2>
@@ -128,6 +132,7 @@
       <p>If an article contains external image links, they load only when you open it, without any WebDAV credentials. External links open in the system browser, likewise credential-free.</p>
       <h2>Network requests</h2>
       <p>The app makes HTTPS requests only to the WebDAV servers you configure (fetching the index and article bodies), plus public external images embedded in articles. No background polling, no push service, no telemetry.</p>
+      <p>If an agent publishes a web page (HTML) instead of Markdown, it runs in an isolated system WebKit environment: it gets no WebDAV credentials, cannot reach your WebDAV server and cannot navigate away to other sites inside the app. Public resources the page references (such as scripts, fonts or images on a CDN) are requested by this device directly, not through Jianguoyun, and those sites can see your IP address. Anything the page stores stays on this device and is removed when you clear the cache.</p>
       <h2>Uninstalling and deletion</h2>
       <p>Deleting Siftr removes the local cache, reading history, and Keychain credentials; synced data in your iCloud private database can be deleted from iCloud storage management in system settings. The briefings in your own cloud are untouched — they were yours all along.</p>
       <h2>Children and contact</h2>
@@ -151,6 +156,7 @@
       <p>Если в статье есть внешние изображения, они загружаются только при открытии и без учётных данных WebDAV. Внешние ссылки открываются системным браузером — также без данных.</p>
       <h2>Сетевые запросы</h2>
       <p>Приложение отправляет HTTPS-запросы только настроенным вами WebDAV-серверам (индекс и тексты) и за публичными внешними изображениями из статей. Никакой фоновой polling-активности, пуш-сервисов и телеметрии.</p>
+      <p>Если агент публикует веб-страницу (HTML), а не Markdown, она работает в изолированной системной среде WebKit: не получает учётных данных WebDAV, не может обращаться к вашему WebDAV-серверу и не может уходить внутри приложения на другие сайты. Общедоступные ресурсы страницы (например, скрипты, шрифты или изображения с CDN) устройство запрашивает напрямую, не через Jianguoyun; эти сайты видят ваш IP-адрес. Всё, что страница сохраняет, остаётся на устройстве и удаляется при очистке кэша.</p>
       <h2>Удаление</h2>
       <p>Удаление Siftr убирает локальный кэш, историю чтения и данные из связки ключей; синхронизированные данные в частной базе iCloud можно удалить через управление хранилищем iCloud в системных настройках. Брифинги в вашем облаке не затрагиваются — они и так ваши.</p>
       <h2>Дети и связь</h2>
@@ -174,6 +180,7 @@
       <p>Les images externes éventuelles ne se chargent qu’à l’ouverture de l’article, sans identifiants WebDAV. Les liens externes s’ouvrent dans le navigateur système, tout aussi sans identifiants.</p>
       <h2>Requêtes réseau</h2>
       <p>L’app n’émet des requêtes HTTPS que vers les serveurs WebDAV configurés (index et textes) et vers les images externes publiques des articles. Pas de polling en arrière-plan, pas de service push, pas de télémétrie.</p>
+      <p>Si un agent publie une page web (HTML) plutôt que du Markdown, elle s’exécute dans un environnement WebKit système isolé : elle ne reçoit aucun identifiant WebDAV, ne peut pas joindre votre serveur WebDAV et ne peut pas naviguer vers d’autres sites dans l’app. Les ressources publiques qu’elle utilise (scripts, polices ou images sur un CDN, par exemple) sont demandées directement par cet appareil, sans passer par Jianguoyun, et ces sites voient votre adresse IP. Ce que la page enregistre reste sur l’appareil et est supprimé lorsque vous videz le cache.</p>
       <h2>Désinstallation</h2>
       <p>Supprimer Siftr efface le cache local, l’historique de lecture et les identifiants du trousseau ; les données synchronisées dans votre base privée iCloud se suppriment depuis la gestion du stockage iCloud. Les briefings de votre cloud restent intacts — ils étaient à vous dès le départ.</p>
       <h2>Enfants et contact</h2>
@@ -197,6 +204,7 @@
       <p>글에 외부 이미지 링크가 있으면 글을 열 때만 불러오고 WebDAV 자격 증명은 전송하지 않아요. 외부 링크도 시스템 브라우저에서 자격 증명 없이 열립니다.</p>
       <h2>네트워크 요청</h2>
       <p>앱은 설정한 WebDAV 서버(인덱스·본문)와 글 속 공개 외부 이미지에만 HTTPS 요청을 보내요. 백그라운드 폴링, 푸시 서비스, 통계 보고가 없습니다.</p>
+      <p>에이전트가 Markdown 대신 웹 페이지(HTML)를 게시하면, 그 페이지는 격리된 시스템 WebKit 환경에서 실행돼요. WebDAV 인증 정보를 받지 못하고, WebDAV 서버에 접근할 수 없으며, 앱 안에서 다른 사이트로 이동할 수도 없어요. 페이지가 참조하는 공개 리소스(예: CDN의 스크립트, 글꼴, 이미지)는 이 기기가 직접 요청하며 젠구오윈(Jianguoyun)을 거치지 않아요. 해당 사이트는 사용자의 IP 주소를 볼 수 있어요. 페이지가 저장한 데이터는 이 기기에만 남고, 캐시를 지우면 함께 삭제돼요.</p>
       <h2>삭제</h2>
       <p>Siftr을 삭제하면 로컬 캐시, 읽기 기록, 키체인 자격 증명이 함께 제거돼요. iCloud 개인 데이터베이스의 동기화 데이터는 시스템 설정의 iCloud 저장 공간 관리에서 삭제할 수 있습니다. 누터스트의 브리핑 원본은 영향을 받지 않아요.</p>
       <h2>아동 및 연락</h2>
@@ -220,6 +228,7 @@
       <p>Externe Bilder in Artikeln laden nur beim Öffnen, ohne WebDAV-Zugangsdaten. Externe Links öffnen sich genauso zugangsdatenfrei im Systembrowser.</p>
       <h2>Netzwerkanfragen</h2>
       <p>Die App stellt HTTPS-Anfragen nur an die von dir konfigurierten WebDAV-Server (Index und Texte) sowie an öffentliche externe Bilder in Artikeln. Kein Hintergrund-Polling, kein Push-Dienst, keine Telemetrie.</p>
+      <p>Veröffentlicht ein Agent statt Markdown eine Webseite (HTML), läuft sie in einer isolierten System-WebKit-Umgebung: Sie erhält keine WebDAV-Zugangsdaten, kann deinen WebDAV-Server nicht erreichen und in der App nicht zu anderen Websites wechseln. Öffentliche Ressourcen der Seite (etwa Skripte, Schriften oder Bilder aus einem CDN) ruft dein Gerät direkt ab, nicht über Jianguoyun; diese Websites sehen deine IP-Adresse. Was die Seite speichert, bleibt auf dem Gerät und wird beim Leeren des Caches gelöscht.</p>
       <h2>Deinstallation</h2>
       <p>Beim Löschen von Siftr verschwinden lokaler Cache, Leseverlauf und die Schlüsselbund-Daten; synchronisierte Daten in deiner privaten iCloud-Datenbank löschst du über die iCloud-Speicherverwaltung der Systemeinstellungen. Die Briefings in deiner Cloud bleiben unberührt — sie waren immer deine.</p>
       <h2>Kinder und Kontakt</h2>
@@ -243,6 +252,7 @@
       <p>Las imágenes externas de los artículos se cargan solo al abrirlos, sin credenciales WebDAV. Los enlaces externos se abren en el navegador del sistema, igualmente sin credenciales.</p>
       <h2>Peticiones de red</h2>
       <p>La app solo hace peticiones HTTPS a los servidores WebDAV configurados (índice y textos) y a imágenes externas públicas de los artículos. Sin sondeo en segundo plano, sin servicio push, sin telemetría.</p>
+      <p>Si un agente publica una página web (HTML) en lugar de Markdown, se ejecuta en un entorno WebKit del sistema aislado: no recibe credenciales de WebDAV, no puede acceder a tu servidor WebDAV y no puede navegar a otros sitios dentro de la app. Los recursos públicos que usa (como scripts, fuentes o imágenes de un CDN) los solicita este dispositivo directamente, sin pasar por Jianguoyun, y esos sitios pueden ver tu dirección IP. Lo que la página guarde se queda en el dispositivo y se borra al vaciar la caché.</p>
       <h2>Desinstalación</h2>
       <p>Al borrar Siftr desaparecen la caché local, el historial de lectura y las credenciales del llavero; los datos sincronizados de tu base privada de iCloud se borran desde la gestión de almacenamiento de iCloud. Los boletines de tu cloud no se tocan — siempre fueron tuyos.</p>
       <h2>Niños y contacto</h2>
