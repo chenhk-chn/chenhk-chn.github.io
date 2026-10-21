@@ -1,17 +1,22 @@
-/* Pickr 官网 · 隐私政策与技术支持样式表（与首页 Apple 原生浅色 Bento 设计语言统一） */
+/* Pickr 官网 · 隐私政策与技术支持样式表（与首页极深色冷暖起伏光学毛玻璃设计语言统一） */
 
 :root {
-  color-scheme: light;
-  --bg: #fbfbfd;
-  --bg-tinted: #f5f5f7;
-  --card: #ffffff;
-  --fg: #1d1d1f;
-  --muted: #6e6e73;
-  --rule: rgba(0, 0, 0, 0.08);
-  --accent: #0066cc;
-  --accent-strong: #0071e3;
-  --pill-bg: #f0f0f3;
-  --focus: #0071e3;
+  color-scheme: dark;
+  --bg: #04060a;
+  --bg-tinted: rgba(255, 255, 255, 0.046);
+  --card: rgba(255, 255, 255, 0.068);
+  --glass-surface: linear-gradient(138deg, rgba(255, 255, 255, 0.078) 0%, rgba(255, 255, 255, 0.024) 52%, rgba(255, 255, 255, 0.048) 100%);
+  --glass-border: rgba(255, 255, 255, 0.105);
+  --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 1px 0 0 rgba(255, 255, 255, 0.055);
+  --fg: #f5f5f7;
+  --muted: #9a9aa2;
+  --rule: rgba(255, 255, 255, 0.085);
+  --accent: #5eb0ff;
+  --accent-strong: #0a84ff;
+  --pill-bg: rgba(255, 255, 255, 0.08);
+  --pill-hover: rgba(255, 255, 255, 0.14);
+  --nav-bg: rgba(4, 6, 10, 0.68);
+  --focus: #0a84ff;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "PingFang SC", "PingFang TC", "Hiragino Sans", "Apple SD Gothic Neo",
     "Helvetica Neue", sans-serif;
@@ -26,9 +31,10 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0 24px 96px;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font);
   font-size: 16.5px;
@@ -38,7 +44,26 @@ body {
   overflow-x: hidden;
 }
 
+/* ---------- 全局深色光学底韵（与首页一致：极深谷底 #04060a + 冷暖峰谷起伏散景光斑） ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -8%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 460px at 18% 14%, rgba(28, 96, 218, 0.34) 0%, rgba(16, 52, 132, 0.16) 46%, transparent 72%),
+    radial-gradient(circle 420px at 84% 22%, rgba(182, 94, 32, 0.28) 0%, rgba(108, 46, 16, 0.13) 46%, transparent 72%),
+    radial-gradient(circle 520px at 52% 48%, rgba(18, 124, 142, 0.22) 0%, rgba(10, 62, 82, 0.1) 48%, transparent 74%),
+    radial-gradient(circle 440px at 14% 78%, rgba(168, 84, 30, 0.25) 0%, rgba(96, 40, 14, 0.11) 46%, transparent 72%),
+    radial-gradient(circle 480px at 82% 84%, rgba(40, 82, 198, 0.32) 0%, rgba(20, 42, 118, 0.15) 48%, transparent 74%);
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+}
+
 .wrap {
+  position: relative;
+  z-index: 1;
   max-width: 920px;
   margin: 0 auto;
 }
@@ -55,9 +80,9 @@ body {
   min-height: 54px;
   margin-inline: calc(50% - 50vw);
   padding: 8px max(24px, calc(50vw - 460px));
-  background: rgba(251, 251, 253, 0.82);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -80,7 +105,7 @@ body {
   height: 28px;
   border-radius: 6.5px;
   background: url("assets/icon-256.webp") center / cover no-repeat;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
   flex-shrink: 0;
 }
 
@@ -108,9 +133,11 @@ body {
   max-width: 100%;
   min-height: 34px;
   padding: 0 30px 0 14px;
-  border: 0;
+  border: 1px solid var(--glass-border);
   border-radius: 980px;
   background: var(--pill-bg);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
   color: var(--fg);
   font-family: var(--font);
   font-size: 13px;
@@ -121,7 +148,7 @@ body {
 }
 
 .language-picker select:hover {
-  background: #e5e5ea;
+  background: var(--pill-hover);
 }
 
 .language-picker::after {
@@ -165,7 +192,7 @@ html:not(.js) .language-panel + .language-panel {
   display: block;
 }
 
-/* ---------- 页面头部与 Bento 导语横幅 ---------- */
+/* ---------- 页面头部与 Bento 深色毛玻璃导语横幅 ---------- */
 header {
   text-align: center;
   padding: 56px 0 28px;
@@ -197,7 +224,10 @@ h1:lang(ja) {
   margin: 0;
   padding: 6px 15px;
   border-radius: 980px;
-  background: var(--bg-tinted);
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
   color: var(--muted);
   font-size: 13.5px;
   font-weight: 600;
@@ -208,7 +238,11 @@ h1:lang(ja) {
   max-width: 100%;
   margin: 0 0 36px;
   padding: 24px 32px;
-  background: var(--bg-tinted);
+  background: var(--glass-surface);
+  backdrop-filter: saturate(195%) blur(36px);
+  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   border-radius: 24px;
   font-family: var(--font);
   font-size: clamp(17px, 1.9vw, 19.5px);
@@ -246,7 +280,7 @@ h2::before {
   width: 5px;
   height: 18px;
   border-radius: 99px;
-  background: var(--accent-strong);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -274,7 +308,11 @@ p {
 ul {
   margin: 14px 0 18px;
   padding: 20px 24px 20px 42px;
-  background: var(--bg-tinted);
+  background: var(--glass-surface);
+  backdrop-filter: saturate(195%) blur(36px);
+  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   border-radius: 20px;
 }
 
@@ -297,15 +335,18 @@ a {
 }
 
 a:hover {
-  color: var(--accent-strong);
+  color: #8cc8ff;
   text-decoration: underline;
 }
 
-/* ---------- 提示框（Bento 浅蓝高光圆角卡片） ---------- */
+/* ---------- 提示框（Bento 深海蓝微光毛玻璃卡片） ---------- */
 .note {
   max-width: 100%;
-  background: rgba(0, 113, 227, 0.06);
-  border: 1px solid rgba(0, 113, 227, 0.16);
+  background: linear-gradient(138deg, rgba(10, 132, 255, 0.16) 0%, rgba(10, 132, 255, 0.06) 100%);
+  backdrop-filter: saturate(190%) blur(32px);
+  -webkit-backdrop-filter: saturate(190%) blur(32px);
+  border: 1px solid rgba(94, 176, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   border-radius: 20px;
   padding: 20px 24px;
   margin: 22px 0;
@@ -354,9 +395,10 @@ footer a:hover {
 
 code {
   padding: 0.14em 0.42em;
-  background: var(--bg-tinted);
-  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 6px;
+  color: var(--fg);
   font: 0.88em/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
   overflow-wrap: anywhere;
 }

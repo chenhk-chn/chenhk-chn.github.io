@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fbfbfd">
+<meta name="theme-color" content="#04060a">
 <meta name="apple-itunes-app" content="app-id=6813511457">
 <title>在 App Store 下载 Pickr</title>
 <meta name="description" content="前往你所在国家或地区的 App Store 下载 Pickr（适用于 iPhone 与 iPad）。">
@@ -11,36 +11,57 @@
 <link rel="apple-touch-icon" href="assets/icon-512.png">
 <style>
   :root {
-    --bg: #fbfbfd;
-    --card: #ffffff;
-    --pill: #f5f5f7;
-    --ink: #1d1d1f;
-    --muted: #6e6e73;
-    --accent: #0071e3;
-    --border: rgba(0, 0, 0, 0.08);
+    color-scheme: dark;
+    --bg: #04060a;
+    --card: linear-gradient(138deg, rgba(255, 255, 255, 0.088) 0%, rgba(255, 255, 255, 0.028) 52%, rgba(255, 255, 255, 0.056) 100%);
+    --pill: rgba(255, 255, 255, 0.085);
+    --ink: #f5f5f7;
+    --muted: #9a9aa2;
+    --accent: #0a84ff;
+    --accent-link: #5eb0ff;
+    --border: rgba(255, 255, 255, 0.115);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: var(--bg);
+    background-color: var(--bg);
     color: var(--ink);
     font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
       "PingFang SC", "PingFang TC", "Hiragino Sans", "Apple SD Gothic Neo", sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -8%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle 460px at 24% 22%, rgba(28, 96, 218, 0.36) 0%, rgba(16, 52, 132, 0.16) 46%, transparent 72%),
+      radial-gradient(circle 420px at 78% 30%, rgba(182, 94, 32, 0.3) 0%, rgba(108, 46, 16, 0.14) 46%, transparent 72%),
+      radial-gradient(circle 460px at 50% 78%, rgba(24, 118, 178, 0.28) 0%, transparent 72%);
+    filter: blur(30px);
+    -webkit-filter: blur(30px);
   }
   .card {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: 460px;
     background: var(--card);
+    backdrop-filter: saturate(195%) blur(36px);
+    -webkit-backdrop-filter: saturate(195%) blur(36px);
     border-radius: 28px;
     padding: 40px 32px 32px;
     text-align: center;
     border: 1px solid var(--border);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 1px 0 0 rgba(255, 255, 255, 0.06);
   }
   .icon {
     width: 76px;
@@ -48,7 +69,7 @@
     border-radius: 18px;
     margin: 0 auto 20px;
     display: block;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
   }
   h1 {
     font-size: 26px;
@@ -71,13 +92,14 @@
     padding: 0 24px;
     border-radius: 980px;
     background: var(--ink);
-    color: #fff;
+    color: #090b10;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    transition: transform 0.15s ease, background-color 0.15s ease;
   }
-  .btn:hover { opacity: 0.92; }
+  .btn:hover { background: #ffffff; }
   .btn:active { transform: scale(0.97); }
   .btn svg { width: 18px; height: 18px; fill: currentColor; }
   .regions-label {
@@ -99,22 +121,24 @@
     padding: 0 14px;
     border-radius: 980px;
     background: var(--pill);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--ink);
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
   .region-pill:hover,
   .region-pill.active {
     background: var(--accent);
+    border-color: var(--accent);
     color: #fff;
   }
   .back {
     display: inline-block;
     margin-top: 24px;
     font-size: 14px;
-    color: var(--accent);
+    color: var(--accent-link);
     text-decoration: none;
   }
   .back:hover { text-decoration: underline; }

@@ -4,17 +4,31 @@
    - 4 种差异化设备构图：全景双端、Bento 底部破框半身 iPhone、单台完整竖屏 iPhone、镜像双端画册 */
 
 :root {
-  --bg: #fbfbfd;
-  --bg-tinted: #f5f5f7;
-  --card: #ffffff;
-  --ink: #1d1d1f;
-  --muted: #6e6e73;
-  --accent: #0066cc;
-  --accent-bright: #0071e3;
-  --accent-hover: #0077ed;
-  --green: #34c759;
-  --border: rgba(0, 0, 0, 0.08);
-  --pill-bg: #f0f0f3;
+  --bg: #04060a;
+  --bg-tinted: rgba(255, 255, 255, 0.046);
+  --card: rgba(255, 255, 255, 0.068);
+  --glass-surface: linear-gradient(138deg, rgba(255, 255, 255, 0.078) 0%, rgba(255, 255, 255, 0.024) 52%, rgba(255, 255, 255, 0.048) 100%);
+  --glass-surface-elevated: linear-gradient(138deg, rgba(255, 255, 255, 0.096) 0%, rgba(255, 255, 255, 0.032) 52%, rgba(255, 255, 255, 0.06) 100%);
+  --glass-border: rgba(255, 255, 255, 0.105);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 26px 64px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 1px 0 0 rgba(255, 255, 255, 0.055);
+  --ink: #f5f5f7;
+  --muted: #9a9aa2;
+  --accent: #5eb0ff;
+  --accent-bright: #0a84ff;
+  --accent-hover: #409cff;
+  --nav-cta-ink: #ffffff;
+  --green: #30d158;
+  --border: rgba(255, 255, 255, 0.08);
+  --pill-bg: rgba(255, 255, 255, 0.08);
+  --pill-hover: rgba(255, 255, 255, 0.14);
+  --nav-bg: rgba(4, 6, 10, 0.68);
+  --store-btn-bg: #f5f5f7;
+  --store-btn-ink: #090b10;
+  --store-btn-hover: #ffffff;
+  --saving-bg: rgba(48, 209, 88, 0.18);
+  --saving-ink: #63e683;
+  --format-heic-bg: rgba(10, 132, 255, 0.2);
 
   --margin: clamp(20px, 4.5vw, 64px);
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
@@ -31,14 +45,38 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
+  position: relative;
   font-family: var(--font);
   font-size: 1.0625rem;
   line-height: 1.58;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* ---------- 第一层：全局深色光学底韵（保留冷暖峰谷起伏，将高光淡色区压暗一档） ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -8%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 460px at 18% 14%, rgba(28, 96, 218, 0.34) 0%, rgba(16, 52, 132, 0.16) 46%, transparent 72%),
+    radial-gradient(circle 420px at 84% 22%, rgba(182, 94, 32, 0.28) 0%, rgba(108, 46, 16, 0.13) 46%, transparent 72%),
+    radial-gradient(circle 520px at 52% 48%, rgba(18, 124, 142, 0.22) 0%, rgba(10, 62, 82, 0.1) 48%, transparent 74%),
+    radial-gradient(circle 440px at 14% 78%, rgba(168, 84, 30, 0.25) 0%, rgba(96, 40, 14, 0.11) 46%, transparent 72%),
+    radial-gradient(circle 480px at 82% 84%, rgba(40, 82, 198, 0.32) 0%, rgba(20, 42, 118, 0.15) 48%, transparent 74%);
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -81,9 +119,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   top: 0;
   z-index: 100;
   height: 54px;
-  background: rgba(251, 251, 253, 0.82);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -160,7 +198,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 500;
   color: var(--ink);
   background: var(--pill-bg);
-  border: 0;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
   border-radius: var(--radius-pill);
   padding: 0 28px 0 14px;
   min-height: 34px;
@@ -169,7 +209,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .lang-select:hover {
-  background: #e5e5ea;
+  background: var(--pill-hover);
 }
 
 .lang-pill::after {
@@ -193,7 +233,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: 0 15px;
   border-radius: var(--radius-pill);
   background: var(--accent-bright);
-  color: #ffffff;
+  color: var(--nav-cta-ink);
   font-size: 0.8125rem;
   font-weight: 600;
   white-space: nowrap;
@@ -221,16 +261,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .btn-store {
-  background: var(--ink);
-  color: #ffffff;
+  background: var(--store-btn-bg);
+  color: var(--store-btn-ink);
   transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 24px rgba(29, 29, 31, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 
 .btn-store:hover {
-  background: #2c2c2e;
+  background: var(--store-btn-hover);
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(29, 29, 31, 0.18);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
 }
 
 .btn-store:active {
@@ -240,11 +280,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn-secondary {
   background: var(--pill-bg);
   color: var(--ink);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   transition: background-color 0.18s ease, transform 0.12s ease;
 }
 
 .btn-secondary:hover {
-  background: #e5e5ea;
+  background: var(--pill-hover);
 }
 
 .btn-secondary:active {
@@ -253,8 +296,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- 首屏 Hero（严格中轴线对称 + 前后双色无标点标题） ---------- */
 .hero {
+  position: relative;
   padding-top: clamp(44px, 6vw, 76px);
   padding-bottom: clamp(48px, 6vw, 84px);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -4% -6% 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 380px at 50% 18%, rgba(36, 104, 218, 0.36) 0%, rgba(18, 56, 142, 0.15) 50%, transparent 75%),
+    radial-gradient(circle 420px at 26% 70%, rgba(188, 98, 34, 0.33) 0%, rgba(116, 50, 16, 0.15) 48%, transparent 74%),
+    radial-gradient(circle 440px at 74% 66%, rgba(26, 118, 188, 0.35) 0%, rgba(14, 60, 116, 0.16) 48%, transparent 74%);
+  filter: blur(28px);
+  -webkit-filter: blur(28px);
 }
 
 .hero-header {
@@ -277,7 +335,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   width: 68px;
   height: 68px;
   border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
 }
 
 .eyebrow-pill {
@@ -287,6 +345,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: 5px 16px;
   border-radius: var(--radius-pill);
   background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
   color: var(--muted);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -345,13 +406,100 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-inline: auto;
 }
 
-/* ---------- 章节通用结构 ---------- */
+/* ---------- 章节通用结构与随页面起伏的深色高斯光晕 ---------- */
 .sec {
+  position: relative;
   padding-block: clamp(64px, 8vw, 112px);
 }
 
 .sec-tinted {
-  background: var(--bg-tinted);
+  background: transparent;
+}
+
+.sec::before {
+  content: "";
+  position: absolute;
+  inset: -4% -6%;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(28px);
+  -webkit-filter: blur(28px);
+}
+
+/* 章节一（按月整理 Bento）：左深海电光蓝、右暗房琥珀暖金、底部群青紫，保持冷暖起伏同时将亮部压沉一档 */
+#how::before {
+  background:
+    radial-gradient(circle 420px at 22% 44%, rgba(28, 108, 196, 0.37) 0%, rgba(14, 54, 122, 0.16) 48%, transparent 74%),
+    radial-gradient(circle 420px at 78% 48%, rgba(188, 96, 34, 0.34) 0%, rgba(114, 48, 16, 0.15) 48%, transparent 74%),
+    radial-gradient(circle 380px at 50% 88%, rgba(56, 78, 192, 0.3) 0%, transparent 72%);
+}
+
+/* 章节二（照片视频压缩）：左深松石翠绿、右上暖琥珀、右下深海蓝 */
+#compression::before {
+  background:
+    radial-gradient(circle 420px at 24% 52%, rgba(22, 134, 118, 0.34) 0%, rgba(12, 68, 62, 0.15) 48%, transparent 74%),
+    radial-gradient(circle 380px at 76% 32%, rgba(182, 94, 34, 0.31) 0%, transparent 72%),
+    radial-gradient(circle 420px at 74% 78%, rgba(34, 92, 196, 0.35) 0%, transparent 74%);
+}
+
+/* 章节三（地点精选：巴黎/佛罗伦萨/罗马）：浓郁深邃的暗房琥珀金与暮色群青交错 */
+#albums::before {
+  background:
+    radial-gradient(circle 460px at 28% 36%, rgba(190, 98, 36, 0.36) 0%, rgba(118, 52, 18, 0.16) 48%, transparent 74%),
+    radial-gradient(circle 460px at 74% 42%, rgba(34, 98, 202, 0.38) 0%, rgba(16, 50, 124, 0.18) 48%, transparent 74%),
+    radial-gradient(circle 420px at 64% 84%, rgba(178, 90, 32, 0.31) 0%, transparent 72%);
+}
+
+/* 章节四（免费与会员）：左深海蓝、右耀金与皇家蓝交汇 */
+#pricing::before {
+  background:
+    radial-gradient(circle 420px at 24% 50%, rgba(28, 94, 186, 0.33) 0%, transparent 72%),
+    radial-gradient(circle 440px at 76% 48%, rgba(62, 92, 206, 0.36) 0%, transparent 72%),
+    radial-gradient(circle 360px at 52% 84%, rgba(180, 94, 34, 0.27) 0%, transparent 70%);
+}
+
+/* 章节五 & 六 & 七：柔和交替的深蓝与暖珀呼吸感 */
+#faq::before {
+  background:
+    radial-gradient(circle 400px at 24% 42%, rgba(178, 92, 34, 0.28) 0%, transparent 72%),
+    radial-gradient(circle 420px at 76% 62%, rgba(30, 98, 190, 0.33) 0%, transparent 72%);
+}
+
+#more-apps::before {
+  background:
+    radial-gradient(circle 420px at 26% 52%, rgba(32, 96, 192, 0.33) 0%, transparent 72%),
+    radial-gradient(circle 400px at 74% 48%, rgba(182, 94, 34, 0.28) 0%, transparent 72%);
+}
+
+#download::before {
+  background:
+    radial-gradient(circle 460px at 54% 50%, rgba(36, 102, 206, 0.36) 0%, transparent 72%),
+    radial-gradient(circle 380px at 34% 56%, rgba(186, 98, 36, 0.3) 0%, transparent 70%);
+}
+
+/* 高斯毛玻璃卡片共用基底（对应 App 内 PickrStyle.surface + 细微边缘折射与冷暖透光） */
+.bento-crop-card,
+.step-card,
+.single-phone-showcase,
+.sample-card,
+.albums-copy-bar,
+.offline-bento-banner,
+.tier-card,
+.privacy-pill-banner,
+.faq-card,
+.app-link-card,
+.cta-banner {
+  background: var(--glass-surface);
+  backdrop-filter: saturate(195%) blur(36px);
+  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.sample-card,
+.tier-card,
+.app-link-card {
+  background: var(--glass-surface-elevated);
 }
 
 .sec-head-wrap {
@@ -548,7 +696,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .compare-card.is-heic .compare-format-tag {
-  background: rgba(0, 102, 204, 0.12);
+  background: var(--format-heic-bg);
   color: var(--accent);
 }
 
@@ -557,8 +705,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   align-items: center;
   padding: 5px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(52, 199, 89, 0.14);
-  color: #1f8a3b;
+  background: var(--saving-bg);
+  color: var(--saving-ink);
   font-size: 0.8125rem;
   font-weight: 700;
 }
@@ -830,8 +978,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .tier-card.tier-pro {
-  background: var(--ink);
-  color: #ffffff;
+  background: linear-gradient(155deg, rgba(10, 132, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-color: rgba(94, 176, 255, 0.32);
+  color: #f5f5f7;
 }
 
 .tier-header {
@@ -852,7 +1001,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .tier-badge.pro {
   background: var(--accent-bright);
-  color: #ffffff;
+  color: var(--nav-cta-ink);
 }
 
 .tier-header h3 {
@@ -1000,7 +1149,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .app-link-card:hover .app-card-arrow {
   background: var(--accent-bright);
-  color: #ffffff;
+  color: var(--nav-cta-ink);
 }
 
 .app-card-body h3 {
@@ -1076,7 +1225,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .site-footer {
   border-top: 1px solid var(--border);
   padding-block: 36px 48px;
-  background: var(--bg);
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
 }
 
 .footer-inner {
