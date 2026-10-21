@@ -3,760 +3,246 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pickr — swipe to tidy your photo library, compress videos and photos on device, and turn trips into albums. Private by design.">
-<meta name="theme-color" content="#fbfaf7">
-<title>Pickr</title>
-<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=pickr-20260918-1">
-<link rel="apple-touch-icon" href="assets/icon-512.png?v=pickr-20260918-1">
-<link rel="stylesheet" href="style.css?v=pickr-20261009-1">
+<title>Pickr — 先看这个月</title>
+<meta name="description" content="把几千张照片按月整理到今天。删除之前，再确认一次。整理与压缩全部在本机完成。">
+<meta property="og:title" content="Pickr — 先看这个月">
+<meta property="og:description" content="把几千张照片按月整理到今天。删除之前，再确认一次。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chenhk.cn/Pickr/">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
 <script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="assets/home/home.css">
 </head>
 <body>
-<div class="wrap">
-  <div class="site-bar">
-    <a class="wordmark" href="index.html" aria-label="Pickr home">Pickr</a>
-    <label class="language-picker">
-      <select data-language-select aria-label="Language">
+
+<header class="top">
+  <a class="brand" href="#top" aria-label="Pickr">
+    <img src="assets/icon-256.png" alt="" width="28" height="28">
+  </a>
+  <nav class="top-links" aria-label="主导航">
+    <a href="#features" data-i18n="nav.features">特性</a>
+    <a href="#try" data-i18n="nav.try">试一试</a>
+    <a href="#faq" data-i18n="nav.faq">常见问题</a>
+    <label class="lang-wrap">
+      <span class="visually-hidden" data-i18n="nav.langLabel">语言</span>
+      <select class="lang" data-language-select aria-label="语言">
         <option value="zh-Hans">简体中文</option>
-        <option value="zh-Hant">繁體中文（中國台灣）</option>
-        <option value="zh-HK">繁體中文（中國香港）</option>
+        <option value="zh-Hant">繁體中文</option>
         <option value="en">English</option>
         <option value="ja">日本語</option>
         <option value="ko">한국어</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-        <option value="it">Italiano</option>
-        <option value="de">Deutsch</option>
-        <option value="pt-BR">Português (Brasil)</option>
-        <option value="pt-PT">Português (Portugal)</option>
-        <option value="nl">Nederlands</option>
-        <option value="pl">Polski</option>
-        <option value="sv">Svenska</option>
-        <option value="da">Dansk</option>
-        <option value="nb">Norsk (bokmål)</option>
-        <option value="fi">Suomi</option>
-        <option value="cs">Čeština</option>
-        <option value="tr">Türkçe</option>
-        <option value="id">Bahasa Indonesia</option>
-        <option value="vi">Tiếng Việt</option>
-        <option value="th">ไทย</option>
-        <option value="ru">Русский</option>
-        <option value="uk">Українська</option>
-        <option value="hu">Magyar</option>
-        <option value="ro">Română</option>
-        <option value="el">Ελληνικά</option>
-        <option value="ms">Bahasa Melayu</option>
-        <option value="hi">हिन्दी</option>
       </select>
     </label>
+    <a class="join" href="mailto:imhccn@gmail.com?subject=Pickr%20TestFlight" data-i18n="nav.join">参加 TestFlight</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <h1 class="hero-name">
+    <span class="mask"><span class="line l1">Pickr</span></span>
+    <span class="mask"><span class="line l2" data-i18n="hero.line2">先看这个月</span></span>
+  </h1>
+  <p class="hero-support" data-i18n="hero.support">把几千张照片按月整理到今天。删除之前，再确认一次。</p>
+</section>
+
+<section class="ch ch1" id="how">
+  <div class="inner">
+    <h2 class="ch-head" data-i18n="ch1.head">一个月一个月来</h2>
+    <div class="grow">
+      <figure class="tile t1">
+        <div class="tile-field"><img data-shot="01-home" src="assets/home/zh-Hans/01-home.jpg" alt="整理首页：按月份继续整理" data-i18n-alt="alt.home"></div>
+        <figcaption>
+          <b data-i18n="ch1.t1n">打开这个月</b>
+          <span data-i18n="ch1.t1b">接着上次的进度，从停下的那张继续。</span>
+        </figcaption>
+      </figure>
+      <figure class="tile t2">
+        <div class="tile-field"><img data-shot="05-review" src="assets/home/zh-Hans/05-review.jpg" alt="过片界面：一张照片与操作按钮" data-i18n-alt="alt.review"></div>
+        <figcaption>
+          <b data-i18n="ch1.t2n">一张张滑过</b>
+          <span data-i18n="ch1.t2b">上滑进待删除，下滑收藏，三秒一张。</span>
+        </figcaption>
+      </figure>
+      <figure class="tile t3">
+        <div class="tile-field"><img data-shot="06-pending" src="assets/home/zh-Hans/06-pending.jpg" alt="待确认页：删除前复核" data-i18n-alt="alt.pending"></div>
+        <figcaption>
+          <b data-i18n="ch1.t3n">复核后才删除</b>
+          <span data-i18n="ch1.t3b">每一批待删除都停在这一页，看过才算数。</span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
+</section>
 
-  <main tabindex="-1">
-    <section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>每月一次，给照片库做减法</h1>
-        <p class="lede">Pickr 用滑动带你按月整理照片：上滑待删除、下滑待收藏，删除前逐批复核。会员还能把视频转 HEVC、照片转 HEIC 省出空间，并按「哪几天在哪个城市」自动把旅行照片做成相簿。浏览和筛选免费，保存可先免费 7 次；此后保存、iCloud 进度同步、压缩和相册需要会员。</p>
-        <p class="meta">适用于 iPhone 与 iPad · 需要 iOS 17 或更新版本（相册功能需 iOS 18）</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 内测</span><a href="mailto:imhccn@gmail.com">参加测试或反馈</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>滑动即整理</strong><span>上滑待删除、下滑待收藏，浏览与筛选永久免费；删除先进待确认批次，系统再确认一次才执行。</span></li>
-        <li><strong>删除前必复核</strong><span>删掉的照片 30 天内都能在「最近删除」找回，也可以只执行勾选的部分。</span></li>
-                <li><strong>相似照片对比</strong><span>连拍、同场景的照片自动归组，两两对比留下更想要的，其余标记待删除；分组在本机完成。</span></li>
-        <li><strong>进度跟着 iCloud 走</strong><span>保留或清除的决定同步到你自己的 iCloud 私有库，换台设备接着整理。（会员）</span></li>
-        <li><strong>画质优先的瘦身</strong><span>视频转 HEVC、照片转 HEIC，逐项与原片比对，画面看不出差别的才保留，不达标的自动跳过。（会员）</span></li>
-        <li><strong>先看效果再替换</strong><span>压缩版先存进「照片」，对比满意才替换原片；压缩标记随 iCloud 同步，换台设备也不会重复压缩。</span></li>
-        <li><strong>旅行自动成册</strong><span>按「哪几天在哪个城市」分组，本机挑出拍得好的照片，滑一遍存为「照片」里的相簿。（iOS 18+，会员）</span></li>
-      </ul>
-      <p class="closing">没有 Pickr 账号，照片不会上传到 Pickr，也没有广告。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>照片、iCloud 与本机数据</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、权限和联系方式</span></a>
+<section class="ch ch2" id="features">
+  <div class="inner">
+    <div class="board">
+      <figure class="b-tile b-comp">
+        <img data-shot="02-compression" src="assets/home/zh-Hans/02-compression.jpg" alt="压缩页：预计节省与画质对比" data-i18n-alt="alt.compression">
+        <figcaption>
+          <b data-i18n="ch2.compn">压缩</b>
+          <span data-i18n="ch2.compb">先看能省多少，对比过再替换。</span>
+        </figcaption>
+      </figure>
+      <div class="b-tile b-head">
+        <h2 data-i18n="ch2.head">全部都在本机上</h2>
       </div>
-    </section>
+      <figure class="b-tile b-arena" data-ui>
+        <div class="duel">
+          <img src="assets/home/demo-01-leaf.jpg" alt="相似照片之一：叶脉" data-i18n-alt="alt.duel1">
+          <img src="assets/home/demo-02-mountain.jpg" alt="相似照片之二：山与湖" data-i18n-alt="alt.duel2">
+        </div>
+        <div class="duel-actions">
+          <button type="button" class="duel-btn" aria-pressed="false" data-i18n="ch2.keep">保留</button>
+          <button type="button" class="duel-btn danger" aria-pressed="false" data-i18n="ch2.del">删除</button>
+        </div>
+        <figcaption>
+          <b data-i18n="ch2.arenan">相似擂台</b>
+          <span data-i18n="ch2.arenab">两张很像的，留下一张。</span>
+        </figcaption>
+      </figure>
+      <figure class="b-tile b-albums">
+        <img data-shot="03-albums" src="assets/home/zh-Hans/03-albums.jpg" alt="地点相册：按城市与日期" data-i18n-alt="alt.albums">
+        <figcaption>
+          <b data-i18n="ch2.albumsn">地点相册</b>
+          <span data-i18n="ch2.albumsb">一座城，几天，长出一本相册。</span>
+        </figcaption>
+      </figure>
+      <figure class="b-tile b-hold" data-ui>
+        <div class="hold-stage">
+          <img class="h-base" src="assets/home/demo-04-darkroom.jpg" alt="原片示意" data-i18n-alt="alt.hold2">
+          <img class="h-top" src="assets/home/demo-01-leaf.jpg" alt="压缩版示意" data-i18n-alt="alt.hold1">
+          <button type="button" class="hold-btn" aria-pressed="false" data-i18n="ch2.holdBtn">按住看原片</button>
+        </div>
+        <figcaption>
+          <b data-i18n="ch2.holdn">按住对比</b>
+          <span data-i18n="ch2.holdb">一根手指，看清两张的差别。</span>
+        </figcaption>
+      </figure>
+      <figure class="b-tile b-offline">
+        <img data-shot="07-offline" src="assets/home/zh-Hans/07-offline.jpg" alt="离线整理准备弹层" data-i18n-alt="alt.offline">
+        <figcaption>
+          <b data-i18n="ch2.offlinen">离线继续</b>
+          <span data-i18n="ch2.offlineb">提前缓存一个月，飞机上也能整理。</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-    <section class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>每月一次，替照片圖庫做減法</h1>
-        <p class="lede">Pickr 用滑動帶你按月整理照片：上滑標為待刪除、下滑標為待加入喜好項目，刪除前逐批覆核。會員還能把影片轉成 HEVC、照片轉成 HEIC 以節省空間，並按「哪幾天在哪個城市」自動把旅行照片整理成相簿。瀏覽和篩選免費，儲存可先免費使用 7 次；之後儲存、iCloud 進度同步、壓縮和相簿需要會員。</p>
-        <p class="meta">適用於 iPhone 與 iPad · 需要 iOS 17 或以上版本（自動相簿需要 iOS 18）</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或提供意見</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>滑動即整理</strong><span>上滑標為待刪除、下滑標為待加入喜好項目，瀏覽與篩選永久免費；刪除會先進入待確認批次，系統再確認一次才執行。</span></li>
-        <li><strong>刪除前必複核</strong><span>刪除的照片 30 天內都能在「最近刪除」找回，也可以只執行勾選的部分。</span></li>
-                <li><strong>相似照片比較</strong><span>連拍、同場景的照片會自動分組，兩兩比較留下更想要的，其餘標為待刪除；分組在本機完成。</span></li>
-        <li><strong>進度跟著 iCloud 走</strong><span>保留或清除的決定會同步到你自己的 iCloud 私有資料庫，換一台裝置也能接著整理。（會員）</span></li>
-        <li><strong>畫質優先的瘦身</strong><span>影片轉成 HEVC、照片轉成 HEIC，逐項與原片比對，畫面看不出差別才保留，不達標的自動略過。（會員）</span></li>
-        <li><strong>先看效果再替換</strong><span>壓縮版先存進「照片」，比對滿意才替換原片；壓縮標記隨 iCloud 同步，換一台裝置也不會重複壓縮。</span></li>
-        <li><strong>旅行自動成冊</strong><span>按「哪幾天在哪個城市」分組，在本機挑出拍得好的照片，滑一遍就能存成「照片」裡的相簿。（iOS 18 以上，會員）</span></li>
-      </ul>
-      <p class="closing">沒有 Pickr 帳號，照片不會上傳到 Pickr，也沒有廣告。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隱私政策</strong><span>照片、iCloud 與本機資料</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、權限與聯絡方式</span></a>
-      </div>
-    </section>
+<section class="ch ch3" id="try">
+  <div class="inner">
+    <div class="ch3-copy">
+      <h2 class="ch3-head" data-i18n="ch3.head" data-state-text data-up-key="ch3.up" data-down-key="ch3.down">试试看：上滑删除，下滑收藏</h2>
+      <p class="ch3-hint" data-i18n="ch3.hint">和 App 里是同一双手势。</p>
+    </div>
+    <div class="ch3-lower">
+    <div class="stack" data-stack tabindex="0" role="group" aria-roledescription="照片卡片" aria-label="示例照片：方向键上滑删除、下滑收藏" data-i18n-aria="ch3.ariaStack">
+      <div class="card c3" ><img src="assets/home/demo-03-cafe.jpg" alt="示例照片：街角咖啡馆" data-i18n-alt="alt.card3"></div>
+      <div class="card c4" ><img src="assets/home/demo-04-darkroom.jpg" alt="示例照片：暗房红光" data-i18n-alt="alt.card4"></div>
+      <div class="card c2" ><img src="assets/home/demo-02-mountain.jpg" alt="示例照片：山与湖" data-i18n-alt="alt.card2"></div>
+      <div class="card c1" ><img src="assets/home/demo-01-leaf.jpg" alt="示例照片：叶脉" data-i18n-alt="alt.card1"></div>
+    </div>
+    <div class="ch3-actions">
+      <button type="button" class="swipe-btn up" data-swipe="up"><span aria-hidden="true">↑</span> <span data-i18n="ch3.delBtn">待删除</span></button>
+      <button type="button" class="swipe-btn down" data-swipe="down"><span aria-hidden="true">↓</span> <span data-i18n="ch3.keepBtn">收藏</span></button>
+    </div>
+    </div>
+  </div>
+</section>
 
-    <section class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>每月一次，幫相片圖庫做減法</h1>
-        <p class="lede">Pickr 用滑動帶你逐個月整理相片：向上掃標做待刪除、向下掃標做待加入喜愛，刪除之前逐批覆核。會員仲可以將影片轉做 HEVC、相片轉做 HEIC 慳返空間，又會按「邊幾日喺邊個城市」自動將旅行相片整理成相簿。瀏覽同篩選免費，儲存可以先免費用 7 次；之後儲存、iCloud 進度同步、壓縮同相簿就要會員。</p>
-        <p class="meta">適用於 iPhone 同 iPad · 需要 iOS 17 或以上版本（自動相簿需要 iOS 18）</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或者畀意見</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>一掃就整理</strong><span>向上掃標做待刪除、向下掃標做待加入喜愛，瀏覽同篩選永久免費；刪除會先放入待確認批次，系統再確認一次先會執行。</span></li>
-        <li><strong>刪除前一定覆核</strong><span>刪咗嘅相 30 日內都可以喺「最近刪除」搵返，亦可以只執行剔選咗嘅部分。</span></li>
-                <li><strong>相似相片對比</strong><span>連拍、同場景嘅相片自動歸組，兩兩對比留低想要嘅，其餘標示待刪除；分組喺本機完成。</span></li>
-        <li><strong>進度跟住 iCloud 走</strong><span>保留或者清除嘅決定會同步到你自己嘅 iCloud 私有資料庫，換部裝置都可以繼續整理。（會員）</span></li>
-        <li><strong>畫質優先嘅瘦身</strong><span>影片轉做 HEVC、相片轉做 HEIC，逐項同原片比對，睇唔出分別先會保留，唔達標嘅自動略過。（會員）</span></li>
-        <li><strong>先睇效果再替換</strong><span>壓縮版會先存入「相片」，對比滿意先替換原片；壓縮標記會隨 iCloud 同步，換部裝置都唔會重複壓縮。</span></li>
-        <li><strong>旅行自動成冊</strong><span>按「邊幾日喺邊個城市」分組，喺本機揀出影得好嘅相，掃一次就存做「相片」入面嘅相簿。（iOS 18 或以上，會員）</span></li>
-      </ul>
-      <p class="closing">冇 Pickr 帳戶，相片唔會上傳到 Pickr，亦冇廣告。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>私隱政策</strong><span>相片、iCloud 同本機資料</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、權限同聯絡方法</span></a>
-      </div>
-    </section>
+<section class="ch ch4" id="faq">
+  <div class="band band-head">
+    <div class="inner">
+      <h2 data-i18n="faq.head">先问清楚</h2>
+    </div>
+  </div>
+  <div class="band qa qa1">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q1">免费可以用多少？</h3>
+      <p data-i18n="faq.a1">整理、待确认、相似擂台和手动相册不限张数，完全免费。压缩、地点相册的保存与筛选、iCloud 同步是会员功能。</p>
+    </div>
+  </div>
+  <div class="band qa qa2">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q2">照片会被上传吗？</h3>
+      <p data-i18n="faq.a2">不会。整理与压缩全部在这台 iPhone 上完成，照片不离开设备。只有你主动开启 iCloud 同步时，整理进度（不是照片本身）才会存进你自己的 iCloud。</p>
+    </div>
+  </div>
+  <div class="band qa qa1">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q3">删错了怎么办？</h3>
+      <p data-i18n="faq.a3">删除不会立刻发生：每一批都先停在「待确认」，你可以整批恢复；整理中的每一步也都能单独撤销。</p>
+    </div>
+  </div>
+  <div class="band qa qa2">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q4">压缩会损失画质吗？</h3>
+      <p data-i18n="faq.a4">替换前有画质评分，也随时能按住对比原片与压缩版；不满意就不替换，原片原样不动。</p>
+    </div>
+  </div>
+  <div class="band qa qa1">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q5">什么时候能下载？</h3>
+      <p data-i18n="faq.a5">正在 TestFlight 打磨。写邮件给我们，当天就能收到邀请；需要 iPhone 或 iPad，iOS 17 以上。</p>
+    </div>
+  </div>
+  <div class="band qa qa2">
+    <div class="inner band-grid">
+      <h3 data-i18n="faq.q6">隐私政策在哪？</h3>
+      <p><span data-i18n="faq.a6">就在本站：</span>
+        <a href="privacy.html" data-localized-link data-i18n="faq.privacy">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="support.html" data-localized-link data-i18n="faq.support">支持页面</a>。
+      </p>
+    </div>
+  </div>
+</section>
 
-    <section class="language-panel" data-language="ja" lang="ja" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>月に一度、写真ライブラリを整える</h1>
-        <p class="lede">Pickr は月ごとに写真を見せてくれます。上スワイプで削除候補、下スワイプでお気に入り、削除は必ず確認してから実行されます。メンバーなら、動画を HEVC・写真を HEIC に変換して容量を節約したり、「いつどの都市で撮ったか」で旅の写真を自動でアルバムにしたりできます。閲覧とスワイプは無料、保存は最初の 7 回まで無料。それ以降の保存、iCloud 進行同期、圧縮、アルバムにはメンバーシップが必要です。</p>
-        <p class="meta">iPhone と iPad 対応 · iOS 17 以降が必要です（アルバム機能は iOS 18 以降）</p>
-      <p class="cta"><span class="cta-badge">TestFlight でベータテスト中</span><a href="mailto:imhccn@gmail.com">ベータに参加・フィードバック</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>スワイプで整理</strong><span>上へスワイプで削除候補、下へスワイプでお気に入り。閲覧とスワイプは無料で、削除は確認リストを経て実行されます。</span></li>
-        <li><strong>削除は必ず再確認</strong><span>削除した項目は 30 日間「最近削除した項目」に残り、選んだものだけを実行することもできます。</span></li>
-                <li><strong>似た写真の比較</strong><span>連写や同じ場面の写真を自動でグループ化し、2 枚ずつ比べて残したい方を残し、残りは削除予定に。グループ化は端末内で行われます。</span></li>
-        <li><strong>進行は iCloud で同期</strong><span>残す／消すの決定が自分の iCloud プライベート領域に同期され、別の端末で続きから再開できます。（メンバー）</span></li>
-        <li><strong>画質優先の圧縮</strong><span>動画は HEVC、写真は HEIC に。1 件ずつ元の映像と見比べ、差が分からないものだけを残します。（メンバー）</span></li>
-        <li><strong>置き換え前に確認</strong><span>圧縮版はまず「写真」に保存し、納得してから元を置き換えます。圧縮マークは iCloud で同期され、別の端末でも二重に圧縮されません。</span></li>
-        <li><strong>旅がアルバムに</strong><span>「いつどの都市で撮ったか」で自動的にまとめ、良い写真を端末内で選び、スワイプで「写真」のアルバムに保存します。（iOS 18 以降・メンバー）</span></li>
-      </ul>
-      <p class="closing">Pickr のアカウント登録は不要です。写真が Pickr にアップロードされることはなく、広告もありません。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>プライバシーポリシー</strong><span>写真、iCloud、端末内データ</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>サポート</strong><span>よくある質問、権限、お問い合わせ</span></a>
-      </div>
-    </section>
+<section class="ch ch5" id="cta">
+  <div class="inner">
+    <p class="cta-sentence">
+      <span class="cta-l1" data-i18n="cta.l1">今晚睡前，</span><br>
+      <span class="cta-l2"><span data-i18n="cta.l2">把上个月整理完</span>
+        <a class="cta-word" href="mailto:imhccn@gmail.com?subject=Pickr%20TestFlight" data-i18n="cta.btn">试试</a></span>
+    </p>
+    <p class="cta-note" data-i18n="cta.note">发一封邮件，当天收到 TestFlight 邀请。iPhone / iPad · iOS 17+。</p>
+  </div>
+</section>
+</main>
 
-    <section class="language-panel" data-language="en" lang="en" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>One pass a month to slim your library</h1>
-        <p class="lede">Pickr walks you through your photos month by month: swipe up to queue for deletion, down to favorite — nothing runs without your confirmation. Members can also convert videos to HEVC and photos to HEIC to reclaim space, and get trips grouped into albums by city and date. Browsing and swiping are free, and so are the first 7 saves; after that, saving, iCloud progress sync, compression, and albums require membership.</p>
-        <p class="meta">For iPhone and iPad · Requires iOS 17 or later (albums need iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Now in TestFlight</span><a href="mailto:imhccn@gmail.com">Join the beta or send feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Swipe to curate</strong><span>Swipe up to queue for deletion, down to favorite. Browsing and swiping stay free; deletions wait in a review batch and run only after the system Photos confirmation.</span></li>
-        <li><strong>Nothing deletes unseen</strong><span>Deleted items stay in Recently Deleted for 30 days, and you can execute just the ones you select.</span></li>
-                <li><strong>Similar photo compare</strong><span>Bursts and same-scene shots are grouped automatically — compare two at a time, keep the ones you want and mark the rest for deletion. Grouping happens on device.</span></li>
-        <li><strong>Progress lives in your iCloud</strong><span>Keep-or-clear decisions sync to your own private iCloud database, so you can pick up on another device. (Member)</span></li>
-        <li><strong>Quality-first compression</strong><span>Videos become HEVC, photos HEIC — each one compared against the original and kept only when the difference is invisible. (Member)</span></li>
-        <li><strong>See it before you replace</strong><span>The compressed copy goes into Photos first; replace the original only when you're happy. Marks sync over iCloud, so nothing is compressed twice — even on another device.</span></li>
-        <li><strong>Trips become albums</strong><span>Photos group themselves by which days you spent in which city, the best ones are picked on device, and one swipe-through saves a real album in Photos. (iOS 18+, member)</span></li>
-      </ul>
-      <p class="closing">No Pickr account. Photos are not uploaded to Pickr, and there are no ads.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>Photos, iCloud, and on-device data</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, permissions, and contact details</span></a>
-      </div>
-    </section>
+<footer class="foot">
+  <div class="inner foot-grid">
+    <div class="f-tile f-statement">
+      <p data-i18n="foot.statement">你的照片，由你决定。</p>
+      <small data-i18n="foot.legal">© 2026 Pickr · 独立开发</small>
+    </div>
+    <nav class="f-tile f-nav" aria-label="页脚导航">
+      <a href="#features" data-i18n="nav.features">特性</a>
+      <a href="#faq" data-i18n="nav.faq">常见问题</a>
+      <a href="privacy.html" data-localized-link data-i18n="faq.privacy">隐私政策</a>
+      <a href="support.html" data-localized-link data-i18n="faq.support">支持页面</a>
+    </nav>
+    <div class="f-tile f-time">
+      <p class="city" data-i18n="foot.city">杭州</p>
+      <p class="clock" data-clock aria-label="当地时间">GMT+8</p>
+    </div>
+    <div class="f-tile f-email">
+      <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>
+    </div>
+    <div class="f-tile f-wordmark" aria-hidden="true">Pickr</div>
+    <a class="f-tile f-invite" href="mailto:imhccn@gmail.com?subject=Pickr%20TestFlight">
+      <span data-i18n="foot.invite">参加 TestFlight</span>
+      <svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" focusable="false">
+        <path d="M10 34 L34 10 M14 10 h20 v20" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+    </a>
+  </div>
+</footer>
 
-    <section class="language-panel" data-language="ko" lang="ko" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>한 달에 한 번, 보관함을 가볍게</h1>
-        <p class="lede">Pickr는 사진을 한 달씩 보여 줍니다. 위로 밀면 삭제 대기, 아래로 밀면 즐겨찾기이고, 삭제는 확인 후에만 실행됩니다. 멤버라면 동영상은 HEVC로, 사진은 HEIC로 바꿔 공간을 아끼고, '며칠 동안 어느 도시에서 찍었는지'에 따라 여행 사진을 자동으로 앨범으로 만들 수 있습니다. 둘러보기와 밀기는 무료이고 저장은 처음 7회까지 무료입니다. 이후 저장, iCloud 진행 동기화, 압축, 앨범은 멤버십이 필요합니다.</p>
-        <p class="meta">iPhone과 iPad · iOS 17 이상 (앨범 기능은 iOS 18 이상)</p>
-      <p class="cta"><span class="cta-badge">TestFlight 베타 테스트 중</span><a href="mailto:imhccn@gmail.com">베타 참여 또는 피드백</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>밀어서 정리</strong><span>위로 밀면 삭제 대기, 아래로 밀면 즐겨찾기. 둘러보기와 밀기는 무료이며, 삭제는 확인 목록을 거쳐 실행됩니다.</span></li>
-        <li><strong>확인 없이 지우지 않습니다</strong><span>지운 항목은 30일간 최근 삭제된 항목에 남고, 고른 것만 실행할 수도 있습니다.</span></li>
-                <li><strong>비슷한 사진 비교</strong><span>연속 촬영이나 같은 장면의 사진을 자동으로 묶어 두 장씩 비교하고 마음에 드는 것만 남기며, 나머지는 삭제 예정으로 표시합니다. 묶음은 기기에서 처리됩니다.</span></li>
-        <li><strong>진행 상황은 자신의 iCloud에</strong><span>남기기/지우기 결정이 자신의 iCloud 비공개 영역에 동기화되어 다른 기기에서 이어서 할 수 있습니다. (멤버)</span></li>
-        <li><strong>화질 우선 압축</strong><span>동영상은 HEVC로, 사진은 HEIC로 바꾸며, 한 장씩 원본과 비교해 차이가 느껴지지 않을 때만 남깁니다. (멤버)</span></li>
-        <li><strong>바꾸기 전에 확인</strong><span>압축본은 먼저 '사진'에 저장하고, 만족할 때만 원본을 교체합니다. 압축 표시는 iCloud로 동기화되어 다른 기기에서도 다시 압축하지 않습니다.</span></li>
-        <li><strong>여행이 앨범으로</strong><span>'며칠 동안 어느 도시에서 찍었는지'에 따라 자동으로 묶고, 좋은 사진을 기기 안에서 골라, 밀어 넘기며 '사진'의 앨범으로 저장합니다. (iOS 18 이상, 멤버)</span></li>
-      </ul>
-      <p class="closing">Pickr 계정은 없습니다. 사진은 Pickr로 업로드되지 않으며, 광고도 없습니다.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>개인정보 처리방침</strong><span>사진, iCloud, 기기에 남는 데이터</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>지원</strong><span>자주 묻는 질문, 권한, 문의</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="fr" lang="fr" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Un passage par mois pour alléger la photothèque</h1>
-        <p class="lede">Pickr défile vos photos mois par mois : vers le haut pour la file de suppression, vers le bas pour les favoris — rien ne s'exécute sans votre confirmation. Avec l'abonnement, convertissez aussi les vidéos en HEVC et les photos en HEIC pour gagner de la place, et laissez les voyages se regrouper tout seuls en albums par ville et par jour. Regarder et trier sont gratuits, ainsi que les 7 premiers enregistrements ; ensuite, l'abonnement est requis pour enregistrer, synchroniser via iCloud, compresser et créer des albums.</p>
-        <p class="meta">Pour iPhone et iPad · Nécessite iOS 17 ou ultérieur (albums : iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Bêta sur TestFlight</span><a href="mailto:imhccn@gmail.com">Participer à la bêta ou écrire</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Glisser pour trier</strong><span>Vers le haut, la photo rejoint la file de suppression ; vers le bas, les favoris. Regarder et trier restent gratuits ; les suppressions passent par un lot de confirmation.</span></li>
-        <li><strong>Rien n'est supprimé sans vous</strong><span>Les éléments supprimés restent 30 jours dans Supprimés récemment, et vous pouvez n'exécuter que ce que vous cochez.</span></li>
-                <li><strong>Comparaison de photos similaires</strong><span>Les rafales et les scènes identiques sont regroupées automatiquement : comparez deux photos à la fois, gardez celles que vous voulez et marquez les autres pour suppression. Le regroupement se fait sur l’appareil.</span></li>
-        <li><strong>La progression reste dans votre iCloud</strong><span>Les décisions garder ou écarter se synchronisent dans votre base iCloud privée ; reprenez sur un autre appareil. (Abonné)</span></li>
-        <li><strong>Compression qualité d'abord</strong><span>Vidéos en HEVC, photos en HEIC : chacune est comparée à l'original et conservée seulement si la différence est invisible. (Abonné)</span></li>
-        <li><strong>Voir avant de remplacer</strong><span>La version compressée va d'abord dans Photos ; remplacez l'original une fois convaincu. Le marqueur se synchronise via iCloud : jamais compressé deux fois, même sur un autre appareil.</span></li>
-        <li><strong>Les voyages deviennent des albums</strong><span>Les photos se regroupent par jour et par ville, les meilleures sont choisies sur l'appareil, et un passage suffit pour créer un vrai album dans Photos. (iOS 18, abonné)</span></li>
-      </ul>
-      <p class="closing">Pas de compte Pickr. Les photos ne sont pas envoyées à Pickr, et il n’y a pas de publicité.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Politique de confidentialité</strong><span>Photos, iCloud et données sur l’appareil</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistance</strong><span>Réponses, autorisations et contact</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="es" lang="es" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Una pasada al mes para aligerar tu fototeca</h1>
-        <p class="lede">Pickr recorre tus fotos mes a mes: desliza hacia arriba para la cola de eliminación y hacia abajo para favoritas; nada se ejecuta sin tu confirmación. Con la suscripción puedes además convertir vídeos a HEVC y fotos a HEIC para ganar espacio, y dejar que los viajes se agrupen solos en álbumes por ciudad y por día. Mirar y deslizar son gratis, igual que los primeros 7 guardados; después, la suscripción cubre guardar, sincronizar por iCloud, comprimir y crear álbumes.</p>
-        <p class="meta">Para iPhone y iPad · Requiere iOS 17 o posterior (álbumes: iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Beta en TestFlight</span><a href="mailto:imhccn@gmail.com">Unirse a la beta o escribir</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Desliza para elegir</strong><span>Hacia arriba, a la cola de eliminación; hacia abajo, a favoritas. Mirar y deslizar siguen gratis; las eliminaciones esperan en un lote de confirmación.</span></li>
-        <li><strong>Nada se borra sin que lo veas</strong><span>Lo eliminado queda 30 días en Eliminados recientemente, y puedes ejecutar solo lo que marques.</span></li>
-                <li><strong>Comparación de fotos similares</strong><span>Las ráfagas y tomas de la misma escena se agrupan solas: compara dos cada vez, quédate con las que quieras y marca el resto para borrar. La agrupación ocurre en el dispositivo.</span></li>
-        <li><strong>El progreso vive en tu iCloud</strong><span>Las decisiones de conservar o descartar se sincronizan en tu base privada de iCloud y sigues en otro dispositivo. (Suscripción)</span></li>
-        <li><strong>Compresión con la calidad primero</strong><span>Vídeos a HEVC y fotos a HEIC: cada uno se compara con el original y solo se conserva si la diferencia es invisible. (Suscripción)</span></li>
-        <li><strong>Mira antes de reemplazar</strong><span>La versión comprimida va primero a Fotos; reemplaza el original solo cuando estés conforme. La marca se sincroniza por iCloud: nunca se comprime dos veces, ni siquiera en otro dispositivo.</span></li>
-        <li><strong>Los viajes se vuelven álbumes</strong><span>Las fotos se agrupan por días y ciudades, las mejores se eligen en el dispositivo, y una pasada las guarda como álbum real en Fotos. (iOS 18, suscripción)</span></li>
-      </ul>
-      <p class="closing">Sin cuenta de Pickr. Las fotos no se suben a Pickr y no hay anuncios.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de privacidad</strong><span>Fotos, iCloud y datos en el dispositivo</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Soporte</strong><span>Respuestas, permisos y contacto</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="it" lang="it" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Un passaggio al mese per alleggerire la libreria</h1>
-        <p class="lede">Pickr scorre le foto mese per mese: verso l'alto per la coda di eliminazione, verso il basso per i preferiti; nulla viene eseguito senza la tua conferma. Con l'abbonamento puoi anche convertire i video in HEVC e le foto in HEIC per risparmiare spazio, e lasciare che i viaggi si raggruppino da soli in album per città e per giorno. Sfogliare e scorrere sono gratuiti, come i primi 7 salvataggi; dopo, l'abbonamento serve per salvare, sincronizzare via iCloud, comprimere e creare album.</p>
-        <p class="meta">Per iPhone e iPad · Richiede iOS 17 o successivi (album: iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Beta su TestFlight</span><a href="mailto:imhccn@gmail.com">Partecipa alla beta o scrivi</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Scorri per scegliere</strong><span>Verso l'alto, in coda di eliminazione; verso il basso, tra i preferiti. Sfogliare e scorrere restano gratuiti; le eliminazioni aspettano in un gruppo di conferma.</span></li>
-        <li><strong>Niente si elimina da solo</strong><span>Gli elementi eliminati restano 30 giorni in Eliminati di recente e puoi eseguire solo ciò che selezioni.</span></li>
-                <li><strong>Confronto foto simili</strong><span>Raffiche e scatti della stessa scena vengono raggruppati da soli: confrontali a due a due, tieni quelli che vuoi e segna gli altri per l’eliminazione. Il raggruppamento avviene sul dispositivo.</span></li>
-        <li><strong>I progressi restano nel tuo iCloud</strong><span>Le decisioni di tenere o scartare si sincronizzano nel tuo database iCloud privato e prosegui su un altro dispositivo. (Abbonato)</span></li>
-        <li><strong>Compressione con la qualità prima</strong><span>Video in HEVC, foto in HEIC: ognuno viene confrontato con l'originale e tenuto solo se la differenza è invisibile. (Abbonato)</span></li>
-        <li><strong>Guarda prima di sostituire</strong><span>La versione compressa va prima in Foto; sostituisci l'originale solo quando sei soddisfatto. Il marcatore si sincronizza via iCloud: mai compresso due volte, nemmeno su un altro dispositivo.</span></li>
-        <li><strong>I viaggi diventano album</strong><span>Le foto si raggruppano per giorni e città, le migliori si scelgono sul dispositivo, e un passaggio le salva come vero album in Foto. (iOS 18, abbonato)</span></li>
-      </ul>
-      <p class="closing">Nessun account Pickr. Le foto non vengono caricate su Pickr e non ci sono annunci.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Informativa sulla privacy</strong><span>Foto, iCloud e dati sul dispositivo</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Supporto</strong><span>Risposte, permessi e contatti</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="de" lang="de" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Ein Durchgang im Monat, damit die Mediathek leichter wird</h1>
-        <p class="lede">Pickr geht deine Fotos Monat für Monat durch: nach oben in die Löschwarteschlange, nach unten zu den Favoriten – nichts läuft ohne deine Bestätigung. Mit Mitgliedschaft wandelst du außerdem Videos in HEVC und Fotos in HEIC, um Platz zu sparen, und Reisen gruppieren sich von selbst zu Alben nach Stadt und Tag. Anschauen und Wischen sind kostenlos, ebenso die ersten 7 Speicherungen; danach braucht es die Mitgliedschaft fürs Speichern, die iCloud-Synchronisierung, das Komprimieren und die Alben.</p>
-        <p class="meta">Für iPhone und iPad · Erfordert iOS 17 oder neuer (Alben: iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Beta bei TestFlight</span><a href="mailto:imhccn@gmail.com">Beta testen oder schreiben</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Wischen zum Aussortieren</strong><span>Nach oben in die Löschwarteschlange, nach unten zu den Favoriten. Anschauen und Wischen bleiben kostenlos; Löschungen warten in einem Prüfstapel.</span></li>
-        <li><strong>Nichts wird ungesehen gelöscht</strong><span>Entfernte Objekte bleiben 30 Tage in Zuletzt gelöscht, und du kannst nur das Ausgewählte ausführen.</span></li>
-                <li><strong>Ähnliche Fotos vergleichen</strong><span>Serienaufnahmen und Motive aus derselben Szene werden automatisch gruppiert — immer zwei vergleichen, die gewünschten behalten, den Rest zum Löschen vormerken. Das Gruppieren passiert auf dem Gerät.</span></li>
-        <li><strong>Der Fortschritt bleibt in deiner iCloud</strong><span>Behalten-oder-weg-Entscheidungen synchronisieren in deine private iCloud-Datenbank; mach auf einem anderen Gerät weiter. (Mitglied)</span></li>
-        <li><strong>Komprimieren mit Qualität zuerst</strong><span>Videos werden HEVC, Fotos HEIC: Jedes wird mit dem Original verglichen und nur behalten, wenn der Unterschied unsichtbar ist. (Mitglied)</span></li>
-        <li><strong>Erst ansehen, dann ersetzen</strong><span>Die komprimierte Version geht zuerst in Fotos; ersetze das Original erst, wenn du zufrieden bist. Die Marke synchronisiert über iCloud – nie doppelt komprimiert, auch nicht auf einem anderen Gerät.</span></li>
-        <li><strong>Reisen werden zu Alben</strong><span>Fotos gruppieren sich nach Tagen und Städten, die besten werden auf dem Gerät gewählt, und ein Durchgang speichert sie als echtes Album in Fotos. (iOS 18, Mitglied)</span></li>
-      </ul>
-      <p class="closing">Kein Pickr-Account. Fotos werden nicht an Pickr hochgeladen, und es gibt keine Werbung.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Datenschutz</strong><span>Fotos, iCloud und Daten auf dem Gerät</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Antworten, Zugriffsrechte und Kontakt</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="pt-BR" lang="pt-BR" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Uma passada por mês para aliviar a fototeca</h1>
-        <p class="lede">O Pickr percorre suas fotos mês a mês: deslize para cima para a fila de exclusão e para baixo para as favoritas; nada roda sem a sua confirmação. Com a assinatura, você também converte vídeos para HEVC e fotos para HEIC para ganhar espaço, e deixa as viagens se agruparem sozinhas em álbuns por cidade e por dia. Olhar e deslizar são grátis, assim como os primeiros 7 salvamentos; depois, a assinatura vale para salvar, sincronizar pelo iCloud, comprimir e criar álbuns.</p>
-        <p class="meta">Para iPhone e iPad · Requer iOS 17 ou posterior (álbuns: iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Beta no TestFlight</span><a href="mailto:imhccn@gmail.com">Participar da beta ou escrever</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Deslize para escolher</strong><span>Para cima, a fila de exclusão; para baixo, os favoritos. Olhar e deslizar continuam grátis; as exclusões esperam em um lote de confirmação.</span></li>
-        <li><strong>Nada é apagado sem você ver</strong><span>O que foi apagado fica 30 dias em Apagados recentemente, e você pode executar só o que marcar.</span></li>
-                <li><strong>Comparação de fotos parecidas</strong><span>Rajadas e fotos da mesma cena são agrupadas automaticamente — compare duas de cada vez, fique com as que quiser e marque as demais para exclusão. O agrupamento acontece no aparelho.</span></li>
-        <li><strong>O progresso fica no seu iCloud</strong><span>As decisões de manter ou descartar sincronizam no seu banco privado do iCloud e você continua em outro aparelho. (Assinante)</span></li>
-        <li><strong>Compressão com qualidade primeiro</strong><span>Vídeos viram HEVC e fotos HEIC: cada um é comparado com o original e mantido só se a diferença for invisível. (Assinante)</span></li>
-        <li><strong>Veja antes de substituir</strong><span>A versão comprimida vai primeiro para Fotos; substitua o original só quando gostar. A marca sincroniza pelo iCloud: nunca comprime duas vezes, nem em outro aparelho.</span></li>
-        <li><strong>Viagens viram álbuns</strong><span>As fotos se agrupam por dias e cidades, as melhores são escolhidas no aparelho, e uma passada salva tudo como álbum de verdade no Fotos. (iOS 18, assinante)</span></li>
-      </ul>
-      <p class="closing">Sem conta Pickr. As fotos não são enviadas ao Pickr e não há anúncios.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de Privacidade</strong><span>Fotos, iCloud e dados no aparelho</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Suporte</strong><span>Respostas, permissões e contato</span></a>
-      </div>
-    </section>
-
-    <section class="language-panel" data-language="pt-PT" lang="pt-PT" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Uma passagem por mês para aligeirar a fototeca</h1>
-        <p class="lede">O Pickr percorre as suas fotografias mês a mês: deslize para cima para a fila de eliminação e para baixo para as favoritas; nada corre sem a sua confirmação. Com a subscrição, também converte vídeos para HEVC e fotografias para HEIC para ganhar espaço, e deixa as viagens agruparem-se sozinhas em álbuns por cidade e por dia. Ver e deslizar são gratuitos, tal como as primeiras 7 gravações; depois, a subscrição vale para guardar, sincronizar pelo iCloud, comprimir e criar álbuns.</p>
-        <p class="meta">Para iPhone e iPad · Requer o iOS 17 ou posterior (álbuns: iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Beta no TestFlight</span><a href="mailto:imhccn@gmail.com">Participar na beta ou escrever</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Deslize para escolher</strong><span>Para cima, a fila de eliminação; para baixo, os favoritos. Ver e deslizar continuam gratuitos; as eliminações esperam num lote de confirmação.</span></li>
-        <li><strong>Nada é eliminado sem a sua confirmação</strong><span>O que foi eliminado fica 30 dias em Eliminados recentemente e pode executar só o que selecionar.</span></li>
-                <li><strong>Comparação de fotografias semelhantes</strong><span>Rajadas e fotografias da mesma cena são agrupadas automaticamente — compare duas de cada vez, fique com as que quiser e marque as restantes para eliminação. O agrupamento acontece no dispositivo.</span></li>
-        <li><strong>O progresso fica no seu iCloud</strong><span>As decisões de manter ou descartar sincronizam na sua base privada do iCloud e continua noutro dispositivo. (Subscritor)</span></li>
-        <li><strong>Compressão com qualidade primeiro</strong><span>Os vídeos passam a HEVC e as fotografias a HEIC: cada uma é comparada com a original e mantida só se a diferença for invisível. (Subscritor)</span></li>
-        <li><strong>Veja antes de substituir</strong><span>A versão comprimida vai primeiro para Fotografias; substitua a original só quando gostar. A marca sincroniza pelo iCloud: nunca comprime duas vezes, nem noutro dispositivo.</span></li>
-        <li><strong>Viagens tornam-se álbuns</strong><span>As fotografias agrupam-se por dias e cidades, as melhores são escolhidas no dispositivo, e uma passagem guarda tudo como álbum a sério nas Fotografias. (iOS 18, subscritor)</span></li>
-      </ul>
-      <p class="closing">Sem conta Pickr. As fotografias não são enviadas para o Pickr e não há anúncios.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de Privacidade</strong><span>Fotografias, iCloud e dados no dispositivo</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistência</strong><span>Respostas, permissões e contacto</span></a>
-      </div>
-    </section>
-      <section class="language-panel" data-language="nl" lang="nl" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Eén keer per maand je fotobibliotheek slanker maken</h1>
-        <p class="lede">Pickr neemt je maand voor maand mee door je foto's: veeg omhoog om foto's in de wachtrij voor verwijdering te zetten, omlaag om ze als favoriet te markeren — niets wordt uitgevoerd zonder jouw bevestiging. Leden kunnen bovendien video's naar HEVC en foto's naar HEIC converteren om ruimte terug te winnen, en reizen automatisch laten groeperen in albums per stad en datum. Bladeren en swipen zijn gratis, en dat geldt ook voor de eerste 7 keer opslaan; daarna zijn opslaan, iCloud-voortgangssynchronisatie, compressie en albums voorbehouden aan leden.</p>
-        <p class="meta">Voor iPhone en iPad · Vereist iOS 17 of nieuwer (albums vereisen iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Nu in TestFlight</span><a href="mailto:imhccn@gmail.com">Doe mee met de bèta of stuur feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Swipen om te ordenen</strong><span>Veeg omhoog voor de wachtrij voor verwijdering, omlaag om als favoriet te markeren. Bladeren en swipen blijven gratis; verwijderingen wachten in een controlebatch en worden pas uitgevoerd na bevestiging in de systeemapp Foto's.</span></li>
-        <li><strong>Niets wordt ongezien verwijderd</strong><span>Verwijderde items blijven 30 dagen in "Onlangs verwijderd" staan, en je voert alleen uit wat je zelf selecteert.</span></li>
-                <li><strong>Vergelijkbare foto’s vergelijken</strong><span>Series en opnames van dezelfde scène worden automatisch gegroepeerd — vergelijk er telkens twee, houd degene die je wilt en markeer de rest voor verwijdering. Het groeperen gebeurt op het apparaat.</span></li>
-        <li><strong>Je voortgang staat in je iCloud</strong><span>Beslissingen om te bewaren of te verwijderen worden gesynchroniseerd met je eigen privé-iCloud-database, zodat je op een ander apparaat verder kunt. (Lid)</span></li>
-        <li><strong>Compressie met kwaliteit voorop</strong><span>Video's worden HEVC, foto's HEIC — elk item wordt vergeleken met het origineel en alleen bewaard als het verschil onzichtbaar is. (Lid)</span></li>
-        <li><strong>Eerst zien, dan vervangen</strong><span>De gecomprimeerde kopie komt eerst in Foto's; vervang het origineel pas als je tevreden bent. Markeringen synchroniseren via iCloud, dus niets wordt twee keer gecomprimeerd — ook niet op een ander apparaat.</span></li>
-        <li><strong>Reizen worden albums</strong><span>Foto's groeperen zichzelf op welke dagen je in welke stad was, de beste worden op het apparaat geselecteerd, en met één keer doornemen sla je een echt album op in Foto's. (iOS 18+, lid)</span></li>
-      </ul>
-      <p class="closing">Geen Pickr-account. Foto's worden niet naar Pickr geüpload en er zijn geen advertenties.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacybeleid</strong><span>Foto's, iCloud en gegevens op het apparaat</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Ondersteuning</strong><span>Antwoorden, machtigingen en contactgegevens</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="pl" lang="pl" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Raz w miesiącu odchudź swoją bibliotekę zdjęć</h1>
-        <p class="lede">Pickr przeprowadza Cię przez zdjęcia miesiąc po miesiącu: przesuń w górę, aby dodać do usunięcia, w dół, aby dodać do ulubionych — nic nie zostanie wykonane bez Twojego potwierdzenia. Członkowie mogą dodatkowo konwertować wideo na HEVC i zdjęcia na HEIC, aby odzyskać miejsce, oraz otrzymywać podróże pogrupowane w albumy według miasta i daty. Przeglądanie i przesuwanie są bezpłatne, podobnie pierwsze 7 zapisów; po ich wyczerpaniu zapisywanie, synchronizacja postępu przez iCloud, kompresja i albumy wymagają członkostwa.</p>
-        <p class="meta">Dla iPhone'a i iPada · Wymaga iOS 17 lub nowszego (albumy wymagają iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Już w TestFlight</span><a href="mailto:imhccn@gmail.com">Dołącz do wersji beta lub prześlij opinię</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Przesuń i uporządkuj</strong><span>Przesuń w górę, aby dodać do usunięcia, w dół, aby dodać do ulubionych. Przeglądanie i przesuwanie pozostają bezpłatne; usunięcia czekają w partii do sprawdzenia i są wykonywane dopiero po potwierdzeniu w systemowej aplikacji Zdjęcia.</span></li>
-        <li><strong>Nic nie zostaje usunięte bez sprawdzenia</strong><span>Usunięte elementy pozostają w albumie „Ostatnio usunięte" przez 30 dni, a wykonać możesz tylko te, które zaznaczysz.</span></li>
-                <li><strong>Porównywanie podobnych zdjęć</strong><span>Serie i ujęcia tej samej sceny są grupowane automatycznie — porównuj po dwa, zachowaj te, które chcesz, a resztę oznacz do usunięcia. Grupowanie odbywa się na urządzeniu.</span></li>
-        <li><strong>Postęp trzymany w Twoim iCloud</strong><span>Decyzje o zachowaniu lub usunięciu są synchronizowane z Twoją własną prywatną bazą danych iCloud, więc możesz kontynuować na innym urządzeniu. (Członek)</span></li>
-        <li><strong>Kompresja z priorytetem jakości</strong><span>Wideo staje się HEVC, zdjęcia HEIC — każdy element jest porównywany z oryginałem i zachowywany tylko wtedy, gdy różnica jest niewidoczna. (Członek)</span></li>
-        <li><strong>Zobacz, zanim zastąpisz</strong><span>Skompresowana kopia trafia najpierw do Zdjęć; oryginał zastępujesz dopiero, gdy wynik Ci odpowiada. Znaczniki synchronizują się przez iCloud, więc nic nie jest kompresowane dwa razy — nawet na innym urządzeniu.</span></li>
-        <li><strong>Podróże stają się albumami</strong><span>Zdjęcia grupują się według dni spędzonych w poszczególnych miastach, najlepsze są wybierane na urządzeniu, a jedno przejrzenie zapisuje prawdziwy album w Zdjęciach. (iOS 18+, członek)</span></li>
-      </ul>
-      <p class="closing">Bez konta Pickr. Zdjęcia nie są przesyłane do Pickr i nie ma reklam.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Polityka prywatności</strong><span>Zdjęcia, iCloud i dane na urządzeniu</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Pomoc techniczna</strong><span>Odpowiedzi, uprawnienia i dane kontaktowe</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="sv" lang="sv" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>En genomgång i månaden ger ett smalare bildbibliotek</h1>
-        <p class="lede">Pickr går igenom dina bilder månad för månad: svep upp för att köa för radering, ned för att favoritmarkera — inget körs utan din bekräftelse. Medlemmar kan även konvertera videor till HEVC och bilder till HEIC för att frigöra utrymme och få resor grupperade i album per stad och datum. Att bläddra och svepa är gratis, och det är även de första 7 sparandena; därefter kräver spara, iCloud-synkronisering av framsteg, komprimering och album medlemskap.</p>
-        <p class="meta">För iPhone och iPad · Kräver iOS 17 eller senare (album kräver iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Nu i TestFlight</span><a href="mailto:imhccn@gmail.com">Delta i betan eller skicka feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Svep för att gallra</strong><span>Svep upp för att köa för radering, ned för att favoritmarkera. Bläddrande och svepande förblir gratis; raderingar väntar i en granskningsomgång och körs först efter bekräftelsen i systemets Bilder-app.</span></li>
-        <li><strong>Inget raderas utan att du sett det</strong><span>Raderade objekt ligger kvar i Senast raderade i 30 dagar, och du kan utföra bara de du markerar.</span></li>
-                <li><strong>Jämför liknande bilder</strong><span>Serier och bilder från samma motiv grupperas automatiskt — jämför två i taget, behåll de du vill och markera resten för radering. Grupperingen sker på enheten.</span></li>
-        <li><strong>Framstegen ligger i ditt iCloud</strong><span>Beslut om att behålla eller rensa synkas till din egen privata iCloud-databas, så att du kan fortsätta på en annan enhet. (Medlem)</span></li>
-        <li><strong>Komprimering med kvaliteten först</strong><span>Videor blir HEVC, bilder HEIC — varje enskilt jämförs med originalet och behålls bara när skillnaden är osynlig. (Medlem)</span></li>
-        <li><strong>Se resultatet innan du ersätter</strong><span>Den komprimerade kopian hamnar i Bilder först; ersätt originalet först när du är nöjd. Märken synkas via iCloud, så inget komprimeras två gånger — inte heller på en annan enhet.</span></li>
-        <li><strong>Resor blir album</strong><span>Bilder grupperas efter vilka dagar du tillbringade i vilken stad, de bästa plockas ut på enheten, och ett enda svep sparar ett riktigt album i Bilder. (iOS 18+, medlem)</span></li>
-      </ul>
-      <p class="closing">Inget Pickr-konto. Bilder laddas inte upp till Pickr och det finns ingen reklam.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Integritetspolicy</strong><span>Bilder, iCloud och data på enheten</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Svar, behörigheter och kontaktuppgifter</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="da" lang="da" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Én gennemgang om måneden giver et slankere billedbibliotek</h1>
-        <p class="lede">Pickr tager dig gennem dine billeder måned for måned: swipe op for at sætte på slettelisten, ned for at markere som favorit — intet køres uden din bekræftelse. Medlemmer kan også konvertere videoer til HEVC og billeder til HEIC for at frigøre plads og få turer grupperet i albummer efter by og dato. Gennemsyn og swipe er gratis, og det gælder også de første 7 gemninger; derefter kræver gemning, iCloud-synkronisering af fremskridt, komprimering og albummer medlemskab.</p>
-        <p class="meta">Til iPhone og iPad · Kræver iOS 17 eller nyere (albummer kræver iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Nu i TestFlight</span><a href="mailto:imhccn@gmail.com">Deltag i betaversionen eller send feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Swipe for at ordne</strong><span>Swipe op for at sætte på slettelisten, ned for at markere som favorit. Gennemsyn og swipe forbliver gratis; sletninger venter i et gennemgangsparti og køres først efter bekræftelsen i systemets Billeder-app.</span></li>
-        <li><strong>Intet slettes uset</strong><span>Slettede elementer ligger i Slettet for nylig i 30 dage, og du kan udføre netop dem, du markerer.</span></li>
-                <li><strong>Sammenlign lignende billeder</strong><span>Serier og billeder fra samme motiv grupperes automatisk — sammenlign to ad gangen, behold dem du vil, og markér resten til sletning. Grupperingen sker på enheden.</span></li>
-        <li><strong>Dine fremskridt ligger i din iCloud</strong><span>Beslutninger om at beholde eller rydde synkroniseres til din egen private iCloud-database, så du kan fortsætte på en anden enhed. (Medlem)</span></li>
-        <li><strong>Komprimering med kvaliteten først</strong><span>Videoer bliver HEVC, billeder HEIC — hvert enkelt sammenlignes med originalen og beholdes kun, når forskellen er usynlig. (Medlem)</span></li>
-        <li><strong>Se resultatet, før du erstatter</strong><span>Den komprimerede kopi lægges i Billeder først; erstat originalen først, når du er tilfreds. Mærker synkroniseres via iCloud, så intet komprimeres to gange — heller ikke på en anden enhed.</span></li>
-        <li><strong>Ture bliver albummer</strong><span>Billeder grupperer sig selv efter, hvilke dage du tilbragte i hvilken by, de bedste udvælges på enheden, og én gennemgang gemmer et rigtigt album i Billeder. (iOS 18+, medlem)</span></li>
-      </ul>
-      <p class="closing">Ingen Pickr-konto. Billeder uploades ikke til Pickr, og der er ingen reklamer.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privatlivspolitik</strong><span>Billeder, iCloud og data på enheden</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Svar, tilladelser og kontaktoplysninger</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="nb" lang="nb" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Én gjennomgang i måneden gir et slankere bilderbibliotek</h1>
-        <p class="lede">Pickr tar deg gjennom bildene dine måned for måned: sveip opp for å legge til sletting, ned for å merke som favoritt — ingenting kjøres uten din bekreftelse. Medlemmer kan også konvertere videoer til HEVC og bilder til HEIC for å frigjøre plass, og få turer gruppert i album etter by og dato. Å bla og sveipe er gratis, og det gjelder også de første 7 lagringene; etter det krever lagring, iCloud-synkronisering av fremdrift, komprimering og album medlemskap.</p>
-        <p class="meta">For iPhone og iPad · Krever iOS 17 eller nyere (album krever iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Nå i TestFlight</span><a href="mailto:imhccn@gmail.com">Bli med i betaversjonen eller send tilbakemelding</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Sveip for å sortere</strong><span>Sveip opp for å legge til sletting, ned for å merke som favoritt. Å bla og sveipe forblir gratis; sletninger venter i et gjennomgangsparti og kjøres først etter bekreftelsen i systemets Bilder-app.</span></li>
-        <li><strong>Ingenting slettes usett</strong><span>Slettede elementer ligger i Nylig slettet i 30 dager, og du kan utføre bare dem du merker.</span></li>
-                <li><strong>Sammenlign lignende bilder</strong><span>Serier og bilder fra samme motiv grupperes automatisk — sammenlign to om gangen, behold de du vil, og merk resten for sletting. Grupperingen skjer på enheten.</span></li>
-        <li><strong>Fremdriften ligger i iCloud-en din</strong><span>Beslutninger om å beholde eller fjerne synkroniseres til din egen private iCloud-database, slik at du kan fortsette på en annen enhet. (Medlem)</span></li>
-        <li><strong>Komprimering med kvaliteten først</strong><span>Videoer blir HEVC, bilder HEIC — hvert enkelt sammenlignes med originalen og beholdes bare når forskjellen er usynlig. (Medlem)</span></li>
-        <li><strong>Se resultatet før du bytter ut</strong><span>Den komprimerte kopien legges i Bilder først; bytt ut originalen først når du er fornøyd. Merker synkroniseres via iCloud, så ingenting komprimeres to ganger — heller ikke på en annen enhet.</span></li>
-        <li><strong>Turer blir album</strong><span>Bilder grupperer seg selv etter hvilke dager du tilbragte i hvilken by, de beste plukkes på enheten, og én gjennomgang lagrer et ekte album i Bilder. (iOS 18+, medlem)</span></li>
-      </ul>
-      <p class="closing">Ingen Pickr-konto. Bilder lastes ikke opp til Pickr, og det er ingen annonser.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Personvernerklæring</strong><span>Bilder, iCloud og data på enheten</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Svar, tillatelser og kontaktinformasjon</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="fi" lang="fi" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Kerran kuussa kuvakirjasto kevyemmäksi</h1>
-        <p class="lede">Pickr vie sinut kuviesi läpi kuukausi kerrallaan: pyyhkäise ylös lisätäksesi poistettaviin, alas merkitäksesi suosikiksi — mikään ei toteudu ilman vahvistustasi. Jäsenet voivat myös muuntaa videot HEVC-muotoon ja kuvat HEIC-muotoon tilan säästämiseksi ja saada matkat ryhmitellyiksi albumeiksi kaupungin ja päivämäärän mukaan. Selaaminen ja pyyhkäisy ovat ilmaisia, samoin ensimmäiset 7 tallennusta; sen jälkeen tallentaminen, iCloud-edistymisen synkronointi, pakkaaminen ja albumit vaativat jäsenyyden.</p>
-        <p class="meta">iPhonelle ja iPadille · Vaatii iOS 17:n tai uudemman (albumit vaativat iOS 18:n)</p>
-      <p class="cta"><span class="cta-badge">Nyt TestFlightissa</span><a href="mailto:imhccn@gmail.com">Liity betaan tai lähetä palautetta</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Pyyhkäise ja järjestä</strong><span>Pyyhkäise ylös lisätäksesi poistettaviin, alas merkitäksesi suosikiksi. Selaaminen ja pyyhkäisy pysyvät ilmaisina; poistot odottavat tarkastuserässä ja toteutuvat vasta järjestelmän Kuvat-sovelluksen vahvistuksen jälkeen.</span></li>
-        <li><strong>Mikään ei poistu näkemättä</strong><span>Poistetut kohteet pysyvät 30 päivää Äskettäin poistetut -albumissa, ja voit toteuttaa vain valitsemasi kohteet.</span></li>
-                <li><strong>Samanlaisten kuvien vertailu</strong><span>Sarjat ja saman kohtauksen otokset ryhmitellään automaattisesti — vertaa kahta kerrallaan, säilytä haluamasi ja merkitse loput poistettavaksi. Ryhmittely tapahtuu laitteella.</span></li>
-        <li><strong>Edistyminen pysyy iCloudissasi</strong><span>Säilytys- ja poistopäätökset synkronoidaan omaan yksityiseen iCloud-tietokantaasi, joten voit jatkaa toisella laitteella. (Jäsen)</span></li>
-        <li><strong>Pakkaaminen laadun ehdoilla</strong><span>Videoista tulee HEVC ja kuvista HEIC — jokainen verrataan alkuperäiseen ja säilytetään vain, jos ero on näkymätön. (Jäsen)</span></li>
-        <li><strong>Katso ennen kuin korvaat</strong><span>Pakattu kopio menee ensin Kuviin; korvaa alkuperäinen vasta, kun olet tyytyväinen. Merkit synkronoituvat iCloudin kautta, joten mitään ei pakata kahdesti — ei edes toisella laitteella.</span></li>
-        <li><strong>Matkoista tulee albumeita</strong><span>Kuvat ryhmittelevät itsensä sen mukaan, mitkä päivät vietit missäkin kaupungissa, parhaat valitaan laitteella, ja yksi läpikäynti tallentaa oikean albumin Kuviin. (iOS 18+, jäsen)</span></li>
-      </ul>
-      <p class="closing">Ei Pickr-tiliä. Kuvia ei ladata Pickriin, eikä mainoksia ole.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Tietosuojaseloste</strong><span>Kuvat, iCloud ja laitteen tiedot</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Tuki</strong><span>Vastauksia, käyttöoikeuksia ja yhteystietoja</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="cs" lang="cs" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Jednou za měsíc odlehčit knihovně fotografií</h1>
-        <p class="lede">Pickr vás provede vašimi fotografiemi měsíc po měsíci: potáhněte nahoru a položka se zařadí ke smazání, potáhněte dolů a označí se jako oblíbená — nic se nevykoná bez vašeho potvrzení. Členové mohou navíc převádět videa do HEVC a fotky do HEIC, a tím ušetřit místo, a nechat si výlety seskupit do alb podle města a data. Procházení a potahování jsou zdarma a stejně tak prvních 7 uložení; po jejich vyčerpání vyžadují ukládání, synchronizace pokroku přes iCloud, komprese i alba členství.</p>
-        <p class="meta">Pro iPhone a iPad · Vyžaduje iOS 17 nebo novější (alba vyžadují iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Nyní v TestFlight</span><a href="mailto:imhccn@gmail.com">Připojte se k betě nebo pošlete zpětnou vazbu</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Třídění jedním tahem</strong><span>Potáhněte nahoru pro zařazení ke smazání, dolů pro označení jako oblíbené. Procházení a potahování zůstávají zdarma; mazání čeká v dávce ke kontrole a spustí se až po potvrzení v systémové aplikaci Fotky.</span></li>
-        <li><strong>Nic se nesmaže, aniž byste to viděli</strong><span>Smazané položky zůstávají 30 dní v seznamu Nedávno smazané a vykonat můžete jen ty, které sami vyberete.</span></li>
-                <li><strong>Porovnání podobných fotografií</strong><span>Série a snímky stejné scény se seskupí samy — porovnávejte po dvou, nechte si, co chcete, a zbytek označte ke smazání. Seskupování probíhá v zařízení.</span></li>
-        <li><strong>Pokrok žije ve vašem iCloudu</strong><span>Rozhodnutí ponechat či smazat se synchronizují do vaší soukromé databáze iCloud, takže můžete pokračovat na jiném zařízení. (Člen)</span></li>
-        <li><strong>Komprese s kvalitou na prvním místě</strong><span>Videa se převedou do HEVC, fotky do HEIC — každá položka se porovná s originálem a ponechá se, jen když je rozdíl neviditelný. (Člen)</span></li>
-        <li><strong>Nejdřív se podívejte, pak teprve nahraďte</strong><span>Komprimovaná kopie se nejdřív uloží do aplikace Fotky; originál nahraďte, až budete spokojeni. Značky se synchronizují přes iCloud, takže se nic nekomprimuje dvakrát — ani na jiném zařízení.</span></li>
-        <li><strong>Z výletů se stanou alba</strong><span>Fotky se samy seskupí podle toho, které dny jste strávili ve kterém městě, ty nejlepší vybere zařízení a jedním projitím uložíte do aplikace Fotky skutečné album. (iOS 18+, člen)</span></li>
-      </ul>
-      <p class="closing">Žádný účet Pickr. Fotografie se na Pickr nenahrávají a aplikace neobsahuje žádné reklamy.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Zásady ochrany osobních údajů</strong><span>Fotografie, iCloud a data v zařízení</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Podpora</strong><span>Odpovědi, oprávnění a kontaktní údaje</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="tr" lang="tr" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Ayda bir geçişle fotoğraf kitaplığınızı hafifletin</h1>
-        <p class="lede">Pickr sizi fotoğraflarınızda ay ay gezdirir: yukarı kaydırmak silinmek üzere sıraya alır, aşağı kaydırmak favorilere ekler — onayınız olmadan hiçbir şey çalışmaz. Üyeler ayrıca videoları HEVC'ye, fotoğrafları HEIC'e dönüştürerek yer kazanabilir ve seyahatlerinin şehre ve tarihe göre albümler halinde gruplanmasını sağlayabilir. Gezinme ve kaydırma ücretsizdir; ilk 7 kaydetme de öyle. Bundan sonra kaydetme, iCloud ilerleme senkronizasyonu, sıkıştırma ve albümler üyelik gerektirir.</p>
-        <p class="meta">iPhone ve iPad için · iOS 17 veya üstünü gerektirir (albümler iOS 18 gerektirir)</p>
-      <p class="cta"><span class="cta-badge">Şu anda TestFlight'ta</span><a href="mailto:imhccn@gmail.com">Betaya katılın veya geri bildirim gönderin</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Düzenlemek için kaydırın</strong><span>Silmek üzere sıraya almak için yukarı, favorilere eklemek için aşağı kaydırın. Gezinme ve kaydırma ücretsiz kalır; silmeler bir onay grubunda bekler ve yalnızca sistem Fotoğraflar onayından sonra çalışır.</span></li>
-        <li><strong>Görülmeden hiçbir şey silinmez</strong><span>Silinen öğeler 30 gün boyunca Son Silinenler'de kalır ve yalnızca seçtiğinizleri çalıştırabilirsiniz.</span></li>
-                <li><strong>Benzer fotoğraf karşılaştırma</strong><span>Seri çekimler ve aynı sahnenin kareleri otomatik gruplanır — ikişerli karşılaştırın, istediklerinizi bırakın, kalanları silinmek üzere işaretleyin. Gruplama cihaz üzerinde yapılır.</span></li>
-        <li><strong>İlerlemeniz iCloud'unuzda yaşar</strong><span>Tutma veya silme kararları kendi özel iCloud veritabanınıza senkronize edilir, böylece başka bir cihazda devam edebilirsiniz. (Üye)</span></li>
-        <li><strong>Kaliteyi önceleyen sıkıştırma</strong><span>Videolar HEVC'ye, fotoğraflar HEIC'e dönüşür — her biri orijinaliyle karşılaştırılır ve yalnızca fark görünmezken tutulur. (Üye)</span></li>
-        <li><strong>Değiştirmeden önce görün</strong><span>Sıkıştırılmış kopya önce Fotoğraflar'a girer; memnun kaldığınızda orijinali değiştirin. İşaretler iCloud üzerinden senkronize olur, böylece hiçbir şey iki kez sıkıştırılmaz — başka bir cihazda bile.</span></li>
-        <li><strong>Seyahatler albüm olur</strong><span>Fotoğraflar hangi gün hangi şehirdeyseniz kendilerini gruplar, en iyileri cihazda seçilir ve tek bir geçişle Fotoğraflar'da gerçek bir albüm kaydedilir. (iOS 18+, üye)</span></li>
-      </ul>
-      <p class="closing">Pickr hesabı yoktur. Fotoğraflar Pickr'a yüklenmez ve uygulama reklamsızdır.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Gizlilik Politikası</strong><span>Fotoğraflar, iCloud ve cihazdaki veriler</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Destek</strong><span>Yanıtlar, izinler ve iletişim bilgileri</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="id" lang="id" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Sekali sebulan untuk merampingkan pustaka foto Anda</h1>
-        <p class="lede">Pickr memandu Anda menata foto per bulan: usap ke atas untuk mengantrekan ke penghapusan, ke bawah untuk memfavoritkan — tidak ada yang dijalankan tanpa konfirmasi Anda. Anggota juga dapat mengonversi video ke HEVC dan foto ke HEIC untuk menghemat ruang, serta mendapatkan perjalanan yang dikelompokkan menjadi album berdasarkan kota dan tanggal. Menjelajah dan mengusap gratis, begitu juga 7 penyimpanan pertama; setelah itu, menyimpan, sinkronisasi progres iCloud, kompresi, dan album memerlukan keanggotaan.</p>
-        <p class="meta">Untuk iPhone dan iPad · Memerlukan iOS 17 atau yang lebih baru (album memerlukan iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Sekarang di TestFlight</span><a href="mailto:imhccn@gmail.com">Ikuti beta atau kirim masukan</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Usap untuk menata</strong><span>Usap ke atas untuk mengantrekan ke penghapusan, ke bawah untuk memfavoritkan. Menjelajah dan mengusap tetap gratis; penghapusan menunggu dalam batch tinjauan dan hanya dijalankan setelah konfirmasi Foto sistem.</span></li>
-        <li><strong>Tidak ada yang terhapus tanpa terlihat</strong><span>Item yang dihapus tetap berada di Baru Dihapus selama 30 hari, dan Anda hanya menjalankan yang Anda pilih.</span></li>
-                <li><strong>Perbandingan foto serupa</strong><span>Foto burst dan adegan yang sama dikelompokkan otomatis — bandingkan dua demi dua, simpan yang Anda mau, dan tandai sisanya untuk dihapus. Pengelompokan dilakukan di perangkat.</span></li>
-        <li><strong>Progres tersimpan di iCloud Anda</strong><span>Keputusan simpan atau hapus disinkronkan ke basis data iCloud pribadi milik Anda sendiri, sehingga bisa dilanjutkan di perangkat lain. (Anggota)</span></li>
-        <li><strong>Kompresi mengutamakan kualitas</strong><span>Video menjadi HEVC, foto menjadi HEIC — masing-masing dibandingkan dengan aslinya dan hanya disimpan bila perbedaannya tak terlihat. (Anggota)</span></li>
-        <li><strong>Lihat dulu sebelum mengganti</strong><span>Salinan terkompresi lebih dulu masuk ke Foto; ganti yang asli hanya setelah Anda puas. Tandanya disinkronkan lewat iCloud, jadi tidak ada yang dikompresi dua kali — bahkan di perangkat lain.</span></li>
-        <li><strong>Perjalanan menjadi album</strong><span>Foto mengelompokkan sendiri berdasarkan hari-hari Anda berada di kota mana, yang terbaik dipilih di perangkat, dan satu kali usap menyimpan album sungguhan di Foto. (iOS 18+, anggota)</span></li>
-      </ul>
-      <p class="closing">Tanpa akun Pickr. Foto tidak diunggah ke Pickr, dan tidak ada iklan.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Kebijakan Privasi</strong><span>Foto, iCloud, dan data di perangkat</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Dukungan</strong><span>Jawaban, izin, dan detail kontak</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="vi" lang="vi" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Mỗi tháng một lượt để làm gọn thư viện ảnh</h1>
-        <p class="lede">Pickr dẫn bạn xem lại ảnh theo từng tháng: vuốt lên để xếp hàng chờ xóa, vuốt xuống để thêm vào yêu thích — không có gì được chạy khi chưa có xác nhận của bạn. Hội viên còn có thể chuyển video sang HEVC và ảnh sang HEIC để lấy lại dung lượng, đồng thời có các chuyến đi được nhóm thành album theo thành phố và ngày. Duyệt ảnh và vuốt miễn phí, 7 lần lưu đầu cũng miễn phí; sau đó, lưu ảnh, đồng bộ tiến trình iCloud, nén và album cần có hội viên.</p>
-        <p class="meta">Dành cho iPhone và iPad · Cần iOS 17 trở lên (album cần iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Đang có trên TestFlight</span><a href="mailto:imhccn@gmail.com">Tham gia bản thử nghiệm hoặc gửi phản hồi</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Vuốt để chọn lọc</strong><span>Vuốt lên để xếp hàng chờ xóa, vuốt xuống để thêm vào yêu thích. Duyệt ảnh và vuốt luôn miễn phí; các mục chờ xóa nằm trong một lô xem lại và chỉ được thực thi sau khi App Ảnh của hệ thống xác nhận.</span></li>
-        <li><strong>Không gì bị xóa khi chưa thấy</strong><span>Mục đã xóa nằm trong Đã Xóa Gần Đây suốt 30 ngày, và bạn có thể chỉ thực thi những mục mình chọn.</span></li>
-                <li><strong>So sánh ảnh tương tự</strong><span>Ảnh chụp liên tiếp và cùng bối cảnh được tự động nhóm lại — so sánh từng cặp, giữ ảnh bạn muốn và đánh dấu phần còn lại để xóa. Việc nhóm ảnh diễn ra trên thiết bị.</span></li>
-        <li><strong>Tiến trình nằm trong iCloud của bạn</strong><span>Quyết định giữ hay xóa được đồng bộ vào cơ sở dữ liệu iCloud riêng tư của chính bạn, để bạn tiếp tục trên thiết bị khác. (Hội viên)</span></li>
-        <li><strong>Nén ưu tiên chất lượng</strong><span>Video thành HEVC, ảnh thành HEIC — từng mục được so với bản gốc và chỉ được giữ khi khác biệt không nhận ra được. (Hội viên)</span></li>
-        <li><strong>Xem trước rồi mới thay thế</strong><span>Bản nén được đưa vào Ảnh trước; chỉ thay bản gốc khi bạn đã ưng ý. Dấu được đồng bộ qua iCloud nên không gì bị nén hai lần — kể cả trên thiết bị khác.</span></li>
-        <li><strong>Chuyến đi thành album</strong><span>Ảnh tự nhóm theo những ngày bạn ở thành phố nào, những ảnh tốt nhất được chọn trên máy, và một lượt vuốt lưu thành album thật trong Ảnh. (iOS 18+, hội viên)</span></li>
-      </ul>
-      <p class="closing">Không có tài khoản Pickr. Ảnh không được tải lên Pickr và không có quảng cáo.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Chính sách quyền riêng tư</strong><span>Ảnh, iCloud và dữ liệu trên máy</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Hỗ trợ</strong><span>Câu trả lời, quyền và thông tin liên hệ</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="th" lang="th" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>เดือนละครั้ง ให้คลังรูปภาพของคุณเบาลง</h1>
-        <p class="lede">Pickr พาคุณไล่ดูรูปภาพเป็นรายเดือน: ปัดขึ้นเพื่อเข้าคิวรอลบ ปัดลงเพื่อเพิ่มในรายการโปรด — ไม่มีอะไรทำงานก่อนได้รับการยืนยันจากคุณ สมาชิกยังแปลงวิดีโอเป็น HEVC และรูปภาพเป็น HEIC เพื่อคืนพื้นที่ และได้รับทริปที่จัดกลุ่มเป็นอัลบั้มตามเมืองและวันที่ การเรียกดูและการปัดฟรี และการบันทึก 7 ครั้งแรกก็ฟรีเช่นกัน หลังจากนั้น การบันทึก การซิงค์ความคืบหน้าผ่าน iCloud การบีบอัด และอัลบั้มต้องเป็นสมาชิก</p>
-        <p class="meta">สำหรับ iPhone และ iPad · ต้องใช้ iOS 17 หรือใหม่กว่า (อัลบั้มต้องใช้ iOS 18)</p>
-      <p class="cta"><span class="cta-badge">ขณะนี้อยู่ใน TestFlight</span><a href="mailto:imhccn@gmail.com">เข้าร่วมเบต้าหรือส่งคำติชม</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>ปัดเพื่อคัดสรร</strong><span>ปัดขึ้นเพื่อเข้าคิวรอลบ ปัดลงเพื่อเพิ่มในรายการโปรด การเรียกดูและการปัดฟรีเสมอ การลบรออยู่ในชุดตรวจทานและทำงานเฉพาะหลังการยืนยันของแอปรูปภาพของระบบ</span></li>
-        <li><strong>ไม่มีการลบโดยที่คุณไม่เห็น</strong><span>รายการที่ลบแล้วจะอยู่ใน "ลบเมื่อเร็วๆ นี้" ต่ออีก 30 วัน และคุณเลือกให้ทำเฉพาะรายการที่ต้องการได้</span></li>
-                <li><strong>เปรียบเทียบภาพคล้ายกัน</strong><span>ภาพถ่ายต่อเนื่องหรือฉากเดียวกันจะถูกจัดกลุ่มอัตโนมัติ — เปรียบเทียบทีละคู่ เก็บภาพที่ต้องการ และทำเครื่องหมายส่วนที่เหลือไว้ลบ การจัดกลุ่มทำบนอุปกรณ์</span></li>
-        <li><strong>ความคืบหน้าอยู่ใน iCloud ของคุณ</strong><span>การตัดสินใจเก็บหรือลบจะซิงค์ไปยังฐานข้อมูล iCloud ส่วนตัวของคุณเอง จึงทำต่อได้บนอุปกรณ์เครื่องอื่น (สมาชิก)</span></li>
-        <li><strong>บีบอัดโดยให้คุณภาพมาก่อน</strong><span>วิดีโอกลายเป็น HEVC รูปภาพกลายเป็น HEIC — แต่ละรายการถูกเทียบกับต้นฉบับและเก็บไว้เฉพาะเมื่อความต่างมองไม่เห็น (สมาชิก)</span></li>
-        <li><strong>เห็นก่อนแล้วค่อยแทนที่</strong><span>สำเนาที่บีบอัดจะเข้าไปในรูปภาพก่อน รอจนคุณพอใจจึงค่อยแทนที่ต้นฉบับ เครื่องหมายซิงค์ผ่าน iCloud จึงไม่มีอะไรถูกบีบอัดสองครั้ง — แม้บนอุปกรณ์เครื่องอื่น</span></li>
-        <li><strong>ทริปกลายเป็นอัลบั้ม</strong><span>รูปภาพจัดกลุ่มตามวันที่คุณอยู่เมืองใด ตัวที่ดีที่สุดถูกเลือกบนอุปกรณ์ และปัดผ่านหนึ่งรอบก็บันทึกเป็นอัลบั้มจริงในรูปภาพ (iOS 18+ สมาชิก)</span></li>
-      </ul>
-      <p class="closing">ไม่มีบัญชี Pickr รูปภาพไม่ถูกอัปโหลดไปที่ Pickr และไม่มีโฆษณา</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>นโยบายความเป็นส่วนตัว</strong><span>รูปภาพ, iCloud และข้อมูลบนอุปกรณ์</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>การสนับสนุน</strong><span>คำตอบ สิทธิ์การเข้าถึง และข้อมูลติดต่อ</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="ru" lang="ru" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Один проход в месяц, чтобы разгрузить медиатеку</h1>
-        <p class="lede">Pickr проводит вас по фотографиям месяц за месяцем: смахните вверх, чтобы поставить в очередь на удаление, вниз — чтобы добавить в избранное; ничего не выполняется без вашего подтверждения. С членством также можно конвертировать видео в HEVC, а фото в HEIC, чтобы освободить место, и получать поездки, сгруппированные в альбомы по городам и датам. Просмотр и смахивание бесплатны, как и первые 7 сохранений; после этого сохранение, синхронизация прогресса через iCloud, сжатие и альбомы требуют членства.</p>
-        <p class="meta">Для iPhone и iPad · Требуется iOS 17 или новее (альбомам нужен iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Уже в TestFlight</span><a href="mailto:imhccn@gmail.com">Присоединиться к бете или отправить отзыв</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Отбор смахиванием</strong><span>Смахните вверх, чтобы поставить в очередь на удаление, вниз — чтобы добавить в избранное. Просмотр и смахивание остаются бесплатными; удаления ждут в проверочной партии и выполняются только после подтверждения в системном приложении «Фото».</span></li>
-        <li><strong>Ничего не удалится без вашего ведома</strong><span>Удаленные объекты остаются в «Недавно удаленных» 30 дней, а выполнить вы можете только то, что сами выбрали.</span></li>
-                <li><strong>Сравнение похожих фото</strong><span>Серии и кадры одной сцены группируются автоматически — сравнивайте по два, оставляйте нужные и помечайте остальные к удалению. Группировка выполняется на устройстве.</span></li>
-        <li><strong>Прогресс хранится в вашем iCloud</strong><span>Решения «оставить» или «удалить» синхронизируются с вашей собственной приватной базой iCloud, так что можно продолжить на другом устройстве. (Членство)</span></li>
-        <li><strong>Сжатие с приоритетом качества</strong><span>Видео становятся HEVC, фото — HEIC; каждый результат сравнивается с оригиналом и сохраняется, только если разница незаметна. (Членство)</span></li>
-        <li><strong>Сначала посмотрите, потом заменяйте</strong><span>Сжатая копия сначала попадает в «Фото»; заменяйте оригинал, только когда довольны результатом. Отметки синхронизируются через iCloud, поэтому ничего не сжимается дважды — даже на другом устройстве.</span></li>
-        <li><strong>Поездки превращаются в альбомы</strong><span>Фотографии группируются по тому, в какие дни вы были в каком городе, лучшие отбираются на устройстве, а один проход сохраняет настоящий альбом в «Фото». (iOS 18+, членство)</span></li>
-      </ul>
-      <p class="closing">Без аккаунта Pickr. Фотографии не загружаются на серверы Pickr, рекламы нет.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Политика конфиденциальности</strong><span>Фото, iCloud и данные на устройстве</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Поддержка</strong><span>Ответы, разрешения и контакты</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="uk" lang="uk" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Один прохід на місяць — і ваша фотобібліотека стає легшою</h1>
-        <p class="lede">Pickr проведе вас фотографіями місяць за місяцем: свайп угору — у чергу на видалення, вниз — в обране; без вашого підтвердження нічого не виконується. Члени також можуть конвертувати відео в HEVC і фото в HEIC, щоб звільнити місце, та отримувати подорожі, згруповані в альбоми за містами й датами. Перегляд і свайпи безкоштовні, як і перші 7 збережень; після цього збереження, синхронізація прогресу через iCloud, стиснення й альбоми потребують членства.</p>
-        <p class="meta">Для iPhone та iPad · Потрібен iOS 17 або новіший (альбоми потребують iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Уже в TestFlight</span><a href="mailto:imhccn@gmail.com">Приєднатися до бети або надіслати відгук</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Впорядковуйте свайпами</strong><span>Свайп угору — у чергу на видалення, вниз — в обране. Перегляд і свайпи лишаються безкоштовними; видалення чекають у партії на перевірку й виконуються лише після підтвердження в системних «Фото».</span></li>
-        <li><strong>Нічого не видаляється без перевірки</strong><span>Видалені об'єкти лишаються 30 днів у «Нещодавно видалених», і виконати можна лише ті, які ви оберете.</span></li>
-                <li><strong>Порівняння схожих фото</strong><span>Серії та кадри однієї сцени групуються автоматично — порівнюйте по два, залишайте потрібні та позначайте решту до вилучення. Групування відбувається на пристрої.</span></li>
-        <li><strong>Прогрес живе у вашому iCloud</strong><span>Рішення лишити або видалити синхронізуються у вашу власну приватну базу iCloud, тож упорядкування можна продовжити на іншому пристрої. (Членство)</span></li>
-        <li><strong>Стиснення з пріоритетом якості</strong><span>Відео стають HEVC, фото — HEIC; кожен файл порівнюється з оригіналом і зберігається, лише коли різниця непомітна. (Членство)</span></li>
-        <li><strong>Побачте результат до заміни</strong><span>Стиснена копія спершу потрапляє у «Фото»; замінюйте оригінал, лише коли задоволені результатом. Позначки синхронізуються через iCloud, тому нічого не стискається двічі — навіть на іншому пристрої.</span></li>
-        <li><strong>Подорожі стають альбомами</strong><span>Фотографії групуються за тим, у які дні ви були в якому місті, найкращі відбираються на самому пристрої, і один прохід свайпами зберігає справжній альбом у «Фото». (iOS 18+, членство)</span></li>
-      </ul>
-      <p class="closing">Обліковий запис Pickr не потрібен. Фотографії не завантажуються до Pickr, і реклами немає.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Політика конфіденційності</strong><span>Фотографії, iCloud і дані на пристрої</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Підтримка</strong><span>Відповіді, дозволи та контактні дані</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="hu" lang="hu" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Havonta egy átfutás a karcsúbb fotókönyvtárért</h1>
-        <p class="lede">A Pickr hónapról hónapra végigvezet a fotóidon: pöccints felfelé, hogy törlésre jelölj, lefelé, hogy kedvencnek jelölj — semmi sem fut le a jóváhagyásod nélkül. A tagok emellett HEVC-re konvertálhatják a videóikat és HEIC-re a fotóikat a hely felszabadításához, és útjaik város és dátum szerint csoportosított albumokba rendezve jelennek meg. A böngészés és a pöccintés ingyenes, és az első 7 mentés is az; ezután a mentés, az iCloud-haladatszinkron, a tömörítés és az albumok tagságot igényel.</p>
-        <p class="meta">iPhone-ra és iPad-ra · iOS 17 vagy újabb szükséges (az albumokhoz iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Most a TestFlightban</span><a href="mailto:imhccn@gmail.com">Csatlakozz a bétához, vagy küldj visszajelzést</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Rendezés pöccintéssel</strong><span>Pöccints felfelé a törlendők közé, lefelé a kedvencek közé. A böngészés és a pöccintés ingyenes marad; a törlések egy ellenőrző kötegben várnak, és csak a rendszer Fotók appjának jóváhagyása után futnak le.</span></li>
-        <li><strong>Semmi nem törlődik megnézetlenül</strong><span>A törölt elemek 30 napig maradnak a „Nemrég törölt” albumban, és csak a kijelölteket hajthatod végre.</span></li>
-                <li><strong>Hasonló fotók összehasonlítása</strong><span>A sorozatok és azonos jelenetű felvételek automatikusan csoportosulnak — hasonlítsd össze kettőt-kettőt, tartsd meg, amelyiket akarod, a többit jelöld törlésre. A csoportosítás az eszközön zajlik.</span></li>
-        <li><strong>A haladás a te iCloudodban él</strong><span>A megtartás vagy törlés döntései a saját, privát iCloud-adatbázisodba szinkronizálódnak, így másik eszközön is folytathatod. (Tag)</span></li>
-        <li><strong>Minőségorientált tömörítés</strong><span>A videók HEVC-vé, a fotók HEIC-ké válnak — minden egyes darab összehasonlításra kerül az eredetivel, és csak akkor marad meg, ha a különbség láthatatlan. (Tag)</span></li>
-        <li><strong>Lásd, mielőtt cserélsz</strong><span>A tömörített másolat először a Fotókba kerül; csak akkor cseréld le az eredetit, ha elégedett vagy. A jelölések iCloudon szinkronizálódnak, így semmi nem tömörítődik kétszer — másik eszközön sem.</span></li>
-        <li><strong>Az utak albumokká válnak</strong><span>A fotók aszerint csoportosulnak, mely napokon melyik városban jártál, a legjobbak az eszközön kerülnek kiválasztásra, és egy végigpöccintés valódi albumot ment a Fotókba. (iOS 18+, tag)</span></li>
-      </ul>
-      <p class="closing">Pickr-fiók nem szükséges. A fotók nem töltődnek fel a Pickrhez, és hirdetés sincs.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Adatvédelmi irányelvek</strong><span>Fotók, iCloud és az eszközön tárolt adatok</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Támogatás</strong><span>Válaszok, engedélyek és elérhetőség</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="ro" lang="ro" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>O trecere pe lună pentru o bibliotecă foto mai ușoară</h1>
-        <p class="lede">Pickr vă parcurge fotografiile lună de lună: glisați în sus pentru a le pune la coadă de șters, în jos pentru a le marca favorite — nimic nu se execută fără confirmarea dvs. Membrii pot de asemenea converti videoclipurile în HEVC și fotografiile în HEIC pentru a recâștiga spațiu și pot primi călătoriile grupate în albume după oraș și dată. Navigarea și glisarea sunt gratuite, la fel și primele 7 salvări; după aceea, salvarea, sincronizarea progresului în iCloud, comprimarea și albumele necesită calitatea de membru.</p>
-        <p class="meta">Pentru iPhone și iPad · Necesită iOS 17 sau o versiune ulterioară (albumele necesită iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Acum în TestFlight</span><a href="mailto:imhccn@gmail.com">Intrați în beta sau trimiteți feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Glisați pentru a curața</strong><span>Glisați în sus pentru coada de șters, în jos pentru favorite. Navigarea și glisarea rămân gratuite; ștergerile așteaptă într-un lot de verificare și se execută doar după confirmarea din aplicația „Fotografii” a sistemului.</span></li>
-        <li><strong>Nimic nu se șterge nevăzut</strong><span>Elementele șterse rămân 30 de zile în „Eliminate recent”, și puteți executa doar elementele pe care le selectați.</span></li>
-                <li><strong>Compararea fotografiilor similare</strong><span>Seriile și cadrele din aceeași scenă se grupează automat — compară câte două, păstrează-le pe cele dorite și marchează restul pentru ștergere. Gruparea are loc pe dispozitiv.</span></li>
-        <li><strong>Progresul stă în iCloud-ul dvs.</strong><span>Deciziile de păstrare sau ștergere se sincronizează în propria dvs. bază de date privată iCloud, ca să puteți continua pe alt dispozitiv. (Membru)</span></li>
-        <li><strong>Comprimare cu prioritatea calității</strong><span>Videoclipurile devin HEVC, fotografiile HEIC — fiecare este comparat cu originalul și păstrat doar când diferența e invizibilă. (Membru)</span></li>
-        <li><strong>Vedeți înainte de a înlocui</strong><span>Copia comprimată intră întâi în Fotografii; înlocuiți originalul doar când sunteți mulțumit. Marcajele se sincronizează prin iCloud, deci nimic nu se comprimă de două ori — nici pe alt dispozitiv.</span></li>
-        <li><strong>Călătoriile devin albume</strong><span>Fotografiile se grupează după zilele petrecute în fiecare oraș, cele mai bune sunt alese pe dispozitiv, iar o singură parcurgere cu glisarea salvează un album real în Fotografii. (iOS 18+, Membru)</span></li>
-      </ul>
-      <p class="closing">Fără cont Pickr. Fotografiile nu sunt încărcate la Pickr și nu există reclame.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Politica de confidențialitate</strong><span>Fotografii, iCloud și datele de pe dispozitiv</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Asistență</strong><span>Răspunsuri, permisiuni și date de contact</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="el" lang="el" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Μία περασιά τον μήνα για μια πιο αδύνατη βιβλιοθήκη φωτογραφιών</h1>
-        <p class="lede">Το Pickr σας περνάει από τις φωτογραφίες σας μήνα με μήνα: σαρώστε προς τα πάνω για ουρά διαγραφής, προς τα κάτω για αγαπημένη — τίποτα δεν εκτελείται χωρίς την επιβεβαίωσή σας. Τα μέλη μπορούν επίσης να μετατρέψουν τα βίντεο σε HEVC και τις φωτογραφίες σε HEIC για να ανακτήσουν χώρο, και να δουν ταξίδια ομαδοποιημένα σε άλμπουμ ανά πόλη και ημερομηνία. Η περιήγηση και η σάρωση είναι δωρεάν, όπως και οι πρώτες 7 αποθηκεύσεις· μετά, η αποθήκευση, ο συγχρονισμός προόδου iCloud, η συμπίεση και τα άλμπουμ απαιτούν ιδιότητα μέλους.</p>
-        <p class="meta">Για iPhone και iPad · Απαιτείται iOS 17 ή νεότερο (τα άλμπουμ απαιτούν iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Τώρα στο TestFlight</span><a href="mailto:imhccn@gmail.com">Συμμετάσχετε στη beta ή στείλτε σχόλια</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Σαρώστε για να επιμεληθείτε</strong><span>Σαρώστε προς τα πάνω για ουρά διαγραφής, προς τα κάτω για αγαπημένη. Η περιήγηση και η σάρωση παραμένουν δωρεάν· οι διαγραφές περιμένουν σε μια ομάδα ελέγχου και εκτελούνται μόνο μετά την επιβεβαίωση της εφαρμογής «Φωτογραφίες» του συστήματος.</span></li>
-        <li><strong>Τίποτα δεν διαγράφεται χωρίς έλεγχο</strong><span>Τα διαγραμμένα στοιχεία μένουν 30 ημέρες στα «Πρόσφατα διαγραμμένα», και μπορείτε να εκτελέσετε μόνο όσα επιλέξετε.</span></li>
-                <li><strong>Σύγκριση παρόμοιων φωτογραφιών</strong><span>Οι σειρές λήψεων και οι λήψεις της ίδιας σκηνής ομαδοποιούνται αυτόματα — συγκρίνετε ανά δύο, κρατήστε ό,τι θέλετε και σημειώστε τα υπόλοιπα προς διαγραφή. Η ομαδοποίηση γίνεται στη συσκευή.</span></li>
-        <li><strong>Η πρόοδος ζει στο iCloud σας</strong><span>Οι αποφάσεις για διατήρηση ή διαγραφή συγχρονίζονται στη δική σας ιδιωτική βάση iCloud, ώστε να συνεχίσετε σε άλλη συσκευή. (Μέλος)</span></li>
-        <li><strong>Συμπίεση με προτεραιότητα στην ποιότητα</strong><span>Τα βίντεο γίνονται HEVC και οι φωτογραφίες HEIC — το καθένα συγκρίνεται με το πρωτότυπο και κρατιέται μόνο όταν η διαφορά είναι αόρατη. (Μέλος)</span></li>
-        <li><strong>Δείτε το πριν το αντικαταστήσετε</strong><span>Το συμπιεσμένο αντίγραφο μπαίνει πρώτα στις «Φωτογραφίες»· αντικαταστήστε το πρωτότυπο μόνο όταν μείνετε ικανοποιημένοι. Τα σημάδια συγχρονίζονται μέσω iCloud, οπότε τίποτα δεν συμπιέζεται δύο φορές — ούτε σε άλλη συσκευή.</span></li>
-        <li><strong>Τα ταξίδια γίνονται άλμπουμ</strong><span>Οι φωτογραφίες ομαδοποιούνται ανάλογα με το ποιες ημέρες περάσατε σε ποια πόλη, οι καλύτερες επιλέγονται στη συσκευή, και μία περιήγηση με σάρωση αποθηκεύει ένα πραγματικό άλμπουμ στις «Φωτογραφίες». (iOS 18+, Μέλος)</span></li>
-      </ul>
-      <p class="closing">Δεν απαιτείται λογαριασμός Pickr. Οι φωτογραφίες σας δεν ανεβαίνουν στο Pickr και δεν υπάρχουν διαφημίσεις.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Πολιτική απορρήτου</strong><span>Φωτογραφίες, iCloud και δεδομένα στη συσκευή</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Υποστήριξη</strong><span>Απαντήσεις, δικαιώματα και στοιχεία επικοινωνίας</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="ms" lang="ms" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>Satu pusingan setiap bulan untuk memangkas pustaka foto anda</h1>
-        <p class="lede">Pickr membimbing anda menyusun foto bulan demi bulan: leret ke atas untuk baris gilir padam, ke bawah untuk kegemaran — tiada apa dilaksanakan tanpa pengesahan anda. Ahli juga boleh menukar video ke HEVC dan foto ke HEIC untuk mendapatkan semula ruang, serta menerima perjalanan yang dikumpulkan menjadi album mengikut bandar dan tarikh. Melayari dan meleret percuma, begitu juga 7 simpanan pertama; selepas itu, menyimpan, penyegerakan kemajuan iCloud, pemampatan dan album memerlukan keahlian.</p>
-        <p class="meta">Untuk iPhone dan iPad · Memerlukan iOS 17 atau lebih baharu (album memerlukan iOS 18)</p>
-      <p class="cta"><span class="cta-badge">Kini dalam TestFlight</span><a href="mailto:imhccn@gmail.com">Sertai beta atau hantar maklum balas</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Leret untuk menyusun</strong><span>Leret ke atas untuk baris gilir padam, ke bawah untuk kegemaran. Melayari dan meleret kekal percuma; pemadaman menunggu dalam kelompok semakan dan hanya berjalan selepas pengesahan app Foto sistem.</span></li>
-        <li><strong>Tiada yang dipadam tanpa dilihat</strong><span>Item yang dipadam kekal dalam Baru Dipadam selama 30 hari, dan anda boleh melaksanakan hanya yang anda pilih.</span></li>
-                <li><strong>Perbandingan foto serupa</strong><span>Foto imbasan berterusan dan adegan yang sama dikumpulkan secara automatik — bandingkan dua demi dua, simpan yang anda mahu dan tandakan yang lain untuk dipadam. Pengumpulan dibuat pada peranti.</span></li>
-        <li><strong>Kemajuan disimpan dalam iCloud anda</strong><span>Keputusan simpan atau padam disegerakkan ke pangkalan data iCloud peribadi milik anda sendiri, jadi anda boleh teruskan di peranti lain. (Ahli)</span></li>
-        <li><strong>Pemampatan utamakan kualiti</strong><span>Video menjadi HEVC, foto HEIC — setiap satu dibandingkan dengan yang asal dan disimpan hanya bila perbezaannya tidak kelihatan. (Ahli)</span></li>
-        <li><strong>Lihat dahulu sebelum mengganti</strong><span>Salinan termampat masuk ke Foto dahulu; gantikan yang asal hanya bila anda berpuas hati. Tanda disegerakkan merentas iCloud, jadi tiada apa dimampatkan dua kali — malah di peranti lain.</span></li>
-        <li><strong>Perjalanan menjadi album</strong><span>Foto dikumpulkan mengikut hari anda berada di bandar mana, yang terbaik dipilih pada peranti, dan satu sesi leret menyimpan album sebenar dalam Foto. (iOS 18+, Ahli)</span></li>
-      </ul>
-      <p class="closing">Tiada akaun Pickr. Foto tidak dimuat naik ke Pickr, dan tiada iklan.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Dasar Privasi</strong><span>Foto, iCloud dan data pada peranti</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>Sokongan</strong><span>Jawapan, kebenaran dan butiran hubungan</span></a>
-      </div>
-    </section>
-    <section class="language-panel" data-language="hi" lang="hi" data-title="Pickr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=pickr-20260918-1" alt="" width="76" height="76">
-        <h1>हर महीने एक बार, अपनी फ़ोटो लाइब्रेरी हल्की करें</h1>
-        <p class="lede">Pickr आपको महीने दर महीने फ़ोटो दिखाता है: ऊपर स्वाइप करें तो डिलीट के लिए, नीचे स्वाइप करें तो फ़ेवरेट के लिए — आपकी पुष्टि के बिना कुछ भी नहीं होता। सदस्य वीडियो को HEVC और फ़ोटो को HEIC में बदलकर जगह भी खाली कर सकते हैं, और शहर व तारीख़ के हिसाब से सफ़र की फ़ोटो का एल्बम भी बनवा सकते हैं। देखना और स्वाइप करना मुफ़्त है, पहली 7 बार सेव करना भी मुफ़्त है; उसके बाद सेव करना, iCloud प्रोग्रेस सिंक, कंप्रेशन और एल्बम के लिए सदस्यता चाहिए।</p>
-        <p class="meta">iPhone और iPad के लिए · iOS 17 या बाद का चाहिए (एल्बम के लिए iOS 18)</p>
-      <p class="cta"><span class="cta-badge">अभी TestFlight पर बीटा में</span><a href="mailto:imhccn@gmail.com">बीटा में शामिल हों या सुझाव भेजें</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>स्वाइप करके छँटाई</strong><span>ऊपर स्वाइप पर डिलीट की क़तार, नीचे स्वाइप पर फ़ेवरेट। देखना और स्वाइप करना मुफ़्त रहता है; डिलीट पहले समीक्षा बैच में रुकता है और सिस्टम फ़ोटो की पुष्टि के बाद ही होता है।</span></li>
-        <li><strong>बिना देखे कुछ नहीं मिटता</strong><span>डिलीट की गई चीज़ें 30 दिन तक हाल ही में हटाए गए में रहती हैं, और आप चुनी हुई चीज़ें ही चला सकते हैं।</span></li>
-                <li><strong>मिलती-जुलती फ़ोटो की तुलना</strong><span>बर्स्ट शॉट और एक ही दृश्य की फ़ोटो अपने-आप समूह में बाँधी जाती हैं — दो-दो करके तुलना करें, जो चाहें रखें और बाक़ी को हटाने के लिए चिह्नित करें। समूहीकरण डिवाइस पर ही होता है।</span></li>
-        <li><strong>प्रोग्रेस आपके iCloud में</strong><span>रखने या हटाने के फ़ैसले आपके निजी iCloud डेटाबेस में सिंक होते हैं, तो दूसरे डिवाइस पर वहीं से जारी रखें। (सदस्य)</span></li>
-        <li><strong>क्वालिटी पहले, कंप्रेशन बाद में</strong><span>वीडियो HEVC और फ़ोटो HEIC बनती हैं — हर चीज़ की तुलना ओरिजिनल से होती है और फ़र्क़ न दिखे तभी रखी जाती है। (सदस्य)</span></li>
-        <li><strong>बदलने से पहले देख लें</strong><span>कंप्रेस की हुई कॉपी पहले फ़ोटो में जाती है; तस रहने पर ही ओरिजिनल बदलें। निशान iCloud से सिंक होते हैं, तो कुछ भी दो बार कंप्रेस नहीं होता — दूसरे डिवाइस पर भी नहीं।</span></li>
-        <li><strong>सफ़र बन जाते हैं एल्बम</strong><span>फ़ोटो खुद ब खुद शहर और दिन के हिसाब से जुड़ती हैं, बेहतरीन चीज़ें डिवाइस पर ही चुनी जाती हैं, और एक बार स्वाइप करने पर असली एल्बम फ़ोटो में सेव हो जाता है। (iOS 18+, सदस्य)</span></li>
-      </ul>
-      <p class="closing">कोई Pickr खाता नहीं। फ़ोटो Pickr पर अपलोड नहीं होती, और कोई विज्ञापन नहीं।</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>गोपनीयता नीति</strong><span>फ़ोटो, iCloud और डिवाइस का डेटा</span></a>
-        <a class="card" href="support.html" data-localized-link="support.html"><strong>सहायता</strong><span>जवाब, अनुमतियाँ और संपर्क</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer><p>© 2026 Chen Haokun · <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a></p></footer>
-</div>
-<script src="language.js?v=pickr-20261009-2"></script>
+<script src="assets/home/home.js" defer></script>
 </body>
 </html>

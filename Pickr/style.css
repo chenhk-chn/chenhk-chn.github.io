@@ -4,8 +4,8 @@
   --fg: #20201e;
   --muted: #6c6a64;
   --rule: #d9d6cf;
-  --accent: #12a044;
-  --accent-strong: #0a6b2d;
+  --accent: #283c53;
+  --accent-strong: #1b2a3c;
   --card: #f0eee8;
   --focus: #2fae5c;
 }
@@ -16,8 +16,8 @@
     --fg: #f1f2ec;
     --muted: #a5a89c;
     --rule: #383b35;
-    --accent: #46d57a;
-    --accent-strong: #8fe7ae;
+    --accent: #b9cadd;
+    --accent-strong: #93aeca;
     --card: #212420;
     --focus: #5fde8c;
   }
