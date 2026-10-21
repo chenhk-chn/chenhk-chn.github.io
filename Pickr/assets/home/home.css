@@ -480,7 +480,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* 高斯毛玻璃卡片共用基底（对应 App 内 PickrStyle.surface + 细微边缘折射与冷暖透光） */
 .bento-crop-card,
 .step-card,
-.single-phone-showcase,
 .sample-card,
 .albums-copy-bar,
 .offline-bento-banner,
@@ -637,8 +636,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .single-phone-showcase {
-  background: var(--bg-tinted);
-  border-radius: var(--radius-card);
   display: flex;
   align-items: center;
   justify-content: center;
