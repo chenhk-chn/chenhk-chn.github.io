@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <link rel="apple-touch-icon" href="assets/icon-512.png">
 <script>document.documentElement.classList.add("js")</script>
-<link rel="stylesheet" href="assets/home/home.css">
+<link rel="stylesheet" href="assets/home/home.css?v=20261021f">
 </head>
 <body>
 
@@ -45,7 +45,15 @@
     <span class="mask"><span class="line l1">Pickr</span></span>
     <span class="mask"><span class="line l2" data-i18n="hero.line2">先看这个月</span></span>
   </h1>
-  <p class="hero-support" data-i18n="hero.support">把几千张照片按月整理到今天。删除之前，再确认一次。</p>
+  <div class="hero-foot">
+    <p class="hero-support" data-i18n="hero.support">把几千张照片按月整理到今天。删除之前，再确认一次。</p>
+    <a class="hero-cta" href="mailto:imhccn@gmail.com?subject=Pickr%20TestFlight">
+      <span data-i18n="nav.join">参加 TestFlight</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <path d="M5 19 L19 5 M8 5 h11 v11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      </svg>
+    </a>
+  </div>
 </section>
 
 <section class="ch ch1" id="how">
@@ -243,6 +251,6 @@
   </div>
 </footer>
 
-<script src="assets/home/home.js" defer></script>
+<script src="assets/home/home.js?v=20261021f" defer></script>
 </body>
 </html>

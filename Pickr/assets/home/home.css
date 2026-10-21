@@ -95,12 +95,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .lang option { color: #10131a; }
 
 /* ---------- Hero：Stacked name, two inks ---------- */
+/* 标题压在版面底部，上方留整块空场——空场是标题页的留白，不是把内容拆开的中缝。
+   一句话说明和 CTA 紧贴在标题下方，首屏就能看到「下一步做什么」。 */
 .hero {
   min-height: 100svh; position: relative;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 var(--margin) clamp(26px, 5svh, 54px);
   background: var(--f-hero); color: var(--paper);
 }
 .hero-name {
-  padding: 14svh 0 0 var(--margin);
+  padding: 14svh 0 0;
   font-weight: 600; letter-spacing: -0.035em; line-height: 0.84;
 }
 .hero-name .mask { display: block; overflow: hidden; padding-bottom: 0.03em; }
@@ -113,17 +117,37 @@ html[lang="ja"] .hero-name .l2,
 html[lang="ko"] .hero-name .l2 { font-size: clamp(84px, 13vw, 200px); }
 html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
 
-.hero-support {
-  position: absolute; right: var(--margin); bottom: 40px;
-  max-width: 30ch; text-align: right; font-size: 18px; line-height: 1.55;
+.hero-foot {
+  margin-top: clamp(20px, 4svh, 44px);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
 }
-.js .top, .js .hero-support { opacity: 0; animation: fadeup 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards; }
+.hero-support {
+  max-width: 36ch; font-size: 17px; line-height: 1.6; color: var(--paper);
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 22px;
+  background: var(--accent); color: var(--ink);
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+  text-decoration: none; white-space: nowrap;
+}
+.hero-cta svg { flex: 0 0 auto; }
+.hero-cta:hover { background: #cfdcea; }
+.hero-cta:active { opacity: 0.85; }
+
+@media (min-width: 860px) {
+  .hero-foot { align-items: flex-end; gap: 18px; }
+  .hero-support { max-width: 26ch; text-align: right; font-size: 19px; }
+}
+
+.js .top, .js .hero-support, .js .hero-cta { opacity: 0; animation: fadeup 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards; }
+.js .hero-cta { animation-delay: 0.9s; }
 
 @keyframes rise { to { transform: translateY(0); } }
 @keyframes fadeup { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .hero-name .line, .js .top, .js .hero-support { animation: none; transform: none; opacity: 1; }
+  .js .hero-name .line, .js .top, .js .hero-support, .js .hero-cta { animation: none; transform: none; opacity: 1; }
 }
 
 /* ---------- ch1 整理：Tiles that grow ---------- */
@@ -222,7 +246,6 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
   min-height: 92svh; display: flex; flex-direction: column; padding: 7svh 0;
 }
 .ch3-copy { position: static; max-width: 46ch; margin-bottom: auto; z-index: 2; }
-.ch3-lower .ch3-actions { order: -1; }
 .ch3-lower {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 28px; margin-top: 28px;
@@ -235,8 +258,7 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
 
 .stack {
   position: relative; flex: 0 0 auto;
-  width: clamp(340px, 34vw, 520px); aspect-ratio: 3 / 4;
-  margin-right: calc(-1 * var(--margin) - 4vw);
+  width: clamp(320px, 34vw, 520px); aspect-ratio: 3 / 4;
   touch-action: none; user-select: none; -webkit-user-select: none;
 }
 .card {
@@ -262,6 +284,20 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
 .swipe-btn.up { background: #d97b62; color: #1a100d; }
 .swipe-btn.down { background: #e5a8b8; color: #2a1420; }
 .swipe-btn:active { opacity: 0.85; }
+
+/* 宽屏：左栏「标题—说明—按钮」上下拉开，右栏整叠卡贴着底部占满高度。
+   三层关系（读、按、滑）都在一屏之内，不再把卡推到屏外。 */
+@media (min-width: 860px) {
+  .ch3 .inner {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 1fr auto;
+    column-gap: clamp(28px, 6vw, 96px);
+  }
+  .ch3-lower { display: contents; }
+  .ch3-copy { grid-column: 1; grid-row: 1; align-self: start; margin: 0; }
+  .ch3-actions { grid-column: 1; grid-row: 2; align-self: end; margin: 0 0 2svh; }
+  .stack { grid-column: 2; grid-row: 1 / span 2; align-self: end; height: min(70svh, 640px); width: auto; margin-right: 26px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .ch3 { transition: none; }
@@ -308,7 +344,7 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
 }
 .cta-word:hover { opacity: 0.86; }
 .cta-word:active { opacity: 0.72; }
-.cta-note { font-size: 16px; color: var(--soft); }
+.cta-note { font-size: 16px; color: var(--soft); max-width: 34ch; text-wrap: pretty; }
 
 /* ---------- Footer：A footer of tiles ---------- */
 .foot { margin: 10px; }
@@ -366,44 +402,69 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
   .top-links { gap: 4px; }
   .top-links a { font-size: 14px; padding: 10px 3px; white-space: nowrap; }
 
-  .hero-name { padding-top: 18svh; letter-spacing: -0.03em; }
+  .hero-name { padding-top: 16svh; letter-spacing: -0.03em; }
   .hero-name .l1, .hero-name .l2 { font-size: 17vw; }
   html[lang="ja"] .hero-name .l2, html[lang="ko"] .hero-name .l2 { font-size: 13vw; }
   html[lang="en"] .hero-name .l2 { font-size: 9.4vw; }
-  .hero-support { right: auto; left: var(--margin); max-width: calc(100% - 32px); text-align: left; font-size: 16px; bottom: 28px; }
+  .hero-foot { margin-top: 26px; gap: 14px; align-items: stretch; }
+  .hero-support { max-width: none; font-size: 16px; }
+  .hero-cta { width: 100%; justify-content: space-between; min-height: 54px; padding: 0 20px; }
 
-  .ch1 .inner { padding: 8svh 0; min-height: 0; }
-  .ch-head { font-size: 30px; padding-bottom: 28px; }
-  .grow { display: block; }
-  .grow .tile + .tile { margin-top: 28px; }
-  .grow .t1 .tile-field, .grow .t2 .tile-field, .grow .t3 .tile-field { width: 100%; }
-  .grow .t1 .tile-field { height: 34vw; }
-  .grow .t2 .tile-field { height: 46vw; }
-  .grow .t3 .tile-field { height: 62vw; }
-  .tile-field img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-  .grow figcaption b { font-size: 18px; }
+  .ch1 .inner { padding: 8svh 0 7svh; min-height: 0; }
+  .ch-head { font-size: 30px; padding-bottom: 26px; }
+  /* 手机上把「逐级长高」从并排改成一张张往上走：图宽 52/64/78%，说明通栏排在下方。
+     截图完整呈现在 4:5 的取景里，只切掉状态栏。 */
+  .grow { display: flex; flex-direction: column; gap: 30px; }
+  .grow .tile { width: 100%; }
+  .grow .t1 .tile-field, .grow .t2 .tile-field, .grow .t3 .tile-field { height: auto; }
+  .grow .t1 .tile-field { width: 52%; }
+  .grow .t2 .tile-field { width: 64%; }
+  .grow .t3 .tile-field { width: 78%; }
+  .tile-field img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; }
+  .grow figcaption { padding-top: 12px; }
+  .grow figcaption b { font-size: 19px; }
+  .grow figcaption span { font-size: 15px; max-width: 30ch; }
 
+  /* 手机上拼板改为一列海报：截图给足高度、只裁掉状态栏，说明落到图下不入图。 */
   .ch2 .inner { padding: 8svh 0; }
-  .board { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 28vw; gap: 6px; }
-  .b-tile { grid-column: auto; grid-row: auto; }
-  .b-head { order: -1; grid-column: 1 / -1; grid-row: span 1; align-self: end; }
-  .b-head h2 { font-size: 9vw; padding: 0; }
-  .b-comp { grid-column: 1 / -1; grid-row: span 3; }
-  .b-arena, .b-albums, .b-hold, .b-offline { grid-column: span 1; grid-row: span 2; }
-  .b-tile figcaption { bottom: 12px; padding: 8px 12px 8px 14px; max-width: 86%; }
-  .b-tile figcaption b { font-size: 16px; }
-  .b-tile figcaption span { font-size: 14px; }
-  .b-arena { font-size: 22px; }
-  .b-arena figcaption { padding: 8px 14px 12px; }
+  .board { display: flex; flex-direction: column; gap: 10px; }
+  .b-tile { width: 100%; }
+  .b-head { order: 0; align-self: stretch; }
+  .b-head h2 { font-size: 9.5vw; padding: 0 0 12px; }
+  .b-comp { order: 1; }
+  .b-hold { order: 2; }
+  .b-arena { order: 3; }
+  .b-albums { order: 4; }
+  .b-offline { order: 5; }
+  .b-comp, .b-albums, .b-offline { display: flex; flex-direction: column; }
+  .b-comp img, .b-albums img, .b-offline img {
+    width: 100%; height: auto; aspect-ratio: 4 / 5;
+    object-fit: cover; object-position: 50% 12%;
+  }
+  .b-tile figcaption {
+    position: static; max-width: none; background: none;
+    padding: 14px 2px 18px;
+  }
+  .b-tile figcaption b { font-size: 19px; }
+  .b-tile figcaption span { font-size: 15px; }
+  .b-arena { font-size: 21px; }
+  .b-arena .duel { flex: none; aspect-ratio: 5 / 4; }
+  .b-arena figcaption { padding: 14px 2px 18px; }
+  .b-hold .hold-stage { flex: none; aspect-ratio: 4 / 5; }
+  .b-hold figcaption { padding: 14px 2px 18px; }
+  .b-hold figcaption b { font-size: 19px; }
+  .b-hold figcaption span { font-size: 15px; }
+  .hold-btn { font-size: 15px; }
 
   .ch3 .inner { min-height: 0; display: flex; flex-direction: column; padding: 8svh 0 7svh; }
   .ch3-copy { position: static; max-width: none; }
   .ch3-lower { flex-direction: column; align-items: stretch; gap: 0; margin-top: 0; }
-  .ch3-head { font-size: 26px; min-height: 0; }
+  .ch3-head { font-size: 26px; min-height: 2.4em; }
   .ch3-hint { font-size: 16px; }
-  .stack { width: 72vw; margin: 28px auto 0; }
-  .ch3-actions { margin: 24px 0 0; }
-  .swipe-btn { flex: 1; justify-content: center; min-height: 48px; padding: 0 14px; font-size: 16px; }
+  .stack { width: 72vw; margin: 26px auto 0; }
+  /* 按钮回到卡组下面：先看卡，再按。 */
+  .ch3-actions { margin: 22px 0 0; }
+  .swipe-btn { flex: 1; justify-content: center; min-height: 50px; padding: 0 14px; font-size: 16px; }
 
   .band-head { min-height: 30svh; }
   .band-head h2 { font-size: 13vw; padding: 8svh 0 5svh; }
@@ -415,15 +476,19 @@ html[lang="en"] .hero-name .l2 { font-size: clamp(64px, 8.6vw, 132px); }
   .cta-sentence { font-size: 10vw; max-width: none; }
   .cta-note { font-size: 15px; }
 
+  /* 页脚：一条一列，块块通栏——12 列网格在手机上会把每块压成一条。 */
   .foot { margin: 6px; }
-  .foot-grid { gap: 6px; }
-  .f-tile { grid-column: auto; grid-row: auto; min-height: 160px; }
-  .f-wordmark { order: 1; grid-column: 1 / -1; min-height: 160px; font-size: 22vw; }
-  .f-invite { order: 2; grid-column: 1 / -1; min-height: 200px; }
+  .foot-grid { grid-template-columns: 1fr; gap: 6px; }
+  .f-tile { grid-column: 1 / -1; grid-row: auto; min-height: 0; padding: 18px 20px; }
+  .f-wordmark { order: 1; padding: 0; min-height: 148px; font-size: 26vw; }
+  .f-invite { order: 2; min-height: 176px; }
+  .f-invite span { font-size: 26px; max-width: 12ch; }
   .f-nav { order: 3; }
-  .f-email { order: 4; }
-  .f-time { order: 5; }
-  .f-statement { order: 6; }
+  .f-nav a { padding: 10px 0; }
+  .f-email { order: 4; min-height: 72px; }
+  .f-time { order: 5; min-height: 0; }
+  .f-time .clock { margin-top: 4px; }
+  .f-statement { order: 6; min-height: 150px; }
   .f-statement p { font-size: 20px; }
-  .f-email a { font-size: 17px; }
+  .f-email a { font-size: 17px; word-break: break-word; }
 }
