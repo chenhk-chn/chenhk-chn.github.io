@@ -15,7 +15,7 @@
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <link rel="apple-touch-icon" href="assets/icon-512.png">
 <script>document.documentElement.classList.add("js")</script>
-<link rel="stylesheet" href="assets/home/home.css?v=20261022a">
+<link rel="stylesheet" href="assets/home/home.css?v=20261022b">
 </head>
 <body>
 
@@ -32,6 +32,7 @@
       <a class="nav-item" href="#albums" data-i18n="nav.albums">地点相册</a>
       <a class="nav-item" href="#pricing" data-i18n="nav.slip">免费与 Pro</a>
       <a class="nav-item" href="#faq" data-i18n="nav.faq">常见问题</a>
+      <a class="nav-item" href="#more-apps" data-i18n="nav.moreApps">更多作品</a>
     </nav>
 
     <div class="nav-actions">
@@ -56,7 +57,7 @@
 </header>
 
 <main>
-  <!-- 首屏 Hero：Apple 官网式居中聚焦排版 + 全幅无框双端真机舞台 -->
+  <!-- 首屏 Hero：两行完整断句标题 + 胶囊按钮 + 响应式真机大图（桌面双端同框 / 手机单 iPhone） -->
   <section class="hero" id="top">
     <div class="inner hero-header">
       <div class="hero-app-badge">
@@ -65,8 +66,8 @@
       </div>
 
       <h1 class="hero-title">
-        <span data-i18n="hero.l1">先看这个月，</span>
-        <span data-i18n="hero.l2">把相册理到今天。</span>
+        <span class="hero-line" data-i18n="hero.l1">先看这个月，</span>
+        <span class="hero-line" data-i18n="hero.l2">把相册理到今天。</span>
       </h1>
 
       <p class="hero-lead" data-i18n="hero.support">不用一口气面对几万张照片。每次挑一个月，上滑待删除、下滑收藏，删除前整批复核。本机画质压缩与旅行地点相册，在 iPhone 与 iPad 上无缝接力。</p>
@@ -84,36 +85,17 @@
       <p class="hero-meta" data-i18n="hero.meta">已在 App Store 正式上架 · 需要 iOS 17 或更新版本 · 照片从不离开本机</p>
     </div>
 
-    <div class="inner hero-showcase" data-showcase>
-      <div class="showcase-stage" aria-live="polite">
-        <figure class="showcase-slide active" data-slide="0">
-          <img data-shot="01-home" src="assets/home/zh-Hans/01-home.jpg" width="1360" height="1060" fetchpriority="high" decoding="async" alt="iPad Pro 与 iPhone 17 双端展示 Pickr 整理首页" data-i18n-alt="alt.home">
-        </figure>
-        <figure class="showcase-slide" data-slide="1">
-          <img data-shot="04-review" src="assets/home/zh-Hans/04-review.jpg" width="1360" height="1060" decoding="async" alt="iPad Pro 与 iPhone 17 双端展示 Pickr 过片与收进相册界面" data-i18n-alt="alt.review">
-        </figure>
-        <figure class="showcase-slide" data-slide="2">
-          <img data-shot="02-compression" src="assets/home/zh-Hans/02-compression.jpg" width="1360" height="1060" decoding="async" alt="iPad Pro 与 iPhone 17 双端展示 Pickr 画质压缩页" data-i18n-alt="alt.compression">
-        </figure>
-        <figure class="showcase-slide" data-slide="3">
-          <img data-shot="03-albums" src="assets/home/zh-Hans/03-albums.jpg" width="1360" height="1060" decoding="async" alt="iPad Pro 与 iPhone 17 双端展示 Pickr 地点相册页" data-i18n-alt="alt.albums">
-        </figure>
-        <figure class="showcase-slide" data-slide="4">
-          <img data-shot="05-offline" src="assets/home/zh-Hans/05-offline.jpg" width="1360" height="1060" decoding="async" alt="iPad Pro 与 iPhone 17 双端展示 Pickr 离线整理与同步页" data-i18n-alt="alt.offline">
-        </figure>
-      </div>
-
-      <div class="segmented-bar" role="tablist" aria-label="核心界面预览切换">
-        <button type="button" class="seg-pill active" role="tab" aria-selected="true" data-target="0" data-i18n="hero.tab0">按月整理</button>
-        <button type="button" class="seg-pill" role="tab" aria-selected="false" data-target="1" data-i18n="hero.tab1">滑动过片</button>
-        <button type="button" class="seg-pill" role="tab" aria-selected="false" data-target="2" data-i18n="hero.tab2">本机压缩</button>
-        <button type="button" class="seg-pill" role="tab" aria-selected="false" data-target="3" data-i18n="hero.tab3">地点相册</button>
-        <button type="button" class="seg-pill" role="tab" aria-selected="false" data-target="4" data-i18n="hero.tab4">离线与同步</button>
-      </div>
+    <div class="inner hero-showcase">
+      <figure class="hero-device-figure">
+        <picture data-shot-picture="01-home">
+          <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-01-home.jpg" width="740" height="1340">
+          <img class="device-img" data-shot="01-home" src="assets/home/zh-Hans/01-home.jpg" width="1360" height="1060" fetchpriority="high" decoding="async" alt="Pickr 整理首页展示" data-i18n-alt="alt.home">
+        </picture>
+      </figure>
     </div>
   </section>
 
-  <!-- 章节一：按月整理（双端同框展示 + 三步清晰流程） -->
+  <!-- 章节一：按月整理（桌面双端同框 / 手机单 iPhone + 三步清晰流程） -->
   <section class="sec" id="how">
     <div class="inner">
       <div class="sec-head-wrap">
@@ -124,7 +106,10 @@
 
       <div class="duo-pair-grid">
         <figure class="duo-showcase-item">
-          <img class="duo-img" data-shot="01-home" src="assets/home/zh-Hans/01-home.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="iPad Pro 与 iPhone 17 整理首页" data-i18n-alt="alt.home">
+          <picture data-shot-picture="01-home">
+            <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-01-home.jpg" width="740" height="1340">
+            <img class="device-img" data-shot="01-home" src="assets/home/zh-Hans/01-home.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="Pickr 整理首页" data-i18n-alt="alt.home">
+          </picture>
           <figcaption class="duo-caption">
             <h3 data-i18n="ch1.t1n">打开这个月，接着上次理</h3>
             <p data-i18n="ch1.t1b">从最近的月份开始，或抽一个随机月份、专项清理视频与截图。自动记住上次停下的那一张。</p>
@@ -132,7 +117,10 @@
         </figure>
 
         <figure class="duo-showcase-item">
-          <img class="duo-img" data-shot="04-review" src="assets/home/zh-Hans/04-review.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="iPad Pro 与 iPhone 17 过片与加入相册界面" data-i18n-alt="alt.review">
+          <picture data-shot-picture="04-review">
+            <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-04-review.jpg" width="740" height="1340">
+            <img class="device-img" data-shot="04-review" src="assets/home/zh-Hans/04-review.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="Pickr 过片与加入相册界面" data-i18n-alt="alt.review">
+          </picture>
           <figcaption class="duo-caption">
             <h3 data-i18n="ch1.t2n">一张张滑过，顺手收进相册</h3>
             <p data-i18n="ch1.t2b">上滑标记待删除，下滑加入收藏，想留下的时刻当场收进「我的相册」。每一步都能撤回。</p>
@@ -160,7 +148,7 @@
     </div>
   </section>
 
-  <!-- 章节二：画质优先的本机瘦身（双端同框展示 + 细节样张对比） -->
+  <!-- 章节二：画质优先的本机瘦身（响应式真机展示 + 交互式「原图 vs HEIC」开关对比卡） -->
   <section class="sec sec-tinted" id="compression">
     <div class="inner">
       <div class="sec-head-wrap">
@@ -171,15 +159,41 @@
 
       <div class="compression-layout">
         <figure class="duo-wide-figure">
-          <img class="duo-img" data-shot="02-compression" src="assets/home/zh-Hans/02-compression.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="iPad Pro 与 iPhone 17 本机压缩界面" data-i18n-alt="alt.compression">
+          <picture data-shot-picture="02-compression">
+            <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-02-compression.jpg" width="740" height="1340">
+            <img class="device-img" data-shot="02-compression" src="assets/home/zh-Hans/02-compression.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="Pickr 本机压缩界面" data-i18n-alt="alt.compression">
+          </picture>
         </figure>
 
         <div class="compression-cards">
-          <figure class="sample-card">
-            <img src="assets/home/demo-01-leaf.jpg" width="900" height="675" loading="lazy" decoding="async" alt="微距叶脉原片画质样张" data-i18n-alt="alt.card1">
+          <!-- 可交互的原图 vs HEIC 切换开关卡片 -->
+          <figure class="sample-card compare-card" data-heic-compare>
+            <div class="compare-toolbar">
+              <div class="compare-status">
+                <span class="compare-format-tag" data-compare-badge data-i18n="ch2.badgeOrig">原图 JPEG · 4.8 MB</span>
+                <span class="compare-saving-tag" data-compare-saving hidden data-i18n="ch2.badgeSave">已省 77% · 画质 98 分</span>
+              </div>
+
+              <div class="heic-switch-wrap">
+                <span class="switch-mode-label active" data-mode-orig data-i18n="ch2.modeOrig">原图</span>
+                <button type="button" class="ios-switch" role="switch" aria-checked="false" data-heic-switch aria-label="切换显示原图与 HEIC 压缩效果">
+                  <span class="ios-switch-thumb"></span>
+                </button>
+                <span class="switch-mode-label" data-mode-heic data-i18n="ch2.modeHeic">HEIC</span>
+              </div>
+            </div>
+
+            <div class="compare-stage" data-compare-stage role="button" tabindex="0" aria-label="点击切换原图与 HEIC">
+              <img class="compare-main-img" data-compare-img src="assets/home/demo-01-leaf.jpg" width="900" height="675" loading="lazy" decoding="async" alt="微距叶脉画质对比样张" data-i18n-alt="alt.card1">
+              <div class="compare-loupe" aria-hidden="true">
+                <img data-compare-loupe-img src="assets/home/demo-01-leaf.jpg" alt="">
+                <span class="loupe-tag">2.5×</span>
+              </div>
+            </div>
+
             <figcaption>
-              <h3 data-i18n="ch2.c1n">按住对比原片，细节过关才替换</h3>
-              <p data-i18n="ch2.c1b">随时长按同屏比对叶脉纹理与暗部层次。比对不过关的项会自动归入「建议先对比」，绝不盲目替换。</p>
+              <h3 data-i18n="ch2.c1n">点开开关对比原图与 HEIC，细节过关才替换</h3>
+              <p data-i18n="ch2.c1b">打开上方开关即可对比原图（4.8 MB）与 HEIC 压缩后（1.1 MB）的叶脉纹理。在 App 内同样支持随时比对，收益不明显的项会自动归入「建议先对比」。</p>
             </figcaption>
           </figure>
 
@@ -196,7 +210,7 @@
     </div>
   </section>
 
-  <!-- 章节三：旅行地点相册 & 离线与 iCloud 同步（两组完整双端同框展示） -->
+  <!-- 章节三：旅行地点相册 & 离线与 iCloud 同步（桌面双端同框 / 手机单 iPhone） -->
   <section class="sec" id="albums">
     <div class="inner">
       <div class="sec-head-wrap">
@@ -208,7 +222,10 @@
       <div class="feature-duo-stack">
         <article class="feature-duo-block">
           <div class="feature-duo-visual">
-            <img class="duo-img" data-shot="03-albums" src="assets/home/zh-Hans/03-albums.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="iPad Pro 与 iPhone 17 地点相册界面" data-i18n-alt="alt.albums">
+            <picture data-shot-picture="03-albums">
+              <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-03-albums.jpg" width="740" height="1340">
+              <img class="device-img" data-shot="03-albums" src="assets/home/zh-Hans/03-albums.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="Pickr 地点相册界面" data-i18n-alt="alt.albums">
+            </picture>
           </div>
           <div class="feature-duo-copy">
             <span class="tag-pill" data-i18n="ch3.tag1">旅行自动成册</span>
@@ -223,7 +240,10 @@
 
         <article class="feature-duo-block reverse">
           <div class="feature-duo-visual">
-            <img class="duo-img" data-shot="05-offline" src="assets/home/zh-Hans/05-offline.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="iPad Pro 与 iPhone 17 离线整理与同步界面" data-i18n-alt="alt.offline">
+            <picture data-shot-picture="05-offline">
+              <source media="(max-width: 768px)" srcset="assets/home/zh-Hans/iphone-05-offline.jpg" width="740" height="1340">
+              <img class="device-img" data-shot="05-offline" src="assets/home/zh-Hans/05-offline.jpg" width="1360" height="1060" loading="lazy" decoding="async" alt="Pickr 离线整理与同步界面" data-i18n-alt="alt.offline">
+            </picture>
           </div>
           <div class="feature-duo-copy">
             <span class="tag-pill" data-i18n="ch3.tag2">离线整理 · iCloud 同步</span>
@@ -235,7 +255,7 @@
     </div>
   </section>
 
-  <!-- 章节四：免费与 Pickr Pro（Apple 风格双栏大圆角卡片） -->
+  <!-- 章节四：免费与 Pickr Pro -->
   <section class="sec sec-tinted" id="pricing">
     <div class="inner">
       <div class="sec-head-wrap">
@@ -292,7 +312,7 @@
     </div>
   </section>
 
-  <!-- 章节五：常见问题（Apple 风格圆角网格问答卡） -->
+  <!-- 章节五：常见问题 -->
   <section class="sec" id="faq">
     <div class="inner">
       <div class="sec-head-wrap">
@@ -339,7 +359,68 @@
     </div>
   </section>
 
-  <!-- 章节六：底部 App Store 下载收尾 -->
+  <!-- 章节六：更多独立作品与友情链接（Placr / Siftr / Mealr / 个人主站 chenhk.cn） -->
+  <section class="sec sec-tinted" id="more-apps">
+    <div class="inner">
+      <div class="sec-head-wrap">
+        <p class="sec-eyebrow" data-i18n="links.eyebrow">更多独立作品与友情链接</p>
+        <h2 class="sec-title" data-i18n="links.head">同样克制、专注的独立工具。</h2>
+        <p class="sec-lead" data-i18n="links.sub">由同一独立开发者打造，全部遵循本机优先、无广告与清晰直接的交互理念。</p>
+      </div>
+
+      <div class="apps-grid">
+        <a class="app-link-card" href="https://chenhk.cn/Placr/" target="_blank" rel="noopener">
+          <div class="app-card-top">
+            <img class="app-card-icon" src="assets/apps/placr-256.png" width="56" height="56" loading="lazy" alt="Placr">
+            <span class="app-card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="app-card-body">
+            <h3>Placr</h3>
+            <p class="app-card-tagline" data-i18n="links.placrDesc">给照片补上缺失的地点。按拍摄时间分组，参考同时段照片智能建议位置并批量写入。</p>
+          </div>
+          <span class="app-card-meta" data-i18n="links.placrMeta">Mac · iPhone · iPad</span>
+        </a>
+
+        <a class="app-link-card" href="https://chenhk.cn/Siftr/" target="_blank" rel="noopener">
+          <div class="app-card-top">
+            <img class="app-card-icon" src="assets/apps/siftr-256.png" width="56" height="56" loading="lazy" alt="Siftr">
+            <span class="app-card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="app-card-body">
+            <h3>Siftr</h3>
+            <p class="app-card-tagline" data-i18n="links.siftrDesc">阅读 AI Agent 为你整理的私人每日简报。连接个人云盘，本地全文检索与离线阅读。</p>
+          </div>
+          <span class="app-card-meta" data-i18n="links.siftrMeta">iPhone · iPad</span>
+        </a>
+
+        <a class="app-link-card" href="https://chenhk.cn/Mealr/" target="_blank" rel="noopener">
+          <div class="app-card-top">
+            <img class="app-card-icon" src="assets/apps/mealr-256.png" width="56" height="56" loading="lazy" alt="Mealr">
+            <span class="app-card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="app-card-body">
+            <h3>Mealr</h3>
+            <p class="app-card-tagline" data-i18n="links.mealrDesc">拍一下，这顿就记好了。从照片估算一餐热量并与 Apple 健康联动，无需称重与填表。</p>
+          </div>
+          <span class="app-card-meta" data-i18n="links.mealrMeta">iPhone · Apple 健康</span>
+        </a>
+
+        <a class="app-link-card" href="https://chenhk.cn" target="_blank" rel="noopener">
+          <div class="app-card-top">
+            <div class="app-card-avatar" aria-hidden="true">HK</div>
+            <span class="app-card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="app-card-body">
+            <h3 data-i18n="links.homeTitle">个人主站 · chenhk.cn</h3>
+            <p class="app-card-tagline" data-i18n="links.homeDesc">访问开发者 Haokun Chen 的个人主页，了解全部独立软件作品、研究与技术文章。</p>
+          </div>
+          <span class="app-card-meta">chenhk.cn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 章节七：底部 App Store 下载收尾 -->
   <section class="sec sec-cta" id="download">
     <div class="inner">
       <div class="cta-banner">
@@ -366,11 +447,12 @@
       <p class="footer-brand" data-i18n="foot.statement">Pickr · 你的照片，由你决定</p>
       <nav class="footer-nav" aria-label="页脚链接">
         <a href="download.html" data-localized-link="download.html">App Store</a>
-        <a href="#how" data-i18n="nav.how">按月整理</a>
-        <a href="#compression" data-i18n="nav.compression">画质瘦身</a>
-        <a href="#albums" data-i18n="nav.albums">地点相册</a>
         <a href="privacy.html" data-localized-link="privacy.html" data-i18n="faq.privacy">隐私政策</a>
         <a href="support.html" data-localized-link="support.html" data-i18n="faq.support">技术支持</a>
+        <a href="https://chenhk.cn/Placr/" target="_blank" rel="noopener">Placr</a>
+        <a href="https://chenhk.cn/Siftr/" target="_blank" rel="noopener">Siftr</a>
+        <a href="https://chenhk.cn/Mealr/" target="_blank" rel="noopener">Mealr</a>
+        <a href="https://chenhk.cn" target="_blank" rel="noopener" data-i18n="foot.mainSite">个人主站</a>
         <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>
       </nav>
     </div>
@@ -381,6 +463,6 @@
   </div>
 </footer>
 
-<script src="assets/home/home.js?v=20261022a" defer></script>
+<script src="assets/home/home.js?v=20261022b" defer></script>
 </body>
 </html>

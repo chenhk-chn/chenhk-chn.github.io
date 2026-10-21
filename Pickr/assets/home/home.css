@@ -1,5 +1,6 @@
 /* Pickr 官网 · Apple 原生产品页设计语言
-   纯净画布 (#fbfbfd) · 柔和层底 (#f5f5f7) · 深空黑字 (#1d1d1f) · 胶囊按钮 (980px) · 双端无框真机展示 */
+   纯净画布 (#fbfbfd) · 柔和层底 (#f5f5f7) · 深空黑字 (#1d1d1f) · 胶囊按钮 (980px)
+   桌面端展示 iPad + iPhone 双端同框，移动端仅展示单台 iPhone 带壳图 */
 
 :root {
   --bg: #fbfbfd;
@@ -9,6 +10,7 @@
   --muted: #6e6e73;
   --accent: #0071e3;
   --accent-hover: #0077ed;
+  --green: #34c759;
   --border: rgba(0, 0, 0, 0.08);
   --pill-bg: #f0f0f3;
 
@@ -38,6 +40,7 @@ body {
 }
 
 img { display: block; max-width: 100%; height: auto; }
+picture { display: block; width: 100%; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -98,7 +101,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 2.2vw, 32px);
+  gap: clamp(16px, 2vw, 28px);
 }
 
 .nav-item {
@@ -233,10 +236,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transform: scale(0.97);
 }
 
-/* ---------- 首屏 Hero（居中排版 + 全幅无框双端真机） ---------- */
+/* ---------- 首屏 Hero（两行清晰标题 + 无框真机展示） ---------- */
 .hero {
   padding-top: clamp(44px, 6vw, 76px);
-  padding-bottom: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(48px, 6vw, 88px);
 }
 
 .hero-header {
@@ -274,21 +277,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   letter-spacing: 0.01em;
 }
 
+/* 关键修复：每一句独立成行，绝不把「到今天。」劈到下一行 */
 .hero-title {
-  font-size: clamp(2.25rem, 4.8vw, 4rem);
+  font-size: clamp(2.25rem, 4.6vw, 3.85rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.028em;
   color: var(--ink);
   margin-bottom: 18px;
 }
 
+.hero-line {
+  display: block;
+}
+
 .hero-lead {
-  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
-  line-height: 1.55;
+  font-size: clamp(1.0625rem, 1.35vw, 1.21875rem);
+  line-height: 1.58;
   color: var(--muted);
-  max-width: 58ch;
+  max-width: 56ch;
   margin-bottom: 28px;
+  text-wrap: pretty;
 }
 
 .hero-cta-group {
@@ -304,84 +313,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
-/* 首屏双端真机舞台：无外框盒子，直接立在纯净画布上 */
 .hero-showcase {
-  margin-top: clamp(24px, 3.5vw, 44px);
+  margin-top: clamp(24px, 3.5vw, 42px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  justify-content: center;
 }
 
-.showcase-stage {
-  position: relative;
+.hero-device-figure {
   width: 100%;
   max-width: 960px;
-  aspect-ratio: 1360 / 1060;
 }
 
-.showcase-slide {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: scale(0.985);
-  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-}
-
-.showcase-slide.active {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
-}
-
-.showcase-slide img {
+.device-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Apple 风格胶囊分段控制器 (Segmented Pill Bar) */
-.segmented-bar {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px;
-  border-radius: var(--radius-pill);
-  background: var(--pill-bg);
-}
-
-.seg-pill {
-  min-height: 40px;
-  padding: 0 18px;
-  border-radius: var(--radius-pill);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--muted);
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
-}
-
-.seg-pill:hover {
-  color: var(--ink);
-}
-
-.seg-pill:active {
-  transform: scale(0.97);
-}
-
-.seg-pill.active {
-  background: var(--card);
-  color: var(--ink);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: auto;
+  border-radius: var(--radius-card);
+  margin-inline: auto;
 }
 
 /* ---------- 章节通用结构 ---------- */
 .sec {
-  padding-block: clamp(64px, 8vw, 116px);
+  padding-block: clamp(64px, 8vw, 112px);
 }
 
 .sec-tinted {
@@ -390,7 +342,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .sec-head-wrap {
   max-width: 760px;
-  margin-bottom: clamp(40px, 5vw, 64px);
+  margin-bottom: clamp(40px, 5vw, 60px);
 }
 
 .sec-eyebrow {
@@ -402,29 +354,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .sec-title {
-  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.8rem, 3.1vw, 2.65rem);
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  line-height: 1.14;
+  letter-spacing: -0.024em;
   color: var(--ink);
   margin-bottom: 14px;
+  text-wrap: balance;
+  word-break: keep-all;
 }
 
 .sec-lead {
-  font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
+  font-size: clamp(1.03125rem, 1.25vw, 1.15625rem);
   color: var(--muted);
   line-height: 1.58;
+  text-wrap: pretty;
 }
 
-/* 双端同框图通用样式：无任何深色盒子，干净融合 */
-.duo-img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-card);
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* ---------- 章节一：按月整理（双端并排展示 + 三步圆角卡） ---------- */
+/* ---------- 章节一：按月整理 ---------- */
 .duo-pair-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -489,7 +436,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
-/* ---------- 章节二：画质优先压缩（双端大图 + 双圆角详情卡） ---------- */
+/* ---------- 章节二：画质优先压缩 + 可交互原图/HEIC 开关卡 ---------- */
 .compression-layout {
   display: flex;
   flex-direction: column;
@@ -507,7 +454,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .compression-cards {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 24px;
 }
 
@@ -520,11 +467,153 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 18px;
 }
 
-.sample-card img {
+/* 原图 vs HEIC 开关工具栏 */
+.compare-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compare-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.compare-format-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-tinted);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.compare-card.is-heic .compare-format-tag {
+  background: rgba(0, 113, 227, 0.12);
+  color: var(--accent);
+}
+
+.compare-saving-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(52, 199, 89, 0.14);
+  color: #1f8a3b;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.compare-saving-tag[hidden] {
+  display: none;
+}
+
+.heic-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-tinted);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.switch-mode-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.18s ease;
+}
+
+.switch-mode-label.active {
+  color: var(--ink);
+}
+
+.ios-switch {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: #d1d1d6;
+  padding: 2px;
+  transition: background-color 0.22s ease;
+}
+
+.ios-switch[aria-checked="true"] {
+  background: var(--green);
+}
+
+.ios-switch-thumb {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ios-switch[aria-checked="true"] .ios-switch-thumb {
+  transform: translateX(20px);
+}
+
+.compare-stage {
+  position: relative;
+  border-radius: var(--radius-sub);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.compare-main-img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-sub);
+  transition: filter 0.2s ease;
+}
+
+.compare-loupe {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  background: #000;
+  pointer-events: none;
+}
+
+.compare-loupe img {
+  width: 260%;
+  height: 260%;
+  max-width: none;
+  object-fit: cover;
+  transform: translate(-30%, -28%);
+}
+
+.loupe-tag {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 700;
 }
 
 .sample-card h3 {
@@ -604,8 +693,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .feature-duo-copy h3 {
   font-size: clamp(1.5rem, 2.3vw, 2rem);
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.18;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .feature-duo-copy p {
@@ -628,7 +718,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 16px;
 }
 
-/* ---------- 章节四：免费与 Pickr Pro（双栏大圆角卡片） ---------- */
+/* ---------- 章节四：免费与 Pickr Pro ---------- */
 .tier-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -714,7 +804,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-align: center;
 }
 
-/* ---------- 章节五：常见问题（圆角卡片网格） ---------- */
+/* ---------- 章节五：常见问题 ---------- */
 .faq-bento {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -746,10 +836,105 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 600;
 }
 
-/* ---------- 章节六：底部 App Store 下载收尾 ---------- */
+/* ---------- 章节六：更多独立作品与友情链接 ---------- */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.app-link-card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+}
+
+.app-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+}
+
+.app-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.app-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-tinted);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.app-link-card:hover .app-card-arrow {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.app-card-body h3 {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+
+.app-card-tagline {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.app-card-meta {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-tinted);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---------- 章节七：底部 App Store 下载收尾 ---------- */
 .sec-cta {
-  padding-top: 20px;
-  padding-bottom: clamp(64px, 8vw, 108px);
+  padding-block: clamp(56px, 7vw, 96px);
 }
 
 .cta-banner {
@@ -774,8 +959,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .cta-title {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.14;
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .cta-sub {
@@ -823,7 +1009,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 22px;
+  gap: 10px 20px;
 }
 
 .footer-nav a {
@@ -860,7 +1046,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .showcase-slide, .duo-img, .btn-store, .btn-secondary, .seg-pill { transition: none; }
+  .device-img, .btn-store, .btn-secondary, .app-link-card { transition: none; }
 }
 
 /* ---------- 平板适配（≤960px） ---------- */
@@ -873,6 +1059,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .faq-bento {
     grid-template-columns: 1fr;
   }
+  .apps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .feature-duo-block,
   .feature-duo-block.reverse {
     grid-template-columns: 1fr;
@@ -884,6 +1073,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
 }
 
+/* ---------- 移动端单 iPhone 展示尺寸控制（≤768px） ---------- */
+@media (max-width: 768px) {
+  .hero-device-figure,
+  .duo-showcase-item picture,
+  .duo-wide-figure picture,
+  .feature-duo-visual picture {
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .duo-wide-figure {
+    padding: 8px;
+  }
+}
+
 /* ---------- 手机端适配（≤640px） ---------- */
 @media (max-width: 640px) {
   :root {
@@ -891,30 +1094,29 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     --radius-card: 24px;
   }
 
-  .hero { padding-top: 32px; padding-bottom: 48px; }
+  .hero { padding-top: 32px; padding-bottom: 44px; }
   .hero-icon { width: 60px; height: 60px; border-radius: 14px; }
-  .hero-title { font-size: clamp(2rem, 8.4vw, 2.5rem); }
+  .hero-title { font-size: clamp(2rem, 8.2vw, 2.45rem); }
   .hero-cta-group { width: 100%; flex-direction: column; align-items: stretch; }
   .hero-cta-group .btn-store,
   .hero-cta-group .btn-secondary { width: 100%; }
-
-  .segmented-bar {
-    border-radius: 22px;
-    padding: 6px;
-    width: 100%;
-  }
-  .seg-pill {
-    min-height: 36px;
-    padding: 0 12px;
-    font-size: 0.8125rem;
-  }
 
   .sec { padding-block: 52px; }
   .step-card,
   .sample-card,
   .tier-card,
-  .faq-card {
+  .faq-card,
+  .app-link-card {
     padding: 22px 20px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-loupe {
+    width: 78px;
+    height: 78px;
   }
 
   .privacy-pill-banner {

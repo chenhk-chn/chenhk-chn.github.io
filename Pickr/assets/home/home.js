@@ -21,6 +21,7 @@
       "nav.albums": "地点相册",
       "nav.slip": "免费与 Pro",
       "nav.faq": "常见问题",
+      "nav.moreApps": "更多作品",
       "nav.langLabel": "语言",
       "nav.download": "下载",
 
@@ -31,11 +32,6 @@
       "hero.storeBtn": "在 App Store 下载",
       "hero.moreBtn": "了解工作方式",
       "hero.meta": "已在 App Store 正式上架 · 需要 iOS 17 或更新版本 · 照片从不离开本机",
-      "hero.tab0": "按月整理",
-      "hero.tab1": "滑动过片",
-      "hero.tab2": "本机压缩",
-      "hero.tab3": "地点相册",
-      "hero.tab4": "离线与同步",
 
       "ch1.eyebrow": "按月整理",
       "ch1.head": "一个月一个月来，删前必复核。",
@@ -54,8 +50,13 @@
       "ch2.eyebrow": "本机无损感瘦身",
       "ch2.head": "先看能省多少，对比过再替换。",
       "ch2.sub": "视频转 HEVC、照片转 HEIC，全程在 Apple 芯片内直接重编码。转换前先算清预计可释放的空间，转换后逐项给出本机画质评分。",
-      "ch2.c1n": "按住对比原片，细节过关才替换",
-      "ch2.c1b": "随时长按同屏比对叶脉纹理与暗部层次。比对不过关的项会自动归入「建议先对比」，绝不盲目替换。",
+      "ch2.badgeOrig": "原图 JPEG · 4.8 MB",
+      "ch2.badgeHeic": "HEIC 压缩后 · 1.1 MB",
+      "ch2.badgeSave": "已省 77% · 画质 98 分",
+      "ch2.modeOrig": "原图",
+      "ch2.modeHeic": "HEIC",
+      "ch2.c1n": "点开开关对比原图与 HEIC，细节过关才替换",
+      "ch2.c1b": "打开上方开关即可对比原图（4.8 MB）与 HEIC 压缩后（1.1 MB）的叶脉纹理。在 App 内同样支持随时比对，收益不明显的项会自动归入「建议先对比」。",
       "ch2.c2n": "拍摄时间、GPS 地点与相册归属完整保留",
       "ch2.c2b": "压缩替换后，照片原有的拍摄日期、经纬度坐标、收藏状态及所属相册原封不动；被替换的原片同样在系统「最近删除」保留 30 天。",
 
@@ -83,7 +84,7 @@
       "slip.r3n": "整月离线内容准备",
       "slip.r3d": "出发前把某个月的照片与视频准备到本机，无网环境照常流畅整理。",
       "slip.r4n": "无限次保存与画质优先本机压缩",
-      "slip.r4d": "不限批次写入系统相册；视频转 HEVC、照片转 HEIC，画质评分把关并支持长按对比原片。",
+      "slip.r4d": "不限批次写入系统相册；视频转 HEVC、照片转 HEIC，画质评分把关并支持对比原片。",
       "slip.r5n": "地点相册保存与高分筛选",
       "slip.r5d": "按城市与日期自动生成旅行相册，本机精选高分照片一键存回系统「照片」。",
       "slip.r6n": "iPhone 与 iPad iCloud 进度同步",
@@ -99,7 +100,7 @@
       "faq.q3": "滑快了删错照片怎么办？",
       "faq.a3": "上滑只是放进「待确认」列表，不会立刻删除。你可以随时撤销上一步，或在待确认页整批恢复；即使确认删除后，系统「最近删除」仍会保留 30 天。",
       "faq.q4": "压缩会损失画质或丢失拍摄信息吗？",
-      "faq.a4": "替换前有本机画质评分，也可随时按住对比原片与压缩版；拍摄时间、GPS 经纬度等 EXIF 元数据完整保留。不满意就不替换，原片原样不动。",
+      "faq.a4": "替换前有本机画质评分，也可随时对比原片与压缩版；拍摄时间、GPS 经纬度等 EXIF 元数据完整保留。不满意就不替换，原片原样不动。",
       "faq.q5": "支持哪些设备与系统版本？",
       "faq.a5": "Pickr 已在 App Store 正式上架，同时原生适配 iPhone 与 iPad，需要 iOS / iPadOS 17.0 或更新版本（自动地点相册精选依赖 iOS 18 本机图像分析）。",
       "faq.q6": "隐私政策与技术支持在哪里查看？",
@@ -107,19 +108,32 @@
       "faq.privacy": "隐私政策",
       "faq.support": "技术支持",
 
+      "links.eyebrow": "更多独立作品与友情链接",
+      "links.head": "同样克制、专注的独立工具。",
+      "links.sub": "由同一独立开发者打造，全部遵循本机优先、无广告与清晰直接的交互理念。",
+      "links.placrDesc": "给照片补上缺失的地点。按拍摄时间分组，参考同时段照片智能建议位置并批量写入。",
+      "links.placrMeta": "Mac · iPhone · iPad",
+      "links.siftrDesc": "阅读 AI Agent 为你整理的私人每日简报。连接个人云盘，本地全文检索与离线阅读。",
+      "links.siftrMeta": "iPhone · iPad",
+      "links.mealrDesc": "拍一下，这顿就记好了。从照片估算一餐热量并与 Apple 健康联动，无需称重与填表。",
+      "links.mealrMeta": "iPhone · Apple 健康",
+      "links.homeTitle": "个人主站 · chenhk.cn",
+      "links.homeDesc": "访问开发者 Haokun Chen 的个人主页，了解全部独立软件作品、研究与技术文章。",
+
       "cta.head": "今晚睡前，把上个月整理完。",
       "cta.note": "前往 App Store 免费下载 Pickr，在 iPhone 与 iPad 上体验干净利落的本机相册整理。",
 
       "foot.statement": "Pickr · 你的照片，由你决定",
+      "foot.mainSite": "个人主站",
       "foot.trademark": "Apple、Apple 标志、iPhone、iPad、iCloud 及 App Store 是 Apple Inc. 在美国及其他国家和地区的注册商标。",
       "foot.legal": "© 2026 Pickr · 独立开发",
 
-      "alt.home": "iPad Pro 与 iPhone 17 双端展示 Pickr 整理首页",
-      "alt.compression": "iPad Pro 与 iPhone 17 双端展示 Pickr 画质压缩页",
-      "alt.albums": "iPad Pro 与 iPhone 17 双端展示 Pickr 地点相册页",
-      "alt.review": "iPad Pro 与 iPhone 17 双端展示 Pickr 过片与收进相册界面",
-      "alt.offline": "iPad Pro 与 iPhone 17 双端展示 Pickr 离线整理与同步页",
-      "alt.card1": "微距叶脉原片画质样张",
+      "alt.home": "Pickr 整理首页展示",
+      "alt.compression": "Pickr 画质压缩页展示",
+      "alt.albums": "Pickr 地点相册页展示",
+      "alt.review": "Pickr 过片与收进相册界面展示",
+      "alt.offline": "Pickr 离线整理与同步页展示",
+      "alt.card1": "微距叶脉画质对比样张",
       "alt.card2": "山与湖风光样张",
       "alt.card3": "街角咖啡馆旅行样张"
     },
@@ -132,6 +146,7 @@
       "nav.albums": "地點相簿",
       "nav.slip": "免費與 Pro",
       "nav.faq": "常見問題",
+      "nav.moreApps": "更多作品",
       "nav.langLabel": "語言",
       "nav.download": "下載",
 
@@ -142,11 +157,6 @@
       "hero.storeBtn": "在 App Store 下載",
       "hero.moreBtn": "了解工作方式",
       "hero.meta": "已在 App Store 正式上架 · 需要 iOS 17 或更新版本 · 照片從不離開本機",
-      "hero.tab0": "按月整理",
-      "hero.tab1": "滑動過片",
-      "hero.tab2": "本機壓縮",
-      "hero.tab3": "地點相簿",
-      "hero.tab4": "離線與同步",
 
       "ch1.eyebrow": "按月整理",
       "ch1.head": "一個月一個月來，刪前必複核。",
@@ -165,8 +175,13 @@
       "ch2.eyebrow": "本機無損感瘦身",
       "ch2.head": "先看能省多少，對比過再替換。",
       "ch2.sub": "影片轉 HEVC、照片轉 HEIC，全程在 Apple 晶片內直接重編碼。轉換前先算清預計可釋放的空間，轉換後逐項給出本機畫質評分。",
-      "ch2.c1n": "按住對比原片，細節過關才替換",
-      "ch2.c1b": "隨時長按同螢幕比對葉脈紋理與暗部層次。比對不過關的項會自動歸入「建議先對比」，絕不盲目替換。",
+      "ch2.badgeOrig": "原圖 JPEG · 4.8 MB",
+      "ch2.badgeHeic": "HEIC 壓縮後 · 1.1 MB",
+      "ch2.badgeSave": "已省 77% · 畫質 98 分",
+      "ch2.modeOrig": "原圖",
+      "ch2.modeHeic": "HEIC",
+      "ch2.c1n": "點開開關對比原圖與 HEIC，細節過關才替換",
+      "ch2.c1b": "打開上方開關即可對比原圖（4.8 MB）與 HEIC 壓縮後（1.1 MB）的葉脈紋理。在 App 內同樣支援隨時比對，收益不明顯的項會自動歸入「建議先對比」。",
       "ch2.c2n": "拍攝時間、GPS 地點與相簿歸屬完整保留",
       "ch2.c2b": "壓縮替換後，照片原有的拍攝日期、經緯度座標、收藏狀態及所屬相簿原封不動；被替換的原片同樣在系統「最近刪除」保留 30 天。",
 
@@ -194,7 +209,7 @@
       "slip.r3n": "整月離線內容準備",
       "slip.r3d": "出發前把某個月的照片與影片準備到本機，無網環境照常流暢整理。",
       "slip.r4n": "無限次儲存與畫質優先本機壓縮",
-      "slip.r4d": "不限批次寫入系統相簿；影片轉 HEVC、照片轉 HEIC，畫質評分把關並支援長按對比原片。",
+      "slip.r4d": "不限批次寫入系統相簿；影片轉 HEVC、照片轉 HEIC，畫質評分把關並支援對比原片。",
       "slip.r5n": "地點相簿儲存與高分篩選",
       "slip.r5d": "按城市與日期自動生成旅行相簿，本機精選高分照片一鍵存回系統「照片」。",
       "slip.r6n": "iPhone 與 iPad iCloud 進度同步",
@@ -210,7 +225,7 @@
       "faq.q3": "滑快了刪錯照片怎麼辦？",
       "faq.a3": "上滑只是放進「待確認」清單，不會立刻刪除。你可以隨時撤銷上一步，或在待確認頁整批恢復；即使確認刪除後，系統「最近刪除」仍會保留 30 天。",
       "faq.q4": "壓縮會損失畫質或遺失拍攝資訊嗎？",
-      "faq.a4": "替換前有本機畫質評分，也可隨時按住對比原片與壓縮版；拍攝時間、GPS 經緯度等 EXIF 中繼資料完整保留。不滿意就不替換，原片原樣不動。",
+      "faq.a4": "替換前有本機畫質評分，也可隨時對比原片與壓縮版；拍攝時間、GPS 經緯度等 EXIF 中繼資料完整保留。不滿意就不替換，原片原樣不動。",
       "faq.q5": "支援哪些裝置與系統版本？",
       "faq.a5": "Pickr 已在 App Store 正式上架，同時原生適配 iPhone 與 iPad，需要 iOS / iPadOS 17.0 或更新版本（自動地點相簿精選依賴 iOS 18 本機影像分析）。",
       "faq.q6": "隱私權政策與技術支援在哪裡查看？",
@@ -218,19 +233,32 @@
       "faq.privacy": "隱私權政策",
       "faq.support": "技術支援",
 
+      "links.eyebrow": "更多獨立作品與友情連結",
+      "links.head": "同樣克制、專注的獨立工具。",
+      "links.sub": "由同一獨立開發者打造，全部遵循本機優先、無廣告與清晰直接的互動理念。",
+      "links.placrDesc": "給照片補上缺失的地點。按拍攝時間分組，參考同時段照片智慧建議位置並批次寫入。",
+      "links.placrMeta": "Mac · iPhone · iPad",
+      "links.siftrDesc": "閱讀 AI Agent 為你整理的私人每日簡報。連接個人雲端空間，本機全文檢索與離線閱讀。",
+      "links.siftrMeta": "iPhone · iPad",
+      "links.mealrDesc": "拍一下，這餐就記好了。從照片估算一餐熱量並與 Apple 健康連動，無需秤重與填表。",
+      "links.mealrMeta": "iPhone · Apple 健康",
+      "links.homeTitle": "個人主站 · chenhk.cn",
+      "links.homeDesc": "造訪開發者 Haokun Chen 的個人主頁，了解全部獨立軟體作品、研究與技術文章。",
+
       "cta.head": "今晚睡前，把上個月整理完。",
       "cta.note": "前往 App Store 免費下載 Pickr，在 iPhone 與 iPad 上體驗乾淨俐落的本機相簿整理。",
 
       "foot.statement": "Pickr · 你的照片，由你決定",
+      "foot.mainSite": "個人主站",
       "foot.trademark": "Apple、Apple 標誌、iPhone、iPad、iCloud 及 App Store 是 Apple Inc. 在美國及其他國家和地區的註冊商標。",
       "foot.legal": "© 2026 Pickr · 獨立開發",
 
-      "alt.home": "iPad Pro 與 iPhone 17 雙端展示 Pickr 整理首頁",
-      "alt.compression": "iPad Pro 與 iPhone 17 雙端展示 Pickr 畫質壓縮頁",
-      "alt.albums": "iPad Pro 與 iPhone 17 雙端展示 Pickr 地點相簿頁",
-      "alt.review": "iPad Pro 與 iPhone 17 雙端展示 Pickr 過片與收進相簿介面",
-      "alt.offline": "iPad Pro 與 iPhone 17 雙端展示 Pickr 離線整理與同步頁",
-      "alt.card1": "微距葉脈原片畫質樣張",
+      "alt.home": "Pickr 整理首頁展示",
+      "alt.compression": "Pickr 畫質壓縮頁展示",
+      "alt.albums": "Pickr 地點相簿頁展示",
+      "alt.review": "Pickr 過片與收進相簿介面展示",
+      "alt.offline": "Pickr 離線整理與同步頁展示",
+      "alt.card1": "微距葉脈畫質對比樣張",
       "alt.card2": "山與湖風光樣張",
       "alt.card3": "街角咖啡館旅行樣張"
     },
@@ -243,6 +271,7 @@
       "nav.albums": "Place Albums",
       "nav.slip": "Free & Pro",
       "nav.faq": "FAQ",
+      "nav.moreApps": "More Apps",
       "nav.langLabel": "Language",
       "nav.download": "Download",
 
@@ -253,11 +282,6 @@
       "hero.storeBtn": "Download on the App Store",
       "hero.moreBtn": "How it works",
       "hero.meta": "Available on the App Store · Requires iOS 17 or later · 100% On-Device",
-      "hero.tab0": "Monthly Sort",
-      "hero.tab1": "Swipe & Collect",
-      "hero.tab2": "Compression",
-      "hero.tab3": "Place Albums",
-      "hero.tab4": "Offline & Sync",
 
       "ch1.eyebrow": "Monthly Workflow",
       "ch1.head": "One month at a time, confirmed before deleting.",
@@ -276,8 +300,13 @@
       "ch2.eyebrow": "Quality-First Compression",
       "ch2.head": "Preview your savings, compare before replacing.",
       "ch2.sub": "Re-encode videos to HEVC and photos to HEIC directly on Apple Silicon. See estimated space savings upfront with a local quality score for every item.",
-      "ch2.c1n": "Press and hold to compare fine detail",
-      "ch2.c1b": "Inspect leaf textures and dark tones against the original. Any item with marginal savings is flagged for manual review.",
+      "ch2.badgeOrig": "Original JPEG · 4.8 MB",
+      "ch2.badgeHeic": "HEIC Compressed · 1.1 MB",
+      "ch2.badgeSave": "77% Saved · Score 98",
+      "ch2.modeOrig": "Original",
+      "ch2.modeHeic": "HEIC",
+      "ch2.c1n": "Toggle between Original and HEIC to inspect fine detail",
+      "ch2.c1b": "Flip the switch above to compare the 4.8 MB original against the 1.1 MB HEIC version. Inside Pickr, any item with marginal savings is automatically flagged for side-by-side review.",
       "ch2.c2n": "Capture date, GPS location & albums preserved",
       "ch2.c2b": "Compressed files retain full EXIF metadata, coordinates, favorites, and album membership.",
 
@@ -321,7 +350,7 @@
       "faq.q3": "What if I swipe too fast and delete by mistake?",
       "faq.a3": "Swiping up only moves a photo to the Pending list. You can undo immediately or restore from the Pending screen; even after confirmation, iOS keeps items in Recently Deleted for 30 days.",
       "faq.q4": "Does compression hurt quality or strip EXIF data?",
-      "faq.a4": "Every result shows a local quality score and press-and-hold comparison. Capture date, GPS coordinates, and album membership are preserved.",
+      "faq.a4": "Every result shows a local quality score and original comparison. Capture date, GPS coordinates, and album membership are preserved.",
       "faq.q5": "Which devices and iOS versions are supported?",
       "faq.a5": "Pickr is available on the App Store for both iPhone and iPad running iOS / iPadOS 17.0 or later (Place Albums curation requires iOS 18).",
       "faq.q6": "Where can I read the privacy policy or get help?",
@@ -329,18 +358,31 @@
       "faq.privacy": "Privacy Policy",
       "faq.support": "Support page",
 
+      "links.eyebrow": "More Independent Apps & Links",
+      "links.head": "Crafted with the same focus and restraint.",
+      "links.sub": "Built by the same independent developer—on-device first, ad-free, and focused on clarity.",
+      "links.placrDesc": "Give photos their missing place. Group photos by time, get smart location suggestions from nearby shots, and batch write coordinates.",
+      "links.placrMeta": "Mac · iPhone · iPad",
+      "links.siftrDesc": "Read daily briefings curated by your AI Agent. Connect your own WebDAV cloud with local full-text search and offline reading.",
+      "links.siftrMeta": "iPhone · iPad",
+      "links.mealrDesc": "Snap a meal and keep moving. Estimate calories from a photo with Apple Health integration—no weighing or tedious forms.",
+      "links.mealrMeta": "iPhone · Apple Health",
+      "links.homeTitle": "Main Site · chenhk.cn",
+      "links.homeDesc": "Visit Haokun Chen’s personal website for all independent apps, research, and notes.",
+
       "cta.head": "Finish last month before bed tonight.",
       "cta.note": "Download Pickr on the App Store for iPhone and iPad.",
 
       "foot.statement": "Pickr · Your photos, your decision",
+      "foot.mainSite": "Author Site",
       "foot.trademark": "Apple, the Apple logo, iPhone, iPad, iCloud, and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.",
       "foot.legal": "© 2026 Pickr · Independent software",
 
-      "alt.home": "Pickr monthly home screen on iPad Pro and iPhone 17",
-      "alt.compression": "Pickr compression screen on iPad Pro and iPhone 17",
-      "alt.albums": "Pickr place albums screen on iPad Pro and iPhone 17",
-      "alt.review": "Pickr swipe review and album sheet on iPad Pro and iPhone 17",
-      "alt.offline": "Pickr offline cache and sync screen on iPad Pro and iPhone 17",
+      "alt.home": "Pickr monthly home screen",
+      "alt.compression": "Pickr compression screen",
+      "alt.albums": "Pickr place albums screen",
+      "alt.review": "Pickr swipe review and album sheet",
+      "alt.offline": "Pickr offline cache and sync screen",
       "alt.card1": "Macro leaf detail sample photo",
       "alt.card2": "Mountain and lake travel sample photo",
       "alt.card3": "Street corner cafe sample photo"
@@ -354,6 +396,7 @@
       "nav.albums": "場所アルバム",
       "nav.slip": "無料とPro",
       "nav.faq": "よくある質問",
+      "nav.moreApps": "その他のアプリ",
       "nav.langLabel": "言語",
       "nav.download": "入手",
 
@@ -364,11 +407,6 @@
       "hero.storeBtn": "App Store からダウンロード",
       "hero.moreBtn": "使い方をみる",
       "hero.meta": "App Store で配信中 · iOS 17 以降が必要 · 写真は端末から出ません",
-      "hero.tab0": "月別整理",
-      "hero.tab1": "スワイプ仕分け",
-      "hero.tab2": "端末内圧縮",
-      "hero.tab3": "場所アルバム",
-      "hero.tab4": "オフラインと同期",
 
       "ch1.eyebrow": "月別整理",
       "ch1.head": "1か月ずつ無理なく、削除前に必ず確認。",
@@ -387,8 +425,13 @@
       "ch2.eyebrow": "画質優先の端末内圧縮",
       "ch2.head": "減らせる容量を見て、比べてから置換。",
       "ch2.sub": "動画を HEVC、写真を HEIC へ Apple チップ内で直接変換。削減できる容量を事前に試算し、1件ごとに画質スコアを算出します。",
-      "ch2.c1n": "長押しで元画像と比較、納得してから置換",
-      "ch2.c1b": "葉脈や暗部のディテールまで拡大して比較可能。削減幅が小さい項目は自動で「比較推奨」に分類されます。",
+      "ch2.badgeOrig": "元画像 JPEG · 4.8 MB",
+      "ch2.badgeHeic": "HEIC 圧縮後 · 1.1 MB",
+      "ch2.badgeSave": "77% 削減 · 画質 98点",
+      "ch2.modeOrig": "元画像",
+      "ch2.modeHeic": "HEIC",
+      "ch2.c1n": "スイッチで元画像と HEIC を比較、納得してから置換",
+      "ch2.c1b": "上のスイッチを切り替えると、元画像（4.8 MB）と HEIC 圧縮後（1.1 MB）の葉脈ディテールを比較できます。アプリ内でも同様に比較でき、削減幅が小さい項目は自動で「比較推奨」に分類されます。",
       "ch2.c2n": "撮影日時・GPS位置情報・アルバムを完全保持",
       "ch2.c2b": "圧縮後も撮影日、位置情報、お気に入り、所属アルバムはそのまま引き継がれます。",
 
@@ -416,7 +459,7 @@
       "slip.r3n": "月単位のオフライン事前準備",
       "slip.r3d": "出発前に写真と動画を端末へ準備し、電波のない場所でもスムーズに整理。",
       "slip.r4n": "回数無制限の保存と画質優先の端末内圧縮",
-      "slip.r4d": "制限なしの保存に加え、画質スコア判定・長押し比較つきの HEVC / HEIC 圧縮を解放。",
+      "slip.r4d": "制限なしの保存に加え、画質スコア判定・比較つきの HEVC / HEIC 圧縮を解放。",
       "slip.r5n": "場所アルバムの保存とベストショット抽出",
       "slip.r5d": "都市と日程で旅行アルバムを自動生成し、「写真」アプリへ保存。",
       "slip.r6n": "iPhone と iPad の iCloud 進捗同期",
@@ -432,7 +475,7 @@
       "faq.q3": "間違えて削除スワイプしてしまったら？",
       "faq.a3": "上スワイプはまず「確認待ち」に入るだけで即座には消えません。直前の取り消しや一括復元ができ、削除確定後も iOS の「最近削除した項目」に30日間残ります。",
       "faq.q4": "圧縮で画質や撮影情報は失われませんか？",
-      "faq.a4": "置換前に画質スコアと長押し比較で確認でき、撮影日時や GPS 位置情報などの EXIF データもそのまま保持されます。",
+      "faq.a4": "置換前に画質スコアと比較表示で確認でき、撮影日時や GPS 位置情報などの EXIF データもそのまま保持されます。",
       "faq.q5": "対応機種と OS バージョンは？",
       "faq.a5": "iOS / iPadOS 17.0 以降の iPhone と iPad に対応し、App Store で配信中です（自動場所アルバムは iOS 18 以降に対応）。",
       "faq.q6": "プライバシーポリシーやサポートはどこにありますか？",
@@ -440,18 +483,31 @@
       "faq.privacy": "プライバシーポリシー",
       "faq.support": "サポートページ",
 
+      "links.eyebrow": "その他の個人開発アプリ",
+      "links.head": "同じくシンプルで、端末内処理を大切にしたツール。",
+      "links.sub": "同じ個人開発者が手がける、広告なし・プライバシー重視のアプリシリーズです。",
+      "links.placrDesc": "位置情報のない写真に場所を補完。撮影時間でグループ化し、前後の写真から場所を提案して一括書き込み。",
+      "links.placrMeta": "Mac · iPhone · iPad",
+      "links.siftrDesc": "AI エージェントがまとめた日刊ブリーフィングを快適に読むリーダー。個人 WebDAV 連携・オフライン対応。",
+      "links.siftrMeta": "iPhone · iPad",
+      "links.mealrDesc": "撮るだけで食事記録。写真からカロリーを推定し Apple ヘルスケアと連携。計量や手入力は不要です。",
+      "links.mealrMeta": "iPhone · ヘルスケア連携",
+      "links.homeTitle": "個人サイト · chenhk.cn",
+      "links.homeDesc": "開発者 Haokun Chen のホームページ。すべての個人開発アプリや技術記事をご覧いただけます。",
+
       "cta.head": "今夜寝る前に、先月分をすっきり整理。",
       "cta.note": "App Store から Pickr を無料ダウンロードして、iPhone と iPad で心地よい写真整理を。",
 
       "foot.statement": "Pickr · あなたの写真は、あなたが決める",
+      "foot.mainSite": "開発者サイト",
       "foot.trademark": "Apple、Apple ロゴ、iPhone、iPad、iCloud、および App Store は、米国およびその他の国と地域で登録された Apple Inc. の商標です。",
       "foot.legal": "© 2026 Pickr · 個人開発",
 
-      "alt.home": "iPad Pro と iPhone 17 で表示した Pickr の整理ホーム画面",
-      "alt.compression": "iPad Pro と iPhone 17 で表示した Pickr の圧縮画面",
-      "alt.albums": "iPad Pro と iPhone 17 で表示した Pickr の場所アルバム画面",
-      "alt.review": "iPad Pro と iPhone 17 で表示した Pickr のスワイプ仕分け画面",
-      "alt.offline": "iPad Pro と iPhone 17 で表示した Pickr のオフライン準備画面",
+      "alt.home": "Pickr の整理ホーム画面",
+      "alt.compression": "Pickr の圧縮画面",
+      "alt.albums": "Pickr の場所アルバム画面",
+      "alt.review": "Pickr のスワイプ仕分け画面",
+      "alt.offline": "Pickr のオフライン準備画面",
       "alt.card1": "葉脈のマクロ撮影サンプル",
       "alt.card2": "山と湖の風景サンプル",
       "alt.card3": "街角のカフェの旅行サンプル"
@@ -465,6 +521,7 @@
       "nav.albums": "장소 앨범",
       "nav.slip": "무료 및 Pro",
       "nav.faq": "자주 묻는 질문",
+      "nav.moreApps": "더 많은 앱",
       "nav.langLabel": "언어",
       "nav.download": "다운로드",
 
@@ -475,11 +532,6 @@
       "hero.storeBtn": "App Store에서 다운로드",
       "hero.moreBtn": "작동 방식 보기",
       "hero.meta": "App Store 정식 출시 · iOS 17 이상 필요 · 사진은 기기 밖으로 나가지 않습니다",
-      "hero.tab0": "월별 정리",
-      "hero.tab1": "스와이프 분류",
-      "hero.tab2": "기기 내 압축",
-      "hero.tab3": "장소 앨범",
-      "hero.tab4": "오프라인 및 동기화",
 
       "ch1.eyebrow": "월별 정리",
       "ch1.head": "한 달씩 차근차근, 삭제 전 반드시 확인.",
@@ -498,8 +550,13 @@
       "ch2.eyebrow": "화질 우선 기기 내 압축",
       "ch2.head": "줄어드는 용량을 미리 보고, 비교한 뒤 교체.",
       "ch2.sub": "동영상은 HEVC로, 사진은 HEIC로 Apple 칩 안에서 직접 재인코딩합니다. 확보 가능한 용량을 미리 계산하고 항목별 화질 점수를 제공합니다.",
-      "ch2.c1n": "길게 눌러 원본과 비교, 만족할 때만 교체",
-      "ch2.c1b": "잎맥 디테일과 암부 계조를 원본과 실시간으로 비교하세요. 절약 폭이 작은 항목은 자동으로 ‘비교 권장’으로 분류됩니다.",
+      "ch2.badgeOrig": "원본 JPEG · 4.8 MB",
+      "ch2.badgeHeic": "HEIC 압축 후 · 1.1 MB",
+      "ch2.badgeSave": "77% 절약 · 화질 98점",
+      "ch2.modeOrig": "원본",
+      "ch2.modeHeic": "HEIC",
+      "ch2.c1n": "스위치를 켜서 원본과 HEIC 비교, 만족할 때만 교체",
+      "ch2.c1b": "위 스위치를 전환해 원본(4.8 MB)과 HEIC 압축본(1.1 MB)의 잎맥 디테일을 비교해 보세요. 앱 안에서도 언제든 비교할 수 있으며 절약 폭이 작은 항목은 자동으로 ‘비교 권장’으로 분류됩니다.",
       "ch2.c2n": "촬영 날짜, GPS 위치 및 앨범 정보 완벽 보존",
       "ch2.c2b": "압축 후에도 촬영 일시, 위치 좌표, 즐겨찾기 및 앨범 소속이 그대로 유지됩니다.",
 
@@ -543,7 +600,7 @@
       "faq.q3": "너무 빨리 넘기다 실수로 지우면 어떡하죠?",
       "faq.a3": "위로 밀면 먼저 ‘확인 대기’ 목록에 들어가며 바로 지워지지 않습니다. 언제든 이전 단계를 취소하거나 일괄 복구할 수 있고, 최종 삭제 후에도 iOS ‘최근 삭제된 항목’에 30일간 남습니다.",
       "faq.q4": "압축하면 화질이 떨어지거나 촬영 정보가 지워지나요?",
-      "faq.a4": "교체 전 기기 내 화질 점수와 길게 눌러 비교하기를 제공하며, 촬영 시간과 GPS 위치 등 EXIF 메타데이터는 온전히 보존됩니다.",
+      "faq.a4": "교체 전 기기 내 화질 점수와 원본 비교를 제공하며, 촬영 시간과 GPS 위치 등 EXIF 메타데이터는 온전히 보존됩니다.",
       "faq.q5": "어떤 기기와 OS 버전을 지원하나요?",
       "faq.a5": "iOS / iPadOS 17.0 이상을 실행하는 iPhone 및 iPad를 지원하며 App Store에서 다운로드할 수 있습니다(자동 장소 앨범은 iOS 18 이상).",
       "faq.q6": "개인정보 처리방침과 기술 지원은 어디서 보나요?",
@@ -551,18 +608,31 @@
       "faq.privacy": "개인정보 처리방침",
       "faq.support": "지원 페이지",
 
+      "links.eyebrow": "더 많은 인디 앱 및 링크",
+      "links.head": "같은 철학으로 만든 간결하고 집중된 도구.",
+      "links.sub": "동일한 인디 개발자가 제작한 기기 내 처리 우선, 무광고 앱 시리즈입니다.",
+      "links.placrDesc": "사진에 빠진 위치 정보를 채워 넣으세요. 촬영 시간별로 묶어 주변 사진의 위치를 제안하고 일괄 기록합니다.",
+      "links.placrMeta": "Mac · iPhone · iPad",
+      "links.siftrDesc": "AI 에이전트가 정리한 일일 브리핑 리더. 개인 WebDAV 클라우드 연결 및 오프라인 읽기를 지원합니다.",
+      "links.siftrMeta": "iPhone · iPad",
+      "links.mealrDesc": "사진 한 장으로 끝내는 식단 기록. 사진으로 칼로리를 추정하고 Apple 건강과 연동합니다.",
+      "links.mealrMeta": "iPhone · Apple 건강",
+      "links.homeTitle": "개인 웹사이트 · chenhk.cn",
+      "links.homeDesc": "개발자 Haokun Chen의 홈페이지에서 모든 인디 앱과 기술 아티클을 확인하세요.",
+
       "cta.head": "오늘 밤 잠들기 전, 지난달 사진을 정리해 보세요.",
       "cta.note": "App Store에서 Pickr를 무료로 다운로드하고 iPhone과 iPad에서 깔끔한 사진 정리를 시작하세요.",
 
       "foot.statement": "Pickr · 내 사진의 결정권은 나에게",
+      "foot.mainSite": "개발자 홈",
       "foot.trademark": "Apple, Apple 로고, iPhone, iPad, iCloud 및 App Store는 미국 및 기타 국가와 지역에 등록된 Apple Inc.의 상표입니다.",
       "foot.legal": "© 2026 Pickr · 인디 개발",
 
-      "alt.home": "iPad Pro와 iPhone 17에 표시된 Pickr 정리 홈 화면",
-      "alt.compression": "iPad Pro와 iPhone 17에 표시된 Pickr 화질 압축 화면",
-      "alt.albums": "iPad Pro와 iPhone 17에 표시된 Pickr 장소 앨범 화면",
-      "alt.review": "iPad Pro와 iPhone 17에 표시된 Pickr 사진 넘기기 및 앨범 추가 화면",
-      "alt.offline": "iPad Pro와 iPhone 17에 표시된 Pickr 오프라인 준비 및 동기화 화면",
+      "alt.home": "Pickr 정리 홈 화면",
+      "alt.compression": "Pickr 화질 압축 화면",
+      "alt.albums": "Pickr 장소 앨범 화면",
+      "alt.review": "Pickr 사진 넘기기 및 앨범 추가 화면",
+      "alt.offline": "Pickr 오프라인 준비 및 동기화 화면",
       "alt.card1": "잎맥 접사 원본 샘플",
       "alt.card2": "산과 호수 풍경 샘플",
       "alt.card3": "모퉁이 카페 여행 샘플"
@@ -570,6 +640,7 @@
   };
 
   var SUPPORTED = ["zh-Hans", "zh-Hant", "en", "ja", "ko"];
+  var currentLang = "zh-Hans";
 
   function normalizeLang(raw) {
     if (!raw) return "zh-Hans";
@@ -607,8 +678,20 @@
     return STORE_BY_LANG[code] || STORE_BY_LANG["zh-Hans"];
   }
 
+  function syncCompareBadge() {
+    var card = document.querySelector("[data-heic-compare]");
+    if (!card) return;
+    var isHeic = card.classList.contains("is-heic");
+    var badge = card.querySelector("[data-compare-badge]");
+    var dict = COPY[currentLang] || COPY["zh-Hans"];
+    if (badge) {
+      badge.textContent = isHeic ? dict["ch2.badgeHeic"] : dict["ch2.badgeOrig"];
+    }
+  }
+
   function applyLang(lang) {
     var code = SUPPORTED.indexOf(lang) !== -1 ? lang : "zh-Hans";
+    currentLang = code;
     var dict = COPY[code] || COPY["zh-Hans"];
 
     document.documentElement.lang = code;
@@ -636,14 +719,22 @@
       }
     }
 
-    var shots = document.querySelectorAll("img[data-shot]");
-    for (var s = 0; s < shots.length; s++) {
-      var name = shots[s].getAttribute("data-shot");
-      if (name) {
-        var file = name.indexOf(".jpg") !== -1 ? name : name + ".jpg";
-        shots[s].setAttribute("src", "assets/home/" + code + "/" + file);
+    /* 响应式 <picture>：桌面端显示 iPad+iPhone 双端图，手机端（≤768px）只显示单台 iPhone 图 */
+    var pictures = document.querySelectorAll("picture[data-shot-picture]");
+    for (var p = 0; p < pictures.length; p++) {
+      var shotName = pictures[p].getAttribute("data-shot-picture");
+      if (!shotName) continue;
+      var sourceEl = pictures[p].querySelector("source");
+      var imgEl = pictures[p].querySelector("img");
+      if (sourceEl) {
+        sourceEl.setAttribute("srcset", "assets/home/" + code + "/iphone-" + shotName + ".jpg");
+      }
+      if (imgEl) {
+        imgEl.setAttribute("src", "assets/home/" + code + "/" + shotName + ".jpg");
       }
     }
+
+    syncCompareBadge();
 
     var storeUrl = resolveStoreUrl(code);
     var storeLinks = document.querySelectorAll("a[data-store-link]");
@@ -669,60 +760,69 @@
     } catch (_) {}
   }
 
-  /* ---------- 首屏双端舞台切换（Segmented Pill Control） ---------- */
-  function initShowcase() {
-    var root = document.querySelector("[data-showcase]");
-    if (!root) return;
+  /* ---------- 原图 vs HEIC 交互开关 ---------- */
+  function initHeicCompare() {
+    var card = document.querySelector("[data-heic-compare]");
+    if (!card) return;
 
-    var tabs = root.querySelectorAll("[data-target]");
-    var slides = root.querySelectorAll("[data-slide]");
-    if (!tabs.length || !slides.length) return;
+    var switchBtn = card.querySelector("[data-heic-switch]");
+    var stage = card.querySelector("[data-compare-stage]");
+    var mainImg = card.querySelector("[data-compare-img]");
+    var loupeImg = card.querySelector("[data-compare-loupe-img]");
+    var savingTag = card.querySelector("[data-compare-saving]");
+    var modeOrig = card.querySelector("[data-mode-orig]");
+    var modeHeic = card.querySelector("[data-mode-heic]");
 
-    var currentIndex = 0;
-    var timer = null;
-    var paused = false;
-    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var ORIG_SRC = "assets/home/demo-01-leaf.jpg";
+    var HEIC_SRC = "assets/home/demo-01-leaf-heic.jpg";
 
-    function activate(idx) {
-      currentIndex = idx;
-      for (var t = 0; t < tabs.length; t++) {
-        var isMatch = Number(tabs[t].getAttribute("data-target")) === idx;
-        tabs[t].classList.toggle("active", isMatch);
-        tabs[t].setAttribute("aria-selected", isMatch ? "true" : "false");
+    /* 预加载 HEIC 对比图，保证点击开关零延迟切换 */
+    var preload = new Image();
+    preload.src = HEIC_SRC;
+
+    function setHeicMode(enabled) {
+      card.classList.toggle("is-heic", enabled);
+      if (switchBtn) {
+        switchBtn.setAttribute("aria-checked", enabled ? "true" : "false");
       }
-      for (var s = 0; s < slides.length; s++) {
-        var sMatch = Number(slides[s].getAttribute("data-slide")) === idx;
-        slides[s].classList.toggle("active", sMatch);
+      var targetSrc = enabled ? HEIC_SRC : ORIG_SRC;
+      if (mainImg) mainImg.setAttribute("src", targetSrc);
+      if (loupeImg) loupeImg.setAttribute("src", targetSrc);
+      if (savingTag) {
+        if (enabled) {
+          savingTag.removeAttribute("hidden");
+        } else {
+          savingTag.setAttribute("hidden", "");
+        }
       }
+      if (modeOrig) modeOrig.classList.toggle("active", !enabled);
+      if (modeHeic) modeHeic.classList.toggle("active", enabled);
+      syncCompareBadge();
     }
 
-    for (var b = 0; b < tabs.length; b++) {
-      (function (btn) {
-        btn.addEventListener("click", function () {
-          activate(Number(btn.getAttribute("data-target")));
-          restartTimer();
-        });
-      })(tabs[b]);
+    function toggle() {
+      var next = !card.classList.contains("is-heic");
+      setHeicMode(next);
     }
 
-    function step() {
-      if (paused || reduceMotion || document.hidden) return;
-      activate((currentIndex + 1) % tabs.length);
+    if (switchBtn) {
+      switchBtn.addEventListener("click", toggle);
     }
-
-    function restartTimer() {
-      if (timer) clearInterval(timer);
-      if (!reduceMotion) {
-        timer = setInterval(step, 4600);
-      }
+    if (modeOrig) {
+      modeOrig.addEventListener("click", function () { setHeicMode(false); });
     }
-
-    root.addEventListener("mouseenter", function () { paused = true; });
-    root.addEventListener("mouseleave", function () { paused = false; });
-    root.addEventListener("focusin", function () { paused = true; });
-    root.addEventListener("focusout", function () { paused = false; });
-
-    restartTimer();
+    if (modeHeic) {
+      modeHeic.addEventListener("click", function () { setHeicMode(true); });
+    }
+    if (stage) {
+      stage.addEventListener("click", toggle);
+      stage.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          toggle();
+        }
+      });
+    }
   }
 
   /* ---------- 章节元素错峰入场 ---------- */
@@ -732,11 +832,11 @@
 
     for (var g = 0; g < groups.length; g++) {
       var items = groups[g].querySelectorAll(
-        ".sec-head-wrap, .duo-showcase-item, .step-card, .duo-wide-figure, .sample-card, .feature-duo-block, .tier-card, .privacy-pill-banner, .faq-card, .cta-banner"
+        ".sec-head-wrap, .duo-showcase-item, .step-card, .duo-wide-figure, .sample-card, .feature-duo-block, .tier-card, .privacy-pill-banner, .faq-card, .app-link-card, .cta-banner"
       );
       for (var i = 0; i < items.length; i++) {
         items[i].classList.add("reveal");
-        items[i].style.setProperty("--d", ((i % 3) * 0.06).toFixed(2) + "s");
+        items[i].style.setProperty("--d", ((i % 4) * 0.05).toFixed(2) + "s");
         allTargets.push(items[i]);
       }
     }
@@ -767,6 +867,8 @@
 
   var initialLang = detectLang();
   applyLang(initialLang);
+  initHeicCompare();
+  initReveal();
 
   var selectEl = document.querySelector("[data-language-select]");
   if (selectEl) {
@@ -774,7 +876,4 @@
       applyLang(ev.target.value);
     });
   }
-
-  initShowcase();
-  initReveal();
 })();
