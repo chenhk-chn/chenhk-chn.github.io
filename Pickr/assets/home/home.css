@@ -1,6 +1,7 @@
-/* Pickr 官网 · Apple 原生产品页设计语言
-   纯净画布 (#fbfbfd) · 柔和层底 (#f5f5f7) · 深空黑字 (#1d1d1f) · 胶囊按钮 (980px)
-   桌面端展示 iPad + iPhone 双端同框，移动端仅展示单台 iPhone 带壳图 */
+/* Pickr 官网 · Apple 原生产品页设计语言 (v3 · 1.1.0 文案与多样化构图版)
+   - 前后双色对比标题（主色 #1d1d1f + 强调蓝 #0066cc / 柔和次色 #6e6e73）
+   - 无句尾标点大标题 + 等宽双按钮，确保首屏严格沿垂直中轴线对称
+   - 4 种差异化设备构图：全景双端、Bento 底部破框半身 iPhone、单台完整竖屏 iPhone、镜像双端画册 */
 
 :root {
   --bg: #fbfbfd;
@@ -8,7 +9,8 @@
   --card: #ffffff;
   --ink: #1d1d1f;
   --muted: #6e6e73;
-  --accent: #0071e3;
+  --accent: #0066cc;
+  --accent-bright: #0071e3;
   --accent-hover: #0077ed;
   --green: #34c759;
   --border: rgba(0, 0, 0, 0.08);
@@ -43,7 +45,7 @@ img { display: block; max-width: 100%; height: auto; }
 picture { display: block; width: 100%; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
 
 .inner {
   max-width: 1200px;
@@ -54,6 +56,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; margin: -1px;
   clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+/* ---------- 前后双色文字层次（参照 App Store 截图双色规范） ---------- */
+.tone-first {
+  color: var(--ink);
+}
+
+.tone-accent {
+  color: var(--accent);
+}
+
+.tone-muted {
+  color: var(--muted);
+}
+
+.title-line {
+  display: block;
 }
 
 /* ---------- 顶部 Apple 风格毛玻璃吸顶导航 ---------- */
@@ -173,7 +192,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-height: 34px;
   padding: 0 15px;
   border-radius: var(--radius-pill);
-  background: var(--accent);
+  background: var(--accent-bright);
   color: #ffffff;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -184,21 +203,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav-cta:hover { background: var(--accent-hover); }
 .nav-cta:active { transform: scale(0.96); }
 
-/* ---------- Apple 风格胶囊形按钮 ---------- */
-.btn-store {
+/* ---------- Apple 风格胶囊形按钮（等宽设计确保双按钮中缝严格对齐中轴线） ---------- */
+.btn-store,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   min-height: 52px;
+  min-width: 212px;
   padding: 0 28px;
   border-radius: var(--radius-pill);
-  background: var(--ink);
-  color: #ffffff;
   font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
+}
+
+.btn-store {
+  background: var(--ink);
+  color: #ffffff;
   transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 8px 24px rgba(29, 29, 31, 0.14);
 }
@@ -214,17 +238,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 0 26px;
-  border-radius: var(--radius-pill);
   background: var(--pill-bg);
   color: var(--ink);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  white-space: nowrap;
   transition: background-color 0.18s ease, transform 0.12s ease;
 }
 
@@ -236,10 +251,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transform: scale(0.97);
 }
 
-/* ---------- 首屏 Hero（两行清晰标题 + 无框真机展示） ---------- */
+/* ---------- 首屏 Hero（严格中轴线对称 + 前后双色无标点标题） ---------- */
 .hero {
   padding-top: clamp(44px, 6vw, 76px);
-  padding-bottom: clamp(48px, 6vw, 88px);
+  padding-bottom: clamp(48px, 6vw, 84px);
 }
 
 .hero-header {
@@ -255,7 +270,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .hero-icon {
@@ -268,23 +283,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .eyebrow-pill {
   display: inline-flex;
   align-items: center;
-  padding: 5px 14px;
+  justify-content: center;
+  padding: 5px 16px;
   border-radius: var(--radius-pill);
   background: var(--pill-bg);
   color: var(--muted);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
 }
 
-/* 关键修复：每一句独立成行，绝不把「到今天。」劈到下一行 */
 .hero-title {
   font-size: clamp(2.25rem, 4.6vw, 3.85rem);
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.028em;
-  color: var(--ink);
+  line-height: 1.14;
+  letter-spacing: -0.025em;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .hero-line {
@@ -293,11 +307,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .hero-lead {
   font-size: clamp(1.0625rem, 1.35vw, 1.21875rem);
-  line-height: 1.58;
+  line-height: 1.6;
   color: var(--muted);
-  max-width: 56ch;
+  max-width: 54ch;
   margin-bottom: 28px;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .hero-cta-group {
@@ -314,7 +328,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .hero-showcase {
-  margin-top: clamp(24px, 3.5vw, 42px);
+  margin-top: clamp(24px, 3.5vw, 40px);
   display: flex;
   justify-content: center;
 }
@@ -341,8 +355,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .sec-head-wrap {
-  max-width: 760px;
-  margin-bottom: clamp(40px, 5vw, 60px);
+  max-width: 780px;
+  margin-bottom: clamp(40px, 5vw, 56px);
 }
 
 .sec-eyebrow {
@@ -350,13 +364,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.02em;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sec-title {
   font-size: clamp(1.8rem, 3.1vw, 2.65rem);
   font-weight: 700;
-  line-height: 1.14;
+  line-height: 1.16;
   letter-spacing: -0.024em;
   color: var(--ink);
   margin-bottom: 14px;
@@ -371,30 +385,60 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-wrap: pretty;
 }
 
-/* ---------- 章节一：按月整理 ---------- */
-.duo-pair-grid {
+/* ---------- 章节一：Apple Bento 破框半身 iPhone 特写双卡（无 iPad） ---------- */
+.bento-crop-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 40px);
-  margin-bottom: clamp(32px, 4vw, 48px);
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-.duo-showcase-item {
+.bento-crop-card {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 36px) 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: hidden;
 }
 
-.duo-caption h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  margin-bottom: 6px;
+.bento-crop-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.duo-caption p {
-  font-size: 1rem;
+.bento-crop-copy h3 {
+  font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -0.018em;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bento-crop-copy p {
+  font-size: 0.96875rem;
   color: var(--muted);
+  line-height: 1.58;
+}
+
+.bento-crop-bleed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.bento-crop-bleed img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
 }
 
 .steps-pills-grid {
@@ -436,26 +480,33 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
-/* ---------- 章节二：画质优先压缩 + 可交互原图/HEIC 开关卡 ---------- */
-.compression-layout {
+/* ---------- 章节二：左单台 iPhone 竖屏 + 右原图/HEIC 交互开关对比卡 ---------- */
+.compression-split-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.single-phone-showcase {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-phone-showcase img {
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+}
+
+.compression-right-stack {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-}
-
-.duo-wide-figure {
-  background: var(--bg);
-  border-radius: var(--radius-card);
-  padding: clamp(12px, 2vw, 24px);
-  max-width: 960px;
-  margin-inline: auto;
-  width: 100%;
-}
-
-.compression-cards {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
   gap: 24px;
+  justify-content: space-between;
 }
 
 .sample-card {
@@ -497,7 +548,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .compare-card.is-heic .compare-format-tag {
-  background: rgba(0, 113, 227, 0.12);
+  background: rgba(0, 102, 204, 0.12);
   color: var(--accent);
 }
 
@@ -578,7 +629,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-sub);
-  transition: filter 0.2s ease;
 }
 
 .compare-loupe {
@@ -619,16 +669,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .sample-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
+  line-height: 1.28;
   margin-bottom: 6px;
 }
 
 .sample-card p {
-  font-size: 1rem;
+  font-size: 0.96875rem;
   color: var(--muted);
-}
-
-.sample-card.info-only {
-  justify-content: center;
 }
 
 .metric-row {
@@ -646,61 +693,63 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 700;
 }
 
-/* ---------- 章节三：地点相册 & 离线与 iCloud 同步 ---------- */
-.feature-duo-stack {
+/* ---------- 章节三：镜像双端画册 + 底部破框半身 iPhone 离线特写卡 ---------- */
+.albums-diverse-stack {
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 6vw, 88px);
+  gap: 36px;
 }
 
-.feature-duo-block {
+.albums-hero-block {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.albums-visual-wrap {
+  max-width: 980px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.albums-copy-bar {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: clamp(28px, 4vw, 52px);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
   align-items: center;
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(24px, 3.2vw, 36px);
 }
 
-.feature-duo-block.reverse {
-  grid-template-columns: 0.75fr 1.25fr;
-}
-
-.feature-duo-block.reverse .feature-duo-visual {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.feature-duo-block.reverse .feature-duo-copy {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.feature-duo-copy {
+.albums-copy-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 10px;
+}
+
+.albums-copy-text h3 {
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.24;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.albums-copy-text p {
+  font-size: 0.96875rem;
+  color: var(--muted);
 }
 
 .tag-pill {
   padding: 5px 14px;
   border-radius: var(--radius-pill);
-  background: var(--pill-bg);
+  background: var(--card);
   color: var(--ink);
   font-size: 0.8125rem;
   font-weight: 600;
-}
-
-.feature-duo-copy h3 {
-  font-size: clamp(1.5rem, 2.3vw, 2rem);
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.feature-duo-copy p {
-  font-size: 1.0625rem;
-  color: var(--muted);
 }
 
 .mini-thumbs {
@@ -708,7 +757,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   width: 100%;
-  margin-top: 6px;
 }
 
 .mini-thumbs img {
@@ -718,7 +766,54 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 16px;
 }
 
-/* ---------- 章节四：免费与 Pickr Pro ---------- */
+/* 离线与同步：左文 + 右侧底部探出上半截 iPhone 特写（无 iPad） */
+.offline-bento-banner {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 3.8vw, 44px) clamp(24px, 3.8vw, 44px) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.offline-bento-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: clamp(28px, 3.8vw, 44px);
+}
+
+.offline-bento-copy h3 {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.offline-bento-copy p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.offline-bento-bleed {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+}
+
+.offline-bento-bleed img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+}
+
+/* ---------- 章节四：免费与会员 ---------- */
 .tier-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -756,7 +851,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .tier-badge.pro {
-  background: var(--accent);
+  background: var(--accent-bright);
   color: #ffffff;
 }
 
@@ -904,7 +999,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .app-link-card:hover .app-card-arrow {
-  background: var(--accent);
+  background: var(--accent-bright);
   color: #ffffff;
 }
 
@@ -957,11 +1052,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .cta-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
   font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.025em;
-  text-wrap: balance;
+  line-height: 1.18;
+  letter-spacing: -0.024em;
 }
 
 .cta-sub {
@@ -1052,38 +1146,32 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- 平板适配（≤960px） ---------- */
 @media (max-width: 960px) {
   .nav-links { display: none; }
-  .duo-pair-grid,
+  .bento-crop-grid,
   .steps-pills-grid,
-  .compression-cards,
+  .compression-split-layout,
+  .albums-copy-bar,
+  .offline-bento-banner,
   .tier-grid,
   .faq-bento {
     grid-template-columns: 1fr;
   }
+  .offline-bento-copy {
+    padding-bottom: 0;
+  }
   .apps-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .feature-duo-block,
-  .feature-duo-block.reverse {
-    grid-template-columns: 1fr;
-  }
-  .feature-duo-block.reverse .feature-duo-visual,
-  .feature-duo-block.reverse .feature-duo-copy {
-    grid-column: auto;
-    grid-row: auto;
   }
 }
 
 /* ---------- 移动端单 iPhone 展示尺寸控制（≤768px） ---------- */
 @media (max-width: 768px) {
   .hero-device-figure,
-  .duo-showcase-item picture,
-  .duo-wide-figure picture,
-  .feature-duo-visual picture {
-    max-width: 340px;
+  .albums-visual-wrap {
+    max-width: 330px;
     margin-inline: auto;
   }
-  .duo-wide-figure {
-    padding: 8px;
+  .single-phone-showcase img {
+    max-width: 310px;
   }
 }
 
@@ -1096,14 +1184,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   .hero { padding-top: 32px; padding-bottom: 44px; }
   .hero-icon { width: 60px; height: 60px; border-radius: 14px; }
-  .hero-title { font-size: clamp(2rem, 8.2vw, 2.45rem); }
+  .hero-title { font-size: clamp(1.95rem, 8vw, 2.4rem); }
   .hero-cta-group { width: 100%; flex-direction: column; align-items: stretch; }
   .hero-cta-group .btn-store,
-  .hero-cta-group .btn-secondary { width: 100%; }
+  .hero-cta-group .btn-secondary { width: 100%; min-width: 0; }
 
   .sec { padding-block: 52px; }
+  .bento-crop-card { padding: 24px 20px 0; }
+  .offline-bento-banner { padding: 24px 20px 0; }
   .step-card,
   .sample-card,
+  .albums-copy-bar,
   .tier-card,
   .faq-card,
   .app-link-card {
@@ -1130,5 +1221,5 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
   .cta-buttons { width: 100%; flex-direction: column; align-items: stretch; }
   .cta-buttons .btn-store,
-  .cta-buttons .btn-secondary { width: 100%; }
+  .cta-buttons .btn-secondary { width: 100%; min-width: 0; }
 }
