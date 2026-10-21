@@ -2,243 +2,1676 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)"><meta name="description" content="Siftr — 阅读 AI Agent 为你整理的每日简报：连接你自己的坚果云 WebDAV，按需缓存正文，本地保存收藏与阅读进度。无服务器、无账号、无广告。">
+<meta name="theme-color" content="#0e1512"><meta name="description" content="Siftr — 阅读 AI Agent 为你整理的每日简报：连接你自己的坚果云 WebDAV，按需缓存正文，本地保存收藏与阅读进度。无服务器、无账号、无广告。">
 <title>Siftr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png?v=siftr-20261014-1">
 <link rel="apple-touch-icon" href="assets/icon-512.png?v=siftr-20261014-1">
-<link rel="stylesheet" href="style.css?v=siftr-20261014-3">
+<link rel="stylesheet" href="home.css?v=siftr-20261021-1">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body><div class="wrap">
-  <div class="site-bar">
-    <a class="wordmark" href="index.html" data-localized-link="index.html">Siftr</a>
-    <label class="language-picker">
-      <select data-language-select aria-label="Language">
-        <option value="zh-Hans">简体中文</option>        <option value="zh-Hant">繁體中文（中國台灣）</option>        <option value="zh-HK">繁體中文（中國香港）</option>        <option value="ja">日本語</option>        <option value="en">English</option>        <option value="ru">Русский</option>        <option value="fr">Français</option>        <option value="ko">한국어</option>        <option value="de">Deutsch</option>        <option value="es">Español</option>
-      </select>
-    </label>
+<body data-shot="home">
+
+<div class="stage" aria-hidden="false">
+  <div class="frame">
+    <video data-key="home" data-active src="assets/shots/app-loop.mp4" poster="assets/shots/home.jpg" muted autoplay loop playsinline></video>
+    <img data-key="reader" src="assets/shots/reader.jpg" alt="Siftr 阅读页：文章排版与摘要展开" width="1206" height="2622" loading="lazy">
+    <img data-key="find" src="assets/shots/find.jpg" alt="Siftr 文内查找：命中词高亮" width="1206" height="2622" loading="lazy">
+    <img data-key="reader-dark" src="assets/shots/reader-dark.jpg" alt="Siftr 深色模式阅读页" width="1206" height="2622" loading="lazy">
+    <img data-key="html-dark" src="assets/shots/html-dark.jpg" alt="Siftr 沉浸式网页阅读：悬浮玻璃工具栏" width="1206" height="2622" loading="lazy">
+    <div class="scrim" aria-hidden="true"></div>
   </div>
-  <main tabindex="-1">
-    <section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>AI 负责整理，你负责阅读</h1>
-        <p class="lede">Siftr 把 AI Agent 每天发布到坚果云的 Markdown 简报，变成一本安静的原生刊物：支持多个 WebDAV 来源，下拉刷新取新内容，正文按需缓存、飞行模式也能接着读；收藏、已读和阅读设置经你自己的 iCloud 私有库同步。</p>
-        <p class="meta">适用于 iPhone 与 iPad · 需要 iOS 18 或更新版本</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 内测</span><a href="mailto:imhccn@gmail.com">参加测试或反馈</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>连接你自己的云盘</strong><span>可同时添加多个 WebDAV 来源；简报存放在你自己的坚果云里，Siftr 不设服务器、不经手第三方。</span></li>
-        <li><strong>像刊物，不像网盘</strong><span>最新一期突出显示，分类、标签、未读筛选与按月归档一应俱全，读起来像一本私人杂志。</span></li>
-        <li><strong>把阅读器调成你的样子</strong><span>五套主题色、黑体或宋体、字号与行距、日间夜间随你搭配；iOS 26 上还有 Liquid Glass 玻璃质感的阅读界面。</span></li>
-        <li><strong>全文搜索，离线照读</strong><span>打开过的文章进入全文索引，多词搜索、命中高亮并跳转章节；地铁里、飞行模式都能接着读。</span></li>
-        <li><strong>收藏与设置跟着 iCloud 走</strong><span>收藏、已读状态和阅读设置同步到你自己的 iCloud 私有库；正文与阅读位置只保存在本机。</span></li>
-        <li><strong>小组件与快捷指令</strong><span>主屏小组件显示最新一期与未读数；快捷指令一键刷新或直达最新一期。</span></li>
-      </ul>
-      <p class="closing">没有 Siftr 账号，没有广告，也没有跟踪。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隐私政策</strong><span>WebDAV 凭证、缓存与本地数据</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技术支持</strong><span>常见问题、连接配置和联系方式</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>发布 Skill</strong><span>把发布简报的技能交给你的 AI Agent</span></a>
-      </div>
-    </section>
+</div>
 
-    <section class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>AI 負責整理，你負責閱讀</h1>
-        <p class="lede">Siftr 把 AI Agent 每天發布到堅果雲的 Markdown 簡報，變成一本安靜的原生刊物：支援多個 WebDAV 來源，下拉重新整理取新內容，正文按需快取、飛航模式也能接著讀；收藏、已讀和閱讀設定經你自己的 iCloud 私有資料庫同步。</p>
-        <p class="meta">適用於 iPhone 與 iPad · 需要 iOS 18 或更新版本</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或回報</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>連接你自己的雲端硬碟</strong><span>可同時加入多個 WebDAV 來源；簡報存放在你自己的堅果雲裡，Siftr 不設伺服器、不經手第三方。</span></li>
-        <li><strong>像刊物，不像網路硬碟</strong><span>最新一期突出顯示，分類、標籤、未讀篩選與按月歸檔一應俱全，讀起來像一本私人雜誌。</span></li>
-        <li><strong>把閱讀器調成你的樣子</strong><span>五套主題色、黑體或宋體、字號與行距、日間夜間隨你搭配；iOS 26 上還有 Liquid Glass 玻璃質感的閱讀介面。</span></li>
-        <li><strong>全文搜尋，離線照讀</strong><span>開啟過的文章進入全文索引，多詞搜尋、命中高亮並跳轉章節；捷運裡、飛航模式都能接著讀。</span></li>
-        <li><strong>收藏與設定跟著 iCloud 走</strong><span>收藏、已讀狀態和閱讀設定同步到你自己的 iCloud 私有資料庫；正文與閱讀位置只保存在本機。</span></li>
-        <li><strong>小工具與捷徑</strong><span>主畫面小工具顯示最新一期與未讀數；「捷徑」一鍵重新整理或直達最新一期。</span></li>
-      </ul>
-      <p class="closing">沒有 Siftr 帳號，沒有廣告，也沒有追蹤。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>隱私政策</strong><span>WebDAV 憑證、快取與本機資料</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、連線設定和聯絡方式</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>發布 Skill</strong><span>把發布簡報的技能交給你的 AI Agent</span></a>
-      </div>
-    </section>
+<h1 class="wordmark">siftr</h1>
 
-    <section class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>AI 負責整理，你負責閱讀</h1>
-        <p class="lede">Siftr 把 AI Agent 每日發佈到堅果雲嘅 Markdown 簡報，變成一本安靜嘅原生刊物：支援多個 WebDAV 來源，下拉重新整理取得新內容，正文按需快取、飛行模式下都可以繼續讀；收藏、已讀同閱讀設定經你自己的 iCloud 私有資料庫同步。</p>
-        <p class="meta">適用於 iPhone 及 iPad · 需要 iOS 18 或以上版本</p>
-      <p class="cta"><span class="cta-badge">正在 TestFlight 內測</span><a href="mailto:imhccn@gmail.com">參加測試或回報</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>連接你自己的雲端硬碟</strong><span>可以同時新增多個 WebDAV 來源；簡報儲存在你自己的堅果雲入面，Siftr 不設伺服器、不經手第三方。</span></li>
-        <li><strong>似刊物，不似網絡硬碟</strong><span>最新一期突出顯示，分類、標籤、未讀篩選同按月歸檔一應俱全，讀落似一本私人雜誌。</span></li>
-        <li><strong>將閱讀器調成你的樣子</strong><span>五款主題色、黑體或宋體、字號同行距、日間夜間任你配搭；iOS 26 仲有 Liquid Glass 玻璃質感嘅閱讀介面。</span></li>
-        <li><strong>全文搜尋，離線照讀</strong><span>開過嘅文章會進入全文索引，多詞搜尋、命中高亮並跳去章節；地鐵入面、飛行模式都照讀。</span></li>
-        <li><strong>收藏同設定跟住 iCloud 走</strong><span>收藏、已讀狀態同閱讀設定同步到你自己的 iCloud 私有資料庫；正文同閱讀位置只儲存在本機。</span></li>
-        <li><strong>小工具同捷徑</strong><span>主畫面小工具顯示最新一期同未讀數；「捷徑」一鍵重新整理或者直達最新一期。</span></li>
-      </ul>
-      <p class="closing">冇 Siftr 帳戶，冇廣告，亦冇追蹤。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>私隱政策</strong><span>WebDAV 憑證、快取同本機資料</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>技術支援</strong><span>常見問題、連線設定同聯絡方法</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>發佈 Skill</strong><span>把發佈簡報嘅技能交俾你嘅 AI Agent</span></a>
-      </div>
-    </section>
+<label class="language-picker lang">
+  <select data-language-select aria-label="Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文（中國台灣）</option>
+        <option value="zh-HK">繁體中文（中國香港）</option>
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="fr">Français</option>
+        <option value="ko">한국어</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+  </select>
+</label>
 
-    <section class="language-panel" data-language="ja" lang="ja" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>AI がまとめ、あなたが読む</h1>
-        <p class="lede">Siftr は、AI エージェントが毎日 Nutstore に公開する Markdown ブリーフィングを、静かなネイティブの雑誌に変えます。複数の WebDAV ソースに対応し、引き落として更新、本文は必要なときにキャッシュ、機内モードでも読み続けられます。お気に入り・既読・読書設定はあなた自身の iCloud プライベートデータベース経由で同期されます。</p>
-        <p class="meta">iPhone と iPad に対応 · iOS 18 以降が必要です</p>
-      <p class="cta"><span class="cta-badge">TestFlight でベータテスト中</span><a href="mailto:imhccn@gmail.com">ベータに参加・フィードバック</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>自分のクラウドに接続</strong><span>複数の WebDAV ソースを同時に追加できます。ブリーフィングはあなた自身の Nutstore にあり、Siftr はサーバーを持ちません。</span></li>
-        <li><strong>雑誌のように、ドライブではなく</strong><span>最新号を大きく表示し、カテゴリ・タグ・未読フィルタと月別アーカイブを備えた、プライベートな雑誌のような画面です。</span></li>
-        <li><strong>読書器を自分好みに</strong><span>5 つのテーマカラー、ゴシック体または明朝体、文字サイズと行間、ライト/ダークを自由に組み合わせられます。iOS 26 では Liquid Glass の質感になります。</span></li>
-        <li><strong>全文検索とオフライン閲覧</strong><span>開いた記事は全文索引に加わり、複数語検索、ハイライト表示、セクションへのジャンプに対応。地下鉄でも機内モードでも読めます。</span></li>
-        <li><strong>お気に入りは iCloud と共に</strong><span>お気に入り・既読状態・読書設定はあなた自身の iCloud プライベートデータベースに同期。本文と閲覧位置はこのデバイスのみに保存されます。</span></li>
-        <li><strong>ウィジェットとショートカット</strong><span>ホーム画面ウィジェットに最新号と未読数を表示。ショートカットでワンタップ更新や最新号を開けます。</span></li>
-      </ul>
-      <p class="closing">Siftr アカウントも広告もトラッキングもありません。</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>プライバシーポリシー</strong><span>WebDAV の資格情報、キャッシュ、端末内データ</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>サポート</strong><span>よくある質問、セットアップ、連絡先</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>パブリッシャー Skill</strong><span>公開用スキルをあなたの AI エージェントへ</span></a>
-      </div>
-    </section>
+<main tabindex="-1">
+<section class="language-panel" data-language="zh-Hans" lang="zh-Hans" data-title="Siftr">
 
-    <section class="language-panel" data-language="en" lang="en" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>Your AI curates. You just read.</h1>
-        <p class="lede">Siftr turns the Markdown briefings your AI agent publishes to your own WebDAV cloud into a calm, native magazine: multiple sources, pull to refresh, articles cached on demand and fully readable offline, with favorites, read states, and reading settings synced through your own private iCloud.</p>
-        <p class="meta">For iPhone and iPad · Requires iOS 18 or later</p>
-      <p class="cta"><span class="cta-badge">Now in TestFlight</span><a href="mailto:imhccn@gmail.com">Join the beta or send feedback</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Your clouds, your data</strong><span>Add several WebDAV sources at once; briefings live in your own Jianguoyun storage — Siftr operates no server of its own.</span></li>
-        <li><strong>A magazine, not a file list</strong><span>The latest issue up front, with category, tag, and unread filters plus a month-by-month archive — it reads like a private magazine.</span></li>
-        <li><strong>A reader shaped like you</strong><span>Five theme colors, sans or serif type, text size and line spacing, light or dark — with a Liquid Glass reading surface on iOS 26.</span></li>
-        <li><strong>Full-text search, offline reading</strong><span>Articles you open join a full-text index: multi-word search, highlighted matches that jump to the section — all readable on the subway or in airplane mode.</span></li>
-        <li><strong>Favorites follow your iCloud</strong><span>Favorites, read states, and reading settings sync through your own private iCloud; article bodies and reading positions stay on this device.</span></li>
-        <li><strong>Widgets and Shortcuts</strong><span>A Home Screen widget shows the latest issue and unread count; Shortcuts refresh or open the latest issue in one tap.</span></li>
-      </ul>
-      <p class="closing">No Siftr account, no ads, no tracking.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Privacy Policy</strong><span>WebDAV credentials, cache, and on-device data</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Answers, setup steps, and contact details</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Publisher Skill</strong><span>Hand the publishing skill to your AI agent</span></a>
-      </div>
-    </section>
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">怎么运转</button>
+  <button type="button" data-goto="sec-features">清单</button>
+  <button type="button" data-goto="sec-faq">问答</button>
+  <a href="skill.html" data-localized-link="skill.html">发布 Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">参加内测</a>
+</nav>
+    <p class="support">把你 AI 发到云盘的每日简报，读成一本安静的刊物。</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 起</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">参加内测</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr 首页：最新一期与分类筛选" width="1206" height="2622"></figure>
+  </div>
 
-    <section class="language-panel" data-language="ru" lang="ru" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>ИИ готовит. Вы читаете.</h1>
-        <p class="lede">Siftr превращает Markdown-брифинги, которые ваш ИИ-агент ежедневно публикует в Nutstore, в спокойный нативный журнал: несколько источников WebDAV, обновление потягиванием, кэширование статей по требованию и полное чтение офлайн; избранное, статус прочтения и настройки чтения синхронизируются через ваш личный iCloud.</p>
-        <p class="meta">Для iPhone и iPad · Требуется iOS 18 или новее</p>
-      <p class="cta"><span class="cta-badge">Бета в TestFlight</span><a href="mailto:imhccn@gmail.com">Участвовать в бете или написать</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Ваши облака, ваши данные</strong><span>Добавляйте несколько источников WebDAV; брифинги лежат в вашем собственном Nutstore — у Siftr нет своего сервера.</span></li>
-        <li><strong>Журнал, а не файловый список</strong><span>Свежий выпуск на видном месте, фильтры по категориям, меткам и непрочитанным, архив по месяцам — читается как личный журнал.</span></li>
-        <li><strong>Читалка под вас</strong><span>Пять цветов темы, гротеск или антиква, размер шрифта и межстрочный интервал, светлая или тёмная — а на iOS 26 ещё и стеклянный Liquid Glass.</span></li>
-        <li><strong>Полнотекстовый поиск и офлайн</strong><span>Прочитанные статьи попадают в полнотекстовый индекс: поиск по нескольким словам, подсветка совпадений и переход к разделу; читается и в метро, и в самолёте.</span></li>
-        <li><strong>Избранное следует за iCloud</strong><span>Избранное, статус прочтения и настройки чтения синхронизируются через ваш личный iCloud; тексты статей и позиция чтения остаются на устройстве.</span></li>
-        <li><strong>Виджеты и Команды</strong><span>Виджет на домашнем экране показывает свежий выпуск и число непрочитанных; Команды обновляют или открывают последний выпуск одним нажатием.</span></li>
-      </ul>
-      <p class="closing">Без аккаунта Siftr, без рекламы и без слежки.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Политика конфиденциальности</strong><span>Учётные данные WebDAV, кэш и локальные данные</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Поддержка</strong><span>Ответы, настройка и контакты</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill публикации</strong><span>Передайте навык публикации своему ИИ-агенту</span></a>
-      </div>
-    </section>
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>四步，一条只属于你的管道</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>先，你的 AI 写好一期</h3><p>当天读到什么、值得留下什么，它替你筛掉噪音，写成一份 Markdown。</p></div>
+<div class="how-clause"><h3>再，放进你自己的云盘</h3><p>一个普通文件夹，一个约定好的文件名。坚果云、任何标准 WebDAV 都行。</p></div>
+<div class="how-clause"><h3>然后，Siftr 排成刊物</h3><p>下拉刷新取新的一期；分类、标签、归档都是现成的。</p></div>
+<div class="how-clause"><h3>最后，离线也接着读</h3><p>打开过的正文进本地缓存，地铁里、飞机上，读到哪算哪。</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="AI 正在写 Markdown 简报">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">已保存</span></div>
+  <pre># AI 每日简报：把信息读成理解
 
-    <section class="language-panel" data-language="fr" lang="fr" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>Votre IA prépare. Vous lisez.</h1>
-        <p class="lede">Siftr transforme les briefings Markdown que votre agent IA publie chaque jour sur Nutstore en un magazine natif et paisible : plusieurs sources WebDAV, actualisation par tirage, articles mis en cache à la demande et lisibles hors ligne ; favoris, état de lecture et réglages suivent votre iCloud privé.</p>
-        <p class="meta">Pour iPhone et iPad · Nécessite iOS 18 ou ultérieur</p>
-      <p class="cta"><span class="cta-badge">Bêta sur TestFlight</span><a href="mailto:imhccn@gmail.com">Participer à la bêta ou écrire</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Vos nuages, vos données</strong><span>Ajoutez plusieurs sources WebDAV ; les briefings restent dans votre propre Nutstore — Siftr n’exploite aucun serveur.</span></li>
-        <li><strong>Un magazine, pas un listing de fichiers</strong><span>Le dernier numéro en tête, filtres par catégorie, tag et non lus, archive mois par mois — on lit cela comme un magazine privé.</span></li>
-        <li><strong>Un lecteur à votre image</strong><span>Cinq couleurs de thème, sans ou avec empattement, taille de texte et interligne, clair ou sombre — et un rendu Liquid Glass sur iOS 26.</span></li>
-        <li><strong>Recherche plein texte, lecture hors ligne</strong><span>Les articles ouverts rejoignent l’index plein texte : recherche multi-mots, occurrences surlignées et saut à la section ; lisible dans le métro comme en avion.</span></li>
-        <li><strong>Les favoris suivent votre iCloud</strong><span>Favoris, état de lecture et réglages se synchronisent via votre iCloud privé ; les corps d’articles et la position de lecture restent sur l’appareil.</span></li>
-        <li><strong>Widgets et raccourcis</strong><span>Un widget d’écran d’accueil affiche le dernier numéro et le nombre de non lus ; les raccourcis actualisent ou ouvrent le dernier numéro en un geste.</span></li>
-      </ul>
-      <p class="closing">Pas de compte Siftr, pas de pub, pas de traçage.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Politique de confidentialité</strong><span>Identifiants WebDAV, cache et données locales</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Assistance</strong><span>Réponses, configuration et contact</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill de publication</strong><span>Confiez le skill de publication à votre agent IA</span></a>
-      </div>
-    </section>
+> 从模型能力到 Agent 实践，
+> 梳理关键变化。
 
-    <section class="language-panel" data-language="ko" lang="ko" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>AI가 정리하고, 당신이 읽는다</h1>
-        <p class="lede">Siftr은 AI 에이전트가 매일 누터스트에 게시하는 Markdown 브리핑을 조용한 네이티브 매거진으로 바꿔 줘요. WebDAV 소스 여러 개를 추가할 수 있고, 당겨서 새로 고치며, 본문은 필요할 때 캐시되어 비행기 모드에서도 이어 읽을 수 있고, 즐겨찾기·읽음 상태·읽기 설정은 당신의 iCloud 개인 데이터베이스로 동기화돼요.</p>
-        <p class="meta">iPhone 및 iPad용 · iOS 18 이상 필요</p>
-      <p class="cta"><span class="cta-badge">TestFlight 베타 테스트 중</span><a href="mailto:imhccn@gmail.com">베타 참여 또는 피드백</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>당신의 클라우드, 당신의 데이터</strong><span>WebDAV 소스를 여러 개 동시에 추가할 수 있어요. 브리핑은 당신의 누터스트에 있고 Siftr은 서버를 운영하지 않아요.</span></li>
-        <li><strong>파일 목록이 아니라 매거진</strong><span>최신 호를 크게 보여 주고, 카테고리·태그·읽지 않음 필터와 월별 보관까지 갖춰 개인 매거진처럼 읽혀요.</span></li>
-        <li><strong>취향대로 조정하는 리더</strong><span>테마 색상 5종, 고딕 또는 명조, 글자 크기와 줄 간격, 라이트/다크 자유 조합. iOS 26에서는 Liquid Glass 질감까지</span></li>
-        <li><strong>전문 검색과 오프라인 읽기</strong><span>열어 본 글은 전문 색인에 들어가 여러 단어 검색, 일치 항목 강조, 섹션 이동까지 가능해요. 지하철에서도 비행기 모드에서도 읽어요.</span></li>
-        <li><strong>즐겨찾기는 iCloud를 따라</strong><span>즐겨찾기·읽음 상태·읽기 설정은 당신의 iCloud 개인 데이터베이스로 동기화되고, 본문과 읽기 위치는 이 기기에만 저장돼요.</span></li>
-        <li><strong>위젯과 단축어</strong><span>홈 화면 위젯에 최신 호와 읽지 않은 개수를 표시하고, 단축어로 한 번에 새로 고치거나 최신 호를 열어요.</span></li>
-      </ul>
-      <p class="closing">Siftr 계정도, 광고도, 추적도 없습니다.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>개인정보 처리방침</strong><span>WebDAV 자격 증명, 캐시, 기기 데이터</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>지원</strong><span>자주 묻는 질문, 설정, 연락처</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>게시 Skill</strong><span>게시 스킬을 AI 에이전트에게 건네주기</span></a>
-      </div>
-    </section>
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文
+接口，价格降了一半。
 
-    <section class="language-panel" data-language="de" lang="de" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>Deine KI sortiert. Du liest.</h1>
-        <p class="lede">Siftr verwandelt die Markdown-Briefings, die dein KI-Agent täglich in Nutstore veröffentlicht, in ein ruhiges, native Magazin: mehrere WebDAV-Quellen, Aktualisieren durch Ziehen, bei Bedarf zwischengespeicherte und offline lesbare Artikel; Favoriten, Lesestatus und Leseeinstellungen folgen über dein privates iCloud.</p>
-        <p class="meta">Für iPhone und iPad · Erfordert iOS 18 oder neuer</p>
-      <p class="cta"><span class="cta-badge">Jetzt in TestFlight</span><a href="mailto:imhccn@gmail.com">Beta testen oder schreiben</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Deine Clouds, deine Daten</strong><span>Füge mehrere WebDAV-Quellen hinzu; die Briefings bleiben in deinem eigenen Nutstore — Siftr betreibt keinen Server.</span></li>
-        <li><strong>Ein Magazin, keine Dateiliste</strong><span>Die neueste Ausgabe oben, Filter nach Kategorie, Tag und ungelesen sowie ein Monatsarchiv — liest sich wie ein privates Magazin.</span></li>
-        <li><strong>Ein Reader ganz nach dir</strong><span>Fünf Themenfarben, serifenlos oder Serif, Textgröße und Zeilenabstand, hell oder dunkel — auf iOS 26 dazu ein Liquid-Glass-Leseerlebnis.</span></li>
-        <li><strong>Volltextsuche, Offline-Lesen</strong><span>Geöffnete Artikel landen im Volltextindex: Mehrwort-Suche, hervorgehobene Treffer und Sprung zum Abschnitt; in der U-Bahn wie im Flugzeug lesbar.</span></li>
-        <li><strong>Favoriten folgen deinem iCloud</strong><span>Favoriten, Lesestatus und Leseeinstellungen synchronisieren über dein privates iCloud; Artikeltexte und Leseposition bleiben auf dem Gerät.</span></li>
-        <li><strong>Widgets und Kurzbefehle</strong><span>Ein HomeScreen-Widget zeigt die neueste Ausgabe und die Ungelesen-Zahl; Kurzbefehle aktualisieren oder öffnen die neueste Ausgabe mit einem Tipp.</span></li>
-      </ul>
-      <p class="closing">Kein Siftr-Konto, keine Werbung, kein Tracking.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Datenschutz</strong><span>WebDAV-Zugangsdaten, Cache und Gerätedaten</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Support</strong><span>Antworten, Einrichtung und Kontakt</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Publisher-Skill</strong><span>Übergib den Publishing-Skill deinem KI-Agenten</span></a>
-      </div>
-    </section>
+## 02｜值得继续跟踪
+- 长上下文的实际命中率
+- 端侧模型的电量账</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="云盘里的简报文件夹">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">新</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr 首页，下拉刷新中">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>正在刷新…</div>
+  <h4>Siftr</h4>
+  <p class="sub">10月21日 星期三 · 3 篇未读</p>
+  <div class="chips"><span class="on">全部</span><span>AI 资讯</span><span>工具评测</span></div>
+  <div class="doc"><div class="t">AI 每日简报：把信息读成理解</div><div class="m">AI 资讯 · 10月21日 · 约 3 分钟</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="文章排版，离线可读">
+  <div class="meta"><span>AI 资讯 · 10月21日</span><span class="offline">离线可读</span></div>
+  <h4>AI 每日简报：把信息读成理解</h4>
+  <p class="sum">从模型能力到 Agent 实践，梳理关键变化与研究线索，为下一次观察保留值得追踪的来源。</p>
+  <div class="body"><h5>01｜先看变化，再看影响</h5><p>三家都放出了新的长上下文接口，价格降了一半。评测里的实际命中率，比发布会上的数字更值得记一笔……</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="管道进度">
+      <div class="how-labels"><span data-active>写稿</span>
+<span>入云</span>
+<span>排版</span>
+<span>离读</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr 阅读页：文章排版与摘要展开" width="1206" height="2622" loading="lazy">
+  </div>
 
-    <section class="language-panel" data-language="es" lang="es" data-title="Siftr">
-      <header class="hero">
-        <img class="hero-mark" src="assets/icon-256.png?v=siftr-20261014-1" alt="" width="76" height="76">
-        <h1>Tu IA prepara. Tú lees.</h1>
-        <p class="lede">Siftr convierte los boletines en Markdown que tu agente de IA publica cada día en Nutstore en una revista nativa y serena: varias fuentes WebDAV, actualizar estirando hacia abajo, artículos en caché a demanda y legibles sin conexión; favoritos, estado de lectura y ajustes se sincronizan mediante tu iCloud privado.</p>
-        <p class="meta">Para iPhone y iPad · Requiere iOS 18 o posterior</p>
-      <p class="cta"><span class="cta-badge">Beta en TestFlight</span><a href="mailto:imhccn@gmail.com">Unirse a la beta o escribir</a></p>
-      </header>
-      <ul class="features">
-        <li><strong>Tus nubes, tus datos</strong><span>Añade varias fuentes WebDAV; los boletines viven en tu propio Nutstore — Siftr no opera ningún servidor.</span></li>
-        <li><strong>Una revista, no una lista de archivos</strong><span>El último número en primer plano, filtros por categoría, etiqueta y sin leer, y un archivo por meses: se lee como una revista privada.</span></li>
-        <li><strong>Un lector a tu medida</strong><span>Cinco colores de tema, redonda o con serifa, tamaño de texto e interlineado, claro u oscuro — y un acabado Liquid Glass en iOS 26.</span></li>
-        <li><strong>Búsqueda de texto completo y lectura sin conexión</strong><span>Los artículos que abres entran en el índice de texto completo: búsqueda de varias palabras, coincidencias resaltadas y salto a la sección; se lee en el metro y en el avión.</span></li>
-        <li><strong>Los favoritos siguen tu iCloud</strong><span>Favoritos, estado de lectura y ajustes se sincronizan mediante tu iCloud privado; los cuerpos de los artículos y la posición de lectura quedan en el dispositivo.</span></li>
-        <li><strong>Widgets y atajos</strong><span>Un widget en la pantalla de inicio muestra el último número y los no leídos; los atajos actualizan o abren el último número de un toque.</span></li>
-      </ul>
-      <p class="closing">Sin cuenta Siftr, sin anuncios y sin rastreo.</p>
-      <div class="cards">
-        <a class="card" href="privacy.html" data-localized-link="privacy.html"><strong>Política de privacidad</strong><span>Credenciales WebDAV, caché y datos del dispositivo</span></a> <a class="card" href="support.html" data-localized-link="support.html"><strong>Soporte</strong><span>Respuestas, configuración y contacto</span></a> <a class="card" href="skill.html" data-localized-link="skill.html"><strong>Skill de publicación</strong><span>Entrega el skill de publicación a tu agente de IA</span></a>
-      </div>
-    </section>
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>一份读物该有的</h2>
+<div class="menu-group"><h3>刊物</h3>
+<div class="menu-row"><span class="name">最新一期</span><span class="dots" aria-hidden="true"></span><span class="value">首屏直达</span></div>
+<div class="menu-row"><span class="name">分类与标签</span><span class="dots" aria-hidden="true"></span><span class="value">一行筛选</span></div>
+<div class="menu-row"><span class="name">未读</span><span class="dots" aria-hidden="true"></span><span class="value">一键只看没读的</span></div>
+<div class="menu-row"><span class="name">按月归档</span><span class="dots" aria-hidden="true"></span><span class="value">旧文有去处</span></div>
+<div class="menu-row"><span class="name">收藏</span><span class="dots" aria-hidden="true"></span><span class="value">跟着 iCloud 私库</span></div></div>
+<div class="menu-group"><h3>版面</h3>
+<div class="menu-row"><span class="name">主题色</span><span class="dots" aria-hidden="true"></span><span class="value">五套</span></div>
+<div class="menu-row"><span class="name">字体</span><span class="dots" aria-hidden="true"></span><span class="value">黑体或宋体</span></div>
+<div class="menu-row"><span class="name">字号与行距</span><span class="dots" aria-hidden="true"></span><span class="value">随手调</span></div>
+<div class="menu-row"><span class="name">日间夜间</span><span class="dots" aria-hidden="true"></span><span class="value">跟系统或自选</span></div>
+<div class="menu-row"><span class="name">玻璃质感</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26 起</span></div></div>
+<div class="menu-group"><h3>检索</h3>
+<div class="menu-row"><span class="name">全文索引</span><span class="dots" aria-hidden="true"></span><span class="value">打开过即收入</span></div>
+<div class="menu-row"><span class="name">多词搜索</span><span class="dots" aria-hidden="true"></span><span class="value">命中高亮</span></div>
+<div class="menu-row"><span class="name">大纲导航</span><span class="dots" aria-hidden="true"></span><span class="value">一键跳章节</span></div>
+<div class="menu-row"><span class="name">离线阅读</span><span class="dots" aria-hidden="true"></span><span class="value">飞行模式照读</span></div></div>
+<div class="menu-group"><h3>随行</h3>
+<div class="menu-row"><span class="name">小组件</span><span class="dots" aria-hidden="true"></span><span class="value">最新一期与未读数</span></div>
+<div class="menu-row"><span class="name">快捷指令</span><span class="dots" aria-hidden="true"></span><span class="value">一键刷新或直达</span></div>
+<div class="menu-row"><span class="name">多个来源</span><span class="dots" aria-hidden="true"></span><span class="value">几个云盘一起接</span></div>
+<div class="menu-row"><span class="name">导出</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown 或 PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr 文内查找：命中词高亮" width="1206" height="2622" loading="lazy">
+  </div>
 
-  </main>
-  <footer><p>© 2026 Chen Haokun · <a href="index.html" data-localized-link="index.html">Siftr</a> · <a href="support.html" data-localized-link="support.html">Support</a></p></footer>
-</div><script src="language.js?v=siftr-20261014-2"></script></body></html>
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>问答</h2>
+    <div class="faq-flow">
+<p><b>需要什么云盘？</b>任何标准 WebDAV 都可以；国内常用坚果云，免费版就够，在设置里开「第三方应用管理」拿一个应用密码。</p>
+<p><b>我的 AI 怎么知道往哪发？</b>把本站的「发布 Skill」交给它——里面写清了文件夹结构和文件名约定，一次配好。</p>
+<p><b>简报是什么格式？</b>带一点元信息的 Markdown；正文随意写，排版交给 Siftr。也支持内嵌的沙箱 HTML 页面。</p>
+<p><b>我的数据存在哪？</b>正文在你的云盘和手机缓存里；收藏、已读和设置走你自己的 iCloud 私有库。Siftr 没有服务器。</p>
+<p><b>断网还能读吗？</b>打开过的文章都进了本地缓存和全文索引，飞行模式下照样读、照样搜。</p>
+<p><b>支持哪些设备？</b>iPhone 和 iPad，iOS 18 起；iPad 上是同样的刊物，更大的版面。</p>
+<p><b>什么时候正式上架？</b>正在 TestFlight 内测；写下邮件就能参加，页尾有入口。</p>
+<p><b>和 RSS 阅读器有什么不同？</b>内容是你自己的 AI 按你的口味整理的，存放和同步全走你自己的账号——没有推荐算法，没有广告。</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr 深色模式阅读页" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">你写下的</h2>
+      <p class="show-hint">试着改改左边——右边就是 Siftr 排出来的样子</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="试着改改左边——右边就是 Siftr 排出来的样子"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">你读到的</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">每天一期，只装你自己想读的。</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">参加 TestFlight 内测</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">或先写封信聊聊</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr 沉浸式网页阅读：悬浮玻璃工具栏" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>一个安静的私人刊物 App</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">隐私政策</a><a href="support.html" data-localized-link="support.html">技术支持</a><a href="skill.html" data-localized-link="skill.html">发布 Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="zh-Hant" lang="zh-Hant" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">怎麼運轉</button>
+  <button type="button" data-goto="sec-features">清單</button>
+  <button type="button" data-goto="sec-faq">問答</button>
+  <a href="skill.html" data-localized-link="skill.html">發布 Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加內測</a>
+</nav>
+    <p class="support">把你 AI 發到雲盤的每日簡報，讀成一本安靜的刊物。</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 起</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加內測</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr 首頁：最新一期與分類篩選" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>四步，一條只屬於你的管道</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>先，你的 AI 寫好一期</h3><p>當天讀到什麼、值得留下什麼，它替你篩掉噪音，寫成一份 Markdown。</p></div>
+<div class="how-clause"><h3>再，放進你自己的雲盤</h3><p>一個普通資料夾，一個約定好的檔名。堅果雲、任何標準 WebDAV 都行。</p></div>
+<div class="how-clause"><h3>然後，Siftr 排成刊物</h3><p>下拉重新整理取新的一期；分類、標籤、歸檔都是現成的。</p></div>
+<div class="how-clause"><h3>最後，離線也接著讀</h3><p>開啟過的正文進本機快取，捷運裡、飛機上，讀到哪算哪。</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="AI 正在寫 Markdown 簡報">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">已儲存</span></div>
+  <pre># AI 每日簡報：把資訊讀成理解
+
+> 從模型能力到 Agent 實踐，
+> 梳理關鍵變化。
+
+## 01｜先看變化，再看影響
+三家都放出了新的長上下文
+介面，價格降了一半。
+
+## 02｜值得繼續追蹤
+- 長上下文的實際命中率
+- 端側模型的電量帳</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="雲盤裡的簡報資料夾">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">新</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr 首頁，下拉重新整理中">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>正在重新整理…</div>
+  <h4>Siftr</h4>
+  <p class="sub">10月21日 星期三 · 3 篇未讀</p>
+  <div class="chips"><span class="on">全部</span><span>AI 資訊</span><span>工具評測</span></div>
+  <div class="doc"><div class="t">AI 每日簡報：把資訊讀成理解</div><div class="m">AI 資訊 · 10月21日 · 約 3 分鐘</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="文章排版，離線可讀">
+  <div class="meta"><span>AI 資訊 · 10月21日</span><span class="offline">離線可讀</span></div>
+  <h4>AI 每日簡報：把資訊讀成理解</h4>
+  <p class="sum">從模型能力到 Agent 實踐，梳理關鍵變化與研究線索，為下一次觀察保留值得追蹤的來源。</p>
+  <div class="body"><h5>01｜先看變化，再看影響</h5><p>三家都放出了新的長上下文介面，價格降了一半。評測裡的實際命中率，比發表會上的數字更值得記一筆……</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="管道進度">
+      <div class="how-labels"><span data-active>寫稿</span>
+<span>入雲</span>
+<span>排版</span>
+<span>離讀</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr 閱讀頁：文章排版與摘要展開" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>一份讀物該有的</h2>
+<div class="menu-group"><h3>刊物</h3>
+<div class="menu-row"><span class="name">最新一期</span><span class="dots" aria-hidden="true"></span><span class="value">首屏直達</span></div>
+<div class="menu-row"><span class="name">分類與標籤</span><span class="dots" aria-hidden="true"></span><span class="value">一行篩選</span></div>
+<div class="menu-row"><span class="name">未讀</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵只看沒讀的</span></div>
+<div class="menu-row"><span class="name">按月歸檔</span><span class="dots" aria-hidden="true"></span><span class="value">舊文有去處</span></div>
+<div class="menu-row"><span class="name">收藏</span><span class="dots" aria-hidden="true"></span><span class="value">跟著 iCloud 私庫</span></div></div>
+<div class="menu-group"><h3>版面</h3>
+<div class="menu-row"><span class="name">主題色</span><span class="dots" aria-hidden="true"></span><span class="value">五套</span></div>
+<div class="menu-row"><span class="name">字體</span><span class="dots" aria-hidden="true"></span><span class="value">黑體或宋體</span></div>
+<div class="menu-row"><span class="name">字號與行距</span><span class="dots" aria-hidden="true"></span><span class="value">隨手調</span></div>
+<div class="menu-row"><span class="name">日間夜間</span><span class="dots" aria-hidden="true"></span><span class="value">跟系統或自選</span></div>
+<div class="menu-row"><span class="name">玻璃質感</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26 起</span></div></div>
+<div class="menu-group"><h3>檢索</h3>
+<div class="menu-row"><span class="name">全文索引</span><span class="dots" aria-hidden="true"></span><span class="value">開啟過即收入</span></div>
+<div class="menu-row"><span class="name">多詞搜尋</span><span class="dots" aria-hidden="true"></span><span class="value">命中高亮</span></div>
+<div class="menu-row"><span class="name">大綱導覽</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵跳章節</span></div>
+<div class="menu-row"><span class="name">離線閱讀</span><span class="dots" aria-hidden="true"></span><span class="value">飛航模式照讀</span></div></div>
+<div class="menu-group"><h3>隨行</h3>
+<div class="menu-row"><span class="name">小工具</span><span class="dots" aria-hidden="true"></span><span class="value">最新一期與未讀數</span></div>
+<div class="menu-row"><span class="name">捷徑</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵重新整理或直達</span></div>
+<div class="menu-row"><span class="name">多個來源</span><span class="dots" aria-hidden="true"></span><span class="value">幾個雲盤一起接</span></div>
+<div class="menu-row"><span class="name">匯出</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown 或 PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr 文內尋找：命中詞高亮" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>問答</h2>
+    <div class="faq-flow">
+<p><b>需要什麼雲盤？</b>任何標準 WebDAV 都可以；台灣常用支援 WebDAV 的網盤（如 Nutstore），在設定裡取得應用密碼。</p>
+<p><b>我的 AI 怎麼知道往哪發？</b>把本站的「發布 Skill」交給它——裡面寫清了資料夾結構和檔名約定，一次配好。</p>
+<p><b>簡報是什麼格式？</b>帶一點元資訊的 Markdown；正文隨意寫，排版交給 Siftr。也支援內嵌的沙箱 HTML 頁面。</p>
+<p><b>我的資料存在哪？</b>正文在你的雲盤和手機快取裡；收藏、已讀和設定走你自己的 iCloud 私有資料庫。Siftr 沒有伺服器。</p>
+<p><b>斷網還能讀嗎？</b>開啟過的文章都進了本機快取和全文索引，飛航模式下照樣讀、照樣搜。</p>
+<p><b>支援哪些裝置？</b>iPhone 和 iPad，iOS 18 起；iPad 上是同樣的刊物，更大的版面。</p>
+<p><b>什麼時候正式上架？</b>正在 TestFlight 內測；寫下郵件就能參加，頁尾有入口。</p>
+<p><b>和 RSS 閱讀器有什麼不同？</b>內容是你自己的 AI 按你的口味整理的，存放和同步全走你自己的帳號——沒有推薦演算法，沒有廣告。</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr 深色模式閱讀頁" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">你寫下的</h2>
+      <p class="show-hint">試著改改左邊——右邊就是 Siftr 排出來的樣子</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="試著改改左邊——右邊就是 Siftr 排出來的樣子"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">你讀到的</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">每天一期，只裝你自己想讀的。</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加 TestFlight 內測</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">或先寫封信聊聊</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr 沉浸式網頁閱讀：懸浮玻璃工具列" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>一個安靜的私人刊物 App</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">隱私政策</a><a href="support.html" data-localized-link="support.html">技術支援</a><a href="skill.html" data-localized-link="skill.html">發布 Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="zh-HK" lang="zh-HK" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">怎樣運作</button>
+  <button type="button" data-goto="sec-features">清單</button>
+  <button type="button" data-goto="sec-faq">問答</button>
+  <a href="skill.html" data-localized-link="skill.html">發佈 Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加內測</a>
+</nav>
+    <p class="support">把你 AI 發去雲盤嘅每日簡報，讀成一本安靜嘅刊物。</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 起</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加內測</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr 首頁：最新一期與分類篩選" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>四步，一條只屬於你嘅管道</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>先，你嘅 AI 寫好一期</h3><p>當日讀到乜、值得留低乜，佢替你篩走噪音，寫成一份 Markdown。</p></div>
+<div class="how-clause"><h3>再，放入你自己嘅雲盤</h3><p>一個普通資料夾，一個約定好嘅檔名。堅果雲、任何標準 WebDAV 都得。</p></div>
+<div class="how-clause"><h3>然後，Siftr 排成刊物</h3><p>下拉更新攞新一期；分類、標籤、歸檔全部現成。</p></div>
+<div class="how-clause"><h3>最後，離線都照讀</h3><p>開過嘅正文入本機快取，地鐵入面、飛機上面，讀到邊算邊。</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="AI 正在寫 Markdown 簡報">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">已儲存</span></div>
+  <pre># AI 每日簡報：把資訊讀成理解
+
+> 從模型能力到 Agent 實踐，
+> 梳理關鍵變化。
+
+## 01｜先看變化，再看影響
+三間都出咗新嘅長上下文
+介面，價錢平咗一半。
+
+## 02｜值得繼續跟蹤
+- 長上下文嘅實際命中率
+- 端側模型嘅電量帳</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="雲盤入面嘅簡報資料夾">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">新</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr 首頁，下拉更新中">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>正在更新…</div>
+  <h4>Siftr</h4>
+  <p class="sub">10月21日 星期三 · 3 篇未讀</p>
+  <div class="chips"><span class="on">全部</span><span>AI 資訊</span><span>工具評測</span></div>
+  <div class="doc"><div class="t">AI 每日簡報：把資訊讀成理解</div><div class="m">AI 資訊 · 10月21日 · 約 3 分鐘</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="文章排版，離線可讀">
+  <div class="meta"><span>AI 資訊 · 10月21日</span><span class="offline">離線可讀</span></div>
+  <h4>AI 每日簡報：把資訊讀成理解</h4>
+  <p class="sum">從模型能力到 Agent 實踐，梳理關鍵變化同研究線索，為下一次觀察留低值得跟蹤嘅來源。</p>
+  <div class="body"><h5>01｜先看變化，再看影響</h5><p>三間都出咗新嘅長上下文介面，價錢平咗一半。評測入面嘅實際命中率，比發佈會上面嘅數字更值得記一筆……</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="管道進度">
+      <div class="how-labels"><span data-active>寫稿</span>
+<span>入雲</span>
+<span>排版</span>
+<span>離讀</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr 閱讀頁：文章排版與摘要展開" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>一份讀物應有嘅</h2>
+<div class="menu-group"><h3>刊物</h3>
+<div class="menu-row"><span class="name">最新一期</span><span class="dots" aria-hidden="true"></span><span class="value">首屏直達</span></div>
+<div class="menu-row"><span class="name">分類與標籤</span><span class="dots" aria-hidden="true"></span><span class="value">一行篩選</span></div>
+<div class="menu-row"><span class="name">未讀</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵只睇未讀</span></div>
+<div class="menu-row"><span class="name">按月歸檔</span><span class="dots" aria-hidden="true"></span><span class="value">舊文有去處</span></div>
+<div class="menu-row"><span class="name">收藏</span><span class="dots" aria-hidden="true"></span><span class="value">跟住 iCloud 私庫</span></div></div>
+<div class="menu-group"><h3>版面</h3>
+<div class="menu-row"><span class="name">主題色</span><span class="dots" aria-hidden="true"></span><span class="value">五套</span></div>
+<div class="menu-row"><span class="name">字體</span><span class="dots" aria-hidden="true"></span><span class="value">黑體或宋體</span></div>
+<div class="menu-row"><span class="name">字號與行距</span><span class="dots" aria-hidden="true"></span><span class="value">隨手調</span></div>
+<div class="menu-row"><span class="name">日間夜間</span><span class="dots" aria-hidden="true"></span><span class="value">跟系統或自選</span></div>
+<div class="menu-row"><span class="name">玻璃質感</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26 起</span></div></div>
+<div class="menu-group"><h3>檢索</h3>
+<div class="menu-row"><span class="name">全文索引</span><span class="dots" aria-hidden="true"></span><span class="value">開過即收入</span></div>
+<div class="menu-row"><span class="name">多詞搜尋</span><span class="dots" aria-hidden="true"></span><span class="value">命中高亮</span></div>
+<div class="menu-row"><span class="name">大綱導航</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵跳章節</span></div>
+<div class="menu-row"><span class="name">離線閱讀</span><span class="dots" aria-hidden="true"></span><span class="value">飛行模式照讀</span></div></div>
+<div class="menu-group"><h3>隨行</h3>
+<div class="menu-row"><span class="name">小工具</span><span class="dots" aria-hidden="true"></span><span class="value">最新一期與未讀數</span></div>
+<div class="menu-row"><span class="name">捷徑</span><span class="dots" aria-hidden="true"></span><span class="value">一鍵更新或直達</span></div>
+<div class="menu-row"><span class="name">多個來源</span><span class="dots" aria-hidden="true"></span><span class="value">幾個雲盤一齊接</span></div>
+<div class="menu-row"><span class="name">匯出</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown 或 PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr 文內尋找：命中字高亮" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>問答</h2>
+    <div class="faq-flow">
+<p><b>要咩雲盤？</b>任何標準 WebDAV 都得；香港用 Nutstore 或者其他支援 WebDAV 嘅網盤，喺設定攞個應用密碼。</p>
+<p><b>我嘅 AI 點知發去邊？</b>將本站嘅「發佈 Skill」交俾佢——入面寫明資料夾結構同檔名約定，一次搞掂。</p>
+<p><b>簡報係咩格式？</b>帶少少元資訊嘅 Markdown；正文求其寫，排版交俾 Siftr。仲支援內嵌嘅沙箱 HTML 頁。</p>
+<p><b>我啲資料喺邊？</b>正文喺你雲盤同手機快取度；收藏、已讀同設定行你自己嘅 iCloud 私人資料庫。Siftr 冇伺服器。</p>
+<p><b>斷網仲讀到嗎？</b>開過嘅文都入咗本機快取同全文索引，飛行模式照讀照搜。</p>
+<p><b>支援咩裝置？</b>iPhone 同 iPad，iOS 18 起；iPad 上面係同一本刊物，更大嘅版面。</p>
+<p><b>幾時正式上架？</b>而家 TestFlight 內測緊；寫封電郵就參加到，頁尾有入口。</p>
+<p><b>同 RSS 閱讀器有咩唔同？</b>內容係你自己嘅 AI 按你口味整理嘅，存放同同步全部行你自己嘅帳戶——冇推薦演算法，冇廣告。</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr 深色模式閱讀頁" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">你寫低嘅</h2>
+      <p class="show-hint">試下改下左邊——右邊就係 Siftr 排出嚟嘅樣</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="試下改下左邊——右邊就係 Siftr 排出嚟嘅樣"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">你讀到嘅</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">每日一期，只裝你自己想讀嘅。</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">參加 TestFlight 內測</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">或者先寫封信傾下</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr 沉浸式網頁閱讀：懸浮玻璃工具列" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>一個安靜嘅私人刊物 App</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">私隱政策</a><a href="support.html" data-localized-link="support.html">技術支援</a><a href="skill.html" data-localized-link="skill.html">發佈 Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="ja" lang="ja" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">仕組み</button>
+  <button type="button" data-goto="sec-features">一覧</button>
+  <button type="button" data-goto="sec-faq">よくある質問</button>
+  <a href="skill.html" data-localized-link="skill.html">公開 Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">ベータに参加</a>
+</nav>
+    <p class="support">AI があなたのクラウドに毎日投稿するブリーフィングを、静かな一冊の雑誌にして読む。</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 以降</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">ベータに参加</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr ホーム：最新号とカテゴリフィルタ" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>4 ステップ、あなた専用のパイプライン</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>まず、AI が号を書く</h3><p>その日読んだもの、残す価値のあるものをノイズからふるいにかけ、1 本の Markdown にまとめます。</p></div>
+<div class="how-clause"><h3>次に、自分のクラウドへ</h3><p>ごく普通のフォルダと、約束したファイル名。Nutstore など標準的な WebDAV ならどれでも。</p></div>
+<div class="how-clause"><h3>そして、Siftr が組版</h3><p>引き下げて更新すれば新しい号に。カテゴリ・タグ・アーカイブも最初から揃っています。</p></div>
+<div class="how-clause"><h3>最後に、オフラインでも</h3><p>開いた記事は端末にキャッシュ。地下鉄でも飛行機の中でも、続きから読めます。</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="AI が Markdown ブリーフィングを書いているところ">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">保存済み</span></div>
+  <pre># AI デイリーブリーフィング
+
+> モデル能力から Agent 実践まで、
+> 主要な変化を整理する。
+
+## 01｜まず変化、次に影響
+3 社が新しいロングコンテキスト
+API を公開、価格は半分に。
+
+## 02｜追跡すべきこと
+- ロングコンテキストの実命中率
+- オンデバイスモデルの電力量</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="クラウドのブリーフィングフォルダ">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">新着</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr のホーム、引き下げ更新中">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>更新中…</div>
+  <h4>Siftr</h4>
+  <p class="sub">10月21日 水曜日 · 3 件未読</p>
+  <div class="chips"><span class="on">すべて</span><span>AI ニュース</span><span>ツールレビュー</span></div>
+  <div class="doc"><div class="t">AI デイリーブリーフィング</div><div class="m">AI ニュース · 10月21日 · 約 3 分</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="記事の組版、オフラインで読める">
+  <div class="meta"><span>AI ニュース · 10月21日</span><span class="offline">オフライン可</span></div>
+  <h4>AI デイリーブリーフィング</h4>
+  <p class="sum">モデル能力から Agent 実践まで、主要な変化と研究の筋道を整理し、次の観察に残す価値のある出所を保管します。</p>
+  <div class="body"><h5>01｜まず変化、次に影響</h5><p>3 社が新しいロングコンテキスト API を公開し、価格は半分になりました。実測の命中率は、発表の数字より記録する価値があります……</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="パイプラインの段階">
+      <div class="how-labels"><span data-active>執筆</span>
+<span>格納</span>
+<span>組版</span>
+<span>離読</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr 閲覧画面：組版と展開された要約" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>一冊の雑誌に備わるもの</h2>
+<div class="menu-group"><h3>号</h3>
+<div class="menu-row"><span class="name">最新号</span><span class="dots" aria-hidden="true"></span><span class="value">ホーム画面の先頭</span></div>
+<div class="menu-row"><span class="name">カテゴリとタグ</span><span class="dots" aria-hidden="true"></span><span class="value">一行のフィルタ</span></div>
+<div class="menu-row"><span class="name">未読</span><span class="dots" aria-hidden="true"></span><span class="value">ワンタップで絞り込み</span></div>
+<div class="menu-row"><span class="name">月別アーカイブ</span><span class="dots" aria-hidden="true"></span><span class="value">旧号の居場所</span></div>
+<div class="menu-row"><span class="name">お気に入り</span><span class="dots" aria-hidden="true"></span><span class="value"> iCloud 私有庫と共に</span></div></div>
+<div class="menu-group"><h3>版面</h3>
+<div class="menu-row"><span class="name">テーマカラー</span><span class="dots" aria-hidden="true"></span><span class="value">5 種</span></div>
+<div class="menu-row"><span class="name">書体</span><span class="dots" aria-hidden="true"></span><span class="value">ゴシックまたは明朝</span></div>
+<div class="menu-row"><span class="name">文字サイズと行間</span><span class="dots" aria-hidden="true"></span><span class="value">自由に</span></div>
+<div class="menu-row"><span class="name">ライト/ダーク</span><span class="dots" aria-hidden="true"></span><span class="value">システムか手動</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26 以降</span></div></div>
+<div class="menu-group"><h3>検索</h3>
+<div class="menu-row"><span class="name">全文索引</span><span class="dots" aria-hidden="true"></span><span class="value">開いた瞬間から</span></div>
+<div class="menu-row"><span class="name">複数語検索</span><span class="dots" aria-hidden="true"></span><span class="value">一致を強調</span></div>
+<div class="menu-row"><span class="name">アウトライン</span><span class="dots" aria-hidden="true"></span><span class="value">セクションへ跳ぶ</span></div>
+<div class="menu-row"><span class="name">オフライン</span><span class="dots" aria-hidden="true"></span><span class="value">機内モードでも</span></div></div>
+<div class="menu-group"><h3>連携</h3>
+<div class="menu-row"><span class="name">ウィジェット</span><span class="dots" aria-hidden="true"></span><span class="value">最新号と未読数</span></div>
+<div class="menu-row"><span class="name">ショートカット</span><span class="dots" aria-hidden="true"></span><span class="value">更新・最新号を開く</span></div>
+<div class="menu-row"><span class="name">複数ソース</span><span class="dots" aria-hidden="true"></span><span class="value">クラウドをまとめて</span></div>
+<div class="menu-row"><span class="name">書き出し</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown / PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr ページ内検索：一致語の強調" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>よくある質問</h2>
+    <div class="faq-flow">
+<p><b>どんなクラウドが必要？</b>標準的な WebDAV なら何でも使えます。Nutstore なら無料プランで十分。設定で「サードパーティアプリ」のアプリパスワードを発行してください。</p>
+<p><b>AI はどこに投稿するの？</b>本サイトの「公開 Skill」を AI に渡してください。フォルダ構造とファイル名の取り決めが一度で設定できます。</p>
+<p><b>ブリーフィングの形式は？</b>少しのメタ情報付き Markdown です。本文は自由に書き、組版は Siftr が引き受けます。サンドボックス HTML の埋め込みにも対応します。</p>
+<p><b>データはどこに保存される？</b>本文はあなたのクラウドと端末のキャッシュに。お気に入り・既読・設定はあなた自身の iCloud 私有データベースに。Siftr にサーバーはありません。</p>
+<p><b>オフラインでも読める？</b>開いたことのある記事はローカルキャッシュと全文索引に入るので、機内モードでも読めますし検索もできます。</p>
+<p><b>対応端末は？</b>iPhone と iPad、iOS 18 以降。iPad では同じ雑誌がより大きな版面になります。</p>
+<p><b>正式リリースはいつ？</b>現在 TestFlight でベータテスト中です。メールで誰でも参加できます。</p>
+<p><b>RSS リーダーと何が違う？</b>内容はあなた自身の AI があなたの好みに合わせて整理したもの。保存も同期もすべてあなたのアカウント経由で、レコメンドも広告もありません。</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr ダークモードの閲覧画面" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">あなたが書いたもの</h2>
+      <p class="show-hint">左を編集してみてください——右が Siftr の組版です</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="左を編集してみてください——右が Siftr の組版です"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">あなたが読むもの</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">1 日 1 号、載せるのは本当に読みたいものだけ。</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">TestFlight ベータに参加</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">まずはメールで話す</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr 没入型ウェブ閲覧：ガラスのツールバー" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>静かな個人雑誌アプリ</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">プライバシー</a><a href="support.html" data-localized-link="support.html">サポート</a><a href="skill.html" data-localized-link="skill.html">公開 Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="en" lang="en" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">How it works</button>
+  <button type="button" data-goto="sec-features">The list</button>
+  <button type="button" data-goto="sec-faq">Questions</button>
+  <a href="skill.html" data-localized-link="skill.html">Publisher skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Join the beta</a>
+</nav>
+    <p class="support">The briefings your AI posts to your own cloud, read as one calm magazine.</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 or later</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Join the beta</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr home: the latest issue and category filters" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>Four steps, a pipeline of your own</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>First, your AI writes the issue</h3><p>Whatever the day produced and whatever was worth keeping, sifted from the noise into one Markdown file.</p></div>
+<div class="how-clause"><h3>Next, into your own cloud</h3><p>An ordinary folder and an agreed filename. Nutstore, or any standard WebDAV.</p></div>
+<div class="how-clause"><h3>Then, Siftr sets the type</h3><p>Pull to refresh for the new issue; categories, tags and the archive are ready-made.</p></div>
+<div class="how-clause"><h3>Last, it reads offline</h3><p>Every article you open is cached. Subway or airplane, you pick up where you left off.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="The AI writing a Markdown briefing">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">Saved</span></div>
+  <pre># AI Daily Briefing: reading into understanding
+
+> From model capability to agent
+> practice, the changes that matter.
+
+## 01 | Change first, impact second
+Three vendors shipped new long-
+context APIs, at half the price.
+
+## 02 | Worth tracking
+- Real hit rate of long context
+- Battery cost of on-device models</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="The briefing folder in your cloud">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">New</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr's home, mid refresh">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>Refreshing…</div>
+  <h4>Siftr</h4>
+  <p class="sub">Wed, Oct 21 · 3 unread</p>
+  <div class="chips"><span class="on">All</span><span>AI news</span><span>Tool reviews</span></div>
+  <div class="doc"><div class="t">AI Daily Briefing: reading into understanding</div><div class="m">AI news · Oct 21 · 3 min</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="A typeset article, readable offline">
+  <div class="meta"><span>AI news · Oct 21</span><span class="offline">Offline</span></div>
+  <h4>AI Daily Briefing: reading into understanding</h4>
+  <p class="sum">From model capability to agent practice: the changes that matter, and the sources worth keeping for the next look.</p>
+  <div class="body"><h5>01 | Change first, impact second</h5><p>Three vendors shipped new long-context APIs at half the price. The hit rates in real reviews deserve a note more than the keynote numbers…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="Pipeline stage">
+      <div class="how-labels"><span data-active>Write</span>
+<span>Upload</span>
+<span>Set</span>
+<span>Read</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr reader: typeset article with the summary expanded" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>What a periodical should have</h2>
+<div class="menu-group"><h3>The issue</h3>
+<div class="menu-row"><span class="name">Latest issue</span><span class="dots" aria-hidden="true"></span><span class="value">up front</span></div>
+<div class="menu-row"><span class="name">Categories & tags</span><span class="dots" aria-hidden="true"></span><span class="value">one row of filters</span></div>
+<div class="menu-row"><span class="name">Unread</span><span class="dots" aria-hidden="true"></span><span class="value">one tap to focus</span></div>
+<div class="menu-row"><span class="name">Monthly archive</span><span class="dots" aria-hidden="true"></span><span class="value">old issues filed</span></div>
+<div class="menu-row"><span class="name">Favorites</span><span class="dots" aria-hidden="true"></span><span class="value">in your iCloud</span></div></div>
+<div class="menu-group"><h3>The page</h3>
+<div class="menu-row"><span class="name">Theme colors</span><span class="dots" aria-hidden="true"></span><span class="value">five</span></div>
+<div class="menu-row"><span class="name">Typeface</span><span class="dots" aria-hidden="true"></span><span class="value">sans or serif</span></div>
+<div class="menu-row"><span class="name">Size & leading</span><span class="dots" aria-hidden="true"></span><span class="value">to taste</span></div>
+<div class="menu-row"><span class="name">Light & dark</span><span class="dots" aria-hidden="true"></span><span class="value">follow or choose</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26 on</span></div></div>
+<div class="menu-group"><h3>Search</h3>
+<div class="menu-row"><span class="name">Full-text index</span><span class="dots" aria-hidden="true"></span><span class="value">grows as you read</span></div>
+<div class="menu-row"><span class="name">Multi-word search</span><span class="dots" aria-hidden="true"></span><span class="value">hits highlighted</span></div>
+<div class="menu-row"><span class="name">Outline</span><span class="dots" aria-hidden="true"></span><span class="value">jump to a section</span></div>
+<div class="menu-row"><span class="name">Offline</span><span class="dots" aria-hidden="true"></span><span class="value">airplane-safe</span></div></div>
+<div class="menu-group"><h3>On the go</h3>
+<div class="menu-row"><span class="name">Widget</span><span class="dots" aria-hidden="true"></span><span class="value">latest & unread</span></div>
+<div class="menu-row"><span class="name">Shortcuts</span><span class="dots" aria-hidden="true"></span><span class="value">refresh or open</span></div>
+<div class="menu-row"><span class="name">Many sources</span><span class="dots" aria-hidden="true"></span><span class="value">several clouds</span></div>
+<div class="menu-row"><span class="name">Export</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown or PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr find-in-article: the match highlighted" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>Questions</h2>
+    <div class="faq-flow">
+<p><b>Which cloud do I need?</b>Any standard WebDAV works. Nutstore's free tier is enough — issue an app password under third-party management in its settings.</p>
+<p><b>How does my AI know where to post?</b>Hand it the publisher skill on this site. It spells out the folder layout and filename convention; set it once.</p>
+<p><b>What format is a briefing?</b>Markdown with a little front matter. Write the body however you like — Siftr does the typesetting. Sandboxed HTML pages embed too.</p>
+<p><b>Where is my data?</b>Article bodies live in your cloud and your phone's cache; favorites, read states and settings sync through your own private iCloud. Siftr runs no server.</p>
+<p><b>Does it work offline?</b>Everything you've opened sits in the local cache and full-text index — airplane mode reads and searches just the same.</p>
+<p><b>Which devices?</b>iPhone and iPad, iOS 18 or later. On iPad it's the same magazine on a bigger page.</p>
+<p><b>When is the App Store release?</b>It's in TestFlight right now. One email joins you; the entrance is at the end of this page.</p>
+<p><b>How is this different from RSS?</b>The content is gathered by your own AI to your taste, and storage and sync run entirely through your own accounts — no recommendation feed, no ads.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr reader in dark mode" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">What you write</h2>
+      <p class="show-hint">Try editing the left side — the right is how Siftr sets it</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="Try editing the left side — the right is how Siftr sets it"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">What you read</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">One issue a day, carrying only what you actually mean to read.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Join the TestFlight</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">or just write first</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr immersive web page: the floating glass bar" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>A quiet private periodical</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">Privacy</a><a href="support.html" data-localized-link="support.html">Support</a><a href="skill.html" data-localized-link="skill.html">Publisher skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="ru" lang="ru" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">Как это работает</button>
+  <button type="button" data-goto="sec-features">Список</button>
+  <button type="button" data-goto="sec-faq">Вопросы</button>
+  <a href="skill.html" data-localized-link="skill.html">Skill публикации</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">В бету</a>
+</nav>
+    <p class="support">Брифинги, которые ваш ИИ публикует в ваше облако, — как один спокойный журнал.</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 и новее</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">В бету</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Главная Siftr: свежий выпуск и фильтры рубрик" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>Четыре шага — ваш собственный конвейер</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>Сначала ИИ пишет выпуск</h3><p>Что за день случилось и что стоит сохранить — просеяно из шума в один файл Markdown.</p></div>
+<div class="how-clause"><h3>Затем — в ваше облако</h3><p>Обычная папка и оговорённое имя файла. Nutstore или любой стандартный WebDAV.</p></div>
+<div class="how-clause"><h3>Потом Siftr вёрстает</h3><p>Потяните вниз — придёт новый выпуск; рубрики, метки и архив уже готовы.</p></div>
+<div class="how-clause"><h3>И наконец — офлайн</h3><p>Каждая открытая статья в кэше. Метро или самолёт — читаете с того же места.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="ИИ пишет Markdown-брифинг">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">Сохранено</span></div>
+  <pre># Ежедневный брифинг ИИ
+
+> От возможностей моделей к практике
+> агентов — главное за день.
+
+## 01｜Сначала перемены, потом эффект
+Три вендора выпустили новые API
+длинного контекста, вдвое дешевле.
+
+## 02｜Стоит отслеживать
+- Реальный hit-rate длинного контекста
+- Расход батареи локальных моделей</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="Папка брифингов в облаке">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">Новый</span><span class="size">12 КБ</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 КБ</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 КБ</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Главная Siftr, обновление">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>Обновление…</div>
+  <h4>Siftr</h4>
+  <p class="sub">ср, 21 окт · 3 непрочитанных</p>
+  <div class="chips"><span class="on">Все</span><span>ИИ-новости</span><span>Обзоры инструментов</span></div>
+  <div class="doc"><div class="t">Ежедневный брифинг ИИ</div><div class="m">ИИ-новости · 21 окт · 3 мин</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="Свёрстанная статья, читается офлайн">
+  <div class="meta"><span>ИИ-новости · 21 окт</span><span class="offline">Офлайн</span></div>
+  <h4>Ежедневный брифинг ИИ</h4>
+  <p class="sum">От возможностей моделей к практике агентов: главные перемены и источники, которые стоит сохранить для следующего взгляда.</p>
+  <div class="body"><h5>01｜Сначала перемены, потом эффект</h5><p>Три вендора выпустили новые API длинного контекста вдвое дешевле. Реальные hit-rate из обзоров заслуживают записи больше, чем цифры с презентаций…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="Шаг конвейера">
+      <div class="how-labels"><span data-active>Пишет</span>
+<span>В облако</span>
+<span>Вёрстка</span>
+<span>Чтение</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Читалка Siftr: свёрстанная статья с раскрытой аннотацией" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>Что должно быть у периодики</h2>
+<div class="menu-group"><h3>Выпуск</h3>
+<div class="menu-row"><span class="name">Свежий выпуск</span><span class="dots" aria-hidden="true"></span><span class="value">на первом экране</span></div>
+<div class="menu-row"><span class="name">Рубрики и метки</span><span class="dots" aria-hidden="true"></span><span class="value">одна строка фильтров</span></div>
+<div class="menu-row"><span class="name">Непрочитанные</span><span class="dots" aria-hidden="true"></span><span class="value">одним нажатием</span></div>
+<div class="menu-row"><span class="name">Архив по месяцам</span><span class="dots" aria-hidden="true"></span><span class="value">старым выпускам есть место</span></div>
+<div class="menu-row"><span class="name">Избранное</span><span class="dots" aria-hidden="true"></span><span class="value">в вашем iCloud</span></div></div>
+<div class="menu-group"><h3>Вёрстка</h3>
+<div class="menu-row"><span class="name">Цвета темы</span><span class="dots" aria-hidden="true"></span><span class="value">пять</span></div>
+<div class="menu-row"><span class="name">Гарнитура</span><span class="dots" aria-hidden="true"></span><span class="value">гротеск или антиква</span></div>
+<div class="menu-row"><span class="name">Кегль и интерлиньяж</span><span class="dots" aria-hidden="true"></span><span class="value">по вкусу</span></div>
+<div class="menu-row"><span class="name">Светлая и тёмная</span><span class="dots" aria-hidden="true"></span><span class="value">система или вручную</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">с iOS 26</span></div></div>
+<div class="menu-group"><h3>Поиск</h3>
+<div class="menu-row"><span class="name">Полнотекстовый индекс</span><span class="dots" aria-hidden="true"></span><span class="value">растёт по мере чтения</span></div>
+<div class="menu-row"><span class="name">Поиск по словам</span><span class="dots" aria-hidden="true"></span><span class="value">совпадения подсвечены</span></div>
+<div class="menu-row"><span class="name">Оглавление</span><span class="dots" aria-hidden="true"></span><span class="value">прыжок к разделу</span></div>
+<div class="menu-row"><span class="name">Офлайн</span><span class="dots" aria-hidden="true"></span><span class="value">работает в самолёте</span></div></div>
+<div class="menu-group"><h3>На ходу</h3>
+<div class="menu-row"><span class="name">Виджет</span><span class="dots" aria-hidden="true"></span><span class="value">выпуск и непрочитанные</span></div>
+<div class="menu-row"><span class="name">Команды</span><span class="dots" aria-hidden="true"></span><span class="value">обновить или открыть</span></div>
+<div class="menu-row"><span class="name">Несколько источников</span><span class="dots" aria-hidden="true"></span><span class="value">облака вместе</span></div>
+<div class="menu-row"><span class="name">Экспорт</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown или PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Поиск в статье Siftr: совпадение подсвечено" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>Вопросы</h2>
+    <div class="faq-flow">
+<p><b>Какое облако нужно?</b>Любой стандартный WebDAV. Nutstore хватает и бесплатного тарифа — выпустите пароль приложения в настройках сторонних приложений.</p>
+<p><b>Откуда ИИ знает, куда публиковать?</b>Передайте ему skill публикации с этого сайта: там расписаны структура папок и соглашение об именах, настраивается один раз.</p>
+<p><b>Какой формат у брифинга?</b>Markdown с небольшими метаданными. Пишите как угодно — вёрстку берёт на себя Siftr. Внутри можно вставлять и HTML-страницы в песочнице.</p>
+<p><b>Где хранятся мои данные?</b>Тексты — в вашем облаке и кэше телефона; избранное, прочтения и настройки — в вашем личном iCloud. У Siftr нет сервера.</p>
+<p><b>Работает без сети?</b>Всё, что вы открывали, лежит в локальном кэше и полнотекстовом индексе — в самолётном режиме читается и ищется так же.</p>
+<p><b>Какие устройства?</b>iPhone и iPad, iOS 18 и новее. На iPad — тот же журнал на большей странице.</p>
+<p><b>Когда релиз в App Store?</b>Сейчас бета в TestFlight; вступить — одно письмо, вход в конце страницы.</p>
+<p><b>Чем это отличается от RSS?</b>Контент собирает ваш собственный ИИ под ваш вкус, хранение и синхронизация идут только через ваши аккаунты — без ленты рекомендаций и рекламы.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Читалка Siftr в тёмной теме" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">Что вы пишете</h2>
+      <p class="show-hint">Попробуйте изменить левую часть — справа вёрстка Siftr</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="Попробуйте изменить левую часть — справа вёрстка Siftr"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">Что вы читаете</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">Один выпуск в день — только то, что вы и правда собираетесь читать.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Вступить в TestFlight</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">или просто напишите</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Иммерсивная веб-страница Siftr: плавающая стеклянная панель" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>Спокойное частное издание</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">Конфиденциальность</a><a href="support.html" data-localized-link="support.html">Поддержка</a><a href="skill.html" data-localized-link="skill.html">Skill публикации</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="fr" lang="fr" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">Comment ça marche</button>
+  <button type="button" data-goto="sec-features">La liste</button>
+  <button type="button" data-goto="sec-faq">Questions</button>
+  <a href="skill.html" data-localized-link="skill.html">Skill de publication</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Rejoindre la bêta</a>
+</nav>
+    <p class="support">Les briefings que votre IA publie dans votre propre nuage, lus comme un magazine tranquille.</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 ou ultérieur</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Rejoindre la bêta</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Accueil Siftr : dernier numéro et filtres de rubriques" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>Quatre étapes, un pipeline à vous</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>D'abord, votre IA rédige</h3><p>Ce que la journée a produit et ce qui méritait d'être gardé, tamisé du bruit en un fichier Markdown.</p></div>
+<div class="how-clause"><h3>Ensuite, dans votre nuage</h3><p>Un dossier ordinaire et un nom de fichier convenu. Nutstore, ou tout WebDAV standard.</p></div>
+<div class="how-clause"><h3>Puis, Siftr compose</h3><p>Tirez pour rafraîchir : le nouveau numéro arrive ; rubriques, étiquettes et archive sont prêtes.</p></div>
+<div class="how-clause"><h3>Enfin, ça lit hors ligne</h3><p>Chaque article ouvert est en cache. Métro ou avion, vous reprenez où vous étiez.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="L'IA rédige un briefing Markdown">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">Enregistré</span></div>
+  <pre># Brève IA quotidienne
+
+> De la capacité des modèles à la
+> pratique des agents, l'essentiel.
+
+## 01｜Le changement d'abord, l'effet ensuite
+Trois éditeurs ont livré de nouvelles
+API à contexte long, deux fois moins chères.
+
+## 02｜À suivre
+- Taux de réussite réel du contexte long
+- Coût batterie des modèles sur appareil</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="Le dossier des briefings dans le nuage">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">Nouveau</span><span class="size">12 Ko</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 Ko</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 Ko</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="L'accueil de Siftr, en rafraîchissement">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>Rafraîchissement…</div>
+  <h4>Siftr</h4>
+  <p class="sub">mer. 21 oct. · 3 non lus</p>
+  <div class="chips"><span class="on">Tout</span><span>Actu IA</span><span>Tests d'outils</span></div>
+  <div class="doc"><div class="t">Brève IA quotidienne</div><div class="m">Actu IA · 21 oct. · 3 min</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="Un article composé, lisible hors ligne">
+  <div class="meta"><span>Actu IA · 21 oct.</span><span class="offline">Hors ligne</span></div>
+  <h4>Brève IA quotidienne</h4>
+  <p class="sum">De la capacité des modèles à la pratique des agents : les changements qui comptent et les sources à garder pour le prochain regard.</p>
+  <div class="body"><h5>01｜Le changement d'abord, l'effet ensuite</h5><p>Trois éditeurs ont livré de nouvelles API à contexte long, deux fois moins chères. Les taux réels des tests méritent plus de notes que les chiffres des keynotes…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="Étape du pipeline">
+      <div class="how-labels"><span data-active>Rédige</span>
+<span>Envoi</span>
+<span>Compose</span>
+<span>Lit</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Lecteur Siftr : article composé, résumé déplié" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>Ce qu'une revue doit avoir</h2>
+<div class="menu-group"><h3>Le numéro</h3>
+<div class="menu-row"><span class="name">Dernier numéro</span><span class="dots" aria-hidden="true"></span><span class="value">en première page</span></div>
+<div class="menu-row"><span class="name">Rubriques et étiquettes</span><span class="dots" aria-hidden="true"></span><span class="value">une ligne de filtres</span></div>
+<div class="menu-row"><span class="name">Non lus</span><span class="dots" aria-hidden="true"></span><span class="value">un geste pour voir</span></div>
+<div class="menu-row"><span class="name">Archives mensuelles</span><span class="dots" aria-hidden="true"></span><span class="value">les anciens rangés</span></div>
+<div class="menu-row"><span class="name">Favoris</span><span class="dots" aria-hidden="true"></span><span class="value">dans votre iCloud</span></div></div>
+<div class="menu-group"><h3>La page</h3>
+<div class="menu-row"><span class="name">Couleurs de thème</span><span class="dots" aria-hidden="true"></span><span class="value">cinq</span></div>
+<div class="menu-row"><span class="name">Caractères</span><span class="dots" aria-hidden="true"></span><span class="value">sans ou avec empattement</span></div>
+<div class="menu-row"><span class="name">Corps et interligne</span><span class="dots" aria-hidden="true"></span><span class="value">à votre goût</span></div>
+<div class="menu-row"><span class="name">Clair et sombre</span><span class="dots" aria-hidden="true"></span><span class="value">système ou choix</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">dès iOS 26</span></div></div>
+<div class="menu-group"><h3>La recherche</h3>
+<div class="menu-row"><span class="name">Index plein texte</span><span class="dots" aria-hidden="true"></span><span class="value">grandit à mesure</span></div>
+<div class="menu-row"><span class="name">Recherche multi-mots</span><span class="dots" aria-hidden="true"></span><span class="value">occurrences surlignées</span></div>
+<div class="menu-row"><span class="name">Plan</span><span class="dots" aria-hidden="true"></span><span class="value">saut de section</span></div>
+<div class="menu-row"><span class="name">Hors ligne</span><span class="dots" aria-hidden="true"></span><span class="value">mode avion ok</span></div></div>
+<div class="menu-group"><h3>Au quotidien</h3>
+<div class="menu-row"><span class="name">Widget</span><span class="dots" aria-hidden="true"></span><span class="value">dernier numéro et non lus</span></div>
+<div class="menu-row"><span class="name">Raccourcis</span><span class="dots" aria-hidden="true"></span><span class="value">rafraîchir ou ouvrir</span></div>
+<div class="menu-row"><span class="name">Plusieurs sources</span><span class="dots" aria-hidden="true"></span><span class="value">plusieurs nuages</span></div>
+<div class="menu-row"><span class="name">Export</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown ou PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Recherche dans l'article Siftr : occurrence surlignée" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>Questions</h2>
+    <div class="faq-flow">
+<p><b>Quel nuage faut-il ?</b>Tout WebDAV standard convient. Nutstore suffit en offre gratuite — générez un mot de passe d'application dans les réglages tiers.</p>
+<p><b>Comment mon IA sait où publier ?</b>Donnez-lui le skill de publication de ce site : structure des dossiers et convention de noms y sont écrits, à configurer une fois.</p>
+<p><b>Quel format pour un briefing ?</b>Du Markdown avec un peu de métadonnées. Écrivez le corps librement — Siftr compose. Les pages HTML en bac à sable s'intègrent aussi.</p>
+<p><b>Où sont mes données ?</b>Les textes, dans votre nuage et le cache du téléphone ; favoris, lectures et réglages, dans votre iCloud privé. Siftr n'a pas de serveur.</p>
+<p><b>Ça marche hors ligne ?</b>Tout ce que vous avez ouvert est en cache local et dans l'index plein texte — en mode avion, lecture et recherche identiques.</p>
+<p><b>Quels appareils ?</b>iPhone et iPad, iOS 18 ou plus. Sur iPad, la même revue sur une plus grande page.</p>
+<p><b>Quand la sortie sur l'App Store ?</b>La bêta tourne sur TestFlight ; un e-mail suffit pour entrer, l'entrée est en bas de page.</p>
+<p><b>La différence avec un lecteur RSS ?</b>Le contenu est rassemblé par votre propre IA à votre goût, et le stockage comme la synchronisation passent uniquement par vos comptes — pas de fil de recommandations, pas de pub.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Lecteur Siftr en mode sombre" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">Ce que vous écrivez</h2>
+      <p class="show-hint">Modifiez la partie gauche — à droite, la composition de Siftr</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="Modifiez la partie gauche — à droite, la composition de Siftr"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">Ce que vous lisez</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">Un numéro par jour, rempli seulement de ce que vous comptez vraiment lire.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Rejoindre la bêta TestFlight</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">ou écrivez d'abord</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Page web immersive Siftr : la barre de verre flottante" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>Une revue privée et tranquille</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">Confidentialité</a><a href="support.html" data-localized-link="support.html">Assistance</a><a href="skill.html" data-localized-link="skill.html">Skill de publication</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="ko" lang="ko" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">작동 방식</button>
+  <button type="button" data-goto="sec-features">목록</button>
+  <button type="button" data-goto="sec-faq">질문</button>
+  <a href="skill.html" data-localized-link="skill.html">게시 Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">베타 참여</a>
+</nav>
+    <p class="support">AI가 당신의 클라우드에 매일 올리는 브리핑을, 잔잔한 잡지 한 권으로 읽는 앱.</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 이상</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">베타 참여</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr 홈: 최신 호와 분류 필터" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>네 단계, 당신만의 파이프라인</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>먼저, AI가 호를 쓴다</h3><p>그날 읽은 것과 남길 만한 것을 소음에서 걸러 한 개의 Markdown 파일로 묶어 줍니다.</p></div>
+<div class="how-clause"><h3>다음, 당신의 클라우드로</h3><p>평범한 폴더 하나, 약속된 파일 이름. 누터스트든 표준 WebDAV든 좋습니다.</p></div>
+<div class="how-clause"><h3>그다음, Siftr이 조판</h3><p>당겨서 새로 고치면 새 호가 옵니다. 분류·태그·아카이브는 갖춰져 있고요.</p></div>
+<div class="how-clause"><h3>마지막, 오프라인에도</h3><p>열어 본 글은 모두 캐시에. 지하철에서도 비행기 안에서도 이어 읽습니다.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="AI가 Markdown 브리핑을 쓰는 중">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">저장됨</span></div>
+  <pre># AI 데일리 브리핑
+
+> 모델 능력에서 에이전트 실전까지,
+> 핵심 변화를 정리.
+
+## 01｜변화 먼저, 영향 다음
+세 곳이 새로운 롱컨텍스트 API를
+내놨고 가격은 절반.
+
+## 02｜계속 따라갈 것
+- 롱컨텍스트 실제 적중률
+- 온디바이스 모델 배터리 비용</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="클라우드의 브리핑 폴더">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">새 항목</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr 홈, 새로 고치는 중">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>새로 고치는 중…</div>
+  <h4>Siftr</h4>
+  <p class="sub">10월 21일 수 · 안 읽은 글 3</p>
+  <div class="chips"><span class="on">전체</span><span>AI 뉴스</span><span>도구 리뷰</span></div>
+  <div class="doc"><div class="t">AI 데일리 브리핑</div><div class="m">AI 뉴스 · 10월 21일 · 3분</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="조판된 글, 오프라인으로도 읽힘">
+  <div class="meta"><span>AI 뉴스 · 10월 21일</span><span class="offline">오프라인</span></div>
+  <h4>AI 데일리 브리핑</h4>
+  <p class="sum">모델 능력에서 에이전트 실전까지, 핵심 변화와 다음 관찰을 위해 남겨둘 만한 출처를 정리합니다.</p>
+  <div class="body"><h5>01｜변화 먼저, 영향 다음</h5><p>세 곳이 새로운 롱컨텍스트 API를 내놨고 가격은 절반이 됐습니다. 리뷰에서 측정한 실제 적중률이 발표장 숫자보다 기록할 가치가 있습니다…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="파이프라인 단계">
+      <div class="how-labels"><span data-active>집필</span>
+<span>업로드</span>
+<span>조판</span>
+<span>열독</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr 리더: 조판된 글과 펼쳐진 요약" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>잡지 하나가 갖춰야 할 것</h2>
+<div class="menu-group"><h3>호</h3>
+<div class="menu-row"><span class="name">최신 호</span><span class="dots" aria-hidden="true"></span><span class="value">첫 화면에</span></div>
+<div class="menu-row"><span class="name">분류와 태그</span><span class="dots" aria-hidden="true"></span><span class="value">한 줄 필터</span></div>
+<div class="menu-row"><span class="name">안 읽음</span><span class="dots" aria-hidden="true"></span><span class="value">한 번에 보기</span></div>
+<div class="menu-row"><span class="name">월별 아카이브</span><span class="dots" aria-hidden="true"></span><span class="value">지난 호 자리</span></div>
+<div class="menu-row"><span class="name">즐겨찾기</span><span class="dots" aria-hidden="true"></span><span class="value">iCloud 개인 보관함</span></div></div>
+<div class="menu-group"><h3>판면</h3>
+<div class="menu-row"><span class="name">테마 색</span><span class="dots" aria-hidden="true"></span><span class="value">다섯 가지</span></div>
+<div class="menu-row"><span class="name">서체</span><span class="dots" aria-hidden="true"></span><span class="value">고딕 또는 명조</span></div>
+<div class="menu-row"><span class="name">글자 크기와 행간</span><span class="dots" aria-hidden="true"></span><span class="value">취향대로</span></div>
+<div class="menu-row"><span class="name">라이트와 다크</span><span class="dots" aria-hidden="true"></span><span class="value">시스템 따라 또 직접</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">iOS 26부터</span></div></div>
+<div class="menu-group"><h3>검색</h3>
+<div class="menu-row"><span class="name">전문 색인</span><span class="dots" aria-hidden="true"></span><span class="value">읽은 만큼 쌓임</span></div>
+<div class="menu-row"><span class="name">여러 단어 검색</span><span class="dots" aria-hidden="true"></span><span class="value">일치 강조</span></div>
+<div class="menu-row"><span class="name">목차</span><span class="dots" aria-hidden="true"></span><span class="value">절로 바로 가기</span></div>
+<div class="menu-row"><span class="name">오프라인</span><span class="dots" aria-hidden="true"></span><span class="value">비행 모드 OK</span></div></div>
+<div class="menu-group"><h3>함께</h3>
+<div class="menu-row"><span class="name">위젯</span><span class="dots" aria-hidden="true"></span><span class="value">최신 호와 안 읽은 수</span></div>
+<div class="menu-row"><span class="name">단축어</span><span class="dots" aria-hidden="true"></span><span class="value">새로 고침·열기</span></div>
+<div class="menu-row"><span class="name">여러 소스</span><span class="dots" aria-hidden="true"></span><span class="value">클라우드 여러 개</span></div>
+<div class="menu-row"><span class="name">내보내기</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown / PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr 글 내 찾기: 일치 단어 강조" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>질문</h2>
+    <div class="faq-flow">
+<p><b>어떤 클라우드가 필요한가요?</b>표준 WebDAV라면 무엇이든 됩니다. 누터스트는 무료 요금제로 충분해요. 설정에서 앱 비밀번호를 발급받으세요.</p>
+<p><b>AI는 어디에 올리나요?</b>이 사이트의 게시 Skill을 AI에게 주세요. 폴더 구조와 파일 이름 규칙이 적혀 있어 한 번만 설정하면 됩니다.</p>
+<p><b>브리핑 형식은요?</b>메타데이터가 조금 붙은 Markdown입니다. 본문은 자유롭게 쓰고 조판은 Siftr이 맡아요. 샌드박스 HTML 페이지도 넣을 수 있습니다.</p>
+<p><b>데이터는 어디에 있나요?</b>본문은 당신의 클라우드와 폰 캐시에, 즐겨찾기·읽음·설정은 당신의 iCloud 개인 데이터베이스에요. Siftr에는 서버가 없습니다.</p>
+<p><b>오프라인에서도 되나요?</b>열어 본 글은 로컬 캐시와 전문 색인에 들어가서, 비행기 모드에서도 읽고 검색할 수 있어요.</p>
+<p><b>어떤 기기를 지원하나요?</b>iPhone과 iPad, iOS 18 이상. iPad에서는 같은 잡지가 더 큰 판면으로 열립니다.</p>
+<p><b>정식 출시는 언제인가요?</b>지금 TestFlight 베타 중입니다. 메일 한 통이면 참여할 수 있어요.</p>
+<p><b>RSS 리더와 뭐가 다른가요?</b>내용이 당신의 AI가 당신 취향으로 걸러 준 것이고, 보관과 동기화는 전부 당신 계정으로만 흐릅니다. 추천 피드도 광고도 없어요.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr 다크 모드 리더" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">당신이 쓴 것</h2>
+      <p class="show-hint">왼쪽을 고쳐 보세요 — 오른쪽이 Siftr의 조판입니다</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="왼쪽을 고쳐 보세요 — 오른쪽이 Siftr의 조판입니다"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">당신이 읽는 것</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">하루에 한 호, 정말 읽을 것만 담는다.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">TestFlight 베타 참여</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">또는 먼저 메일로</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr 몰입형 웹 페이지: 유리 도구 막대" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>조용한 사설 잡지 앱</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">개인정보</a><a href="support.html" data-localized-link="support.html">지원</a><a href="skill.html" data-localized-link="skill.html">게시 Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="de" lang="de" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">So funktioniert's</button>
+  <button type="button" data-goto="sec-features">Die Liste</button>
+  <button type="button" data-goto="sec-faq">Fragen</button>
+  <a href="skill.html" data-localized-link="skill.html">Publisher-Skill</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Beta testen</a>
+</nav>
+    <p class="support">Die Briefings, die deine KI in deine eigene Cloud stellt, gelesen als eine ruhige Zeitschrift.</p>
+    <p class="hero-meta">iPhone · iPad · ab iOS 18</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Beta testen</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Siftr-Start: die neueste Ausgabe und Rubrikfilter" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>Vier Schritte, eine eigene Pipeline</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>Zuerst schreibt deine KI</h3><p>Was der Tag gebracht hat und was blieb, vom Rauschen gesiebt in eine Markdown-Datei.</p></div>
+<div class="how-clause"><h3>Dann in deine eigene Cloud</h3><p>Ein ganz gewöhnlicher Ordner und ein abgesprochener Dateiname. Nutstore oder jedes Standard-WebDAV.</p></div>
+<div class="how-clause"><h3>Dann setzt Siftr den Satz</h3><p>Zum Aktualisieren ziehen — die neue Ausgabe kommt; Rubriken, Tags und Archiv sind fertig.</p></div>
+<div class="how-clause"><h3>Und zuletzt: offline lesen</h3><p>Jeder geöffnete Artikel liegt im Cache. U-Bahn oder Flugzeug, weiter wo du warst.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="Die KI schreibt ein Markdown-Briefing">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">Gespeichert</span></div>
+  <pre># KI-Tagesbriefing
+
+> Von Modellfähigkeiten zur Agenten-
+> praxis: was zählt.
+
+## 01｜Erst der Wandel, dann die Wirkung
+Drei Anbieter lieferten neue Long-Context-
+APIs, zum halben Preis.
+
+## 02｜Im Blick behalten
+- Trefferquote von Long Context
+- Stromverbrauch on-device Modelle</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="Der Briefing-Ordner in der Cloud">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">Neu</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Siftr-Startseite, beim Aktualisieren">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>Aktualisiere…</div>
+  <h4>Siftr</h4>
+  <p class="sub">Mi., 21. Okt. · 3 ungelesen</p>
+  <div class="chips"><span class="on">Alle</span><span>KI-News</span><span>Tool-Reviews</span></div>
+  <div class="doc"><div class="t">KI-Tagesbriefing</div><div class="m">KI-News · 21. Okt. · 3 Min</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="Ein gesetzter Artikel, offline lesbar">
+  <div class="meta"><span>KI-News · 21. Okt.</span><span class="offline">Offline</span></div>
+  <h4>KI-Tagesbriefing</h4>
+  <p class="sum">Von Modellfähigkeiten zur Agentenpraxis: die Änderungen, die zählen, und die Quellen, die sich für den nächsten Blick lohnen.</p>
+  <div class="body"><h5>01｜Erst der Wandel, dann die Wirkung</h5><p>Drei Anbieter lieferten neue Long-Context-APIs zum halben Preis. Die Trefferquoten aus Tests verdienten eher eine Notiz als die Keynote-Zahlen…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="Pipeline-Schritt">
+      <div class="how-labels"><span data-active>Schreiben</span>
+<span>Hochladen</span>
+<span>Setzen</span>
+<span>Lesen</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Siftr-Leser: gesetzter Artikel, aufgeklappte Zusammenfassung" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>Was eine Zeitschrift haben muss</h2>
+<div class="menu-group"><h3>Die Ausgabe</h3>
+<div class="menu-row"><span class="name">Neueste Ausgabe</span><span class="dots" aria-hidden="true"></span><span class="value">gleich auf Start</span></div>
+<div class="menu-row"><span class="name">Rubriken & Tags</span><span class="dots" aria-hidden="true"></span><span class="value">eine Filterzeile</span></div>
+<div class="menu-row"><span class="name">Ungelesen</span><span class="dots" aria-hidden="true"></span><span class="value">mit einem Tipp</span></div>
+<div class="menu-row"><span class="name">Monatsarchiv</span><span class="dots" aria-hidden="true"></span><span class="value">alte Hefte abgelegt</span></div>
+<div class="menu-row"><span class="name">Favoriten</span><span class="dots" aria-hidden="true"></span><span class="value">in deinem iCloud</span></div></div>
+<div class="menu-group"><h3>Der Satz</h3>
+<div class="menu-row"><span class="name">Themenfarben</span><span class="dots" aria-hidden="true"></span><span class="value">fünf</span></div>
+<div class="menu-row"><span class="name">Schrift</span><span class="dots" aria-hidden="true"></span><span class="value">serifenlos oder Serif</span></div>
+<div class="menu-row"><span class="name">Größe & Zeilenabstand</span><span class="dots" aria-hidden="true"></span><span class="value">nach Geschmack</span></div>
+<div class="menu-row"><span class="name">Hell & dunkel</span><span class="dots" aria-hidden="true"></span><span class="value">System oder Wahl</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">ab iOS 26</span></div></div>
+<div class="menu-group"><h3>Die Suche</h3>
+<div class="menu-row"><span class="name">Volltextindex</span><span class="dots" aria-hidden="true"></span><span class="value">wächst beim Lesen</span></div>
+<div class="menu-row"><span class="name">Mehrwortsuche</span><span class="dots" aria-hidden="true"></span><span class="value">Treffer markiert</span></div>
+<div class="menu-row"><span class="name">Gliederung</span><span class="dots" aria-hidden="true"></span><span class="value">Sprung zum Abschnitt</span></div>
+<div class="menu-row"><span class="name">Offline</span><span class="dots" aria-hidden="true"></span><span class="value">flugtauglich</span></div></div>
+<div class="menu-group"><h3>Unterwegs</h3>
+<div class="menu-row"><span class="name">Widget</span><span class="dots" aria-hidden="true"></span><span class="value">Neuestes & Ungelesene</span></div>
+<div class="menu-row"><span class="name">Kurzbefehle</span><span class="dots" aria-hidden="true"></span><span class="value">laden oder öffnen</span></div>
+<div class="menu-row"><span class="name">Mehrere Quellen</span><span class="dots" aria-hidden="true"></span><span class="value">mehrere Clouds</span></div>
+<div class="menu-row"><span class="name">Export</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown oder PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Siftr-Suche im Artikel: Treffer markiert" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>Fragen</h2>
+    <div class="faq-flow">
+<p><b>Welche Cloud brauche ich?</b>Jedes Standard-WebDAV. Nutstore reicht mit dem kostenlosen Tarif — in den Einstellungen ein App-Passwort ausstellen.</p>
+<p><b>Woher weiß meine KI, wohin?</b>Gib ihr den Publisher-Skill dieser Seite: Ordnerstruktur und Dateinamen-Konvention stehen drin, einmal eingerichtet.</p>
+<p><b>Welches Format hat ein Briefing?</b>Markdown mit etwas Metadaten. Den Text schreibst du frei, den Satz übernimmt Siftr. Eingebettete HTML-Seiten in der Sandbox gehen auch.</p>
+<p><b>Wo liegen meine Daten?</b>Texte in deiner Cloud und dem Cache des Telefons; Favoriten, Gelesen und Einstellungen in deinem privaten iCloud. Siftr hat keinen Server.</p>
+<p><b>Geht das offline?</b>Alles Geöffnete liegt im lokalen Cache und Volltextindex — im Flugmodus liest und sucht es genauso.</p>
+<p><b>Welche Geräte?</b>iPhone und iPad, ab iOS 18. Auf dem iPad dieselbe Zeitschrift auf größerer Seite.</p>
+<p><b>Wann erscheint es im App Store?</b>Läuft gerade als TestFlight-Beta; eine E-Mail genügt zum Mitmachen, der Eingang ist am Seitenende.</p>
+<p><b>Was ist anders zu RSS?</b>Den Inhalt sammelt deine eigene KI nach deinem Geschmack, Speicherung und Sync laufen ausschließlich über deine eigenen Konten — ohne Empfehlungsfeed, ohne Werbung.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Siftr-Leser im Dunkelmodus" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">Was du schreibst</h2>
+      <p class="show-hint">Ändere links etwas — rechts zeigt Siftr den Satz</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="Ändere links etwas — rechts zeigt Siftr den Satz"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">Was du liest</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">Eine Ausgabe am Tag, nur mit dem, was du wirklich lesen willst.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">TestFlight-Beta testen</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">oder schreib erst mal</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Siftr-Webseite immersiv: die schwebende Glasleiste" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>Eine ruhige private Zeitschrift</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">Datenschutz</a><a href="support.html" data-localized-link="support.html">Support</a><a href="skill.html" data-localized-link="skill.html">Publisher-Skill</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+<section class="language-panel" data-language="es" lang="es" data-title="Siftr">
+
+  <div class="sec sec-hero fx" data-shot-key="home">
+<nav class="hero-nav">
+  <button type="button" data-goto="sec-how">Cómo funciona</button>
+  <button type="button" data-goto="sec-features">La lista</button>
+  <button type="button" data-goto="sec-faq">Preguntas</button>
+  <a href="skill.html" data-localized-link="skill.html">Skill de publicación</a>
+  <a href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Unirse a la beta</a>
+</nav>
+    <p class="support">Los resúmenes que tu IA publica en tu propia nube, leídos como una revista serena.</p>
+    <p class="hero-meta">iPhone · iPad · iOS 18 o posterior</p>
+    <p class="hero-cta"><a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Unirse a la beta</a></p>
+    <figure class="hero-fig"><img src="assets/shots/home.jpg" alt="Inicio de Siftr: el último número y filtros de categoría" width="1206" height="2622"></figure>
+  </div>
+
+  <div class="sec sec-how fx" data-shot-key="reader" id="">
+    <h2>Cuatro pasos, una tubería propia</h2>
+    <div class="how-clauses">
+<div class="how-clause" data-active><h3>Primero, tu IA escribe</h3><p>Lo que el día trajo y lo que valía guardar, cribado del ruido en un archivo Markdown.</p></div>
+<div class="how-clause"><h3>Después, a tu propia nube</h3><p>Una carpeta corriente y un nombre de archivo pactado. Nutstore, o cualquier WebDAV estándar.</p></div>
+<div class="how-clause"><h3>Luego, Siftr compone</h3><p>Tira para actualizar y llega el nuevo número; categorías, etiquetas y archivo ya listos.</p></div>
+<div class="how-clause"><h3>Por último, lee sin red</h3><p>Cada artículo abierto queda en caché. Metro o avión, sigues donde estabas.</p></div>
+    </div>
+    <div class="how-fragments">
+<div class="how-fragment" data-active><div class="ui-md" data-ui role="img" aria-label="La IA escribiendo un resumen Markdown">
+  <div class="bar"><span>briefings/2026/10/2026-10-21.md</span><span class="save">Guardado</span></div>
+  <pre># Resumen diario de IA
+
+> De la capacidad de los modelos a la
+> práctica de agentes: lo que importa.
+
+## 01｜Primero el cambio, luego el efecto
+Tres proveedores lanzaron APIs nuevas de
+contexto largo, a mitad de precio.
+
+## 02｜Para seguir
+- Tasa real de acierto del contexto largo
+- Batería de los modelos en el dispositivo</pre>
+</div></div>
+<div class="how-fragment"><div class="ui-cloud" data-ui role="img" aria-label="La carpeta de resúmenes en la nube">
+  <div class="path">dav://nutstore/… /briefings/2026/10/</div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-21.md</span><span class="new">Nuevo</span><span class="size">12 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-20.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>2026-10-19.md</span><span class="size">11 KB</span></div>
+<div class="row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h3l1.5 1.5h4.5A1.5 1.5 0 0 1 14 6v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12V4.5Z" fill="#14483b"/></svg><span>…</span><span class="size"></span></div>
+</div></div>
+<div class="how-fragment"><div class="ui-home" data-ui role="img" aria-label="Inicio de Siftr, actualizando">
+  <div class="refresh"><span class="ring" aria-hidden="true"></span>Actualizando…</div>
+  <h4>Siftr</h4>
+  <p class="sub">mié 21 oct · 3 sin leer</p>
+  <div class="chips"><span class="on">Todo</span><span>Noticias de IA</span><span>Reseñas de herramientas</span></div>
+  <div class="doc"><div class="t">Resumen diario de IA</div><div class="m">Noticias de IA · 21 oct · 3 min</div></div>
+</div></div>
+<div class="how-fragment"><div class="ui-reader" data-ui role="img" aria-label="Un artículo compuesto, legible sin conexión">
+  <div class="meta"><span>Noticias de IA · 21 oct.</span><span class="offline">Sin conexión</span></div>
+  <h4>Resumen diario de IA</h4>
+  <p class="sum">De la capacidad de los modelos a la práctica de agentes: los cambios que importan y las fuentes que conviene guardar para la próxima mirada.</p>
+  <div class="body"><h5>01｜Primero el cambio, luego el efecto</h5><p>Tres proveedores lanzaron APIs nuevas de contexto largo a mitad de precio. Las tasas reales de las reseñas merecen más nota que las cifras del escenario…</p></div>
+</div></div>
+    </div>
+    <div class="how-slider">
+      <input type="range" min="0" max="3" step="1" value="0" aria-label="Etapa de la tubería">
+      <div class="how-labels"><span data-active>Escribe</span>
+<span>Sube</span>
+<span>Compone</span>
+<span>Lee</span></div>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader.jpg" alt="Lector de Siftr: artículo compuesto con el resumen desplegado" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-features fx" data-shot-key="find">
+<div class="menu-sheet" style="clip-path:polygon(0 14px, 4.167% 0, 8.333% 14px, 12.500% 0, 16.667% 14px, 20.833% 0, 25.000% 14px, 29.167% 0, 33.333% 14px, 37.500% 0, 41.667% 14px, 45.833% 0, 50.000% 14px, 54.167% 0, 58.333% 14px, 62.500% 0, 66.667% 14px, 70.833% 0, 75.000% 14px, 79.167% 0, 83.333% 14px, 87.500% 0, 91.667% 14px, 95.833% 0, 100.000% 14px, 95.833% 100%, 91.667% calc(100% - 14px), 87.500% 100%, 83.333% calc(100% - 14px), 79.167% 100%, 75.000% calc(100% - 14px), 70.833% 100%, 66.667% calc(100% - 14px), 62.500% 100%, 58.333% calc(100% - 14px), 54.167% 100%, 50.000% calc(100% - 14px), 45.833% 100%, 41.667% calc(100% - 14px), 37.500% 100%, 33.333% calc(100% - 14px), 29.167% 100%, 25.000% calc(100% - 14px), 20.833% 100%, 16.667% calc(100% - 14px), 12.500% 100%, 8.333% calc(100% - 14px), 4.167% 100%, 0.000% calc(100% - 14px))">
+<h2>Lo que una revista debe tener</h2>
+<div class="menu-group"><h3>El número</h3>
+<div class="menu-row"><span class="name">Último número</span><span class="dots" aria-hidden="true"></span><span class="value">en la primera pantalla</span></div>
+<div class="menu-row"><span class="name">Categorías y etiquetas</span><span class="dots" aria-hidden="true"></span><span class="value">una fila de filtros</span></div>
+<div class="menu-row"><span class="name">Sin leer</span><span class="dots" aria-hidden="true"></span><span class="value">un toque para verlos</span></div>
+<div class="menu-row"><span class="name">Archivo mensual</span><span class="dots" aria-hidden="true"></span><span class="value">los viejos, ordenados</span></div>
+<div class="menu-row"><span class="name">Favoritos</span><span class="dots" aria-hidden="true"></span><span class="value">en tu iCloud</span></div></div>
+<div class="menu-group"><h3>La página</h3>
+<div class="menu-row"><span class="name">Colores de tema</span><span class="dots" aria-hidden="true"></span><span class="value">cinco</span></div>
+<div class="menu-row"><span class="name">Tipografía</span><span class="dots" aria-hidden="true"></span><span class="value">palo o serifa</span></div>
+<div class="menu-row"><span class="name">Cuerpo e interlineado</span><span class="dots" aria-hidden="true"></span><span class="value">a tu gusto</span></div>
+<div class="menu-row"><span class="name">Claro y oscuro</span><span class="dots" aria-hidden="true"></span><span class="value">sistema o a mano</span></div>
+<div class="menu-row"><span class="name">Liquid Glass</span><span class="dots" aria-hidden="true"></span><span class="value">desde iOS 26</span></div></div>
+<div class="menu-group"><h3>La búsqueda</h3>
+<div class="menu-row"><span class="name">Índice completo</span><span class="dots" aria-hidden="true"></span><span class="value">crece al leer</span></div>
+<div class="menu-row"><span class="name">Varias palabras</span><span class="dots" aria-hidden="true"></span><span class="value">aciertos resaltados</span></div>
+<div class="menu-row"><span class="name">Esquema</span><span class="dots" aria-hidden="true"></span><span class="value">salto a la sección</span></div>
+<div class="menu-row"><span class="name">Sin conexión</span><span class="dots" aria-hidden="true"></span><span class="value">vale en el avión</span></div></div>
+<div class="menu-group"><h3>De camino</h3>
+<div class="menu-row"><span class="name">Widget</span><span class="dots" aria-hidden="true"></span><span class="value">último número y sin leer</span></div>
+<div class="menu-row"><span class="name">Atajos</span><span class="dots" aria-hidden="true"></span><span class="value">actualizar o abrir</span></div>
+<div class="menu-row"><span class="name">Varias fuentes</span><span class="dots" aria-hidden="true"></span><span class="value">varias nubes</span></div>
+<div class="menu-row"><span class="name">Exportar</span><span class="dots" aria-hidden="true"></span><span class="value">Markdown o PDF</span></div></div>
+</div>
+    <img class="inline-shot" src="assets/shots/find.jpg" alt="Búsqueda en el artículo de Siftr: acierto resaltado" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <div class="sec sec-faq fx" data-shot-key="reader-dark">
+    <h2>Preguntas</h2>
+    <div class="faq-flow">
+<p><b>¿Qué nube necesito?</b>Cualquier WebDAV estándar. A Nutstore le basta el plan gratuito: emite una contraseña de aplicación en sus ajustes de terceros.</p>
+<p><b>¿Cómo sabe mi IA dónde publicar?</b>Entrégale el skill de publicación de este sitio: describen la estructura de carpetas y el convenio de nombres; se configura una vez.</p>
+<p><b>¿Qué formato tiene un resumen?</b>Markdown con unos metadatos. Escribe el cuerpo como quieras: la composición la hace Siftr. También van páginas HTML en caja de arena.</p>
+<p><b>¿Dónde están mis datos?</b>Los textos, en tu nube y la caché del teléfono; favoritos, leídos y ajustes, en tu iCloud privado. Siftr no tiene servidor.</p>
+<p><b>¿Funciona sin conexión?</b>Todo lo que abriste queda en caché local e índice completo: en modo avión se lee y se busca igual.</p>
+<p><b>¿Qué dispositivos?</b>iPhone y iPad, iOS 18 o posterior. En iPad, la misma revista en una página mayor.</p>
+<p><b>¿Cuándo sale en el App Store?</b>Está en beta en TestFlight; un correo te incorpora, la entrada está al final de la página.</p>
+<p><b>¿En qué se diferencia de un lector RSS?</b>El contenido lo reúne tu propia IA a tu gusto, y el almacenamiento y la sincronización pasan solo por tus cuentas: sin feed de recomendaciones ni anuncios.</p>
+    </div>
+    <img class="inline-shot" src="assets/shots/reader-dark.jpg" alt="Lector de Siftr en modo oscuro" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <section class="sec sec-showcase fx">
+    <div class="show-in">
+      <h2 class="half-title">Lo que escribes</h2>
+      <p class="show-hint">Cambia la izquierda — la derecha es cómo la compone Siftr</p>
+      <textarea class="show-source" rows="14" spellcheck="false" aria-label="Cambia la izquierda — la derecha es cómo la compone Siftr"># AI 每日简报：把信息读成理解
+2026-10-21 · 约 3 分钟 · 来源 1
+
+> 从模型能力到 Agent 实践，梳理关键变化。
+
+## 01｜先看变化，再看影响
+三家都放出了新的长上下文接口，价格降了一半。
+
+## 02｜给自己的观察清单
+- 长上下文的实际命中率
+- 端侧模型的电量账
+
+#标签: AI / 观察清单
+</textarea>
+    </div>
+    <div class="show-out">
+      <h2 class="half-title">Lo que lees</h2>
+      <div class="ui-issue" data-ui><p class="meta">2026-10-21 · 约 3 分钟 · 来源 1</p>
+<h3>AI 每日简报：把信息读成理解</h3>
+<blockquote>从模型能力到 Agent 实践，梳理关键变化。</blockquote>
+<h4>01｜先看变化，再看影响</h4>
+<p>三家都放出了新的长上下文接口，价格降了一半。</p>
+<h4>02｜给自己的观察清单</h4>
+<ul><li>长上下文的实际命中率</li><li>端侧模型的电量账</li></ul>
+<div class="tags"><span>AI</span><span>观察清单</span></div></div>
+    </div>
+  </section>
+
+  <div class="sec sec-cta fx" data-shot-key="html-dark">
+    <p class="cta-sentence">Un número al día, con solo lo que de verdad piensas leer.</p>
+    <div class="cta-row">
+      <a class="action" href="mailto:imhccn@gmail.com?subject=Siftr%20TestFlight">Unirse a la beta de TestFlight</a>
+      <a class="cta-alt" href="mailto:imhccn@gmail.com">o escríbenos primero</a>
+    </div>
+    <img class="inline-shot" src="assets/shots/html-dark.jpg" alt="Página web inmersiva de Siftr: la barra de cristal flotante" width="1206" height="2622" loading="lazy">
+  </div>
+
+  <footer class="panel-footer">
+    <span>Una revista privada y serena</span>
+    <span class="links"><a href="privacy.html" data-localized-link="privacy.html">Privacidad</a><a href="support.html" data-localized-link="support.html">Soporte</a><a href="skill.html" data-localized-link="skill.html">Skill de publicación</a></span>
+    <span class="who">© 2026 Chen Haokun</span>
+  </footer>
+
+</section>
+</main>
+
+<script src="language.js?v=siftr-20261014-2"></script>
+<script src="home.js?v=siftr-20261021-1"></script>
+</body></html>
