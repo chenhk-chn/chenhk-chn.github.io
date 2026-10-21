@@ -58,10 +58,15 @@
     return "en";
   }
 
+  // App「设置 › 技术支持」带 ?lang=<App界面语言> 过来；页内语言切换写的是 hash。
+  // hash 优先：用户换过语言后刷新，仍尊重自己的选择，而不是被 URL 里的旧参数盖掉。
+  const queryLanguage = normalizeLanguage(
+    new URLSearchParams(window.location.search).get("lang")
+  );
   const hashLanguage = normalizeLanguage(
     decodeURIComponent(window.location.hash.slice(1))
   );
-  let activeLanguage = hashLanguage || browserLanguage();
+  let activeLanguage = hashLanguage || queryLanguage || browserLanguage();
 
   function localizedTarget(link, language) {
     const base = link.dataset.localizedLink;
