@@ -9,7 +9,7 @@
   --ink: #1c2a23;
   --green: #14483b;
   --field: #e6ebe2;
-  --muted: #536258;
+  --muted: #465147;
   --rule: #d9ded1;
   --font-text: "Source Serif 4", Georgia, "Songti SC", "Hiragino Mincho ProN", serif;
   --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
@@ -69,12 +69,13 @@ p { overflow-wrap: break-word; }
   width: auto;
   max-width: 100%;
   min-height: 44px;
-  padding: 10px 30px 10px 12px;
+  padding: 8px 26px 8px 2px;
   border: 0;
   border-radius: 0;
-  background: var(--field);
+  background: transparent;
   color: var(--ink);
   font: 400 1rem/1.4 var(--font-ui);
+  cursor: pointer;
 }
 
 .language-panel {
