@@ -385,7 +385,7 @@ code {
   * { transition-duration: 0.01ms !important; }
 }
 
-/* 下载入口：上架前是 TestFlight 徽章 + 邮箱；上架后换成 App Store 徽章。 */
+/* 下载入口：App Store 徽章（download.html 用）。 */
 .cta {
   display: flex;
   flex-wrap: wrap;
@@ -395,17 +395,63 @@ code {
 }
 
 .cta-badge {
-  display: inline-block;
-  padding: 9px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 9px 20px;
   border-radius: 999px;
   background: var(--accent);
   color: #fff9ee;
   font-size: 15px;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-badge .apple-mark {
+  width: 1em;
+  height: 1em;
+  flex: none;
 }
 
 .cta a { font-size: 15px; }
 
 @media (prefers-color-scheme: dark) {
   .cta-badge { color: #092b25; }
+}
+
+/* download.html 的地区商店药丸。 */
+.store-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.store-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--fg);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.store-pills a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.store-pills a.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff9ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  .store-pills a.active { color: #092b25; }
 }
