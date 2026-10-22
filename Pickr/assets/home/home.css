@@ -13,7 +13,7 @@
   --glass-border-strong: rgba(255, 255, 255, 0.18);
   --glass-shadow: 0 26px 64px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 1px 0 0 rgba(255, 255, 255, 0.055);
   --ink: #f5f5f7;
-  --muted: #9a9aa2;
+  --muted: #b0b0b8;
   --accent: #5eb0ff;
   --accent-bright: #0a84ff;
   --accent-hover: #409cff;
@@ -203,7 +203,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   border-radius: var(--radius-pill);
   padding: 0 28px 0 14px;
-  min-height: 34px;
+  min-height: 44px;
   cursor: pointer;
   transition: background-color 0.18s ease;
 }
@@ -229,7 +229,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 34px;
+  min-height: 44px;
   padding: 0 15px;
   border-radius: var(--radius-pill);
   background: var(--accent-bright);
@@ -297,7 +297,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- 首屏 Hero（严格中轴线对称 + 前后双色无标点标题） ---------- */
 .hero {
   position: relative;
-  padding-top: clamp(44px, 6vw, 76px);
+  padding-top: clamp(28px, 4vw, 48px);
   padding-bottom: clamp(48px, 6vw, 84px);
 }
 
@@ -325,15 +325,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .hero-app-badge {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .hero-icon {
-  width: 68px;
-  height: 68px;
+  width: 48px;
+  height: 48px;
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
 }
@@ -488,17 +488,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .faq-card,
 .app-link-card,
 .cta-banner {
-  background: var(--glass-surface);
-  backdrop-filter: saturate(195%) blur(36px);
-  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  background: rgba(18, 22, 30, 0.88);
+  /* Content stays quiet; translucent material belongs to navigation. */
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  box-shadow: none;
 }
 
 .sample-card,
 .tier-card,
 .app-link-card {
-  background: var(--glass-surface-elevated);
+  background: rgba(22, 27, 36, 0.92);
 }
 
 .sec-head-wrap {
@@ -737,18 +736,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .ios-switch {
   position: relative;
   width: 48px;
-  height: 28px;
+  height: 44px;
   border-radius: var(--radius-pill);
-  background: #d1d1d6;
-  padding: 2px;
+  background: transparent;
+  padding: 10px 2px;
   transition: background-color 0.22s ease;
 }
 
-.ios-switch[aria-checked="true"] {
-  background: var(--green);
+.ios-switch::before {
+  content: "";
+  position: absolute;
+  inset: 8px 0;
+  border-radius: var(--radius-pill);
+  background: #d1d1d6;
 }
+.ios-switch[aria-checked="true"]::before { background: var(--green); }
 
 .ios-switch-thumb {
+  position: relative;
   display: block;
   width: 24px;
   height: 24px;
@@ -759,6 +764,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .ios-switch[aria-checked="true"] .ios-switch-thumb {
+  position: relative;
   transform: translateX(20px);
 }
 
@@ -1223,8 +1229,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-top: 1px solid var(--border);
   padding-block: 36px 48px;
   background: var(--nav-bg);
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
 }
 
 .footer-inner {
@@ -1331,7 +1335,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
 
   .hero { padding-top: 32px; padding-bottom: 44px; }
-  .hero-icon { width: 60px; height: 60px; border-radius: 14px; }
+  .hero-icon { width: 40px; height: 40px; border-radius: 10px; }
   .hero-title { font-size: clamp(1.95rem, 8vw, 2.4rem); }
   .hero-cta-group { width: 100%; flex-direction: column; align-items: stretch; }
   .hero-cta-group .btn-store,
@@ -1370,4 +1374,28 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .cta-buttons { width: 100%; flex-direction: column; align-items: stretch; }
   .cta-buttons .btn-store,
   .cta-buttons .btn-secondary { width: 100%; min-width: 0; }
+}
+
+/* Keep the product CTA ahead of the compact collection of other apps. */
+.more-apps-compact { padding-block: 40px; }
+.more-apps-compact .sec-head-wrap { margin-bottom: 24px; }
+.more-apps-compact .sec-title { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+.more-apps-compact .app-link-card { padding: 20px; }
+section[id] { scroll-margin-top: 70px; }
+.switch-mode-label { cursor: default; }
+@media (max-width: 640px) {
+  .hero-lead { margin-bottom: 20px; }
+  .hero-cta-group { gap: 6px; }
+  .hero-cta-group .btn-secondary { background: none; border-color: transparent; box-shadow: none; }
+  .hero-showcase { margin-top: 24px; }
+  .more-apps-compact .app-card-tagline { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  body::before, .hero::before, .sec::before { display: none; }
+  *, *::before, *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .global-nav { background: var(--bg); }
+  :root { --muted: #d1d1d6; --glass-border: #85858d; --border: #85858d; }
 }

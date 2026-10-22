@@ -117,7 +117,7 @@
   .region-pill {
     display: inline-flex;
     align-items: center;
-    min-height: 34px;
+    min-height: 44px;
     padding: 0 14px;
     border-radius: 980px;
     background: var(--pill);
@@ -142,15 +142,22 @@
     text-decoration: none;
   }
   .back:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--accent-link); outline-offset: 4px; }
+  .back { min-height: 44px; padding-block: 10px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+    body::before { display: none; }
+    .card { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  }
 </style>
 </head>
 <body>
   <main class="card">
     <img class="icon" src="assets/icon-256.webp" width="76" height="76" alt="Pickr">
-    <h1 id="title">正在打开 App Store…</h1>
-    <p class="status" id="status">为您匹配所在国家或地区的 App Store 商店页面</p>
+    <h1 id="title">下载 Pickr</h1>
+    <p class="status" id="status">点按按钮前往 App Store，或选择其他地区商店</p>
 
-    <a class="btn" id="primary-btn" href="https://apps.apple.com/cn/app/pickr/id6813511457">
+    <a class="btn" id="primary-btn" href="https://apps.apple.com/app/id6813511457">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
       </svg>
@@ -170,57 +177,41 @@
     <a class="back" id="back-link" href="index.html">← 返回 Pickr 官网</a>
   </main>
 
+  <script src="assets/site-routing.js?v=20261022-review1"></script>
   <script>
   (function () {
-    var APP_ID = "6813511457";
-    var STORE_URLS = {
-      cn: "https://apps.apple.com/cn/app/pickr/id" + APP_ID,
-      hk: "https://apps.apple.com/hk/app/pickr/id" + APP_ID,
-      tw: "https://apps.apple.com/tw/app/pickr/id" + APP_ID,
-      us: "https://apps.apple.com/us/app/pickr-photos/id" + APP_ID,
-      gb: "https://apps.apple.com/gb/app/pickr-photos/id" + APP_ID,
-      au: "https://apps.apple.com/au/app/pickr-photos/id" + APP_ID,
-      ca: "https://apps.apple.com/ca/app/pickr-photos/id" + APP_ID,
-      jp: "https://apps.apple.com/jp/app/pickr/id" + APP_ID,
-      kr: "https://apps.apple.com/kr/app/pickr/id" + APP_ID,
-      fr: "https://apps.apple.com/fr/app/pickr/id" + APP_ID,
-      de: "https://apps.apple.com/de/app/pickr/id" + APP_ID,
-      es: "https://apps.apple.com/es/app/pickr/id" + APP_ID,
-      it: "https://apps.apple.com/it/app/pickr/id" + APP_ID
-    };
-
     var UI_COPY = {
       "zh-Hans": {
-        title: "正在打开 App Store…",
-        status: "适用于 iPhone 与 iPad · 已为您匹配当前地区商店",
+        title: "下载 Pickr",
+        status: "适用于 iPhone 与 iPad · 点按下方按钮前往 App Store",
         btn: "在 App Store 下载 Pickr",
         other: "切换其他国家或地区商店：",
         back: "← 返回 Pickr 官网"
       },
       "zh-Hant": {
-        title: "正在打開 App Store…",
-        status: "適用於 iPhone 與 iPad · 已為您配對目前地區商店",
+        title: "下載 Pickr",
+        status: "適用於 iPhone 與 iPad · 點按下方按鈕前往 App Store",
         btn: "在 App Store 下載 Pickr",
         other: "切換其他國家或地區商店：",
         back: "← 返回 Pickr 官網"
       },
       en: {
-        title: "Opening the App Store…",
-        status: "Pickr for iPhone and iPad · Matched to your regional storefront",
+        title: "Download Pickr",
+        status: "For iPhone and iPad · Continue to the App Store below",
         btn: "Download on the App Store",
         other: "Or choose another storefront:",
         back: "← Back to Pickr website"
       },
       ja: {
-        title: "App Store を開いています…",
-        status: "iPhone・iPad 対応 · お住まいの地域のストアへ移動します",
+        title: "Pickr をダウンロード",
+        status: "iPhone・iPad 対応 · 下のボタンから App Store へ",
         btn: "App Store からダウンロード",
         other: "その他の国・地域のストア：",
         back: "← Pickr 公式サイトへ戻る"
       },
       ko: {
-        title: "App Store 여는 중…",
-        status: "iPhone 및 iPad 지원 · 현재 지역의 스토어로 이동합니다",
+        title: "Pickr 다운로드",
+        status: "iPhone 및 iPad 지원 · 아래 버튼으로 App Store 열기",
         btn: "App Store에서 다운로드",
         other: "다른 국가 또는 지역 스토어 선택:",
         back: "← Pickr 웹사이트로 돌아가기"
@@ -228,65 +219,8 @@
     };
 
     function resolveTarget() {
-      var params = new URLSearchParams(window.location.search);
-      var explicitStore = (params.get("store") || "").toLowerCase();
-      var rawLang = params.get("lang") || "";
-      if (!rawLang) {
-        try { rawLang = localStorage.getItem("pickr.lang") || ""; } catch (_) {}
-      }
-      if (!rawLang) {
-        rawLang = (navigator.languages && navigator.languages[0]) || navigator.language || "zh-CN";
-      }
-      var lower = String(rawLang).toLowerCase();
-      var tz = "";
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (_) {}
-
-      var uiLang = "en";
-      var store = "us";
-
-      if (lower.indexOf("zh-hk") === 0 || lower.indexOf("zh-mo") === 0 || tz === "Asia/Hong_Kong" || tz === "Asia/Macau") {
-        uiLang = "zh-Hant";
-        store = "hk";
-      } else if (lower.indexOf("zh-tw") === 0 || lower.indexOf("zh-hant") === 0 || tz === "Asia/Taipei") {
-        uiLang = "zh-Hant";
-        store = "tw";
-      } else if (lower.indexOf("zh") === 0 || tz === "Asia/Shanghai" || tz === "Asia/Chongqing" || tz === "Asia/Urumqi") {
-        uiLang = "zh-Hans";
-        store = "cn";
-      } else if (lower.indexOf("ja") === 0 || tz === "Asia/Tokyo") {
-        uiLang = "ja";
-        store = "jp";
-      } else if (lower.indexOf("ko") === 0 || tz === "Asia/Seoul") {
-        uiLang = "ko";
-        store = "kr";
-      } else if (lower.indexOf("en-gb") === 0 || tz === "Europe/London") {
-        uiLang = "en";
-        store = "gb";
-      } else if (lower.indexOf("en-au") === 0) {
-        uiLang = "en";
-        store = "au";
-      } else if (lower.indexOf("en-ca") === 0) {
-        uiLang = "en";
-        store = "ca";
-      } else if (lower.indexOf("fr") === 0) {
-        uiLang = "en";
-        store = "fr";
-      } else if (lower.indexOf("de") === 0) {
-        uiLang = "en";
-        store = "de";
-      } else if (lower.indexOf("es") === 0) {
-        uiLang = "en";
-        store = "es";
-      } else if (lower.indexOf("it") === 0) {
-        uiLang = "en";
-        store = "it";
-      }
-
-      if (explicitStore && STORE_URLS[explicitStore]) {
-        store = explicitStore;
-      }
-
-      return { uiLang: uiLang, store: store, url: STORE_URLS[store] || STORE_URLS.cn };
+      var params = new URLSearchParams(location.search);
+      return { uiLang: PickrRouting.readLanguage(), store: params.get("store"), url: PickrRouting.storeURL(params.get("store")) };
     }
 
     var target = resolveTarget();
@@ -310,12 +244,6 @@
       }
     }
 
-    var params = new URLSearchParams(window.location.search);
-    if (params.get("stay") !== "1") {
-      setTimeout(function () {
-        window.location.replace(target.url);
-      }, 180);
-    }
   })();
   </script>
 </body>

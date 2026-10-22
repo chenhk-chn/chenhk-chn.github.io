@@ -9,7 +9,7 @@
   --glass-border: rgba(255, 255, 255, 0.105);
   --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 1px 0 0 rgba(255, 255, 255, 0.055);
   --fg: #f5f5f7;
-  --muted: #9a9aa2;
+  --muted: #b0b0b8;
   --rule: rgba(255, 255, 255, 0.085);
   --accent: #5eb0ff;
   --accent-strong: #0a84ff;
@@ -64,7 +64,7 @@ body::before {
 .wrap {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -131,13 +131,11 @@ body::before {
   margin: 0;
   width: auto;
   max-width: 100%;
-  min-height: 34px;
+  min-height: 44px;
   padding: 0 30px 0 14px;
   border: 1px solid var(--glass-border);
   border-radius: 980px;
   background: var(--pill-bg);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
   color: var(--fg);
   font-family: var(--font);
   font-size: 13px;
@@ -226,8 +224,6 @@ h1:lang(ja) {
   border-radius: 980px;
   background: var(--pill-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: saturate(180%) blur(18px);
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
   color: var(--muted);
   font-size: 13.5px;
   font-weight: 600;
@@ -238,11 +234,9 @@ h1:lang(ja) {
   max-width: 100%;
   margin: 0 0 36px;
   padding: 24px 32px;
-  background: var(--glass-surface);
-  backdrop-filter: saturate(195%) blur(36px);
-  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  background: rgba(18, 22, 30, 0.88);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  box-shadow: none;
   border-radius: 24px;
   font-family: var(--font);
   font-size: clamp(17px, 1.9vw, 19.5px);
@@ -308,11 +302,9 @@ p {
 ul {
   margin: 14px 0 18px;
   padding: 20px 24px 20px 42px;
-  background: var(--glass-surface);
-  backdrop-filter: saturate(195%) blur(36px);
-  -webkit-backdrop-filter: saturate(195%) blur(36px);
+  background: rgba(18, 22, 30, 0.88);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  box-shadow: none;
   border-radius: 20px;
 }
 
@@ -343,8 +335,6 @@ a:hover {
 .note {
   max-width: 100%;
   background: linear-gradient(138deg, rgba(10, 132, 255, 0.16) 0%, rgba(10, 132, 255, 0.06) 100%);
-  backdrop-filter: saturate(190%) blur(32px);
-  -webkit-backdrop-filter: saturate(190%) blur(32px);
   border: 1px solid rgba(94, 176, 255, 0.28);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   border-radius: 20px;
@@ -439,4 +429,13 @@ code {
   * {
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Long-form pages prioritize reading over decorative containers. */
+ul { background: none; border: 0; box-shadow: none; padding: 0 0 0 24px; }
+body::before { opacity: 0.45; }
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  body::before { display: none; }
+  .site-bar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  :root { --muted: #d1d1d6; --glass-border: #85858d; --rule: #85858d; }
 }

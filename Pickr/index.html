@@ -11,11 +11,11 @@
 <meta property="og:description" content="让照片更轻，也让回忆更有条理。已在 App Store 上架，适用于 iPhone 与 iPad。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chenhk.cn/Pickr/">
-<meta property="og:image" content="assets/icon-512.png">
+<meta property="og:image" content="https://chenhk.cn/Pickr/assets/icon-512.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
 <link rel="apple-touch-icon" href="assets/icon-512.png">
 <script>document.documentElement.classList.add("js")</script>
-<link rel="stylesheet" href="assets/home/home.css?v=20261022h">
+<link rel="stylesheet" href="assets/home/home.css?v=20261022-review1">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
       <span class="brand-name">Pickr</span>
     </a>
 
-    <nav class="nav-links" aria-label="主导航">
+    <nav class="nav-links" aria-label="主导航" data-i18n-aria="nav.aria">
       <a class="nav-item" href="#how" data-i18n="nav.how">按月整理</a>
       <a class="nav-item" href="#compression" data-i18n="nav.compression">照片视频压缩</a>
       <a class="nav-item" href="#albums" data-i18n="nav.albums">地点精选</a>
@@ -38,7 +38,7 @@
     <div class="nav-actions">
       <label class="lang-pill">
         <span class="visually-hidden" data-i18n="nav.langLabel">语言</span>
-        <select class="lang-select" data-language-select aria-label="语言">
+        <select class="lang-select" data-language-select aria-label="语言" data-i18n-aria="nav.langLabel">
           <option value="zh-Hans">简体中文</option>
           <option value="zh-Hant">繁體中文</option>
           <option value="en">English</option>
@@ -46,7 +46,7 @@
           <option value="ko">한국어</option>
         </select>
       </label>
-      <a class="nav-cta" data-store-link href="https://apps.apple.com/cn/app/pickr/id6813511457" target="_blank" rel="noopener">
+      <a class="nav-cta" data-store-link href="https://apps.apple.com/app/id6813511457" target="_blank" rel="noopener">
         <svg class="apple-mark" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
           <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/>
         </svg>
@@ -70,10 +70,10 @@
         <span class="hero-line tone-accent" data-i18n="hero.l2">为新回忆留出空间</span>
       </h1>
 
-      <p class="hero-lead" data-i18n="hero.support">拍下的日子，值得被好好安放。从一个月份开始，整理留下的照片；让较大的文件少占一些空间，让去过的地方、想分享的片刻，各有归处</p>
+      <p class="hero-lead" data-i18n="hero.support">按月整理照片与视频，压缩大文件，按地点重温值得留下的片刻。</p>
 
       <div class="hero-cta-group">
-        <a class="btn-store" data-store-link href="https://apps.apple.com/cn/app/pickr/id6813511457" target="_blank" rel="noopener">
+        <a class="btn-store" data-store-link href="https://apps.apple.com/app/id6813511457" target="_blank" rel="noopener">
           <svg class="apple-mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/>
           </svg>
@@ -178,20 +178,20 @@
           <figure class="sample-card compare-card" data-heic-compare>
             <div class="compare-toolbar">
               <div class="compare-status">
-                <span class="compare-format-tag" data-compare-badge data-i18n="ch2.badgeOrig">原图 JPEG · 4.8 MB</span>
-                <span class="compare-saving-tag" data-compare-saving hidden data-i18n="ch2.badgeSave">已省 77% · 画质 98 分</span>
+                <span class="compare-format-tag" data-compare-badge data-i18n="ch2.badgeOrig">原图预览 · 示例</span>
+                <span class="compare-saving-tag" data-compare-saving hidden data-i18n="ch2.badgeSave">效果示意</span>
               </div>
 
               <div class="heic-switch-wrap">
                 <span class="switch-mode-label active" data-mode-orig data-i18n="ch2.modeOrig">原图</span>
-                <button type="button" class="ios-switch" role="switch" aria-checked="false" data-heic-switch aria-label="切换显示原图与 HEIC 压缩效果">
+                <button type="button" class="ios-switch" role="switch" aria-checked="false" data-heic-switch aria-label="切换原图与压缩示例" data-i18n-aria="compare.aria">
                   <span class="ios-switch-thumb"></span>
                 </button>
-                <span class="switch-mode-label" data-mode-heic data-i18n="ch2.modeHeic">HEIC</span>
+                <span class="switch-mode-label" data-mode-heic data-i18n="ch2.modeHeic">压缩</span>
               </div>
             </div>
 
-            <div class="compare-stage" data-compare-stage role="button" tabindex="0" aria-label="点击切换原图与 HEIC">
+            <div class="compare-stage" data-compare-stage role="button" tabindex="0" aria-label="切换原图与压缩示例" data-i18n-aria="compare.aria">
               <img class="compare-main-img" data-compare-img src="assets/home/demo-01-leaf.webp" width="900" height="675" loading="lazy" decoding="async" alt="微距叶脉画质对比样张" data-i18n-alt="alt.card1">
               <div class="compare-loupe" aria-hidden="true">
                 <img data-compare-loupe-img src="assets/home/demo-01-leaf.webp" alt="">
@@ -201,10 +201,10 @@
 
             <figcaption>
               <h3>
-                <span class="tone-first" data-i18n="ch2.c1a">点开开关对比原图与 HEIC</span>
+                <span class="tone-first" data-i18n="ch2.c1a">切换预览，了解对比方式</span>
                 <span class="tone-muted" data-i18n="ch2.c1b">看清细节再决定是否替换</span>
               </h3>
-              <p data-i18n="ch2.c1desc">拨动上方开关即可对比原片（4.8 MB）与 HEIC 压缩版（1.1 MB）的叶脉纹理。在 App 内同样支持先对比再替换，不满意则原片分毫不动。</p>
+              <p data-i18n="ch2.c1desc">图片仅用于演示对比操作，不代表实际压缩效果。请在 App 内对比自己的照片，再决定是否替换。</p>
             </figcaption>
           </figure>
 
@@ -386,8 +386,30 @@
     </div>
   </section>
 
+  <!-- 章节七：底部 App Store 下载收尾 -->
+  <section class="sec sec-cta" id="download">
+    <div class="inner">
+      <div class="cta-banner">
+        <img class="cta-icon" src="assets/icon-256.webp" width="72" height="72" alt="Pickr">
+        <h2 class="cta-title">
+          <span class="title-line tone-first" data-i18n="cta.h1">拍下的日子，值得被好好安放</span>
+          <span class="title-line tone-accent" data-i18n="cta.h2">从一个月份开始，为下一段生活留出空间</span>
+        </h2>
+        <p class="cta-sub" data-i18n="cta.note">前往 App Store 免费下载 Pickr，适用于 iPhone 与 iPad</p>
+        <div class="cta-buttons">
+          <a class="btn-store" data-store-link href="https://apps.apple.com/app/id6813511457" target="_blank" rel="noopener">
+            <svg class="apple-mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/>
+            </svg>
+            <span data-i18n="hero.storeBtn">在 App Store 下载</span>
+          </a>
+          <a class="btn-secondary" href="support.html" data-localized-link="support.html" data-i18n="faq.support">技术支持</a>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- 章节六：更多独立作品与友情链接（最新 Mealr / Placr / Siftr / 个人主站 chenhk.cn） -->
-  <section class="sec sec-tinted" id="more-apps">
+  <section class="sec sec-tinted more-apps-compact" id="more-apps">
     <div class="inner">
       <div class="sec-head-wrap">
         <p class="sec-eyebrow" data-i18n="links.eyebrow">更多独立作品与友情链接</p>
@@ -449,35 +471,13 @@
     </div>
   </section>
 
-  <!-- 章节七：底部 App Store 下载收尾 -->
-  <section class="sec sec-cta" id="download">
-    <div class="inner">
-      <div class="cta-banner">
-        <img class="cta-icon" src="assets/icon-256.webp" width="72" height="72" alt="Pickr">
-        <h2 class="cta-title">
-          <span class="title-line tone-first" data-i18n="cta.h1">拍下的日子，值得被好好安放</span>
-          <span class="title-line tone-accent" data-i18n="cta.h2">从一个月份开始，为下一段生活留出空间</span>
-        </h2>
-        <p class="cta-sub" data-i18n="cta.note">前往 App Store 免费下载 Pickr，适用于 iPhone 与 iPad</p>
-        <div class="cta-buttons">
-          <a class="btn-store" data-store-link href="https://apps.apple.com/cn/app/pickr/id6813511457" target="_blank" rel="noopener">
-            <svg class="apple-mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/>
-            </svg>
-            <span data-i18n="hero.storeBtn">在 App Store 下载</span>
-          </a>
-          <a class="btn-secondary" href="support.html" data-localized-link="support.html" data-i18n="faq.support">技术支持</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
   <div class="inner footer-inner">
     <div class="footer-top">
       <p class="footer-brand" data-i18n="foot.statement">Pickr · 你的照片，由你决定</p>
-      <nav class="footer-nav" aria-label="页脚链接">
+      <nav class="footer-nav" aria-label="页脚链接" data-i18n-aria="foot.aria">
         <a href="download.html" data-localized-link="download.html">App Store</a>
         <a href="privacy.html" data-localized-link="privacy.html" data-i18n="faq.privacy">隐私政策</a>
         <a href="support.html" data-localized-link="support.html" data-i18n="faq.support">技术支持</a>
@@ -495,6 +495,7 @@
   </div>
 </footer>
 
-<script src="assets/home/home.js?v=20261022c" defer></script>
+<script src="assets/site-routing.js?v=20261022-review1" defer></script>
+<script src="assets/home/home.js?v=20261022-review1" defer></script>
 </body>
 </html>

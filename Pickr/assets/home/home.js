@@ -3,18 +3,13 @@
 
   document.documentElement.classList.add("js");
 
-  var APP_ID = "6813511457";
-  var STORE_BY_LANG = {
-    "zh-Hans": "https://apps.apple.com/cn/app/pickr/id" + APP_ID,
-    "zh-Hant": "https://apps.apple.com/tw/app/pickr/id" + APP_ID,
-    en: "https://apps.apple.com/us/app/pickr-photos/id" + APP_ID,
-    ja: "https://apps.apple.com/jp/app/pickr/id" + APP_ID,
-    ko: "https://apps.apple.com/kr/app/pickr/id" + APP_ID
-  };
-
   /* 严格对齐 AppStore/metadata/1.1.0/*.json 与 Scripts/screenshots/copy-1.1.0.json */
   var COPY = {
     "zh-Hans": {
+      "nav.aria": "主导航",
+      "foot.aria": "页脚链接",
+      "compare.aria": "切换原图与压缩示例",
+
       "meta.title": "Pickr · 把相册厘清，为新回忆留出空间 | iPhone 与 iPad 照片整理工具",
       "meta.description": "拍下的日子，值得被好好安放。Pickr 帮你按月整理照片与视频，压缩前先对比，按地点重温旅途精选，整理时把想分享的片刻收进相册。已在 App Store 上架。",
       "nav.how": "按月整理",
@@ -29,7 +24,7 @@
       "hero.eyebrow": "适用于 iPhone 与 iPad",
       "hero.l1": "把相册厘清",
       "hero.l2": "为新回忆留出空间",
-      "hero.support": "拍下的日子，值得被好好安放。从一个月份开始，整理留下的照片；让较大的文件少占一些空间，让去过的地方、想分享的片刻，各有归处",
+      "hero.support": "按月整理照片与视频，压缩大文件，按地点重温值得留下的片刻。",
       "hero.storeBtn": "在 App Store 下载",
       "hero.moreBtn": "了解工作方式",
       "hero.meta": "已在 App Store 正式上架 · 你的照片，由你决定",
@@ -55,14 +50,14 @@
       "ch2.h1": "让照片与视频更轻",
       "ch2.h2": "为新回忆留出空间",
       "ch2.sub": "查看照片与视频预计可节省的大小，选择压缩方案，完成后对比原片与压缩版，再决定是否替换。压缩版先保存，确认替换时才删除原片。",
-      "ch2.badgeOrig": "原图 JPEG · 4.8 MB",
-      "ch2.badgeHeic": "HEIC 压缩版 · 1.1 MB",
-      "ch2.badgeSave": "已省 77% · 画质 98 分",
+      "ch2.badgeOrig": "原图预览 · 示例",
+      "ch2.badgeHeic": "压缩预览 · 示例",
+      "ch2.badgeSave": "效果示意",
       "ch2.modeOrig": "原图",
-      "ch2.modeHeic": "HEIC",
-      "ch2.c1a": "点开开关对比原图与 HEIC",
+      "ch2.modeHeic": "压缩",
+      "ch2.c1a": "切换预览，了解对比方式",
       "ch2.c1b": "看清细节再决定是否替换",
-      "ch2.c1desc": "拨动上方开关即可对比原片（4.8 MB）与 HEIC 压缩版（1.1 MB）的叶脉纹理。在 App 内同样支持先对比再替换，不满意则原片分毫不动。",
+      "ch2.c1desc": "图片仅用于演示对比操作，不代表实际压缩效果。请在 App 内对比自己的照片，再决定是否替换。",
       "ch2.pillSafe": "先保存后替换",
       "ch2.c2n": "压缩版先保存，拍摄时间与地点完整保留",
       "ch2.c2b": "只有在你确认替换时才会把原片移入系统「最近删除」；照片原有的拍摄日期、GPS 坐标、收藏状态及所属相册均完整保留，具体影响会在操作前清晰说明。",
@@ -151,6 +146,10 @@
     },
 
     "zh-Hant": {
+      "nav.aria": "主要導覽",
+      "foot.aria": "頁尾連結",
+      "compare.aria": "切換原圖與壓縮範例",
+
       "meta.title": "Pickr · 整理照片，為新回憶留出空間 | iPhone 與 iPad 照片整理工具",
       "meta.description": "拍下的日子，值得好好珍藏。Pickr 幫你按月整理照片與影片，壓縮後先比較再替換，按地點重溫精選，整理時收集想分享的照片。已在 App Store 上架。",
       "nav.how": "按月整理",
@@ -165,7 +164,7 @@
       "hero.eyebrow": "適用於 iPhone 與 iPad",
       "hero.l1": "整理照片",
       "hero.l2": "為新回憶留出空間",
-      "hero.support": "拍下的日子，值得好好珍藏。從一個月份開始，整理想留下的照片；讓較大的檔案少佔一些空間，也讓去過的地方、想分享的片刻，各有歸處",
+      "hero.support": "按月整理照片與影片，壓縮大型檔案，按地點重溫值得珍藏的片刻。",
       "hero.storeBtn": "在 App Store 下載",
       "hero.moreBtn": "了解工作方式",
       "hero.meta": "已在 App Store 正式上架 · 你的照片，由你決定",
@@ -191,14 +190,14 @@
       "ch2.h1": "讓照片與影片更輕",
       "ch2.h2": "為新回憶留出空間",
       "ch2.sub": "先看看照片與影片的檔案預計能縮小多少，再選擇壓縮方案。完成後比較原始檔與壓縮版，再決定是否替換。",
-      "ch2.badgeOrig": "原圖 JPEG · 4.8 MB",
-      "ch2.badgeHeic": "HEIC 壓縮版 · 1.1 MB",
-      "ch2.badgeSave": "已省 77% · 畫質 98 分",
+      "ch2.badgeOrig": "原圖預覽 · 範例",
+      "ch2.badgeHeic": "壓縮預覽 · 範例",
+      "ch2.badgeSave": "效果示意",
       "ch2.modeOrig": "原圖",
-      "ch2.modeHeic": "HEIC",
-      "ch2.c1a": "點開開關比較原圖與 HEIC",
+      "ch2.modeHeic": "壓縮",
+      "ch2.c1a": "切換預覽，了解比較方式",
       "ch2.c1b": "看清細節再決定是否替換",
-      "ch2.c1desc": "撥動上方開關即可比較原始檔（4.8 MB）與 HEIC 壓縮版（1.1 MB）的葉脈紋理。在 App 內同樣支援先比較再替換。",
+      "ch2.c1desc": "圖片僅用於示範比較操作，不代表實際壓縮效果。請在 App 內比較自己的照片，再決定是否替換。",
       "ch2.pillSafe": "先儲存後替換",
       "ch2.c2n": "壓縮版先儲存，拍攝時間與地點完整保留",
       "ch2.c2b": "壓縮版會先儲存，只有在你確認替換時才會刪除原始檔；照片原有的拍攝日期、GPS 座標、收藏狀態及所屬相簿均完整保留。",
@@ -287,6 +286,10 @@
     },
 
     en: {
+      "nav.aria": "Main navigation",
+      "foot.aria": "Footer links",
+      "compare.aria": "Switch between original and compressed previews",
+
       "meta.title": "Pickr · Catch up with your camera roll, make room for new memories",
       "meta.description": "Sort photos and videos by month on iPhone and iPad. Compare before compressing, rediscover cities in a few photos, and choose what to share as you go. Available on the App Store.",
       "nav.how": "Monthly Sort",
@@ -301,7 +304,7 @@
       "hero.eyebrow": "For iPhone and iPad",
       "hero.l1": "Catch up with your camera roll",
       "hero.l2": "Make room for new memories",
-      "hero.support": "The days you capture deserve to be cherished. Start with a month, shrink larger files, and find a home for the places you’ve been and the moments you’d like to share",
+      "hero.support": "Sort photos by month, compress large files, and rediscover memories by place.",
       "hero.storeBtn": "Download on the App Store",
       "hero.moreBtn": "How it works",
       "hero.meta": "Available on the App Store · Your photos. Your choice.",
@@ -327,14 +330,14 @@
       "ch2.h1": "Lighter photos and videos",
       "ch2.h2": "Room for new memories",
       "ch2.sub": "See how much space compression could save, choose a setting, then compare the original and compressed versions before deciding whether to replace the original.",
-      "ch2.badgeOrig": "Original JPEG · 4.8 MB",
-      "ch2.badgeHeic": "HEIC Compressed · 1.1 MB",
-      "ch2.badgeSave": "77% Saved · Score 98",
+      "ch2.badgeOrig": "Original preview · Demo",
+      "ch2.badgeHeic": "Compressed preview · Demo",
+      "ch2.badgeSave": "Illustrative preview",
       "ch2.modeOrig": "Original",
-      "ch2.modeHeic": "HEIC",
-      "ch2.c1a": "Toggle between Original and HEIC",
+      "ch2.modeHeic": "Compressed",
+      "ch2.c1a": "Try the comparison preview",
       "ch2.c1b": "Compare detail before replacing",
-      "ch2.c1desc": "Flip the switch above to compare the 4.8 MB original against the 1.1 MB HEIC version. Inside Pickr, you always compare before deciding whether to replace.",
+      "ch2.c1desc": "These images illustrate the comparison controls, not actual compression results. Compare your own photos in the app before deciding whether to replace them.",
       "ch2.pillSafe": "Save First, Replace Later",
       "ch2.c2n": "Compressed version saved first, metadata preserved",
       "ch2.c2b": "The compressed file is saved first and the original is removed only when you confirm replacement. Capture date, GPS coordinates, and album membership stay intact.",
@@ -423,6 +426,10 @@
     },
 
     ja: {
+      "nav.aria": "メインナビゲーション",
+      "foot.aria": "フッターリンク",
+      "compare.aria": "元画像と圧縮画像のプレビューを切り替え",
+
       "meta.title": "Pickr · 写真を整え、新しい思い出に余白を | iPhone・iPad 写真整理アプリ",
       "meta.description": "写真に残した日々を大切に。月ごとに写真と動画を整理し、圧縮後は比べてから置換。場所別のセレクションや整理中のアルバム収集に対応。App Store で配信中。",
       "nav.how": "月別整理",
@@ -437,7 +444,7 @@
       "hero.eyebrow": "iPhone と iPad に対応",
       "hero.l1": "写真を整え",
       "hero.l2": "新しい思い出に余白を",
-      "hero.support": "写真に残した日々を、大切にしまっておこう。まずはひと月分から整理して、大きなファイルは少し身軽に。訪れた場所の思い出も、誰かに見せたい瞬間も、見つけやすい場所へ",
+      "hero.support": "写真や動画を月ごとに整理。大きなファイルを圧縮し、撮影場所から思い出を振り返れます。",
       "hero.storeBtn": "App Store からダウンロード",
       "hero.moreBtn": "使い方をみる",
       "hero.meta": "App Store で配信中 · あなたの写真。決めるのは、あなた。",
@@ -463,14 +470,14 @@
       "ch2.h1": "写真も動画も軽くして",
       "ch2.h2": "新しい思い出に空きを",
       "ch2.sub": "ファイルサイズをどれくらい小さくできるか目安を確認。圧縮後は元の写真・動画と比べてから、置き換えるかどうかを決められます。",
-      "ch2.badgeOrig": "元画像 JPEG · 4.8 MB",
-      "ch2.badgeHeic": "HEIC 圧縮版 · 1.1 MB",
-      "ch2.badgeSave": "77% 削減 · 画質 98点",
+      "ch2.badgeOrig": "元画像プレビュー · デモ",
+      "ch2.badgeHeic": "圧縮プレビュー · デモ",
+      "ch2.badgeSave": "操作イメージ",
       "ch2.modeOrig": "元画像",
-      "ch2.modeHeic": "HEIC",
-      "ch2.c1a": "スイッチで元画像と HEIC を比較",
+      "ch2.modeHeic": "圧縮",
+      "ch2.c1a": "プレビューを切り替えて比較",
       "ch2.c1b": "ディテールを確かめてから置換",
-      "ch2.c1desc": "上のスイッチを切り替えると、元画像（4.8 MB）と HEIC 圧縮版（1.1 MB）の葉脈ディテールを比較できます。",
+      "ch2.c1desc": "画像は比較操作のイメージで、実際の圧縮結果ではありません。アプリでご自身の写真を比較してから、置き換えるかを決められます。",
       "ch2.pillSafe": "先に保存、確認後に置換",
       "ch2.c2n": "圧縮ファイルを先に保存、撮影日時や位置情報も保持",
       "ch2.c2b": "圧縮したファイルを先に保存し、置き換えを確定したときにだけ元の写真・動画を削除します。撮影日時や GPS 位置情報も引き継がれます。",
@@ -559,6 +566,10 @@
     },
 
     ko: {
+      "nav.aria": "주 탐색",
+      "foot.aria": "하단 링크",
+      "compare.aria": "원본과 압축 예시 전환",
+
       "meta.title": "Pickr · 사진을 정리해 새 추억을 위한 공간을 | iPhone 및 iPad 사진 정리 도구",
       "meta.description": "사진에 담긴 날들, 소중하게 간직하세요. 한 달씩 사진과 동영상을 정리하고, 압축 후 비교해 원본 교체를 결정하세요. 장소별 사진과 공유 앨범 수집까지. App Store 출시.",
       "nav.how": "월별 정리",
@@ -573,7 +584,7 @@
       "hero.eyebrow": "iPhone 및 iPad 지원",
       "hero.l1": "사진을 가지런히 정리해",
       "hero.l2": "새 추억을 위한 공간을",
-      "hero.support": "사진에 담긴 날들, 소중하게 간직하세요. 한 달치 사진부터 천천히 정리해 큰 파일은 조금 가볍게, 다녀온 곳의 추억과 나누고 싶은 순간은 찾기 쉽게 모아 둘 수 있어요",
+      "hero.support": "사진과 동영상을 월별로 정리하고, 큰 파일을 압축하고, 촬영 장소별로 추억을 다시 만나세요.",
       "hero.storeBtn": "App Store에서 다운로드",
       "hero.moreBtn": "작동 방식 보기",
       "hero.meta": "App Store 정식 출시 · 내 사진, 내가 결정해요",
@@ -599,14 +610,14 @@
       "ch2.h1": "사진과 동영상을 가볍게",
       "ch2.h2": "새 추억을 위한 공간을",
       "ch2.sub": "파일 크기를 얼마나 줄일 수 있을지 예상치를 확인하고 압축 방식을 고르세요. 압축이 끝나면 원본과 압축본을 비교한 뒤 교체할지 결정할 수 있어요.",
-      "ch2.badgeOrig": "원본 JPEG · 4.8 MB",
-      "ch2.badgeHeic": "HEIC 압축본 · 1.1 MB",
-      "ch2.badgeSave": "77% 절약 · 화질 98점",
+      "ch2.badgeOrig": "원본 미리보기 · 예시",
+      "ch2.badgeHeic": "압축 미리보기 · 예시",
+      "ch2.badgeSave": "작동 예시",
       "ch2.modeOrig": "원본",
-      "ch2.modeHeic": "HEIC",
-      "ch2.c1a": "스위치로 원본과 HEIC 비교",
+      "ch2.modeHeic": "압축",
+      "ch2.c1a": "미리보기를 전환해 비교해 보세요",
       "ch2.c1b": "디테일을 확인한 뒤 교체 결정",
-      "ch2.c1desc": "위 스위치를 전환해 원본(4.8 MB)과 HEIC 압축본(1.1 MB)의 잎맥 디테일을 비교해 보세요.",
+      "ch2.c1desc": "비교 조작을 보여 주는 예시 이미지로, 실제 압축 결과가 아닙니다. 앱에서 자신의 사진을 비교한 뒤 교체할지 결정하세요.",
       "ch2.pillSafe": "먼저 저장 후 교체",
       "ch2.c2n": "압축본을 먼저 저장하고 촬영 날짜와 위치 보존",
       "ch2.c2b": "압축본을 먼저 저장하고, 직접 교체를 확정했을 때만 원본을 삭제해요. 촬영 일시와 GPS 위치 좌표, 앨범 소속이 그대로 유지됩니다.",
@@ -698,41 +709,7 @@
   var SUPPORTED = ["zh-Hans", "zh-Hant", "en", "ja", "ko"];
   var currentLang = "zh-Hans";
 
-  function normalizeLang(raw) {
-    if (!raw) return "zh-Hans";
-    var lower = String(raw).toLowerCase();
-    if (lower.indexOf("zh-hant") === 0 || lower === "zh-tw" || lower === "zh-hk" || lower === "zh-mo") {
-      return "zh-Hant";
-    }
-    if (lower.indexOf("zh") === 0) return "zh-Hans";
-    if (lower.indexOf("ja") === 0) return "ja";
-    if (lower.indexOf("ko") === 0) return "ko";
-    if (lower.indexOf("en") === 0) return "en";
-    return "zh-Hans";
-  }
-
-  function detectLang() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      var fromQuery = params.get("lang");
-      if (fromQuery) {
-        return normalizeLang(fromQuery);
-      }
-      var saved = window.localStorage.getItem("pickr.lang");
-      if (saved && SUPPORTED.indexOf(saved) !== -1) {
-        return saved;
-      }
-    } catch (_) {}
-    return normalizeLang(navigator.language || "zh-Hans");
-  }
-
-  function resolveStoreUrl(code) {
-    var rawNav = (navigator.language || "").toLowerCase();
-    if (code === "zh-Hant" && (rawNav.indexOf("hk") !== -1 || rawNav.indexOf("mo") !== -1)) {
-      return "https://apps.apple.com/hk/app/pickr/id" + APP_ID;
-    }
-    return STORE_BY_LANG[code] || STORE_BY_LANG["zh-Hans"];
-  }
+  function detectLang() { return PickrRouting.readLanguage(); }
 
   function syncCompareBadge() {
     var card = document.querySelector("[data-heic-compare]");
@@ -745,7 +722,7 @@
     }
   }
 
-  function applyLang(lang) {
+  function applyLang(lang, updateURL = false) {
     var code = SUPPORTED.indexOf(lang) !== -1 ? lang : "zh-Hans";
     currentLang = code;
     var dict = COPY[code] || COPY["zh-Hans"];
@@ -766,6 +743,11 @@
         textNodes[i].textContent = dict[key];
       }
     }
+
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (node) {
+      var label = dict[node.getAttribute("data-i18n-aria")];
+      if (label) node.setAttribute("aria-label", label);
+    });
 
     var altNodes = document.querySelectorAll("[data-i18n-alt]");
     for (var j = 0; j < altNodes.length; j++) {
@@ -801,7 +783,7 @@
 
     syncCompareBadge();
 
-    var storeUrl = resolveStoreUrl(code);
+    var storeUrl = PickrRouting.storeURL(new URLSearchParams(location.search).get("store"));
     var storeLinks = document.querySelectorAll("a[data-store-link]");
     for (var u = 0; u < storeLinks.length; u++) {
       storeLinks[u].setAttribute("href", storeUrl);
@@ -820,9 +802,7 @@
       select.value = code;
     }
 
-    try {
-      window.localStorage.setItem("pickr.lang", code);
-    } catch (_) {}
+    PickrRouting.rememberLanguage(code, updateURL);
   }
 
   /* ---------- 原图 vs HEIC 交互开关 ---------- */
@@ -871,12 +851,6 @@
 
     if (switchBtn) {
       switchBtn.addEventListener("click", toggle);
-    }
-    if (modeOrig) {
-      modeOrig.addEventListener("click", function () { setHeicMode(false); });
-    }
-    if (modeHeic) {
-      modeHeic.addEventListener("click", function () { setHeicMode(true); });
     }
     if (stage) {
       stage.addEventListener("click", toggle);
@@ -937,7 +911,7 @@
   var selectEl = document.querySelector("[data-language-select]");
   if (selectEl) {
     selectEl.addEventListener("change", function (ev) {
-      applyLang(ev.target.value);
+      applyLang(ev.target.value, true);
     });
   }
 })();

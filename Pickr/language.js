@@ -64,13 +64,13 @@
     new URLSearchParams(window.location.search).get("lang")
   );
   const hashLanguage = normalizeLanguage(
-    decodeURIComponent(window.location.hash.slice(1))
+    window.location.hash.slice(1)
   );
   let activeLanguage = hashLanguage || queryLanguage || browserLanguage();
 
   function localizedTarget(link, language) {
     const base = link.dataset.localizedLink;
-    return `${base}#${encodeURIComponent(language)}`;
+    return `${base}?lang=${encodeURIComponent(language)}`;
   }
 
   function showLanguage(language, updateHash = false) {
@@ -96,7 +96,11 @@
     });
 
     if (updateHash) {
-      history.replaceState(null, "", `#${encodeURIComponent(activeLanguage)}`);
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", activeLanguage);
+      url.hash = "";
+      history.replaceState(null, "", url.pathname + url.search);
+      try { localStorage.setItem("pickr.lang", activeLanguage); } catch (_) {}
     }
   }
 
@@ -107,7 +111,7 @@
 
   window.addEventListener("hashchange", () => {
     const language = normalizeLanguage(
-      decodeURIComponent(window.location.hash.slice(1))
+      window.location.hash.slice(1)
     );
     if (language) showLanguage(language);
   });
