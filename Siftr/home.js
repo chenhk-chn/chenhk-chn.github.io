@@ -13,34 +13,28 @@
     target.focus({ preventScroll: true });
   });
 
-  // 入场动效：每个区块的标题、文字、图片依次浮现一次。类名由脚本添加，
-  // 无 JS 时内容原样显示；prefers-reduced-motion 由 home.css 兜底为直接可见。
+  // 入场动效：首屏与各节主标题保持即刻可见；首屏以下的内部条目随滚动依次浮现。
+  // 无 JS 或 prefers-reduced-motion 时内容直接可见。
   const targets = document.querySelectorAll(
     [
-      ".hero-copy > *",
-      ".hero-visual",
-      ".section > h2",
-      ".section > .wrap > h2",
-      ".section-intro > *",
-      ".reading-copy > *",
+      ".reading-points li",
       ".reading-visual",
       ".pipeline li",
       ".feature-columns article",
       ".proofs figure",
-      ".more-tools",
+      ".tool-list",
       ".qa",
       ".friend-card",
-      ".closing .wrap > *",
     ].join(", ")
   );
 
   const seenSections = new Map();
   targets.forEach((element) => {
-    const section = element.closest(".hero, .section") || document.body;
+    const section = element.closest(".section") || document.body;
     const index = seenSections.get(section) || 0;
     seenSections.set(section, index + 1);
     element.classList.add("reveal");
-    element.style.setProperty("--d", `${Math.min(index * 70, 280)}ms`);
+    element.style.setProperty("--d", `${Math.min(index * 65, 260)}ms`);
   });
 
   if ("IntersectionObserver" in window) {
@@ -53,7 +47,7 @@
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
     );
     targets.forEach((element) => observer.observe(element));
   } else {
