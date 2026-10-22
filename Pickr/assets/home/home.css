@@ -662,12 +662,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 18px;
 }
 
-/* 原图 vs HEIC 开关工具栏 */
+/* The demo label stays constant so toggling cannot reflow this toolbar. */
 .compare-toolbar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
 }
 
@@ -696,20 +696,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--accent);
 }
 
-.compare-saving-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: var(--saving-bg);
-  color: var(--saving-ink);
-  font-size: 0.8125rem;
-  font-weight: 700;
-}
-
-.compare-saving-tag[hidden] {
-  display: none;
-}
+.compare-status { min-width: 0; }
 
 .heic-switch-wrap {
   display: inline-flex;
@@ -736,6 +723,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .ios-switch {
   position: relative;
   width: 48px;
+  flex-shrink: 0;
   height: 44px;
   border-radius: var(--radius-pill);
   background: transparent;
@@ -1398,4 +1386,12 @@ section[id] { scroll-margin-top: 70px; }
   *, *::before, *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
   .global-nav { background: var(--bg); }
   :root { --muted: #d1d1d6; --glass-border: #85858d; --border: #85858d; }
+}
+
+@media (max-width: 360px) {
+  .nav-bar { gap: 8px; }
+  .brand { flex-shrink: 0; gap: 6px; }
+  .nav-actions { gap: 6px; }
+  .lang-select { width: 86px; padding-left: 10px; }
+  .nav-cta { padding-inline: 12px; }
 }

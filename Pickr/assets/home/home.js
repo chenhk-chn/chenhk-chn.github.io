@@ -9,6 +9,7 @@
       "nav.aria": "主导航",
       "foot.aria": "页脚链接",
       "compare.aria": "切换原图与压缩示例",
+      "compare.demo": "示例",
 
       "meta.title": "Pickr · 把相册厘清，为新回忆留出空间 | iPhone 与 iPad 照片整理工具",
       "meta.description": "拍下的日子，值得被好好安放。Pickr 帮你按月整理照片与视频，压缩前先对比，按地点重温旅途精选，整理时把想分享的片刻收进相册。已在 App Store 上架。",
@@ -149,6 +150,7 @@
       "nav.aria": "主要導覽",
       "foot.aria": "頁尾連結",
       "compare.aria": "切換原圖與壓縮範例",
+      "compare.demo": "範例",
 
       "meta.title": "Pickr · 整理照片，為新回憶留出空間 | iPhone 與 iPad 照片整理工具",
       "meta.description": "拍下的日子，值得好好珍藏。Pickr 幫你按月整理照片與影片，壓縮後先比較再替換，按地點重溫精選，整理時收集想分享的照片。已在 App Store 上架。",
@@ -289,6 +291,7 @@
       "nav.aria": "Main navigation",
       "foot.aria": "Footer links",
       "compare.aria": "Switch between original and compressed previews",
+      "compare.demo": "Demo",
 
       "meta.title": "Pickr · Catch up with your camera roll, make room for new memories",
       "meta.description": "Sort photos and videos by month on iPhone and iPad. Compare before compressing, rediscover cities in a few photos, and choose what to share as you go. Available on the App Store.",
@@ -429,6 +432,7 @@
       "nav.aria": "メインナビゲーション",
       "foot.aria": "フッターリンク",
       "compare.aria": "元画像と圧縮画像のプレビューを切り替え",
+      "compare.demo": "デモ",
 
       "meta.title": "Pickr · 写真を整え、新しい思い出に余白を | iPhone・iPad 写真整理アプリ",
       "meta.description": "写真に残した日々を大切に。月ごとに写真と動画を整理し、圧縮後は比べてから置換。場所別のセレクションや整理中のアルバム収集に対応。App Store で配信中。",
@@ -569,6 +573,7 @@
       "nav.aria": "주 탐색",
       "foot.aria": "하단 링크",
       "compare.aria": "원본과 압축 예시 전환",
+      "compare.demo": "예시",
 
       "meta.title": "Pickr · 사진을 정리해 새 추억을 위한 공간을 | iPhone 및 iPad 사진 정리 도구",
       "meta.description": "사진에 담긴 날들, 소중하게 간직하세요. 한 달씩 사진과 동영상을 정리하고, 압축 후 비교해 원본 교체를 결정하세요. 장소별 사진과 공유 앨범 수집까지. App Store 출시.",
@@ -711,17 +716,6 @@
 
   function detectLang() { return PickrRouting.readLanguage(); }
 
-  function syncCompareBadge() {
-    var card = document.querySelector("[data-heic-compare]");
-    if (!card) return;
-    var isHeic = card.classList.contains("is-heic");
-    var badge = card.querySelector("[data-compare-badge]");
-    var dict = COPY[currentLang] || COPY["zh-Hans"];
-    if (badge) {
-      badge.textContent = isHeic ? dict["ch2.badgeHeic"] : dict["ch2.badgeOrig"];
-    }
-  }
-
   function applyLang(lang, updateURL = false) {
     var code = SUPPORTED.indexOf(lang) !== -1 ? lang : "zh-Hans";
     currentLang = code;
@@ -781,7 +775,6 @@
       }
     }
 
-    syncCompareBadge();
 
     var storeUrl = PickrRouting.storeURL(new URLSearchParams(location.search).get("store"));
     var storeLinks = document.querySelectorAll("a[data-store-link]");
@@ -814,7 +807,6 @@
     var stage = card.querySelector("[data-compare-stage]");
     var mainImg = card.querySelector("[data-compare-img]");
     var loupeImg = card.querySelector("[data-compare-loupe-img]");
-    var savingTag = card.querySelector("[data-compare-saving]");
     var modeOrig = card.querySelector("[data-mode-orig]");
     var modeHeic = card.querySelector("[data-mode-heic]");
 
@@ -832,16 +824,8 @@
       var targetSrc = enabled ? HEIC_SRC : ORIG_SRC;
       if (mainImg) mainImg.setAttribute("src", targetSrc);
       if (loupeImg) loupeImg.setAttribute("src", targetSrc);
-      if (savingTag) {
-        if (enabled) {
-          savingTag.removeAttribute("hidden");
-        } else {
-          savingTag.setAttribute("hidden", "");
-        }
-      }
       if (modeOrig) modeOrig.classList.toggle("active", !enabled);
       if (modeHeic) modeHeic.classList.toggle("active", enabled);
-      syncCompareBadge();
     }
 
     function toggle() {
