@@ -199,20 +199,26 @@ figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-a
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: clamp(18px, 2.4vw, 32px);
-}
-.reading-shots img {
-  filter: drop-shadow(0 20px 38px rgb(20 34 27 / .15));
+  gap: 0;
+  padding-bottom: 14px;
 }
 .pad-shot {
-  width: 61%;
-  max-width: 392px;
+  width: 68%;
+  max-width: 440px;
   flex: 0 0 auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 20px 38px rgb(20 34 27 / .15));
 }
 .phone-shot {
-  width: 34%;
-  max-width: 218px;
+  width: 39%;
+  max-width: 244px;
   flex: 0 0 auto;
+  margin-left: clamp(-78px, -6.8vw, -50px);
+  margin-bottom: -14px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(-14px 20px 36px rgb(14 33 26 / .28));
 }
 
 /* 接入方式：全宽浅绿底带 + 三步管道。 */
@@ -344,7 +350,6 @@ figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-a
 .closing p { margin: 20px auto 0; max-width: 34em; color: var(--accent); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: center; margin-top: 32px; }
 .closing .action { color: var(--dark); background: var(--accent); }
-.cta-alt { display: inline-flex; align-items: center; min-height: 44px; }
 .panel-footer {
   display: flex;
   flex-wrap: wrap;
@@ -374,9 +379,8 @@ figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-a
   .hero { gap: 28px; }
   .reader-shot { width: 252px; }
   .reading { gap: 28px; grid-template-columns: .9fr 1.1fr; padding-top: 68px; margin-top: 56px; }
-  .reading-shots { gap: 16px; }
-  .pad-shot { width: 61%; max-width: 310px; }
-  .phone-shot { width: 34%; max-width: 172px; }
+  .pad-shot { width: 68%; max-width: 340px; }
+  .phone-shot { width: 39%; max-width: 192px; margin-left: -52px; margin-bottom: -10px; }
   .section-intro { gap: 32px; }
   .pipeline { gap: 32px; }
   .pipeline li + li::before { left: -24px; }
@@ -406,9 +410,8 @@ figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-a
   .section { margin-top: 76px; }
   .reading { display: flex; flex-direction: column; align-items: stretch; gap: 32px; margin-top: 56px; padding-top: 56px; }
   .reading-copy .lead { margin-top: 18px; }
-  .reading-shots { gap: 14px; }
-  .pad-shot { width: 60%; max-width: 240px; }
-  .phone-shot { width: 34%; max-width: 136px; }
+  .pad-shot { width: 68%; max-width: 268px; }
+  .phone-shot { width: 40%; max-width: 156px; margin-left: -44px; margin-bottom: -10px; }
   .connect { padding-block: 52px; }
   .section-intro { display: block; }
   .section-intro p { margin-top: 18px; }
