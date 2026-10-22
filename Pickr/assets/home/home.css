@@ -186,6 +186,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .lang-pill {
   position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
 }
@@ -197,10 +198,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--ink);
-  background: var(--pill-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-pill);
   padding: 0 28px 0 14px;
   min-height: 44px;
@@ -208,9 +207,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: background-color 0.18s ease;
 }
 
-.lang-select:hover {
-  background: var(--pill-hover);
+/* Paint only 34px; the native select and link retain their full 44px hit area. */
+.lang-pill::before,
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 5px 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: var(--radius-pill);
+  transition: background-color 0.18s ease;
 }
+.lang-pill::before {
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+.lang-pill:hover::before { background: var(--pill-hover); }
+
 
 .lang-pill::after {
   content: "";
@@ -226,13 +241,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .nav-cta {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   min-height: 44px;
   padding: 0 15px;
   border-radius: var(--radius-pill);
-  background: var(--accent-bright);
+  background: transparent;
   color: var(--nav-cta-ink);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -240,7 +257,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: background-color 0.18s ease, transform 0.12s ease;
 }
 
-.nav-cta:hover { background: var(--accent-hover); }
+.nav-cta::before { background: var(--accent-bright); }
+.nav-cta:hover::before { background: var(--accent-hover); }
 .nav-cta:active { transform: scale(0.96); }
 
 /* ---------- Apple 风格胶囊形按钮（等宽设计确保双按钮中缝严格对齐中轴线） ---------- */
@@ -991,7 +1009,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .tier-badge.pro {
-  background: var(--accent-bright);
+  background: transparent;
   color: var(--nav-cta-ink);
 }
 
@@ -1139,7 +1157,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .app-link-card:hover .app-card-arrow {
-  background: var(--accent-bright);
+  background: transparent;
   color: var(--nav-cta-ink);
 }
 
