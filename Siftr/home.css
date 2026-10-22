@@ -1,6 +1,6 @@
-/* Siftr — an editorial reading window. Real app screens framed on calm paper
-   and deep forest plates, subtle micro-radii matching the iOS app's geometry,
-   unified masthead, and structured periodical typography across 10 languages. */
+/* Siftr — an editorial reading window. Real app screens sit directly on the
+   paper ground without coloured backing boxes; a full-width chapter rule
+   separates the hero from the iPad + iPhone reading showcase. */
 @import url("assets/fonts/fonts.css");
 :root {
   color-scheme: light;
@@ -10,13 +10,13 @@
   --field: #e6ebe2;
   --field-hover: #dbe3d6;
   --rule: #d5ddd0;
+  --rule-strong: #bcc8b6;
   --dark: #0e211a;
   --light: #f2f2e8;
   --muted: #465147;
   --accent: #a9d7bc;
   --radius-sm: 10px;
   --radius-md: 14px;
-  --radius-lg: 20px;
   --font-text: "Source Serif 4", Georgia, "Songti SC", "Hiragino Mincho ProN", serif;
   --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
   --ease-out: cubic-bezier(.2, .7, .2, 1);
@@ -98,14 +98,14 @@ p { overflow-wrap: break-word; }
 .language-panel:not([data-language="zh-Hans"]):not(.is-active) { display: none; }
 .section-nav[hidden], .language-panel[hidden] { display: none; }
 
-/* 首屏：左文右图，右侧用鼠尾草浅绿画框承托 iPhone 真机。 */
+/* 首屏：左文右图，iPhone 直接落在纸面底子上，无色块衬底。 */
 .hero {
   display: grid;
-  grid-template-columns: 1.04fr .96fr;
+  grid-template-columns: 1.05fr .95fr;
   align-items: center;
   gap: clamp(32px, 5vw, 72px);
-  padding-top: clamp(32px, 4vw, 52px);
-  padding-bottom: 40px;
+  padding-top: clamp(36px, 4.5vw, 56px);
+  padding-bottom: 24px;
 }
 .hero-copy { padding-block: 16px; }
 .lead { font-size: clamp(1.0625rem, 1.2vw, 1.225rem); line-height: 1.7; max-width: 34em; color: var(--ink); }
@@ -131,27 +131,45 @@ p { overflow-wrap: break-word; }
 .hero-copy .action { margin-top: 28px; }
 .compatibility { color: var(--muted); font-size: .9375rem; margin-top: 14px; }
 .hero-visual {
-  width: 100%;
-  background: var(--field);
-  border-radius: var(--radius-lg);
-  padding: clamp(28px, 3.5vw, 44px) clamp(24px, 3vw, 40px) 22px;
+  justify-self: center;
   text-align: center;
 }
 .hero-shots { display: flex; justify-content: center; }
 .reader-shot {
-  width: clamp(256px, 21vw, 316px);
-  filter: drop-shadow(0 18px 34px rgb(14 33 26 / .16));
+  width: clamp(268px, 22vw, 332px);
+  filter: drop-shadow(0 20px 38px rgb(20 34 27 / .15));
 }
-figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-align: center; }
+figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-align: center; }
 
 .section { margin-top: 112px; }
 
-/* 第二屏（阅读体验）：左侧导语 + 三条刊物要点，右侧深林绿画框承托 iPad。 */
+/* 第二屏（阅读体验）：通过通栏分节眉线与首屏明确切分；右侧并排展示 iPad + iPhone 阅读页，同样直接落在纸面底子上。 */
 .reading {
+  position: relative;
+  margin-top: 72px;
+  padding-top: 88px;
   display: grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: .84fr 1.16fr;
+  gap: clamp(32px, 4.5vw, 64px);
   align-items: center;
+}
+.reading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: var(--rule-strong);
+}
+.reading::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: var(--gutter);
+  width: 64px;
+  height: 3px;
+  background: var(--green);
 }
 .reading-copy .lead { margin-top: 22px; }
 .reading-points {
@@ -175,17 +193,27 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
 .reading-points span { color: var(--muted); }
 .reading-visual {
   width: 100%;
-  background: var(--dark);
-  border-radius: var(--radius-lg);
-  padding: clamp(28px, 3.5vw, 44px) clamp(24px, 3vw, 40px) 22px;
   text-align: center;
 }
-.reading-shots { display: flex; justify-content: center; }
-.pad-shot {
-  width: min(100%, 460px);
-  filter: drop-shadow(0 20px 40px rgb(0 0 0 / .42));
+.reading-shots {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(18px, 2.4vw, 32px);
 }
-.reading-visual figcaption { color: var(--accent); }
+.reading-shots img {
+  filter: drop-shadow(0 20px 38px rgb(20 34 27 / .15));
+}
+.pad-shot {
+  width: 61%;
+  max-width: 392px;
+  flex: 0 0 auto;
+}
+.phone-shot {
+  width: 34%;
+  max-width: 218px;
+  flex: 0 0 auto;
+}
 
 /* 接入方式：全宽浅绿底带 + 三步管道。 */
 .connect { background: var(--field); padding-block: 80px; }
@@ -210,7 +238,7 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
 .pipeline li + li::before { content: "→"; position: absolute; left: -32px; top: 0; color: var(--green); font-size: 1.25rem; }
 .pipeline p { margin-top: 12px; max-width: 28em; color: var(--muted); }
 
-/* 核心能力：四项保证 + 对称「暗—亮—暗」三机画廊 + 四列刊物工具表。 */
+/* 核心能力：四项保证 + 对称「暗—亮—暗」三机展示 + 四列刊物工具表。 */
 .feature-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -220,21 +248,20 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
 .feature-columns article p { margin-top: 10px; max-width: 34em; color: var(--muted); }
 .proofs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 290px));
-  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(3, minmax(0, 284px));
+  gap: clamp(20px, 3.2vw, 44px);
   justify-content: center;
-  margin-top: 52px;
-  background: var(--field);
-  border-radius: var(--radius-lg);
-  padding: clamp(28px, 3.5vw, 44px) clamp(20px, 3vw, 36px) 26px;
+  margin-top: 56px;
+  padding-block: 48px 12px;
+  border-top: 1px solid var(--rule);
 }
 .proofs figure { min-width: 0; }
 .proofs img {
   width: 100%;
   margin-inline: auto;
-  filter: drop-shadow(0 16px 28px rgb(14 33 26 / .15));
+  filter: drop-shadow(0 18px 34px rgb(20 34 27 / .15));
 }
-.more-tools { margin-top: 56px; }
+.more-tools { margin-top: 64px; }
 .tools-title { font-family: var(--font-text); font-size: 1.35rem; }
 .tools-content {
   margin-top: 22px;
@@ -345,9 +372,11 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
   .language-picker { order: 2; margin-left: auto; }
   .section-nav { order: 3; flex-basis: 100%; margin-left: 0; padding-top: 6px; border-top: 1px solid var(--rule); gap: 2px 24px; }
   .hero { gap: 28px; }
-  .reader-shot { width: 244px; }
-  .reading { gap: 32px; grid-template-columns: .95fr 1.05fr; }
-  .pad-shot { width: min(100%, 380px); }
+  .reader-shot { width: 252px; }
+  .reading { gap: 28px; grid-template-columns: .9fr 1.1fr; padding-top: 68px; margin-top: 56px; }
+  .reading-shots { gap: 16px; }
+  .pad-shot { width: 61%; max-width: 310px; }
+  .phone-shot { width: 34%; max-width: 172px; }
   .section-intro { gap: 32px; }
   .pipeline { gap: 32px; }
   .pipeline li + li::before { left: -24px; }
@@ -372,13 +401,14 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
   .hero-copy .lead { margin-top: 18px; }
   .hero-copy .action { margin-top: 22px; }
   .compatibility { margin-top: 12px; }
-  .hero-visual { padding: 28px 20px 18px; }
-  .reader-shot { width: 248px; }
+  .hero-visual { padding: 8px 0 0; }
+  .reader-shot { width: 264px; }
   .section { margin-top: 76px; }
-  .reading { display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
+  .reading { display: flex; flex-direction: column; align-items: stretch; gap: 32px; margin-top: 56px; padding-top: 56px; }
   .reading-copy .lead { margin-top: 18px; }
-  .reading-visual { padding: 28px 20px 18px; }
-  .pad-shot { width: min(92%, 332px); }
+  .reading-shots { gap: 14px; }
+  .pad-shot { width: 60%; max-width: 240px; }
+  .phone-shot { width: 34%; max-width: 136px; }
   .connect { padding-block: 52px; }
   .section-intro { display: block; }
   .section-intro p { margin-top: 18px; }
@@ -388,8 +418,8 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
   .feature-columns { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; }
   .proofs {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px 12px 16px;
+    gap: 12px;
+    padding-block: 32px 8px;
     margin-top: 36px;
   }
   .proofs figcaption { font-size: .78125rem; padding-top: 10px; line-height: 1.35; }
@@ -412,9 +442,9 @@ figcaption { font-size: .9375rem; padding-top: 16px; color: var(--muted); text-a
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 @media (prefers-contrast: more) {
-  :root { --muted: #1c2a23; --field: #dce5d8; --rule: #b4c0ae; }
+  :root { --muted: #1c2a23; --field: #dce5d8; --rule: #b4c0ae; --rule-strong: #8e9e88; }
 }
 @media (forced-colors: active) {
   .action { border: 2px solid ButtonText; /* taste-skill-ignore: forced-colors 辅助模式必需的可见边界，非视觉装饰 */ }
-  .friend-card img, .pad-shot, .reader-shot { outline: 1px solid CanvasText; /* taste-skill-ignore: forced-colors 下图片需要可辨边界 */ }
+  .friend-card img, .pad-shot, .phone-shot, .reader-shot { outline: 1px solid CanvasText; /* taste-skill-ignore: forced-colors 下图片需要可辨边界 */ }
 }
