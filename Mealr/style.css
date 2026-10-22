@@ -351,3 +351,17 @@ code {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Document pages share the homepage's quiet paper and readable controls. */
+:root{--bg:#f8f7f3;--fg:#252720;--muted:#62645b;--accent:#a1431c;--accent-strong:#793217;--card:#efede6}
+@media(prefers-color-scheme:dark){:root{--bg:#1d211c;--fg:#f4f1e8;--muted:#c2c4b9;--accent:#efa87f;--accent-strong:#ffd0ad;--card:#292e26}}
+.wordmark{font-size:28px;min-height:44px;display:inline-flex;align-items:center}
+.language-picker button{min-height:44px;font-size:14px;padding:10px 12px}
+.site-bar,header,footer{border:0}
+header{padding-bottom:28px;margin-bottom:32px}
+h1{font-family:"Iowan Old Style","Songti SC","Songti TC","Yu Mincho",Georgia,serif;line-height:1.22}
+h2{font-family:inherit;font-size:25px;line-height:1.45}
+.note{border:0;background:var(--card);border-radius:12px;padding:24px}
+.friend-footer{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px}
+.friend-footer a{min-height:44px;display:inline-flex;align-items:center;font-size:15px}
+@media(prefers-contrast:more){:root{--muted:var(--fg)}}

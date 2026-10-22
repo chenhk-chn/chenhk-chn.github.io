@@ -1,0 +1,382 @@
+{
+  "zh-Hans": {
+    "title": "Mealr · 好好吃饭，轻松记录",
+    "head": [
+      "好好吃饭",
+      "轻松记录"
+    ],
+    "intro": "拍下这一餐，确认热量估算。让每天的饮食，慢慢有迹可循。",
+    "cta": "了解工作方式",
+    "nav": [
+      "如何记录",
+      "回看趋势",
+      "常见问题"
+    ],
+    "support": "使用与支持",
+    "meta": "为 iPhone 而设计 · iOS 18 或更新版本",
+    "shot": "App 实拍 · 简体中文界面 · 示例数据",
+    "how": "这一餐，拍下来",
+    "howbody": "不用从搜索食物开始。拍下餐盘，或从相册选一张，让 Mealr 帮你估算这一餐。",
+    "steps": [
+      [
+        "拍下餐食",
+        "可以从不同角度补充照片，也可以用文字说明实际吃了多少。"
+      ],
+      [
+        "确认估算",
+        "逐项查看识别结果，按实际份量调整，再保存这餐。"
+      ],
+      [
+        "回到生活",
+        "记录留在手机里。下一次打开，今天吃了什么，一目了然。"
+      ]
+    ],
+    "today": "今天吃了什么\n心里有数",
+    "todaybody": "摄入、消耗和当天餐食，放在一起看。连接 Apple 健康后，还能了解每天的热量差。",
+    "trend": "一餐一餐\n看见日常",
+    "trendbody": "在忙碌的一周里，也能回头看看自己。切换摄入与消耗、每日差值，找到适合自己的记录节奏。",
+    "tabs": [
+      "摄入与消耗",
+      "每日差值"
+    ],
+    "privacy": "你的记录\n由你掌握",
+    "privacybody": "餐食记录保存在本机。连接 Apple 健康需要你的授权；使用云端识别时，餐食照片和补充文字会发送到 Mealr 服务进行分析。",
+    "privacyLink": "了解数据如何处理",
+    "faq": "你可能想知道",
+    "qas": [
+      [
+        "热量是精确测量吗？",
+        "不是。Mealr 根据照片估算热量，实际结果会受到份量、食材和烹饪方式影响。保存前可以调整；结果用于日常记录，不替代专业建议。"
+      ],
+      [
+        "需要连接 Apple 健康吗？",
+        "记录餐食不要求连接 Apple 健康。授权后，可以结合膳食能量、活动能量和基础能量查看摄入、消耗与热量差。"
+      ],
+      [
+        "需要注册账号吗？",
+        "无需注册 Mealr 账号。餐食记录和照片保存在本机，购买与订阅由 Apple 处理。"
+      ],
+      [
+        "在哪里了解会员和使用方式？",
+        "会员价格、试用资格和识别额度以 App 内当前显示为准。操作说明、权限设置和联系方式可在技术支持页面查看。"
+      ]
+    ],
+    "end": "从下一餐开始",
+    "endbody": "让记录简单一点，让生活照常。",
+    "friends": "也许你也会喜欢",
+    "friendbody": "同一位开发者的其他作品。",
+    "apps": [
+      "整理照片，留住回忆",
+      "为照片补上地点",
+      "留一扇阅读的窗口"
+    ],
+    "home": "个人主站",
+    "privacyTitle": "隐私政策",
+    "foot": "餐食照片为生成的场景插图；App 截图使用示例数据。",
+    "skip": "跳到内容"
+  },
+  "en": {
+    "title": "Mealr · Eat well. Log simply.",
+    "head": [
+      "Eat well.",
+      "Log simply."
+    ],
+    "intro": "Photograph your meal, review the calorie estimate, and build a little picture of your everyday eating.",
+    "cta": "See how it works",
+    "nav": [
+      "How it works",
+      "Trends",
+      "Questions"
+    ],
+    "support": "Help & support",
+    "meta": "Designed for iPhone · iOS 18 or later",
+    "shot": "App screenshots · Chinese interface · Sample data",
+    "how": "Start with a photo",
+    "howbody": "Skip the food search. Photograph your plate or choose an image, and let Mealr estimate your meal.",
+    "steps": [
+      [
+        "Photograph your meal",
+        "Add another angle or a short note about how much you ate."
+      ],
+      [
+        "Review the estimate",
+        "Check each food, adjust the portions, then save your meal."
+      ],
+      [
+        "Get on with your day",
+        "Your records stay on your phone, ready when you want to look back."
+      ]
+    ],
+    "today": "Your day,\nat a glance",
+    "todaybody": "See intake, energy burned and meals together. Connect Apple Health to understand your daily calorie balance.",
+    "trend": "Small records.\nA bigger picture.",
+    "trendbody": "Look back on a busy week. Switch between intake and energy burned or daily balance, and find your own rhythm.",
+    "tabs": [
+      "Intake & energy burned",
+      "Daily balance"
+    ],
+    "privacy": "Your records.\nYour choice.",
+    "privacybody": "Meal records stay on your device. Apple Health access requires your permission. Cloud recognition sends meal photos and notes to the Mealr service for analysis.",
+    "privacyLink": "How your data is handled",
+    "faq": "A few answers",
+    "qas": [
+      [
+        "Are calories measured precisely?",
+        "No. Mealr estimates calories from photos. Portions, ingredients and cooking methods affect the result. You can adjust it before saving. Estimates are for everyday logging, not professional advice."
+      ],
+      [
+        "Do I need Apple Health?",
+        "You can log meals without Apple Health. With permission, Mealr combines dietary, active and resting energy to show intake, energy burned and calorie balance."
+      ],
+      [
+        "Do I need an account?",
+        "No Mealr account is required. Meal records and photos are stored on your device. Apple handles purchases and subscriptions."
+      ],
+      [
+        "Where can I learn about membership?",
+        "Current prices, trial eligibility and recognition allowances appear in the app. Visit Support for instructions, permissions and contact details."
+      ]
+    ],
+    "end": "Start with your next meal",
+    "endbody": "A little less effort. A little more everyday clarity.",
+    "friends": "More to explore",
+    "friendbody": "Other apps by the same independent developer.",
+    "apps": [
+      "Make room for memories",
+      "Put your photos on the map",
+      "A window into your reading"
+    ],
+    "home": "Personal website",
+    "privacyTitle": "Privacy policy",
+    "foot": "Food photography is AI-generated. App screenshots contain sample data.",
+    "skip": "Skip to content"
+  },
+  "ja": {
+    "title": "Mealr · 食事を楽しむ。記録は気軽に。",
+    "head": [
+      "食事を楽しむ",
+      "記録は気軽に"
+    ],
+    "intro": "食事を撮って、カロリーの推定値を確認。毎日の食生活を、少しずつ振り返れるように。",
+    "cta": "使い方を見る",
+    "nav": [
+      "記録の流れ",
+      "傾向を見る",
+      "よくある質問"
+    ],
+    "support": "使い方とサポート",
+    "meta": "iPhone 向け · iOS 18 以降",
+    "shot": "実際の App 画面 · 簡体字中国語 · サンプルデータ",
+    "how": "一枚の写真から",
+    "howbody": "食品を検索する手間を省いて。食事を撮るか写真を選ぶと、Mealr がカロリーを推定します。",
+    "steps": [
+      [
+        "食事を撮る",
+        "別の角度からの写真や、食べた量についてのメモも追加できます。"
+      ],
+      [
+        "推定値を確認する",
+        "料理ごとの結果と量を確認し、必要に応じて調整して保存します。"
+      ],
+      [
+        "いつもの毎日へ",
+        "記録は iPhone に保存。あとから、その日の食事を振り返れます。"
+      ]
+    ],
+    "today": "今日の食事を\nひと目で",
+    "todaybody": "摂取量、消費量、その日の食事をまとめて確認。Apple ヘルスケアと連携すると、カロリー収支もわかります。",
+    "trend": "一食ずつ\n日々が見えてくる",
+    "trendbody": "忙しかった一週間も、あとから振り返れます。摂取量と消費量、日ごとの収支を切り替えて、自分のペースで記録を。",
+    "tabs": [
+      "摂取量と消費量",
+      "日ごとの収支"
+    ],
+    "privacy": "自分の記録を\n自分の手で",
+    "privacybody": "食事の記録は端末に保存されます。Apple ヘルスケアへのアクセスには許可が必要です。クラウド認識では、写真とメモを Mealr サービスに送信して解析します。",
+    "privacyLink": "データの取り扱いを見る",
+    "faq": "よくある質問",
+    "qas": [
+      [
+        "カロリーは正確な測定値ですか？",
+        "いいえ。写真からの推定値です。量や食材、調理方法によって変わるため、保存前に調整できます。日々の記録を目的とし、専門的な助言に代わるものではありません。"
+      ],
+      [
+        "Apple ヘルスケアとの連携は必要ですか？",
+        "連携しなくても食事を記録できます。許可すると、食事・活動・安静時のエネルギーをもとにカロリー収支を確認できます。"
+      ],
+      [
+        "アカウント登録は必要ですか？",
+        "Mealr のアカウントは不要です。記録と写真は端末に保存され、購入とサブスクリプションは Apple が管理します。"
+      ],
+      [
+        "メンバーシップについて知りたいです",
+        "料金、無料トライアルの対象条件、認識回数は App 内の最新表示をご確認ください。操作方法やお問い合わせ先はサポートページに掲載しています。"
+      ]
+    ],
+    "end": "次の食事から",
+    "endbody": "記録は気軽に。食事はいつもどおりに。",
+    "friends": "ほかのアプリも",
+    "friendbody": "同じ開発者がつくったアプリです。",
+    "apps": [
+      "写真を整理して、思い出を残す",
+      "写真に撮影場所を添える",
+      "読書のための、小さな窓"
+    ],
+    "home": "開発者のサイト",
+    "privacyTitle": "プライバシー",
+    "foot": "食事写真は AI によるイメージです。App 画面はサンプルデータを使用しています。",
+    "skip": "本文へ移動"
+  },
+  "zh-Hant": {
+    "title": "Mealr · 好好吃飯，輕鬆記錄",
+    "head": [
+      "好好吃飯",
+      "輕鬆記錄"
+    ],
+    "intro": "拍下這一餐，確認熱量估算。讓每天的飲食，慢慢有跡可循。",
+    "cta": "了解記錄方式",
+    "nav": [
+      "如何記錄",
+      "回顧趨勢",
+      "常見問題"
+    ],
+    "support": "使用與支援",
+    "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
+    "shot": "App 實際畫面 · 簡體中文介面 · 範例資料",
+    "how": "這一餐，拍下來",
+    "howbody": "不用先搜尋食物。拍下餐盤，或從相簿選一張照片，讓 Mealr 幫你估算這一餐。",
+    "steps": [
+      [
+        "拍下餐食",
+        "可以從不同角度補充照片，也可以用文字說明實際吃了多少。"
+      ],
+      [
+        "確認估算",
+        "逐項查看辨識結果，依實際份量調整，再儲存這一餐。"
+      ],
+      [
+        "回到生活",
+        "記錄留在手機裡。下次打開，今天吃了什麼，一目了然。"
+      ]
+    ],
+    "today": "今天吃了什麼\n心裡有數",
+    "todaybody": "一起查看攝取量、消耗量和當天餐食。連接 Apple 健康後，還能了解每天的熱量差。",
+    "trend": "一餐一餐\n看見日常",
+    "trendbody": "忙碌的一週過後，也能回頭看看自己。切換攝取與消耗、每日熱量差，找到適合自己的記錄節奏。",
+    "tabs": [
+      "攝取與消耗",
+      "每日熱量差"
+    ],
+    "privacy": "你的記錄\n由你掌握",
+    "privacybody": "餐食記錄儲存在裝置上。連接 Apple 健康需要你的授權；使用雲端辨識時，餐食照片和補充文字會傳送至 Mealr 服務進行分析。",
+    "privacyLink": "了解資料如何處理",
+    "faq": "你可能想知道",
+    "qas": [
+      [
+        "熱量是精確測量嗎？",
+        "不是。Mealr 根據照片估算熱量，結果會受到份量、食材和烹調方式影響。儲存前可以調整；結果用於日常記錄，不取代專業建議。"
+      ],
+      [
+        "需要連接 Apple 健康嗎？",
+        "記錄餐食不需要連接 Apple 健康。授權後，可以結合飲食、活動和靜態能量，查看攝取、消耗與熱量差。"
+      ],
+      [
+        "需要註冊帳號嗎？",
+        "不需要註冊 Mealr 帳號。餐食記錄和照片儲存在裝置上，購買與訂閱由 Apple 處理。"
+      ],
+      [
+        "哪裡可以了解會員和使用方式？",
+        "會員價格、試用資格和辨識額度以 App 內目前顯示為準。操作說明、權限設定和聯絡方式請見技術支援頁面。"
+      ]
+    ],
+    "end": "從下一餐開始",
+    "endbody": "讓記錄簡單一點，讓生活照常。",
+    "friends": "也許你也會喜歡",
+    "friendbody": "同一位開發者的其他作品。",
+    "apps": [
+      "整理照片，留下回憶",
+      "為照片補上地點",
+      "留一扇閱讀的窗口"
+    ],
+    "home": "個人網站",
+    "privacyTitle": "隱私權政策",
+    "foot": "餐食照片為 AI 生成的情境圖；App 畫面使用範例資料。",
+    "skip": "跳至內容"
+  },
+  "zh-HK": {
+    "title": "Mealr · 好好食飯，輕鬆記錄",
+    "head": [
+      "好好食飯",
+      "輕鬆記錄"
+    ],
+    "intro": "拍下這一餐，確認熱量估算。讓每天的飲食，慢慢有跡可循。",
+    "cta": "了解記錄方式",
+    "nav": [
+      "如何記錄",
+      "回顧趨勢",
+      "常見問題"
+    ],
+    "support": "使用與支援",
+    "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
+    "shot": "App 實際畫面 · 簡體中文介面 · 示例資料",
+    "how": "這一餐，拍下來",
+    "howbody": "毋須先搜尋食物。拍下餐盤，或從相簿選一張相片，讓 Mealr 幫你估算這一餐。",
+    "steps": [
+      [
+        "拍下餐食",
+        "可以從不同角度補充相片，也可以用文字說明實際吃了多少。"
+      ],
+      [
+        "確認估算",
+        "逐項查看辨識結果，按實際份量調整，再儲存這一餐。"
+      ],
+      [
+        "回到生活",
+        "記錄留在手機裏。下次打開，今天吃了甚麼，一目了然。"
+      ]
+    ],
+    "today": "今天吃了甚麼\n心裏有數",
+    "todaybody": "一起查看攝取量、消耗量和當天餐食。連接 Apple 健康後，還能了解每天的熱量差。",
+    "trend": "一餐一餐\n看見日常",
+    "trendbody": "忙碌的一週過後，也能回頭看看自己。切換攝取與消耗、每日熱量差，找到適合自己的記錄節奏。",
+    "tabs": [
+      "攝取與消耗",
+      "每日熱量差"
+    ],
+    "privacy": "你的記錄\n由你掌握",
+    "privacybody": "餐食記錄儲存在裝置上。連接 Apple 健康需要你的授權；使用雲端辨識時，餐食相片和補充文字會傳送至 Mealr 服務進行分析。",
+    "privacyLink": "了解資料如何處理",
+    "faq": "你可能想知道",
+    "qas": [
+      [
+        "熱量是精確測量嗎？",
+        "不是。Mealr 根據照片估算熱量，結果會受到份量、食材和烹調方式影響。儲存前可以調整；結果用於日常記錄，不取代專業建議。"
+      ],
+      [
+        "需要連接 Apple 健康嗎？",
+        "記錄餐食不需要連接 Apple 健康。授權後，可以結合飲食、活動和靜態能量，查看攝取、消耗與熱量差。"
+      ],
+      [
+        "需要註冊帳號嗎？",
+        "不需要註冊 Mealr 帳號。餐食記錄和照片儲存在裝置上，購買與訂閱由 Apple 處理。"
+      ],
+      [
+        "哪裡可以了解會員和使用方式？",
+        "會員價格、試用資格和辨識額度以 App 內目前顯示為準。操作說明、權限設定和聯絡方式請見技術支援頁面。"
+      ]
+    ],
+    "end": "從下一餐開始",
+    "endbody": "讓記錄簡單一點，讓生活照常。",
+    "friends": "也許你也會喜歡",
+    "friendbody": "同一位開發者的其他作品。",
+    "apps": [
+      "整理相片，留住回憶",
+      "為相片補上地點",
+      "留一扇閱讀的窗口"
+    ],
+    "home": "個人網站",
+    "privacyTitle": "私隱政策",
+    "foot": "餐食相片為 AI 生成的情境圖；App 畫面使用示例資料。",
+    "skip": "跳至內容"
+  }
+}
