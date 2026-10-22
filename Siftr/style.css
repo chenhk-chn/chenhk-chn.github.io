@@ -1,71 +1,60 @@
+/* Siftr — an editorial reading window. Subpages (support / privacy / skill /
+   download) share the homepage's paper-and-green-ink look: same palette, same
+   serif display face, flat squares, light scheme only. Reading order, aligned
+   groups, adaptive text and 44px controls per HIG. */
+@import url("assets/fonts/fonts.css");
 :root {
-  color-scheme: light dark;
-  --bg: #f7f5ef;
-  --fg: #1e2b25;
-  --muted: #6b746d;
-  --rule: #dcd9cd;
-  --accent: #123f35;
-  --accent-strong: #0a5a49;
-  --card: #efece2;
-  --focus: #2f7a67;
+  color-scheme: light;
+  --paper: #f7f5ef;
+  --ink: #1c2a23;
+  --green: #14483b;
+  --field: #e6ebe2;
+  --muted: #536258;
+  --rule: #d9ded1;
+  --font-text: "Source Serif 4", Georgia, "Songti SC", "Hiragino Mincho ProN", serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e1512;
-    --fg: #ede9dc;
-    --muted: #9ba79d;
-    --rule: #2a332e;
-    --accent: #6fbfa4;
-    --accent-strong: #9bd8c0;
-    --card: #16201b;
-    --focus: #7fc9ad;
-  }
-}
-
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
+::selection { background: var(--green); color: var(--paper); }
 body {
   margin: 0;
   padding: 0 24px 96px;
-  background: var(--bg);
-  color: var(--fg);
-  font: 17px/1.68 -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Helvetica Neue", "PingFang SC", "PingFang TC", "Hiragino Sans",
-    "Yu Gothic", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.68 var(--font-ui);
   -webkit-font-smoothing: antialiased;
 }
-
 .wrap { max-width: 760px; margin: 0 auto; }
+p, h1, h2, h3, h4, ul, ol { margin: 0; }
+h1, h2 { font-family: var(--font-text); font-weight: 600; text-wrap: balance; }
+h1 { font-size: clamp(2.1rem, 4.5vw, 3rem); line-height: 1.15; letter-spacing: -.03em; }
+h2 { font-size: 1.6rem; line-height: 1.25; letter-spacing: -.02em; }
+h3 { font-size: 1.2rem; line-height: 1.4; font-weight: 600; }
+h4 { font-size: 1.03125rem; line-height: 1.4; font-weight: 600; }
+a { color: var(--green); text-underline-offset: .22em; text-decoration-thickness: .08em; }
+a:hover { text-decoration-thickness: .14em; }
+a:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+main:focus { outline: none; }
+img { display: block; max-width: 100%; height: auto; }
+p { overflow-wrap: break-word; }
 
 .site-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 24px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--rule);
 }
 
 .wordmark {
-  color: var(--fg);
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+  font: 400 2rem/1.2 "Young Serif", var(--font-text);
   text-decoration: none;
-}
-
-/* 图标只在够大的时候才看得出是什么：缩到导航栏那个尺寸会糊成一团噪点。
-   所以它只出现在首页标题上方。 */
-.hero-mark {
-  display: block;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 28px;
 }
 
 .language-picker {
@@ -76,41 +65,17 @@ body {
 .js .language-picker { display: block; }
 
 .language-picker select {
-  appearance: none;
   margin: 0;
   width: auto;
   max-width: 100%;
-  padding: 8px 36px 8px 14px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--card);
-  color: var(--fg);
-  font: inherit;
-  font-size: 14px;
-  line-height: 1.2;
-  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 30px 10px 12px;
+  border: 0;
+  border-radius: 0;
+  background: var(--field);
+  color: var(--ink);
+  font: 400 1rem/1.4 var(--font-ui);
 }
-
-.language-picker::after {
-  content: "";
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  width: 7px;
-  height: 7px;
-  border-right: 1.5px solid var(--muted);
-  border-bottom: 1.5px solid var(--muted);
-  transform: translateY(-70%) rotate(45deg);
-  pointer-events: none;
-}
-
-.language-picker select:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
-main:focus { outline: none; }
 
 .language-panel {
   padding-top: 1px;
@@ -128,60 +93,37 @@ html:not(.js) .language-panel + .language-panel {
 .js .language-panel.is-active { display: block; }
 
 header {
-  padding: 72px 0 40px;
+  padding: 64px 0 36px;
   border-bottom: 1px solid var(--rule);
   margin-bottom: 48px;
 }
 
-header .home {
-  display: inline-block;
-  margin-bottom: 24px;
-  font-size: 15px;
-  color: var(--accent);
-  text-decoration: none;
+.updated { margin-top: 8px; color: var(--muted); font-size: 1rem; }
+
+h2 { margin: 56px 0 16px; }
+h3 { margin: 32px 0 10px; }
+h4 { margin: 24px 0 8px; }
+
+.lede {
+  max-width: 34em;
+  font-family: var(--font-text);
+  font-size: clamp(1.125rem, 1.4vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--ink);
 }
 
-header .home:hover { text-decoration: underline; }
+/* 正文列有 760px，英文在这个宽度下一行能排到九十多个字符，读起来会串行。
+   38em 折算过来中文约 38 字、英文约 70 字符，都在舒服的范围内。 */
+p, ul, ol { max-width: 38em; }
 
-h1 {
-  margin: 0 0 8px;
-  max-width: 100%;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: clamp(42px, 7vw, 64px);
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
-}
-
-h1:lang(zh-Hans),
-h1:lang(zh-Hant),
-h1:lang(zh-HK),
-h1:lang(ja) {
-  line-break: strict;
-  letter-spacing: -0.02em;
-}
-
-.updated { margin: 0; color: var(--muted); font-size: 15px; }
-
-h2 {
-  margin: 56px 0 16px;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 27px;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-}
-
-h3 { margin: 32px 0 10px; font-size: 20px; letter-spacing: -0.01em; }
+p { margin: 0 0 16px; }
+ul, ol { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 8px; }
 
 /* Skill 全文页引入了原文里的表格、代码块与引用块。 */
-h4 { margin: 24px 0 8px; font-size: 17px; letter-spacing: -0.01em; }
-
 .tablewrap { max-width: 100%; overflow-x: auto; margin: 0 0 16px; }
 
-table { border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+table { border-collapse: collapse; font-size: .9375rem; line-height: 1.5; }
 
 th, td {
   border: 1px solid var(--rule);
@@ -190,19 +132,18 @@ th, td {
   vertical-align: top;
 }
 
-th { background: var(--card); font-weight: 600; white-space: nowrap; }
+th { background: var(--field); font-weight: 600; white-space: nowrap; }
 
 pre {
   max-width: 100%;
   margin: 0 0 16px;
   padding: 14px 16px;
-  background: var(--card);
-  border-radius: 10px;
+  background: var(--field);
   overflow-x: auto;
-  font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font: .8125rem/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
-pre code { border: 0; padding: 0; font-size: inherit; border-radius: 0; }
+pre code { border: 0; padding: 0; font-size: inherit; }
 
 blockquote {
   margin: 0 0 16px;
@@ -213,177 +154,35 @@ blockquote {
 
 blockquote p { margin: 8px 0; }
 
-/* 正文列有 760px，英文在这个宽度下一行能排到九十多个字符，读起来会串行。
-   38em 折算过来中文约 38 字、英文约 70 字符，都在舒服的范围内。 */
-p, ul { max-width: 38em; }
-
-p { margin: 0 0 16px; }
-
-ul { margin: 0 0 16px; padding-left: 22px; }
-
-li { margin-bottom: 8px; }
-
-a { color: var(--accent); text-underline-offset: 0.18em; }
-a:hover { color: var(--accent-strong); }
-
-.lede {
-  max-width: 34em;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 23px;
-  line-height: 1.45;
-  color: var(--fg);
-}
-
-/* 首页不需要标题下那条横线：下面紧接着就是特性列表，多一条边界只会显得碎。 */
-.hero {
-  padding: 76px 0 0;
-  border-bottom: 0;
-  margin-bottom: 40px;
-}
-
-.hero .lede { margin: 24px 0 0; }
-
-.hero .meta {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.features {
-  display: grid;
-  gap: 28px;
-  margin: 0 0 48px;
-  padding: 0;
-  list-style: none;
-}
-
-.features li {
-  margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--rule);
-}
-
-.features strong {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-}
-
-.features span {
-  display: block;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.closing {
-  max-width: 34em;
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-@media (min-width: 721px) {
-  .features {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
+code {
+  padding: .1em .35em;
+  border: 1px solid var(--rule);
+  font: .88em/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  overflow-wrap: anywhere;
 }
 
 .note {
   max-width: 38em;
-  background: var(--card);
-  border-left: 3px solid var(--accent);
-  border-radius: 2px 12px 12px 2px;
+  background: var(--field);
+  border-left: 3px solid var(--green);
   padding: 18px 22px;
   margin: 28px 0;
-  font-size: 16px;
+  font-size: 1rem;
   /* 提示框讲的是「Siftr 只读不改云端」这类要紧事，用灰字会被当成脚注读过去。 */
-  color: var(--fg);
+  color: var(--ink);
 }
 
 .note p:last-child { margin-bottom: 0; }
-
-.divider {
-  margin: 80px 0 0;
-  border: 0;
-  border-top: 1px solid var(--rule);
-}
 
 footer {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  font-size: 14px;
+  font-size: .875rem;
 }
 
 footer a { color: var(--muted); }
-
-.cards { display: grid; gap: 16px; margin-top: 48px; }
-
-@media (min-width: 721px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
-
-.card {
-  display: block;
-  padding: 28px;
-  background: var(--card);
-  border: 1px solid transparent;
-  border-radius: 14px;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: border-color 180ms ease, color 180ms ease;
-}
-
-.card:hover {
-  color: inherit;
-  border-color: var(--accent);
-}
-
-.card strong {
-  display: block;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  font-size: 24px;
-  margin-bottom: 4px;
-}
-
-.card span { color: var(--muted); font-size: 15px; }
-
-code {
-  padding: 0.1em 0.35em;
-  border: 1px solid var(--rule);
-  border-radius: 5px;
-  font: 0.88em/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 720px) {
-  body { padding-inline: 18px; }
-
-  .site-bar {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .language-picker,
-  .language-picker select {
-    width: 100%;
-  }
-
-  header { padding-top: 52px; }
-  h1 { font-size: clamp(40px, 12vw, 54px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition-duration: 0.01ms !important; }
-}
 
 /* 下载入口：App Store 徽章（download.html 用）。 */
 .cta {
@@ -400,9 +199,9 @@ code {
   gap: 9px;
   min-height: 44px;
   padding: 9px 20px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #fff9ee;
+  border-radius: 0;
+  background: var(--green);
+  color: var(--paper);
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -415,10 +214,6 @@ code {
 }
 
 .cta a { font-size: 15px; }
-
-@media (prefers-color-scheme: dark) {
-  .cta-badge { color: #092b25; }
-}
 
 /* download.html 的地区商店药丸。 */
 .store-pills {
@@ -434,24 +229,46 @@ code {
   min-height: 44px;
   padding: 8px 16px;
   border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--card);
-  color: var(--fg);
+  background: var(--field);
+  color: var(--ink);
   font-size: 15px;
   text-decoration: none;
 }
 
 .store-pills a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--green);
+  color: var(--green);
 }
 
 .store-pills a.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff9ee;
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--paper);
 }
 
-@media (prefers-color-scheme: dark) {
-  .store-pills a.active { color: #092b25; }
+@media (max-width: 720px) {
+  body { padding-inline: 18px; }
+
+  .site-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .language-picker,
+  .language-picker select {
+    width: 100%;
+  }
+
+  header { padding-top: 44px; }
+  h1 { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+@media (prefers-contrast: more) {
+  :root { --muted: #1c2a23; --field: #dce5d8; --rule: #b9c4b2; }
 }
