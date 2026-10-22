@@ -40,13 +40,17 @@
       "每日差值"
     ],
     "privacy": "你的记录\n由你掌握",
-    "privacybody": "餐食记录保存在本机。连接 Apple 健康需要你的授权；使用云端识别时，餐食照片和补充文字会发送到 Mealr 服务进行分析。",
+    "privacybody": "餐食记录保存在本机。选择本地模型时，识别内容不上传；选择云端识别时，照片和补充文字会发送至 Mealr 服务。连接 Apple 健康始终需要你的授权。",
     "privacyLink": "了解数据如何处理",
     "faq": "你可能想知道",
     "qas": [
       [
         "热量是精确测量吗？",
         "不是。Mealr 根据照片估算热量，实际结果会受到份量、食材和烹饪方式影响。保存前可以调整；结果用于日常记录，不替代专业建议。"
+      ],
+      [
+        "可以离线识别吗？",
+        "可以。在记录设置的“推理方式”中选择本地模型，模型可用时即可在设备上完成识别，无需联网。首次识别前需要加载；运行可能增加耗电和发热。本地识别失败不会自动转为云端识别。"
       ],
       [
         "需要连接 Apple 健康吗？",
@@ -73,7 +77,25 @@
     "home": "个人主站",
     "privacyTitle": "隐私政策",
     "foot": "餐食照片为生成的场景插图；App 截图使用示例数据。",
-    "skip": "跳到内容"
+    "skip": "跳到内容",
+    "offline": "不联网\n也能记下一餐",
+    "offlinebody": "选择本地模型，让 AI 就在 iPhone 上估算餐食。不必把照片传到云端，没网时也能继续记录。",
+    "offlinepoints": [
+      [
+        "照片留在手机",
+        "识别在本机完成，照片和补充说明不会上传。"
+      ],
+      [
+        "选择权在你",
+        "在记录设置中切换本地模型或云端 API。本地识别失败时，不会自动转到云端。"
+      ]
+    ],
+    "offlinenote": "本地模型首次使用需要加载，运行时可能增加耗电和发热；请以 App 内的设备与模型状态为准。",
+    "download": "App Store 下载",
+    "coming": "即将上线",
+    "homedesc": "更多作品与日常",
+    "offlineq": "可以离线识别吗？",
+    "offlinea": "可以。在记录设置的“推理方式”中选择本地模型，模型可用时即可在设备上完成识别，无需联网。首次识别前需要加载；运行可能增加耗电和发热。本地识别失败不会自动转为云端识别。"
   },
   "en": {
     "title": "Mealr · Eat well. Log simply.",
@@ -116,13 +138,17 @@
       "Daily balance"
     ],
     "privacy": "Your records.\nYour choice.",
-    "privacybody": "Meal records stay on your device. Apple Health access requires your permission. Cloud recognition sends meal photos and notes to the Mealr service for analysis.",
+    "privacybody": "Meal records stay on your device. On-device recognition does not upload meal content; cloud recognition sends photos and notes to the Mealr service. Apple Health access always requires your permission.",
     "privacyLink": "How your data is handled",
     "faq": "A few answers",
     "qas": [
       [
         "Are calories measured precisely?",
         "No. Mealr estimates calories from photos. Portions, ingredients and cooking methods affect the result. You can adjust it before saving. Estimates are for everyday logging, not professional advice."
+      ],
+      [
+        "Can I recognize meals offline?",
+        "Yes. Choose the on-device model under Recognition mode in settings. With the model available, recognition runs on your device without a network connection. It must load before first use and can increase battery use and heat. A local failure never triggers automatic cloud recognition."
       ],
       [
         "Do I need Apple Health?",
@@ -149,7 +175,25 @@
     "home": "Personal website",
     "privacyTitle": "Privacy policy",
     "foot": "Food photography is AI-generated. App screenshots contain sample data.",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "offline": "A meal logged.\nEven offline.",
+    "offlinebody": "Choose the on-device model and let AI estimate your meal right on your iPhone. Keep photos off the cloud, and keep logging without a connection.",
+    "offlinepoints": [
+      [
+        "Photos stay with you",
+        "Recognition happens on your device. Photos and notes are not uploaded."
+      ],
+      [
+        "You choose the mode",
+        "Switch between the on-device model and cloud API in settings. A failed local request never switches to the cloud automatically."
+      ]
+    ],
+    "offlinenote": "The on-device model loads before its first use and may increase battery use and device temperature. Availability depends on the device and model status shown in the app.",
+    "download": "Download on the App Store",
+    "coming": "Coming soon",
+    "homedesc": "More projects and everyday notes",
+    "offlineq": "Can I recognize meals offline?",
+    "offlinea": "Yes. Choose the on-device model under Recognition mode in settings. With the model available, recognition runs on your device without a network connection. It must load before first use and can increase battery use and heat. A local failure never triggers automatic cloud recognition."
   },
   "ja": {
     "title": "Mealr · 食事を楽しむ。記録は気軽に。",
@@ -192,13 +236,17 @@
       "日ごとの収支"
     ],
     "privacy": "自分の記録を\n自分の手で",
-    "privacybody": "食事の記録は端末に保存されます。Apple ヘルスケアへのアクセスには許可が必要です。クラウド認識では、写真とメモを Mealr サービスに送信して解析します。",
+    "privacybody": "食事の記録は端末に保存されます。端末内モデルでは食事の内容を送信しません。クラウド認識では写真とメモを Mealr サービスへ送信します。Apple ヘルスケアへのアクセスには常に許可が必要です。",
     "privacyLink": "データの取り扱いを見る",
     "faq": "よくある質問",
     "qas": [
       [
         "カロリーは正確な測定値ですか？",
         "いいえ。写真からの推定値です。量や食材、調理方法によって変わるため、保存前に調整できます。日々の記録を目的とし、専門的な助言に代わるものではありません。"
+      ],
+      [
+        "オフラインで認識できますか？",
+        "はい。設定の「推論方法」で端末内モデルを選ぶと、利用可能なモデルでネット接続なしに認識できます。初回は読み込みが必要で、電池の消費や発熱が増える場合があります。端末内で失敗してもクラウドに自動で切り替えません。"
       ],
       [
         "Apple ヘルスケアとの連携は必要ですか？",
@@ -225,7 +273,25 @@
     "home": "開発者のサイト",
     "privacyTitle": "プライバシー",
     "foot": "食事写真は AI によるイメージです。App 画面はサンプルデータを使用しています。",
-    "skip": "本文へ移動"
+    "skip": "本文へ移動",
+    "offline": "オフラインでも\n食事を記録",
+    "offlinebody": "端末内モデルを選べば、iPhone 上で AI が食事のカロリーを推定。写真をクラウドに送らず、ネット接続がなくても記録できます。",
+    "offlinepoints": [
+      [
+        "写真は端末の中に",
+        "認識は端末内で完結。写真や補足メモをアップロードしません。"
+      ],
+      [
+        "認識方法を選べる",
+        "設定で端末内モデルとクラウド API を切り替えられます。端末内の認識に失敗しても、クラウドには自動で切り替わりません。"
+      ]
+    ],
+    "offlinenote": "端末内モデルは初回の認識前に読み込みが必要です。電池の消費や発熱が増える場合があります。利用可否は App 内の端末・モデルの状態をご確認ください。",
+    "download": "App Store からダウンロード",
+    "coming": "近日公開",
+    "homedesc": "ほかの作品や日々のこと",
+    "offlineq": "オフラインで認識できますか？",
+    "offlinea": "はい。設定の「推論方法」で端末内モデルを選ぶと、利用可能なモデルでネット接続なしに認識できます。初回は読み込みが必要で、電池の消費や発熱が増える場合があります。端末内で失敗してもクラウドに自動で切り替えません。"
   },
   "zh-Hant": {
     "title": "Mealr · 好好吃飯，輕鬆記錄",
@@ -268,13 +334,17 @@
       "每日熱量差"
     ],
     "privacy": "你的記錄\n由你掌握",
-    "privacybody": "餐食記錄儲存在裝置上。連接 Apple 健康需要你的授權；使用雲端辨識時，餐食照片和補充文字會傳送至 Mealr 服務進行分析。",
+    "privacybody": "餐食記錄儲存在裝置上。選擇本機模型時，辨識內容不會上傳；選擇雲端辨識時，照片和補充文字會傳送至 Mealr 服務。連接 Apple 健康始終需要你的授權。",
     "privacyLink": "了解資料如何處理",
     "faq": "你可能想知道",
     "qas": [
       [
         "熱量是精確測量嗎？",
         "不是。Mealr 根據照片估算熱量，結果會受到份量、食材和烹調方式影響。儲存前可以調整；結果用於日常記錄，不取代專業建議。"
+      ],
+      [
+        "可以離線辨識嗎？",
+        "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，無須連網。首次辨識前需要載入；執行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
       ],
       [
         "需要連接 Apple 健康嗎？",
@@ -301,7 +371,25 @@
     "home": "個人網站",
     "privacyTitle": "隱私權政策",
     "foot": "餐食照片為 AI 生成的情境圖；App 畫面使用範例資料。",
-    "skip": "跳至內容"
+    "skip": "跳至內容",
+    "offline": "沒有網路\n也能記下一餐",
+    "offlinebody": "選擇本機模型，讓 AI 就在 iPhone 上估算餐食。不必把照片傳到雲端，離線時也能繼續記錄。",
+    "offlinepoints": [
+      [
+        "照片留在手機",
+        "辨識在裝置上完成，照片和補充說明不會上傳。"
+      ],
+      [
+        "由你選擇",
+        "在記錄設定中切換本機模型或雲端 API。本機辨識失敗時，不會自動改用雲端。"
+      ]
+    ],
+    "offlinenote": "本機模型首次使用需要載入，執行時可能增加耗電和發熱；請以 App 內的裝置與模型狀態為準。",
+    "download": "在 App Store 下載",
+    "coming": "即將推出",
+    "homedesc": "更多作品與日常",
+    "offlineq": "可以離線辨識嗎？",
+    "offlinea": "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，無須連網。首次辨識前需要載入；執行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
   },
   "zh-HK": {
     "title": "Mealr · 好好食飯，輕鬆記錄",
@@ -344,13 +432,17 @@
       "每日熱量差"
     ],
     "privacy": "你的記錄\n由你掌握",
-    "privacybody": "餐食記錄儲存在裝置上。連接 Apple 健康需要你的授權；使用雲端辨識時，餐食相片和補充文字會傳送至 Mealr 服務進行分析。",
+    "privacybody": "餐食記錄儲存在裝置上。選擇本機模型時，辨識內容不會上傳；選擇雲端辨識時，相片和補充文字會傳送至 Mealr 服務。連接 Apple 健康始終需要你的授權。",
     "privacyLink": "了解資料如何處理",
     "faq": "你可能想知道",
     "qas": [
       [
         "熱量是精確測量嗎？",
         "不是。Mealr 根據照片估算熱量，結果會受到份量、食材和烹調方式影響。儲存前可以調整；結果用於日常記錄，不取代專業建議。"
+      ],
+      [
+        "可以離線辨識嗎？",
+        "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，毋須連接網絡。首次辨識前需要載入；運行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
       ],
       [
         "需要連接 Apple 健康嗎？",
@@ -377,6 +469,24 @@
     "home": "個人網站",
     "privacyTitle": "私隱政策",
     "foot": "餐食相片為 AI 生成的情境圖；App 畫面使用示例資料。",
-    "skip": "跳至內容"
+    "skip": "跳至內容",
+    "offline": "沒有網絡\n也能記下一餐",
+    "offlinebody": "選擇本機模型，讓 AI 就在 iPhone 上估算餐食。毋須把相片傳到雲端，離線時也能繼續記錄。",
+    "offlinepoints": [
+      [
+        "相片留在手機",
+        "辨識在裝置上完成，相片和補充說明不會上傳。"
+      ],
+      [
+        "由你選擇",
+        "在記錄設定中切換本機模型或雲端 API。本機辨識失敗時，不會自動改用雲端。"
+      ]
+    ],
+    "offlinenote": "本機模型首次使用需要載入，運行時可能增加耗電和發熱；請以 App 內的裝置與模型狀態為準。",
+    "download": "在 App Store 下載",
+    "coming": "即將推出",
+    "homedesc": "更多作品與日常",
+    "offlineq": "可以離線辨識嗎？",
+    "offlinea": "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，毋須連接網絡。首次辨識前需要載入；運行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
   }
 }

@@ -17,7 +17,7 @@
     const copy = window.MEALR_COPY[panel.dataset.language];
     panel.querySelectorAll('[data-view]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     const image = panel.querySelector('.trend-image');
-    image.src = `assets/home/trends-${mode}-light.webp`;
+    image.src = `assets/home/trends-${mode}-light-framed.webp`;
     image.alt = `${copy.tabs[mode === 'energy' ? 0 : 1]} · ${copy.shot}`;
   }));
 })();
@@ -41,4 +41,20 @@
   reduced.addEventListener('change', () => {
     if (reduced.matches) document.getAnimations().forEach(animation => animation.finish());
   });
+})();
+
+// One deployment setting controls every App Store entry. Empty stays visibly unavailable.
+(() => {
+  const candidate = window.MEALR_CONFIG?.appStoreURL;
+  let destination = null;
+  try {
+    const url = new URL(candidate);
+    if (url.protocol === 'https:' && url.hostname === 'apps.apple.com' && !url.username && !url.password) destination = url.href;
+  } catch { /* Empty or invalid configuration: keep the native disabled buttons. */ }
+  if (!destination) return;
+  document.querySelectorAll('[data-store-link]').forEach(link => {
+    link.href = destination;
+    link.hidden = false;
+  });
+  document.querySelectorAll('[data-store-placeholder], [data-store-status]').forEach(element => { element.hidden = true; });
 })();
