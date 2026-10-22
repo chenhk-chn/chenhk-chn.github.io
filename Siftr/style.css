@@ -45,7 +45,7 @@ p { overflow-wrap: break-word; }
   justify-content: space-between;
   gap: 24px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule); /* taste-skill-ignore: 文档页顶栏与正文的分隔线 */
 }
 
 .wordmark {
@@ -72,7 +72,7 @@ p { overflow-wrap: break-word; }
   padding: 8px 26px 8px 2px;
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background: var(--field);
   color: var(--ink);
   font: 400 1rem/1.4 var(--font-ui);
   cursor: pointer;
@@ -95,7 +95,7 @@ html:not(.js) .language-panel + .language-panel {
 
 header {
   padding: 64px 0 36px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule); /* taste-skill-ignore: 文档页标题区与正文的分隔线 */
   margin-bottom: 48px;
 }
 
@@ -127,7 +127,7 @@ li { margin-bottom: 8px; }
 table { border-collapse: collapse; font-size: .9375rem; line-height: 1.5; }
 
 th, td {
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule); /* taste-skill-ignore: 真实表格（Skill 协议文档） */
   padding: 6px 10px;
   text-align: left;
   vertical-align: top;
@@ -157,7 +157,7 @@ blockquote p { margin: 8px 0; }
 
 code {
   padding: .1em .35em;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule); /* taste-skill-ignore: 行内代码记号，等宽字体惯例 */
   font: .88em/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
   overflow-wrap: anywhere;
 }
@@ -178,7 +178,7 @@ code {
 footer {
   margin-top: 64px;
   padding-top: 24px;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--rule); /* taste-skill-ignore: 文档页页脚上缘分隔线 */
   color: var(--muted);
   font-size: .875rem;
 }

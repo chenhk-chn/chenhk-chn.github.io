@@ -37,7 +37,7 @@ p { overflow-wrap: break-word; }
 .wrap, .panel-footer { width: min(100%, 1360px); margin-inline: auto; padding-inline: var(--gutter); }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; }
 .brand { font: 400 2.25rem/1.2 "Young Serif", var(--font-text); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
-.language-picker select { font: 400 1rem/1.4 var(--font-ui); color: var(--ink); background: transparent; border: 0; border-radius: 0; min-height: 44px; padding: 8px 26px 8px 2px; cursor: pointer; }
+.language-picker select { font: 400 1rem/1.4 var(--font-ui); color: var(--ink); background: var(--field); border: 0; border-radius: 0; min-height: 44px; padding: 8px 30px 8px 12px; cursor: pointer; }
 .section-nav { display: flex; gap: 12px 28px; flex-wrap: wrap; }
 .section-nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: 1rem; text-decoration: none; }
 .language-panel:not([data-language="zh-Hans"]):not(.is-active) { display: none; }
@@ -72,7 +72,8 @@ figcaption { font-size: .9375rem; padding-top: 14px; color: var(--muted); }
 .pipeline p { margin-top: 16px; max-width: 28em; }
 .feature-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 44px 88px; margin-top: 48px; }
 .feature-columns article p { margin-top: 12px; max-width: 36em; }
-.proofs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+.proofs { display: grid; grid-template-columns: repeat(3, minmax(0, 360px)); gap: 32px; justify-content: center; margin-top: 56px; }
+.proofs figure { min-width: 0; }
 .proofs img { width: 100%; }
 .more-tools { margin-top: 64px; }
 .tools-title { font-family: var(--font-text); }
@@ -147,7 +148,11 @@ figcaption { font-size: .9375rem; padding-top: 14px; color: var(--muted); }
   .more-tools { margin-top: 48px; }
   .tools-content { grid-template-columns: 1fr; gap: 20px; }
   .faq-content { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
-  .proofs { grid-template-columns: 1fr; gap: 20px; margin-top: 36px; }
+  .proofs { display: flex; justify-content: center; align-items: flex-start; gap: 0; margin-top: 36px; }
+  .proofs figure { width: 38%; }
+  .proofs figure + figure { width: 46%; margin-inline: -9%; z-index: 2; position: relative; }
+  .proofs figure:first-child, .proofs figure:last-child { z-index: 1; margin-top: 28px; }
+  .proofs figure:first-child figcaption, .proofs figure:last-child figcaption { display: none; }
   .friends-grid { grid-template-columns: 1fr; gap: 4px; margin-top: 28px; }
   .friend-card { padding: 14px 8px; }
   .closing { padding-block: 64px; }
