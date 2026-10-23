@@ -1,12 +1,12 @@
 {
   "zh-Hans": {
-    "title": "Mealr · 好好吃饭，轻松记录",
+    "title": "Mealr · 三餐有迹，日子可寻。",
     "head": [
-      "好好吃饭",
-      "轻松记录"
+      "三餐有迹",
+      "日子可寻"
     ],
-    "intro": "拍下这一餐，确认热量估算。让每天的饮食，慢慢有迹可循。",
-    "cta": "了解工作方式",
+    "intro": "一本轻松记录的 AI 热量日记。拍照记下每一餐，在日历与趋势中，慢慢看见自己的饮食日常。",
+    "cta": "从一餐开始了解",
     "nav": [
       "如何记录",
       "回看趋势",
@@ -15,33 +15,33 @@
     "support": "使用与支持",
     "meta": "为 iPhone 而设计 · iOS 18 或更新版本",
     "shot": "App 实拍 · 简体中文界面 · 示例数据",
-    "how": "这一餐，拍下来",
-    "howbody": "不用从搜索食物开始。拍下餐盘，或从相册选一张，让 Mealr 帮你估算这一餐。",
+    "how": "拍一张，记下一餐",
+    "howbody": "一碗熟悉的面，一顿久违的小聚。拍照或从相册选择照片，让 Mealr 估算热量，给这一餐留下一页。",
     "steps": [
       [
-        "拍下餐食",
-        "可以从不同角度补充照片，也可以用文字说明实际吃了多少。"
+        "拍下这一餐",
+        "一张照片，或几个不同的角度。也可以用文字或语音，补充实际吃了多少。"
       ],
       [
-        "确认估算",
-        "逐项查看识别结果，按实际份量调整，再保存这餐。"
+        "按实际记下",
+        "查看菜品和热量，按实际情况调整后保存。没有照片时，也能手动记录。"
       ],
       [
-        "回到生活",
-        "记录留在手机里。下一次打开，今天吃了什么，一目了然。"
+        "留待日后回看",
+        "照片与记录保存在手机里，慢慢积成一本属于你的饮食日记。"
       ]
     ],
-    "today": "今天吃了什么\n心里有数",
-    "todaybody": "摄入、消耗和当天餐食，放在一起看。连接 Apple 健康后，还能了解每天的热量差。",
-    "trend": "一餐一餐\n看见日常",
-    "trendbody": "在忙碌的一周里，也能回头看看自己。切换摄入与消耗、每日差值，找到适合自己的记录节奏。",
+    "today": "今天的三餐\n一页记下",
+    "todaybody": "把当天餐食与摄入热量放在一起看。授权连接 Apple 健康后，还能结合消耗数据，了解今天的热量差。",
+    "trend": "翻过一页\n看见日常",
+    "trendbody": "在日历里找回某天的三餐，在趋势中看看最近的变化。一餐一饭，慢慢记出自己的饮食节奏。",
     "tabs": [
       "摄入与消耗",
       "每日差值"
     ],
-    "privacy": "你的记录\n由你掌握",
-    "privacybody": "餐食记录保存在本机。选择本地模型时，识别内容不上传；选择云端识别时，照片和补充文字会发送至 Mealr 服务。连接 Apple 健康始终需要你的授权。",
-    "privacyLink": "了解数据如何处理",
+    "privacy": "属于你的三餐\n由你留存",
+    "privacybody": "餐食照片和记录保存在本机。选择本地模型时，食物识别在设备上完成；选择云端识别时，照片和补充文字会发送至 Mealr 服务。Apple 健康的访问由你授权。",
+    "privacyLink": "了解记录如何保存",
     "faq": "你可能想知道",
     "qas": [
       [
@@ -65,10 +65,10 @@
         "会员价格、试用资格和识别额度以 App 内当前显示为准。操作说明、权限设置和联系方式可在技术支持页面查看。"
       ]
     ],
-    "end": "从下一餐开始",
-    "endbody": "让记录简单一点，让生活照常。",
-    "friends": "也许你也会喜欢",
-    "friendbody": "同一位开发者的其他作品。",
+    "end": "从今天的一餐开始",
+    "endbody": "给三餐留下痕迹，给日常留下一页。",
+    "friends": "生活里的其他小帮手",
+    "friendbody": "同一位开发者，为照片、地点与阅读写下的作品。",
     "apps": [
       "整理照片，留住回忆",
       "为照片补上地点",
@@ -78,33 +78,31 @@
     "privacyTitle": "隐私政策",
     "foot": "餐食照片为生成的场景插图；App 截图使用示例数据。",
     "skip": "跳到内容",
-    "offline": "不联网\n也能记下一餐",
-    "offlinebody": "选择本地模型，让 AI 就在 iPhone 上估算餐食。不必把照片传到云端，没网时也能继续记录。",
+    "offline": "没有网络\n也记得这一餐",
+    "offlinebody": "选择本地模型，在 iPhone 上估算餐食热量。照片无需上传，离线时也能为三餐留下一笔。",
     "offlinepoints": [
       [
-        "照片留在手机",
-        "识别在本机完成，照片和补充说明不会上传。"
+        "让照片留在身边",
+        "本地食物识别在设备上完成，餐食照片和补充文字不会上传。"
       ],
       [
-        "选择权在你",
-        "在记录设置中切换本地模型或云端 API。本地识别失败时，不会自动转到云端。"
+        "按你的方式记录",
+        "可在设置中选择本地或云端识别。本地识别失败时，不会自动切换至云端。"
       ]
     ],
     "offlinenote": "本地模型首次使用需要加载，运行时可能增加耗电和发热；请以 App 内的设备与模型状态为准。",
     "download": "App Store 下载",
     "coming": "即将上线",
-    "homedesc": "更多作品与日常",
-    "offlineq": "可以离线识别吗？",
-    "offlinea": "可以。在记录设置的“推理方式”中选择本地模型，模型可用时即可在设备上完成识别，无需联网。首次识别前需要加载；运行可能增加耗电和发热。本地识别失败不会自动转为云端识别。"
+    "homedesc": "作品之外，也有日常"
   },
   "en": {
-    "title": "Mealr · Eat well. Log simply.",
+    "title": "Mealr · Meals remembered. Days rediscovered.",
     "head": [
-      "Eat well.",
-      "Log simply."
+      "Meals remembered.",
+      "Days rediscovered."
     ],
-    "intro": "Photograph your meal, review the calorie estimate, and build a little picture of your everyday eating.",
-    "cta": "See how it works",
+    "intro": "An AI calorie diary for everyday life. Photograph a meal, save an estimate, and look back on your eating habits through your calendar and trends.",
+    "cta": "See how a meal becomes a memory",
     "nav": [
       "How it works",
       "Trends",
@@ -113,33 +111,33 @@
     "support": "Help & support",
     "meta": "Designed for iPhone · iOS 18 or later",
     "shot": "App screenshots · Chinese interface · Sample data",
-    "how": "Start with a photo",
-    "howbody": "Skip the food search. Photograph your plate or choose an image, and let Mealr estimate your meal.",
+    "how": "A photo. A meal. A page.",
+    "howbody": "A familiar bowl of noodles. Dinner with an old friend. Take a photo or choose one from your library, and let Mealr estimate the calories.",
     "steps": [
       [
-        "Photograph your meal",
-        "Add another angle or a short note about how much you ate."
+        "Capture the meal",
+        "Take a photo or add a few angles. A written or spoken note can help explain how much you ate."
       ],
       [
-        "Review the estimate",
-        "Check each food, adjust the portions, then save your meal."
+        "Make the record yours",
+        "Review the foods and calories, adjust what needs changing, then save. You can also add a meal by hand, without a photo."
       ],
       [
-        "Get on with your day",
-        "Your records stay on your phone, ready when you want to look back."
+        "Keep a little of the day",
+        "Photos and records stay on your phone, gradually becoming a diary of your everyday meals."
       ]
     ],
-    "today": "Your day,\nat a glance",
-    "todaybody": "See intake, energy burned and meals together. Connect Apple Health to understand your daily calorie balance.",
-    "trend": "Small records.\nA bigger picture.",
-    "trendbody": "Look back on a busy week. Switch between intake and energy burned or daily balance, and find your own rhythm.",
+    "today": "Today’s meals,\non one page",
+    "todaybody": "See your meals and calorie intake together. With your permission, Apple Health adds energy burned so you can see the day’s calorie balance.",
+    "trend": "Turn a page.\nSee a pattern.",
+    "trendbody": "Find a past meal in your calendar or look at changes over time. The more days you record, the more familiar your eating habits become.",
     "tabs": [
       "Intake & energy burned",
       "Daily balance"
     ],
-    "privacy": "Your records.\nYour choice.",
-    "privacybody": "Meal records stay on your device. On-device recognition does not upload meal content; cloud recognition sends photos and notes to the Mealr service. Apple Health access always requires your permission.",
-    "privacyLink": "How your data is handled",
+    "privacy": "Your meals.\nYour memories.",
+    "privacybody": "Meal photos and records stay on your device. Choose the on-device model to recognize food locally, or cloud recognition to send photos and notes to the Mealr service. You decide whether to allow Apple Health access.",
+    "privacyLink": "See how your records are stored",
     "faq": "A few answers",
     "qas": [
       [
@@ -163,10 +161,10 @@
         "Current prices, trial eligibility and recognition allowances appear in the app. Visit Support for instructions, permissions and contact details."
       ]
     ],
-    "end": "Start with your next meal",
-    "endbody": "A little less effort. A little more everyday clarity.",
-    "friends": "More to explore",
-    "friendbody": "Other apps by the same independent developer.",
+    "end": "Begin with today’s meal",
+    "endbody": "A meal to remember. A page of everyday life.",
+    "friends": "For other parts of your day",
+    "friendbody": "Apps for photos, places and reading, from the same independent developer.",
     "apps": [
       "Make room for memories",
       "Put your photos on the map",
@@ -176,33 +174,31 @@
     "privacyTitle": "Privacy policy",
     "foot": "Food photography is AI-generated. App screenshots contain sample data.",
     "skip": "Skip to content",
-    "offline": "A meal logged.\nEven offline.",
-    "offlinebody": "Choose the on-device model and let AI estimate your meal right on your iPhone. Keep photos off the cloud, and keep logging without a connection.",
+    "offline": "No connection.\nStill worth recording.",
+    "offlinebody": "Choose the on-device model to estimate calories right on your iPhone. Keep meal photos off the cloud and add a page to your diary, even offline.",
     "offlinepoints": [
       [
-        "Photos stay with you",
-        "Recognition happens on your device. Photos and notes are not uploaded."
+        "Keep photos close",
+        "On-device food recognition does not upload meal photos or written notes."
       ],
       [
-        "You choose the mode",
-        "Switch between the on-device model and cloud API in settings. A failed local request never switches to the cloud automatically."
+        "Record your way",
+        "Choose on-device or cloud recognition in settings. If local recognition fails, Mealr will not switch to the cloud automatically."
       ]
     ],
     "offlinenote": "The on-device model loads before its first use and may increase battery use and device temperature. Availability depends on the device and model status shown in the app.",
     "download": "Download on the App Store",
     "coming": "Coming soon",
-    "homedesc": "More projects and everyday notes",
-    "offlineq": "Can I recognize meals offline?",
-    "offlinea": "Yes. Choose the on-device model under Recognition mode in settings. With the model available, recognition runs on your device without a network connection. It must load before first use and can increase battery use and heat. A local failure never triggers automatic cloud recognition."
+    "homedesc": "Projects and the days between them"
   },
   "ja": {
-    "title": "Mealr · 食事を楽しむ。記録は気軽に。",
+    "title": "Mealr · 食事を記して、日々をたどる。",
     "head": [
-      "食事を楽しむ",
-      "記録は気軽に"
+      "食事を記して、",
+      "日々をたどる。"
     ],
-    "intro": "食事を撮って、カロリーの推定値を確認。毎日の食生活を、少しずつ振り返れるように。",
-    "cta": "使い方を見る",
+    "intro": "毎日の食事を気軽に残せる、AI カロリー日記。写真で一食を記録し、カレンダーやグラフから自分の食生活を少しずつ振り返れます。",
+    "cta": "一食を記録するまで",
     "nav": [
       "記録の流れ",
       "傾向を見る",
@@ -211,33 +207,33 @@
     "support": "使い方とサポート",
     "meta": "iPhone 向け · iOS 18 以降",
     "shot": "実際の App 画面 · 簡体字中国語 · サンプルデータ",
-    "how": "一枚の写真から",
-    "howbody": "食品を検索する手間を省いて。食事を撮るか写真を選ぶと、Mealr がカロリーを推定します。",
+    "how": "一枚の写真から、一食の記録へ",
+    "howbody": "いつもの一杯も、久しぶりに集まった日の食事も。写真を撮るかライブラリから選ぶと、Mealr がカロリーを推定します。",
     "steps": [
       [
-        "食事を撮る",
-        "別の角度からの写真や、食べた量についてのメモも追加できます。"
+        "食事を写真に残す",
+        "一枚でも、いくつかの角度からでも。食べた量など、写真だけでは伝わらないことは文字や音声で添えられます。"
       ],
       [
-        "推定値を確認する",
-        "料理ごとの結果と量を確認し、必要に応じて調整して保存します。"
+        "実際の食事に合わせる",
+        "料理とカロリーを確認し、必要に応じて調整して保存。写真がなくても手入力で記録できます。"
       ],
       [
-        "いつもの毎日へ",
-        "記録は iPhone に保存。あとから、その日の食事を振り返れます。"
+        "あとから振り返る",
+        "写真と記録は iPhone に保存。一食ずつ、自分だけの食事日記ができていきます。"
       ]
     ],
-    "today": "今日の食事を\nひと目で",
-    "todaybody": "摂取量、消費量、その日の食事をまとめて確認。Apple ヘルスケアと連携すると、カロリー収支もわかります。",
-    "trend": "一食ずつ\n日々が見えてくる",
-    "trendbody": "忙しかった一週間も、あとから振り返れます。摂取量と消費量、日ごとの収支を切り替えて、自分のペースで記録を。",
+    "today": "今日の食事を\n一つのページに",
+    "todaybody": "その日の食事と摂取カロリーをまとめて確認。許可して Apple ヘルスケアと連携すると、消費エネルギーやカロリー収支も見られます。",
+    "trend": "ページをめくり、\n日々を振り返る",
+    "trendbody": "カレンダーであの日の食事を探したり、グラフで最近の変化を見たり。一食ずつの記録から、自分の食生活が見えてきます。",
     "tabs": [
       "摂取量と消費量",
       "日ごとの収支"
     ],
-    "privacy": "自分の記録を\n自分の手で",
-    "privacybody": "食事の記録は端末に保存されます。端末内モデルでは食事の内容を送信しません。クラウド認識では写真とメモを Mealr サービスへ送信します。Apple ヘルスケアへのアクセスには常に許可が必要です。",
-    "privacyLink": "データの取り扱いを見る",
+    "privacy": "大切な食事の記録を\n自分の手元に",
+    "privacybody": "食事の写真と記録は端末に保存されます。端末内モデルでは食事の認識を端末上で行い、クラウド認識では写真とメモを Mealr サービスへ送信します。Apple ヘルスケアへのアクセスには許可が必要です。",
+    "privacyLink": "記録の保存について",
     "faq": "よくある質問",
     "qas": [
       [
@@ -261,10 +257,10 @@
         "料金、無料トライアルの対象条件、認識回数は App 内の最新表示をご確認ください。操作方法やお問い合わせ先はサポートページに掲載しています。"
       ]
     ],
-    "end": "次の食事から",
-    "endbody": "記録は気軽に。食事はいつもどおりに。",
-    "friends": "ほかのアプリも",
-    "friendbody": "同じ開発者がつくったアプリです。",
+    "end": "今日の一食から",
+    "endbody": "食事の記録が、日々をたどる一ページに。",
+    "friends": "暮らしのほかの場面にも",
+    "friendbody": "写真、場所、読書のために。同じ開発者がつくったアプリです。",
     "apps": [
       "写真を整理して、思い出を残す",
       "写真に撮影場所を添える",
@@ -274,33 +270,31 @@
     "privacyTitle": "プライバシー",
     "foot": "食事写真は AI によるイメージです。App 画面はサンプルデータを使用しています。",
     "skip": "本文へ移動",
-    "offline": "オフラインでも\n食事を記録",
-    "offlinebody": "端末内モデルを選べば、iPhone 上で AI が食事のカロリーを推定。写真をクラウドに送らず、ネット接続がなくても記録できます。",
+    "offline": "オフラインでも\nこの一食を残す",
+    "offlinebody": "端末内モデルを選ぶと、iPhone 上で食事のカロリーを推定します。写真をクラウドに送らず、ネット接続がないときも記録を続けられます。",
     "offlinepoints": [
       [
-        "写真は端末の中に",
-        "認識は端末内で完結。写真や補足メモをアップロードしません。"
+        "写真は手元に",
+        "端末内の食事認識では、写真や補足のテキストをアップロードしません。"
       ],
       [
-        "認識方法を選べる",
-        "設定で端末内モデルとクラウド API を切り替えられます。端末内の認識に失敗しても、クラウドには自動で切り替わりません。"
+        "記録の方法を選ぶ",
+        "設定で端末内認識とクラウド認識を選べます。端末内の認識に失敗しても、自動でクラウドに切り替わることはありません。"
       ]
     ],
     "offlinenote": "端末内モデルは初回の認識前に読み込みが必要です。電池の消費や発熱が増える場合があります。利用可否は App 内の端末・モデルの状態をご確認ください。",
     "download": "App Store からダウンロード",
     "coming": "近日公開",
-    "homedesc": "ほかの作品や日々のこと",
-    "offlineq": "オフラインで認識できますか？",
-    "offlinea": "はい。設定の「推論方法」で端末内モデルを選ぶと、利用可能なモデルでネット接続なしに認識できます。初回は読み込みが必要で、電池の消費や発熱が増える場合があります。端末内で失敗してもクラウドに自動で切り替えません。"
+    "homedesc": "ほかの作品と、日々のこと"
   },
   "zh-Hant": {
-    "title": "Mealr · 好好吃飯，輕鬆記錄",
+    "title": "Mealr · 三餐有跡，日子可尋。",
     "head": [
-      "好好吃飯",
-      "輕鬆記錄"
+      "三餐有跡",
+      "日子可尋"
     ],
-    "intro": "拍下這一餐，確認熱量估算。讓每天的飲食，慢慢有跡可循。",
-    "cta": "了解記錄方式",
+    "intro": "一本輕鬆記錄的 AI 熱量日記。拍照記下每一餐，在日曆與趨勢中，慢慢看見自己的飲食日常。",
+    "cta": "從一餐開始了解",
     "nav": [
       "如何記錄",
       "回顧趨勢",
@@ -309,33 +303,33 @@
     "support": "使用與支援",
     "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
     "shot": "App 實際畫面 · 簡體中文介面 · 範例資料",
-    "how": "這一餐，拍下來",
-    "howbody": "不用先搜尋食物。拍下餐盤，或從相簿選一張照片，讓 Mealr 幫你估算這一餐。",
+    "how": "拍一張，記下一餐",
+    "howbody": "一碗熟悉的麵，一頓久違的小聚。拍照或從相簿選擇照片，讓 Mealr 估算熱量，為這一餐留下一頁。",
     "steps": [
       [
-        "拍下餐食",
-        "可以從不同角度補充照片，也可以用文字說明實際吃了多少。"
+        "拍下這一餐",
+        "一張照片，或幾個不同的角度。也可以用文字或語音，補充實際吃了多少。"
       ],
       [
-        "確認估算",
-        "逐項查看辨識結果，依實際份量調整，再儲存這一餐。"
+        "依實際情況記下",
+        "查看菜色與熱量，依實際情況調整後儲存。沒有照片時，也能手動記錄。"
       ],
       [
-        "回到生活",
-        "記錄留在手機裡。下次打開，今天吃了什麼，一目了然。"
+        "留待日後回顧",
+        "照片與記錄儲存在手機裡，慢慢累積成一本屬於你的飲食日記。"
       ]
     ],
-    "today": "今天吃了什麼\n心裡有數",
-    "todaybody": "一起查看攝取量、消耗量和當天餐食。連接 Apple 健康後，還能了解每天的熱量差。",
-    "trend": "一餐一餐\n看見日常",
-    "trendbody": "忙碌的一週過後，也能回頭看看自己。切換攝取與消耗、每日熱量差，找到適合自己的記錄節奏。",
+    "today": "今天的三餐\n一頁記下",
+    "todaybody": "一起查看當天餐食與攝取熱量。授權連接 Apple 健康後，還能結合消耗資料，了解今天的熱量差。",
+    "trend": "翻過一頁\n看見日常",
+    "trendbody": "在日曆裡找回某天的三餐，在趨勢中看看最近的變化。一餐一飯，慢慢記出自己的飲食節奏。",
     "tabs": [
       "攝取與消耗",
       "每日熱量差"
     ],
-    "privacy": "你的記錄\n由你掌握",
-    "privacybody": "餐食記錄儲存在裝置上。選擇本機模型時，辨識內容不會上傳；選擇雲端辨識時，照片和補充文字會傳送至 Mealr 服務。連接 Apple 健康始終需要你的授權。",
-    "privacyLink": "了解資料如何處理",
+    "privacy": "屬於你的三餐\n由你留存",
+    "privacybody": "餐食照片與記錄儲存在裝置上。選擇本機模型時，食物辨識在裝置上完成；選擇雲端辨識時，照片和補充文字會傳送至 Mealr 服務。Apple 健康的存取由你授權。",
+    "privacyLink": "了解記錄如何儲存",
     "faq": "你可能想知道",
     "qas": [
       [
@@ -359,10 +353,10 @@
         "會員價格、試用資格和辨識額度以 App 內目前顯示為準。操作說明、權限設定和聯絡方式請見技術支援頁面。"
       ]
     ],
-    "end": "從下一餐開始",
-    "endbody": "讓記錄簡單一點，讓生活照常。",
-    "friends": "也許你也會喜歡",
-    "friendbody": "同一位開發者的其他作品。",
+    "end": "從今天的一餐開始",
+    "endbody": "為三餐留下痕跡，為日常留下一頁。",
+    "friends": "生活裡的其他小幫手",
+    "friendbody": "同一位開發者，為照片、地點與閱讀寫下的作品。",
     "apps": [
       "整理照片，留下回憶",
       "為照片補上地點",
@@ -372,33 +366,31 @@
     "privacyTitle": "隱私權政策",
     "foot": "餐食照片為 AI 生成的情境圖；App 畫面使用範例資料。",
     "skip": "跳至內容",
-    "offline": "沒有網路\n也能記下一餐",
-    "offlinebody": "選擇本機模型，讓 AI 就在 iPhone 上估算餐食。不必把照片傳到雲端，離線時也能繼續記錄。",
+    "offline": "沒有網路\n也記得這一餐",
+    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量。照片無須上傳，離線時也能為三餐留下一筆。",
     "offlinepoints": [
       [
-        "照片留在手機",
-        "辨識在裝置上完成，照片和補充說明不會上傳。"
+        "讓照片留在身邊",
+        "本機食物辨識在裝置上完成，餐食照片和補充文字不會上傳。"
       ],
       [
-        "由你選擇",
-        "在記錄設定中切換本機模型或雲端 API。本機辨識失敗時，不會自動改用雲端。"
+        "依你的方式記錄",
+        "可在設定中選擇本機或雲端辨識。本機辨識失敗時，不會自動切換至雲端。"
       ]
     ],
     "offlinenote": "本機模型首次使用需要載入，執行時可能增加耗電和發熱；請以 App 內的裝置與模型狀態為準。",
     "download": "在 App Store 下載",
     "coming": "即將推出",
-    "homedesc": "更多作品與日常",
-    "offlineq": "可以離線辨識嗎？",
-    "offlinea": "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，無須連網。首次辨識前需要載入；執行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
+    "homedesc": "作品之外，也有日常"
   },
   "zh-HK": {
-    "title": "Mealr · 好好食飯，輕鬆記錄",
+    "title": "Mealr · 三餐有跡，日子可尋。",
     "head": [
-      "好好食飯",
-      "輕鬆記錄"
+      "三餐有跡",
+      "日子可尋"
     ],
-    "intro": "拍下這一餐，確認熱量估算。讓每天的飲食，慢慢有跡可循。",
-    "cta": "了解記錄方式",
+    "intro": "一本輕鬆記錄的 AI 熱量日記。拍照記下每一餐，在日曆與趨勢中，慢慢看見自己的飲食日常。",
+    "cta": "從一餐開始了解",
     "nav": [
       "如何記錄",
       "回顧趨勢",
@@ -407,33 +399,33 @@
     "support": "使用與支援",
     "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
     "shot": "App 實際畫面 · 簡體中文介面 · 示例資料",
-    "how": "這一餐，拍下來",
-    "howbody": "毋須先搜尋食物。拍下餐盤，或從相簿選一張相片，讓 Mealr 幫你估算這一餐。",
+    "how": "拍一張，記下一餐",
+    "howbody": "一碗熟悉的麵，一頓久違的小聚。拍照或從相簿選擇相片，讓 Mealr 估算熱量，為這一餐留下一頁。",
     "steps": [
       [
-        "拍下餐食",
-        "可以從不同角度補充相片，也可以用文字說明實際吃了多少。"
+        "拍下這一餐",
+        "一張相片，或幾個不同的角度。也可以用文字或語音，補充實際吃了多少。"
       ],
       [
-        "確認估算",
-        "逐項查看辨識結果，按實際份量調整，再儲存這一餐。"
+        "按實際情況記下",
+        "查看菜色與熱量，按實際情況調整後儲存。沒有相片時，也能手動記錄。"
       ],
       [
-        "回到生活",
-        "記錄留在手機裏。下次打開，今天吃了甚麼，一目了然。"
+        "留待日後回顧",
+        "相片與記錄儲存在手機裏，慢慢累積成一本屬於你的飲食日記。"
       ]
     ],
-    "today": "今天吃了甚麼\n心裏有數",
-    "todaybody": "一起查看攝取量、消耗量和當天餐食。連接 Apple 健康後，還能了解每天的熱量差。",
-    "trend": "一餐一餐\n看見日常",
-    "trendbody": "忙碌的一週過後，也能回頭看看自己。切換攝取與消耗、每日熱量差，找到適合自己的記錄節奏。",
+    "today": "今天的三餐\n一頁記下",
+    "todaybody": "一起查看當天餐食與攝取熱量。授權連接 Apple 健康後，還能結合消耗資料，了解今天的熱量差。",
+    "trend": "翻過一頁\n看見日常",
+    "trendbody": "在日曆裏找回某天的三餐，在趨勢中看看最近的變化。一餐一飯，慢慢記出自己的飲食節奏。",
     "tabs": [
       "攝取與消耗",
       "每日熱量差"
     ],
-    "privacy": "你的記錄\n由你掌握",
-    "privacybody": "餐食記錄儲存在裝置上。選擇本機模型時，辨識內容不會上傳；選擇雲端辨識時，相片和補充文字會傳送至 Mealr 服務。連接 Apple 健康始終需要你的授權。",
-    "privacyLink": "了解資料如何處理",
+    "privacy": "屬於你的三餐\n由你留存",
+    "privacybody": "餐食相片與記錄儲存在裝置上。選擇本機模型時，食物辨識在裝置上完成；選擇雲端辨識時，相片和補充文字會傳送至 Mealr 服務。Apple 健康的存取由你授權。",
+    "privacyLink": "了解記錄如何儲存",
     "faq": "你可能想知道",
     "qas": [
       [
@@ -457,10 +449,10 @@
         "會員價格、試用資格和辨識額度以 App 內目前顯示為準。操作說明、權限設定和聯絡方式請見技術支援頁面。"
       ]
     ],
-    "end": "從下一餐開始",
-    "endbody": "讓記錄簡單一點，讓生活照常。",
-    "friends": "也許你也會喜歡",
-    "friendbody": "同一位開發者的其他作品。",
+    "end": "從今天的一餐開始",
+    "endbody": "為三餐留下痕跡，為日常留下一頁。",
+    "friends": "生活裏的其他小幫手",
+    "friendbody": "同一位開發者，為相片、地點與閱讀寫下的作品。",
     "apps": [
       "整理相片，留住回憶",
       "為相片補上地點",
@@ -470,23 +462,21 @@
     "privacyTitle": "私隱政策",
     "foot": "餐食相片為 AI 生成的情境圖；App 畫面使用示例資料。",
     "skip": "跳至內容",
-    "offline": "沒有網絡\n也能記下一餐",
-    "offlinebody": "選擇本機模型，讓 AI 就在 iPhone 上估算餐食。毋須把相片傳到雲端，離線時也能繼續記錄。",
+    "offline": "沒有網絡\n也記得這一餐",
+    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量。相片毋須上傳，離線時也能為三餐留下一筆。",
     "offlinepoints": [
       [
-        "相片留在手機",
-        "辨識在裝置上完成，相片和補充說明不會上傳。"
+        "讓相片留在身邊",
+        "本機食物辨識在裝置上完成，餐食相片和補充文字不會上傳。"
       ],
       [
-        "由你選擇",
-        "在記錄設定中切換本機模型或雲端 API。本機辨識失敗時，不會自動改用雲端。"
+        "按你的方式記錄",
+        "可在設定中選擇本機或雲端辨識。本機辨識失敗時，不會自動切換至雲端。"
       ]
     ],
     "offlinenote": "本機模型首次使用需要載入，運行時可能增加耗電和發熱；請以 App 內的裝置與模型狀態為準。",
     "download": "在 App Store 下載",
     "coming": "即將推出",
-    "homedesc": "更多作品與日常",
-    "offlineq": "可以離線辨識嗎？",
-    "offlinea": "可以。在記錄設定的「推理方式」中選擇本機模型，模型可用時即可在裝置上完成辨識，毋須連接網絡。首次辨識前需要載入；運行可能增加耗電和發熱。本機辨識失敗時，不會自動改用雲端。"
+    "homedesc": "作品之外，也有日常"
   }
 }
