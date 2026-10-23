@@ -919,8 +919,10 @@ details p {
   overflow: hidden;
 }
 .hero-inner {
-  grid-template-columns: 1fr 1.15fr;
-  min-height: 620px;
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .85fr);
+  min-height: 660px;
   gap: 36px;
   padding-top: 36px;
   padding-bottom: 36px;
@@ -928,17 +930,25 @@ details p {
 .hero-copy { max-width: 550px; }
 .hero .lead { max-width: 25em; }
 .hero .compatibility { color: var(--muted); }
-.hero-art { min-width: 0; width: 100%; }
+.hero-art { position: relative; z-index: 1; min-width: 0; width: 100%; display: grid; place-items: center; }
+.hero .screen-figure { width: 280px; max-width: 100%; margin: 0; padding: 0; background: none; justify-self: center; }
 .hero-dish {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
+  position: absolute;
+  z-index: 0;
+  width: 76%;
+  max-width: none;
   height: auto;
+  left: -14%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .08;
+  filter: saturate(.7);
   pointer-events: none;
-  /* Dissolve only the photograph's empty surround; food remains sharp. */
-  -webkit-mask-image: radial-gradient(ellipse 49% 48% at 54% 51%, #000 62%, transparent 100%);
-  mask-image: radial-gradient(ellipse 49% 48% at 54% 51%, #000 62%, transparent 100%);
+  /* The plate is only atmosphere; fade its perimeter into the reading surface. */
+  -webkit-mask-image: radial-gradient(ellipse 48% 46% at 54% 51%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 48% 46% at 54% 51%, #000 30%, transparent 100%);
 }
+
 .screen { background: transparent; outline: none; border-radius: 0; overflow: visible; width: 100%; margin: 0; }
 .screen img { width: 100%; height: auto; }
 .screen-figure figcaption { background: none; color: var(--muted); font-size: .8125rem; padding: 0; margin-top: 16px; text-align: center; }
@@ -980,24 +990,19 @@ details p {
 .friend-links a > span:last-child { display: none; }
 .friend-links a > .personal-mark { margin-left: 0; display: grid; place-items: center; border-radius: 12px; background: var(--dark); color: var(--inverse); font: 600 18px var(--serif); }
 @media (max-width: 1100px) and (min-width: 651px) {
-  .hero-inner { gap: 24px; min-height: 540px; }
+  .hero-inner { gap: 28px; min-height: 580px; }
+  .hero .screen-figure { width: 230px; }
   .offline-layout { gap: 45px; }
   .offline-image { height: 560px; }
   .friend-links { gap: 20px; }
   .friend-links a { flex-direction: column; }
 }
-@media (min-width: 651px) and (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; min-height: 0; gap: 0; padding-top: 32px; padding-bottom: 12px; }
-  .hero-copy { width: 100%; max-width: 620px; justify-self: center; text-align: center; }
-  .hero .lead { margin: 22px auto 24px; }
-  .hero-actions { justify-content: center; }
-  .hero-art { width: min(100%, 460px); justify-self: center; }
-}
 @media (max-width: 650px) {
   .hero-inner { display: flex; min-height: 0; gap: 0; padding: 24px 0 0; }
   .hero-copy { padding: 0 var(--gutter) 0; }
-  .hero-art { display: block; width: 100%; max-width: 480px; align-self: center; padding: 0 0 20px; }
-  .hero-dish { width: 100%; transform: none; }
+  .hero-art { width: 100%; padding: 26px var(--gutter) 24px; }
+  .hero .screen-figure { width: 230px; }
+  .hero-dish { width: 165%; left: -40%; top: 0; transform: none; opacity: .07; }
   .hero-actions { gap: 12px 18px; }
   .hero-actions > .text-link { font-size: .9rem; padding-top: 6px; }
   .meal-image { height: 370px; }
@@ -1016,4 +1021,8 @@ details p {
 }
 @media (prefers-contrast: more) {
   .store-placeholder { outline: 1px solid currentColor; }
+}
+
+@media (prefers-contrast: more) {
+  .hero-dish { display: none; }
 }
