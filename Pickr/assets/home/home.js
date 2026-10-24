@@ -771,7 +771,7 @@
     for (var s = 0; s < singleShots.length; s++) {
       var fileName = singleShots[s].getAttribute("data-single-shot");
       if (fileName) {
-        singleShots[s].setAttribute("src", "assets/home/" + code + "/" + fileName + "?v=20261024a");
+        singleShots[s].setAttribute("src", "assets/home/" + code + "/" + fileName + "?v=20261024c");
       }
     }
 
