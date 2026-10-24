@@ -2,7 +2,6 @@
    download) share the homepage's paper-and-green-ink look: unified 1360px top
    masthead, 760px reading column, micro-radii matching the iOS app, and
    script-aware CJK/Latin typography. */
-@import url("assets/fonts/fonts.css");
 :root {
   color-scheme: light;
   --paper: #f7f5ef;

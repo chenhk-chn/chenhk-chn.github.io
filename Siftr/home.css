@@ -1,7 +1,6 @@
 /* Siftr — an editorial reading window. Real app screens sit directly on the
    paper ground without coloured backing boxes; a full-width chapter rule
    separates the hero from the iPad + iPhone reading showcase. */
-@import url("assets/fonts/fonts.css");
 :root {
   color-scheme: light;
   --paper: #f7f5ef;
