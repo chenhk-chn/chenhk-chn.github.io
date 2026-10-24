@@ -452,35 +452,6 @@ figcaption { font-size: .9375rem; padding-top: 18px; color: var(--muted); text-a
   .friend-card img, .pad-shot, .phone-shot, .reader-shot { outline: 1px solid CanvasText; /* taste-skill-ignore: forced-colors 下图片需要可辨边界 */ }
 }
 
-/* The interactive HTML example: the dice page is a real briefing, embedded as-is. */
-.live-demo {
-  margin: 40px auto 0;
-  max-width: 380px;
-}
-
-.live-demo .demo-frame {
-  display: block;
-  width: 100%;
-  aspect-ratio: 5 / 7.5;
-  border: 1px solid #00000014;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #faf7f1;
-  box-shadow: 0 12px 28px #0000000d;
-}
-
-.live-demo figcaption {
-  margin-top: 12px;
-  text-align: center;
-  font-size: .875rem;
-  color: #6f6a60;
-}
-
-@media (prefers-color-scheme: dark) {
-  .live-demo .demo-frame {
-    border-color: #ffffff1a;
-    background: #171512;
-  }
-
-  .live-demo figcaption { color: #a39d92; }
-}
+/* Hero's second line carries the app's 靛青 theme colour (ThemePalette .ink, light):
+   a calm counterpoint to the ink first line — emphasis without shouting. */
+h1 span + span { color: #25467a; }
