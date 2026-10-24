@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fbfaf7">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-itunes-app" content="app-id=6799345303">
 <meta name="description" content="Placr Support">
 <title>技术支持 · Placr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon-rounded.svg?v=20261022">
 <link rel="apple-touch-icon" href="assets/icon-512.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 <div class="wrap">
@@ -37,7 +39,7 @@
     data-title="技术支持 · Placr">
     <header>
       <h1>技术支持</h1>
-      <p class="updated">需要 macOS 15 或更新版本</p>
+      <p class="updated">需要 macOS 26、iOS 26 或 iPadOS 26</p>
     </header>
     <p class="lede">遇到问题或有功能建议，请发送邮件至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
@@ -46,7 +48,7 @@
     <p>这时可以直接手动输入坐标：在地点搜索面板下方展开“手动输入坐标”，填入纬度和经度（按 WGS-84 解释，直接写入照片）。请先核对地点所在的国家/地区，避免选到同名地点；坐标可以从地图应用或地图网站的地点信息里复制。</p>
 
     <h2>怎样撤销照片权限？</h2>
-    <p>打开“系统设置 → 隐私与安全性 → 照片”，关闭 Placr。撤销权限不会删除照片，也不会撤销已经写入的位置。</p>
+    <p>在 Mac 上打开“系统设置 → 隐私与安全性 → 照片”，关闭 Placr。在 iPhone 或 iPad 上打开“设置 → Placr”，关闭照片访问。撤销权限不会删除照片，也不会恢复已经写入的位置。</p>
 
     <h2>怎样删除 Placr 的本机数据？</h2>
     <p>先退出 Placr。在访达选择“前往 → 前往文件夹”，输入 <code>~/Library/Containers/cn.chenhk.placr</code>，将该文件夹移到废纸篓。</p>
@@ -61,8 +63,11 @@
     <h2>视频会补位置吗？</h2>
     <p>会。从 1.0.2 起，没有位置的相机视频和照片一起分组、一起写入；有位置的视频也能当参考。录屏不会出现。旧版本扫描的分组需要点一次“重新分组”才会纳入视频。</p>
 
+    <h2>iCloud 同步会上传什么？</h2>
+    <p>照片内容、缩略图和文件名不会离开设备。开启同步后，离开设备的审阅事实只有照片的 iCloud 标识、暂不处理标记、待写入批次的坐标和地名、写入记录。它们只写入你自己的 iCloud 私有数据库，开发者读不到。在设置里可以关闭同步，或使用「删除 iCloud 中的 Placr 数据」清空云端和本机的同步数据。这不会删除照片，也不会恢复已经写入的位置。</p>
+
     <h2>为什么访达中的图标没有变化？</h2>
-    <p>macOS 只允许应用在运行时替换 Dock 和应用切换器图标；访达图标由代码签名固定，无法在运行时更改。</p>
+    <p>macOS 只允许应用在运行时替换 Dock 和应用切换器图标；访达图标由代码签名固定，无法在运行时更改。iPhone 和 iPad 可以在设置里更换主屏幕图标。</p>
 
     <h2>怎样切换界面语言？</h2>
     <p>在“设置 → 语言”中选择，或选择跟随系统。Placr 支持简体中文、繁体中文（台湾/香港）、日语、英语、德语、西班牙语、法语、意大利语、葡萄牙语（巴西）和韩语，切换后需要重新启动。</p>
@@ -72,7 +77,7 @@
     data-title="技術支援 · Placr">
     <header>
       <h1>技術支援</h1>
-      <p class="updated">需要 macOS 15 或以上版本</p>
+      <p class="updated">需要 macOS 26、iOS 26 或 iPadOS 26</p>
     </header>
     <p class="lede">若遇到問題或有功能建議，請寄信至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
@@ -81,7 +86,7 @@
     <p>這時可以直接手動輸入座標：在地點搜尋面板下方展開「手動輸入座標」，填入緯度和經度（按 WGS-84 解釋，直接寫入照片）。請先核對地點所在的國家／地區，避免選到同名地點；座標可以從地圖應用或地圖網站的地點資訊裡複製。</p>
 
     <h2>如何撤銷照片權限？</h2>
-    <p>開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。撤銷權限不會刪除照片，也不會撤銷已寫入的位置。</p>
+    <p>在 Mac 上開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。在 iPhone 或 iPad 上開啟「設定 → Placr」，關閉照片存取。撤銷權限不會刪除照片，也不會還原已寫入的位置。</p>
 
     <h2>如何刪除 Placr 的本機資料？</h2>
     <p>先結束 Placr。在 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。</p>
@@ -96,8 +101,11 @@
     <h2>影片會補位置嗎？</h2>
     <p>會。從 1.0.2 起，沒有位置的相機影片和照片一起分組、一起寫入；有位置的影片也能當參考。螢幕錄製不會出現。舊版本掃描的分組需要點一次「重新分組」才會納入影片。</p>
 
+    <h2>iCloud 同步會上傳什麼？</h2>
+    <p>照片內容、縮圖和檔名不會離開裝置。開啟同步後，離開裝置的審閱事實只有照片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標和地名、寫入記錄。它們只寫入你自己的 iCloud 私有資料庫，開發者讀不到。在設定裡可以關閉同步，或使用「刪除 iCloud 中的 Placr 資料」清空雲端和本機的同步資料。這不會刪除照片，也不會還原已經寫入的位置。</p>
+
     <h2>為什麼 Finder 中的圖示沒有改變？</h2>
-    <p>macOS 只允許 App 在執行期間替換 Dock 與 App 切換器圖示；Finder 圖示由程式碼簽署固定，無法在執行期間更改。</p>
+    <p>macOS 只允許 App 在執行期間替換 Dock 與 App 切換器圖示；Finder 圖示由程式碼簽署固定，無法在執行期間更改。iPhone 和 iPad 可以在設定裡更換主畫面圖像。</p>
 
     <h2>如何切換介面語言？</h2>
     <p>在「設定 → 語言」中選擇，或選擇跟隨系統。Placr 支援簡體中文、繁體中文（台灣／香港）、日語、英語、德語、西班牙語、法語、義大利語、葡萄牙語（巴西）與韓語，切換後需要重新啟動。</p>
@@ -107,7 +115,7 @@
     data-title="技術支援 · Placr">
     <header>
       <h1>技術支援</h1>
-      <p class="updated">需要 macOS 15 或以上版本</p>
+      <p class="updated">需要 macOS 26、iOS 26 或 iPadOS 26</p>
     </header>
     <p class="lede">如遇到問題或有功能建議，請電郵至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
 
@@ -116,7 +124,7 @@
     <p>這時可以直接手動輸入座標：在地點搜尋面板下方展開「手動輸入座標」，填入緯度和經度（按 WGS-84 解釋，直接寫入照片）。請先核對地點所在的國家／地區，避免選到同名地點；座標可以從地圖應用或地圖網站的地點資訊裡複製。</p>
 
     <h2>如何撤銷相片權限？</h2>
-    <p>開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。撤銷權限不會刪除相片，亦不會撤銷已寫入的位置。</p>
+    <p>在 Mac 上開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。在 iPhone 或 iPad 上開啟「設定 → Placr」，關閉相片存取。撤銷權限不會刪除相片，亦不會還原已寫入的位置。</p>
 
     <h2>如何刪除 Placr 的本機資料？</h2>
     <p>先結束 Placr。在 Finder 選擇「前往 → 前往資料夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該資料夾移到垃圾桶。</p>
@@ -131,8 +139,11 @@
     <h2>影片會補位置嗎？</h2>
     <p>會。由 1.0.2 起，沒有位置的相機影片同相片一齊分組、一齊寫入；有位置的影片亦可以當參考。螢幕錄製不會出現。舊版本掃描的分組需要點一次「重新分組」先會納入影片。</p>
 
+    <h2>iCloud 同步會上傳什麼？</h2>
+    <p>相片內容、縮圖同檔名唔會離開裝置。開啟同步後，離開裝置的審閱事實只有相片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標同地名、寫入記錄。佢哋只寫入你自己嘅 iCloud 私有資料庫，開發者讀不到。喺設定可以關閉同步，或者用「刪除 iCloud 中的 Placr 資料」清空雲端同本機的同步資料。呢個唔會刪除相片，亦唔會還原已經寫入嘅位置。</p>
+
     <h2>為甚麼 Finder 中的圖示沒有改變？</h2>
-    <p>macOS 只容許應用程式在運作期間替換 Dock 及應用程式切換器圖示；Finder 圖示由程式碼簽署固定，無法在運作期間更改。</p>
+    <p>macOS 只容許應用程式在運作期間替換 Dock 及應用程式切換器圖示；Finder 圖示由程式碼簽署固定，無法在運作期間更改。iPhone 同 iPad 可以喺設定更換主畫面圖像。</p>
 
     <h2>如何切換介面語言？</h2>
     <p>在「設定 → 語言」選擇，或選擇跟隨系統。Placr 支援簡體中文、繁體中文（台灣／香港）、日語、英語、德語、西班牙語、法語、意大利語、葡萄牙語（巴西）及韓語，切換後需要重新啟動。</p>
@@ -142,7 +153,7 @@
     data-title="サポート · Placr">
     <header>
       <h1>サポート</h1>
-      <p class="updated">macOS 15 以降が必要です</p>
+      <p class="updated">macOS 26、iOS 26 または iPadOS 26 が必要です</p>
     </header>
     <p class="lede">不具合や機能のご要望は <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> までお送りください。</p>
 
@@ -151,7 +162,7 @@
     <p>その場合は座標を手動で入力できます。場所検索パネルの下の「座標を手動入力」を展開し、緯度と経度を入力してください（WGS-84 として解釈され、そのまま写真に書き込まれます）。同名の場所を選ばないよう、まず国・地域を確認してください。座標はマップアプリや地図サイトの場所情報からコピーできます。</p>
 
     <h2>写真へのアクセスを取り消す方法</h2>
-    <p>「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。権限を取り消しても写真は削除されず、すでに書き込んだ位置情報も元には戻りません。</p>
+    <p>Mac では「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。iPhone または iPad では「設定 → Placr」で写真へのアクセスをオフにします。権限を取り消しても写真は削除されず、すでに書き込んだ位置情報も元には戻りません。</p>
 
     <h2>Placr の端末内データを削除する方法</h2>
     <p>Placr を終了し、Finder の「移動 → フォルダへ移動」で <code>~/Library/Containers/cn.chenhk.placr</code> を開き、そのフォルダをゴミ箱へ移動します。</p>
@@ -166,8 +177,11 @@
     <h2>動画にも位置は付きますか？</h2>
     <p>付きます。1.0.2 から、位置情報のないカメラ動画も写真と一緒にグループ化して書き込めます。位置のある動画は参照にもなります。画面収録は対象外です。以前のバージョンでスキャンしたグループは、一度「再グループ化」すると動画が含まれます。</p>
 
+    <h2>iCloud 同期で送られるもの</h2>
+    <p>写真の内容、サムネイル、ファイル名は端末の外へ出ません。同期をオンにしたあと外へ出るレビュー事実は、写真の iCloud 識別子、後回しの印、書き込み待ちバッチの座標と地名、書き込み記録だけです。書き込み先はあなた自身の iCloud プライベートデータベースで、開発者は読めません。設定で同期をオフにでき、「iCloud 上の Placr データを削除」でクラウドと端末上の同期データを消せます。写真は消えず、すでに書き込んだ位置も元には戻りません。</p>
+
     <h2>Finder のアイコンが変わらない理由</h2>
-    <p>macOS では実行中に変更できるのは Dock とアプリ切り替え画面のアイコンだけです。Finder のアイコンはコード署名で固定されているため変更できません。</p>
+    <p>macOS では実行中に変更できるのは Dock とアプリ切り替え画面のアイコンだけです。Finder のアイコンはコード署名で固定されているため変更できません。iPhone と iPad では、設定からホーム画面のアイコンを切り替えられます。</p>
 
     <h2>表示言語の変更方法</h2>
     <p>「設定 → 言語」で選ぶか、システム設定に従うよう指定します。簡体字中国語、繁体字中国語（台湾・香港）、日本語、英語、ドイツ語、スペイン語、フランス語、イタリア語、ポルトガル語（ブラジル）、韓国語に対応しており、変更後は再起動が必要です。</p>
@@ -177,7 +191,7 @@
     data-title="Support · Placr">
     <header>
       <h1>Support</h1>
-      <p class="updated">Requires macOS 15 or later</p>
+      <p class="updated">Requires macOS 26, iOS 26, or iPadOS 26</p>
     </header>
     <p class="lede">For problems or feature requests, email <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -186,7 +200,7 @@
     <p>In that case, enter coordinates manually: expand “Enter coordinates manually” at the bottom of the place-search panel and type a latitude and longitude (interpreted as WGS-84 and written to the photos as-is). Check the place's country/region first to rule out same-name places; you can copy coordinates from the place details in a maps app or website.</p>
 
     <h2>Revoke Photos access</h2>
-    <p>Open System Settings → Privacy &amp; Security → Photos and turn off Placr. Revoking access does not delete photos or undo locations that have already been written.</p>
+    <p>On a Mac, open System Settings → Privacy &amp; Security → Photos and turn off Placr. On an iPhone or iPad, open Settings → Placr and turn off Photos access. Revoking access does not delete photos or undo locations that have already been written.</p>
 
     <h2>Delete Placr’s local data</h2>
     <p>Quit Placr. In Finder, choose Go → Go to Folder, enter <code>~/Library/Containers/cn.chenhk.placr</code>, and move that folder to the Trash.</p>
@@ -201,8 +215,11 @@
     <h2>Does Placr locate videos?</h2>
     <p>Yes. Starting with 1.0.2, camera videos without a location are grouped and written together with photos, and videos that have a location can serve as references. Screen recordings are left out. Groups scanned by an earlier version need one “Regroup” to include videos.</p>
 
+    <h2>What does iCloud sync upload?</h2>
+    <p>Photo content, thumbnails, and filenames never leave the device. After you turn sync on, the only review facts that leave are a photo’s iCloud identifier, skip marks, the coordinates and place names of batches waiting to be written, and write records. They are written only to your own iCloud private database. The developer cannot read them. You can turn sync off in Settings, or use “Delete Placr Data from iCloud” to clear the cloud copy and the local sync files. That does not delete photos or undo locations already written.</p>
+
     <h2>Why the Finder icon does not change</h2>
-    <p>macOS lets an app change only its Dock and app-switcher icon at runtime. The icon in Finder is fixed by the code signature and cannot be changed while the app runs.</p>
+    <p>macOS lets an app change only its Dock and app-switcher icon at runtime. The icon in Finder is fixed by the code signature and cannot be changed while the app runs. On iPhone and iPad, Settings can change the Home Screen icon.</p>
 
     <h2>Change the interface language</h2>
     <p>Choose a language under Settings → Language, or follow the system. Placr supports Simplified Chinese, Traditional Chinese for Taiwan and Hong Kong, Japanese, English, German, Spanish, French, Italian, Brazilian Portuguese, and Korean. Restart the app after changing it.</p>
@@ -212,7 +229,7 @@
     data-title="Support · Placr">
     <header>
       <h1>Support</h1>
-      <p class="updated">Erfordert macOS 15 oder neuer</p>
+      <p class="updated">Erfordert macOS 26, iOS 26 oder iPadOS 26</p>
     </header>
     <p class="lede">Bei Problemen oder Funktionswünschen schreib an <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -221,7 +238,7 @@
     <p>Gib in dem Fall Koordinaten manuell ein: Klappe unten im Ortssuchfeld „Koordinaten manuell eingeben“ aus und trage Breite und Länge ein (als WGS-84 gedeutet und unverändert in die Fotos geschrieben). Prüfe vorher Land/Region des Orts, um gleichnamige Orte auszuschließen; Koordinaten kannst du aus den Ortsdetails einer Karten-App oder Website kopieren.</p>
 
     <h2>Fotozugriff entziehen</h2>
-    <p>Öffne „Systemeinstellungen → Datenschutz &amp; Sicherheit → Fotos“ und schalte Placr aus. Das Entziehen des Zugriffs löscht keine Fotos und macht keine bereits geschriebenen Standorte rückgängig.</p>
+    <p>Öffne auf dem Mac „Systemeinstellungen → Datenschutz &amp; Sicherheit → Fotos“ und schalte Placr aus. Öffne auf iPhone oder iPad „Einstellungen → Placr“ und schalte den Fotozugriff aus. Das Entziehen des Zugriffs löscht keine Fotos und macht keine bereits geschriebenen Standorte rückgängig.</p>
 
     <h2>Placr's lokale Daten löschen</h2>
     <p>Beende Placr. Wähle im Finder „Gehe zu → Ordner öffnen“, gib <code>~/Library/Containers/cn.chenhk.placr</code> ein und lege den Ordner in den Papierkorb.</p>
@@ -236,8 +253,11 @@
     <h2>Werden Videos verortet?</h2>
     <p>Ja. Ab 1.0.2 werden Kameravideos ohne Standort zusammen mit Fotos gruppiert und geschrieben; Videos mit Standort können als Referenz dienen. Bildschirmaufnahmen bleiben außen vor. Gruppen aus einer früheren Version brauchen einmal „Neu gruppieren“, damit Videos dazukommen.</p>
 
+    <h2>Was lädt die iCloud-Synchronisierung hoch?</h2>
+    <p>Fotoinhalte, Miniaturbilder und Dateinamen verlassen das Gerät nicht. Nach dem Einschalten verlassen nur diese Prüfdaten das Gerät: die iCloud-Kennung eines Fotos, Zurückstellmarkierungen, Koordinaten und Ortsnamen von Stapeln, die noch geschrieben werden, sowie Schreibprotokolle. Sie landen nur in deiner privaten iCloud-Datenbank. Der Entwickler kann sie nicht lesen. In den Einstellungen kannst du die Synchronisierung ausschalten oder mit „Placr-Daten aus iCloud löschen“ die Cloud-Kopie und die lokalen Synchronisierungsdateien entfernen. Fotos werden dabei nicht gelöscht, und bereits geschriebene Standorte bleiben.</p>
+
     <h2>Warum das Finder-Symbol sich nicht ändert</h2>
-    <p>macOS erlaubt einer App zur Laufzeit nur Dock- und App-Umschalter-Symbol zu ändern. Das Symbol im Finder ist durch die Codesignatur festgelegt und lässt sich während der Laufzeit nicht ändern.</p>
+    <p>macOS erlaubt einer App zur Laufzeit nur Dock- und App-Umschalter-Symbol zu ändern. Das Symbol im Finder ist durch die Codesignatur festgelegt und lässt sich während der Laufzeit nicht ändern. Auf iPhone und iPad lässt sich das Symbol des Home-Bildschirms in den Einstellungen wechseln.</p>
 
     <h2>Oberflächensprache wechseln</h2>
     <p>Wähle eine Sprache unter „Einstellungen → Sprache“ oder „Wie System“. Placr unterstützt Vereinfachtes Chinesisch, Traditionelles Chinesisch (Taiwan und Hongkong), Japanisch, Englisch, Deutsch, Spanisch, Französisch, Italienisch, Brasilianisches Portugiesisch und Koreanisch. Nach dem Wechsel ist ein Neustart nötig.</p>
@@ -247,7 +267,7 @@
     data-title="Soporte · Placr">
     <header>
       <h1>Soporte</h1>
-      <p class="updated">Requiere macOS 15 o posterior</p>
+      <p class="updated">Requiere macOS 26, iOS 26 o iPadOS 26</p>
     </header>
     <p class="lede">Para problemas o sugerencias, escribe a <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -256,7 +276,7 @@
     <p>En ese caso, introduce las coordenadas manualmente: despliega «Introducir coordenadas manualmente» al pie del panel de búsqueda y escribe latitud y longitud (se interpretan como WGS-84 y se escriben tal cual en las fotos). Comprueba primero el país/región del lugar para descartar nombres duplicados; puedes copiar las coordenadas desde la información del lugar en una app o web de mapas.</p>
 
     <h2>Revocar el acceso a Fotos</h2>
-    <p>Abre Ajustes del Sistema → Privacidad y seguridad → Fotos y desactiva Placr. Revocar el acceso no borra fotos ni deshace ubicaciones ya escritas.</p>
+    <p>En un Mac, abre Ajustes del Sistema → Privacidad y seguridad → Fotos y desactiva Placr. En un iPhone o iPad, abre Ajustes → Placr y desactiva el acceso a Fotos. Revocar el acceso no borra fotos ni deshace ubicaciones ya escritas.</p>
 
     <h2>Borrar los datos locales de Placr</h2>
     <p>Sal de Placr. En el Finder, elige Ir → Ir a la carpeta, escribe <code>~/Library/Containers/cn.chenhk.placr</code> y mueve esa carpeta a la Papelera.</p>
@@ -271,8 +291,11 @@
     <h2>¿Placr ubica vídeos?</h2>
     <p>Sí. Desde la versión 1.0.2, los vídeos de cámara sin ubicación se agrupan y se escriben junto con las fotos, y los que ya tienen ubicación pueden servir de referencia. Las grabaciones de pantalla no aparecen. Los grupos escaneados con una versión anterior necesitan un «Reagrupar» para incluir los vídeos.</p>
 
+    <h2>¿Qué sube la sincronización de iCloud?</h2>
+    <p>El contenido de las fotos, las miniaturas y los nombres de archivo no salen del dispositivo. Tras activarla, los únicos datos de revisión que salen son el identificador de iCloud de una foto, las marcas de dejar para después, las coordenadas y los nombres de lugar de los lotes pendientes, y los registros de escritura. Se escriben solo en tu base privada de iCloud. El desarrollador no puede leerlos. En Ajustes puedes desactivar la sincronización o usar «Eliminar los datos de Placr de iCloud» para borrar la copia en la nube y los archivos locales de sincronización. Eso no borra fotos ni deshace ubicaciones ya escritas.</p>
+
     <h2>Por qué el icono del Finder no cambia</h2>
-    <p>macOS solo permite a una app cambiar en ejecución su icono del Dock y del cambiador de apps. El icono del Finder lo fija la firma de código y no se puede cambiar mientras la app se ejecuta.</p>
+    <p>macOS solo permite a una app cambiar en ejecución su icono del Dock y del cambiador de apps. El icono del Finder lo fija la firma de código y no se puede cambiar mientras la app se ejecuta. En iPhone y iPad, Ajustes puede cambiar el icono de la pantalla de inicio.</p>
 
     <h2>Cambiar el idioma de la interfaz</h2>
     <p>Elige un idioma en Ajustes → Idioma, o sigue el sistema. Placr admite chino simplificado, chino tradicional para Taiwán y Hong Kong, japonés, inglés, alemán, español, francés, italiano, portugués de Brasil y coreano. Reinicia la app tras cambiarlo.</p>
@@ -282,7 +305,7 @@
     data-title="Assistance · Placr">
     <header>
       <h1>Assistance</h1>
-      <p class="updated">Nécessite macOS 15 ou ultérieur</p>
+      <p class="updated">Nécessite macOS 26, iOS 26 ou iPadOS 26</p>
     </header>
     <p class="lede">Pour un problème ou une suggestion, écrivez à <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -291,7 +314,7 @@
     <p>Dans ce cas, saisissez les coordonnées manuellement : dépliez « Saisir des coordonnées manuellement » en bas du panneau de recherche et entrez latitude et longitude (interprétées en WGS-84 et écrites telles quelles dans les photos). Vérifiez d’abord le pays/la région du lieu pour écarter les homonymes ; vous pouvez copier les coordonnées depuis les détails du lieu dans une app ou un site de cartes.</p>
 
     <h2>Révoquer l'accès aux photos</h2>
-    <p>Ouvrez Réglages Système → Confidentialité et sécurité → Photos, puis désactivez Placr. Révoquer l'accès ne supprime pas les photos et n'annule pas les lieux déjà écrits.</p>
+    <p>Sur un Mac, ouvrez Réglages Système → Confidentialité et sécurité → Photos, puis désactivez Placr. Sur un iPhone ou un iPad, ouvrez Réglages → Placr et désactivez l'accès aux photos. Révoquer l'accès ne supprime pas les photos et n'annule pas les lieux déjà écrits.</p>
 
     <h2>Supprimer les données locales de Placr</h2>
     <p>Quittez Placr. Dans le Finder, choisissez Aller → Aller au dossier, saisissez <code>~/Library/Containers/cn.chenhk.placr</code> et placez ce dossier à la Corbeille.</p>
@@ -306,8 +329,11 @@
     <h2>Placr localise-t-il les vidéos ?</h2>
     <p>Oui. Depuis la version 1.0.2, les vidéos d’appareil photo sans lieu sont regroupées et écrites avec les photos, et celles qui ont un lieu peuvent servir de référence. Les enregistrements d’écran n’apparaissent pas. Les groupes analysés par une version antérieure demandent un « Regrouper » pour inclure les vidéos.</p>
 
+    <h2>Que téléverse la synchronisation iCloud ?</h2>
+    <p>Le contenu des photos, les vignettes et les noms de fichier ne quittent pas l'appareil. Une fois la synchronisation activée, les seuls faits de révision qui sortent sont l'identifiant iCloud d'une photo, les marques « plus tard », les coordonnées et noms de lieu des lots en attente, et les enregistrements d'écriture. Ils ne sont écrits que dans votre base privée iCloud. Le développeur ne peut pas les lire. Dans Réglages, vous pouvez désactiver la synchronisation ou utiliser « Supprimer les données Placr d’iCloud » pour effacer la copie dans le nuage et les fichiers locaux de synchronisation. Cela n'efface pas les photos et n'annule pas les lieux déjà écrits.</p>
+
     <h2>Pourquoi l'icône du Finder ne change pas</h2>
-    <p>macOS ne permet à une app de changer, à l'exécution, que son icône du Dock et du sélecteur d'applications. L'icône du Finder est fixée par la signature du code et ne peut pas changer pendant l'exécution.</p>
+    <p>macOS ne permet à une app de changer, à l'exécution, que son icône du Dock et du sélecteur d'applications. L'icône du Finder est fixée par la signature du code et ne peut pas changer pendant l'exécution. Sur iPhone et iPad, Réglages permet de changer l'icône de l'écran d'accueil.</p>
 
     <h2>Changer la langue de l'interface</h2>
     <p>Choisissez une langue dans Réglages → Langue, ou suivez le système. Placr prend en charge le chinois simplifié, le chinois traditionnel pour Taïwan et Hong Kong, le japonais, l'anglais, l'allemand, l'espagnol, le français, l'italien, le portugais du Brésil et le coréen. Redémarrez l'app après le changement.</p>
@@ -317,7 +343,7 @@
     data-title="Supporto · Placr">
     <header>
       <h1>Supporto</h1>
-      <p class="updated">Richiede macOS 15 o successivo</p>
+      <p class="updated">Richiede macOS 26, iOS 26 o iPadOS 26</p>
     </header>
     <p class="lede">Per problemi o suggerimenti scrivi a <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -326,7 +352,7 @@
     <p>In tal caso inserisci le coordinate manualmente: apri «Inserisci coordinate manualmente» in fondo al pannello di ricerca e digita latitudine e longitudine (interpretate come WGS-84 e scritte così com’è nelle foto). Controlla prima il paese/regione del luogo per escludere omonimi; puoi copiare le coordinate dai dettagli del luogo in un’app o sito di mappe.</p>
 
     <h2>Revocare l'accesso alle foto</h2>
-    <p>Apri Impostazioni di Sistema → Privacy e sicurezza → Foto e disattiva Placr. Revocare l'accesso non elimina foto e non annulla i luoghi già scritti.</p>
+    <p>Su un Mac, apri Impostazioni di Sistema → Privacy e sicurezza → Foto e disattiva Placr. Su iPhone o iPad, apri Impostazioni → Placr e disattiva l'accesso alle foto. Revocare l'accesso non elimina foto e non annulla i luoghi già scritti.</p>
 
     <h2>Eliminare i dati locali di Placr</h2>
     <p>Chiudi Placr. Nel Finder scegli Vai → Vai alla cartella, digita <code>~/Library/Containers/cn.chenhk.placr</code> e sposta la cartella nel Cestino.</p>
@@ -341,8 +367,11 @@
     <h2>Placr localizza i video?</h2>
     <p>Sì. Dalla versione 1.0.2 i video della fotocamera senza luogo vengono raggruppati e scritti insieme alle foto, e i video con un luogo possono fare da riferimento. Le registrazioni dello schermo restano escluse. I gruppi creati da una versione precedente richiedono un “Raggruppa” per includere i video.</p>
 
+    <h2>Che cosa carica la sincronizzazione iCloud?</h2>
+    <p>Contenuto delle foto, miniature e nomi dei file non lasciano il dispositivo. Dopo l'attivazione, i soli fatti di revisione che escono sono l'identificatore iCloud di una foto, i contrassegni di rinvio, le coordinate e i nomi dei luoghi dei lotti in attesa e le registrazioni di scrittura. Vengono scritti solo nel tuo database privato di iCloud. Lo sviluppatore non può leggerli. In Impostazioni puoi disattivare la sincronizzazione oppure usare «Elimina i dati di Placr da iCloud» per cancellare la copia nel cloud e i file locali di sincronizzazione. Questo non cancella le foto e non annulla i luoghi già scritti.</p>
+
     <h2>Perché l'icona nel Finder non cambia</h2>
-    <p>macOS consente a una app di cambiare a runtime solo l'icona nel Dock e nel selettore delle app. L'icona nel Finder è fissata dalla firma del codice e non può cambiare mentre l'app è in esecuzione.</p>
+    <p>macOS consente a una app di cambiare a runtime solo l'icona nel Dock e nel selettore delle app. L'icona nel Finder è fissata dalla firma del codice e non può cambiare mentre l'app è in esecuzione. Su iPhone e iPad, Impostazioni può cambiare l'icona della schermata Home.</p>
 
     <h2>Cambiare la lingua dell'interfaccia</h2>
     <p>Scegli una lingua in Impostazioni → Lingua, oppure segui il sistema. Placr supporta cinese semplificato, cinese tradizionale per Taiwan e Hong Kong, giapponese, inglese, tedesco, spagnolo, francese, italiano, portoghese brasiliano e coreano. Riavvia l'app dopo la modifica.</p>
@@ -352,7 +381,7 @@
     data-title="Suporte · Placr">
     <header>
       <h1>Suporte</h1>
-      <p class="updated">Requer macOS 15 ou posterior</p>
+      <p class="updated">Requer macOS 26, iOS 26 ou iPadOS 26</p>
     </header>
     <p class="lede">Para problemas ou sugestões, escreva para <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
 
@@ -361,7 +390,7 @@
     <p>Nesse caso, insira as coordenadas manualmente: expanda “Informar coordenadas manualmente” na parte de baixo do painel de busca e digite latitude e longitude (interpretadas como WGS-84 e gravadas nas fotos como estão). Confira primeiro o país/região do lugar para evitar homônimos; você pode copiar as coordenadas dos detalhes do lugar em um app ou site de mapas.</p>
 
     <h2>Revogar o acesso às fotos</h2>
-    <p>Abra Ajustes do Sistema → Privacidade e Segurança → Fotos e desative o Placr. Revogar o acesso não apaga fotos nem desfaz locais que já foram gravados.</p>
+    <p>No Mac, abra Ajustes do Sistema → Privacidade e Segurança → Fotos e desative o Placr. No iPhone ou iPad, abra Ajustes → Placr e desative o acesso às Fotos. Revogar o acesso não apaga fotos nem desfaz locais que já foram gravados.</p>
 
     <h2>Apagar os dados locais do Placr</h2>
     <p>Saia do Placr. No Finder, escolha Ir → Ir para a Pasta, digite <code>~/Library/Containers/cn.chenhk.placr</code> e mova a pasta para o Lixo.</p>
@@ -376,8 +405,11 @@
     <h2>O Placr localiza vídeos?</h2>
     <p>Sim. A partir da versão 1.0.2, vídeos da câmera sem local são agrupados e gravados junto com as fotos, e os que já têm local podem servir de referência. Gravações de tela não aparecem. Grupos criados por uma versão anterior precisam de um “Reagrupar” para incluir os vídeos.</p>
 
+    <h2>O que a sincronização do iCloud envia?</h2>
+    <p>O conteúdo das fotos, as miniaturas e os nomes de arquivo não saem do aparelho. Depois de ligar, os únicos fatos da revisão que saem são o identificador do iCloud de uma foto, as marcas de deixar para depois, as coordenadas e os nomes de lugar dos lotes aguardando gravação e os registros de gravação. Eles são gravados somente no seu banco privado do iCloud. O desenvolvedor não consegue lê-los. Nos Ajustes você pode desligar a sincronização ou usar “Apagar os dados do Placr do iCloud” para limpar a cópia na nuvem e os arquivos locais de sincronização. Isso não apaga fotos nem desfaz locais já gravados.</p>
+
     <h2>Por que o ícone no Finder não muda</h2>
-    <p>O macOS permite que um app troque em execução apenas o ícone do Dock e do seletor de apps. O ícone no Finder é fixado pela assinatura de código e não pode mudar enquanto o app roda.</p>
+    <p>O macOS permite que um app troque em execução apenas o ícone do Dock e do seletor de apps. O ícone no Finder é fixado pela assinatura de código e não pode mudar enquanto o app roda. No iPhone e no iPad, os Ajustes podem trocar o ícone da Tela de Início.</p>
 
     <h2>Mudar o idioma da interface</h2>
     <p>Escolha um idioma em Ajustes → Idioma, ou siga o sistema. O Placr tem suporte a chinês simplificado, chinês tradicional para Taiwan e Hong Kong, japonês, inglês, alemão, espanhol, francês, italiano, português do Brasil e coreano. Reinicie o app depois de mudar.</p>
@@ -387,7 +419,7 @@
     data-title="지원 · Placr">
     <header>
       <h1>지원</h1>
-      <p class="updated">macOS 15 이상 필요</p>
+      <p class="updated">macOS 26, iOS 26 또는 iPadOS 26 필요</p>
     </header>
     <p class="lede">문제나 기능 제안은 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>으로 보내 주세요.</p>
 
@@ -396,7 +428,7 @@
     <p>이런 경우 좌표를 직접 입력할 수 있습니다. 장소 검색 패널 아래의 ‘좌표 직접 입력’을 펼쳐 위도와 경도를 입력하세요(WGS-84로 해석되어 사진에 그대로 기록됩니다). 같은 이름의 장소를 고르지 않도록 먼저 국가/지역을 확인하세요. 좌표는 지도 앱이나 지도 사이트의 장소 정보에서 복사할 수 있습니다.</p>
 
     <h2>사진 접근 권한 철회하기</h2>
-    <p>'시스템 설정 → 개인정보 보호 및 보안 → 사진'에서 Placr을 끕니다. 권한을 철회해도 사진이 삭제되지 않고 이미 기록된 위치가 되돌려지지도 않습니다.</p>
+    <p>Mac에서는 '시스템 설정 → 개인정보 보호 및 보안 → 사진'에서 Placr를 끕니다. iPhone 또는 iPad에서는 '설정 → Placr'에서 사진 접근을 끕니다. 권한을 철회해도 사진이 삭제되지 않고 이미 기록된 위치가 되돌려지지도 않습니다.</p>
 
     <h2>Placr 로컬 데이터 삭제하기</h2>
     <p>Placr을 종료한 뒤 Finder에서 '이동 → 폴더로 이동'을 골라 <code>~/Library/Containers/cn.chenhk.placr</code>를 입력하고 그 폴더를 휴지통으로 옮깁니다.</p>
@@ -411,8 +443,11 @@
     <h2>동영상에도 위치를 넣나요?</h2>
     <p>넣습니다. 1.0.2부터 위치가 없는 카메라 동영상도 사진과 함께 묶고 기록합니다. 위치가 있는 동영상은 참고로 쓸 수 있습니다. 화면 녹화는 나오지 않습니다. 이전 버전에서 스캔한 그룹은 ‘다시 나누기’를 한 번 해야 동영상이 포함됩니다.</p>
 
+    <h2>iCloud 동기화는 무엇을 올리나요?</h2>
+    <p>사진 내용, 썸네일, 파일 이름은 기기 밖으로 나가지 않습니다. 동기화를 켠 뒤 나가는 검토 사실은 사진의 iCloud 식별자, 나중에 처리 표시, 쓰기 대기 배치의 좌표와 지명, 쓰기 기록뿐입니다. 기록 위치는 사용자 자신의 iCloud 비공개 데이터베이스이며 개발자는 읽을 수 없습니다. 설정에서 동기화를 끄거나 ‘iCloud에서 Placr 데이터 삭제’로 클라우드와 기기의 동기화 데이터를 지울 수 있습니다. 사진을 지우거나 이미 기록된 위치를 되돌리지는 않습니다.</p>
+
     <h2>Finder 아이콘이 바뀌지 않는 이유</h2>
-    <p>macOS는 앱이 실행 중에 바꿀 수 있는 아이콘을 Dock과 앱 전환기로 제한합니다. Finder 아이콘은 코드 서명으로 고정되어 실행 중에는 바꿀 수 없습니다.</p>
+    <p>macOS는 앱이 실행 중에 바꿀 수 있는 아이콘을 Dock과 앱 전환기로 제한합니다. Finder 아이콘은 코드 서명으로 고정되어 실행 중에는 바꿀 수 없습니다. iPhone과 iPad에서는 설정에서 홈 화면 아이콘을 바꿀 수 있습니다.</p>
 
     <h2>인터페이스 언어 바꾸기</h2>
     <p>'설정 → 언어'에서 고르거나 시스템을 따르도록 하세요. Placr는 간체 중국어, 번체 중국어(대만·홍콩), 일본어, 영어, 독일어, 스페인어, 프랑스어, 이탈리아어, 브라질 포르투갈어, 한국어를 지원합니다. 변경 후에는 재시작이 필요합니다.</p>

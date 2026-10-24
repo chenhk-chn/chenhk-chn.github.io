@@ -1,0 +1,1247 @@
+/* Placr 官网 · Apple 浅色产品页设计语言（结构沿用 Pickr v3 架构，画布改为纯白）
+   - 前后双色对比标题（主色 #1d1d1f + 强调蓝 #0066cc / 柔和次色 #6e6e73）
+   - 纯白画布 + #f5f5f7 卡片与发丝线，无背景光晕层
+   - 4 种差异化设备构图：双端全景、Bento 底部破框半身 iPhone、单台完整竖屏 iPhone、镜像双端 */
+
+:root {
+  --bg: #ffffff;
+  --bg-tinted: #f5f5f7;
+  --card: #f5f5f7;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --accent: #0066cc;
+  --accent-bright: #0071e3;
+  --accent-hover: #0077ed;
+  --nav-cta-ink: #ffffff;
+  --green: #30d158;
+  --border: rgba(0, 0, 0, 0.08);
+  --pill-bg: rgba(0, 0, 0, 0.05);
+  --pill-hover: rgba(0, 0, 0, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --store-btn-bg: #0071e3;
+  --store-btn-ink: #ffffff;
+  --store-btn-hover: #0077ed;
+  --format-after-bg: rgba(0, 113, 227, 0.12);
+
+  --margin: clamp(20px, 4.5vw, 64px);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "PingFang SC", "PingFang TC", "Hiragino Sans", "Apple SD Gothic Neo",
+          "Helvetica Neue", sans-serif;
+
+  --radius-pill: 980px;
+  --radius-card: 28px;
+  --radius-sub: 20px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  position: relative;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.58;
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+picture { display: block; width: 100%; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
+
+.inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+/* ---------- 前后双色文字层次 ---------- */
+.tone-first {
+  color: var(--ink);
+}
+
+.tone-accent {
+  color: var(--accent);
+}
+
+.tone-muted {
+  color: var(--muted);
+}
+
+.title-line {
+  display: block;
+}
+
+/* ---------- 顶部毛玻璃吸顶导航 ---------- */
+.global-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 54px;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.brand-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.nav-item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0.82;
+  white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.18s ease, color 0.18s ease;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-pill {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0 28px 0 14px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+/* Paint only 34px; the native select and link retain their full 44px hit area. */
+.lang-pill::before,
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 5px 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: var(--radius-pill);
+  transition: background-color 0.18s ease;
+}
+.lang-pill::before {
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+}
+.lang-pill:hover::before { background: var(--pill-hover); }
+
+
+.lang-pill::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: translateY(-65%) rotate(45deg);
+  pointer-events: none;
+}
+
+.nav-cta {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 15px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--nav-cta-ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+.nav-cta::before { background: var(--accent-bright); }
+.nav-cta:hover::before { background: var(--accent-hover); }
+.nav-cta:active { transform: scale(0.96); }
+
+/* ---------- 胶囊形按钮（等宽设计确保双按钮中缝严格对齐中轴线） ---------- */
+.btn-store,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  min-width: 212px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.btn-store {
+  background: var(--store-btn-bg);
+  color: var(--store-btn-ink);
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 113, 227, 0.24);
+}
+
+.btn-store:hover {
+  background: var(--store-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 113, 227, 0.3);
+}
+
+.btn-store:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* ---------- 首屏 Hero（严格中轴线对称 + 前后双色无标点标题） ---------- */
+.hero {
+  position: relative;
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(48px, 6vw, 84px);
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 820px;
+}
+
+.hero-app-badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hero-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4.6vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hero-line {
+  display: block;
+}
+
+.hero-lead {
+  font-size: clamp(1.0625rem, 1.35vw, 1.21875rem);
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 54ch;
+  margin-bottom: 28px;
+  text-wrap: balance;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.hero-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.hero-showcase {
+  margin-top: clamp(24px, 3.5vw, 40px);
+  display: flex;
+  justify-content: center;
+}
+
+.hero-device-figure {
+  width: 100%;
+  max-width: 960px;
+}
+
+.device-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  margin-inline: auto;
+}
+
+/* ---------- 章节通用结构（纯白画布，无光晕层） ---------- */
+.sec {
+  position: relative;
+  padding-block: clamp(64px, 8vw, 112px);
+}
+
+.sec-tinted {
+  background: transparent;
+}
+
+.sec-head-wrap {
+  max-width: 780px;
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+
+.sec-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.sec-title {
+  font-size: clamp(1.8rem, 3.1vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  color: var(--ink);
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+
+.sec-lead {
+  font-size: clamp(1.03125rem, 1.25vw, 1.15625rem);
+  color: var(--muted);
+  line-height: 1.58;
+  text-wrap: pretty;
+}
+
+/* ---------- 章节一：Bento 破框半身 iPhone 特写双卡 ---------- */
+.bento-crop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.bento-crop-card {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 36px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.bento-crop-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bento-crop-copy h3 {
+  font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -0.018em;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bento-crop-copy p {
+  font-size: 0.96875rem;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.bento-crop-bleed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.bento-crop-bleed img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+}
+
+.steps-pills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px var(--glass-border);
+}
+
+.step-card h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.step-card p {
+  font-size: 0.96875rem;
+  color: var(--muted);
+}
+
+/* ---------- 章节二：左单台 iPhone 竖屏 + 右确认/记录交互开关卡 ---------- */
+.compression-split-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.single-phone-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-phone-showcase img {
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+}
+
+.compression-right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.sample-card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* The demo label stays constant so toggling cannot reflow this toolbar. */
+.compare-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.compare-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.compare-format-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.compare-card.is-after .compare-format-tag {
+  background: var(--format-after-bg);
+  color: var(--accent);
+}
+
+.heic-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.switch-mode-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.18s ease;
+}
+
+.switch-mode-label.active {
+  color: var(--ink);
+}
+
+.ios-switch {
+  position: relative;
+  width: 48px;
+  flex-shrink: 0;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  padding: 10px 2px;
+  transition: background-color 0.22s ease;
+}
+
+.ios-switch::before {
+  content: "";
+  position: absolute;
+  inset: 8px 0;
+  border-radius: var(--radius-pill);
+  background: #d1d1d6;
+}
+.ios-switch[aria-checked="true"]::before { background: var(--green); }
+
+.ios-switch-thumb {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ios-switch[aria-checked="true"] .ios-switch-thumb {
+  position: relative;
+  transform: translateX(20px);
+}
+
+.compare-stage {
+  position: relative;
+  border-radius: var(--radius-sub);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-tinted);
+}
+
+.compare-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sub);
+}
+
+.sample-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.28;
+  margin-bottom: 6px;
+}
+
+.sample-card h3 span {
+  display: block;
+}
+
+.sample-card p {
+  font-size: 0.96875rem;
+  color: var(--muted);
+}
+
+.metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metric-pill {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+/* ---------- 章节三：镜像双端构图 + 底部破框半身 iPhone 同步特写卡 ---------- */
+.albums-diverse-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.albums-hero-block {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.albums-visual-wrap {
+  max-width: 980px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.albums-copy-bar {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(24px, 3.2vw, 36px);
+}
+
+.albums-copy-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.albums-copy-text h3 {
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.24;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.albums-copy-text p {
+  font-size: 0.96875rem;
+  color: var(--muted);
+}
+
+.tag-pill {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--glass-border);
+}
+
+.mini-thumbs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.mini-thumbs img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* 同步与多端：左文 + 右侧底部探出上半截 iPhone 特写 */
+.offline-bento-banner {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 3.8vw, 44px) clamp(24px, 3.8vw, 44px) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.offline-bento-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: clamp(28px, 3.8vw, 44px);
+}
+
+.offline-bento-copy h3 {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.offline-bento-copy p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.offline-bento-bleed {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+}
+
+.offline-bento-bleed img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+}
+
+/* ---------- 章节四：免费与解锁 ---------- */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tier-card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 3.6vw, 42px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tier-card.tier-pro {
+  background: linear-gradient(155deg, rgba(0, 113, 227, 0.08) 0%, rgba(0, 113, 227, 0.02) 100%);
+  border: 1px solid rgba(0, 113, 227, 0.28);
+  color: var(--ink);
+}
+
+.tier-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tier-badge {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.tier-badge.pro {
+  background: var(--accent-bright);
+  color: var(--nav-cta-ink);
+}
+
+.tier-header h3 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tier-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tier-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tier-list strong {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.tier-list span {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.privacy-pill-banner {
+  margin-top: 24px;
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- 章节五：常见问题 ---------- */
+.faq-bento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.faq-card {
+  background: var(--bg-tinted);
+  border-radius: var(--radius-card);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.faq-card p {
+  font-size: 0.96875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.faq-card a {
+  font-weight: 600;
+}
+
+/* ---------- 章节六：更多独立作品与友情链接 ---------- */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.app-link-card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+}
+
+.app-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.app-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.app-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.app-link-card:hover .app-card-arrow {
+  background: var(--accent-bright);
+  color: var(--nav-cta-ink);
+}
+
+.app-card-body h3 {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+
+.app-card-tagline {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.app-card-meta {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---------- 章节七：底部 App Store 下载收尾 ---------- */
+.sec-cta {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+.cta-banner {
+  background: var(--bg-tinted);
+  border-radius: 32px;
+  padding: clamp(44px, 6vw, 76px) clamp(24px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.cta-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 17px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  margin-bottom: 4px;
+}
+
+.cta-title {
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.024em;
+}
+
+.cta-sub {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  max-width: 48ch;
+  margin-bottom: 8px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 36px 48px;
+  background: var(--bg-tinted);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.footer-brand {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.footer-nav a {
+  color: var(--muted);
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--ink);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  color: var(--muted);
+}
+
+/* ---------- 入场动效 ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0s);
+}
+.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .device-img, .btn-store, .btn-secondary, .app-link-card { transition: none; }
+}
+
+/* ---------- 平板适配（≤960px） ---------- */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .bento-crop-grid,
+  .steps-pills-grid,
+  .compression-split-layout,
+  .albums-copy-bar,
+  .offline-bento-banner,
+  .tier-grid,
+  .faq-bento {
+    grid-template-columns: 1fr;
+  }
+  .offline-bento-copy {
+    padding-bottom: 0;
+  }
+  .apps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 移动端单 iPhone 展示尺寸控制（≤768px） ---------- */
+@media (max-width: 768px) {
+  .hero-device-figure,
+  .albums-visual-wrap {
+    max-width: 330px;
+    margin-inline: auto;
+  }
+  .single-phone-showcase img {
+    max-width: 310px;
+  }
+}
+
+/* ---------- 手机端适配（≤640px） ---------- */
+@media (max-width: 640px) {
+  :root {
+    --margin: 20px;
+    --radius-card: 24px;
+  }
+
+  .hero { padding-top: 32px; padding-bottom: 44px; }
+  .hero-icon { width: 40px; height: 40px; border-radius: 10px; }
+  .hero-title { font-size: clamp(1.95rem, 8vw, 2.4rem); }
+  .hero-cta-group { width: 100%; flex-direction: column; align-items: stretch; }
+  .hero-cta-group .btn-store,
+  .hero-cta-group .btn-secondary { width: 100%; min-width: 0; }
+
+  .sec { padding-block: 52px; }
+  .bento-crop-card { padding: 24px 20px 0; }
+  .offline-bento-banner { padding: 24px 20px 0; }
+  .step-card,
+  .sample-card,
+  .albums-copy-bar,
+  .tier-card,
+  .faq-card,
+  .app-link-card {
+    padding: 22px 20px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-pill-banner {
+    border-radius: 20px;
+    padding: 14px 18px;
+  }
+
+  .cta-banner {
+    border-radius: 26px;
+    padding: 36px 20px;
+  }
+  .cta-buttons { width: 100%; flex-direction: column; align-items: stretch; }
+  .cta-buttons .btn-store,
+  .cta-buttons .btn-secondary { width: 100%; min-width: 0; }
+}
+
+/* Keep the product CTA ahead of the compact collection of other apps. */
+.more-apps-compact { padding-block: 40px; }
+.more-apps-compact .sec-head-wrap { margin-bottom: 24px; }
+.more-apps-compact .sec-title { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+.more-apps-compact .app-link-card { padding: 20px; }
+section[id] { scroll-margin-top: 70px; }
+.switch-mode-label { cursor: default; }
+@media (max-width: 640px) {
+  .hero-lead { margin-bottom: 20px; }
+  .hero-cta-group { gap: 6px; }
+  .hero-cta-group .btn-secondary { background: none; border-color: transparent; box-shadow: none; }
+  .hero-showcase { margin-top: 24px; }
+  .more-apps-compact .app-card-tagline { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .global-nav { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  :root { --muted: #3a3a3c; --glass-border: #86868b; --border: #86868b; --nav-bg: #ffffff; }
+}
+
+@media (max-width: 360px) {
+  .nav-bar { gap: 8px; }
+  .brand { flex-shrink: 0; gap: 6px; }
+  .nav-actions { gap: 6px; }
+  .lang-select { width: 86px; padding-left: 10px; }
+  .nav-cta { padding-inline: 12px; }
+}

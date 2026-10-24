@@ -54,11 +54,24 @@
     }
   }
 
-  let activeLanguage = hashLanguage() || browserLanguage();
+  // 首页与下载页用 ?lang= 传界面语言；hash 是早期链接形式，保留兼容。
+  // hash 优先：用户在本页切换过语言后刷新，仍尊重自己的选择。
+  function queryLanguage() {
+    try {
+      return normalizeLanguage(
+        new URLSearchParams(window.location.search).get("lang")
+      );
+    } catch {
+      return null;
+    }
+  }
+
+  let activeLanguage =
+    hashLanguage() || queryLanguage() || browserLanguage();
 
   function localizedTarget(link, language) {
     const base = link.dataset.localizedLink;
-    return `${base}#${encodeURIComponent(language)}`;
+    return `${base}?lang=${encodeURIComponent(language)}`;
   }
 
   function showLanguage(language, updateHash = false) {
@@ -84,7 +97,10 @@
     });
 
     if (updateHash) {
-      history.replaceState(null, "", `#${encodeURIComponent(activeLanguage)}`);
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", activeLanguage);
+      url.hash = "";
+      history.replaceState(null, "", url.pathname + url.search);
     }
   }
 

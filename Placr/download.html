@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-itunes-app" content="app-id=6799345303">
+<title>在 App Store 查看 Placr</title>
+<meta name="description" content="前往你所在国家或地区的 App Store 查看 Placr（适用于 Mac、iPhone 与 iPad）。">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon-rounded.svg?v=20261022">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --card: #f5f5f7;
+    --pill: rgba(0, 0, 0, 0.05);
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --accent: #0066cc;
+    --accent-strong: #0071e3;
+    --border: rgba(0, 0, 0, 0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "PingFang SC", "PingFang TC", "Hiragino Sans", "Apple SD Gothic Neo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 460px;
+    background: var(--card);
+    border-radius: 28px;
+    padding: 40px 32px 32px;
+    text-align: center;
+  }
+  .icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .status {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 50px;
+    padding: 0 24px;
+    border-radius: 980px;
+    background: var(--accent-strong);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 113, 227, 0.24);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+  .btn:hover { background: #0077ed; }
+  .btn:active { transform: scale(0.97); }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .regions-label {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .regions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .region-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 980px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .region-pill:hover,
+  .region-pill.active {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: #fff;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 24px;
+    padding-block: 10px;
+    min-height: 44px;
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .back:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <main class="card">
+    <img class="icon" src="assets/icon-256.png" width="76" height="76" alt="Placr">
+    <h1 id="title">查看 Placr</h1>
+    <p class="status" id="status">点按按钮前往 App Store，或选择其他地区商店</p>
+
+    <a class="btn" id="primary-btn" href="https://apps.apple.com/app/id6799345303">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+      </svg>
+      <span id="btn-text">前往 App Store 查看</span>
+    </a>
+
+    <p class="regions-label" id="regions-label">或选择其他地区商店：</p>
+    <div class="regions" id="regions">
+      <a class="region-pill" data-store="cn" href="https://apps.apple.com/cn/app/placr/id6799345303">中国大陆</a>
+      <a class="region-pill" data-store="hk" href="https://apps.apple.com/hk/app/placr/id6799345303">中國香港</a>
+      <a class="region-pill" data-store="tw" href="https://apps.apple.com/tw/app/placr/id6799345303">台灣</a>
+      <a class="region-pill" data-store="us" href="https://apps.apple.com/us/app/placr-photo-geotagging/id6799345303">United States</a>
+      <a class="region-pill" data-store="jp" href="https://apps.apple.com/jp/app/placr/id6799345303">日本</a>
+      <a class="region-pill" data-store="kr" href="https://apps.apple.com/kr/app/placr/id6799345303">대한민국</a>
+      <a class="region-pill" data-store="de" href="https://apps.apple.com/de/app/placr/id6799345303">Deutschland</a>
+      <a class="region-pill" data-store="fr" href="https://apps.apple.com/fr/app/placr/id6799345303">France</a>
+      <a class="region-pill" data-store="es" href="https://apps.apple.com/es/app/placr/id6799345303">España</a>
+      <a class="region-pill" data-store="it" href="https://apps.apple.com/it/app/placr/id6799345303">Italia</a>
+      <a class="region-pill" data-store="br" href="https://apps.apple.com/br/app/placr/id6799345303">Brasil</a>
+    </div>
+
+    <a class="back" id="back-link" href="index.html">← 返回 Placr 官网</a>
+  </main>
+
+  <script src="assets/site-routing.js?v=20261022"></script>
+  <script>
+  (function () {
+    var UI_COPY = {
+      "zh-Hans": {
+        title: "查看 Placr",
+        status: "适用于 Mac、iPhone 与 iPad · 点按下方按钮前往 App Store",
+        btn: "前往 App Store 查看",
+        other: "切换其他国家或地区商店：",
+        back: "← 返回 Placr 官网"
+      },
+      "zh-Hant": {
+        title: "檢視 Placr",
+        status: "適用於 Mac、iPhone 與 iPad · 點按下方按鈕前往 App Store",
+        btn: "前往 App Store 檢視",
+        other: "切換其他國家或地區商店：",
+        back: "← 返回 Placr 官網"
+      },
+      "zh-HK": {
+        title: "檢視 Placr",
+        status: "適用於 Mac、iPhone 與 iPad · 點按下方按鈕前往 App Store",
+        btn: "前往 App Store 檢視",
+        other: "切換其他國家或地區商店：",
+        back: "← 返回 Placr 官網"
+      },
+      "ja": {
+        title: "Placr を見る",
+        status: "Mac・iPhone・iPad 対応 · 下のボタンから App Store へ",
+        btn: "App Store で見る",
+        other: "その他の国・地域のストア：",
+        back: "← Placr 公式サイトへ戻る"
+      },
+      "en": {
+        title: "View Placr",
+        status: "For Mac, iPhone, and iPad · Continue to the App Store below",
+        btn: "View on the App Store",
+        other: "Or choose another storefront:",
+        back: "← Back to the Placr website"
+      },
+      "de": {
+        title: "Placr ansehen",
+        status: "Für Mac, iPhone und iPad · Weiter geht's zum App Store",
+        btn: "Im App Store ansehen",
+        other: "Oder einen anderen Storefront wählen:",
+        back: "← Zurück zur Placr-Website"
+      },
+      "es": {
+        title: "Ver Placr",
+        status: "Para Mac, iPhone e iPad · Continúa al App Store",
+        btn: "Ver en el App Store",
+        other: "O elige otra tienda:",
+        back: "← Volver al sitio de Placr"
+      },
+      "fr": {
+        title: "Voir Placr",
+        status: "Pour Mac, iPhone et iPad · Continuez vers l'App Store",
+        btn: "Voir sur l'App Store",
+        other: "Ou choisir une autre boutique :",
+        back: "← Retour au site de Placr"
+      },
+      "it": {
+        title: "Vedi Placr",
+        status: "Per Mac, iPhone e iPad · Continua sull'App Store",
+        btn: "Vedi sull'App Store",
+        other: "Oppure scegli un altro negozio:",
+        back: "← Torna al sito di Placr"
+      },
+      "pt-BR": {
+        title: "Ver o Placr",
+        status: "Para Mac, iPhone e iPad · Continue para a App Store",
+        btn: "Ver na App Store",
+        other: "Ou escolha outra loja:",
+        back: "← Voltar ao site do Placr"
+      },
+      "ko": {
+        title: "Placr 보기",
+        status: "Mac, iPhone, iPad 지원 · 아래 버튼으로 App Store 열기",
+        btn: "App Store에서 보기",
+        other: "다른 국가 또는 지역 스토어 선택:",
+        back: "← Placr 웹사이트로 돌아가기"
+      }
+    };
+
+    function resolveTarget() {
+      var params = new URLSearchParams(location.search);
+      return { uiLang: PlacrRouting.readLanguage(), store: params.get("store"), url: PlacrRouting.storeURL(params.get("store")) };
+    }
+
+    var target = resolveTarget();
+    var copy = UI_COPY[target.uiLang] || UI_COPY.en;
+    document.documentElement.lang = target.uiLang;
+    document.title = copy.btn + " · Placr";
+    document.getElementById("title").textContent = copy.title;
+    document.getElementById("status").textContent = copy.status;
+    document.getElementById("btn-text").textContent = copy.btn;
+    document.getElementById("regions-label").textContent = copy.other;
+    document.getElementById("back-link").textContent = copy.back;
+    document.getElementById("back-link").href = "index.html?lang=" + encodeURIComponent(target.uiLang);
+
+    var btn = document.getElementById("primary-btn");
+    btn.href = target.url;
+
+    var pills = document.querySelectorAll(".region-pill");
+    for (var i = 0; i < pills.length; i++) {
+      if (pills[i].getAttribute("data-store") === target.store) {
+        pills[i].classList.add("active");
+      }
+    }
+
+  })();
+  </script>
+</body>
+</html>

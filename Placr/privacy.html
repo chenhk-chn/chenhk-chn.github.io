@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fbfaf7">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-itunes-app" content="app-id=6799345303">
 <meta name="description" content="Placr Privacy Policy">
 <title>隐私政策 · Placr</title>
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon-rounded.svg?v=20261022">
 <link rel="apple-touch-icon" href="assets/icon-512.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 <div class="wrap">
@@ -37,36 +39,41 @@
     data-title="隐私政策 · Placr">
     <header>
       <h1>隐私政策</h1>
-      <p class="updated">最后更新：2026 年 9 月</p>
+      <p class="updated">最后更新：2026 年 10 月 16 日</p>
     </header>
 
-      <p class="lede">Placr 在你的 Mac 上本地运行，照片与审阅记录都留在本机。它没有开发者服务器，不需要注册账号，应用不会自动发送你的照片或使用记录。唯一例外：你主动点「发送反馈」时会打开自己的邮件客户端，正文可先编辑再发送。</p>
+    <p class="lede">Placr 在你的 Mac、iPhone 和 iPad 上本地运行。它没有开发者服务器，不需要注册账号，也不会把照片内容、缩略图或文件名发出设备。你主动点「发送反馈」时，会打开自己的邮件客户端，正文可先编辑再发送。</p>
 
     <h2>不收集的内容</h2>
-    <p>Placr 不会向开发者控制的服务器收集、存储或传输个人信息。应用没有分析统计、崩溃上报、广告、跨应用追踪，也没有第三方数据收集 SDK。</p>
+    <p>Placr 不会向开发者控制的服务器收集、存储或传输个人信息。应用没有分析统计、崩溃上报、广告、跨应用追踪，也没有第三方数据收集 SDK。开启 iCloud 同步时写入的是你自己的 iCloud 私有数据库，开发者读不到，这不构成追踪，也不算开发者收集。</p>
 
     <h2>照片</h2>
-    <p>在你授权后，Placr 会读取照片的拍摄时间、位置和缩略图，用来找出缺少位置的照片、按时间分组并显示参考照片。所有处理都在你的 Mac 上完成，照片本身不会离开设备。</p>
-    <p>只有经过候选确认和最终批量确认后，Placr 才会写入位置。它不会删除照片，也不会修改位置以外的元数据。写入前的原位置会保存在本机操作记录中，供你恢复。</p>
+    <p>在你授权后，Placr 会读取照片的拍摄时间、位置和缩略图，用来找出缺少位置的照片、按时间分组并显示参考照片。照片内容、缩略图和文件名的处理都在这台设备上完成，这三项从不离开设备。</p>
+    <p>只有经过保存和写入确认后，Placr 才会把位置写入「照片」。它不会删除照片，也不会修改位置以外的元数据。写入前的原位置保存在本机记录中，供你恢复。</p>
 
-    <h2>地点搜索与第三方服务</h2>
-    <p>搜索地点时，Placr 只向 Apple 地图服务发送你输入的文字；若有参考坐标，还会发送一个大致的搜索区域。照片、照片缩略图和操作记录不会发送。写入「照片」的位置如你开启了 iCloud 照片，会由系统按你的设置同步，那是 Apple 的服务，不由 Placr 控制。</p>
-    <p>地点搜索由 Apple 地图（MapKit）处理，适用 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 的隐私政策</a>。</p>
-    <p>应用里的地图预览同样来自 Apple 地图：即使不搜索，打开带位置的组也会向 Apple 加载地图数据。若图库使用 iCloud 照片，查看照片时 macOS 可能按系统设置从 iCloud 下载原图；这类传输只发生在你的 Mac 与 Apple 之间。</p>
-    <p>Placr 只向这些服务提供完成当前搜索所需的最少信息，不会出售数据，也不会允许将请求用于开发者的广告或用户画像。</p>
+    <h2>会离开设备的内容</h2>
+    <p>会离开这台设备的只有下面两项，而且都不发给开发者：</p>
+    <ol>
+      <li>地点搜索文字，以及为附近地点反查时使用的坐标。这些发给 Apple 地图（MapKit）。</li>
+      <li>你在设置中开启 iCloud 同步之后的审阅事实：照片的 iCloud 标识、暂不处理标记、待写入批次的坐标和地名、写入记录。它们只通过 Apple CloudKit 写入你自己的 iCloud 私有数据库，容器是 <code>iCloud.cn.chenhk.placr</code>，自定义分区是 <code>PlacrReview</code>，正文放在端到端加密字段 <code>encryptedValues["payload"]</code> 里。开发者无法读取。你可以随时在设置里关闭同步，或使用「删除 iCloud 中的 Placr 数据」清空云端和本机的同步数据。关闭或删除不会删除照片，也不会撤销已经写入照片的位置。</li>
+    </ol>
+    <p>地点搜索由 Apple 地图处理，适用 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 的隐私政策</a>。</p>
+    <p>应用里的地图预览同样来自 Apple 地图：即使不搜索，打开带位置的组也会向 Apple 加载地图数据。若图库使用 iCloud 照片，查看照片时系统可能按你的设置从 iCloud 下载原图。这类传输只发生在你的设备和 Apple 之间，不由 Placr 控制。</p>
 
     <h2>本机存储与保留期限</h2>
-    <p>图库快照、审阅草稿、操作记录、时区缓存和偏好设置保存在 Placr 的沙盒容器中，直到你删除相应文件。</p>
+    <p>图库快照、审阅草稿、操作记录、时区缓存、同步状态和偏好设置保存在 Placr 的沙盒容器中，直到你删除相应文件，或在设置里删除 iCloud 同步数据（那只会清掉同步用的本地文件，审阅草稿和写入记录仍留在本机）。</p>
     <div class="note">
       <p>删除 App 不一定会自动删除沙盒容器或钥匙串项目。下面提供了完整删除方法。</p>
     </div>
 
     <h2>撤销权限与删除数据</h2>
     <ul>
-      <li>撤销照片访问：打开“系统设置 → 隐私与安全性 → 照片”，关闭 Placr。</li>
-      <li>删除 Placr 本机数据：退出 Placr，在访达选择“前往 → 前往文件夹”，输入 <code>~/Library/Containers/cn.chenhk.placr</code>，然后将该文件夹移到废纸篓。</li>
+      <li>撤销照片访问：在 Mac 上打开「系统设置 → 隐私与安全性 → 照片」，关闭 Placr。在 iPhone 或 iPad 上打开「设置 → Placr」，关闭照片访问。</li>
+      <li>关闭同步：在 Placr 的设置里关掉 iCloud 同步。之后不会再向 CloudKit 发送请求；已经在 iCloud 里的数据不会自动删除。</li>
+      <li>删除 iCloud 中的 Placr 数据：在设置里使用同名操作。确认后会删除 CloudKit 私有数据库里的 Placr 分区，并清掉本机的同步文件。</li>
+      <li>删除 Mac 上的本机数据：退出 Placr，在访达选择「前往 → 前往文件夹」，输入 <code>~/Library/Containers/cn.chenhk.placr</code>，然后将该文件夹移到废纸篓。</li>
     </ul>
-    <p>撤销照片权限或删除本机数据不会撤销已经写入照片的位置。若要恢复，请先在 Placr 的操作记录中执行恢复，再删除本机数据。</p>
+    <p>撤销照片权限或删除本机数据不会撤销已经写入照片的位置。若要恢复，请先在 Placr 的写入记录中执行恢复，再删除本机数据。</p>
 
     <h2>儿童</h2>
     <p>Placr 不面向儿童设计，也不会收集年龄或其他个人信息。</p>
@@ -82,36 +89,41 @@
     data-title="隱私權政策 · Placr">
     <header>
       <h1>隱私權政策</h1>
-      <p class="updated">最後更新：2026 年 9 月</p>
+      <p class="updated">最後更新：2026 年 10 月 16 日</p>
     </header>
 
-      <p class="lede">Placr 在你的 Mac 上本機執行，照片與審閱記錄都留在本機。它沒有開發者伺服器，不需要註冊帳號，應用不會自動傳送你的照片或使用記錄。唯一例外：你主動點「傳送回饋」時會開啟自己的郵件用戶端，正文可先編輯再傳送。</p>
+    <p class="lede">Placr 在你的 Mac、iPhone 與 iPad 上本機執行。它沒有開發者伺服器，不需要註冊帳號，也不會把照片內容、縮圖或檔名送出裝置。你主動點「傳送回饋」時，會開啟自己的郵件用戶端，正文可先編輯再傳送。</p>
 
     <h2>不收集的內容</h2>
-    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳輸個人資訊。App 沒有分析統計、當機回報、廣告、跨 App 追蹤，也沒有第三方資料收集 SDK。</p>
+    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳輸個人資訊。App 沒有分析統計、當機回報、廣告、跨 App 追蹤，也沒有第三方資料收集 SDK。開啟 iCloud 同步時寫入的是你自己的 iCloud 私有資料庫，開發者讀不到，這不構成追蹤，也不算開發者收集。</p>
 
     <h2>照片</h2>
-    <p>在你授權後，Placr 會讀取照片的拍攝時間、位置與縮圖，用來找出缺少位置資訊的照片、依時間分組並顯示參考照片。所有處理都在你的 Mac 上完成，照片本身不會離開裝置。</p>
-    <p>只有在你確認候選項目並完成最後的批次確認後，Placr 才會寫入位置。它不會刪除照片，也不會修改位置以外的中繼資料。寫入前的位置會儲存在本機操作記錄中，供你還原。</p>
+    <p>在你授權後，Placr 會讀取照片的拍攝時間、位置與縮圖，用來找出缺少位置資訊的照片、依時間分組並顯示參考照片。照片內容、縮圖和檔名的處理都在這台裝置上完成，這三項從不離開裝置。</p>
+    <p>只有在你儲存並確認寫入後，Placr 才會把位置寫入「照片」。它不會刪除照片，也不會修改位置以外的中繼資料。寫入前的位置會儲存在本機記錄中，供你還原。</p>
 
-    <h2>地點搜尋與第三方服務</h2>
-    <p>搜尋地點時，Placr 只會傳送你輸入的文字；若有參考座標，還會傳送大致的搜尋區域。照片、照片縮圖與操作記錄都不會傳送。</p>
+    <h2>會離開裝置的內容</h2>
+    <p>會離開這台裝置的只有下面兩項，而且都不發給開發者：</p>
+    <ol>
+      <li>地點搜尋文字，以及為附近地點反查時使用的座標。這些發給 Apple 地圖（MapKit）。</li>
+      <li>你在設定中開啟 iCloud 同步之後的審閱事實：照片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標和地名、寫入記錄。它們只透過 Apple CloudKit 寫入你自己的 iCloud 私有資料庫，容器是 <code>iCloud.cn.chenhk.placr</code>，自訂分割區是 <code>PlacrReview</code>，正文放在端對端加密欄位 <code>encryptedValues["payload"]</code> 裡。開發者無法讀取。你可以隨時在設定裡關閉同步，或使用「刪除 iCloud 中的 Placr 資料」清空雲端和本機的同步資料。關閉或刪除不會刪除照片，也不會還原已經寫入照片的位置。</li>
+    </ol>
     <p>地點搜尋由 Apple 地圖（MapKit）處理，適用 <a href="https://www.apple.com/tw/legal/privacy/" rel="noopener">Apple 的隱私權政策</a>。</p>
-    <p>應用程式裡的地圖預覽同樣來自 Apple 地圖：即使不搜尋，打開有位置的群組也會向 Apple 載入地圖資料。若圖庫使用 iCloud 照片，檢視照片時 macOS 可能依系統設定從 iCloud 下載原始檔；這類傳輸只發生在你的 Mac 與 Apple 之間。</p>
-    <p>Placr 只會向這些服務提供完成當次搜尋所需的最少資訊，不會販售資料，也不會允許將請求用於開發者的廣告或使用者剖析。</p>
+    <p>App 裡的地圖預覽同樣來自 Apple 地圖：即使不搜尋，打開有位置的群組也會向 Apple 載入地圖資料。若圖庫使用 iCloud 照片，檢視照片時系統可能依你的設定從 iCloud 下載原始檔。這類傳輸只發生在你的裝置與 Apple 之間，不由 Placr 控制。</p>
 
     <h2>本機儲存與保留期間</h2>
-    <p>圖庫快照、審閱草稿、操作記錄、時區快取與偏好設定會保存在 Placr 的沙盒容器中，直到你刪除相關檔案。</p>
+    <p>圖庫快照、審閱草稿、操作記錄、時區快取、同步狀態與偏好設定會保存在 Placr 的沙盒容器中，直到你刪除相關檔案，或在設定裡刪除 iCloud 同步資料（那只會清掉同步用的本機檔案，審閱草稿和寫入記錄仍留在本機）。</p>
     <div class="note">
       <p>刪除 App 不一定會自動刪除沙盒容器或鑰匙圈項目。下方提供完整刪除方式。</p>
     </div>
 
     <h2>撤銷權限與刪除資料</h2>
     <ul>
-      <li>撤銷照片存取：開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。</li>
-      <li>刪除 Placr 本機資料：結束 Placr，在 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。</li>
+      <li>撤銷照片存取：在 Mac 上開啟「系統設定 → 隱私權與安全性 → 照片」，關閉 Placr。在 iPhone 或 iPad 上開啟「設定 → Placr」，關閉照片存取。</li>
+      <li>關閉同步：在 Placr 的設定裡關掉 iCloud 同步。之後不會再向 CloudKit 傳送請求；已經在 iCloud 裡的資料不會自動刪除。</li>
+      <li>刪除 iCloud 中的 Placr 資料：在設定裡使用同名操作。確認後會刪除 CloudKit 私有資料庫裡的 Placr 分割區，並清掉本機的同步檔案。</li>
+      <li>刪除 Mac 上的本機資料：結束 Placr，在 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。</li>
     </ul>
-    <p>撤銷照片權限或刪除本機資料，不會撤銷已寫入照片的位置。若要還原，請先在 Placr 的操作記錄中執行還原，再刪除本機資料。</p>
+    <p>撤銷照片權限或刪除本機資料，不會還原已寫入照片的位置。若要還原，請先在 Placr 的寫入記錄中執行還原，再刪除本機資料。</p>
 
     <h2>兒童</h2>
     <p>Placr 並非為兒童設計，也不會收集年齡或其他個人資訊。</p>
@@ -127,81 +139,91 @@
     data-title="私隱政策 · Placr">
     <header>
       <h1>私隱政策</h1>
-      <p class="updated">最後更新：2026 年 9 月</p>
+      <p class="updated">最後更新：2026 年 10 月 16 日</p>
     </header>
 
-      <p class="lede">Placr 喺你嘅 Mac 上本機運作，相片同審閱記錄都留喺本機。佢無開發者伺服器，唔需要註冊帳戶，應用唔會自動傳送你嘅相片或使用記錄。唯一例外：你主動撳「傳送回饋」時會開啟自己嘅郵件程式，正文可先編輯再傳送。</p>
+    <p class="lede">Placr 喺你嘅 Mac、iPhone 同 iPad 上本機運作。佢無開發者伺服器，唔需要註冊帳戶，亦唔會把相片內容、縮圖或檔名送出裝置。你主動撳「傳送回饋」時，會開啟自己嘅郵件程式，正文可先編輯再傳送。</p>
 
     <h2>不收集的內容</h2>
-    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳送個人資料。應用程式沒有分析統計、當機報告、廣告、跨應用程式追蹤，亦沒有第三方資料收集 SDK。</p>
+    <p>Placr 不會向開發者控制的伺服器收集、儲存或傳送個人資料。應用程式沒有分析統計、當機報告、廣告、跨應用程式追蹤，亦沒有第三方資料收集 SDK。開啟 iCloud 同步時寫入的是你自己的 iCloud 私有資料庫，開發者讀不到，呢個唔構成追蹤，亦唔算開發者收集。</p>
 
     <h2>相片</h2>
-    <p>在你授權後，Placr 會讀取相片的拍攝時間、位置及縮圖，用來找出缺少位置的相片、按時間分組並顯示參考相片。所有處理都在你的 Mac 上完成，相片本身不會離開裝置。</p>
-    <p>只有在你確認候選項目及最後的批次確認後，Placr 才會寫入位置。它不會刪除相片，亦不會修改位置以外的元資料。寫入前的位置會儲存在本機操作記錄中，讓你還原。</p>
+    <p>在你授權後，Placr 會讀取相片的拍攝時間、位置及縮圖，用來找出缺少位置的相片、按時間分組並顯示參考相片。相片內容、縮圖和檔名的處理都在呢部裝置上完成，呢三項從不會離開裝置。</p>
+    <p>只有在你儲存並確認寫入後，Placr 先會把位置寫入「相片」。它不會刪除相片，亦不會修改位置以外的元資料。寫入前的位置會儲存在本機記錄中，讓你還原。</p>
 
-    <h2>地點搜尋及第三方服務</h2>
-    <p>搜尋地點時，Placr 只會傳送你輸入的文字；如有參考座標，亦會傳送大概的搜尋範圍。相片、相片縮圖及操作記錄都不會傳送。</p>
+    <h2>會離開裝置的內容</h2>
+    <p>會離開呢部裝置的只有下面兩項，而且都唔會發給開發者：</p>
+    <ol>
+      <li>地點搜尋文字，以及為附近地點反查時使用的座標。呢啲會發給 Apple 地圖（MapKit）。</li>
+      <li>你喺設定開啟 iCloud 同步之後的審閱事實：相片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標和地名、寫入記錄。佢哋只透過 Apple CloudKit 寫入你自己的 iCloud 私有資料庫，容器係 <code>iCloud.cn.chenhk.placr</code>，自訂區域係 <code>PlacrReview</code>，正文放喺端對端加密欄位 <code>encryptedValues["payload"]</code>。開發者無法讀取。你可以隨時喺設定關閉同步，或者用「刪除 iCloud 中的 Placr 資料」清空雲端同本機的同步資料。關閉或刪除唔會刪除相片，亦唔會還原已經寫入相片的位置。</li>
+    </ol>
     <p>地點搜尋由 Apple 地圖（MapKit）處理，受 <a href="https://www.apple.com/hk/privacy/" rel="noopener">Apple 私隱政策</a>約束。</p>
-    <p>App 入面嘅地圖預覽同樣嚟自 Apple 地圖：即使唔搜尋，打開有位置嘅群組都會向 Apple 載入地圖資料。若圖庫使用 iCloud 相片，檢視相片時 macOS 可能按系統設定從 iCloud 下載原檔；呢類傳輸只發生喺你嘅 Mac 同 Apple 之間。</p>
-    <p>Placr 只會向這些服務提供完成當次搜尋所需的最少資料，不會出售資料，亦不會容許將請求用於開發者的廣告或用戶分析。</p>
+    <p>App 入面嘅地圖預覽同樣嚟自 Apple 地圖：即使唔搜尋，打開有位置嘅群組都會向 Apple 載入地圖資料。若圖庫使用 iCloud 相片，檢視相片時系統可能按你嘅設定從 iCloud 下載原檔。呢類傳輸只發生喺你嘅裝置同 Apple 之間，唔由 Placr 控制。</p>
 
     <h2>本機儲存及保留期</h2>
-    <p>圖庫快照、審閱草稿、操作記錄、時區快取及偏好設定會保存在 Placr 的沙盒容器內，直至你刪除相關檔案。</p>
+    <p>圖庫快照、審閱草稿、操作記錄、時區快取、同步狀態及偏好設定會保存在 Placr 的沙盒容器內，直至你刪除相關檔案，或喺設定刪除 iCloud 同步資料（嗰個只會清走同步用的本機檔案，審閱草稿同寫入記錄仍然留喺本機）。</p>
     <div class="note">
-      <p>刪除應用程式未必會自動刪除沙盒容器或鑰匙圈項目。下方提供完整刪除方法。</p>
+      <p>刪除 App 不一定會自動刪除沙盒容器或鑰匙圈項目。下方提供完整刪除方式。</p>
     </div>
 
-    <h2>撤銷權限及刪除資料</h2>
+    <h2>撤銷權限與刪除資料</h2>
     <ul>
-      <li>撤銷相片存取：開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。</li>
-      <li>刪除 Placr 本機資料：結束 Placr，在 Finder 選擇「前往 → 前往資料夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該資料夾移到垃圾桶。</li>
+      <li>撤銷相片存取：喺 Mac 開啟「系統設定 → 私隱與保安 → 相片」，關閉 Placr。喺 iPhone 或 iPad 開啟「設定 → Placr」，關閉相片存取。</li>
+      <li>關閉同步：喺 Placr 設定關掉 iCloud 同步。之後唔會再向 CloudKit 傳送請求；已經喺 iCloud 嘅資料唔會自動刪除。</li>
+      <li>刪除 iCloud 中的 Placr 資料：喺設定使用同名操作。確認後會刪除 CloudKit 私有資料庫入面的 Placr 區域，並清走本機的同步檔案。</li>
+      <li>刪除 Mac 上的本機資料：結束 Placr，喺 Finder 選擇「前往 → 前往檔案夾」，輸入 <code>~/Library/Containers/cn.chenhk.placr</code>，再將該檔案夾移到垃圾桶。</li>
     </ul>
-    <p>撤銷相片權限或刪除本機資料，不會撤銷已寫入相片的位置。如要還原，請先在 Placr 的操作記錄中執行還原，再刪除本機資料。</p>
+    <p>撤銷相片權限或刪除本機資料，不會還原已寫入相片的位置。若要還原，請先在 Placr 的寫入記錄中執行還原，再刪除本機資料。</p>
 
     <h2>兒童</h2>
-    <p>Placr 並非為兒童而設，亦不會收集年齡或其他個人資料。</p>
+    <p>Placr 並非為兒童設計，亦不會收集年齡或其他個人資料。</p>
 
     <h2>政策變更</h2>
     <p>如本政策有所變更，本頁上方的日期會同步更新；重大變更亦會在應用程式內提示。</p>
 
-    <h2>聯絡方法</h2>
-    <p>如有私隱問題，請電郵至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+    <h2>聯絡方式</h2>
+    <p>如有私隱相關問題，請寄信至 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
   </article>
 
   <article class="language-panel" data-language="ja" lang="ja"
     data-title="プライバシーポリシー · Placr">
     <header>
       <h1>プライバシーポリシー</h1>
-      <p class="updated">最終更新：2026 年 9 月</p>
+      <p class="updated">最終更新：2026年10月16日</p>
     </header>
 
-      <p class="lede">Placr は Mac 上でローカルに動作し、写真と作業記録は端末内にとどまります。開発者が運営するサーバーもアカウント登録もなく、アプリが写真や利用履歴を自動送信することはありません。唯一の例外：「フィードバックを送信」を選ぶと、編集可能な下書きとともに自分のメールアプリが開きます。</p>
+    <p class="lede">Placr はお使いの Mac、iPhone、iPad 上でローカルに動作します。開発者のサーバーはなく、アカウント登録も不要です。写真の内容、サムネイル、ファイル名が端末の外へ出ることはありません。「フィードバックを送信」を選ぶと、編集できる下書きとともにご自身のメールアプリが開きます。</p>
 
     <h2>収集しない情報</h2>
-    <p>Placr は、開発者が管理するサーバーへ個人情報を収集、保存、送信しません。解析、クラッシュレポート、広告、アプリ横断トラッキング、第三者のデータ収集 SDK は一切ありません。</p>
+    <p>Placr は、開発者が管理するサーバーへ個人情報を収集、保存、送信しません。解析、クラッシュレポート、広告、アプリ間トラッキング、第三者のデータ収集 SDK はありません。iCloud 同期をオンにしたときに書き込まれるのは、あなた自身の iCloud プライベートデータベースです。開発者は読めず、トラッキングにも開発者による収集にもあたりません。</p>
 
     <h2>写真</h2>
-    <p>許可を得た後、Placr は撮影時刻、位置情報、サムネイルを読み取り、位置情報のない写真の抽出、時刻によるグループ分け、参考写真の表示に使います。処理はすべて Mac 上で行われ、写真そのものが端末の外へ送られることはありません。</p>
-    <p>候補を確認し、最後の一括確認を行った場合にだけ位置情報を書き込みます。写真の削除や、位置情報以外のメタデータの変更は行いません。書き込み前の位置は、復元できるよう端末内の操作履歴に保存されます。</p>
+    <p>アクセスを許可すると、Placr は撮影日時、位置情報、サムネイルを読み、位置のない写真を見つけ、時刻でグループ化し、参考写真を表示します。写真の内容、サムネイル、ファイル名の処理はこの端末上で行われ、これらが端末の外へ出ることはありません。</p>
+    <p>位置情報が「写真」に書き込まれるのは、保存し、書き込みを確認したあとだけです。写真の削除や、位置以外のメタデータの変更は行いません。書き込み前の位置は、復元できるよう端末内の記録に残します。</p>
 
-    <h2>場所検索と第三者サービス</h2>
-    <p>場所を検索するときに送信するのは、入力した文字列だけです。参考座標がある場合は、検索精度を上げるため大まかな検索範囲も送信します。写真、サムネイル、操作履歴は送信しません。</p>
+    <h2>端末の外へ出るもの</h2>
+    <p>この端末の外へ出るのは次の二つだけで、どちらも開発者には送られません。</p>
+    <ol>
+      <li>場所検索の文字と、近くの場所を逆ジオコードするときの座標。送信先は Apple マップ（MapKit）です。</li>
+      <li>設定で iCloud 同期をオンにしたあとのレビュー事実。写真の iCloud 識別子、後回しの印、書き込み待ちバッチの座標と地名、書き込み記録です。これらは Apple CloudKit を通じて、あなた自身の iCloud プライベートデータベースにだけ書き込まれます。コンテナは <code>iCloud.cn.chenhk.placr</code>、カスタムゾーンは <code>PlacrReview</code>、本文はエンドツーエンド暗号化フィールド <code>encryptedValues["payload"]</code> に入ります。開発者は読めません。設定でいつでも同期をオフにでき、「iCloud 上の Placr データを削除」でクラウドと端末上の同期データを消せます。オフにしても削除しても、写真は消えず、すでに書き込んだ位置も元には戻りません。</li>
+    </ol>
     <p>場所の検索は Apple マップ（MapKit）が処理し、<a href="https://www.apple.com/jp/legal/privacy/" rel="noopener">Apple のプライバシーポリシー</a>が適用されます。</p>
-    <p>アプリ内の地図プレビューも Apple マップから配信されます。検索しなくても、位置情報を持つグループを開くだけで Apple から地図データが読み込まれることがあります。また、写真ライブラリで iCloud写真を利用している場合、写真の表示時に macOS がシステム設定に従って iCloud からオリジナルをダウンロードすることがあります。これらの通信はお使いの Mac と Apple の間でのみ行われます。</p>
-    <p>これらのサービスには、その検索を完了するために必要な最小限の情報だけを送ります。データを販売したり、開発者の広告やユーザープロファイル作成に利用させたりすることはありません。</p>
+    <p>アプリ内の地図プレビューも Apple マップから配信されます。検索しなくても、位置情報を持つグループを開くだけで Apple から地図データが読み込まれることがあります。写真ライブラリで iCloud 写真を使っている場合、写真の表示時にシステム設定に従って iCloud からオリジナルをダウンロードすることがあります。これらの通信はお使いの端末と Apple の間だけで、Placr は関与しません。</p>
 
     <h2>端末内の保存と保持期間</h2>
-    <p>ライブラリのスナップショット、確認途中の下書き、操作履歴、タイムゾーンのキャッシュ、設定は、削除するまで Placr のサンドボックスコンテナに保存されます。</p>
+    <p>ライブラリのスナップショット、レビュー下書き、操作記録、タイムゾーンのキャッシュ、同期状態、設定は、該当ファイルを削除するまで Placr のサンドボックスに残ります。設定から iCloud の同期データを削除した場合、消えるのは同期用のローカルファイルだけで、下書きと書き込み記録は端末に残ります。</p>
     <div class="note">
-      <p>アプリを削除しても、サンドボックスコンテナやキーチェーン項目が自動的に消えるとは限りません。完全な削除方法を以下に示します。</p>
+      <p>App を削除しても、サンドボックスやキーチェーン項目が自動では消えないことがあります。完全な削除手順は以下のとおりです。</p>
     </div>
 
     <h2>権限の取り消しとデータの削除</h2>
     <ul>
-      <li>写真へのアクセスを取り消す：「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。</li>
-      <li>Placr の端末内データを削除する：Placr を終了し、Finder の「移動 → フォルダへ移動」で <code>~/Library/Containers/cn.chenhk.placr</code> を開き、そのフォルダをゴミ箱へ移動します。</li>
+      <li>写真へのアクセスを取り消す：Mac では「システム設定 → プライバシーとセキュリティ → 写真」で Placr をオフにします。iPhone または iPad では「設定 → Placr」で写真へのアクセスをオフにします。</li>
+      <li>同期をオフにする：Placr の設定で iCloud 同期をオフにします。その後 CloudKit へはリクエストを送りません。すでに iCloud にあるデータは自動では消えません。</li>
+      <li>iCloud 上の Placr データを削除：設定の同名の操作を使います。確認すると、CloudKit プライベートデータベースの Placr ゾーンと、端末上の同期ファイルが削除されます。</li>
+      <li>Mac の端末内データを削除する：Placr を終了し、Finder の「移動 → フォルダへ移動」で <code>~/Library/Containers/cn.chenhk.placr</code> を開き、そのフォルダをゴミ箱へ移動します。</li>
     </ul>
-    <p>写真の権限や端末内データを削除しても、写真に書き込まれた位置情報は元に戻りません。復元したい場合は、データを削除する前に Placr の操作履歴から復元してください。</p>
+    <p>写真の権限や端末内データを削除しても、写真に書き込まれた位置情報は元に戻りません。復元したい場合は、データを削除する前に Placr の書き込み記録から復元してください。</p>
 
     <h2>子どもについて</h2>
     <p>Placr は子ども向けに設計されておらず、年齢その他の個人情報を収集しません。</p>
@@ -217,36 +239,41 @@
     data-title="Privacy Policy · Placr">
     <header>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: September 2026</p>
+      <p class="updated">Last updated: October 16, 2026</p>
     </header>
 
-      <p class="lede">Placr runs on your Mac and keeps your photos and review history on the device. There is no developer-operated server, no account, and the app never sends your photos or usage history on its own. The only exception: choosing “Send Feedback” opens your own mail client with an editable draft.</p>
+    <p class="lede">Placr runs locally on your Mac, iPhone, and iPad. There is no developer-operated server and no account. Photo content, thumbnails, and filenames never leave the device. Choosing “Send Feedback” opens your own mail client with an editable draft.</p>
 
     <h2>What is not collected</h2>
-    <p>Placr does not collect, store, or transmit personal information to any server controlled by the developer. There is no analytics, crash reporting, advertising, cross-app tracking, or third-party data collection SDK.</p>
+    <p>Placr does not collect, store, or transmit personal information to any server controlled by the developer. There is no analytics, crash reporting, advertising, cross-app tracking, or third-party data collection SDK. When iCloud sync is on, data is written to your own iCloud private database. The developer cannot read it. That is not tracking, and it is not collection by the developer.</p>
 
     <h2>Photos</h2>
-    <p>After you grant access, Placr reads capture times, locations, and thumbnails to find photos missing a location, group them by time, and display reference photos. All processing happens on your Mac. The photos themselves never leave the device.</p>
-    <p>A location is written only after you approve the candidate and the final batch confirmation. Placr never deletes photos or changes metadata other than location. The previous location is stored in a local operation record so you can restore it.</p>
+    <p>After you grant access, Placr reads capture times, locations, and thumbnails to find photos missing a location, group them by time, and show reference photos. Photo content, thumbnails, and filenames are processed on the device and never leave it.</p>
+    <p>A location is written to Photos only after you save it and confirm the write. Placr never deletes photos or changes metadata other than location. The previous location stays in a record on the device so you can restore it.</p>
 
-    <h2>Place search and third-party services</h2>
-    <p>For a place search, Placr sends only the text you typed. If a reference coordinate is available, it also sends an approximate search region. Photos, thumbnails, and operation records are never sent.</p>
-    <p>Place searches are handled by Apple Maps (MapKit) and are subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</p>
-    <p>The map previews in the app are served by Apple Maps as well: simply opening a group that has a location can load map data from Apple even before you search. If your library uses iCloud Photos, viewing a photo may let macOS download the original from iCloud according to your system settings; those transfers happen only between your Mac and Apple.</p>
-    <p>Placr provides these services only the minimum information required for the search at hand. It does not sell data or permit requests to be used for advertising or user profiling on the developer’s behalf.</p>
+    <h2>What leaves the device</h2>
+    <p>Only two things leave the device, and neither is sent to the developer:</p>
+    <ol>
+      <li>The text of a place search, and the coordinates used to look up nearby places. These go to Apple Maps (MapKit).</li>
+      <li>Review facts, and only after you turn on iCloud sync in Settings: a photo’s iCloud identifier, skip marks, the coordinates and place names of batches waiting to be written, and write records. They are written only through Apple CloudKit, into your own iCloud private database. The container is <code>iCloud.cn.chenhk.placr</code>, the custom zone is <code>PlacrReview</code>, and the body is the end-to-end encrypted field <code>encryptedValues["payload"]</code>. The developer cannot read it. You can turn sync off in Settings at any time, or use “Delete Placr Data from iCloud” to clear the cloud copy and the local sync files. Turning sync off or deleting that data does not delete photos or undo locations already written to Photos.</li>
+    </ol>
+    <p>Place search is handled by Apple Maps (MapKit) and is subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</p>
+    <p>Map previews in the app also come from Apple Maps. Opening a group that already has a location can load map data from Apple even if you do not search. If your library uses iCloud Photos, viewing a photo may let the system download the original from iCloud according to your settings. Those transfers happen only between your device and Apple. Placr does not control them.</p>
 
     <h2>Local storage and retention</h2>
-    <p>The library snapshot, review drafts, operation history, time-zone cache, and preferences remain in Placr’s sandbox container until you remove the files.</p>
+    <p>The library snapshot, review drafts, operation history, time-zone cache, sync state, and preferences stay in Placr’s sandbox until you delete the files. Deleting iCloud sync data from Settings removes only the local files used for sync. Drafts and write records stay on the device.</p>
     <div class="note">
-      <p>Deleting the app may not automatically remove its sandbox container or Keychain item. Complete removal instructions follow.</p>
+      <p>Deleting the app may not automatically remove its sandbox container or Keychain item. Complete removal steps follow.</p>
     </div>
 
     <h2>Revoking access and deleting data</h2>
     <ul>
-      <li>Revoke Photos access: open System Settings → Privacy &amp; Security → Photos, then turn off Placr.</li>
-      <li>Delete Placr’s local data: quit Placr, choose Go → Go to Folder in Finder, enter <code>~/Library/Containers/cn.chenhk.placr</code>, and move that folder to the Trash.</li>
+      <li>Revoke Photos access: on a Mac, open System Settings → Privacy &amp; Security → Photos and turn Placr off. On an iPhone or iPad, open Settings → Placr and turn Photos access off.</li>
+      <li>Turn sync off: turn off iCloud sync in Placr’s Settings. Placr then sends no further CloudKit requests. Data already in iCloud is not deleted automatically.</li>
+      <li>Delete Placr data from iCloud: use the action of that name in Settings. After you confirm, Placr deletes its zone in your CloudKit private database and clears the local sync files.</li>
+      <li>Delete local data on a Mac: quit Placr, choose Go → Go to Folder in Finder, enter <code>~/Library/Containers/cn.chenhk.placr</code>, and move that folder to the Trash.</li>
     </ul>
-    <p>Revoking Photos access or deleting local data does not undo locations already written to Photos. To restore them, use Placr’s operation history before deleting the local data.</p>
+    <p>Revoking Photos access or deleting local data does not undo locations already written to Photos. Restore them from Placr’s write history before you delete the local data.</p>
 
     <h2>Children</h2>
     <p>Placr is not directed to children and does not collect age or any other personal information.</p>
@@ -262,42 +289,47 @@
     data-title="Datenschutzrichtlinie · Placr">
     <header>
       <h1>Datenschutzrichtlinie</h1>
-      <p class="updated">Zuletzt aktualisiert: September 2026</p>
+      <p class="updated">Zuletzt aktualisiert: 16. Oktober 2026</p>
     </header>
 
-      <p class="lede">Placr läuft lokal auf deinem Mac; Fotos und Prüflisten bleiben auf dem Gerät. Es gibt keinen vom Entwickler betriebenen Server und keine Kontoregistrierung; die App sendet deine Fotos oder Nutzungsdaten nie von selbst. Einzige Ausnahme: „Feedback senden“ öffnet dein eigenes Mailprogramm mit einem bearbeitbaren Entwurf.</p>
+    <p class="lede">Placr läuft lokal auf deinem Mac, iPhone und iPad. Es gibt keinen vom Entwickler betriebenen Server und keine Kontoregistrierung. Fotoinhalte, Miniaturbilder und Dateinamen verlassen das Gerät nie. „Feedback senden“ öffnet dein eigenes Mailprogramm mit einem bearbeitbaren Entwurf.</p>
 
     <h2>Was nicht erfasst wird</h2>
-    <p>Placr erfasst, speichert oder überträgt keine personenbezogenen Daten an vom Entwickler kontrollierte Server. Es gibt keine Analyse, keine Absturzberichte, keine Werbung, keine appübergreifende Verfolgung und keine SDKs von Drittanbietern zur Datensammlung.</p>
+    <p>Placr erfasst, speichert oder überträgt keine personenbezogenen Daten an vom Entwickler kontrollierte Server. Es gibt keine Analyse, keine Absturzberichte, keine Werbung, keine appübergreifende Verfolgung und keine SDKs von Drittanbietern zur Datensammlung. Ist die iCloud-Synchronisierung an, schreibt Placr in deine eigene private iCloud-Datenbank. Der Entwickler kann sie nicht lesen. Das ist weder Tracking noch eine Erhebung durch den Entwickler.</p>
 
     <h2>Fotos</h2>
-    <p>Nach deiner Freigabe liest Placr Aufnahmezeitpunkt, Standort und Miniaturbilder, um Fotos ohne Standort zu finden, sie zeitlich zu gruppieren und Referenzfotos anzuzeigen. Alles geschieht auf deinem Mac; die Fotos selbst verlassen das Gerät nie.</p>
-    <p>Ein Standort wird erst geschrieben, nachdem du den Kandidaten und die abschließende Sammelbestätigung genehmigt hast. Placr löscht keine Fotos und ändert keine Metadaten außer dem Standort. Der vorherige Standort wird zum Wiederherstellen im lokalen Aktionsverlauf gespeichert.</p>
+    <p>Nach deiner Freigabe liest Placr Aufnahmezeitpunkt, Standort und Miniaturbilder, um Fotos ohne Standort zu finden, sie zeitlich zu gruppieren und Referenzfotos anzuzeigen. Fotoinhalte, Miniaturbilder und Dateinamen werden auf dem Gerät verarbeitet und verlassen es nie.</p>
+    <p>Ein Standort wird erst in „Fotos“ geschrieben, nachdem du ihn gesichert und das Schreiben bestätigt hast. Placr löscht keine Fotos und ändert keine Metadaten außer dem Standort. Der vorherige Standort bleibt zum Wiederherstellen in einer lokalen Aufzeichnung.</p>
 
-    <h2>Ortssuche und Drittanbieter</h2>
-    <p>Für eine Ortssuche sendet Placr nur den von dir eingegebenen Text; liegt eine Referenzkoordinate vor, zusätzlich einen ungefähren Suchbereich. Fotos, Miniaturbilder und der Aktionsverlauf werden nie gesendet.</p>
-    <p>Ortssuchen werden von Apple Karten (MapKit) ausgeführt und unterliegen der <a href="https://www.apple.com/legal/privacy/" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
-    <p>Auch die Kartenvorschauen in der App werden von Apple Karten geliefert: Schon das Öffnen einer Gruppe mit Position kann – ganz ohne Suche – Kartendaten von Apple laden. Wenn deine Mediatothek iCloud-Fotos nutzt, kann macOS beim Anzeigen eines Fotos gemäß deinen Systemeinstellungen das Original aus der iCloud laden; diese Übertragungen laufen nur zwischen deinem Mac und Apple.</p>
-    <p>Placr übermittelt diesen Diensten nur die für die jeweilige Suche nötigen Mindestinformationen, verkauft keine Daten und erlaubt nicht, Anfragen für Werbung oder Nutzerprofile im Auftrag des Entwicklers zu verwenden.</p>
+    <h2>Was das Gerät verlässt</h2>
+    <p>Nur zwei Dinge verlassen das Gerät, und keines davon geht an den Entwickler:</p>
+    <ol>
+      <li>Der Text einer Ortssuche und die Koordinaten für die Suche nach Orten in der Nähe. Sie gehen an Apple Karten (MapKit).</li>
+      <li>Prüfdaten, und nur nachdem du die iCloud-Synchronisierung in den Einstellungen einschaltest: die iCloud-Kennung eines Fotos, Zurückstellmarkierungen, Koordinaten und Ortsnamen von Stapeln, die noch geschrieben werden, sowie Schreibprotokolle. Sie werden nur über Apple CloudKit in deine eigene private iCloud-Datenbank geschrieben. Der Container ist <code>iCloud.cn.chenhk.placr</code>, die eigene Zone ist <code>PlacrReview</code>, der Inhalt liegt im Ende-zu-Ende-verschlüsselten Feld <code>encryptedValues["payload"]</code>. Der Entwickler kann ihn nicht lesen. Du kannst die Synchronisierung jederzeit in den Einstellungen ausschalten oder mit „Placr-Daten aus iCloud löschen“ die Cloud-Kopie und die lokalen Synchronisierungsdateien entfernen. Ausschalten oder Löschen entfernt keine Fotos und macht bereits geschriebene Standorte nicht rückgängig.</li>
+    </ol>
+    <p>Ortssuchen führt Apple Karten (MapKit) aus. Es gilt die <a href="https://www.apple.com/legal/privacy/" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
+    <p>Auch die Kartenvorschauen stammen von Apple Karten. Schon das Öffnen einer Gruppe mit Standort kann Kartendaten von Apple laden, auch ohne Suche. Nutzt deine Mediathek iCloud-Fotos, kann das System beim Anzeigen eines Fotos das Original gemäß deinen Einstellungen aus der iCloud laden. Diese Übertragungen laufen nur zwischen deinem Gerät und Apple. Placr steuert sie nicht.</p>
 
     <h2>Lokale Speicherung und Speicherdauer</h2>
-    <p>Mediathek-Snapshot, Prüfentwürfe, Aktionsverlauf, Zeitzonen-Cache und Einstellungen bleiben im Sandbox-Container von Placr, bis du die Dateien entfernst.</p>
+    <p>Mediathek-Snapshot, Prüfentwürfe, Aktionsverlauf, Zeitzonen-Cache, Synchronisierungsstatus und Einstellungen bleiben im Sandbox-Container von Placr, bis du die Dateien entfernst. Das Löschen der iCloud-Synchronisierungsdaten in den Einstellungen entfernt nur die lokalen Dateien der Synchronisierung. Entwürfe und Schreibprotokolle bleiben auf dem Gerät.</p>
     <div class="note">
-      <p>Das Löschen der App entfernt den Sandbox-Container oder den Schlüsselbund-Eintrag nicht automatisch. Vollständige Schritte zum Entfernen folgen.</p>
+      <p>Das Löschen der App entfernt den Sandbox-Container oder den Schlüsselbund-Eintrag nicht automatisch. Die vollständigen Schritte folgen.</p>
     </div>
 
     <h2>Zugriff entziehen und Daten löschen</h2>
     <ul>
-      <li>Fotozugriff entziehen: Öffne „Systemeinstellungen → Datenschutz &amp; Sicherheit → Fotos“ und schalte Placr aus.</li>
-      <li>Lokale Daten löschen: Beende Placr, wähle im Finder „Gehe zu → Ordner öffnen“, gib <code>~/Library/Containers/cn.chenhk.placr</code> ein und lege den Ordner in den Papierkorb.</li>
+      <li>Fotozugriff entziehen: Öffne auf dem Mac „Systemeinstellungen → Datenschutz &amp; Sicherheit → Fotos“ und schalte Placr aus. Öffne auf iPhone oder iPad „Einstellungen → Placr“ und schalte den Fotozugriff aus.</li>
+      <li>Synchronisierung ausschalten: Schalte die iCloud-Synchronisierung in den Einstellungen von Placr aus. Danach gehen keine CloudKit-Anfragen mehr hinaus. Daten, die schon in der iCloud liegen, werden nicht automatisch gelöscht.</li>
+      <li>Placr-Daten aus iCloud löschen: Nutze die gleichnamige Aktion in den Einstellungen. Nach der Bestätigung löscht Placr seine Zone in deiner privaten CloudKit-Datenbank und die lokalen Synchronisierungsdateien.</li>
+      <li>Lokale Daten auf dem Mac löschen: Beende Placr, wähle im Finder „Gehe zu → Ordner öffnen“, gib <code>~/Library/Containers/cn.chenhk.placr</code> ein und lege den Ordner in den Papierkorb.</li>
     </ul>
-    <p>Das Entziehen des Fotozugriffs oder das Löschen lokaler Daten macht bereits geschriebene Standorte nicht rückgängig. Stelle sie zuerst über den Aktionsverlauf wieder her, bevor du die lokalen Daten löschst.</p>
+    <p>Das Entziehen des Fotozugriffs oder das Löschen lokaler Daten macht bereits geschriebene Standorte nicht rückgängig. Stelle sie zuerst über das Schreibprotokoll von Placr wieder her.</p>
 
     <h2>Kinder</h2>
     <p>Placr richtet sich nicht an Kinder und erfasst weder Alter noch andere personenbezogene Daten.</p>
 
     <h2>Änderungen der Richtlinie</h2>
-    <p>Ändert sich diese Richtlinie, wird das Datum oben auf der Seite aktualisiert; wesentliche Änderungen werden auch in der App bekannt gegeben.</p>
+    <p>Ändert sich diese Richtlinie, wird das Datum oben auf der Seite aktualisiert. Wesentliche Änderungen werden auch in der App bekannt gegeben.</p>
 
     <h2>Kontakt</h2>
     <p>Bei Datenschutzfragen schreib an <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
@@ -307,36 +339,41 @@
     data-title="Política de privacidad · Placr">
     <header>
       <h1>Política de privacidad</h1>
-      <p class="updated">Última actualización: septiembre de 2026</p>
+      <p class="updated">Última actualización: 16 de octubre de 2026</p>
     </header>
 
-      <p class="lede">Placr funciona localmente en tu Mac; tus fotos y tu historial de revisión permanecen en el dispositivo. No hay servidor del desarrollador ni registro de cuenta, y la app nunca envía tus fotos ni tu historial de uso por su cuenta. La única excepción: al elegir «Enviar comentarios» se abre tu propio cliente de correo con un borrador editable.</p>
+    <p class="lede">Placr funciona en local en tu Mac, iPhone y iPad. No hay servidor del desarrollador ni registro de cuenta. El contenido de las fotos, las miniaturas y los nombres de archivo nunca salen del dispositivo. Al elegir «Enviar comentarios» se abre tu propio cliente de correo con un borrador editable.</p>
 
     <h2>Lo que no se recopila</h2>
-    <p>Placr no recopila, almacena ni transmite información personal a ningún servidor controlado por el desarrollador. No hay análisis de uso, informes de fallos, publicidad, rastreo entre apps ni SDK de recopilación de datos de terceros.</p>
+    <p>Placr no recopila, almacena ni transmite información personal a ningún servidor controlado por el desarrollador. No hay análisis de uso, informes de fallos, publicidad, rastreo entre apps ni SDK de recopilación de datos de terceros. Con la sincronización de iCloud activada, los datos se escriben en tu propia base de datos privada de iCloud. El desarrollador no puede leerlos. Eso no es rastreo ni una recopilación del desarrollador.</p>
 
     <h2>Fotos</h2>
-    <p>Tras conceder el acceso, Placr lee fechas de captura, ubicaciones y miniaturas para encontrar fotos sin ubicación, agruparlas por tiempo y mostrar fotos de referencia. Todo el procesamiento ocurre en tu Mac; las fotos nunca salen del dispositivo.</p>
-    <p>Una ubicación se escribe solo después de aprobar el candidato y la confirmación final por lotes. Placr nunca borra fotos ni cambia metadatos distintos de la ubicación. La ubicación anterior se guarda en un registro local de operaciones para que puedas restaurarla.</p>
+    <p>Tras conceder el acceso, Placr lee fechas de captura, ubicaciones y miniaturas para encontrar fotos sin ubicación, agruparlas por tiempo y mostrar fotos de referencia. El contenido de las fotos, las miniaturas y los nombres de archivo se procesan en el dispositivo y nunca salen de él.</p>
+    <p>Una ubicación se escribe en Fotos solo después de guardarla y confirmar la escritura. Placr nunca borra fotos ni cambia metadatos distintos de la ubicación. La ubicación anterior queda en un registro del dispositivo para que puedas restaurarla.</p>
 
-    <h2>Búsqueda de lugares y servicios de terceros</h2>
-    <p>Para buscar un lugar, Placr envía solo el texto que escribiste. Si hay una coordenada de referencia disponible, también envía una región de búsqueda aproximada. Las fotos, las miniaturas y los registros de operaciones nunca se envían.</p>
-    <p>Las búsquedas de lugares las gestiona Mapas de Apple (MapKit) y se rigen por la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de privacidad de Apple</a>.</p>
-    <p>Las vistas previas de mapas de la app también provienen de Apple Maps: con solo abrir un grupo que tenga ubicación se pueden cargar datos de mapa de Apple, incluso sin buscar nada. Si tu fototeca usa Fotos de iCloud, al ver una foto macOS puede descargar el original desde iCloud según tu configuración del sistema; esas transferencias ocurren únicamente entre tu Mac y Apple.</p>
-    <p>Placr proporciona a estos servicios la información mínima necesaria para cada búsqueda. No vende datos ni permite que las solicitudes se usen para publicidad o perfiles de usuarios en nombre del desarrollador.</p>
+    <h2>Qué sale del dispositivo</h2>
+    <p>Solo dos cosas salen del dispositivo, y ninguna se envía al desarrollador:</p>
+    <ol>
+      <li>El texto de una búsqueda de lugares y las coordenadas usadas para buscar lugares cercanos. Van a Mapas de Apple (MapKit).</li>
+      <li>Los datos de revisión, y solo después de activar la sincronización de iCloud en Ajustes: el identificador de iCloud de una foto, las marcas de dejar para después, las coordenadas y los nombres de lugar de los lotes pendientes de escribir, y los registros de escritura. Se escriben solo a través de Apple CloudKit, en tu propia base de datos privada de iCloud. El contenedor es <code>iCloud.cn.chenhk.placr</code>, la zona personalizada es <code>PlacrReview</code> y el cuerpo está en el campo cifrado de extremo a extremo <code>encryptedValues["payload"]</code>. El desarrollador no puede leerlo. Puedes desactivar la sincronización en Ajustes en cualquier momento, o usar «Eliminar los datos de Placr de iCloud» para borrar la copia en la nube y los archivos locales de sincronización. Desactivar o eliminar eso no borra fotos ni deshace ubicaciones ya escritas en Fotos.</li>
+    </ol>
+    <p>La búsqueda de lugares la gestiona Mapas de Apple (MapKit) y se rige por la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de privacidad de Apple</a>.</p>
+    <p>Las vistas previas de mapas también provienen de Mapas de Apple. Abrir un grupo que ya tiene ubicación puede cargar datos de mapa de Apple aunque no busques. Si tu fototeca usa Fotos de iCloud, al ver una foto el sistema puede descargar el original desde iCloud según tus ajustes. Esas transferencias ocurren solo entre tu dispositivo y Apple. Placr no las controla.</p>
 
     <h2>Almacenamiento local y retención</h2>
-    <p>La instantánea de la fototeca, los borradores de revisión, el historial de operaciones, la caché de zonas horarias y las preferencias permanecen en el contenedor de sandbox de Placr hasta que elimines los archivos.</p>
+    <p>La instantánea de la fototeca, los borradores, el historial de operaciones, la caché de zonas horarias, el estado de sincronización y las preferencias permanecen en el contenedor de sandbox de Placr hasta que elimines los archivos. Eliminar los datos de sincronización de iCloud desde Ajustes solo quita los archivos locales usados para sincronizar. Los borradores y los registros de escritura siguen en el dispositivo.</p>
     <div class="note">
-      <p>Eliminar la app puede no eliminar automáticamente su contenedor de sandbox ni el elemento del llavero. Más abajo se indican los pasos completos de eliminación.</p>
+      <p>Eliminar la app puede no eliminar automáticamente su contenedor de sandbox ni el elemento del llavero. Los pasos completos siguen abajo.</p>
     </div>
 
     <h2>Revocar el acceso y eliminar datos</h2>
     <ul>
-      <li>Revocar el acceso a Fotos: abre Ajustes del Sistema → Privacidad y seguridad → Fotos y desactiva Placr.</li>
-      <li>Eliminar los datos locales de Placr: sal de Placr, elige Ir → Ir a la carpeta en el Finder, escribe <code>~/Library/Containers/cn.chenhk.placr</code> y mueve esa carpeta a la Papelera.</li>
+      <li>Revocar el acceso a Fotos: en un Mac, abre Ajustes del Sistema → Privacidad y seguridad → Fotos y desactiva Placr. En un iPhone o iPad, abre Ajustes → Placr y desactiva el acceso a Fotos.</li>
+      <li>Desactivar la sincronización: desactiva la sincronización de iCloud en los ajustes de Placr. A partir de entonces no hay más solicitudes a CloudKit. Los datos que ya estén en iCloud no se borran solos.</li>
+      <li>Eliminar los datos de Placr de iCloud: usa la acción del mismo nombre en Ajustes. Tras confirmar, Placr borra su zona en tu base de datos privada de CloudKit y los archivos locales de sincronización.</li>
+      <li>Eliminar los datos locales en un Mac: sal de Placr, elige Ir → Ir a la carpeta en el Finder, escribe <code>~/Library/Containers/cn.chenhk.placr</code> y mueve esa carpeta a la Papelera.</li>
     </ul>
-    <p>Revocar el acceso a Fotos o eliminar los datos locales no deshace las ubicaciones ya escritas en Fotos. Para restaurarlas, usa el historial de operaciones de Placr antes de eliminar los datos locales.</p>
+    <p>Revocar el acceso a Fotos o eliminar los datos locales no deshace las ubicaciones ya escritas en Fotos. Restáuralas desde el historial de escritura de Placr antes de eliminar los datos locales.</p>
 
     <h2>Niños</h2>
     <p>Placr no está dirigido a niños y no recopila la edad ni ningún otro dato personal.</p>
@@ -352,36 +389,41 @@
     data-title="Politique de confidentialité · Placr">
     <header>
       <h1>Politique de confidentialité</h1>
-      <p class="updated">Dernière mise à jour : septembre 2026</p>
+      <p class="updated">Dernière mise à jour : 16 octobre 2026</p>
     </header>
 
-      <p class="lede">Placr fonctionne localement sur votre Mac ; vos photos et votre historique de révision restent sur l'appareil. Il n'existe ni serveur géré par le développeur ni compte, et l'app n'envoie jamais vos photos ni votre historique d'utilisation de sa propre initiative. Seule exception : « Envoyer des commentaires » ouvre votre propre client de messagerie avec un brouillon modifiable.</p>
+    <p class="lede">Placr fonctionne localement sur votre Mac, iPhone et iPad. Il n'existe ni serveur géré par le développeur ni compte. Le contenu des photos, les vignettes et les noms de fichier ne quittent jamais l'appareil. « Envoyer des commentaires » ouvre votre propre client de messagerie avec un brouillon modifiable.</p>
 
     <h2>Ce qui n'est pas collecté</h2>
-    <p>Placr ne collecte, ne stocke et ne transmet aucune donnée personnelle vers un serveur contrôlé par le développeur. Pas d'analytique, pas de rapports de plantage, pas de publicité, pas de suivi entre apps, pas de SDK tiers de collecte de données.</p>
+    <p>Placr ne collecte, ne stocke et ne transmet aucune donnée personnelle vers un serveur contrôlé par le développeur. Pas d'analytique, pas de rapports de plantage, pas de publicité, pas de suivi entre apps, pas de SDK tiers de collecte de données. Lorsque la synchronisation iCloud est activée, les données sont écrites dans votre propre base privée iCloud. Le développeur ne peut pas les lire. Ce n'est ni un suivi ni une collecte par le développeur.</p>
 
     <h2>Photos</h2>
-    <p>Après votre autorisation, Placr lit les dates de prise, les lieux et les vignettes pour trouver les photos sans lieu, les grouper dans le temps et afficher des photos de référence. Tout le traitement a lieu sur votre Mac ; les photos ne quittent jamais l'appareil.</p>
-    <p>Un lieu n'est écrit qu'après votre validation du candidat et la confirmation finale par lot. Placr ne supprime jamais de photos et ne modifie aucune métadonnée autre que le lieu. Le lieu antérieur est conservé dans un historique d'opérations local pour permettre sa restauration.</p>
+    <p>Après votre autorisation, Placr lit les dates de prise, les lieux et les vignettes pour trouver les photos sans lieu, les grouper dans le temps et afficher des photos de référence. Le contenu des photos, les vignettes et les noms de fichier sont traités sur l'appareil et ne le quittent jamais.</p>
+    <p>Un lieu n'est écrit dans Photos qu'après l'enregistrement et la confirmation de l'écriture. Placr ne supprime jamais de photos et ne modifie aucune métadonnée autre que le lieu. Le lieu antérieur reste dans un enregistrement sur l'appareil afin que vous puissiez le restaurer.</p>
 
-    <h2>Recherche de lieux et services tiers</h2>
-    <p>Pour une recherche de lieu, Placr n'envoie que le texte saisi. Si une coordonnée de référence est disponible, il envoie aussi une zone de recherche approximative. Les photos, les vignettes et les historiques d'opérations ne sont jamais envoyés.</p>
-    <p>Les recherches de lieux sont traitées par Plans (MapKit) et soumises à la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Politique de confidentialité d'Apple</a>.</p>
-    <p>Les aperçus de carte de l'app proviennent eux aussi d'Apple Maps : simplement ouvrir un groupe comportant une position peut charger des données cartographiques d'Apple, même sans aucune recherche. Si votre photothèque utilise Photos iCloud, l'affichage d'une photo peut amener macOS à télécharger l'original depuis iCloud selon vos réglages système ; ces transferts s'effectuent uniquement entre votre Mac et Apple.</p>
-    <p>Placr ne transmet à ces services que le minimum nécessaire à chaque recherche. Il ne vend aucune donnée et ne permet pas que les requêtes servent à de la publicité ou du profilage au nom du développeur.</p>
+    <h2>Ce qui quitte l'appareil</h2>
+    <p>Seules deux choses quittent l'appareil, et aucune n'est envoyée au développeur :</p>
+    <ol>
+      <li>Le texte d'une recherche de lieu et les coordonnées utilisées pour retrouver les lieux à proximité. Ils sont envoyés à Plans (MapKit).</li>
+      <li>Les faits de révision, et seulement après avoir activé la synchronisation iCloud dans Réglages : l'identifiant iCloud d'une photo, les marques « plus tard », les coordonnées et noms de lieu des lots en attente d'écriture, et les enregistrements d'écriture. Ils ne sont écrits que via Apple CloudKit, dans votre propre base privée iCloud. Le conteneur est <code>iCloud.cn.chenhk.placr</code>, la zone personnalisée est <code>PlacrReview</code>, et le corps se trouve dans le champ chiffré de bout en bout <code>encryptedValues["payload"]</code>. Le développeur ne peut pas le lire. Vous pouvez désactiver la synchronisation à tout moment dans Réglages, ou utiliser « Supprimer les données Placr d’iCloud » pour effacer la copie dans le nuage et les fichiers locaux de synchronisation. Désactiver ou supprimer cela n'efface pas les photos et n'annule pas les lieux déjà écrits dans Photos.</li>
+    </ol>
+    <p>La recherche de lieux est traitée par Plans (MapKit) et soumise à la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Politique de confidentialité d'Apple</a>.</p>
+    <p>Les aperçus de carte proviennent aussi de Plans. Ouvrir un groupe qui a déjà un lieu peut charger des données cartographiques d'Apple, même sans recherche. Si votre photothèque utilise Photos iCloud, l'affichage d'une photo peut amener le système à télécharger l'original depuis iCloud selon vos réglages. Ces transferts n'ont lieu qu'entre votre appareil et Apple. Placr ne les contrôle pas.</p>
 
     <h2>Stockage local et conservation</h2>
-    <p>L'instantané de la photothèque, les brouillons de révision, l'historique des opérations, le cache des fuseaux horaires et les réglages restent dans le conteneur sandbox de Placr jusqu'à ce que vous supprimiez les fichiers.</p>
+    <p>L'instantané de la photothèque, les brouillons, l'historique des opérations, le cache des fuseaux horaires, l'état de synchronisation et les réglages restent dans le conteneur sandbox de Placr jusqu'à ce que vous supprimiez les fichiers. Supprimer les données de synchronisation iCloud dans Réglages ne retire que les fichiers locaux utilisés pour la synchronisation. Les brouillons et les enregistrements d'écriture restent sur l'appareil.</p>
     <div class="note">
-      <p>Supprimer l'app ne supprime pas nécessairement son conteneur sandbox ni son élément de trousseau. Les instructions complètes de suppression suivent.</p>
+      <p>Supprimer l'app ne supprime pas nécessairement son conteneur sandbox ni son élément de trousseau. Les instructions complètes suivent.</p>
     </div>
 
     <h2>Révoquer l'accès et supprimer les données</h2>
     <ul>
-      <li>Révoquer l'accès aux photos : ouvrez Réglages Système → Confidentialité et sécurité → Photos, puis désactivez Placr.</li>
-      <li>Supprimer les données locales de Placr : quittez Placr, choisissez Aller → Aller au dossier dans le Finder, saisissez <code>~/Library/Containers/cn.chenhk.placr</code> et placez ce dossier à la Corbeille.</li>
+      <li>Révoquer l'accès aux photos : sur un Mac, ouvrez Réglages Système → Confidentialité et sécurité → Photos, puis désactivez Placr. Sur un iPhone ou un iPad, ouvrez Réglages → Placr et désactivez l'accès aux photos.</li>
+      <li>Désactiver la synchronisation : désactivez la synchronisation iCloud dans les réglages de Placr. Aucune requête CloudKit n'est ensuite envoyée. Les données déjà présentes dans iCloud ne sont pas supprimées automatiquement.</li>
+      <li>Supprimer les données Placr d’iCloud : utilisez l'action du même nom dans Réglages. Après confirmation, Placr supprime sa zone dans votre base privée CloudKit et les fichiers locaux de synchronisation.</li>
+      <li>Supprimer les données locales sur un Mac : quittez Placr, choisissez Aller → Aller au dossier dans le Finder, saisissez <code>~/Library/Containers/cn.chenhk.placr</code> et placez ce dossier à la Corbeille.</li>
     </ul>
-    <p>Révoquer l'accès aux photos ou supprimer les données locales n'annule pas les lieux déjà écrits dans Photos. Pour les restaurer, servez-vous de l'historique des opérations de Placr avant de supprimer les données locales.</p>
+    <p>Révoquer l'accès aux photos ou supprimer les données locales n'annule pas les lieux déjà écrits dans Photos. Restaurez-les depuis l'historique d'écriture de Placr avant de supprimer les données locales.</p>
 
     <h2>Enfants</h2>
     <p>Placr ne s'adresse pas aux enfants et ne collecte ni l'âge ni aucune autre donnée personnelle.</p>
@@ -397,36 +439,41 @@
     data-title="Informativa sulla privacy · Placr">
     <header>
       <h1>Informativa sulla privacy</h1>
-      <p class="updated">Ultimo aggiornamento: settembre 2026</p>
+      <p class="updated">Ultimo aggiornamento: 16 ottobre 2026</p>
     </header>
 
-      <p class="lede">Placr funziona localmente sul tuo Mac; foto e cronologia di revisione restano sul dispositivo. Non esiste un server gestito dallo sviluppatore né la registrazione di un account, e l'app non invia mai foto o cronologie d'uso di propria iniziativa. Unica eccezione: scegliendo «Invia commenti» si apre il tuo client di posta con una bozza modificabile.</p>
+    <p class="lede">Placr funziona in locale sul tuo Mac, iPhone e iPad. Non esiste un server gestito dallo sviluppatore né la registrazione di un account. Contenuto delle foto, miniature e nomi dei file non lasciano mai il dispositivo. Scegliendo «Invia commenti» si apre il tuo client di posta con una bozza modificabile.</p>
 
     <h2>Cosa non viene raccolto</h2>
-    <p>Placr non raccoglie, archivia né trasmette informazioni personali a server controllati dallo sviluppatore. Niente analisi, segnalazioni di arresto anomalo, pubblicità, tracciamento tra app o SDK di terze parti per la raccolta dati.</p>
+    <p>Placr non raccoglie, archivia né trasmette informazioni personali a server controllati dallo sviluppatore. Niente analisi, segnalazioni di arresto anomalo, pubblicità, tracciamento tra app o SDK di terze parti per la raccolta dati. Con la sincronizzazione iCloud attiva, i dati vengono scritti nel tuo database privato di iCloud. Lo sviluppatore non può leggerli. Non è tracciamento e non è una raccolta da parte dello sviluppatore.</p>
 
     <h2>Foto</h2>
-    <p>Dopo aver concesso l'accesso, Placr legge data di scatto, luoghi e miniature per trovare le foto senza luogo, raggrupparle nel tempo e mostrare foto di riferimento. Tutta l'elaborazione avviene sul tuo Mac; le foto non lasciano mai il dispositivo.</p>
-    <p>Un luogo viene scritto solo dopo l'approvazione del candidato e la conferma finale del lotto. Placr non elimina mai le foto e non modifica metadati diversi dal luogo. Il luogo precedente è conservato in una cronologia operazioni locale, così puoi ripristinarlo.</p>
+    <p>Dopo aver concesso l'accesso, Placr legge data di scatto, luoghi e miniature per trovare le foto senza luogo, raggrupparle nel tempo e mostrare foto di riferimento. Contenuto delle foto, miniature e nomi dei file vengono elaborati sul dispositivo e non lo lasciano mai.</p>
+    <p>Un luogo viene scritto in Foto solo dopo il salvataggio e la conferma della scrittura. Placr non elimina mai le foto e non modifica metadati diversi dal luogo. Il luogo precedente resta in una registrazione sul dispositivo, così puoi ripristinarlo.</p>
 
-    <h2>Ricerca di luoghi e servizi di terze parti</h2>
-    <p>Per cercare un luogo, Placr invia solo il testo digitato. Se è disponibile una coordinata di riferimento, invia anche un'area di ricerca approssimativa. Foto, miniature e cronologie operazioni non vengono mai inviate.</p>
-    <p>Le ricerche dei luoghi sono gestite da Mappe (MapKit) e sono soggette all'<a href="https://www.apple.com/legal/privacy/" rel="noopener">Informativa sulla privacy di Apple</a>.</p>
-    <p>Anche le anteprime mappa nell'app sono fornite da Mappe: basta aprire un gruppo con posizione per caricare dati cartografici da Apple, anche senza effettuare ricerche. Se la tua libreria usa Foto di iCloud, alla visualizzazione di una foto macOS può scaricare l'originale da iCloud secondo le tue impostazioni di sistema; questi trasferimenti avvengono solo tra il tuo Mac e Apple.</p>
-    <p>Placr fornisce a questi servizi solo le informazioni minime necessarie alla ricerca. Non vende dati né consente che le richieste siano usate per pubblicità o profilatura per conto dello sviluppatore.</p>
+    <h2>Cosa lascia il dispositivo</h2>
+    <p>Solo due cose lasciano il dispositivo, e nessuna viene inviata allo sviluppatore:</p>
+    <ol>
+      <li>Il testo di una ricerca di luoghi e le coordinate usate per cercare luoghi vicini. Vanno a Mappe (MapKit).</li>
+      <li>I fatti di revisione, e solo dopo aver attivato la sincronizzazione iCloud in Impostazioni: l'identificatore iCloud di una foto, i contrassegni di rinvio, le coordinate e i nomi dei luoghi dei lotti in attesa di scrittura e le registrazioni di scrittura. Vengono scritti solo tramite Apple CloudKit, nel tuo database privato di iCloud. Il contenitore è <code>iCloud.cn.chenhk.placr</code>, la zona personalizzata è <code>PlacrReview</code> e il corpo sta nel campo cifrato end-to-end <code>encryptedValues["payload"]</code>. Lo sviluppatore non può leggerlo. Puoi disattivare la sincronizzazione in qualsiasi momento in Impostazioni, oppure usare «Elimina i dati di Placr da iCloud» per cancellare la copia nel cloud e i file locali di sincronizzazione. Disattivare o eliminare non cancella le foto e non annulla i luoghi già scritti in Foto.</li>
+    </ol>
+    <p>La ricerca dei luoghi è gestita da Mappe (MapKit) ed è soggetta all'<a href="https://www.apple.com/legal/privacy/" rel="noopener">Informativa sulla privacy di Apple</a>.</p>
+    <p>Anche le anteprime mappa provengono da Mappe. Aprire un gruppo che ha già un luogo può caricare dati cartografici da Apple, anche senza cercare. Se la tua libreria usa Foto di iCloud, alla visualizzazione di una foto il sistema può scaricare l'originale da iCloud secondo le tue impostazioni. Questi trasferimenti avvengono solo tra il tuo dispositivo e Apple. Placr non li controlla.</p>
 
     <h2>Archiviazione locale e conservazione</h2>
-    <p>Lo snapshot della libreria, le bozze di revisione, la cronologia operazioni, la cache dei fusi orari e le preferenze restano nel contenitore sandbox di Placr finché non elimini i file.</p>
+    <p>Lo snapshot della libreria, le bozze, la cronologia operazioni, la cache dei fusi orari, lo stato di sincronizzazione e le preferenze restano nel contenitore sandbox di Placr finché non elimini i file. Eliminare i dati di sincronizzazione iCloud dalle Impostazioni rimuove solo i file locali usati per la sincronizzazione. Bozze e registrazioni di scrittura restano sul dispositivo.</p>
     <div class="note">
-      <p>Eliminare l'app non rimuove necessariamente il contenitore sandbox o l'elemento del portachiavi. Più sotto trovi le istruzioni complete per la rimozione.</p>
+      <p>Eliminare l'app non rimuove necessariamente il contenitore sandbox o l'elemento del portachiavi. Le istruzioni complete seguono.</p>
     </div>
 
     <h2>Revocare l'accesso ed eliminare i dati</h2>
     <ul>
-      <li>Revocare l'accesso alle foto: apri Impostazioni di Sistema → Privacy e sicurezza → Foto e disattiva Placr.</li>
-      <li>Eliminare i dati locali di Placr: chiudi Placr, nel Finder scegli Vai → Vai alla cartella, digita <code>~/Library/Containers/cn.chenhk.placr</code> e sposta la cartella nel Cestino.</li>
+      <li>Revocare l'accesso alle foto: su un Mac, apri Impostazioni di Sistema → Privacy e sicurezza → Foto e disattiva Placr. Su iPhone o iPad, apri Impostazioni → Placr e disattiva l'accesso alle foto.</li>
+      <li>Disattivare la sincronizzazione: disattiva la sincronizzazione iCloud nelle impostazioni di Placr. In seguito non partono altre richieste CloudKit. I dati già presenti in iCloud non vengono eliminati da soli.</li>
+      <li>Elimina i dati di Placr da iCloud: usa l'azione con lo stesso nome in Impostazioni. Dopo la conferma, Placr elimina la propria zona nel database privato di CloudKit e i file locali di sincronizzazione.</li>
+      <li>Eliminare i dati locali su un Mac: chiudi Placr, nel Finder scegli Vai → Vai alla cartella, digita <code>~/Library/Containers/cn.chenhk.placr</code> e sposta la cartella nel Cestino.</li>
     </ul>
-    <p>Revocare l'accesso alle foto o eliminare i dati locali non annulla i luoghi già scritti in Foto. Per ripristinarli, usa la cronologia operazioni di Placr prima di eliminare i dati locali.</p>
+    <p>Revocare l'accesso alle foto o eliminare i dati locali non annulla i luoghi già scritti in Foto. Ripristinali dalla cronologia di scrittura di Placr prima di eliminare i dati locali.</p>
 
     <h2>Bambini</h2>
     <p>Placr non è destinato ai bambini e non raccoglie età né altre informazioni personali.</p>
@@ -442,36 +489,41 @@
     data-title="Política de Privacidade · Placr">
     <header>
       <h1>Política de Privacidade</h1>
-      <p class="updated">Última atualização: setembro de 2026</p>
+      <p class="updated">Última atualização: 16 de outubro de 2026</p>
     </header>
 
-      <p class="lede">O Placr funciona localmente no seu Mac; suas fotos e o histórico de revisão ficam no dispositivo. Não há servidor operado pelo desenvolvedor nem cadastro de conta, e o app nunca envia suas fotos ou histórico de uso por conta própria. Única exceção: ao escolher “Enviar comentários”, abre-se o seu próprio cliente de e-mail com um rascunho editável.</p>
+    <p class="lede">O Placr funciona localmente no seu Mac, iPhone e iPad. Não há servidor operado pelo desenvolvedor nem cadastro de conta. O conteúdo das fotos, as miniaturas e os nomes de arquivo nunca saem do aparelho. Ao escolher “Enviar comentários”, abre-se o seu próprio cliente de e-mail com um rascunho editável.</p>
 
     <h2>O que não é coletado</h2>
-    <p>O Placr não coleta, armazena nem transmite informações pessoais a nenhum servidor controlado pelo desenvolvedor. Não há análise de uso, relatórios de falhas, publicidade, rastreamento entre apps ou SDK de coleta de dados de terceiros.</p>
+    <p>O Placr não coleta, armazena nem transmite informações pessoais a nenhum servidor controlado pelo desenvolvedor. Não há análise de uso, relatórios de falhas, publicidade, rastreamento entre apps ou SDK de coleta de dados de terceiros. Com a sincronização do iCloud ligada, os dados são gravados no seu próprio banco privado do iCloud. O desenvolvedor não consegue lê-los. Isso não é rastreamento nem coleta pelo desenvolvedor.</p>
 
     <h2>Fotos</h2>
-    <p>Depois que você concede acesso, o Placr lê datas de captura, locais e miniaturas para encontrar fotos sem local, agrupá-las pelo tempo e mostrar fotos de referência. Todo o processamento acontece no seu Mac; as fotos nunca saem do aparelho.</p>
-    <p>Um local só é gravado depois que você aprova o candidato e a confirmação final do lote. O Placr nunca apaga fotos nem altera metadados além do local. O local anterior é guardado em um histórico de operações local para você poder restaurá-lo.</p>
+    <p>Depois que você concede acesso, o Placr lê datas de captura, locais e miniaturas para encontrar fotos sem local, agrupá-las pelo tempo e mostrar fotos de referência. O conteúdo das fotos, as miniaturas e os nomes de arquivo são processados no aparelho e nunca saem dele.</p>
+    <p>Um local só é gravado no Fotos depois que você o salva e confirma a gravação. O Placr nunca apaga fotos nem altera metadados além do local. O local anterior fica em um registro no aparelho para você poder restaurá-lo.</p>
 
-    <h2>Busca de lugares e serviços de terceiros</h2>
-    <p>Para buscar um lugar, o Placr envia apenas o texto digitado. Se há uma coordenada de referência disponível, também envia uma região de busca aproximada. Fotos, miniaturas e históricos de operações nunca são enviados.</p>
-    <p>As buscas de lugares são feitas pelo Mapas Apple (MapKit) e estão sujeitas à <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de Privacidade da Apple</a>.</p>
-    <p>As prévias de mapa no app também vêm do Apple Mapas: basta abrir um grupo que tenha localização para carregar dados de mapa da Apple, mesmo sem fazer nenhuma busca. Se a sua fototeca usa Fotos do iCloud, ao ver uma foto o macOS pode baixar o original do iCloud conforme as suas configurações do sistema; essas transferências acontecem apenas entre o seu Mac e a Apple.</p>
-    <p>O Placr fornece a esses serviços apenas o mínimo necessário para cada busca. Não vende dados nem permite que as solicitações sejam usadas para publicidade ou criação de perfis em nome do desenvolvedor.</p>
+    <h2>O que sai do aparelho</h2>
+    <p>Só duas coisas saem do aparelho, e nenhuma é enviada ao desenvolvedor:</p>
+    <ol>
+      <li>O texto de uma busca de lugares e as coordenadas usadas para localizar lugares próximos. Elas vão para o Mapas da Apple (MapKit).</li>
+      <li>Os fatos da revisão, e somente depois de você ligar a sincronização do iCloud nos Ajustes: o identificador do iCloud de uma foto, as marcas de deixar para depois, as coordenadas e os nomes de lugar dos lotes aguardando gravação e os registros de gravação. Eles são gravados somente pelo Apple CloudKit, no seu próprio banco privado do iCloud. O contêiner é <code>iCloud.cn.chenhk.placr</code>, a zona personalizada é <code>PlacrReview</code> e o corpo fica no campo criptografado de ponta a ponta <code>encryptedValues["payload"]</code>. O desenvolvedor não consegue lê-lo. Você pode desligar a sincronização a qualquer momento nos Ajustes, ou usar “Apagar os dados do Placr do iCloud” para limpar a cópia na nuvem e os arquivos locais de sincronização. Desligar ou apagar isso não apaga fotos nem desfaz locais já gravados no Fotos.</li>
+    </ol>
+    <p>A busca de lugares é feita pelo Mapas da Apple (MapKit) e está sujeita à <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de Privacidade da Apple</a>.</p>
+    <p>As prévias de mapa também vêm do Mapas da Apple. Abrir um grupo que já tem localização pode carregar dados de mapa da Apple, mesmo sem buscar. Se a sua fototeca usa Fotos do iCloud, ao ver uma foto o sistema pode baixar o original do iCloud conforme os seus ajustes. Essas transferências acontecem apenas entre o seu aparelho e a Apple. O Placr não as controla.</p>
 
     <h2>Armazenamento local e retenção</h2>
-    <p>O instantâneo da biblioteca, os rascunhos de revisão, o histórico de operações, o cache de fusos horários e as preferências ficam no contêiner de sandbox do Placr até você remover os arquivos.</p>
+    <p>O instantâneo da biblioteca, os rascunhos, o histórico de operações, o cache de fusos horários, o estado da sincronização e as preferências ficam no contêiner de sandbox do Placr até você remover os arquivos. Apagar os dados de sincronização do iCloud nos Ajustes remove apenas os arquivos locais usados na sincronização. Rascunhos e registros de gravação continuam no aparelho.</p>
     <div class="note">
-      <p>Apagar o app pode não remover automaticamente o contêiner de sandbox nem o item do chaveiro. As instruções completas de remoção seguem abaixo.</p>
+      <p>Apagar o app pode não remover automaticamente o contêiner de sandbox nem o item do chaveiro. As instruções completas seguem abaixo.</p>
     </div>
 
     <h2>Revogar o acesso e apagar dados</h2>
     <ul>
-      <li>Revogar o acesso às fotos: abra Ajustes do Sistema → Privacidade e Segurança → Fotos e desative o Placr.</li>
-      <li>Apagar os dados locais do Placr: saia do Placr, escolha Ir → Ir para a Pasta no Finder, digite <code>~/Library/Containers/cn.chenhk.placr</code> e mova a pasta para o Lixo.</li>
+      <li>Revogar o acesso às fotos: no Mac, abra Ajustes do Sistema → Privacidade e Segurança → Fotos e desative o Placr. No iPhone ou iPad, abra Ajustes → Placr e desative o acesso às Fotos.</li>
+      <li>Desligar a sincronização: desligue a sincronização do iCloud nos ajustes do Placr. Depois disso não há novos pedidos ao CloudKit. Os dados que já estão no iCloud não são apagados sozinhos.</li>
+      <li>Apagar os dados do Placr do iCloud: use a ação de mesmo nome nos Ajustes. Depois da confirmação, o Placr apaga a zona no seu banco privado do CloudKit e os arquivos locais de sincronização.</li>
+      <li>Apagar os dados locais no Mac: saia do Placr, escolha Ir → Ir para a Pasta no Finder, digite <code>~/Library/Containers/cn.chenhk.placr</code> e mova a pasta para o Lixo.</li>
     </ul>
-    <p>Revogar o acesso às fotos ou apagar os dados locais não desfaz os locais já gravados no Fotos. Para restaurá-los, use o histórico de operações do Placr antes de apagar os dados locais.</p>
+    <p>Revogar o acesso às fotos ou apagar os dados locais não desfaz os locais já gravados no Fotos. Restaure-os pelo histórico de gravação do Placr antes de apagar os dados locais.</p>
 
     <h2>Crianças</h2>
     <p>O Placr não é direcionado a crianças e não coleta idade nem qualquer outra informação pessoal.</p>
@@ -487,36 +539,41 @@
     data-title="개인정보 처리방침 · Placr">
     <header>
       <h1>개인정보 처리방침</h1>
-      <p class="updated">마지막 업데이트: 2026년 9월</p>
+      <p class="updated">마지막 업데이트: 2026년 10월 16일</p>
     </header>
 
-      <p class="lede">Placr는 Mac에서 로컬로 동작하며, 사진과 검토 기록은 기기에 남습니다. 개발자가 운영하는 서버도 계정 가입도 없으며, 앱이 사진이나 사용 기록을 자동으로 보내지 않습니다. 유일한 예외: '피드백 보내기'를 선택하면 수정 가능한 임시 메일과 함께 본인의 메일 앱이 열립니다.</p>
+    <p class="lede">Placr는 Mac, iPhone, iPad에서 기기 안에서 동작합니다. 개발자가 운영하는 서버도 계정 가입도 없습니다. 사진 내용, 썸네일, 파일 이름은 기기 밖으로 나가지 않습니다. ‘피드백 보내기’를 선택하면 수정 가능한 임시 메일과 함께 본인의 메일 앱이 열립니다.</p>
 
     <h2>수집하지 않는 정보</h2>
-    <p>Placr는 개발자가 관리하는 서버로 개인정보를 수집, 저장, 전송하지 않습니다. 분석, 크래시 리포트, 광고, 앱 간 추적, 서드파티 데이터 수집 SDK가 전혀 없습니다.</p>
+    <p>Placr는 개발자가 관리하는 서버로 개인정보를 수집, 저장, 전송하지 않습니다. 분석, 크래시 리포트, 광고, 앱 간 추적, 서드파티 데이터 수집 SDK가 없습니다. iCloud 동기화를 켜면 데이터는 사용자 자신의 iCloud 비공개 데이터베이스에 기록됩니다. 개발자는 읽을 수 없습니다. 이것은 추적도, 개발자의 수집도 아닙니다.</p>
 
     <h2>사진</h2>
-    <p>권한을 허용하면 Placr는 촬영 시각, 위치, 썸네일을 읽어 위치 없는 사진을 찾고, 시각순으로 묶고, 참고 사진을 표시하는 데 사용합니다. 모든 처리는 Mac에서 이루어지며 사진 자체가 기기 밖으로 나가는 일은 없습니다.</p>
-    <p>위치는 후보를 확인하고 최종 일괄 확인을 마친 뒤에만 기록됩니다. Placr는 사진을 삭제하지 않고 위치 외의 메타데이터도 변경하지 않습니다. 기록 이전의 위치는 복원할 수 있도록 기기 내 작업 기록에 저장됩니다.</p>
+    <p>권한을 허용하면 Placr는 촬영 시각, 위치, 썸네일을 읽어 위치 없는 사진을 찾고, 시각순으로 묶고, 참고 사진을 표시합니다. 사진 내용, 썸네일, 파일 이름의 처리는 이 기기에서 이루어지며 이 셋은 기기 밖으로 나가지 않습니다.</p>
+    <p>위치는 저장하고 쓰기를 확인한 뒤에만 ‘사진’에 기록됩니다. Placr는 사진을 삭제하지 않고 위치 외의 메타데이터도 바꾸지 않습니다. 기록 이전의 위치는 복원할 수 있도록 기기의 기록에 남습니다.</p>
 
-    <h2>장소 검색과 서드파티 서비스</h2>
-    <p>장소를 검색할 때 Placr가 보내는 것은 입력한 텍스트뿐입니다. 참고 좌표가 있으면 대략적인 검색 범위도 함께 보냅니다. 사진, 썸네일, 작업 기록은 절대 전송하지 않습니다.</p>
+    <h2>기기 밖으로 나가는 것</h2>
+    <p>이 기기 밖으로 나가는 것은 아래 두 가지뿐이며, 어느 쪽도 개발자에게 전송되지 않습니다.</p>
+    <ol>
+      <li>장소 검색 문구와, 근처 장소를 역지오코딩할 때 쓰는 좌표. 수신자는 Apple 지도(MapKit)입니다.</li>
+      <li>설정에서 iCloud 동기화를 켠 뒤의 검토 사실: 사진의 iCloud 식별자, 나중에 처리 표시, 쓰기 대기 배치의 좌표와 지명, 쓰기 기록. 이들은 Apple CloudKit을 통해서만 사용자 자신의 iCloud 비공개 데이터베이스에 기록됩니다. 컨테이너는 <code>iCloud.cn.chenhk.placr</code>, 사용자 설정 영역은 <code>PlacrReview</code>, 본문은 종단간 암호화 필드 <code>encryptedValues["payload"]</code>에 들어갑니다. 개발자는 읽을 수 없습니다. 설정에서 언제든 동기화를 끄거나, ‘iCloud에서 Placr 데이터 삭제’로 클라우드와 기기의 동기화 데이터를 지울 수 있습니다. 끄거나 삭제해도 사진이 지워지거나, 이미 사진에 기록된 위치가 되돌려지지는 않습니다.</li>
+    </ol>
     <p>장소 검색은 Apple 지도(MapKit)가 처리하며 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple의 개인정보 처리방침</a>이 적용됩니다.</p>
-    <p>앱의 지도 미리보기도 Apple 지도에서 제공됩니다. 검색하지 않아도 위치가 있는 그룹을 열면 Apple에서 지도 데이터를 불러올 수 있습니다. 사진 보관함이 iCloud 사진을 사용하면 사진을 볼 때 macOS가 시스템 설정에 따라 iCloud에서 원본을 내려받을 수 있으며, 이러한 전송은 Mac과 Apple 사이에서만 이루어집니다.</p>
-    <p>Placr는 해당 검색을 완료하는 데 필요한 최소한의 정보만 이들 서비스에 제공하며, 데이터를 판매하거나 요청이 개발자를 위한 광고나 사용자 프로파일링에 쓰이도록 허용하지 않습니다.</p>
+    <p>앱의 지도 미리보기도 Apple 지도에서 제공됩니다. 검색하지 않아도 위치가 있는 그룹을 열면 Apple에서 지도 데이터를 불러올 수 있습니다. 사진 보관함이 iCloud 사진을 사용하면 사진을 볼 때 시스템 설정에 따라 iCloud에서 원본을 내려받을 수 있습니다. 이러한 전송은 기기와 Apple 사이에서만 이루어지며 Placr가 관여하지 않습니다.</p>
 
     <h2>로컬 저장과 보존 기간</h2>
-    <p>보관함 스냅샷, 검토 초안, 작업 기록, 시간대 캐시, 설정은 삭제하기 전까지 Placr의 샌드박스 컨테이너에 보관됩니다.</p>
+    <p>보관함 스냅샷, 검토 초안, 작업 기록, 시간대 캐시, 동기화 상태, 설정은 해당 파일을 지우기 전까지 Placr의 샌드박스에 남습니다. 설정에서 iCloud 동기화 데이터를 삭제하면 동기화에 쓰이던 로컬 파일만 지워집니다. 초안과 쓰기 기록은 기기에 남습니다.</p>
     <div class="note">
       <p>앱을 삭제해도 샌드박스 컨테이너나 키체인 항목이 자동으로 지워지지 않을 수 있습니다. 완전한 삭제 방법은 아래에 있습니다.</p>
     </div>
 
     <h2>권한 철회와 데이터 삭제</h2>
     <ul>
-      <li>사진 접근 철회: '시스템 설정 → 개인정보 보호 및 보안 → 사진'에서 Placr을 끕니다.</li>
-      <li>Placr 로컬 데이터 삭제: Placr을 종료한 뒤 Finder에서 '이동 → 폴더로 이동'을 골라 <code>~/Library/Containers/cn.chenhk.placr</code>를 입력하고 그 폴더를 휴지통으로 옮깁니다.</li>
+      <li>사진 접근 철회: Mac에서는 ‘시스템 설정 → 개인정보 보호 및 보안 → 사진’에서 Placr를 끕니다. iPhone 또는 iPad에서는 ‘설정 → Placr’에서 사진 접근을 끕니다.</li>
+      <li>동기화 끄기: Placr 설정에서 iCloud 동기화를 끕니다. 이후 CloudKit으로 요청을 보내지 않습니다. 이미 iCloud에 있는 데이터는 자동으로 지워지지 않습니다.</li>
+      <li>iCloud에서 Placr 데이터 삭제: 설정의 같은 이름 동작을 사용합니다. 확인하면 CloudKit 비공개 데이터베이스의 Placr 영역과 기기의 동기화 파일이 삭제됩니다.</li>
+      <li>Mac의 로컬 데이터 삭제: Placr를 종료한 뒤 Finder에서 ‘이동 → 폴더로 이동’을 골라 <code>~/Library/Containers/cn.chenhk.placr</code>를 입력하고 그 폴더를 휴지통으로 옮깁니다.</li>
     </ul>
-    <p>사진 권한을 철회하거나 로컬 데이터를 삭제해도 이미 사진에 기록된 위치는 되돌려지지 않습니다. 복원이 필요하면 로컬 데이터를 삭제하기 전에 Placr의 작업 기록에서 복원하세요.</p>
+    <p>사진 권한을 철회하거나 로컬 데이터를 삭제해도 이미 사진에 기록된 위치는 되돌려지지 않습니다. 복원이 필요하면 로컬 데이터를 삭제하기 전에 Placr의 쓰기 기록에서 복원하세요.</p>
 
     <h2>어린이</h2>
     <p>Placr는 어린이를 대상으로 하지 않으며, 나이 그 외의 개인정보를 수집하지 않습니다.</p>
