@@ -41,7 +41,7 @@
     data-title="隐私政策 · Placr">
     <header>
       <h1>隐私政策</h1>
-      <p class="updated">最后更新：2026 年 10 月 16 日</p>
+      <p class="updated">最后更新：2026 年 10 月 28 日</p>
     </header>
 
     <p class="lede">Placr 在你的 Mac、iPhone 和 iPad 上本地运行。它没有开发者服务器，不需要注册账号，也不会把照片内容、缩略图或文件名发出设备。你主动点「发送反馈」时，会打开自己的邮件客户端，正文可先编辑再发送。</p>
@@ -54,10 +54,11 @@
     <p>只有经过保存和写入确认后，Placr 才会把位置写入「照片」。它不会删除照片，也不会修改位置以外的元数据。写入前的原位置保存在本机记录中，供你恢复。</p>
 
     <h2>会离开设备的内容</h2>
-    <p>会离开这台设备的只有下面两项，而且都不发给开发者：</p>
+    <p>会离开这台设备的只有下面三项。前两项不经过开发者，第三项只在你主动点「上传诊断日志」时才发生：</p>
     <ol>
       <li>地点搜索文字，以及为附近地点反查时使用的坐标。这些发给 Apple 地图（MapKit）。</li>
       <li>你在设置中开启 iCloud 同步之后的审阅事实：照片的 iCloud 标识、暂不处理标记、待写入批次的坐标和地名、写入记录。它们只通过 Apple CloudKit 写入你自己的 iCloud 私有数据库，容器是 <code>iCloud.cn.chenhk.placr</code>，自定义分区是 <code>PlacrReview</code>，正文放在端到端加密字段 <code>encryptedValues["payload"]</code> 里。开发者无法读取。你可以随时在设置里关闭同步，或使用「删除 iCloud 中的 Placr 数据」清空云端和本机的同步数据。关闭或删除不会删除照片，也不会撤销已经写入照片的位置。</li>
+      <li>你主动点「上传诊断日志」之后的诊断报告。它在离开设备前已经脱敏——照片标识、文件名、坐标都换成 <code>&lt;photo-1&gt;</code> 这类占位符——再用开发者公钥加密（X25519 密钥协商 + ChaCha20-Poly1305），然后写进 Apple CloudKit 公共数据库的记录 <code>DiagnosticReport</code>，换回一个反馈编号。它存在 Apple 的 iCloud 基础设施里，不是开发者自建的服务器；正文只有持有私钥的开发者能解开。记录上另带应用版本、系统版本、设备型号和时间戳，这几项是明文，用来把编号和报告对上。不点这个按钮就什么都不会传。</li>
     </ol>
     <p>地点搜索由 Apple 地图处理，适用 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 的隐私政策</a>。</p>
     <p>应用里的地图预览同样来自 Apple 地图：即使不搜索，打开带位置的组也会向 Apple 加载地图数据。若图库使用 iCloud 照片，查看照片时系统可能按你的设置从 iCloud 下载原图。这类传输只发生在你的设备和 Apple 之间，不由 Placr 控制。</p>
@@ -91,7 +92,7 @@
     data-title="隱私權政策 · Placr">
     <header>
       <h1>隱私權政策</h1>
-      <p class="updated">最後更新：2026 年 10 月 16 日</p>
+      <p class="updated">最後更新：2026 年 10 月 28 日</p>
     </header>
 
     <p class="lede">Placr 在你的 Mac、iPhone 與 iPad 上本機執行。它沒有開發者伺服器，不需要註冊帳號，也不會把照片內容、縮圖或檔名送出裝置。你主動點「傳送回饋」時，會開啟自己的郵件用戶端，正文可先編輯再傳送。</p>
@@ -104,10 +105,11 @@
     <p>只有在你儲存並確認寫入後，Placr 才會把位置寫入「照片」。它不會刪除照片，也不會修改位置以外的中繼資料。寫入前的位置會儲存在本機記錄中，供你還原。</p>
 
     <h2>會離開裝置的內容</h2>
-    <p>會離開這台裝置的只有下面兩項，而且都不發給開發者：</p>
+    <p>會離開這台裝置的只有下面三項。前兩項不經過開發者，第三項只在你主動點「上傳診斷日誌」時才發生：</p>
     <ol>
       <li>地點搜尋文字，以及為附近地點反查時使用的座標。這些發給 Apple 地圖（MapKit）。</li>
       <li>你在設定中開啟 iCloud 同步之後的審閱事實：照片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標和地名、寫入記錄。它們只透過 Apple CloudKit 寫入你自己的 iCloud 私有資料庫，容器是 <code>iCloud.cn.chenhk.placr</code>，自訂分割區是 <code>PlacrReview</code>，正文放在端對端加密欄位 <code>encryptedValues["payload"]</code> 裡。開發者無法讀取。你可以隨時在設定裡關閉同步，或使用「刪除 iCloud 中的 Placr 資料」清空雲端和本機的同步資料。關閉或刪除不會刪除照片，也不會還原已經寫入照片的位置。</li>
+      <li>你主動點「上傳診斷日誌」之後的診斷報告。它在離開裝置前已經去識別化——照片識別碼、檔名、座標都換成 <code>&lt;photo-1&gt;</code> 這類佔位符——再用開發者公鑰加密（X25519 金鑰協商 + ChaCha20-Poly1305），然後寫進 Apple CloudKit 公共資料庫的記錄 <code>DiagnosticReport</code>，換回一個回饋編號。它存放在 Apple 的 iCloud 基礎設施裡，不是開發者自建的伺服器；正文只有持有私鑰的開發者能解開。記錄上另帶應用程式版本、系統版本、裝置型號和時間戳，這幾項是明文，用來把編號和報告對上。不點這個按鈕就什麼都不會傳。</li>
     </ol>
     <p>地點搜尋由 Apple 地圖（MapKit）處理，適用 <a href="https://www.apple.com/tw/legal/privacy/" rel="noopener">Apple 的隱私權政策</a>。</p>
     <p>App 裡的地圖預覽同樣來自 Apple 地圖：即使不搜尋，打開有位置的群組也會向 Apple 載入地圖資料。若圖庫使用 iCloud 照片，檢視照片時系統可能依你的設定從 iCloud 下載原始檔。這類傳輸只發生在你的裝置與 Apple 之間，不由 Placr 控制。</p>
@@ -141,7 +143,7 @@
     data-title="私隱政策 · Placr">
     <header>
       <h1>私隱政策</h1>
-      <p class="updated">最後更新：2026 年 10 月 16 日</p>
+      <p class="updated">最後更新：2026 年 10 月 28 日</p>
     </header>
 
     <p class="lede">Placr 喺你嘅 Mac、iPhone 同 iPad 上本機運作。佢無開發者伺服器，唔需要註冊帳戶，亦唔會把相片內容、縮圖或檔名送出裝置。你主動撳「傳送回饋」時，會開啟自己嘅郵件程式，正文可先編輯再傳送。</p>
@@ -154,10 +156,11 @@
     <p>只有在你儲存並確認寫入後，Placr 先會把位置寫入「相片」。它不會刪除相片，亦不會修改位置以外的元資料。寫入前的位置會儲存在本機記錄中，讓你還原。</p>
 
     <h2>會離開裝置的內容</h2>
-    <p>會離開呢部裝置的只有下面兩項，而且都唔會發給開發者：</p>
+    <p>會離開呢部裝置的只有下面三項。前兩項唔會經開發者，第三項只喺你主動撳「上載診斷日誌」嗰陣先會發生：</p>
     <ol>
       <li>地點搜尋文字，以及為附近地點反查時使用的座標。呢啲會發給 Apple 地圖（MapKit）。</li>
       <li>你喺設定開啟 iCloud 同步之後的審閱事實：相片的 iCloud 識別碼、暫不處理標記、待寫入批次的座標和地名、寫入記錄。佢哋只透過 Apple CloudKit 寫入你自己的 iCloud 私有資料庫，容器係 <code>iCloud.cn.chenhk.placr</code>，自訂區域係 <code>PlacrReview</code>，正文放喺端對端加密欄位 <code>encryptedValues["payload"]</code>。開發者無法讀取。你可以隨時喺設定關閉同步，或者用「刪除 iCloud 中的 Placr 資料」清空雲端同本機的同步資料。關閉或刪除唔會刪除相片，亦唔會還原已經寫入相片的位置。</li>
+      <li>你主動撳「上載診斷日誌」之後嘅診斷報告。佢喺離開裝置前已經去識別化——相片識別碼、檔名、座標都換成 <code>&lt;photo-1&gt;</code> 呢類佔位符——再用開發者公鑰加密（X25519 金鑰協商 + ChaCha20-Poly1305），然後寫入 Apple CloudKit 公共資料庫嘅記錄 <code>DiagnosticReport</code>，換返一個意見反映編號。佢存放喺 Apple 嘅 iCloud 基礎設施入面，唔係開發者自建嘅伺服器；正文只有持有私鑰嘅開發者解得開。記錄另外帶住應用程式版本、系統版本、裝置型號同時間戳，呢幾項係明文，用嚟將編號同報告對得上。唔撳呢個掣就乜都唔會傳。</li>
     </ol>
     <p>地點搜尋由 Apple 地圖（MapKit）處理，受 <a href="https://www.apple.com/hk/privacy/" rel="noopener">Apple 私隱政策</a>約束。</p>
     <p>App 入面嘅地圖預覽同樣嚟自 Apple 地圖：即使唔搜尋，打開有位置嘅群組都會向 Apple 載入地圖資料。若圖庫使用 iCloud 相片，檢視相片時系統可能按你嘅設定從 iCloud 下載原檔。呢類傳輸只發生喺你嘅裝置同 Apple 之間，唔由 Placr 控制。</p>
@@ -191,7 +194,7 @@
     data-title="プライバシーポリシー · Placr">
     <header>
       <h1>プライバシーポリシー</h1>
-      <p class="updated">最終更新：2026年10月16日</p>
+      <p class="updated">最終更新：2026年10月28日</p>
     </header>
 
     <p class="lede">Placr はお使いの Mac、iPhone、iPad 上でローカルに動作します。開発者のサーバーはなく、アカウント登録も不要です。写真の内容、サムネイル、ファイル名が端末の外へ出ることはありません。「フィードバックを送信」を選ぶと、編集できる下書きとともにご自身のメールアプリが開きます。</p>
@@ -204,10 +207,11 @@
     <p>位置情報が「写真」に書き込まれるのは、保存し、書き込みを確認したあとだけです。写真の削除や、位置以外のメタデータの変更は行いません。書き込み前の位置は、復元できるよう端末内の記録に残します。</p>
 
     <h2>端末の外へ出るもの</h2>
-    <p>この端末の外へ出るのは次の二つだけで、どちらも開発者には送られません。</p>
+    <p>この端末の外へ出るのは次の三つだけです。前の二つは開発者を経由しません。三つ目は、あなたが「診断ログをアップロード」を押したときだけ発生します。</p>
     <ol>
       <li>場所検索の文字と、近くの場所を逆ジオコードするときの座標。送信先は Apple マップ（MapKit）です。</li>
       <li>設定で iCloud 同期をオンにしたあとのレビュー事実。写真の iCloud 識別子、後回しの印、書き込み待ちバッチの座標と地名、書き込み記録です。これらは Apple CloudKit を通じて、あなた自身の iCloud プライベートデータベースにだけ書き込まれます。コンテナは <code>iCloud.cn.chenhk.placr</code>、カスタムゾーンは <code>PlacrReview</code>、本文はエンドツーエンド暗号化フィールド <code>encryptedValues["payload"]</code> に入ります。開発者は読めません。設定でいつでも同期をオフにでき、「iCloud 上の Placr データを削除」でクラウドと端末上の同期データを消せます。オフにしても削除しても、写真は消えず、すでに書き込んだ位置も元には戻りません。</li>
+      <li>「診断ログをアップロード」を押したあとの診断レポート。端末を出る前に匿名化され（写真の識別子、ファイル名、座標は <code>&lt;photo-1&gt;</code> のようなプレースホルダーに置き換わります）、開発者の公開鍵で暗号化され（X25519 鍵共有 + ChaCha20-Poly1305）、Apple CloudKit のパブリックデータベースのレコード <code>DiagnosticReport</code> に書き込まれて、フィードバック番号が返ります。保存先は Apple の iCloud 基盤で、開発者が自前で用意したサーバーではありません。本文を復号できるのは秘密鍵を持つ開発者だけです。レコードにはアプリのバージョン、OS のバージョン、機種名、タイムスタンプも平文で付き、番号とレポートを突き合わせるために使います。このボタンを押さなければ何も送信されません。</li>
     </ol>
     <p>場所の検索は Apple マップ（MapKit）が処理し、<a href="https://www.apple.com/jp/legal/privacy/" rel="noopener">Apple のプライバシーポリシー</a>が適用されます。</p>
     <p>アプリ内の地図プレビューも Apple マップから配信されます。検索しなくても、位置情報を持つグループを開くだけで Apple から地図データが読み込まれることがあります。写真ライブラリで iCloud 写真を使っている場合、写真の表示時にシステム設定に従って iCloud からオリジナルをダウンロードすることがあります。これらの通信はお使いの端末と Apple の間だけで、Placr は関与しません。</p>
@@ -241,7 +245,7 @@
     data-title="Privacy Policy · Placr">
     <header>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: October 16, 2026</p>
+      <p class="updated">Last updated: October 28, 2026</p>
     </header>
 
     <p class="lede">Placr runs locally on your Mac, iPhone, and iPad. There is no developer-operated server and no account. Photo content, thumbnails, and filenames never leave the device. Choosing “Send Feedback” opens your own mail client with an editable draft.</p>
@@ -254,10 +258,11 @@
     <p>A location is written to Photos only after you save it and confirm the write. Placr never deletes photos or changes metadata other than location. The previous location stays in a record on the device so you can restore it.</p>
 
     <h2>What leaves the device</h2>
-    <p>Only two things leave the device, and neither is sent to the developer:</p>
+    <p>Only three things leave the device. The first two do not pass through the developer. The third happens only when you press “Upload Diagnostics Log”.</p>
     <ol>
       <li>The text of a place search, and the coordinates used to look up nearby places. These go to Apple Maps (MapKit).</li>
       <li>Review facts, and only after you turn on iCloud sync in Settings: a photo’s iCloud identifier, skip marks, the coordinates and place names of batches waiting to be written, and write records. They are written only through Apple CloudKit, into your own iCloud private database. The container is <code>iCloud.cn.chenhk.placr</code>, the custom zone is <code>PlacrReview</code>, and the body is the end-to-end encrypted field <code>encryptedValues["payload"]</code>. The developer cannot read it. You can turn sync off in Settings at any time, or use “Delete Placr Data from iCloud” to clear the cloud copy and the local sync files. Turning sync off or deleting that data does not delete photos or undo locations already written to Photos.</li>
+      <li>A diagnostics report, after you press “Upload Diagnostics Log”. Before it leaves the device it is redacted — photo identifiers, file names, and coordinates become placeholders like <code>&lt;photo-1&gt;</code> — then encrypted with the developer’s public key (X25519 key agreement + ChaCha20-Poly1305) and written to a <code>DiagnosticReport</code> record in Apple CloudKit’s public database, which returns a feedback code. It is stored on Apple’s iCloud infrastructure, not on a server the developer runs; only the developer, holding the private key, can decrypt the body. The record also carries the app version, OS version, device model, and a timestamp in the clear, so the code can be matched to the report. If you do not press the button, nothing is sent.</li>
     </ol>
     <p>Place search is handled by Apple Maps (MapKit) and is subject to <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</p>
     <p>Map previews in the app also come from Apple Maps. Opening a group that already has a location can load map data from Apple even if you do not search. If your library uses iCloud Photos, viewing a photo may let the system download the original from iCloud according to your settings. Those transfers happen only between your device and Apple. Placr does not control them.</p>
@@ -291,7 +296,7 @@
     data-title="Datenschutzrichtlinie · Placr">
     <header>
       <h1>Datenschutzrichtlinie</h1>
-      <p class="updated">Zuletzt aktualisiert: 16. Oktober 2026</p>
+      <p class="updated">Zuletzt aktualisiert: 28. Oktober 2026</p>
     </header>
 
     <p class="lede">Placr läuft lokal auf deinem Mac, iPhone und iPad. Es gibt keinen vom Entwickler betriebenen Server und keine Kontoregistrierung. Fotoinhalte, Miniaturbilder und Dateinamen verlassen das Gerät nie. „Feedback senden“ öffnet dein eigenes Mailprogramm mit einem bearbeitbaren Entwurf.</p>
@@ -304,10 +309,11 @@
     <p>Ein Standort wird erst in „Fotos“ geschrieben, nachdem du ihn gesichert und das Schreiben bestätigt hast. Placr löscht keine Fotos und ändert keine Metadaten außer dem Standort. Der vorherige Standort bleibt zum Wiederherstellen in einer lokalen Aufzeichnung.</p>
 
     <h2>Was das Gerät verlässt</h2>
-    <p>Nur zwei Dinge verlassen das Gerät, und keines davon geht an den Entwickler:</p>
+    <p>Nur drei Dinge verlassen das Gerät. Die ersten beiden laufen nicht über den Entwickler. Das dritte geschieht nur, wenn du „Diagnoseprotokoll hochladen“ antippst.</p>
     <ol>
       <li>Der Text einer Ortssuche und die Koordinaten für die Suche nach Orten in der Nähe. Sie gehen an Apple Karten (MapKit).</li>
       <li>Prüfdaten, und nur nachdem du die iCloud-Synchronisierung in den Einstellungen einschaltest: die iCloud-Kennung eines Fotos, Zurückstellmarkierungen, Koordinaten und Ortsnamen von Stapeln, die noch geschrieben werden, sowie Schreibprotokolle. Sie werden nur über Apple CloudKit in deine eigene private iCloud-Datenbank geschrieben. Der Container ist <code>iCloud.cn.chenhk.placr</code>, die eigene Zone ist <code>PlacrReview</code>, der Inhalt liegt im Ende-zu-Ende-verschlüsselten Feld <code>encryptedValues["payload"]</code>. Der Entwickler kann ihn nicht lesen. Du kannst die Synchronisierung jederzeit in den Einstellungen ausschalten oder mit „Placr-Daten aus iCloud löschen“ die Cloud-Kopie und die lokalen Synchronisierungsdateien entfernen. Ausschalten oder Löschen entfernt keine Fotos und macht bereits geschriebene Standorte nicht rückgängig.</li>
+      <li>Ein Diagnoseprotokoll, nachdem du „Diagnoseprotokoll hochladen“ antippst. Bevor es das Gerät verlässt, wird es entpersonalisiert – Fotokennungen, Dateinamen und Koordinaten werden durch Platzhalter wie <code>&lt;photo-1&gt;</code> ersetzt –, dann mit dem öffentlichen Schlüssel des Entwicklers verschlüsselt (X25519-Schlüsselaustausch + ChaCha20-Poly1305) und in einen Datensatz <code>DiagnosticReport</code> in der öffentlichen Apple-CloudKit-Datenbank geschrieben, der einen Feedback-Code zurückgibt. Gespeichert wird es auf Apples iCloud-Infrastruktur, nicht auf einem Server des Entwicklers; den Inhalt entschlüsseln kann nur der Entwickler mit dem privaten Schlüssel. Der Datensatz trägt außerdem App-Version, Systemversion, Gerätemodell und einen Zeitstempel im Klartext, damit der Code zum Protokoll passt. Ohne diesen Knopfdruck wird nichts gesendet.</li>
     </ol>
     <p>Ortssuchen führt Apple Karten (MapKit) aus. Es gilt die <a href="https://www.apple.com/legal/privacy/" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
     <p>Auch die Kartenvorschauen stammen von Apple Karten. Schon das Öffnen einer Gruppe mit Standort kann Kartendaten von Apple laden, auch ohne Suche. Nutzt deine Mediathek iCloud-Fotos, kann das System beim Anzeigen eines Fotos das Original gemäß deinen Einstellungen aus der iCloud laden. Diese Übertragungen laufen nur zwischen deinem Gerät und Apple. Placr steuert sie nicht.</p>
@@ -341,7 +347,7 @@
     data-title="Política de privacidad · Placr">
     <header>
       <h1>Política de privacidad</h1>
-      <p class="updated">Última actualización: 16 de octubre de 2026</p>
+      <p class="updated">Última actualización: 28 de octubre de 2026</p>
     </header>
 
     <p class="lede">Placr funciona en local en tu Mac, iPhone y iPad. No hay servidor del desarrollador ni registro de cuenta. El contenido de las fotos, las miniaturas y los nombres de archivo nunca salen del dispositivo. Al elegir «Enviar comentarios» se abre tu propio cliente de correo con un borrador editable.</p>
@@ -354,10 +360,11 @@
     <p>Una ubicación se escribe en Fotos solo después de guardarla y confirmar la escritura. Placr nunca borra fotos ni cambia metadatos distintos de la ubicación. La ubicación anterior queda en un registro del dispositivo para que puedas restaurarla.</p>
 
     <h2>Qué sale del dispositivo</h2>
-    <p>Solo dos cosas salen del dispositivo, y ninguna se envía al desarrollador:</p>
+    <p>Solo tres cosas salen del dispositivo. Las dos primeras no pasan por el desarrollador. La tercera solo ocurre cuando pulsas «Subir registro de diagnóstico».</p>
     <ol>
       <li>El texto de una búsqueda de lugares y las coordenadas usadas para buscar lugares cercanos. Van a Mapas de Apple (MapKit).</li>
       <li>Los datos de revisión, y solo después de activar la sincronización de iCloud en Ajustes: el identificador de iCloud de una foto, las marcas de dejar para después, las coordenadas y los nombres de lugar de los lotes pendientes de escribir, y los registros de escritura. Se escriben solo a través de Apple CloudKit, en tu propia base de datos privada de iCloud. El contenedor es <code>iCloud.cn.chenhk.placr</code>, la zona personalizada es <code>PlacrReview</code> y el cuerpo está en el campo cifrado de extremo a extremo <code>encryptedValues["payload"]</code>. El desarrollador no puede leerlo. Puedes desactivar la sincronización en Ajustes en cualquier momento, o usar «Eliminar los datos de Placr de iCloud» para borrar la copia en la nube y los archivos locales de sincronización. Desactivar o eliminar eso no borra fotos ni deshace ubicaciones ya escritas en Fotos.</li>
+      <li>Un informe de diagnóstico, después de pulsar «Subir registro de diagnóstico». Antes de salir del dispositivo se anonimiza —los identificadores de foto, los nombres de archivo y las coordenadas pasan a ser marcadores como <code>&lt;photo-1&gt;</code>—, se cifra con la clave pública del desarrollador (acuerdo de claves X25519 + ChaCha20-Poly1305) y se escribe en un registro <code>DiagnosticReport</code> de la base de datos pública de Apple CloudKit, que devuelve un código de feedback. Se guarda en la infraestructura de iCloud de Apple, no en un servidor del desarrollador; solo el desarrollador, que tiene la clave privada, puede descifrar el cuerpo. El registro también incluye la versión de la app, la versión del sistema, el modelo del dispositivo y una marca de tiempo en claro, para poder casar el código con el informe. Si no pulsas el botón, no se envía nada.</li>
     </ol>
     <p>La búsqueda de lugares la gestiona Mapas de Apple (MapKit) y se rige por la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de privacidad de Apple</a>.</p>
     <p>Las vistas previas de mapas también provienen de Mapas de Apple. Abrir un grupo que ya tiene ubicación puede cargar datos de mapa de Apple aunque no busques. Si tu fototeca usa Fotos de iCloud, al ver una foto el sistema puede descargar el original desde iCloud según tus ajustes. Esas transferencias ocurren solo entre tu dispositivo y Apple. Placr no las controla.</p>
@@ -391,7 +398,7 @@
     data-title="Politique de confidentialité · Placr">
     <header>
       <h1>Politique de confidentialité</h1>
-      <p class="updated">Dernière mise à jour : 16 octobre 2026</p>
+      <p class="updated">Dernière mise à jour : 28 octobre 2026</p>
     </header>
 
     <p class="lede">Placr fonctionne localement sur votre Mac, iPhone et iPad. Il n'existe ni serveur géré par le développeur ni compte. Le contenu des photos, les vignettes et les noms de fichier ne quittent jamais l'appareil. « Envoyer des commentaires » ouvre votre propre client de messagerie avec un brouillon modifiable.</p>
@@ -404,10 +411,11 @@
     <p>Un lieu n'est écrit dans Photos qu'après l'enregistrement et la confirmation de l'écriture. Placr ne supprime jamais de photos et ne modifie aucune métadonnée autre que le lieu. Le lieu antérieur reste dans un enregistrement sur l'appareil afin que vous puissiez le restaurer.</p>
 
     <h2>Ce qui quitte l'appareil</h2>
-    <p>Seules deux choses quittent l'appareil, et aucune n'est envoyée au développeur :</p>
+    <p>Seules trois choses quittent l'appareil. Les deux premières ne passent pas par le développeur. La troisième ne se produit que si vous appuyez sur « Envoyer le journal de diagnostic ».</p>
     <ol>
       <li>Le texte d'une recherche de lieu et les coordonnées utilisées pour retrouver les lieux à proximité. Ils sont envoyés à Plans (MapKit).</li>
       <li>Les faits de révision, et seulement après avoir activé la synchronisation iCloud dans Réglages : l'identifiant iCloud d'une photo, les marques « plus tard », les coordonnées et noms de lieu des lots en attente d'écriture, et les enregistrements d'écriture. Ils ne sont écrits que via Apple CloudKit, dans votre propre base privée iCloud. Le conteneur est <code>iCloud.cn.chenhk.placr</code>, la zone personnalisée est <code>PlacrReview</code>, et le corps se trouve dans le champ chiffré de bout en bout <code>encryptedValues["payload"]</code>. Le développeur ne peut pas le lire. Vous pouvez désactiver la synchronisation à tout moment dans Réglages, ou utiliser « Supprimer les données Placr d’iCloud » pour effacer la copie dans le nuage et les fichiers locaux de synchronisation. Désactiver ou supprimer cela n'efface pas les photos et n'annule pas les lieux déjà écrits dans Photos.</li>
+      <li>Un rapport de diagnostic, après avoir appuyé sur « Envoyer le journal de diagnostic ». Avant de quitter l'appareil, il est anonymisé — les identifiants de photo, les noms de fichier et les coordonnées deviennent des repères comme <code>&lt;photo-1&gt;</code> —, puis chiffré avec la clé publique du développeur (échange de clés X25519 + ChaCha20-Poly1305) et écrit dans un enregistrement <code>DiagnosticReport</code> de la base publique d'Apple CloudKit, qui renvoie un code de retour. Il est stocké sur l'infrastructure iCloud d'Apple, pas sur un serveur du développeur ; seul le développeur, qui détient la clé privée, peut déchiffrer le corps. L'enregistrement porte aussi la version de l'app, la version du système, le modèle de l'appareil et un horodatage en clair, pour faire correspondre le code au rapport. Sans appui sur ce bouton, rien n'est envoyé.</li>
     </ol>
     <p>La recherche de lieux est traitée par Plans (MapKit) et soumise à la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Politique de confidentialité d'Apple</a>.</p>
     <p>Les aperçus de carte proviennent aussi de Plans. Ouvrir un groupe qui a déjà un lieu peut charger des données cartographiques d'Apple, même sans recherche. Si votre photothèque utilise Photos iCloud, l'affichage d'une photo peut amener le système à télécharger l'original depuis iCloud selon vos réglages. Ces transferts n'ont lieu qu'entre votre appareil et Apple. Placr ne les contrôle pas.</p>
@@ -441,7 +449,7 @@
     data-title="Informativa sulla privacy · Placr">
     <header>
       <h1>Informativa sulla privacy</h1>
-      <p class="updated">Ultimo aggiornamento: 16 ottobre 2026</p>
+      <p class="updated">Ultimo aggiornamento: 28 ottobre 2026</p>
     </header>
 
     <p class="lede">Placr funziona in locale sul tuo Mac, iPhone e iPad. Non esiste un server gestito dallo sviluppatore né la registrazione di un account. Contenuto delle foto, miniature e nomi dei file non lasciano mai il dispositivo. Scegliendo «Invia commenti» si apre il tuo client di posta con una bozza modificabile.</p>
@@ -454,10 +462,11 @@
     <p>Un luogo viene scritto in Foto solo dopo il salvataggio e la conferma della scrittura. Placr non elimina mai le foto e non modifica metadati diversi dal luogo. Il luogo precedente resta in una registrazione sul dispositivo, così puoi ripristinarlo.</p>
 
     <h2>Cosa lascia il dispositivo</h2>
-    <p>Solo due cose lasciano il dispositivo, e nessuna viene inviata allo sviluppatore:</p>
+    <p>Solo tre cose lasciano il dispositivo. Le prime due non passano dallo sviluppatore. La terza avviene solo se premi «Carica log diagnostico».</p>
     <ol>
       <li>Il testo di una ricerca di luoghi e le coordinate usate per cercare luoghi vicini. Vanno a Mappe (MapKit).</li>
       <li>I fatti di revisione, e solo dopo aver attivato la sincronizzazione iCloud in Impostazioni: l'identificatore iCloud di una foto, i contrassegni di rinvio, le coordinate e i nomi dei luoghi dei lotti in attesa di scrittura e le registrazioni di scrittura. Vengono scritti solo tramite Apple CloudKit, nel tuo database privato di iCloud. Il contenitore è <code>iCloud.cn.chenhk.placr</code>, la zona personalizzata è <code>PlacrReview</code> e il corpo sta nel campo cifrato end-to-end <code>encryptedValues["payload"]</code>. Lo sviluppatore non può leggerlo. Puoi disattivare la sincronizzazione in qualsiasi momento in Impostazioni, oppure usare «Elimina i dati di Placr da iCloud» per cancellare la copia nel cloud e i file locali di sincronizzazione. Disattivare o eliminare non cancella le foto e non annulla i luoghi già scritti in Foto.</li>
+      <li>Un rapporto di diagnostica, dopo che premi «Carica log diagnostico». Prima di uscire dal dispositivo viene anonimizzato — gli identificatori delle foto, i nomi dei file e le coordinate diventano segnaposto come <code>&lt;photo-1&gt;</code> —, poi cifrato con la chiave pubblica dello sviluppatore (scambio di chiavi X25519 + ChaCha20-Poly1305) e scritto in un record <code>DiagnosticReport</code> nel database pubblico di Apple CloudKit, che restituisce un codice di feedback. È conservato sull'infrastruttura iCloud di Apple, non su un server dello sviluppatore; solo lo sviluppatore, che ha la chiave privata, può decifrare il corpo. Il record porta anche la versione dell'app, la versione del sistema, il modello del dispositivo e un timestamp in chiaro, per abbinare il codice al rapporto. Se non premi il pulsante, non viene inviato nulla.</li>
     </ol>
     <p>La ricerca dei luoghi è gestita da Mappe (MapKit) ed è soggetta all'<a href="https://www.apple.com/legal/privacy/" rel="noopener">Informativa sulla privacy di Apple</a>.</p>
     <p>Anche le anteprime mappa provengono da Mappe. Aprire un gruppo che ha già un luogo può caricare dati cartografici da Apple, anche senza cercare. Se la tua libreria usa Foto di iCloud, alla visualizzazione di una foto il sistema può scaricare l'originale da iCloud secondo le tue impostazioni. Questi trasferimenti avvengono solo tra il tuo dispositivo e Apple. Placr non li controlla.</p>
@@ -491,7 +500,7 @@
     data-title="Política de Privacidade · Placr">
     <header>
       <h1>Política de Privacidade</h1>
-      <p class="updated">Última atualização: 16 de outubro de 2026</p>
+      <p class="updated">Última atualização: 28 de outubro de 2026</p>
     </header>
 
     <p class="lede">O Placr funciona localmente no seu Mac, iPhone e iPad. Não há servidor operado pelo desenvolvedor nem cadastro de conta. O conteúdo das fotos, as miniaturas e os nomes de arquivo nunca saem do aparelho. Ao escolher “Enviar comentários”, abre-se o seu próprio cliente de e-mail com um rascunho editável.</p>
@@ -504,10 +513,11 @@
     <p>Um local só é gravado no Fotos depois que você o salva e confirma a gravação. O Placr nunca apaga fotos nem altera metadados além do local. O local anterior fica em um registro no aparelho para você poder restaurá-lo.</p>
 
     <h2>O que sai do aparelho</h2>
-    <p>Só duas coisas saem do aparelho, e nenhuma é enviada ao desenvolvedor:</p>
+    <p>Só três coisas saem do aparelho. As duas primeiras não passam pelo desenvolvedor. A terceira só acontece quando você toca em “Enviar registro de diagnóstico”.</p>
     <ol>
       <li>O texto de uma busca de lugares e as coordenadas usadas para localizar lugares próximos. Elas vão para o Mapas da Apple (MapKit).</li>
       <li>Os fatos da revisão, e somente depois de você ligar a sincronização do iCloud nos Ajustes: o identificador do iCloud de uma foto, as marcas de deixar para depois, as coordenadas e os nomes de lugar dos lotes aguardando gravação e os registros de gravação. Eles são gravados somente pelo Apple CloudKit, no seu próprio banco privado do iCloud. O contêiner é <code>iCloud.cn.chenhk.placr</code>, a zona personalizada é <code>PlacrReview</code> e o corpo fica no campo criptografado de ponta a ponta <code>encryptedValues["payload"]</code>. O desenvolvedor não consegue lê-lo. Você pode desligar a sincronização a qualquer momento nos Ajustes, ou usar “Apagar os dados do Placr do iCloud” para limpar a cópia na nuvem e os arquivos locais de sincronização. Desligar ou apagar isso não apaga fotos nem desfaz locais já gravados no Fotos.</li>
+      <li>Um relatório de diagnóstico, depois que você toca em “Enviar registro de diagnóstico”. Antes de sair do aparelho ele é anonimizado — identificadores de foto, nomes de arquivo e coordenadas viram marcadores como <code>&lt;photo-1&gt;</code> —, depois cifrado com a chave pública do desenvolvedor (acordo de chaves X25519 + ChaCha20-Poly1305) e gravado em um registro <code>DiagnosticReport</code> no banco público do Apple CloudKit, que devolve um código de retorno. Ele fica na infraestrutura do iCloud da Apple, não em um servidor do desenvolvedor; só o desenvolvedor, que tem a chave privada, consegue decifrar o corpo. O registro também carrega a versão do app, a versão do sistema, o modelo do aparelho e um carimbo de data e hora em texto claro, para casar o código com o relatório. Se você não tocar no botão, nada é enviado.</li>
     </ol>
     <p>A busca de lugares é feita pelo Mapas da Apple (MapKit) e está sujeita à <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de Privacidade da Apple</a>.</p>
     <p>As prévias de mapa também vêm do Mapas da Apple. Abrir um grupo que já tem localização pode carregar dados de mapa da Apple, mesmo sem buscar. Se a sua fototeca usa Fotos do iCloud, ao ver uma foto o sistema pode baixar o original do iCloud conforme os seus ajustes. Essas transferências acontecem apenas entre o seu aparelho e a Apple. O Placr não as controla.</p>
@@ -541,7 +551,7 @@
     data-title="개인정보 처리방침 · Placr">
     <header>
       <h1>개인정보 처리방침</h1>
-      <p class="updated">마지막 업데이트: 2026년 10월 16일</p>
+      <p class="updated">마지막 업데이트: 2026년 10월 28일</p>
     </header>
 
     <p class="lede">Placr는 Mac, iPhone, iPad에서 기기 안에서 동작합니다. 개발자가 운영하는 서버도 계정 가입도 없습니다. 사진 내용, 썸네일, 파일 이름은 기기 밖으로 나가지 않습니다. ‘피드백 보내기’를 선택하면 수정 가능한 임시 메일과 함께 본인의 메일 앱이 열립니다.</p>
@@ -554,10 +564,11 @@
     <p>위치는 저장하고 쓰기를 확인한 뒤에만 ‘사진’에 기록됩니다. Placr는 사진을 삭제하지 않고 위치 외의 메타데이터도 바꾸지 않습니다. 기록 이전의 위치는 복원할 수 있도록 기기의 기록에 남습니다.</p>
 
     <h2>기기 밖으로 나가는 것</h2>
-    <p>이 기기 밖으로 나가는 것은 아래 두 가지뿐이며, 어느 쪽도 개발자에게 전송되지 않습니다.</p>
+    <p>이 기기 밖으로 나가는 것은 아래 세 가지입니다. 앞의 두 가지는 개발자를 거치지 않습니다. 세 번째는 ‘진단 로그 업로드’를 눌렀을 때만 일어납니다.</p>
     <ol>
       <li>장소 검색 문구와, 근처 장소를 역지오코딩할 때 쓰는 좌표. 수신자는 Apple 지도(MapKit)입니다.</li>
       <li>설정에서 iCloud 동기화를 켠 뒤의 검토 사실: 사진의 iCloud 식별자, 나중에 처리 표시, 쓰기 대기 배치의 좌표와 지명, 쓰기 기록. 이들은 Apple CloudKit을 통해서만 사용자 자신의 iCloud 비공개 데이터베이스에 기록됩니다. 컨테이너는 <code>iCloud.cn.chenhk.placr</code>, 사용자 설정 영역은 <code>PlacrReview</code>, 본문은 종단간 암호화 필드 <code>encryptedValues["payload"]</code>에 들어갑니다. 개발자는 읽을 수 없습니다. 설정에서 언제든 동기화를 끄거나, ‘iCloud에서 Placr 데이터 삭제’로 클라우드와 기기의 동기화 데이터를 지울 수 있습니다. 끄거나 삭제해도 사진이 지워지거나, 이미 사진에 기록된 위치가 되돌려지지는 않습니다.</li>
+      <li>‘진단 로그 업로드’를 누른 뒤의 진단 보고서. 기기를 떠나기 전에 익명화되어(사진 식별자, 파일 이름, 좌표가 <code>&lt;photo-1&gt;</code> 같은 자리표시자로 바뀝니다), 개발자의 공개 키로 암호화된 뒤(X25519 키 교환 + ChaCha20-Poly1305) Apple CloudKit 공용 데이터베이스의 <code>DiagnosticReport</code> 레코드에 기록되고, 피드백 코드를 돌려받습니다. 저장 위치는 Apple의 iCloud 인프라이지 개발자가 직접 운영하는 서버가 아닙니다. 본문은 개인 키를 가진 개발자만 풀 수 있습니다. 레코드에는 앱 버전, 시스템 버전, 기기 모델, 타임스탬프가 평문으로 함께 붙어 코드와 보고서를 맞추는 데 쓰입니다. 이 버튼을 누르지 않으면 아무것도 전송되지 않습니다.</li>
     </ol>
     <p>장소 검색은 Apple 지도(MapKit)가 처리하며 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple의 개인정보 처리방침</a>이 적용됩니다.</p>
     <p>앱의 지도 미리보기도 Apple 지도에서 제공됩니다. 검색하지 않아도 위치가 있는 그룹을 열면 Apple에서 지도 데이터를 불러올 수 있습니다. 사진 보관함이 iCloud 사진을 사용하면 사진을 볼 때 시스템 설정에 따라 iCloud에서 원본을 내려받을 수 있습니다. 이러한 전송은 기기와 Apple 사이에서만 이루어지며 Placr가 관여하지 않습니다.</p>
