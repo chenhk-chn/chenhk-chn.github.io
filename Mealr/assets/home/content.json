@@ -13,7 +13,7 @@
       "常见问题"
     ],
     "support": "使用与支持",
-    "meta": "为 iPhone 而设计 · iOS 18 或更新版本",
+    "meta": "为 iPhone 而设计 · iOS 26 或更新版本",
     "shot": "App 实拍 · 简体中文界面 · 示例数据",
     "how": "拍一张，记下一餐",
     "howbody": "一碗熟悉的面，一顿久违的小聚。拍照或从相册选择照片，让 Mealr 估算热量，给这一餐留下一页。",
@@ -40,7 +40,7 @@
       "每日差值"
     ],
     "privacy": "属于你的三餐\n由你留存",
-    "privacybody": "餐食照片和记录保存在本机。选择本地模型时，食物识别在设备上完成；选择云端识别时，照片和补充文字会发送至 Mealr 服务。Apple 健康的访问由你授权。",
+    "privacybody": "餐食记录保存在本机；会员有效时自动私人 iCloud 同步，到期暂停但保留本机。云端识别会发送照片与文字；可另行同意分享新餐食样本用于模型改进。Apple 健康历史不进入这两条上传链路。",
     "privacyLink": "了解记录如何保存",
     "faq": "你可能想知道",
     "qas": [
@@ -58,7 +58,7 @@
       ],
       [
         "需要注册账号吗？",
-        "无需注册 Mealr 账号。餐食记录和照片保存在本机，购买与订阅由 Apple 处理。"
+        "无需注册 Mealr 账号。会员私人同步使用你的 iCloud 账号；购买与订阅由 Apple 处理。"
       ],
       [
         "在哪里了解会员和使用方式？",
@@ -79,11 +79,11 @@
     "foot": "餐食照片为生成的场景插图；App 截图使用示例数据。",
     "skip": "跳到内容",
     "offline": "没有网络\n也记得这一餐",
-    "offlinebody": "选择本地模型，在 iPhone 上估算餐食热量。照片无需上传，离线时也能为三餐留下一笔。",
+    "offlinebody": "选择本地模型，在 iPhone 上估算餐食热量；模型可用后，离线也能记录，失败不会自动改用云端。",
     "offlinepoints": [
       [
-        "让照片留在身边",
-        "本地食物识别在设备上完成，餐食照片和补充文字不会上传。"
+        "本地识别，独立分享",
+        "本地识别不发送照片或文字给云端 AI。会员私人 iCloud 同步及已同意的模型改进计划仍可能分别上传照片。"
       ],
       [
         "按你的方式记录",
@@ -109,7 +109,7 @@
       "Questions"
     ],
     "support": "Help & support",
-    "meta": "Designed for iPhone · iOS 18 or later",
+    "meta": "Designed for iPhone · iOS 26 or later",
     "shot": "App screenshots · Chinese interface · Sample data",
     "how": "A photo. A meal. A page.",
     "howbody": "A familiar bowl of noodles. Dinner with an old friend. Take a photo or choose one from your library, and let Mealr estimate the calories.",
@@ -136,7 +136,7 @@
       "Daily balance"
     ],
     "privacy": "Your meals.\nYour memories.",
-    "privacybody": "Meal photos and records stay on your device. Choose the on-device model to recognize food locally, or cloud recognition to send photos and notes to the Mealr service. You decide whether to allow Apple Health access.",
+    "privacybody": "Meals are stored locally, with automatic private iCloud sync during premium membership. Expiry pauses sync, not local access. Cloud analysis sends photos and notes; separately, you can consent to sharing new meal samples for model improvement. Neither upload path includes Apple Health history.",
     "privacyLink": "See how your records are stored",
     "faq": "A few answers",
     "qas": [
@@ -154,7 +154,7 @@
       ],
       [
         "Do I need an account?",
-        "No Mealr account is required. Meal records and photos are stored on your device. Apple handles purchases and subscriptions."
+        "No Mealr account registration is required. Premium private sync uses your iCloud account; Apple handles purchases and subscriptions."
       ],
       [
         "Where can I learn about membership?",
@@ -175,11 +175,11 @@
     "foot": "Food photography is AI-generated. App screenshots contain sample data.",
     "skip": "Skip to content",
     "offline": "No connection.\nStill worth recording.",
-    "offlinebody": "Choose the on-device model to estimate calories right on your iPhone. Keep meal photos off the cloud and add a page to your diary, even offline.",
+    "offlinebody": "Choose the on-device model to estimate calories on your iPhone. Once available, it works offline and never automatically falls back to cloud analysis.",
     "offlinepoints": [
       [
-        "Keep photos close",
-        "On-device food recognition does not upload meal photos or written notes."
+        "Local recognition, separate sharing",
+        "Local recognition does not send photos or notes to cloud AI. Premium private iCloud sync and separately consented model improvement may still upload photos."
       ],
       [
         "Record your way",
@@ -205,7 +205,7 @@
       "よくある質問"
     ],
     "support": "使い方とサポート",
-    "meta": "iPhone 向け · iOS 18 以降",
+    "meta": "iPhone 向け · iOS 26 以降",
     "shot": "実際の App 画面 · 簡体字中国語 · サンプルデータ",
     "how": "一枚の写真から、一食の記録へ",
     "howbody": "いつもの一杯も、久しぶりに集まった日の食事も。写真を撮るかライブラリから選ぶと、Mealr がカロリーを推定します。",
@@ -232,7 +232,7 @@
       "日ごとの収支"
     ],
     "privacy": "大切な食事の記録を\n自分の手元に",
-    "privacybody": "食事の写真と記録は端末に保存されます。端末内モデルでは食事の認識を端末上で行い、クラウド認識では写真とメモを Mealr サービスへ送信します。Apple ヘルスケアへのアクセスには許可が必要です。",
+    "privacybody": "食事は端末に保存され、メンバーシップ中はプライベート iCloud 同期が自動で動作します。終了後は同期を停止し、端末の記録は保持します。クラウド分析は写真とメモを送信します。新たな食事サンプルのモデル改善への共有は別途同意できます。どちらのアップロードにも Apple ヘルスケア履歴は含めません。",
     "privacyLink": "記録の保存について",
     "faq": "よくある質問",
     "qas": [
@@ -250,7 +250,7 @@
       ],
       [
         "アカウント登録は必要ですか？",
-        "Mealr のアカウントは不要です。記録と写真は端末に保存され、購入とサブスクリプションは Apple が管理します。"
+        "Mealr アカウントの登録は不要です。メンバーのプライベート同期は iCloud アカウントを使用し、購入とサブスクリプションは Apple が管理します。"
       ],
       [
         "メンバーシップについて知りたいです",
@@ -271,11 +271,11 @@
     "foot": "食事写真は AI によるイメージです。App 画面はサンプルデータを使用しています。",
     "skip": "本文へ移動",
     "offline": "オフラインでも\nこの一食を残す",
-    "offlinebody": "端末内モデルを選ぶと、iPhone 上で食事のカロリーを推定します。写真をクラウドに送らず、ネット接続がないときも記録を続けられます。",
+    "offlinebody": "端末内モデルを選ぶと iPhone 上でカロリーを推定します。モデルが利用可能になればオフラインでも記録でき、失敗してもクラウドへ自動で切り替えません。",
     "offlinepoints": [
       [
-        "写真は手元に",
-        "端末内の食事認識では、写真や補足のテキストをアップロードしません。"
+        "端末内認識と共有は別設定",
+        "端末内認識では写真やメモをクラウド AI に送りません。ただし、メンバーのプライベート iCloud 同期と別途同意したモデル改善では写真を送信する場合があります。"
       ],
       [
         "記録の方法を選ぶ",
@@ -301,7 +301,7 @@
       "常見問題"
     ],
     "support": "使用與支援",
-    "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
+    "meta": "專為 iPhone 設計 · iOS 26 或以上版本",
     "shot": "App 實際畫面 · 簡體中文介面 · 範例資料",
     "how": "拍一張，記下一餐",
     "howbody": "一碗熟悉的麵，一頓久違的小聚。拍照或從相簿選擇照片，讓 Mealr 估算熱量，為這一餐留下一頁。",
@@ -328,7 +328,7 @@
       "每日熱量差"
     ],
     "privacy": "屬於你的三餐\n由你留存",
-    "privacybody": "餐食照片與記錄儲存在裝置上。選擇本機模型時，食物辨識在裝置上完成；選擇雲端辨識時，照片和補充文字會傳送至 Mealr 服務。Apple 健康的存取由你授權。",
+    "privacybody": "餐食記錄儲存在本機；會員有效時自動私人 iCloud 同步，到期暫停但保留本機。雲端辨識會傳送照片與文字；可另行同意分享新餐食樣本用於模型改善。Apple 健康歷史不進入這兩條上傳流程。",
     "privacyLink": "了解記錄如何儲存",
     "faq": "你可能想知道",
     "qas": [
@@ -346,7 +346,7 @@
       ],
       [
         "需要註冊帳號嗎？",
-        "不需要註冊 Mealr 帳號。餐食記錄和照片儲存在裝置上，購買與訂閱由 Apple 處理。"
+        "無須註冊 Mealr 帳號。會員私人同步使用你的 iCloud 帳號；購買與訂閱由 Apple 處理。"
       ],
       [
         "哪裡可以了解會員和使用方式？",
@@ -367,11 +367,11 @@
     "foot": "餐食照片為 AI 生成的情境圖；App 畫面使用範例資料。",
     "skip": "跳至內容",
     "offline": "沒有網路\n也記得這一餐",
-    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量。照片無須上傳，離線時也能為三餐留下一筆。",
+    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量；模型可用後，離線也能記錄，失敗不會自動改用雲端。",
     "offlinepoints": [
       [
-        "讓照片留在身邊",
-        "本機食物辨識在裝置上完成，餐食照片和補充文字不會上傳。"
+        "本機辨識，分享另選",
+        "本機辨識不將照片或文字傳送給雲端 AI。會員私人 iCloud 同步及已同意的模型改善計畫仍可能分別上傳照片。"
       ],
       [
         "依你的方式記錄",
@@ -397,7 +397,7 @@
       "常見問題"
     ],
     "support": "使用與支援",
-    "meta": "專為 iPhone 設計 · iOS 18 或以上版本",
+    "meta": "專為 iPhone 設計 · iOS 26 或以上版本",
     "shot": "App 實際畫面 · 簡體中文介面 · 示例資料",
     "how": "拍一張，記下一餐",
     "howbody": "一碗熟悉的麵，一頓久違的小聚。拍照或從相簿選擇相片，讓 Mealr 估算熱量，為這一餐留下一頁。",
@@ -424,7 +424,7 @@
       "每日熱量差"
     ],
     "privacy": "屬於你的三餐\n由你留存",
-    "privacybody": "餐食相片與記錄儲存在裝置上。選擇本機模型時，食物辨識在裝置上完成；選擇雲端辨識時，相片和補充文字會傳送至 Mealr 服務。Apple 健康的存取由你授權。",
+    "privacybody": "餐食記錄儲存在本機；會員有效時自動私人 iCloud 同步，到期暫停但保留本機。雲端辨認會傳送相片及文字；可另行同意分享新餐食樣本用於模型改善。Apple 健康歷史不進入這兩條上傳流程。",
     "privacyLink": "了解記錄如何儲存",
     "faq": "你可能想知道",
     "qas": [
@@ -442,7 +442,7 @@
       ],
       [
         "需要註冊帳號嗎？",
-        "不需要註冊 Mealr 帳號。餐食記錄和照片儲存在裝置上，購買與訂閱由 Apple 處理。"
+        "毋須註冊 Mealr 帳戶。會員私人同步使用你的 iCloud 帳戶；購買與訂閱由 Apple 處理。"
       ],
       [
         "哪裡可以了解會員和使用方式？",
@@ -463,11 +463,11 @@
     "foot": "餐食相片為 AI 生成的情境圖；App 畫面使用示例資料。",
     "skip": "跳至內容",
     "offline": "沒有網絡\n也記得這一餐",
-    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量。相片毋須上傳，離線時也能為三餐留下一筆。",
+    "offlinebody": "選擇本機模型，在 iPhone 上估算餐食熱量；模型可用後，離線也能記錄，失敗不會自動改用雲端。",
     "offlinepoints": [
       [
-        "讓相片留在身邊",
-        "本機食物辨識在裝置上完成，餐食相片和補充文字不會上傳。"
+        "本機辨認，分享另選",
+        "本機辨認不將相片或文字傳送給雲端 AI。會員私人 iCloud 同步及已同意的模型改善計劃仍可能分別上傳相片。"
       ],
       [
         "按你的方式記錄",
