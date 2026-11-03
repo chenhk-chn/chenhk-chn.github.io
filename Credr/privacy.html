@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-Hans">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Credr 隐私说明"><title>隐私 · Credr</title><link rel="stylesheet" href="style.css"><script defer src="language.js"></script></head>
+<body><a class="skip" href="#main">跳到正文 / Skip to content</a><div class="wrap">
+<header class="site-bar"><a class="wordmark" href="index.html" data-localized-link="index.html">Credr</a><nav><a href="index.html" data-localized-link="index.html">首页 / Home</a><a href="support.html" data-localized-link="support.html">帮助 / Help</a></nav><select data-language-select aria-label="Language / 语言"><option value="zh-Hans">简体中文</option><option value="en">English</option></select></header>
+<main id="main" tabindex="-1">
+<article class="article" data-language="zh-Hans" data-title="隐私 · Credr"><p class="eyebrow">PRIVACY / 2026-11-03</p><h1>隐私说明</h1><p class="lede">Credr 不设用户账户、广告或分析后端。凭据由 Apple 钥匙串存储，调用记录留在本机。</p>
+<h2>凭据保存在哪里？</h2><p>你加入 Credr 的值保存在其 synchronizable Data Protection Keychain 记录中，包含引用、显示名称、类型、备注和分组。iCloud 钥匙串同步由 Apple 提供，取决于账户与设备设置。Credr 不读取 Apple“密码”或其他应用的完整钥匙串，不确认远端同步完成时间。</p>
+<h2>什么时候会读取明文？</h2><p>显示、复制、加载当前值、CLI 原始导出和环境交付均先请求系统身份验证。环境变量与原始输出是明文，获准目标程序可以读取和传播，剪贴板管理器、工具日志或 Agent 捕获也可能保留内容。Credr 不代理业务请求，也不能保证下游输出脱敏。</p>
+<h2>调用记录包含什么？</h2><p>启用时最多保留 500 条本机请求：时间、调用方自报名称/环境、理由、观察到的直接父进程名/PID（或 Credr App）、动作、合法引用和结果/退出码。记录不含密钥值、子程序参数、环境变量、输入路径或备注。调用方和理由是有意保留的文字，使用者不得在其中填写密钥。记录可关闭并清空，不由 Credr 同步，不验证 Agent 身份，也不是防篡改日志。</p>
+<h2>文件、诊断和连接</h2><p>导入读取用户所选或明确授权的文件。访问诊断不读取值，但可能含本机 App 路径、版本、签名和共享组。App 不自动安装 Skill 或修改 PATH；用户复制说明后，Agent 可按授权安装随包文档。</p>
+<h2>删除与支持</h2><p>删除凭据可能通过 iCloud 钥匙串传播到其他设备，且不能由 Credr 撤销。卸载不保证删除 Keychain 记录。你主动发送的支持邮件由邮箱服务处理；请勿发送真实密钥。联系：<a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。</p>
+<h2>这个网站</h2><p>本网站不使用分析脚本、跟踪 Cookie 或外部字体服务。语言选择保留在 URL。托管服务提供商可能按自身政策处理基础访问日志。站外链接按各自政策处理。</p>
+</article>
+<article class="article" data-language="en" data-title="Privacy · Credr" hidden><p class="eyebrow">PRIVACY / 2026-11-03</p><h1>Privacy</h1><p class="lede">No Credr accounts, ads or analytics backend. Credentials live in Apple Keychain. Request history stays on your Mac.</p>
+<h2>Credential storage</h2><p>Values you add to Credr use its own synchronizable Data Protection Keychain records, with references, display names, types, notes and groups. Apple manages iCloud Keychain sync according to your settings. Credr does not browse Apple Passwords or other apps' private records and cannot verify per-entry remote completion.</p>
+<h2>Plaintext release</h2><p>Display, copy, loading, raw export and environment delivery require system verification first. Approved tools can read and propagate plaintext. Clipboard managers, tool logs and agent capture may retain it. Credr does not proxy business requests or guarantee downstream output redaction.</p>
+<h2>Local history</h2><p>When enabled, up to 500 requests retain time, self-declared caller/environment and purpose, observed direct parent process/PID or Credr App, action, validated references and outcome/exit code. Values, child arguments, environment variables, input paths and notes are excluded. Never put secrets in caller/purpose text. History can be disabled/cleared. It is not synchronized by Credr, tamper-proof or authenticated agent identity.</p>
+<h2>Imports, diagnostics and setup</h2><p>Imports read selected or explicitly approved files. Metadata-only diagnostics may include app paths, versions, signing facts and the access group. The app does not install Skills or change PATH. Your agent may install bundled documentation after your request.</p>
+<h2>Deletion and support</h2><p>Deleting credentials may propagate through iCloud Keychain and cannot be undone in Credr. Uninstalling does not guarantee deletion of Keychain entries. Email you choose to send is handled by the email provider. Do not send real keys. Contact <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>.</p>
+<h2>This website</h2><p>No analytics scripts, tracking cookies or external font services. Language choices remain in the URL. The hosting provider may process basic access logs under its own policy. External links have their own policies.</p>
+</article></main>
+<footer><span>© 2026 Credr</span><nav><a href="support.html" data-localized-link="support.html">Support</a><a href="mailto:imhccn@gmail.com">Contact</a></nav></footer></div></body></html>

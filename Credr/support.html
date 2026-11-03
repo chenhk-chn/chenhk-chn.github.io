@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-Hans">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Credr 使用帮助与技术支持"><title>使用帮助 · Credr</title><link rel="stylesheet" href="style.css"><script defer src="language.js"></script></head>
+<body><a class="skip" href="#main">跳到正文 / Skip to content</a><div class="wrap">
+<header class="site-bar"><a class="wordmark" href="index.html" data-localized-link="index.html">Credr</a><nav><a href="index.html" data-localized-link="index.html">首页 / Home</a><a href="privacy.html" data-localized-link="privacy.html">隐私 / Privacy</a></nav><select data-language-select aria-label="Language / 语言"><option value="zh-Hans">简体中文</option><option value="en">English</option></select></header>
+<main id="main" tabindex="-1">
+<article class="article" data-language="zh-Hans" data-title="使用帮助 · Credr"><p class="eyebrow">SUPPORT</p><h1>使用帮助</h1><p class="lede">遇到问题或有建议，请联系 <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a>。附上 macOS 版本、Credr 版本与操作步骤；请勿发送密钥值。</p>
+<h2>怎样连接 Agent？</h2><p>在 Credr 打开“连接 Agent”，复制说明并粘贴给正在使用的 Agent。Agent 按自己的 Skill 目录规则安装完整文档并检查连接。已有冲突文件应保留，不自动覆盖。移动或升级 App 后重新复制说明。</p>
+<h2>为什么查到了名字，却没有值？</h2><p>默认查询只返回名称和元数据。取用值需要 Touch ID 或系统密码。让 Agent 优先使用 run --env 交给目标程序；明确需要原始值时可用 get --stdout，注意选择接收位置。</p>
+<h2>命令为什么要求 caller 和 reason？</h2><p>每次业务操作都必须声明调用方、实际运行环境和理由，供你在取用提示与调用记录中查看。它们属于调用方自报信息，不代表经过身份认证，也不能代替系统验证。</p>
+<h2>为什么目标命令不能启动？</h2><p>Credr 使用 App Sandbox。某些程序、配置文件或目录可能无法访问。“检查本机访问”只检查元数据能力，不证明任意工具都能运行。请分享不含密钥的静态错误和诊断，不要通过关闭沙盒解决。</p>
+<h2>可以读取“密码”里的所有密码吗？</h2><p>不可以。Credr 只管理你添加到它的 Keychain 共享组的凭据，不自动导入其他应用或 Apple“密码”的记录。</p>
+<h2>iCloud 同步怎样开启？</h2><p>在参与同步的设备使用同一 Apple 账户，并开启“密码与钥匙串”。Credr 不能验证每条凭据的远端到达时间。当前产品是 Mac 应用，工程里的 iOS 宿主仅用于共享层测试。</p>
+<h2>怎样删除数据？</h2><p>在 App 里明确删除凭据；操作可能同步传播到其他设备，且无法由 Credr 撤销。本机调用记录可以在“调用记录”中关闭并清空。卸载 App 不等于删除所有 Keychain 凭据。</p>
+<h2>怎样提供诊断？</h2><p>“设置 → 关于 → 诊断”可以复制不读取值的访问诊断。诊断可能含 App 路径、签名和访问组；分享前检查。请勿附带真实凭据、环境变量或含令牌的命令输出。</p>
+</article>
+<article class="article" data-language="en" data-title="Support · Credr" hidden><p class="eyebrow">SUPPORT</p><h1>Help with Credr</h1><p class="lede">Contact <a href="mailto:imhccn@gmail.com">imhccn@gmail.com</a> with your macOS version, Credr version and reproduction steps. Never send credential values.</p>
+<h2>Connect an agent</h2><p>Open Connect Agent, copy instructions and paste them into your agent. It installs the entire Skill directory using its own conventions and checks access. Preserve conflicting files. Repeat after moving or upgrading the app.</p>
+<h2>Names without values</h2><p>Queries return metadata by default. Releasing values requires Touch ID or your system password. Prefer run --env for delivery to an intended tool. Use get --stdout only when raw access is explicitly requested.</p>
+<h2>Caller and reason</h2><p>Every operational command declares its caller, environment and purpose. These are self-reported information for prompts/history, not authenticated identity or substitutes for system verification.</p>
+<h2>Command compatibility</h2><p>App Sandbox can restrict executables, configuration files and directories. A metadata probe does not prove that every tool works. Share static errors and sanitized diagnostics; keep sandboxing enabled.</p>
+<h2>Storage and sync</h2><p>Credr only manages records added to its own Keychain group. It does not browse Apple Passwords. Apple manages iCloud Keychain synchronization according to your device settings. Credr cannot verify per-entry remote completion. This is a Mac app; the iOS target in the project is a test host.</p>
+<h2>Delete data and share diagnostics</h2><p>Deleting a credential may propagate to other devices and cannot be undone in Credr. Turn off or clear local history in Request History. Uninstalling is not a guarantee of Keychain deletion. Settings can copy metadata-only diagnostics; inspect local paths and signing facts before sharing. The current app interface is in Simplified Chinese.</p>
+</article></main>
+<footer><span>© 2026 Credr</span><nav><a href="privacy.html" data-localized-link="privacy.html">Privacy</a><a href="mailto:imhccn@gmail.com">Contact</a></nav></footer></div></body></html>

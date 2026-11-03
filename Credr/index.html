@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Credr：在 Apple 钥匙串中管理凭据，验证身份后交给你的 Agent。">
+<title>Credr · 密钥，由你掌管</title><link rel="stylesheet" href="style.css">
+<script defer src="language.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文 / Skip to content</a>
+<div class="wrap">
+<header class="site-bar">
+  <a class="wordmark" href="index.html" data-localized-link="index.html"><span class="brand-mark" aria-hidden="true">{·}</span>Credr</a>
+  <nav aria-label="Main navigation"><a href="support.html" data-localized-link="support.html">使用帮助 / Help</a><a href="privacy.html" data-localized-link="privacy.html">隐私 / Privacy</a></nav>
+  <select data-language-select aria-label="Language / 语言"><option value="zh-Hans">简体中文</option><option value="en">English</option></select>
+</header>
+<main id="main" tabindex="-1">
+<div data-language="zh-Hans" data-title="Credr · 密钥，由你掌管">
+  <section class="hero">
+    <div><p class="eyebrow">CREDENTIALS / MACOS</p>
+      <h1>密钥放好。<br>按需交给 Agent。</h1>
+      <p class="lede">把凭据保存在 Apple 钥匙串。Agent 先找到名称，取用时由你验证身份。</p>
+      <a class="cta" href="download.html" data-localized-link="download.html">查看获取方式 <span aria-hidden="true">↗</span></a>
+      <p class="fine">macOS 15 及以上 · 当前为发布准备阶段</p>
+    </div>
+    <div class="flow" aria-label="凭据交付流程">
+      <p class="flow-label">你决定何时取用</p>
+      <div class="flow-row"><span class="step">01</span><div><strong>查询名称与元数据</strong><p><code>github.personal.pat</code><br>找到要用的凭据，值保持隐藏。</p></div><span class="pill">隐藏值</span></div>
+      <div class="flow-row"><span class="step">02</span><div><strong>验证本次取用</strong><p>显示调用方与理由，请求 Touch ID 或系统密码。</p></div><span class="pill">系统验证</span></div>
+      <div class="flow-row"><span class="step">03</span><div><strong>交给目标程序</strong><p><code>run --env GH_TOKEN=github.personal.pat</code><br>获准后，再把值传给要运行的命令。</p></div><span class="pill">按需交付</span></div>
+    </div>
+  </section>
+  <section class="section"><div><p class="eyebrow">01 / KEEP</p><h2>一个清楚的密钥库。</h2></div><div><p>添加 API 密钥、令牌或文件凭据，按名称搜索、按项目分组。显示名可以修改，供命令使用的引用保持不变。</p><p>你加入 Credr 的凭据启用 iCloud 钥匙串同步，由 Apple 根据账户和设备设置管理。</p></div></section>
+  <section class="section"><div><p class="eyebrow">02 / CONNECT</p><h2>连接正在使用的 Agent。</h2></div><ol class="steps"><li><strong>复制接入说明</strong><p>在 App 中打开“连接 Agent”，把说明粘贴给支持 Skill 的 Agent。</p></li><li><strong>安装文档，检查连接</strong><p>Agent 连接完整 Skill 目录，检查 CLI 版本与能力。此步骤不读取密钥值。</p></li><li><strong>需要时，再批准取用</strong><p>每次操作声明调用方和理由，取用时请求系统身份验证。本机调用记录帮助你查看来由。</p></li></ol></section>
+  <section class="section"><div><p class="eyebrow">03 / KNOW</p><h2>知道交给了谁。</h2></div><div><p>默认不输出明文。环境交付把值传给获准程序；该程序仍能读取并使用它，兼容性受 App Sandbox 限制。</p><p>Credr 只管理你加入它的凭据，不读取 Apple“密码”或其他应用的完整钥匙串。<a href="privacy.html" data-localized-link="privacy.html">查看隐私与使用边界</a></p></div></section>
+</div>
+<div data-language="en" data-title="Credr · Your keys. Your permission." hidden>
+  <section class="hero">
+    <div><p class="eyebrow">CREDENTIALS / MACOS</p><h1>Keep keys ready.<br>Share them when needed.</h1>
+      <p class="lede">Store credentials in Apple Keychain. Let your agent find names first, then verify your identity before releasing a value.</p>
+      <a class="cta" href="download.html" data-localized-link="download.html">View availability <span aria-hidden="true">↗</span></a><p class="fine">macOS 15 or later · Release preparation in progress</p>
+    </div>
+    <div class="flow" aria-label="Credential delivery flow"><p class="flow-label">YOU CHOOSE WHEN TO RELEASE</p>
+      <div class="flow-row"><span class="step">01</span><div><strong>Find names and metadata</strong><p><code>github.personal.pat</code><br>Find the right entry. Its value stays hidden.</p></div><span class="pill">Hidden</span></div>
+      <div class="flow-row"><span class="step">02</span><div><strong>Verify this release</strong><p>See the caller and purpose. Use Touch ID or your system password.</p></div><span class="pill">Verify</span></div>
+      <div class="flow-row"><span class="step">03</span><div><strong>Deliver to your tool</strong><p><code>run --env GH_TOKEN=github.personal.pat</code><br>Supply the value to the intended command after approval.</p></div><span class="pill">Deliver</span></div>
+    </div>
+  </section>
+  <section class="section"><div><p class="eyebrow">01 / KEEP</p><h2>A clear credential library.</h2></div><div><p>Add API keys, tokens or file credentials. Search names and group projects. Edit display names while keeping command references stable.</p><p>Entries you add to Credr have iCloud Keychain synchronization enabled. Apple manages sync according to account and device settings.</p></div></section>
+  <section class="section"><div><p class="eyebrow">02 / CONNECT</p><h2>Connect the agent you use.</h2></div><ol class="steps"><li><strong>Copy instructions</strong><p>Open Connect Agent in Credr and paste the instructions into a Skill-capable agent.</p></li><li><strong>Install docs and check access</strong><p>The agent connects the entire Skill directory and checks CLI versions and capabilities, without reading values.</p></li><li><strong>Approve when a value is needed</strong><p>Each operation declares a caller and purpose. System verification precedes release. Review local request history.</p></li></ol></section>
+  <section class="section"><div><p class="eyebrow">03 / KNOW</p><h2>Understand the destination.</h2></div><div><p>No plaintext output by default. Environment delivery supplies values to approved tools that can read them. App Sandbox still limits tool compatibility.</p><p>Credr manages only entries you add to its group. It does not browse Apple Passwords or other apps' private Keychain records. <a href="privacy.html" data-localized-link="privacy.html">Read privacy and use boundaries</a>.</p><p>The current app interface is in Simplified Chinese.</p></div></section>
+</div>
+</main>
+<footer><span>© 2026 Credr</span><nav><a href="support.html" data-localized-link="support.html">Support</a><a href="privacy.html" data-localized-link="privacy.html">Privacy</a><a href="mailto:imhccn@gmail.com">Contact</a></nav></footer>
+</div>
+</body></html>
