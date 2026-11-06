@@ -3,7 +3,7 @@
 
   document.documentElement.classList.add("js");
 
-  /* 严格对齐 AppStore/metadata/1.1.0/*.json 与 Scripts/screenshots/copy-1.1.0.json */
+  /* 严格对齐 AppStore/metadata/1.1.0/*.json 与 scripts/screenshots/copy-1.1.0.json */
   var COPY = {
     "zh-Hans": {
       "nav.aria": "主导航",
